@@ -1,0 +1,23 @@
+
+.r{
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.input{
+
+}
+
+.form{
+    width:90%;
+    max-width:390px;
+}
+
+/*
+@media screen and (max-width:700px){
+    .form{
+        width:90%;
+    }
+}*/

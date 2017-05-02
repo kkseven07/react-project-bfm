@@ -1,0 +1,26 @@
+.r{
+    background: #f0f1ef;
+}
+
+.book-form{
+    max-width:500px;
+    width:50%;
+    padding:50px 0 50px 0;
+
+}
+
+.book{
+}
+
+.form{
+
+    /*background-color: blue;*/
+
+}
+
+@media screen and (max-width:750px){
+    .book-form{
+        width:100%;
+        padding:20px 0 15px 0;
+    }
+}
