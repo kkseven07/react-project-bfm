@@ -1,9 +1,12 @@
 
 import React, {Component} from 'react'
 import {render} from 'react-dom'
+import "../app/app.css"
+
 import configureStore from './store'
 import createHistory from 'history/createBrowserHistory'
 import { Provider } from 'react-redux'
+
 import { ConnectedRouter} from 'react-router-redux'
 
 import App from '../app/app'

@@ -12,11 +12,11 @@ export const test=()=> console.log("Ilyas is awesome")
 
 export const fieldStyle=(isPristine,isValid)=>{
     if(isPristine){
-        return"enter"
+        return "enter"
     }else if(!isValid){
-        return"enter error"
+        return "enter error"
     }else{
-        return"enter valid"
+        return "enter valid"
     }
 }
 

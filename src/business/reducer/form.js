@@ -17,8 +17,9 @@ const initialState = {
     isNext:false
 }
 
-let partOne=["name", "surname"]
+let partOne=["name", "surname","gender"]
 import * as selector from './selectorForm'
+import {data} from '../../app/shared'
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -35,13 +36,16 @@ export default (state = initialState, action) => {
           isNext:true
         }
       }else{
+        //check if evertyghin is pristine
         let name=find(fields,(obj)=>obj.fieldType==="name")
         let surname=find(fields,(obj)=>obj.fieldType==="surname")
+        let gender=find(fields,(obj)=>obj.fieldType==="gender")
         return {
           ...state,
           isNext:false,
           name:name,
-          surname:surname
+          surname:surname,
+          gender:gender
         }
       }
     }else{
@@ -64,9 +68,9 @@ export default (state = initialState, action) => {
         return state
     }else{
         let calculatedAge=""
-        let dateExists = isValidDate(state.year, monthsMap[state.month], state.day)
+        let dateExists = selector.isValidDate(state.year, data.months[state.month], state.day)
         if(dateExists){
-          calculatedAge=getAge(new Date(state.year, monthsMap[state.month], state.day))
+          calculatedAge=selector.getAge(new Date(state.year, data.months[state.month], state.day))
         }else{
           calculatedAge=null
         }

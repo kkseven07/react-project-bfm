@@ -14,11 +14,9 @@ import home from './home.css'
 
 export default (props)=>(
     <div
-        className="flex full flex-center"
+        className="flex flex-center full"
         >
-
         <BookForm/>
-
     </div>
 
 )

@@ -8,7 +8,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../business/actions'
 import { bindActionCreators } from 'redux'
-import app from "./app.css"
 import header from './shared/components/header.css'
 import {Background, Header} from './shared'
 

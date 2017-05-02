@@ -13,7 +13,6 @@
     justify-content: flex-start;
     padding-left:25px;
     cursor: pointer;
-    background-color: blue;
 }
 
 .image{
@@ -36,7 +35,6 @@
 @media screen and (max-width:830px) and (min-width:430px){
     .logo{
         width:30%;
-        background-color: red;
     }
 
     .links{

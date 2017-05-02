@@ -1,30 +1,36 @@
 import React from 'react'
 import { Route, withRouter, Redirect} from 'react-router-dom'
 import {MemoryRouter} from 'react-router'
-import {Button,Input} from '../../shared'
+import {Button,Input, Select} from '../../shared'
 import './form.css'
 import { connect } from 'react-redux'
 import * as actions from '../../../business/actions'
 import { bindActionCreators } from 'redux'
 
 const PartOne = ({form,...props}) => {
-    console.log(form)
     return <div
     style={{height:300}} styleName="form">
         <Input
             field={form.name}
-            style=""
             fieldType={"name"}
             enter={props.actions.enterInput}
         />
         <div style={{margin:10}}>{form.name.errorText}</div>
         <Input
             field={form.surname}
-            style=""
             fieldType={"surname"}
             enter={props.actions.enterInput}
         />
         <div style={{margin:10}}>{form.surname.errorText}</div>
+
+        <Select
+            options={["Женский","Мужской"]}
+            field={form.gender}
+            fieldType={"gender"}
+            enter={props.actions.enterInput}
+        />
+        <div style={{margin:10}}>{form.gender.errorText}</div>
+
 
         <Button click={()=>props.actions.changeForm(true)}>Продолжить</Button>
 

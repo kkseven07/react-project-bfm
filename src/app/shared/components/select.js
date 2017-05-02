@@ -1,19 +1,16 @@
 
 
 import React from 'react'
+import {fieldStyle} from "../utils"
 
-export default ({field:{value},options})=>{
-
-
+export default ({field:{value ,isPristine,isValid},options,...props})=>{
     return <select value={value}
-                    onChange={props.enter}
-                    styleName={props.style}>
-                {[props.options.map((val,i)=>{
-                    if(i===0){
-                        return <option key={i} disabled>{val}</option>
-                    }else{
-                        return  <option key={i} value={value}>{val}</option>
-                    }
+                onChange={(e)=>props.enter(e.target.value,props.fieldType)}
+                className={fieldStyle(isPristine,isValid)}
+                styleName={props.style||""}>
+                    <option disabled>{value}</option>
+                {[options.map((val,i)=>{
+                    return  <option key={i} value={val}>{val}</option>
                 })]}
 
                </select>
