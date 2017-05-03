@@ -8,6 +8,7 @@ export default ({field:{value, isPristine,isValid,errorText},enter,...props})=>{
             className={fieldStyle(isPristine,isValid)}
             styleName={props.style||""}
             type="text"
+            // maxLength={}
             value = {value}
             placeholder={props.placeholder}/>
 }

@@ -57,6 +57,6 @@ export const isValidDate=(y,m,d)=>{
     }
 
 export const getAge=(b)=>{
-   return ~~((Date.now() - b) / (31557600000))
+   return ""+~~((Date.now() - b) / (31557600000))
 }
 

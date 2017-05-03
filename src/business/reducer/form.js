@@ -17,7 +17,7 @@ const initialState = {
     isNext:false
 }
 
-let partOne=["name", "surname","gender"]
+let partOne=["name", "surname","gender","day","month","year","age"]
 import * as selector from './selectorForm'
 import {data} from '../../app/shared'
 
@@ -29,7 +29,7 @@ export default (state = initialState, action) => {
         const {isValid,errorText}=selector.validate(state[v].value,v)
         return {isPristine:false,isValid,errorText, fieldType:v,value:state[v].value}
       })
-      if(every(mapValues(fields,({isValid})=> isValid))){
+      if(every(mapValues(fields,({isValid})=> isValid)) && state.dateExists){
         //successful path
         return {
           ...state,
@@ -40,12 +40,15 @@ export default (state = initialState, action) => {
         let name=find(fields,(obj)=>obj.fieldType==="name")
         let surname=find(fields,(obj)=>obj.fieldType==="surname")
         let gender=find(fields,(obj)=>obj.fieldType==="gender")
+        let day=find(fields,(obj)=>obj.fieldType==="day")
+        let month=find(fields,(obj)=>obj.fieldType==="month")
+        let year=find(fields,(obj)=>obj.fieldType==="year")
+        let age=find(fields,(obj)=>obj.fieldType==="age")
         return {
           ...state,
           isNext:false,
-          name:name,
-          surname:surname,
-          gender:gender
+          name, gender,surname,day,month,year,age
+
         }
       }
     }else{
@@ -64,13 +67,13 @@ export default (state = initialState, action) => {
       }
     }
   case "CHECK_DATE":
-    if(state.day==="День"||state.year==="Год"||state.month==="Месяц"){
+    if(state.day.value==="День"||state.year.value==="Год"||state.month.value==="Месяц"){
         return state
     }else{
         let calculatedAge=""
-        let dateExists = selector.isValidDate(state.year, data.months[state.month], state.day)
+        let dateExists = selector.isValidDate(state.year.value, data.months[state.month.value], state.day.value)
         if(dateExists){
-          calculatedAge=selector.getAge(new Date(state.year, data.months[state.month], state.day))
+          calculatedAge=selector.getAge(new Date(state.year.value, data.months[state.month.value], state.day.value))
         }else{
           calculatedAge=null
         }

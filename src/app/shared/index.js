@@ -8,7 +8,7 @@ import Select from './components/select'
 import Textarea from './components/textarea'
 import Button from './components/button'
 import Background from './components/background'
-
+import ErrorText from './components/errorText'
 export {
     utils,
     data,
@@ -18,5 +18,6 @@ export {
     Select,
     Textarea,
     Button,
+    ErrorText,
     Background
 }

@@ -20,6 +20,9 @@ select{
   height:100%;
   width: 100%;
 }
+:global .width-full{
+  width: 100%;
+}
 
 :global .flex{
   display: flex;
@@ -35,6 +38,9 @@ select{
 :global .flex-center{
     justify-content: center;
     align-items: center;
+}
+:global .space-between{
+  justify-content: space-between;
 }
 
 :global .absolute{
@@ -71,5 +77,9 @@ select{
 
 :global .app-blue{
   background-color:#5877ff;
+}
+
+:global .app-blue-text{
+  color:#5877ff;
 }
 
