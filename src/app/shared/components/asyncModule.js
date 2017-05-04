@@ -30,7 +30,6 @@ export default function asyncRoute(getComponent,moduleName) {
 
     componentWillMount() {
       const { Component } = this.state
-      console.log(Component)
       if (!Component) {
         console.log("aboout to fetch my component")
         this._componentWillUnmountSubject = new Subject()
