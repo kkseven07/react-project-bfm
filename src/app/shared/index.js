@@ -11,7 +11,7 @@ import Background from './components/background'
 import ErrorText from './components/errorText'
 import DescText from './components/formDesсriptionText'
 import DescSmall from './components/formDesсriptionSmall'
-import asyncModule from './components/AsyncModule'
+import asyncModule from './components/asyncModule'
 export {
     utils,
     data,
