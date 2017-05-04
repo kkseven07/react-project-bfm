@@ -1,2 +1,0 @@
-/*! Copyright Ilyas Malgazhdarov */
-webpackJsonp([1],{496:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var u=n(2),o=function(e){return e&&e.__esModule?e:{default:e}}(u);n(502),t.default=function(e){return o.default.createElement("div",{style:{fontFamily:"BebasBold"}},"About")}},502:function(e,t){}});
