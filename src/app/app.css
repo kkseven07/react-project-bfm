@@ -16,6 +16,24 @@ select{
   appearance: none;
 }
 
+@font-face {
+  font-family: 'RobotoMedium';
+  src: url('../../assets/fonts/Roboto-Medium.woff');
+}
+@font-face {
+  font-family: 'RobotoRegular';
+  src: url('../../assets/fonts/Roboto-Regular.woff');
+}
+
+@font-face {
+  font-family: 'BebasRegular';
+  src: url('../../assets/fonts/AA-BebasNeue-Regular.woff');
+}
+/*@font-face {
+  font-family: 'BebasBold';
+  src: url('../../assets/fonts/AA-BebasNeue-Bold.woff');
+}*/
+
 :global .full{
   height:100%;
   width: 100%;
@@ -39,6 +57,10 @@ select{
     justify-content: center;
     align-items: center;
 }
+:global .flex-end{
+    justify-content: flex-end;
+    align-items: flex-end;
+}
 :global .space-between{
   justify-content: space-between;
 }
@@ -57,9 +79,8 @@ select{
 :global .enter{
     width:100%;
     border-radius:4px;
-    height:45px;
-    font-size:16px;
-    font-weight: 400;
+    height:46px;
+    font-size:17px;
     border:1px solid;
     border-color:#dddddd;
     outline: none;

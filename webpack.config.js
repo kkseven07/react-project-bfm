@@ -10,10 +10,11 @@ const context = path.resolve(__dirname, 'src');
 module.exports = {
   context,
   devtool: 'eval-source-map',
-  entry:  __dirname + "/src/entry/index.js",
+  entry: __dirname + "/src/entry/index.js",
   output: {
     path: __dirname + "/public",
-    filename: "app.js"
+    filename: '[name].[hash].js',
+    chunkFilename:"[name]-[chunkhash].async.js"
   },
   devServer: {
     contentBase: "/public",

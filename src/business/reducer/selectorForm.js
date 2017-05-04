@@ -1,5 +1,5 @@
 export const isEmpty = (str)=>(str.length === 0 || !str.trim());
-export const isValidStr=(str)=>!str.match(/[^а-яА-Яa-zA-Z]/gi);
+export const isValidStr=(str)=>!str.match(/[^а-яА-Яa-zA-Z ]/gi);
 export const tooLong=(str, limit) => (str.length>limit)
 const validateFields=["name","surname", "senderName"]
 const defaultFields=["Пол", "Месяц","Возраст указанный в книге","Год","День", "Кем приходитесь"]
@@ -12,19 +12,30 @@ export const validateSelect = (str)=>{
     return {isValid:true, errorText:""}
 
 }
-
-export const validate=(str,field) =>{
-    let limit=20
-    if(selectFields.indexOf(field)>-1){
-        return validateSelect(str)
-    }
-    if(isEmpty(str)){
-        if(field==="bookName"){
-            return {
+export const validateMicro=(str)=>{
+    return {
                 isValid:true,
                 errorText:""
+    }
+}
+
+export const validate=(str,field) =>{
+    let limit=18
+    if(selectFields.indexOf(field)>-1){
+
+        return validateSelect(str)
+    }
+    if(field==="bookName"){
+        if(tooLong(str,30)){
+            return {
+                isValid:false,
+                errorText:`Длина текста превышает допустимую`,
             }
         }
+        return validateMicro(str)
+    }
+    if(isEmpty(str)){
+
         return {
             isValid:false,
             errorText:"Необходимо заполнить"

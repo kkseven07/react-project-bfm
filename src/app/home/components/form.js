@@ -1,7 +1,5 @@
 import React from 'react'
-import { Route, withRouter, Redirect} from 'react-router-dom'
-import {MemoryRouter} from 'react-router'
-import {Button,Input, Select, ErrorText} from '../../shared'
+import {Button,Input, Select, ErrorText,DescText,DescSmall} from '../../shared'
 import './form.css'
 import { connect } from 'react-redux'
 import * as actions from '../../../business/actions'
@@ -20,6 +18,10 @@ const getData = (field)=>{
 const PartOne = ({form,...props}) => {
     return <div className="flex flex-center flex-column"
      styleName="form">
+        <DescText text="Для кого эта книга?"/>
+        <div style={{margin:3,marginTop:0}}/>
+        <DescSmall text="Детали будут использованы для создания книги"/>
+        <div style={{margin:6}}/>
         <Input
             placeholder="Имя"
             field={form.name}
@@ -44,7 +46,9 @@ const PartOne = ({form,...props}) => {
             enter={props.actions.enterInput}
         />
         <ErrorText text={form.gender.errorText}/>
-
+        <div style={{marginTop:15}}/>
+        <DescText text="Дата рождения"/>
+        <div style={{margin:5}}/>
         <div className="flex width-full">
             <div styleName="day">
                 <Select
@@ -79,7 +83,9 @@ const PartOne = ({form,...props}) => {
             </div>
 
         </div>
-        <ErrorText text={form.month.errorText||form.day.errorText||form.year.errorText}/>
+        {!form.dateExists&&<ErrorText text={"Данной даты не существует"}/>}
+        {form.dateExists&&<ErrorText text={form.month.errorText||form.day.errorText||form.year.errorText}/>}
+
         <Select
             values={["today", "next"]}
             default="Возраст указанный в книге"
@@ -90,9 +96,7 @@ const PartOne = ({form,...props}) => {
             enter={props.actions.enterInput}
         />
 
-            <ErrorText text={form.age.errorText}/>
-
-        <div className="width-full" style={{margin:3}}>{!form.dateExists&&"Данной даты не существует"}</div>
+        <ErrorText text={form.age.errorText}/>
 
         <div className="flex width-full" >
             <Button click={()=>props.actions.changeForm(true)}>Продолжить</Button>
@@ -105,20 +109,41 @@ const PartTwo = ({form,...props}) => {
 
     return  <div className="flex flex-center flex-column" styleName="form"
      >
+            <DescText text="От кого эта книга?"/>
+            <div style={{margin:10,marginTop:0}}/>
             <Input
                 field={form.senderName}
                 style=""
+                placeholder="Оби Ван Кеноби"
                 fieldType={"senderName"}
                 enter={props.actions.enterInput}
             />
-            <div style={{margin:5}}>{form.senderName.errorText}</div>
+            <ErrorText text={form.senderName.errorText}/>
             <Input
                 field={form.bookName}
                 style=""
+                placeholder="Название книги (можно оставить пустым)"
                 fieldType={"bookName"}
                 enter={props.actions.enterInput}
             />
-            <div style={{margin:5}}>{form.bookName.errorText}</div>
+            <ErrorText text={form.bookName.errorText}/>
+             <div style={{margin:15}}/>
+            <DescText text="Отношение"/>
+            <div style={{margin:3,marginTop:0}}/>
+            <DescSmall text={`Кем вы приходитесь человеку по имени ${form.name.value}`}/>
+             <div style={{margin:6}}/>
+             <Select
+                values={["collegue", "friend","relative","married"]}
+                default="Кем приходитесь?"
+                options={["Коллеги","Друзья", "Родственники",
+                    form.gender.value==="male"?"Супруга":"Супруг",
+                    ]}
+                field={form.relation}
+                fieldType={"relation"}
+                enter={props.actions.enterInput}
+             />
+
+            <ErrorText text={form.relation.errorText}/>
 
             <div className="flex width-full space-between">
 

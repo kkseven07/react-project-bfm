@@ -6,8 +6,8 @@ import Logo from "../../../../assets/icons/logo.png"
 import "./header.css"
 
 const links = ["КНИГИ", "О НАС", "КОНТАКТЫ"]
-const active={fontWeight:"bold", color:"#5877ff"}
-const style={fontWeight:"500", color:"black"}
+const active={color:"#5877ff",fontFamily:"RobotoMedium",textDecoration:"underline"}
+const style={color:"black",textDecoration:"none"}
 export default ({history}) => (
     <div className="flex fixed" styleName="r">
         <div className="flex flex-center"
@@ -19,7 +19,7 @@ export default ({history}) => (
 
         </div>
 
-        <div className="flex flex-center" styleName="links">
+        <div className="flex flex-center" style={{fontFamily:"RobotoRegular",fontSize:23}} styleName="links">
             <NavLink
                 to="/books"
                 style={style}

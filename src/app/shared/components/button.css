@@ -1,10 +1,11 @@
 .root{
     background-color: #5877ff;
-    margin-top:15px;
+    margin-top:5px;
     border:0;
     border-radius: 5px;
-    max-width: 190px;
-    padding:14px 30px 14px 30px;
+    max-width: 170px;
+    padding:14px 25px 14px 25px;
+    font-family: "RobotoRegular";
 
 }
 .root:hover{

@@ -9,10 +9,13 @@ const extractCSS = new ExtractTextPlugin('[name]-one.css');
 var combineLoaders = require('webpack-combine-loaders');
 module.exports = {
   context,
-  entry: __dirname + "/src/entry/index.js",
+  entry: {app:__dirname + "/src/entry/index.js",
+        vendor:["react","redux","react-router","redux-observable"]
+  },
   output: {
     path: __dirname + "/public",
-    filename: "[name]-[hash].js"
+    filename: "[name]-[hash].js",
+    chunkFilename:"async-[chunkhash].async.js"
   },
   resolve: {
         modules: [SRC, NODE_MODULES],                  // root folders for Webpack resolving, so we can now call require('greet')

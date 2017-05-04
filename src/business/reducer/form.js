@@ -17,11 +17,27 @@ const initialState = {
     isNext:false
 }
 
+const forTest = {
+    name:{value:"Ильяс",isPristine:false,isValid:true,errorText:""},
+    surname:{value:"Малгаждаров",isPristine:false,isValid:true,errorText:""},
+    gender:{value:"male",isPristine:false,isValid:true,errorText:""},
+    bookName:{value:"",isPristine:true,isValid:true,errorText:""},
+    day:{value:"1",isPristine:false,isValid:true,errorText:""},
+    month:{value:"Май",isPristine:false,isValid:true,errorText:""},
+    year:{value:"1987",isPristine:false,isValid:true,errorText:""},
+    age:{value:"today",isPristine:false,isValid:true,errorText:""},
+    relation:{value:"Кем приходитесь?",isPristine:true,isValid:true,errorText:""},
+    senderName:{value:"Абай",isPristine:false,isValid:true,errorText:""},
+    calculatedAge:"30",
+    dateExists: true,
+    isNext:false
+}
+
 let partOne=["name", "surname","gender","day","month","year","age"]
 import * as selector from './selectorForm'
 import {data} from '../../app/shared'
 
-export default (state = initialState, action) => {
+export default (state = forTest, action) => {
   switch (action.type) {
   case 'CHANGE_FORM':
     if(action.isNext){
@@ -75,7 +91,7 @@ export default (state = initialState, action) => {
         if(dateExists){
           calculatedAge=selector.getAge(new Date(state.year.value, data.months[state.month.value], state.day.value))
         }else{
-          calculatedAge=null
+          calculatedAge=""
         }
         return {...state, calculatedAge, dateExists }
     }

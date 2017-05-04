@@ -17,8 +17,29 @@ select{
   appearance: none;
 }
 
+@font-face {
+  font-family: 'RobotoMedium';
+  src: url(Roboto-Medium-71b4038282314812a3fc337e00d7140f.woff);
+}
+@font-face {
+  font-family: 'RobotoRegular';
+  src: url(Roboto-Regular-99433f7d92c3a5c1179fa7ebb1ba0a48.woff);
+}
+
+@font-face {
+  font-family: 'BebasRegular';
+  src: url(AA-BebasNeue-Regular-8518e0e42e48fce04696bb44bef891cb.woff);
+}
+/*@font-face {
+  font-family: 'BebasBold';
+  src: url('../../assets/fonts/AA-BebasNeue-Bold.woff');
+}*/
+
 .full{
   height:100%;
+  width: 100%;
+}
+.width-full{
   width: 100%;
 }
 
@@ -47,6 +68,19 @@ select{
         -ms-flex-align: center;
             align-items: center;
 }
+.flex-end{
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+}
+.space-between{
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
 
 .absolute{
   position: absolute;
@@ -62,9 +96,8 @@ select{
 .enter{
     width:100%;
     border-radius:4px;
-    height:45px;
-    font-size:16px;
-    font-weight: 400;
+    height:46px;
+    font-size:17px;
     border:1px solid;
     border-color:#dddddd;
     outline: none;
@@ -84,32 +117,11 @@ select{
   background-color:#5877ff;
 }
 
-.app-home-components-___bookForm__r___22XhV{
-    background: #f0f1ef;
+.app-blue-text{
+  color:#5877ff;
 }
 
-.app-home-components-___bookForm__book-form___NsUEH{
-    max-width:500px;
-    width:50%;
-    padding:50px 0 50px 0;
-
-}
-
-.app-home-components-___bookForm__book___3ToKX{
-}
-
-.app-home-components-___bookForm__form___1oCec{
-
-    /*background-color: blue;*/
-
-}
-
-@media screen and (max-width:750px){
-    .app-home-components-___bookForm__book-form___NsUEH{
-        width:100%;
-        padding:20px 0 15px 0;
-    }
-}.app-shared-components-___header__r___3jLaE{
+.app-shared-components-___header__r___3jLaE{
     top:0;
     left:0;
     height:120px;
@@ -183,11 +195,12 @@ select{
 
 }.app-shared-components-___button__root___34FXu{
     background-color: #5877ff;
-    margin-top:15px;
+    margin-top:5px;
     border:0;
     border-radius: 5px;
     max-width: 170px;
-    padding:14px 17px 14px 17px;
+    padding:14px 25px 14px 25px;
+    font-family: "RobotoRegular";
 
 }
 .app-shared-components-___button__root___34FXu:hover{
@@ -203,29 +216,62 @@ select{
     top:0;
     left:0;
     background-color:rgba(10,10,10,0.8);
-}
-.app-home-components-___form__r___zy3Bu{
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+}.app-shared-components-___errorText__r___2xE2p{
+    color:#F22613;
+    padding-left:2px;
+}.app-shared-components-___formDescriptionText__r___2HvqK{
+    font-family: "BebasRegular";
+    font-size:25px;
+    color:rgb(80,80,80);
+    padding-left:4px;
+}.app-shared-components-___formDescriptionSmall__r___TlcIa{
+    font-family: "RobotoRegular";
+    font-size:15px;
+    color:rgb(130,130,130);
+    padding-left:4px;
+
+}.app-home-components-___bookForm__r___22XhV{
+    background: #f0f1ef;
+    min-height:580px;
 }
 
-.app-home-components-___form__input___5Gb3a{
+.app-home-components-___bookForm__book-form___NsUEH{
+    max-width:450px;
+    width:50%;
+    padding:50px 0 50px 0;
 
 }
 
-.app-home-components-___form__form___3fx6T{
-    width:90%;
-    max-width:390px;
-}
 
-/*
-@media screen and (max-width:700px){
-    .form{
-        width:90%;
+@media screen and (max-width:750px){
+    .app-home-components-___bookForm__book-form___NsUEH{
+        width:100%;
+        padding:20px 0 15px 0;
     }
-}*/.app-home-components-___book__r___1TkTA{
+    .app-home-components-___bookForm__form___1oCec{
+        padding-bottom:30px;
+    }
+}
+.app-home-components-___form__form___3fx6T{
+    width:85%;
+    max-width:370px;
+}
+
+.app-home-components-___form__day___2vD61{
+    width:21%;
+
+}
+.app-home-components-___form__month___1Y9nI{
+    width:42%;
+    margin-left:6%;
+}
+
+.app-home-components-___form__year___15sGv{
+    width:25%;
+    margin-left:6%;
+}
+
+.app-home-components-___book__r___1TkTA{
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
@@ -234,12 +280,18 @@ select{
             align-items: flex-end;
     height:260px;
     width:260px;
-    padding:1%;
+    padding:0 4px 0px 0;
     box-shadow: 2px 1px 2px rgb(200,200,200);
-
+    white-space: pre-line;
+    text-align: right;
+    font-size:40px;
+    color:white;
 }
 
 
 .app-home-___home__slider-div___1IPgh{
     width:100%;
+}@font-face {
+  font-family: 'BebasBold';
+  src: url(AA-BebasNeue-Bold-524784d2823112db107613f3e047483c.woff);
 }

@@ -1,3 +1,3 @@
 import React from 'react'
-
-export default (props)=>(<div>About</div>)
+import './about.css'
+export default (props)=>(<div style={{fontFamily:"BebasBold"}}>About</div>)

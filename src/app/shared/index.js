@@ -9,6 +9,9 @@ import Textarea from './components/textarea'
 import Button from './components/button'
 import Background from './components/background'
 import ErrorText from './components/errorText'
+import DescText from './components/formDesсriptionText'
+import DescSmall from './components/formDesсriptionSmall'
+import asyncModule from './components/AsyncModule'
 export {
     utils,
     data,
@@ -19,5 +22,8 @@ export {
     Textarea,
     Button,
     ErrorText,
-    Background
+    Background,
+    DescSmall,
+    DescText,
+    asyncModule
 }

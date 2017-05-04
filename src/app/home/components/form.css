@@ -1,20 +1,20 @@
 
 .form{
-    width:90%;
-    max-width:390px;
+    width:85%;
+    max-width:370px;
 }
 
 .day{
-    width:23%;
+    width:21%;
 
 }
 .month{
-    width:44%;
-    margin-left:3%;
+    width:42%;
+    margin-left:6%;
 }
 
 .year{
-    width:27%;
-    margin-left:3%;
+    width:25%;
+    margin-left:6%;
 }
 
