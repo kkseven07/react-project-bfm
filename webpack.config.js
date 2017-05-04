@@ -10,10 +10,13 @@ const context = path.resolve(__dirname, 'src');
 module.exports = {
   context,
   devtool: 'eval-source-map',
-  entry: __dirname + "/src/entry/index.js",
+  entry: {
+    app:__dirname + "/src/entry/index.js",
+    vendor:["react-dom","react","redux-observable","redux","react-router"]
+  },
   output: {
     path: __dirname + "/public",
-    filename: '[name].[hash].js',
+    filename: '[name]-[chunkhash].js',
     chunkFilename:"[name]-[chunkhash].async.js"
   },
   devServer: {
@@ -68,6 +71,9 @@ module.exports = {
     new HtmlWebpackPlugin({
         template: __dirname + "/index.html"
     }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['vendor', 'manifest'],
+    })
   ],
   stats: 'minimal'
 }

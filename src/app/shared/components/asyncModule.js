@@ -29,9 +29,9 @@ export default function asyncRoute(getComponent,moduleName) {
     }
 
     componentWillMount() {
-      const { Component, ReducersLoaded } = this.state
-      setTimeout(()=>{
-        if (!Component) {
+      const { Component } = this.state
+      console.log(Component)
+      if (!Component) {
         console.log("aboout to fetch my component")
         this._componentWillUnmountSubject = new Subject()
 
@@ -58,10 +58,7 @@ export default function asyncRoute(getComponent,moduleName) {
 
             this._componentWillUnmountSubject.unsubscribe()
           })
-        }
-
-      },1000)
-
+      }
     }
 
     componentDidMount() {

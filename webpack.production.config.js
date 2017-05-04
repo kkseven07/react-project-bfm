@@ -9,13 +9,14 @@ const extractCSS = new ExtractTextPlugin('[name]-one.css');
 var combineLoaders = require('webpack-combine-loaders');
 module.exports = {
   context,
-  entry: {app:__dirname + "/src/entry/index.js",
-        vendor:["react","redux","react-router","redux-observable"]
+  entry: {
+    app:__dirname + "/src/entry/index.js",
+    vendor:["react-dom","react","redux-observable","redux"]
   },
   output: {
     path: __dirname + "/public",
-    filename: "[name]-[hash].js",
-    chunkFilename:"async-[chunkhash].async.js"
+    filename: "[name]-[chunkhash].js",
+    chunkFilename:"[name]-[chunkhash].async.js"
   },
   resolve: {
         modules: [SRC, NODE_MODULES],                  // root folders for Webpack resolving, so we can now call require('greet')
@@ -73,6 +74,9 @@ module.exports = {
     new ExtractTextPlugin({
       filename: 'style-[hash].css',
       allChunks: true
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['vendor', 'manifest'],
     })
 
   ]
