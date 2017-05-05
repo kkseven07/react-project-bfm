@@ -90,7 +90,7 @@ const PartOne = ({form,...props}) => {
             values={["today", "next"]}
             default="Возраст указанный в книге"
             options={[`Возраст сегодня ${form.calculatedAge&&" ("+form.calculatedAge+")"}`,
-                `Возраст в следующий день рождения ${form.calculatedAge&&" ("+(parseInt(form.calculatedAge)+1)+")"}`]}
+                `На следующий день рождения ${form.calculatedAge&&" ("+(parseInt(form.calculatedAge)+1)+")"}`]}
             field={form.age}
             fieldType={"age"}
             enter={props.actions.enterInput}

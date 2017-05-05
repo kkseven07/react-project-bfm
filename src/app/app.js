@@ -5,6 +5,10 @@ import {asyncModule} from './shared'
 const About = asyncModule(()=>import("./about"), "About route")
 const Home = asyncModule(()=>import ("./home"),"Home route")
 const Contacts = asyncModule(()=>import ("./contacts"),"contacts route")
+// import About from './about'
+// import Home from './home'
+// import Contacts from './contacts'
+
 import Builder from './pages/pages'
 import { connect } from 'react-redux'
 import * as actions from '../business/actions'
@@ -17,8 +21,14 @@ const showHeader = (location)=>(!location.pathname.match(/\/about/))
 const App = ({location, history,...props}) => (
     // console.log(props,location,history)||
 <div>
-    <Background zIndex="10">
+    <Background  zIndex="10">
         Loading...
+    </Background>
+     <Background  zIndex="10">
+        modal...
+    </Background>
+    <Background  zIndex="10">
+        zoomer...
     </Background>
 
     {showHeader(location)&&<Header history={history}/>}
@@ -37,7 +47,9 @@ const App = ({location, history,...props}) => (
 )
 
 const mapStateToProps = (state) => ({
-  state: state
+  state: state,
+  fetching:state.fetching,
+  modalOpen:state.modalOpen
 })
 
 const mapDispatchToProps = dispatch => ({
