@@ -5,7 +5,7 @@ import Book from './book'
 export default (props)=>{
 
 
-    return <div className="full flex flex-center flex-wrap" styleName="r">
+    return <div className="width-full flex flex-center flex-wrap" styleName="r">
         <div className="flex flex-center"
             styleName="book-form" >
             <Book/>

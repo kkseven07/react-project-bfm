@@ -3,7 +3,7 @@ import './reviews.css'
 export default (props)=>{
 
 
-    return <div className="full flex flex-center" styleName="r">
+    return <div className="width-full flex flex-center" styleName="r">
         <div> здесь будут отзывы </div>
 
 
