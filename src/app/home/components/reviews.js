@@ -1,10 +1,10 @@
 import React from 'react'
-import './gallery.css'
+import './reviews.css'
 export default (props)=>{
 
 
     return <div className="full flex flex-center" styleName="r">
-        <div> здесь будет галлерея</div>
+        <div> здесь будут отзывы </div>
 
 
     </div>
