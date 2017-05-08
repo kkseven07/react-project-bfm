@@ -1,0 +1,14 @@
+.r{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family:'BebasRegular';
+    font-size: 0.7em;
+    color:white;
+    padding-bottom:18%;
+    box-sizing: border-box;
+}
+
+.text-name{
+    font-size: 1.7em;
+}

@@ -16,7 +16,7 @@ import { bindActionCreators } from 'redux'
 import header from './shared/components/header.css'
 import {Background, Header} from './shared'
 
-const showHeader = (location)=>(!location.pathname.match(/\/about/))
+const showHeader = (location)=>(!location.pathname.match(/\/books/))
 
 const App = ({location, history,...props}) => (
     // console.log(props,location,history)||

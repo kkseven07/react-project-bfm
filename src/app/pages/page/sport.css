@@ -1,0 +1,23 @@
+.r{
+    text-align: center;
+    flex-direction: column;
+    color:white;
+    padding-bottom:9%;
+    font-family: 'Century';
+}
+
+.sport{
+    display: flex;
+    flex-direction: column;
+    margin-top:1%;
+    color:rgb(220,220,220);
+}
+
+.type{
+    font-size:0.55em;
+   /* font-weight: bold;*/
+}
+.fact{
+    font-size:0.5em;
+}
+

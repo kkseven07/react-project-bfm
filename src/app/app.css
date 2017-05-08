@@ -18,16 +18,16 @@ select{
 
 @font-face {
   font-family: 'RobotoMedium';
-  src: url('../../assets/fonts/Roboto-Medium.woff');
+  src: url('../../assets/fonts/Roboto-Medium.woff2');
 }
 @font-face {
   font-family: 'RobotoRegular';
-  src: url('../../assets/fonts/Roboto-Regular.woff');
+  src: url('../../assets/fonts/Roboto-Regular.woff2');
 }
 
 @font-face {
   font-family: 'BebasRegular';
-  src: url('../../assets/fonts/AA-BebasNeue-Regular.woff');
+  src: url('../../assets/fonts/AA-BebasNeue-Regular.woff2');
 }
 /*@font-face {
   font-family: 'BebasBold';

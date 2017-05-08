@@ -1,0 +1,17 @@
+.r{
+    justify-content: center;
+    align-items: flex-end;
+    height:73%;
+    font-family: 'BebasRegular';
+}
+
+.text, .text1{
+    font-size: 0.7em;
+    text-align: center;
+    color:#df8507;
+    width:25%;
+    line-height: 1.1;
+    font-weight:900;
+    white-space: pre-line;
+
+}

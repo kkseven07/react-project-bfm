@@ -22,8 +22,8 @@ const ajaxObjectGet={
     dataType: 'json',
     type: 'GET',
 }
-const url = "http://localhost:4000"
-// const url = "http://46.101.217.205:4000"
+// const url = "http://localhost:4000"
+const url = "http://46.101.217.205:4000"
 export const createHashid = (id) =>{
     let hashids = new Hashids('', 10);
     return hashids.encode(id)

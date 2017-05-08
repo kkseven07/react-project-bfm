@@ -1,0 +1,13 @@
+.r{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height:90%;
+    padding-left:2%;
+    font-family: 'BebasRegular';
+}
+.text{
+    font-size: 1em;
+    text-align: center;
+    color:white;
+}
