@@ -3,12 +3,14 @@ import { combineReducers } from 'redux'
 
 import loading from './loading'
 import form from './form'
-
+import book from './book'
+import bookId from './currentBookId'
 const reducer = combineReducers({
   routing,
   loading,
-  form
-
+  form,
+  book,
+  bookId
 })
 
 export default reducer

@@ -1,0 +1,14 @@
+.r{
+    position: relative
+}
+
+.text{
+    top:60%;
+    left:44%;
+    width:50%;
+    font-size: 1.5em;
+    text-align: center;
+    color:#FEE23A;
+    font-family: 'PeaceSans';
+
+}

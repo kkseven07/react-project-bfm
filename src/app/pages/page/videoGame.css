@@ -1,0 +1,10 @@
+.r{
+    position: relative;
+}
+
+.text{
+    font-size: 3em;
+    text-align: center;
+    top: 11%;
+    left: 41%;
+}

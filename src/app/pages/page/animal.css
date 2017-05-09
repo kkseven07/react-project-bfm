@@ -1,0 +1,28 @@
+.r {
+    font-family: 'BebasRegular';
+    color:white;
+}
+.first{
+    width:24%;
+    margin:2%;
+    margin-right:4%;
+    flex-direction: column;
+    text-align: center;
+}
+.big{
+    font-size:2.5em;
+}
+
+.med{
+    font-size: 0.7em;
+}
+
+.small{
+    font-size:0.5em;
+}
+.second{
+    width:22%;
+    text-align: center;
+    margin:2%;
+    margin-left:0;
+}

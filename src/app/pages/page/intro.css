@@ -1,0 +1,92 @@
+.r{
+  color:#fff;
+  position: relative;
+}
+.positioned {
+  position:absolute;
+}
+.name {
+  width:45%;
+}
+.sender {
+  width:65%;
+}
+.r div[class*="v1"] {
+  font-family:'BebasRegular';
+  color:#88076d;
+  direction:rtl;
+}
+.name-v1 {
+  bottom:68%;
+  right:20%;  
+  font-size:2.75em;
+  text-align:center;
+}
+.name-v1::before {
+  content:'!';
+} 
+.sender-v1 {
+  bottom:14%;
+  right:2%;
+  font-size:1.15em;
+}
+.r div[class*="v2"] {
+  width:32%;
+  font-family:'Yarin';
+  color:#3a3839;
+  left:36%;
+  text-align:center;
+  font-weight:900;
+}
+.name-v2 {
+  top:25%;
+  font-size:1.5em;
+  font-weight:500;
+}
+.name-v2::after {
+  content:',';
+}
+.sender-v2 {
+  top:61%;
+  font-size:0.9em;
+  text-align:center;
+}
+.r div[class*="v4"] {
+  font-family:'Open Sans';
+  color:#efeac2;
+}
+.name-v4 {
+  bottom:82%;
+  left:3.3%;
+  font-size:1.5em;
+}
+.name-v4::after {
+  content: ',';
+}
+.sender-v4 {
+  top:55%;
+  left:3.3%;
+  width:250px;
+}
+.no-image:after {
+  content: 'no background image';
+  margin-left:10%;
+  color:red;
+}
+
+/*@media screen and (max-width:520px) and (min-width:400px){
+   .name{
+        font-size:16px;
+    }
+    .sender{
+        font-size:13px;
+    }
+}
+@media screen and (max-width:399px){
+    .name{
+        font-size:14px;
+    }
+    .sender{
+        font-size:12px;
+    }
+}*/

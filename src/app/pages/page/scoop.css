@@ -1,0 +1,51 @@
+.r,.empty,.first,.second{
+    display: flex;
+}
+
+.r{
+    flex-wrap:wrap;
+    font-family: 'Sylfaen';
+    color: #525046;
+    font-weight: 900;
+    position: relative;
+}
+
+.year-text{
+    font-size: 0.6em;
+    position: absolute;
+    top: 19.7%;
+    left: 52.5%;
+}
+
+ul{
+    margin:0;
+    padding:0;
+}
+.li{
+    font-size:0.6em;
+    line-height: 1.2;
+}
+
+.empty{
+    width:100%;
+    padding-top:18%;
+    padding-left:16%;
+    height:25%;
+
+
+}
+
+.first{
+    width:50%;
+    height:75%;
+    padding:18% 2% 6% 6%;
+}
+
+.second{
+
+    padding:2% 2% 6% 6%;
+    width:50%;
+    height:75%;
+
+}
+

@@ -1,3 +1,186 @@
-@font-face{
+.root{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: white;
+    flex-direction: column;
+    padding-bottom:20px;
+    padding-top:20px;
+    min-height: 600px;
+}
+.page-wrap{
+    height:452px;
+    margin-top:40px;
+}
+.page{
+    position: relative;
+    border: 1px solid rgb(240,240,240);
+    transition: all 0.3s;
+    margin-top:36px;
+    height:510px;
+    width:510px;
+    background-size: 100% 100%;
+    /*box-shadow: 2px 3px 2px rgb(190,190,190);*/
+    font-size:20px;
+}
+.page > div {
+    position: relative;
+}
+.page:first-child{
+    margin-top:40px;
+    height:230px;
+}
+.page:nth-child(2){
+    margin-top:30px;
+}
+.page:first-child:hover{
+    cursor:default;
+}
+.page:hover{
+    cursor:zoom-in;
+}
+.clicked{
+    transform: scale(1.4);
+    z-index:104;
+    cursor:zoom-out;
+}
 
+.clicked:hover{
+    cursor:zoom-out;
+}
+
+.edit-button{
+    height:35px;
+    width:170px;
+    outline: none;
+    border-radius: 3px;
+    box-shadow: 2px 3px 2px rgb(150,150,150);
+    border:0;
+    background-color: #5877ff;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom:-20px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+.edit-button:hover{
+    background-color: black;
+    box-shadow: 0px 0px 0px rgb(150,150,150);
+
+}
+
+
+.edit-text{
+    font-size: 16px;
+    color:white;
+}
+
+.menu{
+    position:fixed;
+    background: red;
+    height:300px;
+    width:70px;
+    top:10%;
+    left:100px;
+    bottom:0;
+    right:0;
+}
+
+/*FONTS*/
+
+@font-face {
+  font-family: 'UniSansHeavy';
+  src: url('../../../assets/fonts/Uni-Sans-Heavy.woff2');
+}
+@font-face {
+  font-family: 'PeaceSans';
+  src: url('../../../assets/fonts/Peace-Sans.woff2');
+}
+@font-face {
+  font-family: 'Sylfaen';
+  src: url('../../../assets/fonts/sylfaen.woff2');
+}
+@font-face {
+  font-family: 'BebasBold';
+  src: url('../../../assets/fonts/AA-BebasNeue-Bold.woff2');
+}
+@font-face {
+  font-family: 'BebasLight';
+  src: url('../../../assets/fonts/BebasNeue-Light.woff2');
+}
+@font-face {
+  font-family: 'BebasBook';
+  src: url('../../../assets/fonts/AA-BebasNeue-Book.woff2');
+}
+@font-face {
+  font-family: 'Agaaler';
+  src: url('../../../assets/fonts/Agaaler.woff2');
+}
+@font-face {
+  font-family: 'Century';
+  src: url('../../../assets/fonts/Century.woff2');
+}
+@font-face {
+  font-family: 'CoreSansGRegular';
+  src: url('../../../assets/fonts/CoreSansG-Regular.woff2');
+}
+@font-face {
+  font-family: 'OksFree';
+  src: url('../../../assets/fonts/Oks-Free.woff2');
+}
+@font-face {
+  font-family: 'OpenSansCondBold';
+  src: url('../../../assets/fonts/OpenSans-CondBold.woff2');
+}
+@font-face {
+  font-family: 'OranienBaum';
+  src: url('../../../assets/fonts/Oranienbaum.woff2');
+}
+@font-face {
+  font-family: 'Yarin';
+  src: url('../../../assets/fonts/Yarin.woff2');
+}
+@font-face {
+  font-family: 'Bttf';
+  src: url('../../../assets/fonts/BTTF.woff2');
+}
+@font-face {
+  font-family: 'StarSeedPro';
+  src: url('../../../assets/fonts/STARSEEDPRO.woff2');
+}
+@font-face {
+  font-family: 'YellowNumber';
+  src: url('../../../assets/fonts/YELLOWNUMBERSROUGHB.woff2');
+}
+
+/*MEDIA*/
+@media screen and (max-width:520px) and (min-width:400px){
+   .page{
+        height:400px;
+        width:400px;
+        font-size:15.7px;
+    }
+    .bg-image {
+        height:398px;
+        width: 398px;
+    }
+
+}
+@media screen and (max-width:399px){
+    .page{
+        height:315px;
+        width:315px;
+        font-size:12.3px;
+    }
+    .bg-image {
+        height:313px;
+        width: 313px;
+    }
 }

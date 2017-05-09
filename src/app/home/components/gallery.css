@@ -3,3 +3,42 @@
     min-height: 600px;
 
 }
+.slider {
+	width:100%;
+	height:500px;
+	position: relative;
+	overflow:hidden;
+	margin:0;
+	padding: 0;
+}
+.slider img {
+	width:100%;
+	height:500px;
+}
+.slider > div > button, .slider ul {
+	position: absolute;
+	top:90%;
+	z-index:20; 
+}
+.slider ul {
+	top:95%;
+	bottom:0;
+}
+.slider ul li button::before {
+	font-size:14px;
+}
+.slider > div > button:first-child::before, .slider > div > button:nth-child(3)::before {
+	font-size:40px;
+}
+.slider > div >button:first-child {
+	left:45%;
+	z-index: 20;
+	height:40px;
+	width:40px;
+}
+.slider > div > button:nth-child(3) {
+	right:45%;
+	z-index:20;
+	height:40px;
+	width:40px;
+}
