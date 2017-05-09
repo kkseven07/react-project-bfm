@@ -38,9 +38,9 @@
         width:30%;
     }
 
-    .links{
+    /*.links{
         display:none;
-    }
+    }*/
 }
 
 @media screen and (max-width:429px){
@@ -51,9 +51,9 @@
         height:60px;
         width:60px;
     }
-    .links{
+    /*.links{
         display: none;
-    }
+    }*/
     .r{
         height:70px;
     }
