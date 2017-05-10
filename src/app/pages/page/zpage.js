@@ -97,7 +97,7 @@ class Page extends Component{
         else if(type==="car"){
             return <Car page={page}/>
         }
-        else if(type==="sports"){
+        else if(type==="sport"){
             return <Sport page={page}/>
         }
         else if(type==="leaders"){
@@ -138,7 +138,7 @@ class Page extends Component{
         let image=null;
         let imagesrc=null, imagesrclow=null;
         if(type!=="colorChooser" && primary_image.image.url){
-            image={backgroundImage: `url(${primary_image.image.url.replace("http://localhost:4000","http://46.101.217.205:4000")})`}
+            image={backgroundImage: `url(${"http://localhost:4000"+primary_image.image.url})`}
             imagesrc = `${primary_image.image.url.replace("http://localhost:4000","http://46.101.217.205:4000")}`
             imagesrclow = `${primary_image.image.url.replace("http://localhost:4000","http://46.101.217.205:4000").replace("768", "320")}`
         }
@@ -153,8 +153,8 @@ class Page extends Component{
              styleName={this.state.zoom?"page clicked":"page"}
                 style={image}
                 >
-                
-                
+
+
                 {this.getPage(type, image, this.props.page, this.props.book)}
 
                 {

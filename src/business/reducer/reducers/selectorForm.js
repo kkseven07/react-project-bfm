@@ -2,7 +2,7 @@ export const isEmpty = (str)=>(str.length === 0 || !str.trim());
 export const isValidStr=(str)=>!str.match(/[^а-яА-Яa-zA-Z ]/gi);
 export const tooLong=(str, limit) => (str.length>limit)
 const validateFields=["name","surname", "senderName"]
-const defaultFields=["Пол", "Месяц","Возраст указанный в книге","Год","День", "Кем приходитесь"]
+const defaultFields=["Пол", "Месяц","Возраст указанный в книге","Год","День", "Кем приходитесь?"]
 const selectFields=["gender", "age","relation","month","day","year"]
 
 export const validateSelect = (str)=>{

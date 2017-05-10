@@ -38,7 +38,7 @@ export const getBookName = (bookName, name) =>{
     if(name===""){
         return "КНИГА\nО\nТЕБЕ"
     }
-    if(bookName===""){
+    if(bookName.trim()===""){
         return name.toUpperCase()
     }
     let str=bookName.toUpperCase()
@@ -60,7 +60,7 @@ export const cutString = (string, limit) => {
         for (let i=0; i<newString.length-1;i++)  {
             if (string.charAt(i)==='.') {
                 dotIndex=i;
-            } 
+            }
         }
         // console.log(`${newString.substring(0, dotIndex)}...`)
         return `${newString.substring(0, dotIndex)}...`;
@@ -73,12 +73,12 @@ export const checkLength=(name,breakpoint, fontsize)=>{
     var k = diff;
     if (name.length>breakpoint) {
         for (let i=0;i<diff;i++){
-            
+
             if ((k-diff)===0) {size=size*0.9; k=k-1;}
             else if((diff-k)>0 && (k-diff)<=3){ size=size*0.96; k=k-1; }
             else if ((diff-k)>3) {size=size*0.99; k=k-1;}
         }
-        return `${size}em`   
+        return `${size}em`
     }
     return '';
 }

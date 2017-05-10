@@ -4,7 +4,6 @@ import Form from './form'
 import Book from './book'
 export default (props)=>{
 
-
     return <div className="width-full flex flex-center flex-wrap" styleName="r">
         <div className="flex flex-center"
             styleName="book-form" >
@@ -13,7 +12,7 @@ export default (props)=>{
         </div>
         <div className="flex flex-center"
             styleName="book-form form" >
-            <Form/>
+            <Form history={props.history}/>
         </div>
 
 

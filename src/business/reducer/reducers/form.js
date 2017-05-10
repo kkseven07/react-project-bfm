@@ -10,11 +10,12 @@ const initialState = {
     month:{value:"Месяц",isPristine:true,isValid:true,errorText:""},
     year:{value:"Год",isPristine:true,isValid:true,errorText:""},
     age:{value:"Возраст указанный в книге",isPristine:true,isValid:true,errorText:""},
-    relation:{value:"Кем приходитесь",isPristine:true,isValid:true,errorText:""},
+    relation:{value:"Кем приходитесь?",isPristine:true,isValid:true,errorText:""},
     senderName:{value:"",isPristine:true,isValid:true,errorText:""},
     calculatedAge:"",
     dateExists: true,
-    isNext:false
+    isNext:false,
+    canCreate:false
 }
 
 const forTest = {
@@ -27,44 +28,54 @@ const forTest = {
     year:{value:"1987",isPristine:false,isValid:true,errorText:""},
     age:{value:"today",isPristine:false,isValid:true,errorText:""},
     relation:{value:"Кем приходитесь?",isPristine:true,isValid:true,errorText:""},
-    senderName:{value:"Абай",isPristine:false,isValid:true,errorText:""},
+    senderName:{value:"",isPristine:true,isValid:true,errorText:""},
     calculatedAge:"30",
     dateExists: true,
-    isNext:false
+    isNext:false,
+    canCreate:false
 }
 
 let partOne=["name", "surname","gender","day","month","year","age"]
+let partTwo=["senderName","relation"]
 import * as selector from './selectorForm'
-import {data} from '../../app/shared'
+import {data} from '../../../app/shared'
 
 export default (state = forTest, action) => {
   switch (action.type) {
   case 'CHANGE_FORM':
     if(action.isNext){
-      let fields=partOne.map(v=>{
+      let canCreate=false;
+      let raw=action.part==="partOne"?partOne:partTwo
+      let fields=raw.map(v=>{
         const {isValid,errorText}=selector.validate(state[v].value,v)
         return {isPristine:false,isValid,errorText, fieldType:v,value:state[v].value}
       })
       if(every(mapValues(fields,({isValid})=> isValid)) && state.dateExists){
         //successful path
+
+        if(action.part === "partOne"){
+          canCreate=false
+        }else{
+          canCreate=true
+        }
+        // console.log("here we go ",canCreate)
         return {
           ...state,
-          isNext:true
+          isNext:true,
+          canCreate,
+
         }
       }else{
-        //check if evertyghin is pristine
-        let name=find(fields,(obj)=>obj.fieldType==="name")
-        let surname=find(fields,(obj)=>obj.fieldType==="surname")
-        let gender=find(fields,(obj)=>obj.fieldType==="gender")
-        let day=find(fields,(obj)=>obj.fieldType==="day")
-        let month=find(fields,(obj)=>obj.fieldType==="month")
-        let year=find(fields,(obj)=>obj.fieldType==="year")
-        let age=find(fields,(obj)=>obj.fieldType==="age")
+        //check if everything is pristine
+        let list = raw.reduce((acc,v) => ({...acc,[v]:find(fields,obj=>obj.fieldType===v)}),{})
+        canCreate=false
+        // console.log("-=-=-=-=-",canCreate)
+
         return {
           ...state,
-          isNext:false,
-          name, gender,surname,day,month,year,age
-
+          isNext:action.part==="partOne"?false:true,
+          canCreate,
+          ...list,
         }
       }
     }else{
@@ -72,6 +83,7 @@ export default (state = forTest, action) => {
         ...state, isNext:false
       }
     }
+
   case 'ENTER_INPUT':
     const {isValid,errorText} = selector.validate(action.text,action.field)
     return {...state,

@@ -5,17 +5,18 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import values from 'lodash/values'
 import * as actions from '../../business/actions/index.js'
-const BOOK_ID = 21
+const BOOK_ID = 8
 
-class BookRoute extends Component{  
+class BookRoute extends Component{
     componentWillMount() {
         !this.props.location.pathname.match(/\/books\//)&&
-            this.props.actions.genPages("2_46", BOOK_ID)
-    // console.log(this.props.location)
+            this.props.actions.genPages("1_46", BOOK_ID)
+    }
+    componentDidMount() {
+       window.scrollTo(0,0);
     }
     render(){
         let {bookId, book} = this.props
-        console.log("bookid", bookId)
         console.log("my book", book)
         let gift, data = [], bData
         if(book[bookId]){
@@ -23,9 +24,7 @@ class BookRoute extends Component{
             const {pages, ...rest} = book[bookId]
             bData=rest
         }
-        let pages = data
-        // let pages = [{type: "colorChooser"}].concat(data)
-        // console.log(pages)
+        let pages = [{type: "colorChooser"}].concat(data)
         return (
           <div style={{backgroundColor:"white",paddingBottom:50}}>
             {book[bookId]&&<div styleName="root">

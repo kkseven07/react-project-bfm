@@ -7,11 +7,12 @@ import Reviews from './components/reviews'
 import Footer from './components/footer'
 import Gallery from './components/gallery'
 export default (props)=>(
+    // console.log(props)||
     <div
         className="full flex flex-center flex-column"
         >
-        <Gallery/>
-        <BookForm/>
+
+        <BookForm history={props.history}/>
         <Reviews/>
         <Footer/>
 

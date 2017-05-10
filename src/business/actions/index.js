@@ -7,8 +7,8 @@ export const checkDate=()=>{
     return ({type:"CHECK_DATE"})
 }
 
-export const changeForm=(isNext)=>{
-    return ({type:"CHANGE_FORM", isNext})
+export const changeForm=(isNext,part)=>{
+    return ({type:"CHANGE_FORM", isNext,part})
 }
 
 //modal
@@ -25,8 +25,9 @@ export const closeModal=()=>{
 }
 
 //api
-export const createBook=(book)=>{
-    return ({type:"CREATE_BOOK",book})
+export const createBook=(book,history)=>{
+    // history.push("/books/1")
+    return ({type:"CREATE_BOOK",book,history})
 }
 export const updatePage=(page,params)=>{
     return ({type:"UPDATE_PAGE",page,params})

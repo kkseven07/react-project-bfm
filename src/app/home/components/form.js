@@ -99,13 +99,39 @@ const PartOne = ({form,...props}) => {
         <ErrorText text={form.age.errorText}/>
 
         <div className="flex width-full" >
-            <Button click={()=>props.actions.changeForm(true)}>Продолжить</Button>
+            <Button click={()=>props.actions.changeForm(true, "partOne")}>Продолжить</Button>
         </div>
 
     </div>
 }
 
-const PartTwo = ({form,...props}) => {
+const PartTwo = ({form,...props,canCreate}) => {
+    const gift = {
+        name:form.name.value,
+        surname:form.surname.value,
+        gender:form.gender.value,
+        bookName:form.bookName.value,
+        day:form.day.value,
+        month:form.month.value,
+        year:form.year.value,
+        age:form.age.value,
+        relation:form.relation.value,
+        senderName:form.senderName.value,
+        calculatedAge:parseInt(form.calculatedAge)
+    }
+    let create
+    if(canCreate){
+        console.log("yes")
+
+        create = () => {
+
+            // props.history.push("/books")
+
+            props.actions.createBook(gift,props.history)
+        }
+    }else{
+        create = () => props.actions.changeForm(true,"partTwo")
+    }
 
     return  <div className="flex flex-center flex-column" styleName="form"
      >
@@ -148,14 +174,14 @@ const PartTwo = ({form,...props}) => {
             <div className="flex width-full space-between">
 
                 <Button click={()=>props.actions.changeForm(false)}>Назад</Button>
-                <Button click={()=>props.actions.changeForm(false)}>Создать книгу</Button>
+                <Button click={()=>create()}>Создать книгу</Button>
             </div>
         </div>
 }
 
 
-const Form = ({form:{isNext,...props},actions})=>{
-    return isNext?<PartTwo actions={actions} form={props}/>:<PartOne actions={actions} form={props}/>
+const Form = ({form:{isNext,...props,canCreate},actions,history})=>{
+    return isNext?<PartTwo canCreate={canCreate} history={history} actions={actions} form={props}/>:<PartOne actions={actions} form={props}/>
 }
 
 

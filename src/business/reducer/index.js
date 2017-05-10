@@ -1,16 +1,14 @@
 import { routerReducer as routing } from 'react-router-redux'
 import { combineReducers } from 'redux'
 
-import loading from './loading'
-import form from './form'
-import book from './book'
-import bookId from './currentBookId'
+import loading from './reducers/loading'
+import form from './reducers/form'
+import book from './reducers/book'
 const reducer = combineReducers({
   routing,
   loading,
   form,
   book,
-  bookId
 })
 
 export default reducer

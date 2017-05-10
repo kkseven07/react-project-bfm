@@ -1,5 +1,5 @@
 import { combineEpics } from 'redux-observable'
-import {push} from 'react-router-redux'
+import {routerActions} from 'react-router-redux'
 import {ajax} from 'rxjs/observable/dom/ajax';
 import Hashids from 'hashids'
 import {of as ofObs} from  'rxjs/observable/of'
@@ -22,8 +22,8 @@ const ajaxObjectGet={
     dataType: 'json',
     type: 'GET',
 }
-// const url = "http://localhost:4000"
-const url = "http://46.101.217.205:4000"
+const url = "http://localhost:4000"
+// const url = "http://46.101.217.205:4000"
 export const createHashid = (id) =>{
     let hashids = new Hashids('', 10);
     return hashids.encode(id)
@@ -38,7 +38,7 @@ const pingEpic = action$ =>
     action$
         .ofType("TEST")
         .delay(1000)
-        .mapTo(push("/book/12"));
+        .mapTo(routerActions.push("/book/12"));
 
 const input = action$ =>
     action$
@@ -60,6 +60,14 @@ const getModal = action$ =>
             .catch(error => ofObs({type: "AJAX_ERROR", payload: error}))
         })
 
+// const changeForm = action$ =>
+//     action$
+//         .ofType("CHANGE_FORM")
+//         .filter(({bool, part})=>{
+
+//         })
+
+
 const updatePage = action$ =>
     action$
         .ofType("UPDATE_PAGE")
@@ -78,21 +86,24 @@ const updatePage = action$ =>
             .catch(error => ofObs({type: "AJAX_ERROR", payload: error}))
         })
 
+
 const createBook = action$ =>
     action$
         .ofType("CREATE_BOOK")
-        .mergeMap(({book})=>{
+        .mergeMap(({book,history})=>{
+            console.log(book,history)
             return ajax({
                 url: `${url}/api/v1/books`,
                 body: {book: JSON.stringify(book)},
                 ...ajaxObject
             })
-            // .delay(1000)
             .flatMap(ajax=>{
                 let hashed_id = createHashid(ajax.response.book.id)
+                history.push(`/books/${hashed_id}`)
+                 // history.push(`/dooks`)
+
                 return [
                     {type: "FETCH_BOOK_FULFILLED", payload: ajax.response},
-                    push(`/book/${hashed_id}`)
                 ]
             })
             .catch(error => ofObs({type: "AJAX_ERROR", payload: error}))

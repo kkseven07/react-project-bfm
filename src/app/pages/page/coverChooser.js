@@ -37,7 +37,7 @@ class CoverChooser extends Component{
 }
 
 const mapStateToProps = (state) => ({
-  color: state.edit.coverColor,
+  // color: state.edit.coverColor,
 })
 
 const mapDispatchToProps = dispatch => ({

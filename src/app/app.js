@@ -6,6 +6,7 @@ const About = asyncModule(()=>import("./about"), "About route")
 const Home = asyncModule(()=>import ("./home"),"Home route")
 const Contacts = asyncModule(()=>import ("./contacts"),"contacts route")
 const Builder = asyncModule(()=>import ("./pages/pages"),"pages route")
+import { routerActions } from 'react-router-redux'
 // import About from './about'
 // import Home from './home'
 // import Contacts from './contacts'
@@ -20,7 +21,7 @@ import {Background, Header} from './shared'
 const showHeader = (location)=>(!location.pathname.match(/\/books/))
 
 const App = ({location, history,...props}) => (
-    // console.log(props,location,history)||
+    // console.log(props.actions.push("/books"))||
 <div>
     <Background  zIndex="10">
         Loading...
@@ -40,6 +41,7 @@ const App = ({location, history,...props}) => (
             <Route path="/about" component={About}/>
             <Route path="/contacts" component={Contacts}/>
             <Route path="/books" component={Builder}/>
+            <Route path="/books/:id" component={Builder}/>
             <Redirect from="/*" to="/"/>
         </Switch>
     </div>
@@ -54,7 +56,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(actions, dispatch)
+  actions: bindActionCreators({...actions,...routerActions}, dispatch)
 })
 
 

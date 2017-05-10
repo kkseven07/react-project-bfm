@@ -9,9 +9,10 @@ class Cover extends Component{
 
     render(){
         return (
-        <div styleName="r"
+        <div styleName="r" className="app-blue"
             style={{background:this.props.color}}>
-            <span styleName="text" style={{color:textColor(this.props.color)}}>
+            <span  styleName="text" //style={{color:textColor(this.props.color)}}
+            >
              {getBookName(this.props.book.book_name, this.props.book.name)}
             </span>
             <div styleName="line"></div>
@@ -22,7 +23,7 @@ class Cover extends Component{
 }
 
 const mapStateToProps = (state) => ({
-  color: state.edit.coverColor,
+  // color: state.edit.coverColor,
 })
 
 const mapDispatchToProps = dispatch => ({
