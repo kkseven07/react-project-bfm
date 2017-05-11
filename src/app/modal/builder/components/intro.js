@@ -1,10 +1,10 @@
 import React from "react";
 
 import ImageChooser from "./imageChooser";
+import Buttons from './buttons'
 import Text from "./text";
 import { Input, Select, Button } from "../../../shared";
 export default ({ page, book, actions }) => {
-    console.log(book);
     return (
         <div className="flex flex-column width-full">
             <Text>
@@ -55,14 +55,7 @@ export default ({ page, book, actions }) => {
                     enter={() => console.log("enter")}
                 />
             </div>
-            <div
-                className="flex width-full space-between"
-                style={{ padding: 20, paddingTop: 0, paddingBottom: 0 }}
-            >
-
-                <Button click={() => actions.closeModal()}>Назад</Button>
-                <Button click={() => console.log("save")}>Сохранить</Button>
-            </div>
+            <Buttons close={actions.closeModal}/>
         </div>
     );
 };

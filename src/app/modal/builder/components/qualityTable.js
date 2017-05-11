@@ -1,5 +1,11 @@
-import React from 'react'
+import React from "react";
 
-export default ({page, book})=>{
-    return <div/>
-}
+import Buttons from "./buttons";
+export default ({ page, book, actions }) => {
+    return (
+        <div className="flex flex-column width-full">
+            <Buttons close={actions.closeModal} />
+
+        </div>
+    );
+};
