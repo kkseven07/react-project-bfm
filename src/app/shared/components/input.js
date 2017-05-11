@@ -13,7 +13,7 @@ export default ({
             className={fieldStyle(isPristine, isValid)}
             styleName={props.style || ""}
             type="text"
-            // maxLength={}
+            maxLength={props.maxLength}
             value={value}
             placeholder={props.placeholder}
         />

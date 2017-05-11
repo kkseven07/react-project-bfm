@@ -2,7 +2,7 @@ import React from "react";
 import "./imageChooser.css";
 export default ({ images, select }) => {
     return (
-        <div className="flex flex-center" styleName="r">
+        <div className="flex flex-center width-full" styleName="r">
             {images.map(image => (
                 <img
                     onClick={() => select(image)}
