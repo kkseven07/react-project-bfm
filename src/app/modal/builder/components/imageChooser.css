@@ -1,0 +1,16 @@
+.r{
+    flex-wrap:wrap;
+}
+
+.image{
+    height:140px;
+    width:140px;
+    margin:7px;
+}
+.image:hover{
+    opacity: 0.8;
+}
+.selected{
+    border-color:black;
+    outline: 3px solid black;
+}

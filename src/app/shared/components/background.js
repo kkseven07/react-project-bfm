@@ -1,27 +1,25 @@
-
-
-import React from 'react'
-import "./background.css"
+import React from "react";
+import "./background.css";
 // import {TransitionMotion, spring} from 'react-motion'
 
-export default ({isOpen,zIndex,children,close}) => (
-    <div style={{overflow:"hidden",position:"absolute"}}>
+export default ({ isOpen, zIndex, children, close }) => (
+    <div style={{ overflow: "hidden", position: "absolute" }}>
 
+        {isOpen &&
+            <div
+                onClick={e => {
+                    e.stopPropagation();
+                    close && close();
+                }}
+                style={{ zIndex: zIndex }}
+                className="fixed flex flex-center"
+                styleName="r"
+            >
+                {children}
+            </div>}
 
-        {
-            isOpen&&<div
-            onClick={(e)=>{
-              e.stopPropagation()
-              close&&close()
-            }}
-            style={{zIndex:zIndex}}
-            className="fixed flex flex-center" styleName="r">
-                    {children}
-            </div>
-        }
-
-    </div>)
-
+    </div>
+);
 
 // class Background extends React.Component{
 
@@ -34,7 +32,6 @@ export default ({isOpen,zIndex,children,close}) => (
 //         return {
 //         opacity: spring(0.6,{stiffness: 50, damping: 2}),zIndex:this.props.zIndex}
 //     }
-
 
 //     render(){
 //         const {isFetching, zIndex,children}=this.props

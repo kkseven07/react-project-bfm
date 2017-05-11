@@ -19,12 +19,9 @@ import { Background, Header, Loading } from "./shared";
 
 const showHeader = location => !location.pathname.match(/\/books/);
 
-const App = ({
-  location,
-  history,
-  ...props
-}) => // console.log(props.actions.push("/books"))||
-(
+const App = (
+  { location, history, ...props } // console.log(props.actions.push("/books"))||
+) => (
   <div>
     <Loading />
 

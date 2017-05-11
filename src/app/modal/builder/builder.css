@@ -1,9 +1,10 @@
 .r{
-    padding:5% 0 5% 0;
-    width:50%;
-    min-width:300px;
+    padding:20px 0 20px 0;
+    width:70%;
+    max-width: 550px;
+    min-width:320px;
     background:white;
     font-size:25px;
     font-family:"BebasBold";
-    overflow: hidden;
+    overflow: auto;
 }
