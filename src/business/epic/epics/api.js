@@ -18,10 +18,10 @@ export const createHashid = (id) =>{
     return hashids.encode(id)
 }
 
-export const decodeHashid = (hashed) => {
-    let hashids = new Hashids('', 10);
-    return hashids.decode(hashed)
-}
+export const decodeHashid = hashed => {
+    let hashids = new Hashids("", 10);
+    return hashids.decode(hashed);
+};
 const url = "http://localhost:4000"
 export const updatePage = action$ =>
     action$

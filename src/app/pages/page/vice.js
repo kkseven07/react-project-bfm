@@ -1,13 +1,10 @@
-import React from 'react'
-import './vice.css'
+import React from "react";
+import "./vice.css";
 
-export default (props) =>(
+export default props => (
     <div className="full" styleName="r">
         <div styleName="text">
-           {"Необдуманно болтать".toUpperCase()}
+            {"Необдуманно болтать".toUpperCase()}
         </div>
     </div>
 );
-
-
-

@@ -1,13 +1,10 @@
-import React from 'react'
-import './virtue.css'
+import React from "react";
+import "./virtue.css";
 
-export default (props) =>(
+export default props => (
     <div className="full" styleName="r">
-            <div className="absolute" styleName="text">
+        <div className="absolute" styleName="text">
             {"упорны".toUpperCase()}
-            </div>
         </div>
+    </div>
 );
-
-
-

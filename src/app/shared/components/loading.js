@@ -10,12 +10,18 @@ var Loader = require('halogen/GridLoader');// var Loader = require('halogen/Grid
 // import Confetti from 'react-confetti'
 // import Confetti from 'react-dom-confetti';
 const Loading=(props)=>{
+    let text;
+    if(props.type==="createBook"){
+        text="Создается книга \n" + '"'+(props.bookName.trim()===""?props.name:props.bookName)+ '"'
+    }else{
+        text="Подгружаем книгу..."
+    }
 
     return <Background isOpen={props.isFetching} zIndex="25">
         <div className="flex flex-center flex-column" styleName="r">
            <Loader color="#5877ff" size="20px" margin="4px"/>
            <div style={{height:30}}/>
-            {"Создается книга \n" + '"'+(props.bookName.trim()===""?props.name:props.bookName)+ '"'}
+            {text}
         </div>
     </Background>
 
@@ -23,7 +29,8 @@ const Loading=(props)=>{
 
 
 const mapStateToProps = (state) => ({
-  isFetching:state.loading,
+  isFetching:state.loading.loading,
+  type:state.loading.type,
   name:state.form.name.value,
   bookName:state.form.bookName.value
 })
