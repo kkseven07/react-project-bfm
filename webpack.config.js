@@ -17,11 +17,12 @@ module.exports = {
   output: {
     path: __dirname + "/public",
     filename: '[name]-[chunkhash].js',
-    chunkFilename:"[name]-[chunkhash].async.js"
+    chunkFilename:"[name].app.js",
+    publicPath: '/'
   },
   devServer: {
     contentBase: "/public",
-    historyApiFallback: true,
+    historyApiFallback: false,
     inline: true,
     hot: false
   },
