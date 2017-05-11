@@ -12,7 +12,6 @@ class CoverChooser extends Component{
         (color === this.props.color?"el selected":"el")
 
     render(){
-        console.log(this.props.color)
         return (
         <div className="flex full flex-center" styleName="r">
             <h4 style={{marginTop:10}}>

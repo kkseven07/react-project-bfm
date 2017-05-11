@@ -81,10 +81,7 @@ export default function asyncRoute(getComponent,moduleName) {
         fontFamily:"BebasBold"
       }
       const { Component } = this.state
-      return Component ? <Component {...this.props} /> : <Background isFetching zIndex="20">
-        <div className="flex flex-center"
-          style={loadingStyle}>
-        Loading...</div></Background>
+      return Component ? <Component {...this.props} /> : <div/>
     }
   }
 }
