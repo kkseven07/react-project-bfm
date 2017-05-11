@@ -1,6 +1,6 @@
 import { combineEpics } from 'redux-observable'
 import {routerActions} from 'react-router-redux'
-import {createBook,updatePage,genPages} from './epics/api'
+import {createBook,updatePage,genPages,changeRoute,getBook} from './epics/api'
 import {input,changeForm} from './epics/form'
 import {delayLoading} from './epics/delay'
 import 'rxjs/add/operator/filter';
@@ -18,6 +18,8 @@ const rootEpic = combineEpics(
   createBook,
   genPages,
   updatePage,
+  changeRoute,
+  getBook,
 
   delayLoading,
 

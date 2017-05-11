@@ -35,4 +35,7 @@ export const updatePage=(page,params)=>{
 export const genPages=(count, book_id)=>{
     return ({type:"GEN_PAGES", count, book_id})
 }
+export const getBook=(book_id)=>{
+    return ({type:"GET_BOOK",book_id})
+}
 

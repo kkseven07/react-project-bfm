@@ -53,13 +53,27 @@ export const createBook = action$ =>
             })
             .flatMap(ajax=>{
                 let hashed_id = createHashid(ajax.response.book.id)
-                history.push(`/books/${hashed_id}`)
+               history.push(`/books/${hashed_id}`)
                 return [
                     {type: "FETCH_BOOK_FULFILLED", payload: ajax.response},
+                    // {type:"CHANGE_ROUTE",reroute:reroute}
                 ]
             })
             .catch(error => ofObs({type: "AJAX_ERROR", payload: error}))
         })
+
+export const getBook = action$ =>
+    action$
+    .ofType("GET_BOOK")
+    .switchMap(({book_id})=>{
+        return ajax({url:`${url}/api/v1/books/${book_id}`,...ajaxObjectGet})
+        .flatMap(ajax=>{
+            return ofObs({type: "GEN_PAGES_FULFILLED", payload: ajax.response})
+        })
+        .catch(error=> ofObs({type: "AJAX_ERROR", payload: error,message:"Книга не найдена!"}))
+    })
+
+
 
 export const genPages = action$ =>
     action$
@@ -93,5 +107,12 @@ const getModal = action$ =>
             .catch(error => ofObs({type: "AJAX_ERROR", payload: error}))
         })
 
-
+export const changeRoute = action$ =>
+    action$
+        .ofType("CHANGE_ROUTE")
+        .delay(500)
+        .flatMap(({reroute})=>{
+            reroute()
+            return [{type:"DONE"}]
+        })
 

@@ -4,7 +4,7 @@ const normalisePages=(pages)=>{
   return mapPages
 }
 
-export default (state = {}, action) => {
+export default (state = {currentBookId:null}, action) => {
   switch (action.type) {
   case 'FETCH_BOOK_FULFILLED':
     let book = {...action.payload.book, pages: normalisePages(action.payload.pages)}

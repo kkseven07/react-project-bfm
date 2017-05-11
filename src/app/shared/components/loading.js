@@ -6,14 +6,16 @@ import "./loading.css"
 import { connect } from 'react-redux'
 import * as actions from '../../../business/actions'
 import { bindActionCreators } from 'redux'
-// var Loader = require('halogen/GridLoader');
+var Loader = require('halogen/GridLoader');// var Loader = require('halogen/GridLoader');
 // import Confetti from 'react-confetti'
 // import Confetti from 'react-dom-confetti';
 const Loading=(props)=>{
 
     return <Background isOpen={props.isFetching} zIndex="25">
-        <div className="flex flex-center" styleName="r">
-            Создается книга "{props.bookName.trim()===""?props.name:props.bookName}"
+        <div className="flex flex-center flex-column" styleName="r">
+           <Loader color="#5877ff" size="20px" margin="4px"/>
+           <div style={{height:30}}/>
+            {"Создается книга \n" + '"'+(props.bookName.trim()===""?props.name:props.bookName)+ '"'}
         </div>
     </Background>
 

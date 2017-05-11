@@ -22,7 +22,7 @@ module.exports = {
   },
   devServer: {
     contentBase: "/public",
-    historyApiFallback: false,
+    historyApiFallback: true,
     inline: true,
     hot: false
   },

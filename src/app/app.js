@@ -42,6 +42,8 @@ const App = ({location, history,...props}) => (
             <Route path="/books" component={Builder}/>
             <Route path="/books/:id" component={Builder}/>
             <Redirect from="/*" to="/"/>
+
+
         </Switch>
     </div>
 </div>
