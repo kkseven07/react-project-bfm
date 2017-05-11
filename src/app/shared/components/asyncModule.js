@@ -7,7 +7,7 @@ import 'rxjs/add/operator/takeUntil'
 import 'rxjs/add/observable/zip'
 import 'rxjs/add/observable/of'
 import 'rxjs/add/observable/fromPromise'
-
+import Background from './background'
 const moduleDefaultExport = module => module.default || module
 
 const esModule=(module, forceArray)=> {
@@ -31,7 +31,6 @@ export default function asyncRoute(getComponent,moduleName) {
     componentWillMount() {
       const { Component } = this.state
       if (!Component) {
-        console.log("aboout to fetch my component")
         this._componentWillUnmountSubject = new Subject()
 
         const streams = [
@@ -39,6 +38,7 @@ export default function asyncRoute(getComponent,moduleName) {
             ? Observable.of(Component)
                 .takeUntil(this._componentWillUnmountSubject)
             : Observable.fromPromise(getComponent())
+                .delay(100)
                 .map(esModule)
                 .map(Component => {
                   AsyncRoute.Component = Component
@@ -72,8 +72,19 @@ export default function asyncRoute(getComponent,moduleName) {
     }
 
     render() {
+      const loadingStyle={
+        height:"20%",
+        width:"20%",
+        minWidth:200,
+        background:"white",
+        fontSize:25,
+        fontFamily:"BebasBold"
+      }
       const { Component } = this.state
-      return Component ? <Component {...this.props} /> : <h1>{moduleName} is loading...</h1>
+      return Component ? <Component {...this.props} /> : <Background isFetching zIndex="20">
+        <div className="flex flex-center"
+          style={loadingStyle}>
+        Loading...</div></Background>
     }
   }
 }

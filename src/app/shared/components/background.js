@@ -5,8 +5,8 @@ import "./background.css"
 export default ({isFetching,zIndex,children}) => (
     <div>
         {
-            isFetching&&<div style={{zIndex:zIndex}}
-            className="flex full flex-center fixed" styleName="r">
+            (isFetching&&isFetching)&&<div style={{zIndex:zIndex}}
+            className="flex flex-center fixed" styleName="r">
             {children}
             </div>
         }

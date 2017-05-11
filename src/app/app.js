@@ -16,16 +16,15 @@ import { connect } from 'react-redux'
 import * as actions from '../business/actions'
 import { bindActionCreators } from 'redux'
 import header from './shared/components/header.css'
-import {Background, Header} from './shared'
+import {Background, Header, Loading} from './shared'
 
 const showHeader = (location)=>(!location.pathname.match(/\/books/))
 
 const App = ({location, history,...props}) => (
     // console.log(props.actions.push("/books"))||
 <div>
-    <Background  zIndex="10">
-        Loading...
-    </Background>
+    <Loading/>
+
      <Background  zIndex="10">
         modal...
     </Background>

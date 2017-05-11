@@ -7,7 +7,6 @@ const normalisePages=(pages)=>{
 export default (state = {}, action) => {
   switch (action.type) {
   case 'FETCH_BOOK_FULFILLED':
-    console.log("in fetch book fulfiled reducer", action.payload.book)
     let book = {...action.payload.book, pages: normalisePages(action.payload.pages)}
     return { ...state, [action.payload.book.id]: book, currentBookId: book.id}
 

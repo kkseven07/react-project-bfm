@@ -1,13 +1,6 @@
 import {ajax} from 'rxjs/observable/dom/ajax';
 import Hashids from 'hashids'
 import {of as ofObs} from  'rxjs/observable/of'
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/delay';
-import 'rxjs/add/operator/mapTo';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/mergeMap';
-import 'rxjs/add/operator/catch';
 const ajaxObject={
     method: 'POST',
     content_type: "application/json",
@@ -53,7 +46,6 @@ export const createBook = action$ =>
     action$
         .ofType("CREATE_BOOK")
         .mergeMap(({book,history})=>{
-            console.log(book,history)
             return ajax({
                 url: `${url}/api/v1/books`,
                 body: {book: JSON.stringify(book)},
@@ -62,8 +54,6 @@ export const createBook = action$ =>
             .flatMap(ajax=>{
                 let hashed_id = createHashid(ajax.response.book.id)
                 history.push(`/books/${hashed_id}`)
-                 // history.push(`/dooks`)
-
                 return [
                     {type: "FETCH_BOOK_FULFILLED", payload: ajax.response},
                 ]
@@ -103,11 +93,5 @@ const getModal = action$ =>
             .catch(error => ofObs({type: "AJAX_ERROR", payload: error}))
         })
 
-// const changeForm = action$ =>
-//     action$
-//         .ofType("CHANGE_FORM")
-//         .filter(({bool, part})=>{
-
-//         })
 
 

@@ -5,7 +5,6 @@ import './car.css'
 
 
 export default ({page}) =>(
-    console.log(page.images)||
     <div className="full" styleName="r">
         <div styleName="box">
             <img styleName="image" src={"http://localhost:4000"+page.images[0].url}/>

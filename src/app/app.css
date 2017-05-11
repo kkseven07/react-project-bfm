@@ -29,10 +29,10 @@ select{
   font-family: 'BebasRegular';
   src: url('../../assets/fonts/AA-BebasNeue-Regular.woff2');
 }
-/*@font-face {
+@font-face {
   font-family: 'BebasBold';
-  src: url('../../assets/fonts/AA-BebasNeue-Bold.woff');
-}*/
+  src: url('../../assets/fonts/AA-BebasNeue-Bold.woff2');
+}
 
 :global .full{
   height:100%;

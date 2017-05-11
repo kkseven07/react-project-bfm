@@ -105,85 +105,83 @@ const PartOne = ({form,...props}) => {
     </div>
 }
 
-const PartTwo = ({form,...props,canCreate}) => {
-    const gift = {
-        name:form.name.value,
-        surname:form.surname.value,
-        gender:form.gender.value,
-        bookName:form.bookName.value,
-        day:form.day.value,
-        month:form.month.value,
-        year:form.year.value,
-        age:form.age.value,
-        relation:form.relation.value,
-        senderName:form.senderName.value,
-        calculatedAge:parseInt(form.calculatedAge)
-    }
-    let create
-    if(canCreate){
-        console.log("yes")
+class PartTwo extends React.Component {
 
-        create = () => {
-
-            // props.history.push("/books")
-
-            props.actions.createBook(gift,props.history)
+    componentWillReceiveProps(nextProps) {
+        if(nextProps.canCreate&&nextProps.canCreate){
+            this.props.actions.createBook(this.gift,this.props.history)
         }
-    }else{
-        create = () => props.actions.changeForm(true,"partTwo")
     }
 
-    return  <div className="flex flex-center flex-column" styleName="form"
-     >
-            <DescText text="От кого эта книга?"/>
-            <div style={{margin:10,marginTop:0}}/>
-            <Input
-                field={form.senderName}
-                style=""
-                placeholder="Оби Ван Кеноби"
-                fieldType={"senderName"}
-                enter={props.actions.enterInput}
-            />
-            <ErrorText text={form.senderName.errorText}/>
-            <Input
-                field={form.bookName}
-                style=""
-                placeholder="Название книги (можно оставить пустым)"
-                fieldType={"bookName"}
-                enter={props.actions.enterInput}
-            />
-            <ErrorText text={form.bookName.errorText}/>
-             <div style={{margin:15}}/>
-            <DescText text="Отношение"/>
-            <div style={{margin:3,marginTop:0}}/>
-            <DescSmall text={`Кем вы приходитесь человеку по имени ${form.name.value}`}/>
-             <div style={{margin:6}}/>
-             <Select
-                values={["collegue", "friend","relative","married"]}
-                default="Кем приходитесь?"
-                options={["Коллеги","Друзья", "Родственники",
-                    form.gender.value==="male"?"Супруга":"Супруг",
-                    ]}
-                field={form.relation}
-                fieldType={"relation"}
-                enter={props.actions.enterInput}
-             />
+    render(){
+        const {form,canCreate,...props,}=this.props
+        this.gift = {
+            name:form.name.value,
+            surname:form.surname.value,
+            gender:form.gender.value,
+            bookName:form.bookName.value,
+            day:form.day.value,
+            month:form.month.value,
+            year:form.year.value,
+            age:form.age.value,
+            relation:form.relation.value,
+            senderName:form.senderName.value,
+            calculatedAge:parseInt(form.calculatedAge)
+        }
+        let create=()=>{props.actions.changeForm(true,"partTwo")}
+        return  <div className="flex flex-center flex-column" styleName="form"
+         >
+                <DescText text="От кого эта книга?"/>
+                <div style={{margin:10,marginTop:0}}/>
+                <Input
+                    field={form.senderName}
+                    style=""
+                    placeholder="Оби Ван Кеноби"
+                    fieldType={"senderName"}
+                    enter={props.actions.enterInput}
+                />
+                <ErrorText text={form.senderName.errorText}/>
+                <Input
+                    field={form.bookName}
+                    style=""
+                    placeholder="Название книги (можно оставить пустым)"
+                    fieldType={"bookName"}
+                    enter={props.actions.enterInput}
+                />
+                <ErrorText text={form.bookName.errorText}/>
+                 <div style={{margin:15}}/>
+                <DescText text="Отношение"/>
+                <div style={{margin:3,marginTop:0}}/>
+                <DescSmall text={`Кем вы приходитесь человеку по имени ${form.name.value}`}/>
+                 <div style={{margin:6}}/>
+                 <Select
+                    values={["collegue", "friend","relative","married"]}
+                    default="Кем приходитесь?"
+                    options={["Коллеги","Друзья", "Родственники",
+                        form.gender.value==="male"?"Супруга":"Супруг",
+                        ]}
+                    field={form.relation}
+                    fieldType={"relation"}
+                    enter={props.actions.enterInput}
+                 />
 
-            <ErrorText text={form.relation.errorText}/>
+                <ErrorText text={form.relation.errorText}/>
 
-            <div className="flex width-full space-between">
+                <div className="flex width-full space-between">
 
-                <Button click={()=>props.actions.changeForm(false)}>Назад</Button>
-                <Button click={()=>create()}>Создать книгу</Button>
+                    <Button click={()=>props.actions.changeForm(false)}>Назад</Button>
+                    <Button click={()=>create()}>Создать книгу</Button>
+                </div>
             </div>
-        </div>
+
+    }
+
 }
 
 
 const Form = ({form:{isNext,...props,canCreate},actions,history})=>{
     return isNext?<PartTwo canCreate={canCreate} history={history} actions={actions} form={props}/>:<PartOne actions={actions} form={props}/>
 }
-
 
 const mapStateToProps = (state) => ({
   form: state.form

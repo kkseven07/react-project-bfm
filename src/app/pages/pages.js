@@ -1,16 +1,16 @@
 import React, {Component} from 'react'
 import './pages.css'
-import Page from './page/zpage.js'
+import Page from './page'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import values from 'lodash/values'
 import * as actions from '../../business/actions/index.js'
-const BOOK_ID = 8
+const BOOK_ID = 157
 
 class BookRoute extends Component{
     componentWillMount() {
         !this.props.location.pathname.match(/\/books\//)&&
-            this.props.actions.genPages("1_46", BOOK_ID)
+            this.props.actions.genPages("1_42", BOOK_ID)
     }
     componentDidMount() {
        window.scrollTo(0,0);

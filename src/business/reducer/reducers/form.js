@@ -27,8 +27,8 @@ const forTest = {
     month:{value:"Май",isPristine:false,isValid:true,errorText:""},
     year:{value:"1987",isPristine:false,isValid:true,errorText:""},
     age:{value:"today",isPristine:false,isValid:true,errorText:""},
-    relation:{value:"Кем приходитесь?",isPristine:true,isValid:true,errorText:""},
-    senderName:{value:"",isPristine:true,isValid:true,errorText:""},
+    relation:{value:"collegue",isPristine:true,isValid:true,errorText:""},
+    senderName:{value:"Luke",isPristine:true,isValid:true,errorText:""},
     calculatedAge:"30",
     dateExists: true,
     isNext:false,
@@ -52,25 +52,20 @@ export default (state = forTest, action) => {
       })
       if(every(mapValues(fields,({isValid})=> isValid)) && state.dateExists){
         //successful path
-
         if(action.part === "partOne"){
           canCreate=false
         }else{
           canCreate=true
         }
-        // console.log("here we go ",canCreate)
         return {
           ...state,
           isNext:true,
           canCreate,
-
         }
       }else{
         //check if everything is pristine
         let list = raw.reduce((acc,v) => ({...acc,[v]:find(fields,obj=>obj.fieldType===v)}),{})
         canCreate=false
-        // console.log("-=-=-=-=-",canCreate)
-
         return {
           ...state,
           isNext:action.part==="partOne"?false:true,
@@ -83,7 +78,6 @@ export default (state = forTest, action) => {
         ...state, isNext:false
       }
     }
-
   case 'ENTER_INPUT':
     const {isValid,errorText} = selector.validate(action.text,action.field)
     return {...state,

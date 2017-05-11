@@ -55,16 +55,17 @@
 .edit-button{
     height:35px;
     width:170px;
-    outline: none;
     border-radius: 3px;
     box-shadow: 2px 3px 2px rgb(150,150,150);
     border:0;
     background-color: #5877ff;
     position: absolute;
+    outline: none;
     display: flex;
     justify-content: center;
     align-items: center;
     bottom:-20px;
+    font-family: "RobotoRegular";
     left: 0;
     right: 0;
     margin-left: auto;
@@ -107,10 +108,10 @@
   font-family: 'Sylfaen';
   src: url('../../../assets/fonts/sylfaen.woff2');
 }
-@font-face {
+/*@font-face {
   font-family: 'BebasBold';
   src: url('../../../assets/fonts/AA-BebasNeue-Bold.woff2');
-}
+}*/
 @font-face {
   font-family: 'BebasLight';
   src: url('../../../assets/fonts/BebasNeue-Light.woff2');
