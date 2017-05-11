@@ -4,5 +4,6 @@
     min-width:300px;
     background:white;
     font-size:25px;
+    overflow:hidden;
     font-family:"BebasBold";
 }

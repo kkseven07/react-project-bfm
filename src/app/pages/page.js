@@ -130,7 +130,7 @@ class Page extends Component{
 
     isEditable=(type)=>(editable.indexOf(type)>-1)
 
-    edit=()=>(this.props.actions.rodal(this.props.page, this.props.book))
+    edit=()=>(this.props.actions.openModal(this.props.page, this.props.book))
 
 
     render(){

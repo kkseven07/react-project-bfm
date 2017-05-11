@@ -4,14 +4,19 @@ import React from 'react'
 import "./background.css"
 // import {TransitionMotion, spring} from 'react-motion'
 
-export default ({isFetching,zIndex,children}) => (
-    <div>
+export default ({isOpen,zIndex,children,close}) => (
+    <div style={{overflow:"hidden",position:"absolute"}}>
 
 
         {
-            (isFetching&&isFetching)&&<div style={{zIndex:zIndex}}
-            className="flex flex-center fixed" styleName="r">
-            {children}
+            isOpen&&<div
+            onClick={(e)=>{
+              e.stopPropagation()
+              close&&close()
+            }}
+            style={{zIndex:zIndex}}
+            className="fixed flex flex-center" styleName="r">
+                    {children}
             </div>
         }
 

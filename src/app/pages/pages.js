@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import values from 'lodash/values'
 import * as actions from '../../business/actions/index.js'
+import Modal from '../modal/builder'
 const BOOK_ID = 157
 
 class BookRoute extends Component{
@@ -14,6 +15,9 @@ class BookRoute extends Component{
     }
     componentDidMount() {
        window.scrollTo(0,0);
+    }
+    componentWillUnmount() {
+      this.props.actions.closeModal()
     }
     render(){
         let {bookId, book} = this.props
@@ -27,6 +31,7 @@ class BookRoute extends Component{
         let pages = [{type: "colorChooser"}].concat(data)
         return (
           <div style={{backgroundColor:"white",paddingBottom:50}}>
+            <Modal/>
             {book[bookId]&&<div styleName="root">
               {
                 pages.map((page,i)=>

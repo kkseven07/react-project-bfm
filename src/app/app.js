@@ -49,7 +49,6 @@ const App = ({location, history,...props}) => (
 )
 
 const mapStateToProps = (state) => ({
-  state: state,
   fetching:state.fetching,
   modalOpen:state.modalOpen
 })

@@ -11,7 +11,7 @@ import { bindActionCreators } from 'redux'
 // import Confetti from 'react-dom-confetti';
 const Loading=(props)=>{
 
-    return <Background isFetching={props.isFetching} zIndex="25">
+    return <Background isOpen={props.isFetching} zIndex="25">
         <div className="flex flex-center" styleName="r">
             Создается книга "{props.bookName.trim()===""?props.name:props.bookName}"
         </div>
