@@ -96,7 +96,6 @@ class Page extends Component {
         } else {
             return (
                 <div>
-                    <span>{type}</span>
                 </div>
             );
         }

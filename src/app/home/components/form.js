@@ -125,34 +125,35 @@ const PartOne = ({ form, ...props }) => {
     );
 };
 class PartTwo extends React.Component {
-
     componentWillReceiveProps(nextProps) {
-        if(nextProps.canCreate&&nextProps.canCreate){
-            this.props.actions.createBook(this.gift,this.props.history)
+        if (nextProps.canCreate && nextProps.canCreate) {
+            this.props.actions.createBook(this.gift, this.props.history);
         }
     }
-    create=()=>{this.props.actions.changeForm(true,"partTwo")}
+    create = () => {
+        this.props.actions.changeForm(true, "partTwo");
+    };
 
-    render(){
-        const {form,canCreate,...props,}=this.props
+    render() {
+        const { form, canCreate, ...props } = this.props;
         this.gift = {
-            name:form.name.value,
-            surname:form.surname.value,
-            gender:form.gender.value,
-            bookName:form.bookName.value,
-            day:form.day.value,
-            month:form.month.value,
-            year:form.year.value,
-            age:form.age.value,
-            relation:form.relation.value,
-            senderName:form.senderName.value,
-            calculatedAge:parseInt(form.calculatedAge)
-        }
+            name: form.name.value,
+            surname: form.surname.value,
+            gender: form.gender.value,
+            bookName: form.bookName.value,
+            day: form.day.value,
+            month: form.month.value,
+            year: form.year.value,
+            age: form.age.value,
+            relation: form.relation.value,
+            senderName: form.senderName.value,
+            calculatedAge: parseInt(form.calculatedAge)
+        };
 
-        return  <div className="flex flex-center flex-column" styleName="form"
-         >
-                <DescText text="От кого эта книга?"/>
-                <div style={{margin:10,marginTop:0}}/>
+        return (
+            <div className="flex flex-center flex-column" styleName="form">
+                <DescText text="От кого эта книга?" />
+                <div style={{ margin: 10, marginTop: 0 }} />
                 <Input
                     field={form.senderName}
                     style=""
@@ -160,7 +161,7 @@ class PartTwo extends React.Component {
                     fieldType={"senderName"}
                     enter={props.actions.enterInput}
                 />
-                <ErrorText text={form.senderName.errorText}/>
+                <ErrorText text={form.senderName.errorText} />
                 <Input
                     field={form.bookName}
                     style=""
@@ -168,36 +169,41 @@ class PartTwo extends React.Component {
                     fieldType={"bookName"}
                     enter={props.actions.enterInput}
                 />
-                <ErrorText text={form.bookName.errorText}/>
-                 <div style={{margin:15}}/>
-                <DescText text="Отношение"/>
-                <div style={{margin:3,marginTop:0}}/>
-                <DescSmall text={`Кем вы приходитесь человеку по имени ${form.name.value}`}/>
-                 <div style={{margin:6}}/>
-                 <Select
-                    values={["collegue", "friend","relative","married"]}
+                <ErrorText text={form.bookName.errorText} />
+                <div style={{ margin: 15 }} />
+                <DescText text="Отношение" />
+                <div style={{ margin: 3, marginTop: 0 }} />
+                <DescSmall
+                    text={`Кем вы приходитесь человеку по имени ${form.name.value}`}
+                />
+                <div style={{ margin: 6 }} />
+                <Select
+                    values={["collegue", "friend", "relative", "married"]}
                     default="Кем приходитесь?"
-                    options={["Коллеги","Друзья", "Родственники",
-                        form.gender.value==="male"?"Супруга":"Супруг",
-                        ]}
+                    options={[
+                        "Коллеги",
+                        "Друзья",
+                        "Родственники",
+                        form.gender.value === "male" ? "Супруга" : "Супруг"
+                    ]}
                     field={form.relation}
                     fieldType={"relation"}
                     enter={props.actions.enterInput}
-                 />
+                />
 
-                <ErrorText text={form.relation.errorText}/>
+                <ErrorText text={form.relation.errorText} />
 
                 <div className="flex width-full space-between">
 
-                    <Button click={()=>props.actions.changeForm(false)}>Назад</Button>
-                    <Button click={()=>this.create()}>Создать книгу</Button>
+                    <Button click={() => props.actions.changeForm(false)}>
+                        Назад
+                    </Button>
+                    <Button click={() => this.create()}>Создать книгу</Button>
                 </div>
             </div>
-
+        );
     }
-
 }
-
 
 const Form = ({ form: { isNext, ...props, canCreate }, actions, history }) => {
     return isNext
@@ -219,12 +225,3 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);
-
-
-
-
-
-
-
-
-

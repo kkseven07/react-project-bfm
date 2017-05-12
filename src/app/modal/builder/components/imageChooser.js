@@ -1,14 +1,22 @@
 import React from "react";
 import "./imageChooser.css";
-export default ({ images, select }) => {
+
+const isSelected = (selectedCurrent, image) => {
+    if (!selectedCurrent) {
+        return false;
+    } else {
+        return image.url == selectedCurrent.url;
+    }
+};
+
+export default ({ images, select, page, selectedImage }) => {
     return (
         <div className="flex flex-center width-full" styleName="r">
             {images.map(image => (
                 <img
-                    onClick={() => select(image)}
+                    onClick={() => select({image},page)}
                     key={image.url}
-                    styleName="image"
-                    // styleName={`image ${isSelected(selectedCoolPlaceImage, image) ? "selected" : ""}`}
+                    styleName={`image ${isSelected(selectedImage, image) ? "selected" : ""}`}
                     src={"http://localhost:4000"+image.url}
                 />
             ))}

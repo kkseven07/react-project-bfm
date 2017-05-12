@@ -16,32 +16,32 @@ import Virtue from "./components/virtue";
 import Vice from "./components/vice";
 import WiseWord from "./components/wiseWord";
 
-const getComponent = (page, book, actions) => {
+const getComponent = (page, book, actions, form) => {
     switch (page.type) {
         case "intro":
-            return <Intro page={page} book={book} actions={actions} />;
+            return <Intro page={page} book={book} actions={actions} form={form}/>;
         case "brain":
-            return <Brain page={page} book={book} actions={actions} />;
+            return <Brain page={page} book={book} actions={actions} form={form}/>;
         case "coolPlace":
-            return <CoolPlace page={page} book={book} actions={actions} />;
+            return <CoolPlace page={page} book={book} actions={actions} form={form}/>;
         case "fruitDNA":
-            return <FruitDNA page={page} book={book} actions={actions} />;
+            return <FruitDNA page={page} book={book} actions={actions} form={form}/>;
         case "qualityTable":
-            return <QualityTable page={page} book={book} actions={actions} />;
+            return <QualityTable page={page} book={book} actions={actions} form={form}/>;
         case "easternWiseWord":
             return (
-                <EasternWiseWord page={page} book={book} actions={actions} />
+                <EasternWiseWord page={page} book={book} actions={actions} form={form}/>
             );
         case "westernWiseWord":
             return (
-                <WesternWiseWord page={page} book={book} actions={actions} />
+                <WesternWiseWord page={page} book={book} actions={actions} form={form}/>
             );
         case "wiseWord":
-            return <WiseWord page={page} book={book} actions={actions} />;
+            return <WiseWord page={page} book={book} actions={actions} form={form}/>;
         case "vice":
-            return <Vice page={page} book={book} actions={actions} />;
+            return <Vice page={page} book={book} actions={actions} form={form}/>;
         case "virtue":
-            return <Virtue page={page} book={book} actions={actions} />;
+            return <Virtue page={page} book={book} actions={actions} form={form}/>;
 
         default:
             return null;
@@ -50,15 +50,14 @@ const getComponent = (page, book, actions) => {
 const stopClick = e => {
     e.stopPropagation();
 };
-const Modal = ({ isOpen, page, book, actions }) => {
+const Modal = ({ isOpen, page, book, actions, builder}) => {
     if (!isOpen) {
         return null;
     }
-
     return (
         <Background close={actions.closeModal} zIndex={"20"} isOpen={isOpen}>
             <div onClick={stopClick} className="flex" styleName="r">
-                {getComponent(page, book, actions)}
+                {getComponent(page, book, actions, builder[page.type])}
             </div>
         </Background>
     );
@@ -67,7 +66,8 @@ const Modal = ({ isOpen, page, book, actions }) => {
 const mapStateToProps = state => ({
     isOpen: state.modal.isOpen,
     page: state.modal.page,
-    book: state.modal.book
+    book: state.modal.book,
+    builder:state.builder
 });
 
 const mapDispatchToProps = dispatch => ({

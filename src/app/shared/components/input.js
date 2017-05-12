@@ -3,18 +3,18 @@ import "./input.css";
 import { fieldStyle } from "../utils";
 
 export default ({
-    field: { value, isPristine, isValid, errorText },
+    field,
     enter,
     ...props
 }) => {
     return (
         <input
-            onChange={e => enter(e.target.value, props.fieldType)}
-            className={fieldStyle(isPristine, isValid)}
+            onChange={e => enter(e.target.value, props.fieldType,"input")}
+            className={fieldStyle(field.isPristine, field.isValid)}
             styleName={props.style || ""}
             type="text"
             maxLength={props.maxLength}
-            value={value}
+            value={field.value}
             placeholder={props.placeholder}
         />
     );

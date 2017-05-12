@@ -7,6 +7,6 @@ export default ({ close, onSave }) => {
     >
 
         <Button click={() => close()}>Назад</Button>
-        <Button click={() => console.log("save")}>Сохранить</Button>
+        <Button click={() => onSave()}>Сохранить</Button>
     </div>;
 };

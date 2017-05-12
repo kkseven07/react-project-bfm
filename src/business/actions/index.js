@@ -16,8 +16,12 @@ export const openModal=(page, book)=>{
     return ({type:"OPEN_MODAL",page, book})
 }
 
-export const modalChange=(params,page)=>{
-    return ({type:"MODAL_CHANGE",params,page})
+export const builderImage=(params,page)=>{
+    return ({type:"BUILDER_IMAGE",params,page})
+}
+
+export const builderInput=(text,fieldType, which)=>{
+    return ({type:"BUILDER_INPUT",text,fieldType, which})
 }
 
 export const closeModal=()=>{
