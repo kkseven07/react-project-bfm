@@ -3,7 +3,7 @@ const init = {
     intro: {
         selectedImage: null,
         select: {
-            value: "На долгую память",
+            value: "",
             isPristine: true,
             isValid: true,
             errorText: ""
@@ -64,7 +64,6 @@ export default (
                 }
             };
         case "BUILDER_INPUT":
-            console.log(which);
             return {
                 ...state,
                 [fieldType]: {
@@ -75,7 +74,6 @@ export default (
                     }
                 }
             };
-
         default:
             return state;
     }

@@ -4,6 +4,29 @@ import ImageChooser from "./imageChooser";
 import Buttons from "./buttons";
 import Text from "./text";
 import { Input, Select, Button } from "../../../shared";
+
+const wishes = name => [
+    `С пожеланиями, ${name}`,
+    `С любовью, ${name}`,
+    `На долгую память, ${name}`,
+    `С уважением, ${name}`
+];
+
+const toSave = form => {
+    let obj = {};
+    if (form.input.value.trim() === "" && form.select.value !== "") {
+        obj = { text: form.select.value };
+    } else if (form.input.value.trim() !== "") {
+        obj = { text: form.input.value };
+    } else {
+        obj = { text: null };
+    }
+    return {
+        selectedImage: form.selectedImage && form.selectedImage.url,
+        ...obj
+    };
+};
+
 export default ({ page, book, actions, form }) => {
     return (
         <div className="flex flex-column width-full">
@@ -19,22 +42,12 @@ export default ({ page, book, actions, form }) => {
             />
             <div style={{ padding: 15, paddingBottom: 10 }}>
                 <Select
-                    // default="Пол"
-                    values={["female", "male"]}
-                    options={[
-                        `С пожеланиями, ${book.sender_name}`,
-                        `С любовью, ${book.sender_name}`,
-                        `На долгую память, ${book.sender_name}`,
-                        `С уважением, ${book.sender_name}`
-                    ]}
-                    field={{
-                        value: `С пожеланиями, ${book.sender_name}`,
-                        isPristine: true,
-                        isValid: true,
-                        errorText: ""
-                    }}
-                    fieldType={"gender"}
-                    enter={() => select}
+                    active
+                    values={wishes(book.sender_name)}
+                    options={wishes(book.sender_name)}
+                    field={form.select}
+                    fieldType={"intro"}
+                    enter={actions.builderInput}
                 />
             </div>
 
@@ -54,10 +67,7 @@ export default ({ page, book, actions, form }) => {
             </div>
             <Buttons
                 onSave={() =>
-                    actions.updatePage(page, {
-                        selectedImage: form.selectedImage &&
-                            form.selectedImage.url
-                    })}
+                    actions.updatePage(page, toSave(form))}
                 close={actions.closeModal}
             />
         </div>

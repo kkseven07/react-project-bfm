@@ -32,8 +32,9 @@ const checkUrl = (first, second) => {
 export const updatePage = action$ =>
     action$.ofType("UPDATE_PAGE").mergeMap(({ page, params }) => {
         if (
-            params.selectedImage &&
-            !checkUrl(params.selectedImage, page.primary_image.image.url)
+            params.text ||
+            (params.selectedImage &&
+                !checkUrl(params.selectedImage, page.primary_image.image.url))
         ) {
             return ajax({
                 url: `${url}/api/v1/update/${page.type}/${page.id}`,
@@ -53,8 +54,8 @@ export const updatePage = action$ =>
                     ];
                 })
                 .catch(error => ofObs({ type: "AJAX_ERROR", payload: error }));
-        }else{
-            return [{type:"CLOSE_MODAL"}]
+        } else {
+            return [{ type: "CLOSE_MODAL" }];
         }
     });
 

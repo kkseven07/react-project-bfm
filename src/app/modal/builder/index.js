@@ -56,7 +56,7 @@ const Modal = ({ isOpen, page, book, actions, builder}) => {
     }
     return (
         <Background close={actions.closeModal} zIndex={"20"} isOpen={isOpen}>
-            <div onClick={stopClick} className="flex" styleName="r">
+            <div onClick={stopClick} styleName="r">
                 {getComponent(page, book, actions, builder[page.type])}
             </div>
         </Background>

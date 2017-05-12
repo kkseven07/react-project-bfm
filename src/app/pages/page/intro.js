@@ -22,7 +22,7 @@ class Intro extends Component {
                     {this.props.book.name.toUpperCase()}
                 </div>
                 <div styleName={"sender positioned " + sender_uniq}>
-                    {"C пожеланиями, \n" + this.props.book.sender_name}
+                    {this.props.page.data.text?this.props.page.data.text:"C пожеланиями, \n" + this.props.book.sender_name}
                 </div>
             </div>
         );

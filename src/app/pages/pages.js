@@ -31,7 +31,7 @@ class BookRoute extends Component {
     }
     render() {
         let { bookId, book } = this.props;
-        // console.log("my book", book)
+        console.log("my book", book)
         let gift, data = [], bData;
         if (book[bookId]) {
             data = values(book[bookId].pages);

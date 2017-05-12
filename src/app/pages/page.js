@@ -41,25 +41,35 @@ class Page extends Component {
     getPage = (type, image, page, book) => {
         if (type === "scoop") {
             return <Scoop book={book} data={page.data} />;
-        } else if (type === "colorChooser") {
+        }
+        else if (type === "colorChooser") {
             return <CoverChooser />;
-        } else if (type === "cover") {
+        }
+        else if (type === "cover") {
             return <Cover book={book} />;
-        } else if (type === "animal") {
+        }
+        else if (type === "animal") {
             return <Animal page={page} book={book} />;
-        } else if (type === "intro") {
+        }
+        else if (type === "intro") {
             return <Intro page={page} book={book} />;
-        } else if (type === "musicHit") {
+        }
+        else if (type === "musicHit") {
             return <MusicHit book={book} page={page} />;
-        } else if (type === "epicStory") {
+        }
+        else if (type === "epicStory") {
             return <EpicStory book={book} />;
-        } else if (type === "scene") {
+        }
+        else if (type === "scene") {
             return <Scene book={book} />;
-        } else if (type === "fruitDNA") {
+        }
+        else if (type === "fruitDNA") {
             return <FruitDNA page={page} book={book} />;
-        } else if (type === "factoid") {
+        }
+        else if (type === "factoid") {
             return <Factoid book={book} />;
-        } else if (type === "cell") {
+        }
+        else if (type === "cell") {
             return <Cell book={book} />;
         } else if (type === "vice") {
             return <Vice book={book} />;
@@ -93,7 +103,8 @@ class Page extends Component {
             return <Film page={page} book={book} />;
         } else if (type === "holiday") {
             return <Holiday page={page} book={book} />;
-        } else {
+        }
+        else {
             return (
                 <div>
                 </div>

@@ -3,7 +3,7 @@ import "./background.css";
 // import {TransitionMotion, spring} from 'react-motion'
 
 export default ({ isOpen, zIndex, children, close }) => (
-    <div style={{ overflow: "hidden", position: "absolute" }}>
+    <div>
 
         {isOpen &&
             <div
