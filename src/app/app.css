@@ -104,3 +104,32 @@ select{
   color:#5877ff;
 }
 
+
+
+:global .example-enter {
+  opacity: 0.01;
+}
+
+:global .example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 100ms ease-in;
+}
+
+:global .example-leave {
+  opacity: 1;
+}
+
+:global .example-leave.example-leave-active {
+  opacity: 0.01;
+
+  transition: opacity 300ms ease-in;
+}
+
+
+
+
+
+
+
+
+

@@ -74,6 +74,8 @@ export default (
                     }
                 }
             };
+        case "CLEAN_BUILDER":
+            return init
         default:
             return state;
     }

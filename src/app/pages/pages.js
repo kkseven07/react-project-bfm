@@ -28,6 +28,7 @@ class BookRoute extends Component {
     }
     componentWillUnmount() {
         this.props.actions.closeModal();
+        this.props.actions.cleanBuilder()
     }
     render() {
         let { bookId, book } = this.props;

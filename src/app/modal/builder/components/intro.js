@@ -40,7 +40,7 @@ export default ({ page, book, actions, form }) => {
                 selectedImage={form.selectedImage}
                 select={actions.builderImage}
             />
-            <div style={{ padding: 15, paddingBottom: 10 }}>
+            {form.input.value.trim()===""&&<div style={{ padding: 15, paddingBottom: 10 }}>
                 <Select
                     active
                     values={wishes(book.sender_name)}
@@ -50,6 +50,7 @@ export default ({ page, book, actions, form }) => {
                     enter={actions.builderInput}
                 />
             </div>
+            }
 
             <Text>
                 Или напишите свое пожелание

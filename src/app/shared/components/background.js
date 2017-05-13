@@ -1,23 +1,27 @@
 import React from "react";
 import "./background.css";
 // import {TransitionMotion, spring} from 'react-motion'
-
+import CSSTransitionGroup from "react-transition-group/CSSTransitionGroup";
 export default ({ isOpen, zIndex, children, close }) => (
     <div>
-
-        {isOpen &&
-            <div
-                onClick={e => {
-                    e.stopPropagation();
-                    close && close();
-                }}
-                style={{ zIndex: zIndex }}
-                className="fixed flex flex-center"
-                styleName="r"
+            <CSSTransitionGroup
+                transitionName="example"
+                transitionEnterTimeout={100}
+                transitionLeaveTimeout={300}
             >
-                {children}
-            </div>}
-
+               {isOpen && <div
+                    key={"exam"}
+                    onClick={e => {
+                        e.stopPropagation();
+                        close && close();
+                    }}
+                    style={{ zIndex: zIndex }}
+                    className="fixed flex flex-center"
+                    styleName="r"
+                >
+                    {children}
+                </div>}
+            </CSSTransitionGroup>
     </div>
 );
 
