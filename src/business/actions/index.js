@@ -24,8 +24,12 @@ export const builderInput = (text, fieldType, which) => {
     return { type: "BUILDER_INPUT", text, fieldType, which };
 };
 
+export const rotateQualityTable = leftRotate => {
+    return { type: "ROTATE_QUALITY_TABLE", leftRotate };
+};
+
 export const cleanBuilder = () => {
-    return {type:"CLEAN_BUILDER"};
+    return { type: "CLEAN_BUILDER" };
 };
 
 export const closeModal = () => {

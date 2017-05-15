@@ -3,12 +3,13 @@
 }
 
 .text{
-    top:60%;
-    left:44%;
+    top:59%;
+    left:42%;
     width:50%;
     font-size: 1.5em;
     text-align: center;
     color:#FEE23A;
+    line-height: 1;
     font-family: 'PeaceSans';
 
 }

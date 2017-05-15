@@ -72,9 +72,9 @@ class Page extends Component {
         else if (type === "cell") {
             return <Cell book={book} />;
         } else if (type === "vice") {
-            return <Vice book={book} />;
+            return <Vice book={book} page={page}/>;
         } else if (type === "virtue") {
-            return <Virtue book={book} />;
+            return <Virtue book={book} page={page} />;
         } else if (type === "deducedAgeFact") {
             return <DeducedAgeFact book={book} page={page} />;
         } else if (type === "bestseller") {

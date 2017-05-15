@@ -42,12 +42,13 @@ const init = {
             errorText: ""
         },
         input: { value: "", isPristine: true, isValid: true, errorText: "" }
-    }
+    },
+    qualityTableStep: 280
 };
 
 export default (
     state = init,
-    { type, page, params, text, fieldType, which }
+    { type, page, params, text, fieldType, which, leftRotate }
 ) => {
     switch (type) {
         case "BUILDER_IMAGE":
@@ -74,8 +75,15 @@ export default (
                     }
                 }
             };
+        case "ROTATE_QUALITY_TABLE":
+            return {
+                ...state,
+                qualityTableStep: leftRotate
+                    ? state.qualityTableStep - 1
+                    : state.qualityTableStep + 1
+            };
         case "CLEAN_BUILDER":
-            return init
+            return init;
         default:
             return state;
     }

@@ -35,10 +35,11 @@ class BookRoute extends Component {
         console.log("my book", book)
         let gift, data = [], bData;
         if (book[bookId]) {
-            data = values(book[bookId].pages);
+            data = values(book[bookId].pages).slice(38,44);
             const { pages, ...rest } = book[bookId];
             bData = rest;
         }
+
         let pages = [{ type: "colorChooser" }].concat(data);
         return (
             <div style={{ backgroundColor: "white", paddingBottom: 50 }}>

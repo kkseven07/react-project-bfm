@@ -42,9 +42,6 @@ export const updatePage = action$ =>
                 ...ajaxObject
             })
                 .flatMap(ajax => {
-                    if (ajax.response.nothing) {
-                        return [{ type: "CLOSE_MODAL" }];
-                    }
                     return [
                         {
                             type: "UPDATE_PAGE_FULFILLED",

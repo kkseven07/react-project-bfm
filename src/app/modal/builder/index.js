@@ -16,7 +16,7 @@ import Virtue from "./components/virtue";
 import Vice from "./components/vice";
 import WiseWord from "./components/wiseWord";
 
-const getComponent = (page, book, actions, form) => {
+const getComponent = (page, book, actions, form, step) => {
     switch (page.type) {
         case "intro":
             return <Intro page={page} book={book} actions={actions} form={form}/>;
@@ -27,7 +27,7 @@ const getComponent = (page, book, actions, form) => {
         case "fruitDNA":
             return <FruitDNA page={page} book={book} actions={actions} form={form}/>;
         case "qualityTable":
-            return <QualityTable page={page} book={book} actions={actions} form={form}/>;
+            return <QualityTable step={step} page={page} book={book} actions={actions} form={form}/>;
         case "easternWiseWord":
             return (
                 <EasternWiseWord page={page} book={book} actions={actions} form={form}/>
@@ -57,7 +57,7 @@ const Modal = ({ isOpen, page, book, actions, builder}) => {
     return (
         <Background close={actions.closeModal} zIndex={"20"} isOpen={isOpen}>
             <div onClick={stopClick} styleName="r">
-                {getComponent(page, book, actions, builder[page.type])}
+                {getComponent(page, book, actions, builder[page.type],builder.qualityTableStep)}
             </div>
         </Background>
     );
