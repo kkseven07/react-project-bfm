@@ -13,6 +13,34 @@ export const female = {
     пацанка: 2,
     спортсменка: 1
 };
+export const male = {
+    карьерист: 0,
+    геймер: 1,
+    тусовщик: 2,
+    экстремал: 6,
+    романтик: 5,
+    весельчак: 4,
+    домосед: 3
+};
+export const femaleE = {
+    карьеристка: "сareerist",
+    умница: "smartgirl",
+    звездочка: "star",
+    гик: "geek",
+    домоседка: "homebody",
+    пацанка: "tomgirl",
+    спортсменка: "sport"
+};
+export const maleE = {
+    карьерист: "careerist",
+    геймер: "gamer",
+    тусовщик: "partygoer",
+    экстремал: "extremal",
+    романтик: "romantic",
+    весельчак: "soul",
+    домосед: "homebody"
+};
+
 import "./qualityTable.css";
 
 import CSSTransitionGroup from "react-transition-group/CSSTransitionGroup";
@@ -25,26 +53,19 @@ export default ({ page, book, actions, step }) => {
         actions.rotateQualityTable(true);
     };
     const deg = level * step + "deg";
-    console.log("here is the step ", step);
     const val = level * step;
     let mainButtonRotation = {
-        rotate: spring(val, { stiffness: 200, damping: 20 })
+        rotate: spring(val, { stiffness: 250, damping: 20 })
     };
+    const group = book.gender === "male" ? male : female;
+    const groupE = book.gender === "male" ? maleE : femaleE;
+    const gender = book.gender === "male" ? "gendermale":"genderfemale"
+    const which = invert(group)[step % 7];
+    const toSend = groupE[which]
 
     return (
         <div className="flex flex-column width-full flex-center relative">
-            <div
-                style={{
-                    zIndex: 10,
-                    position: "absolute",
-                    top: "13%",
-                    left: "11%",
-                    bottom: "14%",
-                    right: "12%",
-                    borderRadius: "50%"
-                }}
-                styleName="pizza"
-            />
+
             <Text>
                 Как вы думаете кто из следующих персонажей, {book.name}?
             </Text>
@@ -79,9 +100,12 @@ export default ({ page, book, actions, step }) => {
                 <div onClick={turnRight} style={{ margin: 10 }}>right</div>
 
             </div>
-            <div>{invert(female)[step % 7]}</div>
+            <div>{invert(group)[step % 7]}</div>
 
-            <Buttons close={actions.closeModal} />
+            <Buttons
+                onSave={() => actions.updatePage(page, {text:toSend, gender})}
+                close={actions.closeModal}
+            />
 
         </div>
     );

@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import values from "lodash/values";
 import * as actions from "../../business/actions/index.js";
 import Modal from "../modal/builder";
+import Book from "./book";
 const BOOK_ID = 157;
 import Hashids from "hashids";
 export const decodeHashid = hashed => {
@@ -28,14 +29,14 @@ class BookRoute extends Component {
     }
     componentWillUnmount() {
         this.props.actions.closeModal();
-        this.props.actions.cleanBuilder()
+        this.props.actions.cleanBuilder();
     }
     render() {
         let { bookId, book } = this.props;
-        console.log("my book", book)
+        console.log("my book", book);
         let gift, data = [], bData;
         if (book[bookId]) {
-            data = values(book[bookId].pages).slice(38,44);
+            data = values(book[bookId].pages)[16];
             const { pages, ...rest } = book[bookId];
             bData = rest;
         }
@@ -56,6 +57,8 @@ class BookRoute extends Component {
                             />
                         ))}
                     </div>}
+                {book[bookId] && <Book />}
+
             </div>
         );
     }

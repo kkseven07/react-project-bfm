@@ -2,14 +2,14 @@
      width:0;
      height:0;
      opacity:0.5;
-     border-right:210px solid purple;
-     border-top:210px solid transparent;
-     border-left:210px solid purple;
-     border-bottom:210px solid purple;
-     border-radius: 210px;
+     border-right:8.5em solid purple;
+     border-top:8.5em solid transparent;
+     border-left:8.5em solid purple;
+     border-bottom:8.5em solid purple;
+     border-radius: 8.5em;
 }
 
-@media screen and (max-width:770px) and (min-width: 720px){
+/*@media screen and (max-width:770px) and (min-width: 720px){
     .pizza{
         border-right:200px solid purple;
         border-top:200px solid transparent;
@@ -21,11 +21,11 @@
 }
 @media screen and (max-width:719px) and (min-width: 600px){
     .pizza{
-        border-right:190px solid purple;
-        border-top:190px solid transparent;
-        border-left:190px solid purple;
-        border-bottom:190px solid purple;
-        border-radius: 190px;
+        border-right:19px solid purple;
+        border-top:19px solid transparent;
+        border-left:19px solid purple;
+        border-bottom:19px solid purple;
+        border-radius: 19px;
 
     }
-}
+}*/

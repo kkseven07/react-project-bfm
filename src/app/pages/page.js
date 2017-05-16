@@ -41,38 +41,28 @@ class Page extends Component {
     getPage = (type, image, page, book) => {
         if (type === "scoop") {
             return <Scoop book={book} data={page.data} />;
-        }
-        else if (type === "colorChooser") {
+        } else if (type === "colorChooser") {
             return <CoverChooser />;
-        }
-        else if (type === "cover") {
+        } else if (type === "cover") {
             return <Cover book={book} />;
-        }
-        else if (type === "animal") {
+        } else if (type === "animal") {
             return <Animal page={page} book={book} />;
-        }
-        else if (type === "intro") {
+        } else if (type === "intro") {
             return <Intro page={page} book={book} />;
-        }
-        else if (type === "musicHit") {
+        } else if (type === "musicHit") {
             return <MusicHit book={book} page={page} />;
-        }
-        else if (type === "epicStory") {
+        } else if (type === "epicStory") {
             return <EpicStory book={book} />;
-        }
-        else if (type === "scene") {
+        } else if (type === "scene") {
             return <Scene book={book} />;
-        }
-        else if (type === "fruitDNA") {
+        } else if (type === "fruitDNA") {
             return <FruitDNA page={page} book={book} />;
-        }
-        else if (type === "factoid") {
+        } else if (type === "factoid") {
             return <Factoid book={book} />;
-        }
-        else if (type === "cell") {
+        } else if (type === "cell") {
             return <Cell book={book} />;
         } else if (type === "vice") {
-            return <Vice book={book} page={page}/>;
+            return <Vice book={book} page={page} />;
         } else if (type === "virtue") {
             return <Virtue book={book} page={page} />;
         } else if (type === "deducedAgeFact") {
@@ -103,12 +93,8 @@ class Page extends Component {
             return <Film page={page} book={book} />;
         } else if (type === "holiday") {
             return <Holiday page={page} book={book} />;
-        }
-        else {
-            return (
-                <div>
-                </div>
-            );
+        } else {
+            return <div />;
         }
     };
 
@@ -120,6 +106,7 @@ class Page extends Component {
         const { type, primary_image, data } = this.props.page;
         let image = null;
         let imagesrc = null, imagesrclow = null;
+        let url;
         if (type !== "colorChooser" && primary_image.image.url) {
             image = {
                 backgroundImage: `url(${"http://localhost:4000" + primary_image.image.url})`
@@ -128,39 +115,30 @@ class Page extends Component {
             imagesrclow = `${primary_image.image.url
                 .replace("http://localhost:4000", "http://46.101.217.205:4000")
                 .replace("768", "320")}`;
+
+            url = "http://localhost:4000" + primary_image.image.url;
         }
         return (
-            // <img src={imagesrc} height="508" width="508" style={{position:"absolute"}} styleName="bg-image"/>
-            (
-                <div
-                    // onContextMenu={()=>false}
-                    onClick={e => {
-                        e.preventDefault();
-                        // if(type!=="colorChooser") this.setState({zoom:!this.state.zoom})
-                    }}
-                    styleName={this.state.zoom ? "page clicked" : "page"}
-                    style={image}
-                >
+            <div
+                onClick={e => {
+                    e.preventDefault();
+                }}
+                styleName={this.state.zoom ? "page clicked" : "page"}
+                style={image}
+            >
+                {this.getPage(type, image, this.props.page, this.props.book)}
 
-                    {this.getPage(
-                        type,
-                        image,
-                        this.props.page,
-                        this.props.book
-                    )}
-
-                    {this.isEditable(type) &&
-                        <button
-                            onClick={this.edit}
-                            styleName="edit-button"
-                            className="flex-center"
-                        >
-                            <span styleName="edit-text" className="jura">
-                                Редактировать
-                            </span>
-                        </button>}
-                </div>
-            )
+                {this.isEditable(type) &&
+                    <button
+                        onClick={this.edit}
+                        styleName="edit-button"
+                        className="flex-center"
+                    >
+                        <span styleName="edit-text" className="jura">
+                            Редактировать
+                        </span>
+                    </button>}
+            </div>
         );
     }
 }

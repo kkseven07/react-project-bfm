@@ -31,13 +31,15 @@ const checkUrl = (first, second) => {
 
 export const updatePage = action$ =>
     action$.ofType("UPDATE_PAGE").mergeMap(({ page, params }) => {
+        console.log(params)
         if (
             params.text ||
             (params.selectedImage &&
                 !checkUrl(params.selectedImage, page.primary_image.image.url))
         ) {
+            const id=page.type==="qualityTable"?(page.id+1):page.id
             return ajax({
-                url: `${url}/api/v1/update/${page.type}/${page.id}`,
+                url: `${url}/api/v1/update/${page.type}/${id}`,
                 body: { params: JSON.stringify(params) },
                 ...ajaxObject
             })
