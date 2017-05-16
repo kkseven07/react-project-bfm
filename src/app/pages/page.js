@@ -42,7 +42,7 @@ class Page extends Component {
         if (type === "scoop") {
             return <Scoop book={book} data={page.data} />;
         } else if (type === "colorChooser") {
-            return <CoverChooser />;
+            return <div />;
         } else if (type === "cover") {
             return <Cover book={book} />;
         } else if (type === "animal") {
@@ -123,12 +123,13 @@ class Page extends Component {
                 onClick={e => {
                     e.preventDefault();
                 }}
-                styleName={this.state.zoom ? "page clicked" : "page"}
+                styleName={this.state.zoom ? "page clicked" : this.props.print?"page print":"page"}
                 style={image}
             >
                 {this.getPage(type, image, this.props.page, this.props.book)}
 
                 {this.isEditable(type) &&
+                    !this.props.print &&
                     <button
                         onClick={this.edit}
                         styleName="edit-button"

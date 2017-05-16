@@ -6,13 +6,15 @@ import form from "./reducers/form";
 import book from "./reducers/book";
 import modal from "./reducers/modal";
 import builder from "./reducers/builder";
+import page from './reducers/page'
 const reducer = combineReducers({
     routing,
     loading,
     form,
     book,
     modal,
-    builder
+    builder,
+    page
 });
 
 export default reducer;

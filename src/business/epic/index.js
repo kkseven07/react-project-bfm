@@ -5,7 +5,8 @@ import {
     updatePage,
     genPages,
     changeRoute,
-    getBook
+    getBook,
+    getBookPage
 } from "./epics/api";
 import { input, changeForm } from "./epics/form";
 import { delayLoading } from "./epics/delay";
@@ -25,6 +26,7 @@ const rootEpic = combineEpics(
     updatePage,
     changeRoute,
     getBook,
+    getBookPage,
     delayLoading
 );
 

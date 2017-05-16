@@ -20,6 +20,7 @@ class BookRoute extends Component {
         if (this.props.history.action === "POP" && !this.props.bookId) {
             let hash_id = this.props.location.pathname.replace(/\/books\//, "");
             if (hash_id.length > 2 && !hash_id.match(/\/books/)) {
+                console.log(decodeHashid(hash_id)[0])
                 this.props.actions.getBook(decodeHashid(hash_id)[0]);
             }
         }
@@ -36,7 +37,7 @@ class BookRoute extends Component {
         console.log("my book", book);
         let gift, data = [], bData;
         if (book[bookId]) {
-            data = values(book[bookId].pages)[16];
+            data = values(book[bookId].pages);
             const { pages, ...rest } = book[bookId];
             bData = rest;
         }
@@ -57,12 +58,13 @@ class BookRoute extends Component {
                             />
                         ))}
                     </div>}
-                {book[bookId] && <Book />}
 
             </div>
         );
     }
 }
+                // {book[bookId] && <Book />}
+
 const mapStateToProps = state => ({
     book: state.book,
     bookId: state.book.currentBookId

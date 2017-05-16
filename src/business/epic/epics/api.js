@@ -31,13 +31,13 @@ const checkUrl = (first, second) => {
 
 export const updatePage = action$ =>
     action$.ofType("UPDATE_PAGE").mergeMap(({ page, params }) => {
-        console.log(params)
+        console.log(params);
         if (
             params.text ||
             (params.selectedImage &&
                 !checkUrl(params.selectedImage, page.primary_image.image.url))
         ) {
-            const id=page.type==="qualityTable"?(page.id+1):page.id
+            const id = page.type === "qualityTable" ? page.id + 1 : page.id;
             return ajax({
                 url: `${url}/api/v1/update/${page.type}/${id}`,
                 body: { params: JSON.stringify(params) },
@@ -90,6 +90,26 @@ export const getBook = action$ =>
                     type: "AJAX_ERROR",
                     payload: error,
                     message: "Книга не найдена!"
+                })
+            );
+    });
+export const getBookPage = action$ =>
+    action$.ofType("GET_BOOK_PAGE").switchMap(({ book_id, page_type }) => {
+        return ajax({
+            url: `${url}/api/v1/books/${book_id}/${page_type}`,
+            ...ajaxObjectGet
+        })
+            .flatMap(ajax => {
+                return ofObs({
+                    type: "PAGE_FOUND",
+                    payload: ajax.response
+                });
+            })
+            .catch(error =>
+                ofObs({
+                    type: "AJAX_ERROR",
+                    payload: error,
+                    message: "Page not found, you are welcome, Ilyas"
                 })
             );
     });

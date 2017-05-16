@@ -10,16 +10,19 @@ import { routerActions } from "react-router-redux";
 // import Home from './home'
 // import Contacts from './contacts'
 // import Builder from './pages/pages'
+import Print from "./pages/print.js";
 import { connect } from "react-redux";
 import * as actions from "../business/actions";
 import { bindActionCreators } from "redux";
 import header from "./shared/components/header.css";
 import { Background, Header, Loading } from "./shared";
 
-const showHeader = location => !location.pathname.match(/\/books/);
+const showHeader = location =>
+    !location.pathname.includes("/books/") &&
+    !location.pathname.includes("/pages/");
 
 const App = (
-    { location, history, ...props } // console.log(props.actions.push("/books"))||
+    { match, location, history, ...props } // console.log(props.actions.push("/books"))||
 ) => (
     <div>
         <Loading />
@@ -33,13 +36,18 @@ const App = (
 
         {showHeader(location) && <Header history={history} />}
 
-        <div styleName={showHeader(location) ? "header.upper-padding" : ""}>
+        <div
+            styleName={
+                showHeader(location, match) ? "header.upper-padding" : ""
+            }
+        >
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/about" component={About} />
                 <Route path="/contacts" component={Contacts} />
                 <Route path="/books" component={Builder} />
                 <Route path="/books/:id" component={Builder} />
+                <Route path="/pages/:book_id/:type" component={Print} />
                 <Redirect from="/*" to="/" />
             </Switch>
         </div>

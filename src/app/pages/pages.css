@@ -31,7 +31,8 @@
 }
 .page:first-child{
     margin-top:40px;
-    height:230px;
+    /*height:10px;*/
+    border:none;
 }
 .page:nth-child(2){
     margin-top:30px;
@@ -185,3 +186,15 @@
         width: 313px;
     }
 }
+
+.print{
+        height:2048px;
+        width:2048px;
+        font-size:80.31px;
+    }
+    .bg-image {
+        height:313px;
+        width: 313px;
+    }
+
+
