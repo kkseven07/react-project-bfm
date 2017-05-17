@@ -26,6 +26,9 @@ class BookRoute extends Component {
                 this.props.actions.getBook(decodeHashid(hash_id)[0]);
             }
         }
+
+
+
     }
     componentDidMount() {
         window.scrollTo(0, 0);
@@ -35,6 +38,9 @@ class BookRoute extends Component {
         this.props.actions.cleanBuilder();
     }
     render() {
+        console.log(this.props.osName)
+
+
         let { bookId, book } = this.props;
         console.log("my book", book);
         let gift, data = [], bData;
@@ -68,10 +74,10 @@ class BookRoute extends Component {
     }
 }
 
-
 const mapStateToProps = state => ({
     book: state.book,
-    bookId: state.book.currentBookId
+    bookId: state.book.currentBookId,
+    osName:state.osName
 });
 const mapDispatchToProps = dispatch => ({
     actions: bindActionCreators(actions, dispatch)

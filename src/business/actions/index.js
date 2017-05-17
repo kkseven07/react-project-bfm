@@ -1,3 +1,12 @@
+//initial
+
+export const osName=(name)=>{
+    return {type:"OS_NAME", name}
+}
+
+
+
+
 //form
 export const enterInput = (text, field) => {
     return { type: "ENTER_INPUT", text, field };
