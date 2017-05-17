@@ -36,7 +36,7 @@ const init = {
     },
     vice: {
         select: {
-            value: "",
+            value: "Много спать",
             isPristine: true,
             isValid: true,
             errorText: ""

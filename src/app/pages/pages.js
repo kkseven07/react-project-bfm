@@ -7,6 +7,8 @@ import values from "lodash/values";
 import * as actions from "../../business/actions/index.js";
 import Modal from "../modal/builder";
 import Book from "./book";
+import CoverChooser from "./page/coverChooser";
+
 const BOOK_ID = 157;
 import Hashids from "hashids";
 export const decodeHashid = hashed => {
@@ -20,7 +22,7 @@ class BookRoute extends Component {
         if (this.props.history.action === "POP" && !this.props.bookId) {
             let hash_id = this.props.location.pathname.replace(/\/books\//, "");
             if (hash_id.length > 2 && !hash_id.match(/\/books/)) {
-                console.log(decodeHashid(hash_id)[0])
+                console.log(decodeHashid(hash_id)[0]);
                 this.props.actions.getBook(decodeHashid(hash_id)[0]);
             }
         }
@@ -42,12 +44,13 @@ class BookRoute extends Component {
             bData = rest;
         }
 
-        let pages = [{ type: "colorChooser" }].concat(data);
+        let pages = data;
         return (
             <div style={{ backgroundColor: "white", paddingBottom: 50 }}>
                 <Modal />
                 {book[bookId] &&
                     <div styleName="root">
+                        <CoverChooser />
                         {pages.map((page, i) => (
                             <Page
                                 actions={this.props.actions}
@@ -58,12 +61,13 @@ class BookRoute extends Component {
                             />
                         ))}
                     </div>}
+                {book[bookId] && <Book />}
 
             </div>
         );
     }
 }
-                // {book[bookId] && <Book />}
+
 
 const mapStateToProps = state => ({
     book: state.book,

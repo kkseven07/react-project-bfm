@@ -31,18 +31,16 @@
 }
 .page:first-child{
     margin-top:40px;
-    /*height:10px;*/
     border:none;
 }
-.page:nth-child(2){
-    margin-top:30px;
-}
+
 .page:first-child:hover{
-    cursor:default;
+  cursor:zoom-out;
 }
 .page:hover{
     cursor:zoom-in;
 }
+
 .clicked{
     transform: scale(1.4);
     z-index:104;
@@ -188,13 +186,16 @@
 }
 
 .print{
-        height:2048px;
-        width:2048px;
-        font-size:80.31px;
+    height:2048px;
+    width:2048px;
+    font-size:80.31px;
     }
-    .bg-image {
-        height:313px;
-        width: 313px;
-    }
+
+
+
+
+
+
+
 
 

@@ -16,10 +16,12 @@ import * as actions from "../business/actions";
 import { bindActionCreators } from "redux";
 import header from "./shared/components/header.css";
 import { Background, Header, Loading } from "./shared";
+import Preview from './preview/preview'
 
 const showHeader = location =>
     !location.pathname.includes("/books/") &&
-    !location.pathname.includes("/pages/");
+    !location.pathname.includes("/pages/")&&
+    !location.pathname.includes("/preview");
 
 const App = (
     { match, location, history, ...props } // console.log(props.actions.push("/books"))||
@@ -47,6 +49,7 @@ const App = (
                 <Route path="/contacts" component={Contacts} />
                 <Route path="/books" component={Builder} />
                 <Route path="/books/:id" component={Builder} />
+                <Route path="/preview" component={Preview} />
                 <Route path="/pages/:book_id/:type" component={Print} />
                 <Redirect from="/*" to="/" />
             </Switch>
