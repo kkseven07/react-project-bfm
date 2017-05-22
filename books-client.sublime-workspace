@@ -1,0 +1,1273 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"http",
+				"http://46.101.217.205:4000"
+			],
+			[
+				"htt",
+				"http://46.101.217.205:4000\t(page.js)"
+			],
+			[
+				"qual",
+				"qualityTableChoice\t(factory.ex)"
+			],
+			[
+				"api",
+				"ApiController"
+			],
+			[
+				"qua",
+				"qualityTableChoice\t(factory.ex)"
+			],
+			[
+				"G",
+				"GetPrimaryImage\t(get_primary_image.ex)"
+			],
+			[
+				"modal",
+				"modalOpen"
+			],
+			[
+				"redux",
+				"redux-observable\t(index.js)"
+			],
+			[
+				"async",
+				"asyncModule"
+			],
+			[
+				"B",
+				"AA-BebasNeue-Bold.woff"
+			],
+			[
+				"Robo",
+				"RobotoRegular\t(app.css)"
+			],
+			[
+				"Bebas",
+				"BebasBold\t(app.css)"
+			],
+			[
+				"wid",
+				"width-full\t(form.js)"
+			],
+			[
+				"Desc",
+				"DescText"
+			],
+			[
+				"fomrd",
+				"formDesriptionText.js"
+			],
+			[
+				"A",
+				"AA BebasNeue-Regular.woff"
+			],
+			[
+				"R",
+				"Roboto-Regular.woff"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"error",
+				"errorText.css"
+			],
+			[
+				"cla",
+				"calculatedAge"
+			],
+			[
+				"Rea",
+				"ReactFitText"
+			],
+			[
+				"white",
+				"white-space"
+			],
+			[
+				"wh",
+				"white-space\t(intro.css)"
+			],
+			[
+				"bor",
+				"border-box"
+			],
+			[
+				"clas",
+				"className"
+			],
+			[
+				"tech",
+				"techState"
+			],
+			[
+				"bac",
+				"backToHistory"
+			],
+			[
+				"Back",
+				"backToHistory"
+			],
+			[
+				"from",
+				"from_erl\t(factory.ex)"
+			],
+			[
+				"get_cla",
+				"get_classification_reversed\t(factory.ex)"
+			],
+			[
+				"spec",
+				"spec_list"
+			],
+			[
+				"ext",
+				"extension"
+			],
+			[
+				"split",
+				"spec_list"
+			],
+			[
+				"concpe",
+				"concept"
+			],
+			[
+				"parse",
+				"parse_folders"
+			],
+			[
+				"with",
+				"with_no_print"
+			],
+			[
+				"for",
+				"for_type\t(factory.ex)"
+			],
+			[
+				"prim",
+				"primary_key\t(20170223093636_create_order_table.exs)"
+			],
+			[
+				"prima",
+				"primary_images\t(p_image.ex)"
+			],
+			[
+				"pre",
+				"prepare_list"
+			],
+			[
+				"month",
+				"months_russian\t(api_controller.ex)"
+			],
+			[
+				"be",
+				"before_birth_year\t(helper.ex)"
+			],
+			[
+				"Boo",
+				"BookApi"
+			],
+			[
+				"defualt",
+				"defaultFields"
+			],
+			[
+				"ba",
+				"background-color\t(gift.css)"
+			],
+			[
+				"next",
+				"nextProps"
+			],
+			[
+				"cal",
+				"calculatedAge"
+			],
+			[
+				"valid",
+				"validateSelect\t(enter.js)"
+			],
+			[
+				"val",
+				"validate"
+			],
+			[
+				"vali",
+				"validateFields"
+			],
+			[
+				"enter",
+				"enter-text-container"
+			],
+			[
+				"style",
+				"styleName"
+			],
+			[
+				"alig",
+				"align-items"
+			],
+			[
+				"margin",
+				"margin-top\t(gift.css)"
+			],
+			[
+				"ali",
+				"align-items"
+			],
+			[
+				"bacg",
+				"background-color"
+			],
+			[
+				"eat",
+				"eat_in_elephants"
+			],
+			[
+				"to",
+				"tortoise_minutes"
+			],
+			[
+				"prvi",
+				"previous_status"
+			],
+			[
+				"current",
+				"current_status"
+			],
+			[
+				"num",
+				"num_guesses"
+			],
+			[
+				"is",
+				"isPalindrome"
+			],
+			[
+				"translate",
+				"translateWord"
+			],
+			[
+				"__",
+				"__\t__magic__"
+			],
+			[
+				"high",
+				"high+low)/2"
+			],
+			[
+				"bala",
+				"balancing"
+			],
+			[
+				"annual",
+				"annualInterestRate"
+			],
+			[
+				"monthly",
+				"monthlyPayment"
+			],
+			[
+				"annu",
+				"annualInterestRate"
+			],
+			[
+				"outstnading",
+				"outstandingBalance"
+			],
+			[
+				"outstand",
+				"outstandingBalance"
+			],
+			[
+				"tota",
+				"totalAmountPaid"
+			],
+			[
+				"outs",
+				"outstandingBalance"
+			],
+			[
+				"minimum",
+				"minimumMonthlyPayment"
+			],
+			[
+				"ann",
+				"annualInterestRate"
+			],
+			[
+				"nu",
+				"num_guesses"
+			],
+			[
+				"ls",
+				"last_name"
+			],
+			[
+				"compoenn",
+				"componentDidMount\t(TabViewTransitioner.js)"
+			],
+			[
+				"Swipea",
+				"SwipeableQuickActions"
+			],
+			[
+				"jut",
+				"justifyContent\t(app.js)"
+			],
+			[
+				"Scrollab",
+				"ScrollableTabBar\t(scrollableTabBar.js)"
+			],
+			[
+				"Scro",
+				"ScrollableTabView"
+			],
+			[
+				"Sclr",
+				"ScrollableTabView"
+			],
+			[
+				"fu",
+				"future_handled"
+			],
+			[
+				"insert",
+				"insert_random_message"
+			],
+			[
+				"broad",
+				"broadcast_messages_to_send"
+			],
+			[
+				"check",
+				"checkpw"
+			],
+			[
+				"defmod",
+				"defmodule\t(user_controller.ex)"
+			],
+			[
+				"User",
+				"UserController\t(router.ex)"
+			],
+			[
+				"Swipe",
+				"SwipeableListView"
+			],
+			[
+				"Swip",
+				"SwipeableListView"
+			],
+			[
+				"Swipeable",
+				"SwipeableListView"
+			],
+			[
+				"align",
+				"alignSelf\t(countryPicker.js)"
+			],
+			[
+				"To",
+				"TouchableOpacity"
+			],
+			[
+				"Touc",
+				"TouchableOpacity"
+			],
+			[
+				"bore",
+				"borderColor\t(registrationNavigation.js)"
+			],
+			[
+				"flex",
+				"flexDirection\t(backButton.js)"
+			],
+			[
+				"Touch",
+				"TouchableWithoutFeedback\t(registrationNavigation.js)"
+			],
+			[
+				"country",
+				"countryPicker"
+			],
+			[
+				"regist",
+				"registerNav"
+			],
+			[
+				"Re",
+				"RegistrationNavigation"
+			],
+			[
+				"int",
+				"interpolate"
+			],
+			[
+				"Inc",
+				"IncrementalGroup"
+			],
+			[
+				"Starred",
+				"StarredItems\t(app.js)"
+			],
+			[
+				"sett",
+				"settings"
+			],
+			[
+				"consol",
+				"console.log\t(app.js)"
+			],
+			[
+				"navi",
+				"navigationBarHide"
+			],
+			[
+				"Cale",
+				"CalendarTitle"
+			],
+			[
+				"Cal",
+				"CalendarTitle\t(calendarTitle.js)"
+			],
+			[
+				"react-",
+				"react-native-vector-icons\t(settingsButton.js)"
+			],
+			[
+				"compoent",
+				"componentWillUnmount\t(app.js)"
+			],
+			[
+				"comope",
+				"componentWillMount\t(list.js)"
+			],
+			[
+				"ke",
+				"keyboard"
+			],
+			[
+				"algi",
+				"alignItems\t(plusButton.js)"
+			],
+			[
+				"Sc",
+				"ScrollView\t(list.js)"
+			],
+			[
+				"Tou",
+				"TouchableHighlight"
+			],
+			[
+				"disable",
+				"disableGestures"
+			],
+			[
+				"disbal",
+				"disableGestures"
+			],
+			[
+				"react",
+				"react-native-side-menu\t(list.js)"
+			],
+			[
+				"Incre",
+				"IncrementalGroup"
+			],
+			[
+				"compone",
+				"componentWillUnmount\t(app.js)"
+			],
+			[
+				"just",
+				"justifyContent"
+			],
+			[
+				"Gr",
+				"GREEN\t(plusButton.js)"
+			],
+			[
+				"conte",
+				"contentHight"
+			],
+			[
+				"Ap",
+				"APP_COLOR\t(loading.js)"
+			],
+			[
+				"Increme",
+				"IncrementalGroup\t(settings.js)"
+			],
+			[
+				"Naviga",
+				"NavigatorIOS"
+			],
+			[
+				"Mess",
+				"MessageCalendar"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/app/pages/page/scoop.js",
+			"settings":
+			{
+				"buffer_size": 895,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/app/pages/page.js",
+			"settings":
+			{
+				"buffer_size": 6618,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "books-front.sublime-project",
+			"settings":
+			{
+				"buffer_size": 721,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nJsPrettier\n----------\n\n  # Sublime Text JavaScript Prettier\n  \n      JsPrettier is a Sublime Text Plug-in for Prettier, the opinionated\n      JavaScript formatter.\n  \n  \n  ## Install Prettier\n  \n      If you installed Prettier globally (using the yarn or npm command below),\n      there is nothing else you need to do.\n  \n          # using yarn:\n          yarn global add prettier\n  \n          # using npm:\n          npm install -g prettier\n  \n      You may be required to specify the path to the `prettier` executable, which\n      is configurable in the Package's settings file...\n  \n          -> \"Preferences\"\n          -> \"Package Settings\"\n          -> \"JsPrettier\"\n              -> \"Settings - Default\" (To view the default settings)\n              -> \"Settings - User\"    (To override the default settings)\n  \n  \n  ## Usage\n  \n      To run the JsPrettier command... open the Sublime Text Command Palette\n      (super + shift + p), and type \"JsPrettier\".\n  \n      You can also right-click anywhere in the view to bring up the \"Context\n      Menu\", and select \"JsPrettier\".\n  \n  \n      ### Command Scope\n  \n          JsPrettier will attempt to format any selected JavaScript sections of\n          code first; if no selections are made, the entire file will be\n          formatted.\n  \n          > NOTE: When the `auto_format_on_save` setting is set to `true`, the\n          > entire file will always be formatted.\n  \n      ### Custom Key Binding\n  \n          To add a custom key binding to JsPrettier, please reference the\n          following example which binds `js_prettier` to \"ctrl/cmd + b\".\n  \n              { \"keys\": [\"super+b\"], \"command\": \"js_prettier\" }\n  \n  \n  ## Settings\n  \n      All Prettier options are configurable from the \"JsPrettier.sublime-settings\"\n      file, accessible from the Preferences > Package Settings > JsPrettier menu\n      shortcut.\n  \n      ### Project-level Settings\n  \n      JsPrettier supports Project-level settings, specified in \"<project_name>.sublime-project\"\n      files. In order for Project-level settings to override the Defaults and User\n      configured settings, a new \"js_prettier\" section must be created under the\n      project file's \"settings\" section.\n  \n      Example Sublime Project File:\n  \n          {\n              \"folders\": [\n                  {\n                      \"path\": \".\"\n                  }\n              ],\n              \"settings\": {\n                  \"js_prettier\": {\n                      \"debug\": false,\n                      \"prettier_cli_path\": \"\",\n                      \"node_path\": \"\",\n                      \"auto_format_on_save\": false,\n                      \"allow_inline_formatting\": false,\n                      \"prettier_options\": {\n                          \"printWidth\": 80,\n                          \"singleQuote\": false,\n                          \"trailingComma\": \"none\",\n                          \"bracketSpacing\": true,\n                          \"jsxBracketSameLine\": false,\n                          \"parser\": \"babylon\",\n                          \"semi\": true\n                      }\n                  }\n              }\n          }\n  \n  \n  ## Help\n  \n      For additional help, including reporting issues, please visit the\n      Sublime Text JavaScript Prettier homepage @ https://github.com/jonlabelle/SublimeJsPrettier.\n  \n  \n  ## Author\n  \n  Jon LaBelle\n  \n  \n  ## License\n  \n      The MIT License (MIT)\n  \n      Copyright (c) 2017 Jon LaBelle\n",
+			"settings":
+			{
+				"buffer_size": 3491,
+				"line_ending": "Unix",
+				"name": "Package Control Messages",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"file": "src/app/modal/builder/components/qualityTable.js",
+			"settings":
+			{
+				"buffer_size": 3224,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/app/pages/print.js",
+			"settings":
+			{
+				"buffer_size": 869,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 354.0,
+		"last_filter": "i",
+		"selected_items":
+		[
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"prettier",
+				"JsPrettier: Format JavaScript"
+			],
+			[
+				"snip",
+				"Snippet: def"
+			],
+			[
+				"orgmod",
+				"Preferences: orgmode Settings – Default"
+			],
+			[
+				"or",
+				"Set Syntax: orgmode"
+			],
+			[
+				"orgmo",
+				"Set Syntax: orgmode"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"ls",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/ilyasmalgazhdarov/Production/books-client",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic/epics",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/entry"
+	],
+	"file_history":
+	[
+		"/Users/ilyasmalgazhdarov/.nvm/versions/node/v7.4.0/bin/prettier",
+		"/Users/ilyasmalgazhdarov/.bash_profile",
+		"/Users/ilyasmalgazhdarov/Learning/sublimeSetup",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/epicStory.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/app.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/print.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic/epics/api.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/imageChooser.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/utils.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/brain.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/brain.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/pages.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/init.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/index.js",
+		"/Users/ilyasmalgazhdarov/Production/bookfromme/apps/book/lib/book/generate/helper.ex",
+		"/Users/ilyasmalgazhdarov/Production/bookfromme/apps/book/lib/book/generate/data_for_page.ex",
+		"/Users/ilyasmalgazhdarov/Production/bookfromme/apps/book/lib/book/generate/get_primary_image.ex",
+		"/Users/ilyasmalgazhdarov/Production/bookfromme/apps/book_api/web/router.ex",
+		"/Users/ilyasmalgazhdarov/Production/bookfromme/apps/book/lib/book.ex",
+		"/Users/ilyasmalgazhdarov/Production/bookfromme/apps/book/lib/book/generate/create_image.ex",
+		"/Users/ilyasmalgazhdarov/Production/bookfromme/apps/book/lib/book/data_for_book/helper_file",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/formDescriptionSmall.css",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/formDesсriptionSmall.js",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/formDescriptionText.css",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/formDesсriptionText.js",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/errorText.css",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/asyncModule.js",
+		"/Users/ilyasmalgazhdarov/Production/book-app/webpack.production.config.js",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/business/reducer/form.js",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/header.js",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/home/components/book.css",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/home/components/book.js",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/pages/pages.css",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/pages/page/cover.js",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/app.js",
+		"/Users/ilyasmalgazhdarov/Production/book-app/.babelrc",
+		"/Users/ilyasmalgazhdarov/Production/book-app/.gitignore",
+		"/Users/ilyasmalgazhdarov/Production/book-app/webpack.config.js",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/about/index.js",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/about/about.css",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/business/epic/index.js",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/app.css",
+		"/Users/ilyasmalgazhdarov/Production/book-app/public/index.html",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/index.js",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/home/components/form.js",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/home/components/bookForm.css",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/button.css",
+		"/Users/ilyasmalgazhdarov/Production/book-app/assets/fonts/AA-BebasNeue-Bold.woff",
+		"/Users/ilyasmalgazhdarov/Production/book-app/assets/fonts/AA-BebasNeue-Regular.woff",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/entry/store.js",
+		"/Users/ilyasmalgazhdarov/Production/book-app/package.json",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/business/reducer/loading.js",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/business/reducer/index.js",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/header.css",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/home/components/form.css",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/button.js",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/home/home.css",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/select.js",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/errorText.js",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/input.js",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/home/index.js",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/input.css",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/business/reducer/selectorForm.js",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/utils.js",
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/entry/index.js",
+		"/Users/ilyasmalgazhdarov/Production/bookfromme-client/.babelrc",
+		"/Users/ilyasmalgazhdarov/Production/bookfromme-client/.baberc",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/home/enter.js",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/zpages.js",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/public/index.html",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/reducers/edit.js",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/containers/modal.js",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/zpage.js",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/reducers/input.js",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/home/gift.css",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/home/gift.js",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/navigation/header.js",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/navigation/header.css",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/containers/modal.css",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/epics/epics.js",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/helpers/utils.js",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/actions/actions.js",
+		"/Users/ilyasmalgazhdarov/bookapp/.gitignore",
+		"/Users/ilyasmalgazhdarov/bookapp/.babelrc",
+		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/lib/book/generate/data_for_page.ex",
+		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/mogri/mix.exs",
+		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book_api/config/prod.secret.exs",
+		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/config/prod.exs",
+		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book_api/.gitignore",
+		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book_api/priv/static/media/for_web/animal/animal_v1_1024.jpg",
+		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book_api/config/prod.exs",
+		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book_api/mix.exs",
+		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/lib/book/generate/create_image.ex",
+		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/lib/book/generate/generator.ex",
+		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/lib/book/generate/get_primary_image.ex",
+		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/lib/book/generate/factory.ex",
+		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/lib/book/data_for_book/bestseller.csv",
+		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/lib/book/data_for_book/film.csv",
+		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/lib/book/generate/helper.ex",
+		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/priv/repo/migrations/20170329094814_data_tables.exs",
+		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/lib/book/data_for_book/data.sql",
+		"/Users/ilyasmalgazhdarov/Learning/psql_test/scr.postgresql",
+		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/lib/book/data_for_book/helper_file",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/containers/modals/coolPlace.js",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/techState.css",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/techState.js",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/famousBirthShare.css",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/mirrorDate.js",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/famousBirthShare.js",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/ageFact.css",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/ageFact.js",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/mirrorDate.css",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/sport.js",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/cell.js",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/cell.css",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/factoid.css",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/factoid.js",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/toy.css",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/toy.js",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/animal.js",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/backToHistory.css",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/car.css",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/car.js",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/fruitDNA.js",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/webpack.config.js",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/containers/app.css",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/sport.css",
+		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/musicHit.css"
+	],
+	"find":
+	{
+		"height": 24.0
+	},
+	"find_in_files":
+	{
+		"height": 95.0,
+		"where_history":
+		[
+			"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/",
+			"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/",
+			"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages",
+			"/Users/ilyasmalgazhdarov/Learning/brunch/client/src",
+			"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book",
+			"/Users/ilyasmalgazhdarov/Learning/bookfromme/app/book",
+			"/Users/ilyasmalgazhdarov/Learning/brunch/client/src",
+			"/Users/ilyasmalgazhdarov/React/TypiInc/",
+			"/Users/ilyasmalgazhdarov/React/TypiInc/components/",
+			"/Users/ilyasmalgazhdarov/React/typi/components/",
+			"/Users/ilyasmalgazhdarov/React/typi/node_modules/react-native",
+			"/Users/ilyasmalgazhdarov/React/typi/components",
+			"/Users/ilyasmalgazhdarov/React/typi/node_modules",
+			"/Users/ilyasmalgazhdarov/React/typi/components",
+			"/Users/ilyasmalgazhdarov/React/despite/components",
+			"/Users/ilyasmalgazhdarov/React/ideal/components",
+			"/Users/ilyasmalgazhdarov/React/InstaDeal/components",
+			"/Users/ilyasmalgazhdarov/React/InstaDeal/components/deal-navbar.js",
+			"/Users/ilyasmalgazhdarov/React/InstaDeal/components",
+			"/Users/ilyasmalgazhdarov/React/InstaDeal",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"true",
+			"false",
+			"1024",
+			"UTC",
+			"monthMap",
+			"768",
+			"like",
+			"io",
+			"music",
+			"classification",
+			"2048",
+			"Enum.random",
+			"Enum.take_random(1)",
+			" Enum.take_random(1)",
+			"GetPrimaryImage.safe_random",
+			"Enum.random",
+			"center",
+			"\"",
+			"80",
+			"100",
+			"200",
+			"100",
+			"isPristine",
+			"4",
+			"Select",
+			"year",
+			"gender",
+			"<Input",
+			"Input",
+			"===",
+			"gender",
+			"20",
+			"17",
+			"10",
+			"class",
+			"monthsMap",
+			"containerB",
+			"img",
+			"browserHistory",
+			"props",
+			"\"",
+			"Enum.random",
+			"си",
+			",",
+			"BEST",
+			"hist",
+			"back",
+			"scoop",
+			"reduce",
+			"<span>",
+			"Textfit",
+			"span",
+			"25px",
+			"width",
+			"70",
+			"4",
+			"10",
+			"430",
+			"width",
+			"-5px",
+			"left: -5px",
+			"left:-5px",
+			"520",
+			"150",
+			"100",
+			"430",
+			"pre-",
+			"composes",
+			"const",
+			"div",
+			"rotate",
+			"start",
+			"span",
+			"monthMapYe",
+			"invert",
+			"let",
+			"я\"",
+			"я",
+			"gift",
+			"class",
+			"200",
+			"class",
+			"25",
+			"10",
+			"2",
+			"50",
+			"<img",
+			"img",
+			"20",
+			"15",
+			"background-color: blue;\n    opacity: 0.4;",
+			"<div",
+			".toUpperCase()",
+			"p",
+			"<p",
+			"p",
+			"span",
+			"353",
+			"calendar",
+			"Loading",
+			":Бок",
+			"{\"t",
+			"2048",
+			"2048x2048",
+			"768",
+			"-> ",
+			"6",
+			"5",
+			"4",
+			"1024",
+			"IO.",
+			"IO.inspect",
+			"tech",
+			"techState",
+			"weather",
+			"folder",
+			"2",
+			"Enum.reduce",
+			"\",\"\"),",
+			"IO.puts ",
+			"rs",
+			"conepts",
+			"fn",
+			"768",
+			":calendar.last_day_of_the_month1",
+			"Calendar",
+			"animals",
+			"scoops"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"rgb(14,122,254)",
+			"#26A65B",
+			"#2ECC71",
+			"#DB0A5B",
+			"#87D37C",
+			"#4183D7",
+			"#446CB3",
+			"#03C9A9",
+			"03C9A9",
+			"#4ECDC4",
+			"#F89406",
+			"#663399",
+			"#1E824C",
+			"#26A65B",
+			"#109440",
+			"anim1",
+			"Deals",
+			"e4e4e4",
+			"0679a2",
+			"0084b4",
+			"134DB1"
+		],
+		"reverse": false,
+		"show_context": false,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/app/pages/page/scoop.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 895,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								28,
+								28
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/app/pages/page.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6618,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6109,
+								6109
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 5.0,
+						"translation.y": 2339.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "books-front.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 721,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								300,
+								241
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3491,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3491,
+								3491
+							]
+						],
+						"settings":
+						{
+							"auto_indent": false,
+							"default_dir": "/Users/ilyasmalgazhdarov/Production/books-client",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_width": 2,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/app/modal/builder/components/qualityTable.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3224,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2421,
+								2421
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/app/pages/print.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 869,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 114.0
+	},
+	"pinned_build_system": "",
+	"project": "books-client.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 375.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 552.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 221.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

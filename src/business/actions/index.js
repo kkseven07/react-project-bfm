@@ -1,11 +1,8 @@
 //initial
 
-export const osName=(name)=>{
-    return {type:"OS_NAME", name}
-}
-
-
-
+export const osName = name => {
+    return { type: "OS_NAME", name };
+};
 
 //form
 export const enterInput = (text, field) => {
@@ -37,6 +34,10 @@ export const rotateQualityTable = leftRotate => {
     return { type: "ROTATE_QUALITY_TABLE", leftRotate };
 };
 
+export const bookVersion = version => {
+    return { type: "BOOK_VERSION", version };
+};
+
 export const cleanBuilder = () => {
     return { type: "CLEAN_BUILDER" };
 };
@@ -50,6 +51,8 @@ export const createBook = (book, history) => {
     // history.push("/books/1")
     return { type: "CREATE_BOOK", book, history };
 };
+
+
 export const updatePage = (page, params) => {
     return { type: "UPDATE_PAGE", page, params };
 };
@@ -59,6 +62,11 @@ export const genPages = (count, book_id) => {
 export const getBook = book_id => {
     return { type: "GET_BOOK", book_id };
 };
-export const getBookPage = (book_id,page_type) => {
+export const getBookPage = (book_id, page_type) => {
     return { type: "GET_BOOK_PAGE", book_id, page_type };
 };
+export const upload = (book_id,page,params) =>{
+    return {type:"UPLOAD", book_id, page,params}
+}
+
+

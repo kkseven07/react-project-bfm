@@ -15,19 +15,14 @@ class Print extends React.Component {
             return null;
         }
         let { page, book } = this.props.res;
-        console.log(this.props);
         return (
-            <div
-                className="width-full flex flex-center"
-                style={{ padding: 50 }}
-            >
-                <Page print book={book} page={page} />
-            </div>
+                <Page url={this.props.url} print book={book} page={page} />
         );
     }
 }
 const mapStateToProps = state => ({
-    res: state.page
+    res: state.page,
+    url:state.init.url
 });
 
 const mapDispatchToProps = dispatch => ({

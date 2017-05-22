@@ -1,0 +1,46 @@
+.view{
+    height:100px;
+    width:100px;
+}
+.v1{
+    background-color: green;
+}
+.v2{
+    background-color: orange;
+}
+.v3{
+    background-color: black;
+}
+.v4{
+    background-color: grey;
+}
+
+.pager-controls{
+    width:80%;
+    height:900px;
+}
+
+.track{
+    width:100%;
+    background-color: blue;
+
+    height:200px;
+}
+
+.frame{
+    height:400px;
+    width:100%;
+}
+
+.pager-control{
+
+
+}
+
+.prev{
+
+}
+
+.next{
+
+}

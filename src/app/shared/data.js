@@ -66,7 +66,8 @@ export const editable = [
     "westernWiseWord",
     "coolPlace",
     "wiseWord",
-    "fruitDNA"
+    "fruitDNA",
+    "framefridge"
 ];
 
 export const colors = [

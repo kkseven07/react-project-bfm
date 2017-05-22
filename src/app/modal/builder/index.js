@@ -15,6 +15,7 @@ import WesternWiseWord from "./components/westernWiseWord";
 import Virtue from "./components/virtue";
 import Vice from "./components/vice";
 import WiseWord from "./components/wiseWord";
+import FrameFridge from './components/frameFridge'
 
 const getComponent = (page, book, actions, form, step) => {
     switch (page.type) {
@@ -42,7 +43,8 @@ const getComponent = (page, book, actions, form, step) => {
             return <Vice page={page} book={book} actions={actions} form={form}/>;
         case "virtue":
             return <Virtue page={page} book={book} actions={actions} form={form}/>;
-
+        case "framefridge":
+            return <FrameFridge page={page} book={book} actions={actions} form={form}/>
         default:
             return null;
     }

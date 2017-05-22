@@ -33,7 +33,7 @@ export const updatePage = action$ =>
     action$.ofType("UPDATE_PAGE").mergeMap(({ page, params }) => {
         console.log(params);
         if (
-            params.text ||
+            (params.text&&params.text!==page.data.text) ||
             (params.selectedImage &&
                 !checkUrl(params.selectedImage, page.primary_image.image.url))
         ) {
@@ -75,6 +75,29 @@ export const createBook = action$ =>
             })
             .catch(error => ofObs({ type: "AJAX_ERROR", payload: error }));
     });
+
+export const upload = action$ =>
+    action$.ofType("UPLOAD").switchMap(({book_id, page, params})=>{
+        let form_data = new FormData()
+        form_data.append("file", params)
+        return ajax({
+            url:`${url}/api/v1/books/${book_id}/${page.id}`,
+            body:form_data,
+            ...ajaxObject
+        }).flatMap(ajax=>{
+
+            return [{
+                    type: "UPLOAD_FULFILLED",
+                    payload: ajax.response
+                },{ type: "CLOSE_MODAL" }];
+        }).catch(error =>
+                ofObs({
+                    type: "AJAX_ERROR",
+                    payload: error,
+                    message: "Картинка не была загружена!"
+                })
+            );
+    })
 
 export const getBook = action$ =>
     action$.ofType("GET_BOOK").switchMap(({ book_id }) => {

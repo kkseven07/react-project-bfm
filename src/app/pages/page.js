@@ -21,6 +21,7 @@ import MusicHit from "./page/musicHit";
 import Sport from "./page/sport";
 import Leader from "./page/leader";
 import Factoid from "./page/factoid";
+import FrameFridge from './page/framefridge'
 import Cell from "./page/cell";
 import MirrorDate from "./page/mirrorDate";
 import FamousBirthShare from "./page/famousBirthShare";
@@ -30,17 +31,24 @@ import TechState from "./page/techState";
 import Virtue from "./page/virtue";
 import Film from "./page/film";
 import Holiday from "./page/holiday";
+import Brain from "./page/brain";
 const urlImage = "http://localhost:4000/images/";
 const noImage = ["cover", "coverChooser"];
 import { editable } from "../shared/utils.js";
 
 // .replace("http://localhost:4000","http://46.101.217.205:4000")
 class Page extends Component {
-    state = { zoom: false };
+    state = { zoom: false, imgLoaded: this.props.print?true:false };
 
     getPage = (type, image, page, book) => {
         if (type === "scoop") {
             return <Scoop book={book} data={page.data} />;
+        }
+        else if (type === "framefridge") {
+            return  <FrameFridge url={this.props.url} book={book} page={page} />
+        }
+        else if (type === "brain") {
+            return <Brain book={book} page={page} />;
         } else if (type === "cover") {
             return <Cover book={book} />;
         } else if (type === "animal") {
@@ -100,21 +108,44 @@ class Page extends Component {
 
     edit = () => this.props.actions.openModal(this.props.page, this.props.book);
 
+    imageUrl = (print, primary_image) => {
+        if (print) {
+            return `url(${this.props.url + primary_image.image.url
+                    .replace("/web/", "/print/")
+                    .replace("_768", "_2048")})`;
+        } else {
+            return `url(${this.props.url + primary_image.image.url})`;
+        }
+    };
+
+    smallImage = () => {
+        return `url(${this.props.url + this.props.page.primary_image.image.url.replace("_768", "_80")})`;
+    };
+
+    urlForLoading = (print, primary_image) => {
+        if (print) {
+            return (
+                this.props.url +
+                primary_image.image.url
+                    .replace("/web/", "/print/")
+                    .replace("_768", "_2048")
+            );
+        }
+        return this.props.url + primary_image.image.url;
+    };
+
     render() {
         const { type, primary_image, data } = this.props.page;
-        let image = null;
-        let imagesrc = null, imagesrclow = null;
-        let url;
-        if (type !== "colorChooser" && primary_image.image.url) {
+        let image, smallImage, url;
+        if (primary_image.image.url) {
             image = {
-                backgroundImage: `url(${"http://localhost:4000" + primary_image.image.url})`
+                backgroundImage: this.imageUrl(this.props.print, primary_image)
             };
-            imagesrc = `${primary_image.image.url.replace("http://localhost:4000", "http://46.101.217.205:4000")}`;
-            imagesrclow = `${primary_image.image.url
-                .replace("http://localhost:4000", "http://46.101.217.205:4000")
-                .replace("768", "320")}`;
-
-            url = "http://localhost:4000" + primary_image.image.url;
+            smallImage = {
+                backgroundImage: this.smallImage(),
+                filter: "blur(15px)",
+            };
+            url = this.urlForLoading(this.props.print, primary_image);
         }
         return (
             <div
@@ -126,8 +157,19 @@ class Page extends Component {
                         ? "page clicked"
                         : this.props.print ? "page print" : "page"
                 }
-                style={image}
+                style={this.state.imgLoaded ? image : smallImage}
             >
+                {!this.props.print&&<img
+                    src={url}
+                    onLoad={() =>
+                        setTimeout(() => this.setState({ imgLoaded: true }), 0)}
+                    onError={() =>
+                        console.log("error happend in ", this.props.page.type)}
+                    style={{
+                        display: "none"
+                    }}
+                />}
+
                 {this.getPage(type, image, this.props.page, this.props.book)}
 
                 {this.isEditable(type) &&

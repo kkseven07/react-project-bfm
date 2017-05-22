@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --progress",
     "build": "NODE_ENV=production webpack --config ./webpack.production.config.js --progress",
-    "shot": "electroshot [http://localhost:8080/books/4open6pe7A 1024x1024] [http://localhost:8080 2048x1024] --delay 2000 --out out --filename '5.png'"
+    "shot": "electroshot [http://localhost:8080/books/4open6pe7A 1024x1024] [http://localhost:8080 2048x1024] --delay 2000 --out out --filename '5.png'",
+    "print": "babel-node print.js"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.6",
@@ -36,6 +37,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "firebase": "^4.0.0",
     "halogen": "^0.2.0",
     "hashids": "^1.1.1",
     "lodash": "^4.17.4",
@@ -43,6 +45,8 @@
     "react": "^15.5.4",
     "react-confetti": "^1.1.4",
     "react-dom": "^15.5.4",
+    "react-dropbox-chooser": "0.0.3",
+    "react-dropzone": "^3.13.1",
     "react-motion": "^0.5.0",
     "react-redux": "^5.0.4",
     "react-router": "^4.1.1",
@@ -50,6 +54,7 @@
     "react-router-redux": "^5.0.0-alpha.6",
     "react-slick": "^0.14.11",
     "react-transition-group": "^1.1.3",
+    "react-view-pager": "^0.5.1",
     "redux": "^3.6.0",
     "redux-observable": "^0.14.1",
     "rxjs": "^5.3.0"

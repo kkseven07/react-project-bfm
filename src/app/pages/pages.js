@@ -50,7 +50,7 @@ class BookRoute extends Component {
             bData = rest;
         }
 
-        let pages = data;
+        let pages = data.slice(37,44);
         return (
             <div style={{ backgroundColor: "white", paddingBottom: 50 }}>
                 <Modal />
@@ -59,6 +59,7 @@ class BookRoute extends Component {
                         <CoverChooser />
                         {pages.map((page, i) => (
                             <Page
+                                url={this.props.url}
                                 actions={this.props.actions}
                                 book={bData}
                                 id={page.type}
@@ -67,7 +68,7 @@ class BookRoute extends Component {
                             />
                         ))}
                     </div>}
-                {book[bookId] && <Book />}
+                {book[bookId] && <Book history={this.props.history}/>}
 
             </div>
         );
@@ -77,7 +78,8 @@ class BookRoute extends Component {
 const mapStateToProps = state => ({
     book: state.book,
     bookId: state.book.currentBookId,
-    osName:state.osName
+    osName:state.init.osName,
+    url:state.init.url
 });
 const mapDispatchToProps = dispatch => ({
     actions: bindActionCreators(actions, dispatch)

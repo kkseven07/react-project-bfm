@@ -20,11 +20,11 @@ export const fieldStyle = (isPristine, isValid) => {
     }
 };
 
-export const getDate = (raw, monthMap) => {
+export const getDate = (raw) => {
     const date = new Date(raw);
-    const day = date.getUTCDate();
-    const month = invert(monthMap)[date.getUTCMonth()];
-    const year = date.getUTCFullYear();
+    const day = date.getDate();
+    const month = invert(monthsMap)[date.getMonth()];
+    const year = date.getFullYear();
     return { day, month, year };
 };
 
@@ -101,7 +101,8 @@ export const editable = [
     "westernWiseWord",
     "coolPlace",
     "wiseWord",
-    "fruitDNA"
+    "fruitDNA",
+    "framefridge"
 ];
 
 export const monthsMap = {

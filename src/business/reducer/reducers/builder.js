@@ -1,5 +1,6 @@
 const init = {
     page: {},
+    bookVersion:{value:"",isPristine:true},
     intro: {
         selectedImage: null,
         select: {
@@ -48,7 +49,7 @@ const init = {
 
 export default (
     state = init,
-    { type, page, params, text, fieldType, which, leftRotate }
+    { type, page, params, text, fieldType, which, leftRotate, version }
 ) => {
     switch (type) {
         case "BUILDER_IMAGE":
@@ -82,8 +83,14 @@ export default (
                     ? state.qualityTableStep - 1
                     : state.qualityTableStep + 1
             };
+        case "BOOK_VERSION":
+            return {
+                ...state,
+                bookVersion:{value:version,isPristine:false}
+            }
         case "CLEAN_BUILDER":
-            return init;
+            return init
+            // return {...init, bookVersion:state.bookVersion};
         default:
             return state;
     }

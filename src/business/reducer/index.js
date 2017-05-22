@@ -7,7 +7,8 @@ import book from "./reducers/book";
 import modal from "./reducers/modal";
 import builder from "./reducers/builder";
 import page from './reducers/page'
-import osName from './reducers/osname'
+import init from './reducers/init'
+import order from './reducers/order'
 const reducer = combineReducers({
     routing,
     loading,
@@ -16,7 +17,8 @@ const reducer = combineReducers({
     modal,
     builder,
     page,
-    osName
+    init,
+    order
 });
 
 export default reducer;

@@ -11,7 +11,7 @@ const getFruit = (url) => {
 }
 
 export default ({page,book}) =>(
-    <div className="full">
+    <div className="width-full">
         <div
             styleName={`text ${getFruit(page.primary_image.image.url)}`}>
            {book.name.toUpperCase()},

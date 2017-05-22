@@ -17,6 +17,7 @@ export default (state = { currentBookId: null }, action) => {
         currentBookId: book.id
       };
 
+    case "UPLOAD_FULFILLED":
     case "UPDATE_PAGE_FULFILLED":
       let page = action.payload.page;
       return {

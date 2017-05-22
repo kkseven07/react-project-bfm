@@ -4,6 +4,58 @@
 		"selected_items":
 		[
 			[
+				"componentWi",
+				"componentWillMount\t(pages.js)"
+			],
+			[
+				"vertica",
+				"vertical-align"
+			],
+			[
+				"Cover",
+				"CoverChooser"
+			],
+			[
+				"bac",
+				"backgroundColor\t(pages.js)"
+			],
+			[
+				"width",
+				"width-full\t(qualityTable.js)"
+			],
+			[
+				"rota",
+				"rotateQualityTable"
+			],
+			[
+				"qua",
+				"qualityTableStep\t(builder.js)"
+			],
+			[
+				"R",
+				"ROTATE_QUALITY_TABLE\t(builder.js)"
+			],
+			[
+				"qu",
+				"qualityTableStep"
+			],
+			[
+				"has",
+				"hash_id"
+			],
+			[
+				"image",
+				"imageChooser.js"
+			],
+			[
+				"W",
+				"WiseWord"
+			],
+			[
+				"fru",
+				"fruitDNA.js"
+			],
+			[
 				"GET",
 				"GET_BOOK\t(api.js)"
 			],
@@ -13,10 +65,6 @@
 			],
 			[
 				"qual",
-				"qualityTableChoice\t(factory.ex)"
-			],
-			[
-				"qua",
 				"qualityTableChoice\t(factory.ex)"
 			],
 			[
@@ -64,10 +112,6 @@
 				"AA BebasNeue-Regular.woff"
 			],
 			[
-				"R",
-				"Roboto-Regular.woff"
-			],
-			[
 				"text",
 				"text-align"
 			],
@@ -102,10 +146,6 @@
 			[
 				"tech",
 				"techState"
-			],
-			[
-				"bac",
-				"backToHistory"
 			],
 			[
 				"Back",
@@ -474,557 +514,16 @@
 			[
 				"react",
 				"react-native-side-menu\t(list.js)"
-			],
-			[
-				"Incre",
-				"IncrementalGroup"
-			],
-			[
-				"compone",
-				"componentWillUnmount\t(app.js)"
-			],
-			[
-				"just",
-				"justifyContent"
-			],
-			[
-				"Gr",
-				"GREEN\t(plusButton.js)"
-			],
-			[
-				"conte",
-				"contentHight"
-			],
-			[
-				"Ap",
-				"APP_COLOR\t(loading.js)"
-			],
-			[
-				"Increme",
-				"IncrementalGroup\t(settings.js)"
-			],
-			[
-				"Naviga",
-				"NavigatorIOS"
-			],
-			[
-				"Mess",
-				"MessageCalendar"
-			],
-			[
-				"Nav",
-				"NavigatorIOS"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "src/business/epic/epics/delay.js",
+			"file": "src/app/preview/flip.js",
 			"settings":
 			{
-				"buffer_size": 295,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "import React from \"react\";\nimport { Background } from \"../../shared\";\nimport \"./builder.css\";\nimport { connect } from \"react-redux\";\nimport * as actions from \"../../../business/actions\";\nimport { bindActionCreators } from \"redux\";\nconst Modal = ({ isOpen, page, book, actions }) => {\n    console.log(\"0-0-0-0-0-0-0-0-0-00\", page, book, \"modal open for\", isOpen);\n    if (!isOpen) {\n        return null;\n    }\n    const stopClick = e => {\n        e.stopPropagation();\n    };\n\n    return (\n        <Background close={actions.closeModal} zIndex={\"20\"} isOpen={isOpen}>\n\n            <div onClick={stopClick} className=\"flex flex-center\" styleName=\"r\">\n\n                Hello {page.type}\n\n            </div>\n\n        </Background>\n    );\n};\n\nconst mapStateToProps = state => ({\n    isOpen: state.modal.isOpen,\n    page: state.modal.page,\n    book: state.modal.book\n});\n\nconst mapDispatchToProps = dispatch => ({\n    actions: bindActionCreators(actions, dispatch)\n});\n\nexport default connect(mapStateToProps, mapDispatchToProps)(Modal);\n",
-			"file": "src/app/modal/builder/index.js",
-			"file_size": 964,
-			"file_write_time": 131389662730000000,
-			"settings":
-			{
-				"buffer_size": 1031,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "Package Control Messages\n========================\n\nJsPrettier\n----------\n\n  # Sublime Text JavaScript Prettier\n  \n      JsPrettier is a Sublime Text Plug-in for Prettier, the opinionated\n      JavaScript formatter.\n  \n  \n  ## Install Prettier\n  \n      If you installed Prettier globally (using the yarn or npm command below),\n      there is nothing else you need to do.\n  \n          # using yarn:\n          yarn global add prettier\n  \n          # using npm:\n          npm install -g prettier\n  \n      You may be required to specify the path to the `prettier` executable, which\n      is configurable in the Package's settings file...\n  \n          -> \"Preferences\"\n          -> \"Package Settings\"\n          -> \"JsPrettier\"\n              -> \"Settings - Default\" (To view the default settings)\n              -> \"Settings - User\"    (To override the default settings)\n  \n  \n  ## Usage\n  \n      To run the JsPrettier command... open the Sublime Text Command Palette\n      (super + shift + p), and type \"JsPrettier\".\n  \n      You can also right-click anywhere in the view to bring up the \"Context\n      Menu\", and select \"JsPrettier\".\n  \n  \n      ### Command Scope\n  \n          JsPrettier will attempt to format any selected JavaScript sections of\n          code first; if no selections are made, the entire file will be\n          formatted.\n  \n          > NOTE: When the `auto_format_on_save` setting is set to `true`, the\n          > entire file will always be formatted.\n  \n      ### Custom Key Binding\n  \n          To add a custom key binding to JsPrettier, please reference the\n          following example which binds `js_prettier` to \"ctrl/cmd + b\".\n  \n              { \"keys\": [\"super+b\"], \"command\": \"js_prettier\" }\n  \n  \n  ## Settings\n  \n      All Prettier options are configurable from the \"JsPrettier.sublime-settings\"\n      file, accessible from the Preferences > Package Settings > JsPrettier menu\n      shortcut.\n  \n      ### Project-level Settings\n  \n      JsPrettier supports Project-level settings, specified in \"<project_name>.sublime-project\"\n      files. In order for Project-level settings to override the Defaults and User\n      configured settings, a new \"js_prettier\" section must be created under the\n      project file's \"settings\" section.\n  \n      Example Sublime Project File:\n  \n          {\n              \"folders\": [\n                  {\n                      \"path\": \".\"\n                  }\n              ],\n              \"settings\": {\n                  \"js_prettier\": {\n                      \"debug\": false,\n                      \"prettier_cli_path\": \"\",\n                      \"node_path\": \"\",\n                      \"auto_format_on_save\": false,\n                      \"allow_inline_formatting\": false,\n                      \"prettier_options\": {\n                          \"printWidth\": 80,\n                          \"singleQuote\": false,\n                          \"trailingComma\": \"none\",\n                          \"bracketSpacing\": true,\n                          \"jsxBracketSameLine\": false,\n                          \"parser\": \"babylon\",\n                          \"semi\": true\n                      }\n                  }\n              }\n          }\n  \n  \n  ## Help\n  \n      For additional help, including reporting issues, please visit the\n      Sublime Text JavaScript Prettier homepage @ https://github.com/jonlabelle/SublimeJsPrettier.\n  \n  \n  ## Author\n  \n  Jon LaBelle\n  \n  \n  ## License\n  \n      The MIT License (MIT)\n  \n      Copyright (c) 2017 Jon LaBelle\n",
-			"settings":
-			{
-				"buffer_size": 3491,
-				"line_ending": "Unix",
-				"name": "Package Control Messages",
-				"read_only": true,
-				"scratch": true
-			}
-		},
-		{
-			"file": "/Users/ilyasmalgazhdarov/Production/prettier.js",
-			"settings":
-			{
-				"buffer_size": 3419,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/modal/builder/components/fruitDNA.js",
-			"settings":
-			{
-				"buffer_size": 27,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/modal/builder/components/fruitDNA.css",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/modal/builder/builder.css",
-			"settings":
-			{
-				"buffer_size": 157,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/app.js",
-			"settings":
-			{
-				"buffer_size": 1963,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "import React from \"react\";\nimport \"./ageFact.css\";\n\nconst parseText = (age, fact, i) => {\n    let first, last, index;\n    if (fact.indexOf(age) > -1) {\n        index = fact.indexOf(age);\n        first = fact.substring(0, index);\n        last = fact.substring(index + 2, fact.length);\n    }\n    return fact.indexOf(age) > -1\n        ? <span key={i} styleName=\"facts\">\n              {first}\n              <span style={{ fontSize: 16, color: \"#fb1611\" }}>\n                  {\"  \" + age + \" \"}\n              </span>\n              {last + \". \"}\n          </span>\n        : <span key={i} styleName=\"facts\">{fact}</span>;\n};\n\nexport default ({ page, book }) => (\n    <div className=\"full\" styleName=\"r\">\n        <div styleName=\"text\">{book.age}</div>\n\n        <div className=\"flex-center\" styleName=\"box2\">\n            {page.data.facts.map((fact, i) => parseText(book.age, fact, i))}\n        </div>\n\n    </div>\n);\n",
-			"file": "src/app/pages/page/ageFact.js",
-			"file_size": 771,
-			"file_write_time": 131387791170000000,
-			"settings":
-			{
-				"buffer_size": 907,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/shared/components/button.js",
-			"settings":
-			{
-				"buffer_size": 360,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/shared/components/input.js",
-			"settings":
-			{
-				"buffer_size": 529,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/shared/components/select.js",
-			"settings":
-			{
-				"buffer_size": 661,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/shared/components/header.js",
-			"settings":
-			{
-				"buffer_size": 1184,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/shared/components/formDesсriptionText.js",
-			"settings":
-			{
-				"buffer_size": 178,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/shared/components/formDesсriptionSmall.js",
-			"settings":
-			{
-				"buffer_size": 165,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/pages/page.js",
-			"settings":
-			{
-				"buffer_size": 6245,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/home/components/gallery.js",
-			"settings":
-			{
-				"buffer_size": 1547,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/home/components/form.js",
-			"settings":
-			{
-				"buffer_size": 7633,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/pages/page/bestseller.js",
-			"settings":
-			{
-				"buffer_size": 447,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/pages/page/factoid.js",
-			"settings":
-			{
-				"buffer_size": 1018,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/pages/page/holiday.js",
-			"settings":
-			{
-				"buffer_size": 394,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/pages/page/animal.js",
-			"settings":
-			{
-				"buffer_size": 533,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/pages/pages.js",
-			"settings":
-			{
-				"buffer_size": 2047,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/pages/page/deducedAgeFact.js",
-			"settings":
-			{
-				"buffer_size": 1903,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/pages/page/epicStory.js",
-			"settings":
-			{
-				"buffer_size": 1060,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/pages/page/cell.js",
-			"settings":
-			{
-				"buffer_size": 607,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/business/reducer/reducers/loading.js",
-			"settings":
-			{
-				"buffer_size": 505,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/business/reducer/reducers/book.js",
-			"settings":
-			{
-				"buffer_size": 1101,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "webpack.config.js",
-			"settings":
-			{
-				"buffer_size": 2189,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/business/reducer/reducers/form.js",
-			"settings":
-			{
-				"buffer_size": 4773,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/shared/components/errorText.js",
-			"settings":
-			{
-				"buffer_size": 229,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/pages/page/scoop.js",
-			"settings":
-			{
-				"buffer_size": 895,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/pages/page/techState.js",
-			"settings":
-			{
-				"buffer_size": 318,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/pages/page/famousBirthShare.js",
-			"settings":
-			{
-				"buffer_size": 986,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/home/index.js",
-			"settings":
-			{
-				"buffer_size": 532,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/home/components/book.js",
-			"settings":
-			{
-				"buffer_size": 1223,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/pages/page/film.js",
-			"settings":
-			{
-				"buffer_size": 1516,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/pages/page/intro.js",
-			"settings":
-			{
-				"buffer_size": 1242,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/pages/page/virtue.js",
-			"settings":
-			{
-				"buffer_size": 236,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/pages/page/vice.js",
-			"settings":
-			{
-				"buffer_size": 226,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/pages/page/car.js",
-			"settings":
-			{
-				"buffer_size": 726,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/business/reducer/reducers/selectorForm.js",
-			"settings":
-			{
-				"buffer_size": 2042,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/shared/utils.js",
-			"settings":
-			{
-				"buffer_size": 4083,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/shared/data.js",
-			"settings":
-			{
-				"buffer_size": 1576,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/business/epic/epics/api.js",
-			"settings":
-			{
-				"buffer_size": 3522,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/business/epic/epics/form.js",
-			"settings":
-			{
-				"buffer_size": 441,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/business/actions/index.js",
-			"settings":
-			{
-				"buffer_size": 893,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/business/epic/index.js",
-			"settings":
-			{
-				"buffer_size": 728,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/modal/info/index.js",
-			"settings":
-			{
-				"buffer_size": 664,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/home/components/bookForm.js",
-			"settings":
-			{
-				"buffer_size": 505,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/shared/components/background.js",
-			"settings":
-			{
-				"buffer_size": 1721,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/shared/components/asyncModule.js",
-			"settings":
-			{
-				"buffer_size": 2550,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/pages/page/videoGame.js",
-			"settings":
-			{
-				"buffer_size": 421,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/pages/page/toy.js",
-			"settings":
-			{
-				"buffer_size": 430,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/pages/page/musicHit.js",
-			"settings":
-			{
-				"buffer_size": 523,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/pages/page/leader.js",
-			"settings":
-			{
-				"buffer_size": 820,
+				"buffer_size": 18033,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -1033,25 +532,52 @@
 			"file": "src/app/app.css",
 			"settings":
 			{
-				"buffer_size": 1583,
+				"buffer_size": 2232,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/app/shared/components/background.css",
+			"file": "src/app/app.js",
 			"settings":
 			{
-				"buffer_size": 118,
+				"buffer_size": 3145,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/app/shared/components/loading.js",
+			"file": "src/app/pages/pages.js",
 			"settings":
 			{
-				"buffer_size": 1250,
+				"buffer_size": 2677,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/business/reducer/index.js",
+			"settings":
+			{
+				"buffer_size": 527,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/app/preview/index.js",
+			"settings":
+			{
+				"buffer_size": 1335,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "print.js",
+			"settings":
+			{
+				"buffer_size": 1002,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -1060,34 +586,88 @@
 			"file": "package.json",
 			"settings":
 			{
-				"buffer_size": 1584,
+				"buffer_size": 1903,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/app/shared/components/loading.css",
+			"file": "src/app/pages/page/car.js",
 			"settings":
 			{
-				"buffer_size": 231,
+				"buffer_size": 195,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/business/reducer/reducers/modal.js",
+			"file": "src/app/pages/page/backToHistory.js",
 			"settings":
 			{
-				"buffer_size": 315,
+				"buffer_size": 431,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/app/shared/components/header.css",
+			"file": "src/app/pages/pages.css",
 			"settings":
 			{
-				"buffer_size": 893,
+				"buffer_size": 3793,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/app/pages/print.js",
+			"settings":
+			{
+				"buffer_size": 1006,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/app/pages/page.js",
+			"settings":
+			{
+				"buffer_size": 6313,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/app/preview/preview.css",
+			"settings":
+			{
+				"buffer_size": 402,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/business/reducer/reducers/osname.js",
+			"settings":
+			{
+				"buffer_size": 154,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/business/actions/index.js",
+			"settings":
+			{
+				"buffer_size": 1482,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/app/pages/page/deducedAgeFact.css",
+			"settings":
+			{
+				"buffer_size": 1617,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -1168,7 +748,7 @@
 	"expanded_folders":
 	[
 		"/Users/ilyasmalgazhdarov/Production/books-client",
-		"/Users/ilyasmalgazhdarov/Production/books-client/assets",
+		"/Users/ilyasmalgazhdarov/Production/books-client/assets/fonts",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home",
@@ -1176,9 +756,10 @@
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/info",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/preview",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/preview/img",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/business",
@@ -1190,42 +771,115 @@
 	],
 	"file_history":
 	[
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/app.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/loading.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/loading.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/loading.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/app.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/background.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/asyncModule.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/webpack.production.config.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/background.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/components/form.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/button.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/techState.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/pages.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/info/info.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/builder.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/info/index.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/index.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/imageChooser.js",
+		"/Users/ilyasmalgazhdarov/Production/mogri/mogri",
+		"/Users/ilyasmalgazhdarov/Production/prettier.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/builder.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/pages.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/car.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/book.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic/index.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/app.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/preview/preview.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/preview/flip.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/cover.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/cover.css",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/coverChooser.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic/epics/delay.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic/epics/api.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic/epics/form.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/coverChooser.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/pages.css",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/index.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/actions/index.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/modal.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic/index.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic/epics/api.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/print.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/package.json",
+		"/Users/ilyasmalgazhdarov/Production/books-client/print.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/book.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/book.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/qualityTable.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/page.js",
+		"/Users/ilyasmalgazhdarov/Production/print/localhost-books-4open6pe7A-",
+		"/Users/ilyasmalgazhdarov/Production/print/localhost-books-4open6pe7A-600x600.png",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/index.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/qualityTable.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/app.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/intro.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/index.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic/epics/delay.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/utils.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/virtue.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/virtue.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/background.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/vice.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/vice.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/virtue.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/intro.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic/epics/form.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/form.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/loading.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/input.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/select.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/components/form.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/loading.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/webpack.config.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/establishedCollage.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/establishedCollage.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/builder.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/background.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/buttons.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/books-front.sublime-project",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/fruitDNA.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/easternWiseWord.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/coolPlace.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/westernWiseWord.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/wiseWord.js",
+		"/Users/ilyasmalgazhdarov/Learning/sublimeSetup",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/imageChooser.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/brain.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/musicHit.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/musicHit.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/text.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/text.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/imageChooser.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/modal.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/intro.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/header.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/leader.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/toy.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/videoGame.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/asyncModule.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/components/bookForm.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/info/index.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/data.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/utils.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/selectorForm.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/car.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/film.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/components/book.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/index.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/famousBirthShare.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/techState.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/scoop.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/errorText.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/book.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/loading.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/cell.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/epicStory.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/deducedAgeFact.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/animal.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/holiday.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/factoid.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/bestseller.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/components/gallery.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/formDesсriptionSmall.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/formDesсriptionText.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/header.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/button.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/ageFact.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/fruitDNA.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/webpack.production.config.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/info/info.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/imageChooser.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/zpage.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic/epics/modal.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/backToHistory.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/webpack.config.js",
-		"/Users/ilyasmalgazhdarov/Learning/sublimeSetup",
 		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/formDescriptionSmall.css",
 		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/formDesсriptionSmall.js",
 		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/formDescriptionText.css",
@@ -1244,80 +898,7 @@
 		"/Users/ilyasmalgazhdarov/Production/book-app/.gitignore",
 		"/Users/ilyasmalgazhdarov/Production/book-app/webpack.config.js",
 		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/about/index.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/about/about.css",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/business/epic/index.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/app.css",
-		"/Users/ilyasmalgazhdarov/Production/book-app/public/index.html",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/index.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/home/components/form.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/home/components/bookForm.css",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/button.css",
-		"/Users/ilyasmalgazhdarov/Production/book-app/assets/fonts/AA-BebasNeue-Bold.woff",
-		"/Users/ilyasmalgazhdarov/Production/book-app/assets/fonts/AA-BebasNeue-Regular.woff",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/entry/store.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/package.json",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/business/reducer/loading.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/business/reducer/index.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/header.css",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/home/components/form.css",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/button.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/home/home.css",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/select.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/errorText.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/input.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/home/index.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/input.css",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/business/reducer/selectorForm.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/utils.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/entry/index.js",
-		"/Users/ilyasmalgazhdarov/Production/bookfromme-client/.babelrc",
-		"/Users/ilyasmalgazhdarov/Production/bookfromme-client/.baberc",
-		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/home/enter.js",
-		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/zpages.js",
-		"/Users/ilyasmalgazhdarov/Learning/brunch/public/index.html",
-		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/reducers/edit.js",
-		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/containers/modal.js",
-		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/zpage.js",
-		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/reducers/input.js",
-		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/home/gift.css",
-		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/home/gift.js",
-		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/navigation/header.js",
-		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/navigation/header.css",
-		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/containers/modal.css",
-		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/epics/epics.js",
-		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/helpers/utils.js",
-		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/actions/actions.js",
-		"/Users/ilyasmalgazhdarov/bookapp/.gitignore",
-		"/Users/ilyasmalgazhdarov/bookapp/.babelrc",
-		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/lib/book/generate/data_for_page.ex",
-		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/mogri/mix.exs",
-		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book_api/config/prod.secret.exs",
-		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/config/prod.exs",
-		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book_api/.gitignore",
-		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book_api/priv/static/media/for_web/animal/animal_v1_1024.jpg",
-		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book_api/config/prod.exs",
-		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book_api/mix.exs",
-		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/lib/book/generate/create_image.ex",
-		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/lib/book/generate/generator.ex",
-		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/lib/book/generate/get_primary_image.ex",
-		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/lib/book/generate/factory.ex",
-		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/lib/book/data_for_book/bestseller.csv",
-		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/lib/book/data_for_book/film.csv",
-		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/lib/book/generate/helper.ex",
-		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/priv/repo/migrations/20170329094814_data_tables.exs",
-		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/lib/book/data_for_book/data.sql",
-		"/Users/ilyasmalgazhdarov/Learning/psql_test/scr.postgresql",
-		"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/lib/book/data_for_book/helper_file",
-		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/containers/modals/coolPlace.js",
-		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/techState.css",
-		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/techState.js",
-		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/famousBirthShare.css",
-		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/mirrorDate.js",
-		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/famousBirthShare.js",
-		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/ageFact.css",
-		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/ageFact.js",
-		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/mirrorDate.css",
-		"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages/sport.js"
+		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/about/about.css"
 	],
 	"find":
 	{
@@ -1328,6 +909,7 @@
 		"height": 95.0,
 		"where_history":
 		[
+			"/Users/ilyasmalgazhdarov/Production/books-client/src",
 			"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/",
 			"/Users/ilyasmalgazhdarov/Learning/bookfromme/apps/book/",
 			"/Users/ilyasmalgazhdarov/Learning/brunch/client/src/components/pages",
@@ -1356,6 +938,67 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"2048",
+			"2248x2248",
+			"class",
+			"this.",
+			"OSName",
+			"2%",
+			"console.log",
+			"console",
+			"console.log",
+			"var",
+			"if",
+			"3",
+			"2048",
+			"3",
+			"1024",
+			"800",
+			"2048",
+			"600",
+			"1024",
+			"this.props.",
+			"his.props",
+			"300",
+			"250",
+			"flex",
+			"210px",
+			"5",
+			"210px",
+			"200",
+			"180",
+			"210",
+			"rgb(200,200,200)",
+			"purple",
+			"60",
+			"60px ",
+			"30",
+			"500",
+			"85",
+			">\n",
+			"book.",
+			"220",
+			"10",
+			"0.01",
+			"http://",
+			"ook.sender_name",
+			"field",
+			" selectedImage={form.selectedImage}\n                select={actions.builderEdit}\n",
+			" selectedImage={form.selectedImage}\n                select={actions.builderImage}\n",
+			"/>",
+			"action",
+			"selectValue",
+			"Месяц",
+			"\"",
+			"/>",
+			"vice",
+			"coolPlace",
+			"brain",
+			"intro",
+			"coolPlace",
+			"brain",
+			"intro",
+			"EasternWiseWord",
 			"10",
 			"modalOpen",
 			"nil",
@@ -1422,68 +1065,7 @@
 			"520",
 			"150",
 			"100",
-			"430",
-			"pre-",
-			"composes",
-			"const",
-			"div",
-			"rotate",
-			"start",
-			"span",
-			"monthMapYe",
-			"invert",
-			"let",
-			"я\"",
-			"я",
-			"gift",
-			"class",
-			"200",
-			"class",
-			"25",
-			"10",
-			"2",
-			"50",
-			"<img",
-			"img",
-			"20",
-			"15",
-			"background-color: blue;\n    opacity: 0.4;",
-			"<div",
-			".toUpperCase()",
-			"p",
-			"<p",
-			"p",
-			"span",
-			"353",
-			"calendar",
-			"Loading",
-			":Бок",
-			"{\"t",
-			"2048",
-			"2048x2048",
-			"768",
-			"-> ",
-			"6",
-			"5",
-			"4",
-			"1024",
-			"IO.",
-			"IO.inspect",
-			"tech",
-			"techState",
-			"weather",
-			"folder",
-			"2",
-			"Enum.reduce",
-			"\",\"\"),",
-			"IO.puts ",
-			"rs",
-			"conepts",
-			"fn",
-			"768",
-			":calendar.last_day_of_the_month1",
-			"Calendar",
-			"animals"
+			"430"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1522,688 +1104,61 @@
 	"groups":
 	[
 		{
-			"selected": 20,
+			"selected": 7,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/business/epic/epics/delay.js",
+					"file": "src/app/preview/flip.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 295,
+						"buffer_size": 18033,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								158,
-								158
+								140,
+								122
 							]
 						],
 						"settings":
 						{
 							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/app/modal/builder/index.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1031,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								465,
-								465
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 31.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 50,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3491,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2563,
-								2563
-							]
-						],
-						"settings":
-						{
-							"auto_indent": false,
-							"default_dir": "/Users/ilyasmalgazhdarov/Production/books-client",
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_width": 2,
-							"word_wrap": true
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 1096.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 48,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/Users/ilyasmalgazhdarov/Production/prettier.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3419,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2378,
-								2378
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1435.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 49,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "src/app/modal/builder/components/fruitDNA.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 27,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								27,
-								27
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"open_with_edit": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 51,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "src/app/modal/builder/components/fruitDNA.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/CSS/CSS.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 52,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "src/app/modal/builder/builder.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 157,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								17,
-								17
-							],
-							[
-								22,
-								22
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/CSS/CSS.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 53,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "src/app/app.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1963,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1630,
-								1630
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 46,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "src/app/pages/page/ageFact.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 907,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								907,
-								907
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 16,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
-					"file": "src/app/shared/components/button.js",
+					"buffer": 1,
+					"file": "src/app/app.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 360,
+						"buffer_size": 2232,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								48,
-								48
+								254,
+								256
 							]
 						],
 						"settings":
 						{
 							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "src/app/shared/components/input.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 529,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								68,
-								68
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 31,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "src/app/shared/components/select.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 661,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								74,
-								74
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 30,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "src/app/shared/components/header.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1184,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								628,
-								628
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 85.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 29,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "src/app/shared/components/formDesсriptionText.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 178,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6,
-								6
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 28,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "src/app/shared/components/formDesсriptionSmall.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 165,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6,
-								6
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 27,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "src/app/pages/page.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6245,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6068,
-								6068
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1820.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "src/app/home/components/gallery.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1547,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								350,
-								350
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 77.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 17,
-					"file": "src/app/home/components/form.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7633,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4732,
-								4732
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 12.0,
-						"translation.y": 2203.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 18,
-					"file": "src/app/pages/page/bestseller.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 447,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								38,
-								38
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 19,
-					"file": "src/app/pages/page/factoid.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1018,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1018,
-								1018
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 20,
-					"file": "src/app/pages/page/holiday.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 394,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								394,
-								394
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 21,
-					"file": "src/app/pages/page/animal.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 533,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5,
-								5
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 17,
-					"type": "text"
-				},
-				{
-					"buffer": 22,
-					"file": "src/app/pages/pages.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2047,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								774,
-								774
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -2211,12 +1166,164 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 34,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 23,
-					"file": "src/app/pages/page/deducedAgeFact.js",
+					"buffer": 2,
+					"file": "src/app/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3145,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								917,
+								917
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 795.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/app/pages/pages.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2677,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1310,
+								1349
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 141.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/business/reducer/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 527,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								497,
+								497
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/app/preview/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1335,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1052,
+								1052
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"open_with_edit": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 31.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "print.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1002,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								891,
+								891
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 386.0,
+						"translation.y": 301.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "package.json",
 					"semi_transient": false,
 					"settings":
 					{
@@ -2227,1100 +1334,8 @@
 						"selection":
 						[
 							[
-								294,
-								294
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 18,
-					"type": "text"
-				},
-				{
-					"buffer": 24,
-					"file": "src/app/pages/page/epicStory.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1060,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								221,
-								221
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 33,
-					"type": "text"
-				},
-				{
-					"buffer": 25,
-					"file": "src/app/pages/page/cell.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 607,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								9,
-								9
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 32,
-					"type": "text"
-				},
-				{
-					"buffer": 26,
-					"file": "src/business/reducer/reducers/loading.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 505,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								286,
-								286
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 27,
-					"file": "src/business/reducer/reducers/book.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1101,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								402,
-								402
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 28,
-					"file": "webpack.config.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2189,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								739,
-								739
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 243.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 57,
-					"type": "text"
-				},
-				{
-					"buffer": 29,
-					"file": "src/business/reducer/reducers/form.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4773,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2818,
-								2818
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2371.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 30,
-					"file": "src/app/shared/components/errorText.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 229,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								56,
-								56
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 42,
-					"type": "text"
-				},
-				{
-					"buffer": 31,
-					"file": "src/app/pages/page/scoop.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 895,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 41,
-					"type": "text"
-				},
-				{
-					"buffer": 32,
-					"file": "src/app/pages/page/techState.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 318,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								9,
-								9
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 40,
-					"type": "text"
-				},
-				{
-					"buffer": 33,
-					"file": "src/app/pages/page/famousBirthShare.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 986,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								128,
-								128
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 19,
-					"type": "text"
-				},
-				{
-					"buffer": 34,
-					"file": "src/app/home/index.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 532,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 39,
-					"type": "text"
-				},
-				{
-					"buffer": 35,
-					"file": "src/app/home/components/book.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1223,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								110,
-								110
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 121.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 36,
-					"file": "src/app/pages/page/film.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1516,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								155,
-								155
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 20,
-					"type": "text"
-				},
-				{
-					"buffer": 37,
-					"file": "src/app/pages/page/intro.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1242,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								16,
-								16
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 38,
-					"type": "text"
-				},
-				{
-					"buffer": 38,
-					"file": "src/app/pages/page/virtue.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 236,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 37,
-					"type": "text"
-				},
-				{
-					"buffer": 39,
-					"file": "src/app/pages/page/vice.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 226,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 36,
-					"type": "text"
-				},
-				{
-					"buffer": 40,
-					"file": "src/app/pages/page/car.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 726,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								191,
-								191
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 35,
-					"type": "text"
-				},
-				{
-					"buffer": 41,
-					"file": "src/business/reducer/reducers/selectorForm.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2042,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								89,
-								89
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 679.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 43,
-					"type": "text"
-				},
-				{
-					"buffer": 42,
-					"file": "src/app/shared/utils.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4083,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								471,
-								471
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 44,
-					"type": "text"
-				},
-				{
-					"buffer": 43,
-					"file": "src/app/shared/data.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1576,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								182,
-								182
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1219.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 45,
-					"type": "text"
-				},
-				{
-					"buffer": 44,
-					"file": "src/business/epic/epics/api.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3522,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								473,
-								589
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1453.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 45,
-					"file": "src/business/epic/epics/form.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 441,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								55,
-								55
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 47,
-					"type": "text"
-				},
-				{
-					"buffer": 46,
-					"file": "src/business/actions/index.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 893,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								887,
-								887
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 67.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 56,
-					"type": "text"
-				},
-				{
-					"buffer": 47,
-					"file": "src/business/epic/index.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 728,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								678,
-								678
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 48,
-					"file": "src/app/modal/info/index.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 664,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								44,
-								44
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 49,
-					"file": "src/app/home/components/bookForm.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 505,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								24,
-								24
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 50,
-					"file": "src/app/shared/components/background.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1721,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								279,
-								279
-							],
-							[
-								585,
-								585
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 26,
-					"type": "text"
-				},
-				{
-					"buffer": 51,
-					"file": "src/app/shared/components/asyncModule.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2550,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								84,
-								84
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 611.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 25,
-					"type": "text"
-				},
-				{
-					"buffer": 52,
-					"file": "src/app/pages/page/videoGame.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 421,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								124,
-								124
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 24,
-					"type": "text"
-				},
-				{
-					"buffer": 53,
-					"file": "src/app/pages/page/toy.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 430,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								126,
-								126
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 23,
-					"type": "text"
-				},
-				{
-					"buffer": 54,
-					"file": "src/app/pages/page/musicHit.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 523,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								64,
-								64
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 22,
-					"type": "text"
-				},
-				{
-					"buffer": 55,
-					"file": "src/app/pages/page/leader.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 820,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								81,
-								81
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 21,
-					"type": "text"
-				},
-				{
-					"buffer": 56,
-					"file": "src/app/app.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1583,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1528,
-								1534
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1237.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 58,
-					"type": "text"
-				},
-				{
-					"buffer": 57,
-					"file": "src/app/shared/components/background.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 118,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								75,
-								75
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/CSS/CSS.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 61,
-					"type": "text"
-				},
-				{
-					"buffer": 58,
-					"file": "src/app/shared/components/loading.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1250,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								598,
-								598
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 55,
-					"type": "text"
-				},
-				{
-					"buffer": 59,
-					"file": "package.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1584,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1301,
-								1301
+								474,
+								474
 							]
 						],
 						"settings":
@@ -3331,99 +1346,33 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 283.0,
+						"translation.y": 391.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 59,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 60,
-					"file": "src/app/shared/components/loading.css",
+					"buffer": 8,
+					"file": "src/app/pages/page/car.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 231,
+						"buffer_size": 195,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								17,
-								17
-							],
-							[
-								23,
-								23
+								165,
+								165
 							]
 						],
 						"settings":
 						{
 							"git_gutter_is_enabled": true,
-							"syntax": "Packages/CSS/CSS.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 54,
-					"type": "text"
-				},
-				{
-					"buffer": 61,
-					"file": "src/business/reducer/reducers/modal.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 315,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								172,
-								172
-							],
-							[
-								253,
-								253
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 60,
-					"type": "text"
-				},
-				{
-					"buffer": 62,
-					"file": "src/app/shared/components/header.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 893,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								803,
-								765
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
@@ -3431,7 +1380,255 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 62,
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/app/pages/page/backToHistory.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 431,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								186,
+								186
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "src/app/pages/pages.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3793,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3691,
+								3604
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2965.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "src/app/pages/print.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1006,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								657,
+								657
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "src/app/pages/page.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6313,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4216,
+								4216
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1752.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "src/app/preview/preview.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 402,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								117,
+								117
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"open_with_edit": true,
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "src/business/reducer/reducers/osname.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 154,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								114,
+								114
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"open_with_edit": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "src/business/actions/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1482,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								73,
+								73
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "src/app/pages/page/deducedAgeFact.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1617,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								568,
+								568
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 444.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
 					"type": "text"
 				}
 			]
