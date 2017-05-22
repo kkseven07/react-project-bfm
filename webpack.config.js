@@ -39,7 +39,7 @@ module.exports = {
         loaders: ['json-loader']
       },
       {
-        test: /\.(otf|eot|woff|woff2|ttc|ttf|svg|png|jpg)$/,
+        test: /\.(otf|eot|woff|woff2|ttc|ttf|svg|png|jpg|jpeg)$/,
         loader: 'file-loader?limit=30000&name=[name]-[hash].[ext]'
       },
       {

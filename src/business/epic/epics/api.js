@@ -31,7 +31,6 @@ const checkUrl = (first, second) => {
 
 export const updatePage = action$ =>
     action$.ofType("UPDATE_PAGE").mergeMap(({ page, params }) => {
-        console.log(params);
         if (
             (params.text&&params.text!==page.data.text) ||
             (params.selectedImage &&

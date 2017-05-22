@@ -1,4 +1,4 @@
-const normalisePages = pages => {
+export const normalisePages = pages => {
   let mapPages = {};
   pages.forEach(page => (mapPages[page.id] = page));
   return mapPages;
@@ -6,6 +6,9 @@ const normalisePages = pages => {
 
 export default (state = { currentBookId: null }, action) => {
   switch (action.type) {
+    case "LOAD_FROM_CACHE":
+      console.log("i m here loading from cache")
+      return {...state,[action.book.id]:action.book,currentBookId: action.book.id}
     case "FETCH_BOOK_FULFILLED":
       let book = {
         ...action.payload.book,

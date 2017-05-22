@@ -52,7 +52,6 @@ export const createBook = (book, history) => {
     return { type: "CREATE_BOOK", book, history };
 };
 
-
 export const updatePage = (page, params) => {
     return { type: "UPDATE_PAGE", page, params };
 };
@@ -65,8 +64,20 @@ export const getBook = book_id => {
 export const getBookPage = (book_id, page_type) => {
     return { type: "GET_BOOK_PAGE", book_id, page_type };
 };
-export const upload = (book_id,page,params) =>{
-    return {type:"UPLOAD", book_id, page,params}
-}
+export const upload = (book_id, page, params) => {
+    return { type: "UPLOAD", book_id, page, params };
+};
 
+//menu
+export const openMenu = params => {
+    return { type: "OPEN_MENU", params };
+};
+export const closeMenu = () => {
+    return { type: "CLOSE_MENU" };
+};
 
+//cache
+
+export const loadFromCache = book => {
+    return { type: "LOAD_FROM_CACHE", book };
+};

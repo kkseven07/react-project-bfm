@@ -22,13 +22,12 @@ class BookRoute extends Component {
         if (this.props.history.action === "POP" && !this.props.bookId) {
             let hash_id = this.props.location.pathname.replace(/\/books\//, "");
             if (hash_id.length > 2 && !hash_id.match(/\/books/)) {
-                console.log(decodeHashid(hash_id)[0]);
-                this.props.actions.getBook(decodeHashid(hash_id)[0]);
+                let book_id = decodeHashid(hash_id)[0];
+                let book = JSON.parse(localStorage.getItem(book_id));
+                if (book) this.props.actions.loadFromCache(book);
+                else this.props.actions.getBook(book_id);
             }
         }
-
-
-
     }
     componentDidMount() {
         window.scrollTo(0, 0);
@@ -38,8 +37,9 @@ class BookRoute extends Component {
         this.props.actions.cleanBuilder();
     }
     render() {
-        console.log(this.props.osName)
-
+        // let test = JSON.parse(localStorage.getItem(804))
+        // console.log("hekre asd adsfh data", test)
+        console.log(Object.keys(localStorage))
 
         let { bookId, book } = this.props;
         console.log("my book", book);
@@ -50,7 +50,7 @@ class BookRoute extends Component {
             bData = rest;
         }
 
-        let pages = data.slice(37,44);
+        let pages = data;
         return (
             <div style={{ backgroundColor: "white", paddingBottom: 50 }}>
                 <Modal />
@@ -68,7 +68,7 @@ class BookRoute extends Component {
                             />
                         ))}
                     </div>}
-                {book[bookId] && <Book history={this.props.history}/>}
+                {book[bookId] && <Book history={this.props.history} />}
 
             </div>
         );
@@ -78,8 +78,8 @@ class BookRoute extends Component {
 const mapStateToProps = state => ({
     book: state.book,
     bookId: state.book.currentBookId,
-    osName:state.init.osName,
-    url:state.init.url
+    osName: state.init.osName,
+    url: state.init.url
 });
 const mapDispatchToProps = dispatch => ({
     actions: bindActionCreators(actions, dispatch)

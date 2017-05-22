@@ -9,6 +9,7 @@ import {
     upload,
     getBookPage
 } from "./epics/api";
+import {storageCreateBook} from './epics/book'
 import { input, changeForm } from "./epics/form";
 import { delayLoading } from "./epics/delay";
 import "rxjs/add/operator/filter";
@@ -29,7 +30,8 @@ const rootEpic = combineEpics(
     getBook,
     upload,
     getBookPage,
-    delayLoading
+    delayLoading,
+    storageCreateBook
 );
 
 export default rootEpic;

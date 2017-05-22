@@ -21,7 +21,7 @@ import MusicHit from "./page/musicHit";
 import Sport from "./page/sport";
 import Leader from "./page/leader";
 import Factoid from "./page/factoid";
-import FrameFridge from './page/framefridge'
+import FrameFridge from "./page/framefridge";
 import Cell from "./page/cell";
 import MirrorDate from "./page/mirrorDate";
 import FamousBirthShare from "./page/famousBirthShare";
@@ -38,16 +38,14 @@ import { editable } from "../shared/utils.js";
 
 // .replace("http://localhost:4000","http://46.101.217.205:4000")
 class Page extends Component {
-    state = { zoom: false, imgLoaded: this.props.print?true:false };
+    state = { zoom: false, imgLoaded: this.props.print ? true : false };
 
     getPage = (type, image, page, book) => {
         if (type === "scoop") {
             return <Scoop book={book} data={page.data} />;
-        }
-        else if (type === "framefridge") {
-            return  <FrameFridge url={this.props.url} book={book} page={page} />
-        }
-        else if (type === "brain") {
+        } else if (type === "framefridge") {
+            return <FrameFridge url={this.props.url} book={book} page={page} />;
+        } else if (type === "brain") {
             return <Brain book={book} page={page} />;
         } else if (type === "cover") {
             return <Cover book={book} />;
@@ -133,6 +131,13 @@ class Page extends Component {
         }
         return this.props.url + primary_image.image.url;
     };
+    componentWillReceiveProps(nextProps) {
+        if (
+            nextProps.page.primary_image.image.url !==
+                this.props.page.primary_image.image.url
+        )
+            this.setState({ imgLoaded: false });
+    }
 
     render() {
         const { type, primary_image, data } = this.props.page;
@@ -143,10 +148,11 @@ class Page extends Component {
             };
             smallImage = {
                 backgroundImage: this.smallImage(),
-                filter: "blur(15px)",
+                filter: "blur(15px)"
             };
             url = this.urlForLoading(this.props.print, primary_image);
         }
+        // console.log("page rerender ", this.state.imgLoaded,this.props.page.type)
         return (
             <div
                 onClick={e => {
@@ -159,16 +165,23 @@ class Page extends Component {
                 }
                 style={this.state.imgLoaded ? image : smallImage}
             >
-                {!this.props.print&&<img
-                    src={url}
-                    onLoad={() =>
-                        setTimeout(() => this.setState({ imgLoaded: true }), 0)}
-                    onError={() =>
-                        console.log("error happend in ", this.props.page.type)}
-                    style={{
-                        display: "none"
-                    }}
-                />}
+                {!this.props.print &&
+                    <img
+                        src={url}
+                        onLoad={() =>
+                            setTimeout(
+                                () => this.setState({ imgLoaded: true }),
+                                0
+                            )}
+                        onError={() =>
+                            console.log(
+                                "error happend in ",
+                                this.props.page.type
+                            )}
+                        style={{
+                            display: "none"
+                        }}
+                    />}
 
                 {this.getPage(type, image, this.props.page, this.props.book)}
 

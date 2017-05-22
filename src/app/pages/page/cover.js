@@ -15,7 +15,6 @@ class Cover extends Component {
             <div styleName="text">
                {getBookName(this.props.book.book_name, this.props.book.name)}
             </div>
-            <div styleName="line" />
 
          </div>
       );

@@ -24,19 +24,19 @@ const showHeader = location =>
     !location.pathname.includes("/preview");
 
 class App extends React.Component {
-    componentWillMount(){
+    componentWillMount() {
         let OSName = "Unknown OS";
         if (navigator.appVersion.indexOf("Win") != -1) OSName = "Win";
         if (navigator.appVersion.indexOf("Mac") != -1) OSName = "Mac";
         if (navigator.appVersion.indexOf("X11") != -1) OSName = "Mac";
         if (navigator.appVersion.indexOf("Linux") != -1) OSName = "Mac";
-        this.props.actions.osName(OSName)
+        this.props.actions.osName(OSName);
     }
 
     render() {
         const { match, location, history, ...props } = this.props;
         return (
-            <div>
+            <div id="outer-container">
                 <Loading />
 
                 <Background zIndex="10">
@@ -47,24 +47,28 @@ class App extends React.Component {
                 </Background>
 
                 {showHeader(location) && <Header history={history} />}
-
-                <div
-                    styleName={
-                        showHeader(location, match)
-                            ? "header.upper-padding"
-                            : ""
-                    }
-                >
-                    <Switch>
-                        <Route exact path="/" component={Home} />
-                        <Route path="/about" component={About} />
-                        <Route path="/contacts" component={Contacts} />
-                        <Route path="/books" component={Builder} />
-                        <Route path="/books/:id" component={Builder} />
-                        <Route path="/preview" component={Preview} />
-                        <Route path="/pages/:book_id/:type" component={Print} />
-                        <Redirect from="/*" to="/" />
-                    </Switch>
+                <div id="wrap">
+                    <div
+                        styleName={
+                            showHeader(location, match)
+                                ? "header.upper-padding"
+                                : ""
+                        }
+                    >
+                        <Switch>
+                            <Route exact path="/" component={Home} />
+                            <Route path="/about" component={About} />
+                            <Route path="/contacts" component={Contacts} />
+                            <Route path="/books" component={Builder} />
+                            <Route path="/books/:id" component={Builder} />
+                            <Route path="/preview" component={Preview} />
+                            <Route
+                                path="/pages/:book_id/:type"
+                                component={Print}
+                            />
+                            <Redirect from="/*" to="/" />
+                        </Switch>
+                    </div>
                 </div>
             </div>
         );

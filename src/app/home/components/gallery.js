@@ -5,11 +5,11 @@ import Slider from "react-slick";
 export default props => {
     const settings = {
         dots: true,
-        // infinite: true,
+        infinite: true,
         speed: 1000,
         slidesToShow: 1,
         slidesToScroll: 1,
-        // autoplay: true,
+        autoplay: true,
         autoplaySpeed: 5000
     };
     const style = {
@@ -20,6 +20,7 @@ export default props => {
             <div styleName="slider">
                 <Slider {...settings}>
                     <div className="item">
+                        <div style={{position:"absolute", top:"20%"}}>hello</div>
                         <img
                             src="https://images.pexels.com/photos/2324/skyline-buildings-new-york-skyscrapers.jpg?w=1260&h=750&auto=compress&cs=tinysrgb"
                             draggable="false"
