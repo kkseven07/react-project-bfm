@@ -5,14 +5,16 @@ import * as actions from "../../../business/actions/index.js";
 import "./cover.css";
 import { getBookName, textColor } from "../../shared/utils.js";
 class Cover extends Component {
+
    render() {
+      const {text_color, background} = this.props.page.data.color
       return (
          <div
             styleName="r"
             className="app-blue"
-            style={{ background: this.props.color }}
+            style={{ background: background }}
          >
-            <div styleName="text">
+            <div styleName="text" style={{color:text_color }}>
                {getBookName(this.props.book.book_name, this.props.book.name)}
             </div>
 

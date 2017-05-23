@@ -30,7 +30,10 @@ class BookRoute extends Component {
         }
     }
     componentDidMount() {
-        window.scrollTo(0, 0);
+        if (!(this.props.history.action === "POP")) window.scrollTo(0, 0);
+        else {
+            window.scrollTo(0, 25000);
+        }
     }
     componentWillUnmount() {
         this.props.actions.closeModal();
@@ -39,7 +42,6 @@ class BookRoute extends Component {
     render() {
         // let test = JSON.parse(localStorage.getItem(804))
         // console.log("hekre asd adsfh data", test)
-        console.log(Object.keys(localStorage))
 
         let { bookId, book } = this.props;
         console.log("my book", book);
@@ -52,11 +54,15 @@ class BookRoute extends Component {
 
         let pages = data;
         return (
-            <div style={{ backgroundColor: "white", paddingBottom: 50 }}>
+            <div style={{ backgroundColor: "white", paddingBottom: 30 }}>
                 <Modal />
                 {book[bookId] &&
                     <div styleName="root">
-                        <CoverChooser />
+                        <CoverChooser
+                            page={
+                                pages.filter(page => page.type === "cover")[0]
+                            }
+                        />
                         {pages.map((page, i) => (
                             <Page
                                 url={this.props.url}
@@ -68,7 +74,11 @@ class BookRoute extends Component {
                             />
                         ))}
                     </div>}
-                {book[bookId] && <Book history={this.props.history} />}
+                {book[bookId] &&
+                    <Book
+                        book={this.props.book}
+                        history={this.props.history}
+                    />}
 
             </div>
         );

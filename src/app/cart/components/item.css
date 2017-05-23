@@ -1,0 +1,23 @@
+.container{
+    border: 1px solid black;
+}
+
+.r{
+    min-height: 200px;
+}
+
+.elem{
+    max-width:450px;
+    width:50%;
+    padding:50px 0 50px 0;
+
+}
+
+
+@media screen and (max-width:550px){
+    .elem{
+        width:100%;
+        padding:20px 0 15px 0;
+    }
+
+}

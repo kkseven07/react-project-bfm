@@ -3,9 +3,9 @@ import "./book.css";
 import { connect } from "react-redux";
 import * as actions from "../../business/actions/index.js";
 import { bindActionCreators } from "redux";
-import Hard from "./hard.jpg";
-import Soft from "./soft.jpg";
-import Digital from "./soft1.jpg";
+import hard from "./hard.jpg";
+import soft from "./soft.jpg";
+import digital from "./soft1.jpg";
 import Text from "../modal/builder/components/text";
 import { Button, ErrorText } from "../shared";
 
@@ -26,46 +26,57 @@ const data = [
         price: "14900 тг"
     }
 ];
+const getImage = version => {
+    if (version === "soft") return soft;
+    if (version === "digital") return digital;
+    if (version === "hard") return hard;
+};
 
+const prices={
+    digital:"2900 тг",
+    soft:"9900 тг",
+    hard:"14900 тг"
+
+}
 const Book = props => {
+    const book = props.book[props.book.currentBookId];
     return (
         <div className="width-full flex flex-center flex-wrap" styleName="r">
             <div className="flex flex-center" styleName="book-form">
-                <img src={Soft} style={{ width: 320, height: 320 }} />
+                <img
+                    src={getImage(props.version.value)}
+                    style={{ width: 320, height: 320 }}
+                />
             </div>
             <div
-                className="flex flex-center flex-column"
+                className="flex flex-column"
                 styleName="book-form form"
             >
-                <Text>
+                <div styleName="choose">
                     Выберите один из вариантов
-                </Text>
-
+                </div>
                 <div
-                    className="flex flex-column"
-                    style={{ alignItems: "flex-start", paddingLeft: 10 }}
+                    className="flex flex-column flex-center"
+                    style={{ alignItems: "flex-start", }}
                 >
                     {data.map((val, i) => (
-                        <div key={i} className="flex flex-center">
+                        <div style={{margin:5,marginLeft:0}} key={i} className="flex flex-center">
                             <input
                                 styleName="input"
                                 type="radio"
                                 name="version"
-                                checked={val.type===props.version.value}
+                                checked={val.type === book.order.type}
                                 value={val.type}
-                                onChange={e =>
-                                    props.actions.bookVersion(e.target.value)}
+                                onChange={e => {
+                                    props.actions.updateOrder(book.order.id, {
+                                        type: e.target.value,
+                                        price: prices[e.target.value]
+                                    });
+                                    props.actions.bookVersion(e.target.value);
+                                }}
                             />
                             {val.label}
-                            <div
-                                style={{
-                                    margin: 20,
-                                    fontSize: 20,
-                                    fontFamily: "RobotoMedium"
-                                }}
-                            >
-                                {val.price}
-                            </div>
+
                         </div>
                     ))}
 
@@ -74,16 +85,23 @@ const Book = props => {
                         <ErrorText
                             text={"Выберите один из вариантов формата книги"}
                         />}
+                    <div
+                        styleName="price"
+                        className="flex space-between"
+                    >
+                        <div>Цена: </div>
+                        <div>{data.filter(val=>val.type===props.version.value)[0].price}</div>
+                    </div>
 
                     <div style={{ height: 20, alignSelf: "center" }} />
                     <Button
                         click={() => {
-                            props.actions.bookVersion(props.version.value)
+                            props.actions.bookVersion(props.version.value);
                             props.version.value !== "" &&
-                                props.history.push("/");
+                                props.history.push("/cart");
                         }}
                     >
-                        Заказать книгу
+                        Добавить в корзину
                     </Button>
 
                 </div>

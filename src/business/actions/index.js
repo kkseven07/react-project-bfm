@@ -68,6 +68,10 @@ export const upload = (book_id, page, params) => {
     return { type: "UPLOAD", book_id, page, params };
 };
 
+export const updateOrder=(order_id, params) =>{
+    return {type:"UPDATE_ORDER", order_id, params}
+}
+
 //menu
 export const openMenu = params => {
     return { type: "OPEN_MENU", params };

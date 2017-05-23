@@ -1,5 +1,6 @@
 .r{
     min-height: 300px;
+    margin-top: 40px;
 }
 .book-form{
     max-width:450px;
@@ -11,13 +12,36 @@
 }
 
 .input{
-    margin:10px;
+    margin:7px;
+    margin-left:0;
+    height:20px;
+    width:20px;
+}
+.choose{
+    margin:20px 0 20px 0;
+    font-size:22px;
+    font-family: "RobotoMedium";
+}
+
+.price{
+    height:40px;
+    padding:10px;
+    align-items:center;
+    background:rgb(220,220,220);
+    margin: 10px;
+    margin-top:20px;
+    margin-left:0;
+    font-size: 20px;
+    width:75%;
+    font-family: "RobotoMedium";
 }
 
 @media screen and (max-width:750px){
     .book-form{
         width:80%;
         padding:20px 0 15px 0;
+        justify-content: center;
+        align-items: center;
     }
     .form{
         padding-bottom:30px;
@@ -27,4 +51,12 @@
         padding-bottom:30px;
         order:2;
     }
+    .price{
+        width:100%;
+    }
+    .choose{
+        margin:20px 0 20px 0;
+        font-size:20px;
+    }
+
 }

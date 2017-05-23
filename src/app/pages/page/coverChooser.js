@@ -7,7 +7,6 @@ import { colors } from "../../shared/utils.js";
 
 class CoverChooser extends Component {
     getStyle = color => (color === this.props.color ? "el selected" : "el");
-
     render() {
         return (
             <div className="flex width-full flex-center" styleName="r">
@@ -18,7 +17,10 @@ class CoverChooser extends Component {
                     {colors.map(color => (
                         <button
                             onClick={e => {
-                                this.props.actions.coverColor(color.background);
+                                this.props.actions.updatePage(this.props.page, {
+                                    background: color.background,
+                                    text_color: color.text
+                                });
                             }}
                             key={color.background}
                             styleName={this.getStyle(color.background)}

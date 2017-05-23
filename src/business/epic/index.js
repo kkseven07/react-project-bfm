@@ -7,7 +7,8 @@ import {
     changeRoute,
     getBook,
     upload,
-    getBookPage
+    getBookPage,
+    updateOrder
 } from "./epics/api";
 import {storageCreateBook} from './epics/book'
 import { input, changeForm } from "./epics/form";
@@ -26,6 +27,7 @@ const rootEpic = combineEpics(
     createBook,
     genPages,
     updatePage,
+    updateOrder,
     changeRoute,
     getBook,
     upload,

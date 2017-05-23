@@ -48,7 +48,7 @@ class Page extends Component {
         } else if (type === "brain") {
             return <Brain book={book} page={page} />;
         } else if (type === "cover") {
-            return <Cover book={book} />;
+            return <Cover book={book} page={page} />;
         } else if (type === "animal") {
             return <Animal page={page} book={book} />;
         } else if (type === "intro") {

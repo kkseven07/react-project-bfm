@@ -17,11 +17,11 @@ import { bindActionCreators } from "redux";
 import header from "./shared/components/header.css";
 import { Background, Header, Loading } from "./shared";
 import Preview from "./preview/preview";
-
+import Cart from "./cart";
 const showHeader = location =>
     !location.pathname.includes("/books/") &&
     !location.pathname.includes("/pages/") &&
-    !location.pathname.includes("/preview");
+    !location.pathname.includes("/cart");
 
 class App extends React.Component {
     componentWillMount() {
@@ -62,6 +62,7 @@ class App extends React.Component {
                             <Route path="/books" component={Builder} />
                             <Route path="/books/:id" component={Builder} />
                             <Route path="/preview" component={Preview} />
+                            <Route path="/cart" component={Cart} />
                             <Route
                                 path="/pages/:book_id/:type"
                                 component={Print}

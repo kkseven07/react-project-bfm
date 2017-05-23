@@ -1,6 +1,6 @@
 const init = {
     page: {},
-    bookVersion:{value:"",isPristine:true},
+    bookVersion:{value:"digital",isPristine:true},
     intro: {
         selectedImage: null,
         select: {

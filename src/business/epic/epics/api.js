@@ -31,8 +31,11 @@ const checkUrl = (first, second) => {
 
 export const updatePage = action$ =>
     action$.ofType("UPDATE_PAGE").mergeMap(({ page, params }) => {
+
         if (
-            (params.text&&params.text!==page.data.text) ||
+            (params.background &&
+                params.background !== page.data.color.background) ||
+            (params.text && params.text !== page.data.text) ||
             (params.selectedImage &&
                 !checkUrl(params.selectedImage, page.primary_image.image.url))
         ) {
@@ -56,6 +59,20 @@ export const updatePage = action$ =>
             return [{ type: "CLOSE_MODAL" }];
         }
     });
+export const updateOrder = action$ =>
+    action$.ofType("UPDATE_ORDER").mergeMap(({ order_id, params }) => {
+        return ajax({
+            url: `${url}/api/v1/orders/${order_id}`,
+            body: { params: JSON.stringify(params) },
+            ...ajaxObject
+        })
+            .flatMap(ajax => {
+                return [
+                    { type: "UPDATE_ORDER_FULFILLED",payload:ajax.response }
+                ];
+            })
+            .catch(error => ofObs({ type: "AJAX_ERROR", payload: error }));
+    });
 
 export const createBook = action$ =>
     action$.ofType("CREATE_BOOK").mergeMap(({ book, history }) => {
@@ -76,27 +93,31 @@ export const createBook = action$ =>
     });
 
 export const upload = action$ =>
-    action$.ofType("UPLOAD").switchMap(({book_id, page, params})=>{
-        let form_data = new FormData()
-        form_data.append("file", params)
+    action$.ofType("UPLOAD").switchMap(({ book_id, page, params }) => {
+        let form_data = new FormData();
+        form_data.append("file", params);
         return ajax({
-            url:`${url}/api/v1/books/${book_id}/${page.id}`,
-            body:form_data,
+            url: `${url}/api/v1/books/${book_id}/${page.id}`,
+            body: form_data,
             ...ajaxObject
-        }).flatMap(ajax=>{
-
-            return [{
-                    type: "UPLOAD_FULFILLED",
-                    payload: ajax.response
-                },{ type: "CLOSE_MODAL" }];
-        }).catch(error =>
+        })
+            .flatMap(ajax => {
+                return [
+                    {
+                        type: "UPLOAD_FULFILLED",
+                        payload: ajax.response
+                    },
+                    { type: "CLOSE_MODAL" }
+                ];
+            })
+            .catch(error =>
                 ofObs({
                     type: "AJAX_ERROR",
                     payload: error,
                     message: "Картинка не была загружена!"
                 })
             );
-    })
+    });
 
 export const getBook = action$ =>
     action$.ofType("GET_BOOK").switchMap(({ book_id }) => {

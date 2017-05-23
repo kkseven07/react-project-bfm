@@ -165,7 +165,7 @@ export const months = [
 export const colors = [
     {
         background: "#90d3e4",
-        text: "white"
+        text: "black"
     },
     {
         background: "#fec00d",
@@ -173,7 +173,7 @@ export const colors = [
     },
     {
         background: "#74c19d",
-        text: "white"
+        text: "black"
     },
     {
         background: "black",
