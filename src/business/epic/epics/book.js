@@ -8,13 +8,15 @@ export const storageCreateBook = (action$, store) =>
                 "UPLOAD_FULFILLED",
                 "UPDATE_PAGE_FULFILLED",
                 "FETCH_BOOK_FULFILLED",
-                "UPDATE_ORDER_FULFILLED"
+                "UPDATE_ORDER_FULFILLED",
+                "GEN_PAGES_FULFILLED"
             ].includes(action.type)
         )
         .switchMap(({ payload }) => {
             const bookState = store.getState().book;
             const currentBookId = bookState.currentBookId;
             const book = bookState[currentBookId];
+            console.log("in storatge book fulfilled")
             // localStorage.clear()
             try {
                 localStorage.setItem(currentBookId, JSON.stringify(book));
@@ -31,9 +33,16 @@ export const loadCache = (action$, store) =>
                 JSON.parse(localStorage.getItem(key))
             )
         );
+        if(items.length<1){
+            return [{ type: "OK"}]
+        }
 
         return [{ type: "LOAD_CACHE_FULFILLED", payload:items }];
     });
 
+export const loadFromCache = (action$, store) =>
+    action$.ofType("LOAD_FROM_CACHE").delay(1000).switchMap(action => {
+        return [{ type: "LOAD_FROM_CACHE_FULFILLED"}];
+    });
 
 

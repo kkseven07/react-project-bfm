@@ -22,7 +22,9 @@ class BookRoute extends Component {
                 let book_id = decodeHashid(hash_id)[0];
                 let book = JSON.parse(localStorage.getItem(book_id));
                 if (book) this.props.actions.loadFromCache(book);
-                else this.props.actions.getBook(book_id);
+                else {
+                    this.props.actions.getBook(book_id);
+                }
             }
     }
     componentDidMount() {
@@ -37,9 +39,10 @@ class BookRoute extends Component {
     }
     render() {
         let { bookId, book } = this.props;
-        console.log("my book", book);
+
         let gift, data = [], bData;
         if (book[bookId]) {
+            console.log("my book", book);
             data = values(book[bookId].pages);
             const { pages, ...rest } = book[bookId];
             bData = rest;

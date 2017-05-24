@@ -29,7 +29,26 @@ class Cart extends React.Component {
         let data = reverse(values(books));
         let total = this.getTotal(data);
         if (!currentBookId) {
-            return null;
+            return  <div
+                className="flex flex-center width-full flex-column"
+                style={{ paddingBottom: 50 }}
+            >
+                <img
+                    onClick={()=>{
+                        this.props.history.push("/")
+                    }}
+                    src={Logo}
+                    style={{ width: 100, height: 100, marginBottom: 10 }}
+                />
+
+                <div style={{margin:30, fontFamily:"RobotoMedium"}}>
+                    ВАША КОРЗИНА ПУСТА
+                </div>
+                 <Button width={310} click={() => {this.props.history.push("/")}}>
+                    Найти подарок
+                </Button>
+
+            </div>
         }
         return (
             <div

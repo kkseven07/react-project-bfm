@@ -9,6 +9,7 @@ var Loader = require("halogen/GridLoader"); // var Loader = require('halogen/Gri
 // import Confetti from 'react-dom-confetti';
 const Loading = props => {
    let text;
+
    if (props.type === "createBook") {
       text =
          "Создается книга \n" +
@@ -34,7 +35,7 @@ const mapStateToProps = state => ({
    isFetching: state.loading.loading,
    type: state.loading.type,
    name: state.form.name.value,
-   bookName: state.form.bookName.value
+   bookName: state.form.bookName.value,
 });
 
 const mapDispatchToProps = dispatch => ({

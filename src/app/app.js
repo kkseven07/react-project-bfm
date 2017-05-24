@@ -2,7 +2,7 @@ import { Route, Switch, withRouter, Redirect } from "react-router-dom";
 import React from "react";
 import { asyncModule } from "./shared";
 const About = asyncModule(() => import("./about"), "About route");
-const Home = asyncModule(() => import("./home"), "Home route");
+const Home = asyncModule(() => import("./home"), "home");
 const Contacts = asyncModule(() => import("./contacts"), "contacts route");
 const Builder = asyncModule(() => import("./pages/pages"), "pages route");
 const Cart = asyncModule(()=>import("./cart"),"cart route")

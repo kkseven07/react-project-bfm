@@ -33,6 +33,7 @@ export default (state = { currentBookId: null }, action) => {
             order: action.payload.order,
             pages: normalisePages(action.payload.pages)
          };
+         console.log("in fetch book fulfilled")
          return {
             ...state,
             [action.payload.book.id]: book,
@@ -65,7 +66,8 @@ export default (state = { currentBookId: null }, action) => {
       case "GEN_PAGES_FULFILLED":
          book = {
             ...action.payload.book,
-            pages: normalisePages(action.payload.pages)
+            pages: normalisePages(action.payload.pages),
+            order:action.payload.order
          };
          return {
             ...state,
