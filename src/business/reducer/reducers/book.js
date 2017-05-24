@@ -11,9 +11,9 @@ export const normaliseBooks = books => {
 };
 import reverse from "lodash/reverse";
 export default (state = { currentBookId: null }, action) => {
+
    switch (action.type) {
       case "LOAD_FROM_CACHE":
-         console.log("i m here loading from cache");
          return {
             ...state,
             [action.book.id]: action.book,
@@ -21,7 +21,7 @@ export default (state = { currentBookId: null }, action) => {
          };
       case "LOAD_CACHE_FULFILLED":
          let books = normaliseBooks(action.payload);
-         let currentBookId = action.payload[0].id;
+         let currentBookId =state.currentBookId || action.payload[0].id;
          return {
             ...state,
             currentBookId,
@@ -33,7 +33,6 @@ export default (state = { currentBookId: null }, action) => {
             order: action.payload.order,
             pages: normalisePages(action.payload.pages)
          };
-         console.log("in fetch book fulfilled")
          return {
             ...state,
             [action.payload.book.id]: book,

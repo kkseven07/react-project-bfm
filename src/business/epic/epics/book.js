@@ -16,7 +16,7 @@ export const storageCreateBook = (action$, store) =>
             const bookState = store.getState().book;
             const currentBookId = bookState.currentBookId;
             const book = bookState[currentBookId];
-            console.log("in storatge book fulfilled")
+            // console.log("in storatge book fulfilled")
             // localStorage.clear()
             try {
                 localStorage.setItem(currentBookId, JSON.stringify(book));
@@ -41,7 +41,7 @@ export const loadCache = (action$, store) =>
     });
 
 export const loadFromCache = (action$, store) =>
-    action$.ofType("LOAD_FROM_CACHE").delay(1000).switchMap(action => {
+    action$.ofType("LOAD_FROM_CACHE").delay(100).switchMap(action => {
         return [{ type: "LOAD_FROM_CACHE_FULFILLED"}];
     });
 
