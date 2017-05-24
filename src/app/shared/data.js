@@ -72,35 +72,35 @@ export const editable = [
 
 export const colors = [
     {
-        background: "#90d3e4",
-        text: "white"
-    },
-    {
-        background: "#fec00d",
+        background: "#a0dbeb ",
         text: "black"
     },
     {
-        background: "#74c19d",
-        text: "white"
-    },
-    {
-        background: "black",
-        text: "white"
-    },
-    {
-        background: "#d60000",
-        text: "white"
-    },
-    {
-        background: "#d6d6d6",
+        background: "#73dcb4 ",
         text: "black"
     },
     {
-        background: "#f47ff8",
-        text: "white"
+        background: "#fa2d2e ",
+        text: "black"
     },
     {
-        background: "#5877ff",
-        text: "white"
+        background: "#ffd632 ",
+        text: "black"
+    },
+    {
+        background: "#c570e5 ",
+        text: "black"
+    },
+    {
+        background: "#ff8c1b ",
+        text: "black"
+    },
+    {
+        background: "#2d292a ",
+        text: "black"
+    },
+    {
+        background: "#ffc5d9 ",
+        text: "black"
     }
-];
+  ];

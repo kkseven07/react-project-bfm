@@ -17,9 +17,6 @@ export const decodeHashid = hashed => {
 };
 class BookRoute extends Component {
     componentWillMount() {
-        !this.props.location.pathname.match(/\/books\//) &&
-            this.props.actions.genPages("1_42", BOOK_ID);
-        if (this.props.history.action === "POP" && !this.props.bookId) {
             let hash_id = this.props.location.pathname.replace(/\/books\//, "");
             if (hash_id.length > 2 && !hash_id.match(/\/books/)) {
                 let book_id = decodeHashid(hash_id)[0];
@@ -27,7 +24,6 @@ class BookRoute extends Component {
                 if (book) this.props.actions.loadFromCache(book);
                 else this.props.actions.getBook(book_id);
             }
-        }
     }
     componentDidMount() {
         if (!(this.props.history.action === "POP")) window.scrollTo(0, 0);
@@ -40,9 +36,6 @@ class BookRoute extends Component {
         this.props.actions.cleanBuilder();
     }
     render() {
-        // let test = JSON.parse(localStorage.getItem(804))
-        // console.log("hekre asd adsfh data", test)
-
         let { bookId, book } = this.props;
         console.log("my book", book);
         let gift, data = [], bData;

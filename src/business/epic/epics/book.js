@@ -1,4 +1,5 @@
 import { normalisePages } from "../../reducer/reducers/book";
+import reverse from "lodash/reverse";
 
 export const storageCreateBook = (action$, store) =>
     action$
@@ -15,11 +16,24 @@ export const storageCreateBook = (action$, store) =>
             const currentBookId = bookState.currentBookId;
             const book = bookState[currentBookId];
             // localStorage.clear()
-            // localStorage.removeItem(key)
             try {
                 localStorage.setItem(currentBookId, JSON.stringify(book));
             } catch (e) {
-                localStorage.clear()
+                localStorage.clear();
             }
             return [{ type: "OK" }, { type: "CLOSE_MODAL" }];
         });
+
+export const loadCache = (action$, store) =>
+    action$.ofType("LOAD_CACHE").switchMap(action => {
+        const items = reverse(
+            Object.keys(localStorage).map(key =>
+                JSON.parse(localStorage.getItem(key))
+            )
+        );
+
+        return [{ type: "LOAD_CACHE_FULFILLED", payload:items }];
+    });
+
+
+

@@ -11,7 +11,7 @@ module.exports = {
   context,
   entry: {
     app:__dirname + "/src/entry/index.js",
-    vendor:["react-dom","react","redux-observable","redux"]
+    vendor:["react-dom","react","redux-observable","redux","react-burger-menu"]
   },
   output: {
     path: __dirname + "/public",
@@ -31,7 +31,7 @@ module.exports = {
         loaders: ['json-loader']
       },
       {
-        test: /\.(otf|eot|woff|ttc|woff2|ttf|svg|png|jpg)$/,
+        test: /\.(otf|eot|woff|ttc|woff2|ttf|svg|png|jpg|jpeg)$/,
         loader: 'file-loader?limit=30000&name=[name]-[hash].[ext]'
       },
       {

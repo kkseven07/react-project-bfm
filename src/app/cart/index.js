@@ -6,42 +6,108 @@ import * as actions from "../../business/actions/index.js";
 import Item from "./components/item";
 import Logo from "../../../assets/icons/logo.png";
 import reverse from "lodash/reverse";
+import { Button, ErrorText } from "../shared";
+
 class Cart extends React.Component {
     componentWillMount() {
-        this.items = reverse(
-            Object.keys(localStorage).map(key =>
-                JSON.parse(localStorage.getItem(key))
-            )
-        );
+        this.props.actions.loadCache();
     }
     componentDidMount() {
         window.scrollTo(0, 0);
     }
 
+    getTotal = books => {
+        return books.reduce(
+            (acc, book) =>
+                parseInt(book.order.price.replace("тг", "").trim()) + acc,
+            0
+        );
+    };
+
     render() {
-        if (!this.items) {
+        let { currentBookId, ...books } = this.props.book;
+        let data = reverse(values(books));
+        let total = this.getTotal(data);
+        if (!currentBookId) {
             return null;
         }
-
         return (
-            <div className="flex flex-center width-full flex-column">
-
+            <div
+                className="flex flex-center width-full flex-column"
+                style={{ paddingBottom: 50 }}
+            >
                 <img
+                    onClick={()=>{
+                        this.props.history.push("/")
+                    }}
                     src={Logo}
-                    style={{ width: 100, height: 100, marginBottom: 30 }}
+                    style={{ width: 100, height: 100, marginBottom: 10 }}
                 />
+                {data.map((item, i) => (
+                    <div
+                        key={i}
+                        className="flex flex-center flex-column width-full"
+                    >
+                        <Item
+                            history={this.props.history}
+                            key={i}
+                            book={item}
+                        />
+                        <div
+                            style={{
+                                height: 1,
+                                width: "85%",
+                                background: "rgb(230,230,230)",
+                                marginLeft: "2%"
+                            }}
+                        />
+                    </div>
+                ))}
 
-                {this.items.map((item, i) => <Item key={i} book={item} />)}
+                <div
+                    className="flex flex-end width-full"
+                    style={{
+                        height: 100,
+                        margin: 20
+                    }}
+                >
+                    <div
+                        className="flex flex-center space-between"
+                        style={{
+                            height: 55,
+                            margin: 20,
+                            width: 250,
+                            padding: 7,
+                            fontFamily: "RobotoRegular",
+                            color: "rgb(120,120,120)",
+                            fontSize: 22,
+                            background: "rgb(240,240,240)",
+                            marginRight: "12%"
+                        }}
+                    >
+                        ИТОГО
+                        <div
+                            style={{
+                                fontFamily: "RobotoMedium",
+                                color: "black"
+                            }}
+                        >
+                            {total} тг
+                        </div>
+                    </div>
+
+                </div>
+
+                <Button width={310} click={() => {}}>
+                    Перейти к оплате
+                </Button>
 
             </div>
         );
     }
 }
 const mapStateToProps = state => ({
-    book: state.book,
-    bookId: state.book.currentBookId,
-    osName: state.init.osName,
-    url: state.init.url
+    book: state.book
 });
 const mapDispatchToProps = dispatch => ({
     actions: bindActionCreators(actions, dispatch)

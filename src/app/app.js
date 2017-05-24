@@ -5,19 +5,14 @@ const About = asyncModule(() => import("./about"), "About route");
 const Home = asyncModule(() => import("./home"), "Home route");
 const Contacts = asyncModule(() => import("./contacts"), "contacts route");
 const Builder = asyncModule(() => import("./pages/pages"), "pages route");
+const Cart = asyncModule(()=>import("./cart"),"cart route")
+const Print = asyncModule(()=> import("./pages/print"), "print route")
 import { routerActions } from "react-router-redux";
-// import About from './about'
-// import Home from './home'
-// import Contacts from './contacts'
-// import Builder from './pages/pages'
-import Print from "./pages/print.js";
 import { connect } from "react-redux";
 import * as actions from "../business/actions";
 import { bindActionCreators } from "redux";
 import header from "./shared/components/header.css";
 import { Background, Header, Loading } from "./shared";
-import Preview from "./preview/preview";
-import Cart from "./cart";
 const showHeader = location =>
     !location.pathname.includes("/books/") &&
     !location.pathname.includes("/pages/") &&
@@ -61,7 +56,6 @@ class App extends React.Component {
                             <Route path="/contacts" component={Contacts} />
                             <Route path="/books" component={Builder} />
                             <Route path="/books/:id" component={Builder} />
-                            <Route path="/preview" component={Preview} />
                             <Route path="/cart" component={Cart} />
                             <Route
                                 path="/pages/:book_id/:type"

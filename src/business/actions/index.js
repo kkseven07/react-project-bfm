@@ -85,3 +85,7 @@ export const closeMenu = () => {
 export const loadFromCache = book => {
     return { type: "LOAD_FROM_CACHE", book };
 };
+
+export const loadCache = () => {
+    return { type: "LOAD_CACHE" };
+};

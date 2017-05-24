@@ -2,6 +2,7 @@ import React from "react";
 import "./book.css";
 import values from "lodash/values";
 import reverse from "lodash/reverse";
+import Hashids from "hashids";
 const getCover = book => {
     let data = values(book.pages);
     return data.filter(v => v.type === "cover")[0];
@@ -12,15 +13,20 @@ const types = {
     soft: "Мягкий переплет",
     hard: "Твердый переплет"
 };
+export const createHashid = id => {
+    let hashids = new Hashids("", 10);
+    return hashids.encode(id);
+};
+
 import { getBookName, textColor } from "../../shared/utils.js";
-export default ({ book }) => {
+export default ({ book, history }) => {
     let color = getCover(book).data.color;
     return (
         <div
             style={{
-                //background: "red",
                 padding: 15
             }}
+            styleName="container"
             className="flex full "
         >
 
@@ -37,15 +43,21 @@ export default ({ book }) => {
             </div>
 
             <div
-                className="flex flex-column"
-                style={{ padding: 20, paddingTop: 5 }}
+                className="flex flex-column "
+                styleName="desc"
             >
 
                 <div styleName="book-type">
                     {types[book.order.type]}
                 </div>
-                <div onClick={() => {}} style={{ marginTop: 20 }}>
-                    Изменить
+                <div
+                    onClick={() => {
+                        let hashed_id = createHashid(book.id);
+                        history.push(`/books/${hashed_id}`);
+                    }}
+                    styleName="edit"
+                >
+                    ИЗМЕНИТЬ
                 </div>
 
             </div>

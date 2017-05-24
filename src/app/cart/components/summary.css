@@ -1,0 +1,59 @@
+.r{
+    height:170px;
+    padding:15px;
+    padding-top:0;
+    align-items: flex-end;
+
+}
+
+.elem{
+    width:200px;
+    height:40px;
+    border:0;
+    padding:6px;
+    padding-top:12px;
+    font-size:17px;
+    border-style: solid;
+    border-top: 1px solid rgb(220,220,220);
+
+    padding-right:7px;
+}
+
+.price{
+    border:0;
+    display: flex;
+    padding:0;
+    padding-right:6px;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgb(240,240,240);
+    font-family:"RobotoMedium";
+    font-size:22px;
+
+}
+
+.delete{
+    color:#F22613;
+    font-family:"RobotoMedium";
+    height:50px;
+    justify-content: flex-end;
+    cursor:pointer;
+}
+
+
+@media screen and (min-width:551px) and (max-width: 745px){
+    .r{
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .r{
+        width:250px;
+        padding-right:0;
+    }
+    .elem{
+        width:250px;
+    }
+
+}

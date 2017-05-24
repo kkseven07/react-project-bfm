@@ -4,6 +4,12 @@ export const normalisePages = pages => {
    return mapPages;
 };
 
+export const normaliseBooks = books => {
+   let map = {};
+   books.forEach(book => (map[book.id] = book));
+   return map;
+};
+import reverse from "lodash/reverse";
 export default (state = { currentBookId: null }, action) => {
    switch (action.type) {
       case "LOAD_FROM_CACHE":
@@ -12,6 +18,14 @@ export default (state = { currentBookId: null }, action) => {
             ...state,
             [action.book.id]: action.book,
             currentBookId: action.book.id
+         };
+      case "LOAD_CACHE_FULFILLED":
+         let books = normaliseBooks(action.payload);
+         let currentBookId = action.payload[0].id;
+         return {
+            ...state,
+            currentBookId,
+            ...books
          };
       case "FETCH_BOOK_FULFILLED":
          let book = {

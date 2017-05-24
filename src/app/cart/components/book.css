@@ -1,20 +1,60 @@
 .r{
-
-    height:200px;
-    width:200px;
+    height:170px;
+    width:170px;
     justify-content: flex-end;
     align-items: flex-end;
     padding:6px;
     white-space: pre-line;
     text-align: right;
     padding-bottom:0;
-    font-size:30px;
+    font-size:25px;
     font-family: "BebasBold";
+}
 
+.edit{
+    font-family: "RobotoRegular";
+    text-decoration: underline;
+    margin-top:20px;
+    cursor:pointer;
 }
 
 
 .book-type{
     font-family:"BebasBold";
     font-size: 25px;
+    color:rgb(50,50,50);
+}
+
+.desc{
+    padding:20px;
+    padding-top:5px;
+}
+
+
+@media screen and (min-width:551px) and (max-width: 745px){
+    .r{
+        height: 150px;
+        width:150px;
+        font-size: 24px;
+    }
+}
+@media screen and (max-width: 550px){
+    .container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .r{
+        height: 250px;
+        width:250px;
+    }
+    .desc{
+        width:250px;
+        padding:0;
+        padding-top:20px;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
 }

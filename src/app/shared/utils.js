@@ -161,38 +161,37 @@ export const months = [
     "Ноябрь",
     "Декабрь"
 ];
-
 export const colors = [
     {
-        background: "#90d3e4",
+        background: "#a0dbeb ",
         text: "black"
     },
     {
-        background: "#fec00d",
+        background: "#73dcb4 ",
         text: "black"
     },
     {
-        background: "#74c19d",
+        background: "#fa2d2e ",
+        text: "white"
+    },
+    {
+        background: "#ffd632 ",
         text: "black"
     },
     {
-        background: "black",
-        text: "white"
-    },
-    {
-        background: "#d60000",
-        text: "white"
-    },
-    {
-        background: "#d6d6d6",
+        background: "#c570e5 ",
         text: "black"
     },
     {
-        background: "#f47ff8",
+        background: "#ff8c1b ",
+        text: "black"
+    },
+    {
+        background: "#2d292a ",
         text: "white"
     },
     {
-        background: "#5877ff",
-        text: "white"
+        background: "#ffc5d9 ",
+        text: "black"
     }
-];
+  ];
