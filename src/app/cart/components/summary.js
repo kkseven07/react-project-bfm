@@ -1,6 +1,6 @@
 import React from "react";
 import "./summary.css";
-export default ({ book }) => {
+export default ({ book,actions }) => {
     return (
         <div styleName="r" className="flex full flex-column">
 
@@ -33,10 +33,13 @@ export default ({ book }) => {
                 {book.order.price}
             </div>
 
-            <div className="flex flex-center" styleName="delete">
+            <div onClick={()=>{
+                actions.deleteFromCache(book.id)
+            }} className="flex flex-center" styleName="delete">
                 Удалить из корзины
             </div>
 
         </div>
     );
 };
+

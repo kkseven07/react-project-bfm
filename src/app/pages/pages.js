@@ -51,7 +51,7 @@ class BookRoute extends Component {
             bData = rest;
         }
 
-        let pages = data;
+        let pages = data.slice(0,3);
         return (
             <div style={{ backgroundColor: "white", paddingBottom: 30 }}>
                 <Modal />

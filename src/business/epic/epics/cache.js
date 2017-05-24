@@ -33,16 +33,22 @@ export const loadCache = (action$, store) =>
                 JSON.parse(localStorage.getItem(key))
             )
         );
-        if(items.length<1){
-            return [{ type: "OK"}]
+        if (items.length < 1) {
+            return [{ type: "OK" }];
         }
 
-        return [{ type: "LOAD_CACHE_FULFILLED", payload:items }];
+        return [{ type: "LOAD_CACHE_FULFILLED", payload: items }];
     });
+
+export const deleteFromCache = (action$, store) =>
+    action$.ofType("DELETE_FROM_CACHE").switchMap(({ id }) => {
+        localStorage.removeItem(id);
+        console.log("epic delete from cache");
+        return [{ type: "DELETE_FROM_CACHE_FULFILLED", payload: id }];
+    });
+
 
 export const loadFromCache = (action$, store) =>
     action$.ofType("LOAD_FROM_CACHE").delay(100).switchMap(action => {
-        return [{ type: "LOAD_FROM_CACHE_FULFILLED"}];
+        return [{ type: "LOAD_FROM_CACHE_FULFILLED" }];
     });
-
-

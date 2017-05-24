@@ -10,7 +10,12 @@ import {
     getBookPage,
     updateOrder
 } from "./epics/api";
-import {storageCreateBook ,loadCache ,loadFromCache} from './epics/book'
+import {
+    storageCreateBook,
+    loadCache,
+    loadFromCache,
+    deleteFromCache
+} from "./epics/cache";
 import { input, changeForm } from "./epics/form";
 import { delayLoading } from "./epics/delay";
 import "rxjs/add/operator/filter";
@@ -35,7 +40,8 @@ const rootEpic = combineEpics(
     delayLoading,
     storageCreateBook,
     loadCache,
-    loadFromCache
+    loadFromCache,
+    deleteFromCache,
 );
 
 export default rootEpic;

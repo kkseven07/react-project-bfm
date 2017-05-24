@@ -68,9 +68,9 @@ export const upload = (book_id, page, params) => {
     return { type: "UPLOAD", book_id, page, params };
 };
 
-export const updateOrder=(order_id, params) =>{
-    return {type:"UPDATE_ORDER", order_id, params}
-}
+export const updateOrder = (order_id, params) => {
+    return { type: "UPDATE_ORDER", order_id, params };
+};
 
 //menu
 export const openMenu = params => {
@@ -82,6 +82,11 @@ export const closeMenu = () => {
 
 //cache
 
+export const deleteFromCache = id => {
+    console.log(id,"in action")
+    return { type: "DELETE_FROM_CACHE", id:id };
+};
+
 export const loadFromCache = book => {
     return { type: "LOAD_FROM_CACHE", book };
 };
@@ -89,3 +94,7 @@ export const loadFromCache = book => {
 export const loadCache = () => {
     return { type: "LOAD_CACHE" };
 };
+
+
+
+

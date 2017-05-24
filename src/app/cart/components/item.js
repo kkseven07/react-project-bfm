@@ -2,7 +2,7 @@ import React from "react";
 import Book from './book'
 import Summary from './summary'
 import "./item.css"
-export default ({ book,history }) => {
+export default ({ book,history,actions }) => {
     return (
         <div className="width-full" styleName="container">
             <div
@@ -14,7 +14,7 @@ export default ({ book,history }) => {
 
                 </div>
                 <div className="flex flex-center" styleName="elem two">
-                    <Summary book={book}/>
+                    <Summary actions={actions} book={book}/>
                 </div>
             </div>
         </div>

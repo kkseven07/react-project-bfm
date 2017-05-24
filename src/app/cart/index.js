@@ -28,7 +28,7 @@ class Cart extends React.Component {
         let { currentBookId, ...books } = this.props.book;
         let data = reverse(values(books));
         let total = this.getTotal(data);
-        if (!currentBookId) {
+        if (data.length<1) {
             return (
                 <div
                     className="flex flex-center width-full flex-column"
@@ -78,6 +78,7 @@ class Cart extends React.Component {
                             history={this.props.history}
                             key={i}
                             book={item}
+                            actions={this.props.actions}
                         />
                         <div
                             style={{

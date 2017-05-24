@@ -3,16 +3,20 @@ export const normalisePages = pages => {
    pages.forEach(page => (mapPages[page.id] = page));
    return mapPages;
 };
-
 export const normaliseBooks = books => {
    let map = {};
    books.forEach(book => (map[book.id] = book));
    return map;
 };
 import reverse from "lodash/reverse";
+import omit from 'lodash/omit'
 export default (state = { currentBookId: null }, action) => {
-
    switch (action.type) {
+
+      case "DELETE_FROM_CACHE_FULFILLED":
+         // const {[action.payload]:book_to_remove,...rest}=state
+         let new_state = omit(state,action.payload)
+         return {...new_state,currentBookId:null}
       case "LOAD_FROM_CACHE":
          return {
             ...state,
