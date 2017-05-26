@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../../../../assets/icons/logo.png";
 import "./header.css";
-
+import values from 'lodash/values'
 import { push as Menu } from "react-burger-menu";
 import * as actions from "../../../business/actions";
 import { connect } from "react-redux";
@@ -59,9 +59,8 @@ const styles = {
 
 // };
 const header = ({ history, ...props }) => {
-          console.log(props.menu)
-          console.log("rerender")
-    // this.menu&&console.log(this.menu.isOpen,"menu open or close")
+    const { currentBookId, ...books } = props.book;
+    const count = values(books).length;
     return (
         <div styleName="header">
             {props.menu &&
@@ -124,9 +123,13 @@ const header = ({ history, ...props }) => {
                         aria-hidden="true"
                     />
                 </div>
-                <div styleName="close-btn" onClick={()=>{
-                    console.log("clickd")
-                    props.actions.closeMenu()}}>
+                <div
+                    styleName="close-btn"
+                    onClick={() => {
+                        console.log("clickd");
+                        props.actions.closeMenu();
+                    }}
+                >
                     <i className="fa fa-times" />
                 </div>
             </Menu>
@@ -164,6 +167,12 @@ const header = ({ history, ...props }) => {
                     </NavLink>
 
                 </div>
+
+                {count>0&&<div onClick={()=>{
+                    history.push("/cart")
+                }} styleName="cart" style={{marginLeft:"20%"}}>
+                    Корзина ({count})
+                </div>}
             </div>
         </div>
     );
@@ -171,7 +180,8 @@ const header = ({ history, ...props }) => {
 
 const mapStateToProps = state => ({
     menu: state.menu.open,
-    count:state.menu.count
+    book: state.book,
+    count: state.menu.count
 });
 const mapDispatchToProps = dispatch => ({
     actions: bindActionCreators(actions, dispatch)

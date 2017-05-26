@@ -1,8 +1,8 @@
 import React from "react";
-import Book from './book'
-import Summary from './summary'
-import "./item.css"
-export default ({ book,history,actions }) => {
+import Book from "./book";
+import Summary from "./summary";
+import "./item.css";
+export default ({ book, history, actions }) => {
     return (
         <div className="width-full" styleName="container">
             <div
@@ -10,11 +10,11 @@ export default ({ book,history,actions }) => {
                 styleName="r"
             >
                 <div className="flex flex-center" styleName="elem one">
-                    <Book history={history} book={book}/>
+                    <Book history={history} book={book} />
 
                 </div>
                 <div className="flex flex-center" styleName="elem two">
-                    <Summary actions={actions} book={book}/>
+                    <Summary actions={actions} book={book} />
                 </div>
             </div>
         </div>

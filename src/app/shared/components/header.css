@@ -100,6 +100,10 @@
     .links{
         display: none;
     }
+    .cart{
+        display: none
+    }
+
     .r{
         height:70px;
     }

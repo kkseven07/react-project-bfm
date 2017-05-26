@@ -20,6 +20,7 @@ const showHeader = location =>
 
 class App extends React.Component {
     componentWillMount() {
+        this.props.actions.loadCache();
         let OSName = "Unknown OS";
         if (navigator.appVersion.indexOf("Win") != -1) OSName = "Win";
         if (navigator.appVersion.indexOf("Mac") != -1) OSName = "Mac";
@@ -41,7 +42,7 @@ class App extends React.Component {
                     zoomer...
                 </Background>
 
-                {showHeader(location) && <Header history={history} />}
+                {showHeader(location) && <Header  history={history} />}
                 <div id="wrap">
                     <div
                         styleName={

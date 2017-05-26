@@ -31,10 +31,11 @@ class BookRoute extends Component {
         }
     }
     componentDidMount() {
-        if (!(this.props.history.action === "POP")) window.scrollTo(0, 0);
-        else {
-            window.scrollTo(0, 25000);
-        }
+        // if (!(this.props.history.action === "POP"))
+        window.scrollTo(0, 0);
+        // else {
+        //     window.scrollTo(0, 25000);
+        // }
     }
     componentWillUnmount() {
         this.props.actions.closeModal();
@@ -51,7 +52,7 @@ class BookRoute extends Component {
             bData = rest;
         }
 
-        let pages = data.slice(0,3);
+        let pages = data;
         return (
             <div style={{ backgroundColor: "white", paddingBottom: 30 }}>
                 <Modal />

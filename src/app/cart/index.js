@@ -9,9 +9,6 @@ import reverse from "lodash/reverse";
 import { Button, ErrorText } from "../shared";
 
 class Cart extends React.Component {
-    componentWillMount() {
-        this.props.actions.loadCache();
-    }
     componentDidMount() {
         window.scrollTo(0, 0);
     }

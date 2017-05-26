@@ -83,7 +83,6 @@ export const closeMenu = () => {
 //cache
 
 export const deleteFromCache = id => {
-    console.log(id,"in action")
     return { type: "DELETE_FROM_CACHE", id:id };
 };
 

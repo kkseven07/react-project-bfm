@@ -90,7 +90,7 @@ const Book = props => {
                         className="flex space-between"
                     >
                         <div>Цена: </div>
-                        <div>{data.filter(val=>val.type===props.version.value)[0].price}</div>
+                        <div>{data.filter(val=>val.type=== book.order.type)[0].price}</div>
                     </div>
 
                     <div style={{ height: 20, alignSelf: "center" }} />

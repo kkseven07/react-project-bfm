@@ -43,7 +43,6 @@ export const loadCache = (action$, store) =>
 export const deleteFromCache = (action$, store) =>
     action$.ofType("DELETE_FROM_CACHE").switchMap(({ id }) => {
         localStorage.removeItem(id);
-        console.log("epic delete from cache");
         return [{ type: "DELETE_FROM_CACHE_FULFILLED", payload: id }];
     });
 

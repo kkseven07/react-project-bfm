@@ -126,7 +126,10 @@ const PartOne = ({ form, ...props }) => {
 };
 class PartTwo extends React.Component {
     componentWillReceiveProps(nextProps) {
-        if (nextProps.canCreate && nextProps.canCreate) {
+        if (nextProps.form.inputEntered) {
+            return;
+        }
+        if (nextProps.canCreate) {
             this.props.actions.createBook(this.gift, this.props.history);
         }
     }

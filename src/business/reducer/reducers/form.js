@@ -66,6 +66,7 @@ import * as selector from "./selectorForm";
 import { data } from "../../../app/shared";
 
 export default (state = forTest, action) => {
+   // console.log(action)
    switch (action.type) {
       case "CHANGE_FORM":
          if (action.isNext) {
@@ -81,7 +82,8 @@ export default (state = forTest, action) => {
                   isValid,
                   errorText,
                   fieldType: v,
-                  value: state[v].value
+                  value: state[v].value,
+                  inputEntered:true
                };
             });
             if (
@@ -97,10 +99,12 @@ export default (state = forTest, action) => {
                return {
                   ...state,
                   isNext: true,
-                  canCreate
+                  canCreate,
+                  inputEntered:false
                };
             } else {
                //check if everything is pristine
+               console.log("check if everything is pristine")
                let list = raw.reduce(
                   (acc, v) => ({
                      ...acc,
@@ -113,16 +117,19 @@ export default (state = forTest, action) => {
                   ...state,
                   isNext: action.part === "partOne" ? false : true,
                   canCreate,
-                  ...list
+                  ...list,
+                  inputEntered:true
                };
             }
          } else {
             return {
                ...state,
-               isNext: false
+               isNext: false,
+               inputEntered:true
             };
          }
       case "ENTER_INPUT":
+
          const { isValid, errorText } = selector.validate(
             action.text,
             action.field
@@ -134,8 +141,12 @@ export default (state = forTest, action) => {
                value: action.text,
                isPristine: false,
                isValid,
-               errorText
-            }
+               errorText,
+            },
+            inputEntered:true
+
+
+
          };
       case "CHECK_DATE":
          if (
@@ -162,7 +173,7 @@ export default (state = forTest, action) => {
             } else {
                calculatedAge = "";
             }
-            return { ...state, calculatedAge, dateExists };
+            return { ...state, calculatedAge, dateExists, inputEntered:true };
          }
       case "CLEAR_GIFT_FORM":
          return initialState;

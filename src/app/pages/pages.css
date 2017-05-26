@@ -185,12 +185,20 @@
     }
 }
 
-.print{
+/*.print{
     height:2048px;
     width:2048px;
     font-size:80.31px;
     margin:0;
+    }*/
+
+.print{
+    height:1400px;
+    width:1400px;
+    font-size:55.01px;
+    margin:0;
     }
+
 
 
 

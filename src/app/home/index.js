@@ -9,7 +9,6 @@ import Gallery from "./components/gallery";
 export default props => // console.log(props)||
 (
     <div className="full flex flex-center flex-column">
-        <Gallery/>
         <BookForm history={props.history} />
         <Reviews />
         <Footer />
