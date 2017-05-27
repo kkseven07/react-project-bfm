@@ -14,7 +14,7 @@ import App from '../app/app'
 const store = configureStore()
 const history = createHistory()
 
-
+// import { AppRegistry } from 'react-native-web';
 render(
     <Provider store={store}>
         <ConnectedRouter history={history}>
@@ -23,3 +23,7 @@ render(
     </Provider>,
   document.getElementById('root')
 )
+
+// const rootTag = document.getElementById('root');
+// AppRegistry.registerComponent('App', () => App);
+// AppRegistry.runApplication('App', { rootTag });
