@@ -22,17 +22,19 @@ class Order extends React.Component {
                 style={{
                     // height:200,
                     // width:200,
+                    opacity:this.anim,
                     marginTop: 20,
                     justifyContent: "center",
                     alignItems: "center",
+                    perspective: 500,
                     // transformOrigin: "center right",
                     transform: [
                         {
                             translateX: this.anim.interpolate({
-                                inputRange: [0, 1],
-                                outputRange: [0, 10]
+                                inputRange: [0.7, 1],
+                                outputRange: [-340, 340]
                             })
-                        },
+                        }
                         // {
                         //     rotateY: this.anim.interpolate({
                         //         inputRange: [0.7, 1],
@@ -45,17 +47,12 @@ class Order extends React.Component {
                         //         outputRange: ["0deg", "100deg", "180deg"]
                         //     })
                         // },
-                        {
-                            rotateX: this.anim.interpolate({
-                                inputRange: [0.7, 0.9, 1],
-                                outputRange: ["60deg", "100deg", "180deg"]
-                            })
-                        },
-                        {
-                            perspective:500
-                        }
-
-
+                        // {
+                        //     rotateX: this.anim.interpolate({
+                        //         inputRange: [0.7, 0.9, 1],
+                        //         outputRange: ["60deg", "100deg", "180deg"]
+                        //     })
+                        // },
 
                         // {
                         //     skewY:100
@@ -66,40 +63,48 @@ class Order extends React.Component {
                     flex: 1
                 }}
             >
-                <View
+                <Animated.View
                     styleName="r"
                     style={{
+                        transform: [
+                            {
+                                rotateX: this.anim.interpolate({
+                                    inputRange: [0.7, 0.9, 1],
+                                    outputRange: ["60deg", "100deg", "280deg"]
+                                })
+                            }
+                        ],
                         height: 500,
                         width: 500,
                         backgroundColor: "red",
                         justifyContent: "center",
-                        alignItems: "center",
+                        alignItems: "center"
                         // perspective:1000
                     }}
                 >
-                    <Text style={{fontSize:20,margin:10}}>
+                    <Text style={{ fontSize: 20, margin: 10 }}>
                         first react native component is finally component
                     </Text>
-                    <Text style={{fontSize:20,margin:10}}>
+                    <Text style={{ fontSize: 20, margin: 10 }}>
                         first react native component is finally component
                     </Text>
-                    <Text style={{fontSize:20,margin:10}}>
+                    <Text style={{ fontSize: 20, margin: 10 }}>
                         first react native component is finally component
                     </Text>
-                    <Text style={{fontSize:20,margin:10}}>
+                    <Text style={{ fontSize: 20, margin: 10 }}>
                         first react native component is finally component
                     </Text>
-                      <Text style={{fontSize:20,margin:10}}>
+                    <Text style={{ fontSize: 20, margin: 10 }}>
                         first react native component is finally component
                     </Text>
-                    <Text style={{fontSize:20,margin:10}}>
+                    <Text style={{ fontSize: 20, margin: 10 }}>
                         first react native component is finally component
                     </Text>
-                    <Text style={{fontSize:20,margin:10}}>
+                    <Text style={{ fontSize: 20, margin: 10 }}>
                         first react native component is finally component
                     </Text>
 
-                </View>
+                </Animated.View>
 
             </Animated.View>
         );
