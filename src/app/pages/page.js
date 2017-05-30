@@ -35,7 +35,7 @@ import Brain from "./page/brain";
 const urlImage = "http://localhost:4000/images/";
 const noImage = ["cover", "coverChooser"];
 import { editable } from "../shared/utils.js";
-
+// import {Button} from '../shared'
 // .replace("http://localhost:4000","http://46.101.217.205:4000")
 class Page extends Component {
     state = { zoom: false, imgLoaded: this.props.print ? true : false };
@@ -171,7 +171,7 @@ class Page extends Component {
                         onLoad={() =>
                             setTimeout(
                                 () => this.setState({ imgLoaded: true }),
-                                0
+                                200
                             )}
                         onError={() =>
                             console.log(
@@ -190,11 +190,10 @@ class Page extends Component {
                     <button
                         onClick={this.edit}
                         styleName="edit-button"
-                        className="flex-center"
                     >
-                        <span styleName="edit-text" className="jura">
+                        <div styleName="edit-text">
                             Редактировать
-                        </span>
+                        </div>
                     </button>}
             </div>
         );

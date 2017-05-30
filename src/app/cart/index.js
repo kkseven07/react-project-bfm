@@ -122,7 +122,7 @@ class Cart extends React.Component {
 
                 </div>
 
-                <Button width={310} click={() => {}}>
+                <Button width={310} click={() => {this.props.history.push("/order")}}>
                     Перейти к оплате
                 </Button>
 

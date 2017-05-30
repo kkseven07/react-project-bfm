@@ -36,6 +36,7 @@ export const updatePage = action$ =>
             (params.background &&
                 params.background !== page.data.color.background) ||
             (params.text && params.text !== page.data.text) ||
+            (params.intro && params.intro !== page.data.intro) ||
             (params.selectedImage &&
                 !checkUrl(params.selectedImage, page.primary_image.image.url))
         ) {

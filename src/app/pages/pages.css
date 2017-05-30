@@ -8,7 +8,7 @@
     background-color: white;
     flex-direction: column;
     padding-bottom:20px;
-    padding-top:20px;
+    padding-top:30px;
     min-height: 600px;
 }
 .page-wrap{
@@ -60,9 +60,6 @@
     background-color: #5877ff;
     position: absolute;
     outline: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     bottom:-20px;
     font-family: "RobotoRegular";
     left: 0;
@@ -71,8 +68,7 @@
     margin-right: auto;
 }
 .edit-button:hover{
-    background-color: black;
-    box-shadow: 0px 0px 0px rgb(150,150,150);
+    background-color: #3954e0;
 
 }
 
@@ -80,6 +76,7 @@
 .edit-text{
     font-size: 16px;
     color:white;
+    text-align:center;
 }
 
 .menu{

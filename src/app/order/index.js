@@ -1,113 +1,121 @@
 import React from "react";
 import "./order.css";
 import { Component, View, Text, Animated } from "react-native";
-
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import values from "lodash/values";
+import * as actions from "../../business/actions/index.js";
+import reverse from "lodash/reverse";
 const tryTo = props => {
     return <div>hello</div>;
 };
 import Home from "../home";
+import Logo from "../../../assets/icons/logo.png";
 
 class Order extends React.Component {
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
+    getTotal = books => {
+        return books.reduce(
+            (acc, book) =>
+                parseInt(book.order.price.replace("тг", "").trim()) + acc,
+            0
+        );
+    };
     render() {
         this.anim = this.anim || new Animated.Value(0.7);
-        console.log(this.anim);
+        let { currentBookId, ...books } = this.props.book;
+        let data = reverse(values(books));
+        let total = this.getTotal(data);
+        console.log(total);
         return (
-            <Animated.View
-                onClick={() =>
-                    console.log("here") ||
-                    Animated.spring(this.anim, {
-                        toValue: this.anim._value > 0.7 ? 0.7 : 1
-                        // duration: 500
-                    }).start()}
-                style={{
-                    // height:200,
-                    // width:200,
-                    opacity:this.anim,
-                    marginTop: 20,
-                    justifyContent: "center",
-                    alignItems: "center",
-                    perspective: 500,
-                    // transformOrigin: "center right",
-                    transform: [
-                        {
-                            translateX: this.anim.interpolate({
-                                inputRange: [0.7, 1],
-                                outputRange: [-340, 340]
-                            })
-                        }
-                        // {
-                        //     rotateY: this.anim.interpolate({
-                        //         inputRange: [0.7, 1],
-                        //         outputRange: ["0deg", "180deg"]
-                        //     })
-                        // },
-                        // {
-                        //     rotateZ: this.anim.interpolate({
-                        //         inputRange: [0.7, 0.9, 1],
-                        //         outputRange: ["0deg", "100deg", "180deg"]
-                        //     })
-                        // },
-                        // {
-                        //     rotateX: this.anim.interpolate({
-                        //         inputRange: [0.7, 0.9, 1],
-                        //         outputRange: ["60deg", "100deg", "180deg"]
-                        //     })
-                        // },
-
-                        // {
-                        //     skewY:100
-                        // }
-                    ],
-
-                    // opacity: this.anim,
-                    flex: 1
-                }}
+            <div
+                className="flex flex-center width-full flex-column"
+                style={{ paddingBottom: 50 }}
             >
-                <Animated.View
-                    styleName="r"
+                <img
+                    onClick={() => {
+                        this.props.history.push("/");
+                    }}
+                    src={Logo}
+                    style={{ width: 100, height: 100, marginBottom: 10 }}
+                />
+                <div
+                    className="flex-start"
                     style={{
-                        transform: [
-                            {
-                                rotateX: this.anim.interpolate({
-                                    inputRange: [0.7, 0.9, 1],
-                                    outputRange: ["60deg", "100deg", "280deg"]
-                                })
-                            }
-                        ],
-                        height: 500,
-                        width: 500,
-                        backgroundColor: "red",
-                        justifyContent: "center",
-                        alignItems: "center"
-                        // perspective:1000
+                        margin: 10,
+                        paddingLeft: 5,
+                        marginTop: 10,
+                        width: "70%",
+                        fontSize: 25,
+                        maxWidth: 700,
+                        fontFamily: "RobotoRegular"
                     }}
                 >
-                    <Text style={{ fontSize: 20, margin: 10 }}>
-                        first react native component is finally component
-                    </Text>
-                    <Text style={{ fontSize: 20, margin: 10 }}>
-                        first react native component is finally component
-                    </Text>
-                    <Text style={{ fontSize: 20, margin: 10 }}>
-                        first react native component is finally component
-                    </Text>
-                    <Text style={{ fontSize: 20, margin: 10 }}>
-                        first react native component is finally component
-                    </Text>
-                    <Text style={{ fontSize: 20, margin: 10 }}>
-                        first react native component is finally component
-                    </Text>
-                    <Text style={{ fontSize: 20, margin: 10 }}>
-                        first react native component is finally component
-                    </Text>
-                    <Text style={{ fontSize: 20, margin: 10 }}>
-                        first react native component is finally component
-                    </Text>
+                    Ваш заказ
+                </div>
+                <div
+                    styleName="summary first"
+                    className="flex flex-center space-between"
+                >
+                    <div>
+                        Книги
+                    </div>
 
-                </Animated.View>
+                    <div>
+                        9900
+                    </div>
+                </div>
+                <div
+                    styleName="summary"
+                    className="flex flex-center space-between"
+                >
+                    <div>
+                        Упаковка
+                    </div>
 
-            </Animated.View>
+                    <div>
+                        300
+                    </div>
+                </div>
+                <div
+                    styleName="summary"
+                    className="flex flex-center space-between"
+                >
+                    <div>
+                        Итого
+                    </div>
+
+                    <div>
+                        300
+                    </div>
+                </div>
+
+                <div
+                    className="flex-start"
+                    style={{
+                        margin: 10,
+                        paddingLeft: 5,
+                        marginTop: 20,
+                        width: "70%",
+                        fontSize: 25,
+                        maxWidth: 700,
+                        fontFamily: "RobotoRegular"
+                    }}
+                >
+                    Ваши детали
+                </div>
+
+            </div>
         );
     }
 }
-export default Order;
+const mapStateToProps = state => ({
+    book: state.book
+});
+const mapDispatchToProps = dispatch => ({
+    actions: bindActionCreators(actions, dispatch)
+});
+export default connect(mapStateToProps, mapDispatchToProps)(Order);

@@ -10,7 +10,6 @@ export default props => // console.log(props)||
 (
     <div className="full flex flex-center flex-column">
         <BookForm history={props.history} />
-        <Reviews />
         <Footer />
 
     </div>

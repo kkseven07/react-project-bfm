@@ -7,6 +7,7 @@ import values from "lodash/values";
 import * as actions from "../../business/actions/index.js";
 import Modal from "../modal/builder";
 import Book from "./book";
+import Menu from "./menu";
 import CoverChooser from "./page/coverChooser";
 const BOOK_ID = 157;
 import Hashids from "hashids";
@@ -26,16 +27,15 @@ class BookRoute extends Component {
             let book = JSON.parse(localStorage.getItem(book_id));
             if (book) this.props.actions.loadFromCache(book);
             else {
+                if (this.props.history.action === "PUSH") {
+                    return;
+                }
                 this.props.actions.getBook(book_id);
             }
         }
     }
     componentDidMount() {
-        // if (!(this.props.history.action === "POP"))
         window.scrollTo(0, 0);
-        // else {
-        //     window.scrollTo(0, 25000);
-        // }
     }
     componentWillUnmount() {
         this.props.actions.closeModal();
@@ -79,6 +79,7 @@ class BookRoute extends Component {
                         book={this.props.book}
                         history={this.props.history}
                     />}
+                <Menu actions={this.props.actions} book={bData} history={this.props.history} />
 
             </div>
         );

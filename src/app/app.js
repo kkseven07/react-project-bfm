@@ -18,6 +18,8 @@ import { Background, Header, Loading } from "./shared";
 const showHeader = location =>
     !location.pathname.includes("/books/") &&
     !location.pathname.includes("/pages/") &&
+    !location.pathname.includes("/preview") &&
+    !location.pathname.includes("/order") &&
     !location.pathname.includes("/cart");
 
 class App extends React.Component {

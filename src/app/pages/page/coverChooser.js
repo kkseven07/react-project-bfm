@@ -10,7 +10,7 @@ class CoverChooser extends Component {
     render() {
         return (
             <div className="flex width-full flex-center" styleName="r">
-                <div style={{ margin: 10, fontFamily: "RobotoMedium" }}>
+                <div style={{ margin: 10, fontFamily: "RobotoRegular" }}>
                     Выберите цвет обложки
                 </div>
                 <div className="flex width-full flex-center" styleName="c">
