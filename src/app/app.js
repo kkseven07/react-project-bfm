@@ -7,8 +7,8 @@ const Contacts = asyncModule(() => import("./contacts"), "contacts route");
 const Builder = asyncModule(() => import("./pages/pages"), "pages route");
 const Cart = asyncModule(()=>import("./cart"),"cart route")
 const Print = asyncModule(()=> import("./pages/print"), "print route")
-import Order from './order'
-import Preview from './preview'
+const Order = asyncModule(()=>import("./order"),"order")
+// import Order from './order'
 import { routerActions } from "react-router-redux";
 import { connect } from "react-redux";
 import * as actions from "../business/actions";
@@ -63,7 +63,6 @@ class App extends React.Component {
                             <Route path="/books/:id" component={Builder} />
                             <Route path="/cart" component={Cart} />
                             <Route path="/order" component={Order}/>
-                            <Route path="/preview" component={Preview}/>
                             <Route
                                 path="/pages/:book_id/:type"
                                 component={Print}

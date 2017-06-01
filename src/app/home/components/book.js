@@ -29,7 +29,6 @@ const Book = ({ bookName, name }) => {
     return (
         <div styleName="r" className="flex app-blue">
             <div style={{ fontSize: fontSize, fontFamily: "BebasBold" }}>
-
                 {toRender}
             </div>
         </div>

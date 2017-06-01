@@ -1,7 +1,7 @@
 import React from "react";
 import "./menu.css";
 
-export default ({ book, actions, history }) => {
+export default ({ book, actions, history, cover }) => {
     return (
         <div styleName="r" className="fixed">
             <div className="flex flex-center width-full">
@@ -17,7 +17,7 @@ export default ({ book, actions, history }) => {
                     </div>
                     <div
                         onClick={() => {
-                            actions.openModal({ type: "info" }, book);
+                            actions.openModal({ type: "info" }, {book,cover});
                         }}
                         className="flex flex-center"
                         styleName="box"

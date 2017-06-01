@@ -1,6 +1,11 @@
 const init = {
     page: {},
-    bookVersion:{value:"digital",isPristine:true},
+    bookVersion: {
+        value: "digital",
+        size: "21",
+        isPristine: true,
+        giftWrap: ""
+    },
     intro: {
         selectedImage: null,
         select: {
@@ -49,7 +54,7 @@ const init = {
 
 export default (
     state = init,
-    { type, page, params, text, fieldType, which, leftRotate, version }
+    { type, page, params, text, fieldType, which, leftRotate, version, whichVersion }
 ) => {
     switch (type) {
         case "BUILDER_IMAGE":
@@ -84,13 +89,33 @@ export default (
                     : state.qualityTableStep + 1
             };
         case "BOOK_VERSION":
+            let toReturn;
+            if (["21", "23"].indexOf(version) > -1) {
+                toReturn = {
+                    size: version,
+                    value: whichVersion?whichVersion:state.bookVersion.value,
+                    giftWrap: state.bookVersion.giftWrap
+                };
+            } else if (version === "giftWrap") {
+                toReturn = {
+                    size: state.bookVersion.size,
+                    value: whichVersion?whichVersion:state.bookVersion.value,
+                    giftWrap: state.bookVersion.giftWrap === "" ? version : ""
+                };
+            } else {
+                toReturn = {
+                    value: version,
+                    size: state.bookVersion.size,
+                    giftWrap: state.bookVersion.giftWrap
+                };
+            }
             return {
                 ...state,
-                bookVersion:{value:version,isPristine:false}
-            }
+                bookVersion: { ...toReturn, isPristine: false }
+            };
         case "CLEAN_BUILDER":
-            return init
-            // return {...init, bookVersion:state.bookVersion};
+            return init;
+        // return {...init, bookVersion:state.bookVersion};
         default:
             return state;
     }

@@ -16,7 +16,7 @@ import {
     loadFromCache,
     deleteFromCache
 } from "./epics/cache";
-import { input, changeForm } from "./epics/form";
+import { input, changeForm, bookVersion } from "./epics/form";
 import { delayLoading } from "./epics/delay";
 import "rxjs/add/operator/filter";
 import "rxjs/add/operator/delay";
@@ -30,6 +30,7 @@ const rootEpic = combineEpics(
     input,
     changeForm,
     createBook,
+    bookVersion,
     genPages,
     updatePage,
     updateOrder,

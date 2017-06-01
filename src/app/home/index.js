@@ -6,10 +6,32 @@ import BookForm from "./components/bookForm";
 import Reviews from "./components/reviews";
 import Footer from "./components/footer";
 import Gallery from "./components/gallery";
-export default props => // console.log(props)||
-(
+var Scroll = require("react-scroll");
+var Element = Scroll.Element;
+var scroller = Scroll.scroller;
+export default (
+    props // console.log(props)||
+) => (
     <div className="full flex flex-center flex-column">
-        <BookForm history={props.history} />
+
+        <div
+            onClick={() => {
+                scroller.scrollTo("myScrollToElement", {
+                    duration: 300,
+                    delay: 50,
+                    offset:-100,
+                    smooth: true,
+                    containerId: "ContainerElementID"
+                });
+            }}
+        >
+            click
+
+        </div>
+        <Gallery />
+        <Element style={{width:"100%"}} name="myScrollToElement">
+            <BookForm history={props.history} />
+        </Element>
         <Footer />
 
     </div>

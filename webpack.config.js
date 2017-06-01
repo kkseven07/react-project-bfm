@@ -11,7 +11,17 @@ module.exports = {
   devtool: "eval-source-map",
   entry: {
     app: __dirname + "/src/entry/index.js",
-    vendor: ["react-dom", "react", "redux-observable", "redux", "react-router"]
+    vendor: [
+      "react-dom",
+      "react",
+      "redux-observable",
+      "redux",
+      "react-router",
+      "react-burger-menu",
+      "react-transition-group/CSSTransitionGroup",
+      "halogen/GridLoader",
+      "react-native"
+    ]
   },
   output: {
     path: __dirname + "/public",

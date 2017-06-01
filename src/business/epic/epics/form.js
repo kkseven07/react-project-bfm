@@ -14,3 +14,18 @@ export const changeForm = action$ =>
             return part === "partTwo";
         })
         .mapTo({ type: "ME" });
+
+export const bookVersion = (action$, store) =>
+    action$.ofType("BOOK_VERSION").switchMap(action => {
+        const state = store.getState();
+        const { currentBookId, ...books } = state.book;
+        const book = books[currentBookId];
+        const bookVersion = state.builder.bookVersion;
+        return [
+            {
+                type: "UPDATE_ORDER",
+                order_id: book.order.id,
+                params:bookVersion
+            }
+        ];
+    });

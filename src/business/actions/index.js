@@ -34,8 +34,8 @@ export const rotateQualityTable = leftRotate => {
     return { type: "ROTATE_QUALITY_TABLE", leftRotate };
 };
 
-export const bookVersion = version => {
-    return { type: "BOOK_VERSION", version };
+export const bookVersion = (version,whichVersion) => {
+    return { type: "BOOK_VERSION", version, whichVersion };
 };
 
 export const cleanBuilder = () => {

@@ -16,7 +16,10 @@ const Loading = props => {
          '"' +
          (props.bookName.trim() === "" ? props.name : props.bookName) +
          '"';
-   } else {
+   }else if(props.type==="updateOrder"){
+      text = "Меняем формат книги..."
+   }
+   else {
       text = "Подгружаем книгу...";
    }
 

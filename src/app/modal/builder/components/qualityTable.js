@@ -24,7 +24,7 @@ export const male = {
 };
 export const femaleE = {
     карьеристка: "сareerist",
-    умница: "smartgirl",
+    умница: "smart",
     звездочка: "star",
     гик: "geek",
     домоседка: "homebody",
@@ -62,7 +62,6 @@ export default ({ page, book, actions, step }) => {
     const gender = book.gender === "male" ? "gendermale":"genderfemale"
     const which = invert(group)[step % 7];
     const toSend = groupE[which]
-
     return (
         <div className="flex flex-column width-full flex-center relative">
 
@@ -74,7 +73,7 @@ export default ({ page, book, actions, step }) => {
                 style={{ marginBottom: 20, marginTop: 20 }}
             >
 
-                <div onClick={turnLeft} style={{ margin: 10, marginRight: 20 }}>
+                <div onClick={turnLeft} style={{zIndex:1000, margin: 10, marginRight: 20 }}>
                     left
                 </div>
                 <Motion style={mainButtonRotation}>
@@ -83,10 +82,10 @@ export default ({ page, book, actions, step }) => {
                             onClick={e => {
                                 e.preventDefault();
                             }}
+                            styleName="r"
                             style={{
                                 borderRadius: "50%",
-                                height: "75%",
-                                width: "75%",
+                                width: "70%",
                                 transform: `rotate(${rotate}deg)`
                             }}
                             src={
@@ -97,7 +96,7 @@ export default ({ page, book, actions, step }) => {
                     )}
                 </Motion>
 
-                <div onClick={turnRight} style={{ margin: 10 }}>right</div>
+                <div onClick={turnRight} style={{zIndex:1000, margin: 10,marginLeft:20 }}>right</div>
 
             </div>
             <div>{invert(group)[step % 7]}</div>

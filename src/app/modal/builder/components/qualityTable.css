@@ -9,6 +9,10 @@
      border-radius: 8.5em;
 }
 
+.r{
+    -moz-border-radius:50%;
+}
+
 /*@media screen and (max-width:770px) and (min-width: 720px){
     .pizza{
         border-right:200px solid purple;

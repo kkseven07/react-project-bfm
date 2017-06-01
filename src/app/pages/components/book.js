@@ -1,13 +1,13 @@
 import React from "react";
 import "./book.css";
 import { connect } from "react-redux";
-import * as actions from "../../business/actions/index.js";
+import * as actions from "../../../business/actions/index.js";
 import { bindActionCreators } from "redux";
 import hard from "./hard.jpg";
 import soft from "./soft.jpg";
 import digital from "./soft1.jpg";
-import Text from "../modal/builder/components/text";
-import { Button, ErrorText } from "../shared";
+import Text from "../../modal/builder/components/text";
+import { Button, ErrorText } from "../../shared";
 
 const data = [
     {

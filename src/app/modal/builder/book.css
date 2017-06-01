@@ -1,0 +1,13 @@
+.r{
+    height:200px;
+    width:200px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding:6px;
+    white-space: pre-line;
+    text-align: right;
+    padding-bottom:0;
+    font-size:30px;
+    font-family: "BebasBold";
+}
+

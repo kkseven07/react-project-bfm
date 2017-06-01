@@ -31,7 +31,6 @@ const checkUrl = (first, second) => {
 
 export const updatePage = action$ =>
     action$.ofType("UPDATE_PAGE").mergeMap(({ page, params }) => {
-
         if (
             (params.background &&
                 params.background !== page.data.color.background) ||
@@ -60,16 +59,49 @@ export const updatePage = action$ =>
             return [{ type: "CLOSE_MODAL" }];
         }
     });
-export const updateOrder = action$ =>
+export const updateOrder = (action$, store) =>
     action$.ofType("UPDATE_ORDER").mergeMap(({ order_id, params }) => {
+        let price;
+        const book_state = store.getState().book;
+        const book_id = book_state.currentBookId;
+        const book = book_state[book_id];
+        if (params.value === "digital") {
+            price = 2900;
+        } else if (params.value === "soft" && params.size === "21") {
+            price = 9900;
+        } else if (params.value === "soft" && params.size === "23") {
+            price = 11900;
+        } else if (params.value === "hard" && params.size === "21") {
+            price = 14900;
+        } else if (params.value === "hard" && params.size === "23") {
+            price = 17900;
+        }
+        const book_price = price + "";
+        if (params.giftWrap !== "") {
+            price = price + 1000;
+        }
+        const toSend = {
+            type: params.value,
+            price: price + "",
+            data: { size: params.size, gift_wrap: params.giftWrap, book_price }
+        };
+        if (
+            toSend.type === book.order.type &&
+            toSend.price === book.order.price &&
+            toSend.data.size === book.order.data.size &&
+            toSend.data.giftWrap === book.order.data.giftWrap
+        ) {
+            return [{type:"LOCAL_UPDATE_ORDER"}]
+        }
+
         return ajax({
             url: `${url}/api/v1/orders/${order_id}`,
-            body: { params: JSON.stringify(params) },
+            body: { params: JSON.stringify(toSend) },
             ...ajaxObject
         })
             .flatMap(ajax => {
                 return [
-                    { type: "UPDATE_ORDER_FULFILLED",payload:ajax.response }
+                    { type: "UPDATE_ORDER_FULFILLED", payload: ajax.response }
                 ];
             })
             .catch(error => ofObs({ type: "AJAX_ERROR", payload: error }));
@@ -84,10 +116,19 @@ export const createBook = action$ =>
         })
             .flatMap(ajax => {
                 let hashed_id = createHashid(ajax.response.book.id);
+                console.log("in create book api epic", hashed_id);
+
                 history.push(`/books/${hashed_id}`);
                 return [
-                    { type: "FETCH_BOOK_FULFILLED", payload: ajax.response }
-                    // {type:"CHANGE_ROUTE",reroute:reroute}
+                    { type: "FETCH_BOOK_FULFILLED", payload: ajax.response },
+                    {
+                        type: "OPEN_MODAL",
+                        page: { type: "info" },
+                        book: {
+                            book: ajax.response.book,
+                            cover: ajax.response.pages[0]
+                        }
+                    }
                 ];
             })
             .catch(error => ofObs({ type: "AJAX_ERROR", payload: error }));
