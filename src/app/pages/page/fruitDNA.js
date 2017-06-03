@@ -10,11 +10,11 @@ const getFruit = (url) => {
     return"potato"
 }
 
-export default ({page,book}) =>(
-    <div className="width-full">
+export default ({page,book}) => {
+    return   <div className="full">
         <div
             styleName={`text ${getFruit(page.primary_image.image.url)}`}>
            {book.name.toUpperCase()},
         </div>
     </div>
-);
+}

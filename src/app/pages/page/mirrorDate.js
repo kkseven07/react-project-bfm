@@ -9,7 +9,7 @@ export default ({book}) =>(
                 {getDate(book.dob).day}
             </div>
             <div styleName="text small">
-                {getDate(book.dob).month}
+                {getDate(book.dob).monthYa}
             </div>
             <div styleName="text">
                 {getDate(book.dob).year}

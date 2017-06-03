@@ -77,7 +77,7 @@ export const updateOrder = (action$, store) =>
             price = 17900;
         }
         const book_price = price + "";
-        if (params.giftWrap !== "") {
+        if (params.giftWrap !== "" && params.value!=="digital") {
             price = price + 1000;
         }
         const toSend = {

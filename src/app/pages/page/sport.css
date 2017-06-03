@@ -3,7 +3,7 @@
     flex-direction: column;
     color:white;
     padding-bottom:9%;
-    font-family: 'Century';
+    font-family: 'Sylfaen';
 }
 
 .sport{
@@ -14,10 +14,13 @@
 }
 
 .type{
-    font-size:0.55em;
-   /* font-weight: bold;*/
+    font-size:0.65em;
+    color: #fcfafa;
 }
 .fact{
     font-size:0.5em;
 }
 
+.year {
+    font-size:1.1em;
+}

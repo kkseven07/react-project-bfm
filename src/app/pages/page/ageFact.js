@@ -11,7 +11,7 @@ const parseText = (age, fact, i) => {
     return fact.indexOf(age) > -1
         ? <span key={i} styleName="facts">
               {first}
-              <span style={{ fontSize: 16, color: "#fb1611" }}>
+              <span style={{ fontSize: '1.4em', color: "#fb1611" }}>
                   {"  " + age + " "}
               </span>
               {last + ". "}
@@ -23,7 +23,7 @@ export default ({ page, book }) => (
     <div className="full" styleName="r">
         <div styleName="text">{book.age}</div>
 
-        <div className="flex-center" styleName="box2">
+        <div styleName="box2">
             {page.data.facts.map((fact, i) => parseText(book.age, fact, i))}
         </div>
 

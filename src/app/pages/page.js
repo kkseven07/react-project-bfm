@@ -9,6 +9,8 @@ import EpicStory from "./page/epicStory";
 import Scene from "./page/scene";
 import CoverChooser from "./page/coverChooser";
 import Intro from "./page/intro";
+import WiseWord from "./page/wiseWord";
+
 import FruitDNA from "./page/fruitDNA";
 import BackToHistory from "./page/backToHistory";
 import Vice from "./page/vice";
@@ -51,17 +53,22 @@ class Page extends Component {
             return <Cover book={book} page={page} />;
         } else if (type === "animal") {
             return <Animal page={page} book={book} />;
-        } else if (type === "intro") {
+        }
+        else if (type === "intro") {
             return <Intro page={page} book={book} />;
         } else if (type === "musicHit") {
             return <MusicHit book={book} page={page} />;
-        } else if (type === "epicStory") {
-            return <EpicStory book={book} />;
-        } else if (type === "scene") {
+        }
+        else if (type === "epicStory") {
+            return <EpicStory page={page} book={book} />;
+        }
+        else if (type === "scene") {
             return <Scene book={book} />;
-        } else if (type === "fruitDNA") {
+        }
+        else if (type === "fruitDNA") {
             return <FruitDNA page={page} book={book} />;
-        } else if (type === "factoid") {
+        }
+         else if (type === "factoid") {
             return <Factoid book={book} />;
         } else if (type === "cell") {
             return <Cell book={book} />;
@@ -69,19 +76,24 @@ class Page extends Component {
             return <Vice book={book} page={page} />;
         } else if (type === "virtue") {
             return <Virtue book={book} page={page} />;
-        } else if (type === "deducedAgeFact") {
+        }
+        else if (type === "deducedAgeFact") {
             return <DeducedAgeFact book={book} page={page} />;
         } else if (type === "bestseller") {
             return <Bestseller page={page} book={book} />;
         } else if (type === "toy") {
             return <Toy page={page} book={book} />;
-        } else if (type === "videoGame") {
+        }
+        else if (type === "videoGame") {
             return <VideoGame page={page} book={book} />;
-        } else if (type === "backToHistory") {
+        }
+        else if (type === "backToHistory") {
             return <BackToHistory page={page} book={book} />;
-        } else if (type === "car") {
-            return <Car page={page} />;
-        } else if (type === "sport") {
+        }
+         else if (type === "car") {
+            return <Car page={page} book={book}/>;
+        }
+        else if (type === "sport") {
             return <Sport page={page} />;
         } else if (type === "leaders") {
             return <Leader page={page} />;
@@ -97,7 +109,10 @@ class Page extends Component {
             return <Film page={page} book={book} />;
         } else if (type === "holiday") {
             return <Holiday page={page} book={book} />;
-        } else {
+        }else if(type==="wiseWord"){
+            return <WiseWord page={page} book={book} />;
+        }
+         else {
             return <div />;
         }
     };

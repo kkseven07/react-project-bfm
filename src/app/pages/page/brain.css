@@ -1,17 +1,18 @@
 .r {
-    position: relative;
-    font-family: 'BebasBold';
-    font-size: 1.2em;
+	position: relative;
+	font-family: 'BebasBold';
+	font-size: 1.2em;
+    color: #db5151;
 }
 .first {
-    top: 38%;
+	top: 38%;
     left: 44%;
     width: 35%;
-    transform: rotate(24deg);
+    transform: rotate(20deg);
     text-align: center;
 }
 .second {
-    top: 54%;
+	top: 54%;
     left: 38%;
     width:34%;
     transform: rotate(15deg);
@@ -19,9 +20,19 @@
 
 }
 .third {
-    top: 38%;
+	top: 38%;
     left: 19%;
     width: 25%;
     transform: rotate(-54deg);
     text-align: center;
+}
+.thinkabout {
+    width: 47%;
+    position: absolute;
+    top: 66%;
+    transform: rotate(18deg);
+    color: #ff957d;
+    left: 23%;
+    text-shadow: -0.01em 0 black, 0 0.01em black,0.01em 0 black, 0 0.01em black;
+    font-size: 1.2em;
 }

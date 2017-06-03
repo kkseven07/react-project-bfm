@@ -1,12 +1,12 @@
 .r,.first,.second, .box{
     display: flex;
-     font-family: 'BebasBold';
+     
 }
 .first{
     width:32%;
     height:58%;
     flex-direction: column;
-    margin:24% 0% 0 0;
+    margin:25% 0 -0.7% 1.5%;
 }
 
 .second{
@@ -15,30 +15,33 @@
     margin:2% 0% 2% 2%;
     flex-direction: column;
     padding-left:2%;
+    font-family: 'Tahoma';
 }
 .box{
     flex-direction: column;
-    margin:2.8%;
-    margin-left:10px;
+    margin-left:9%;
+    height: 10%;
 }
 
 .country{
-    font-size:0.5em;
-    font-weight: bold;
+    font-size:0.55em;
+    font-family: 'BebasBold';
 }
 
 .leader{
     font-size:0.45em;
     margin-left:2.5%;
+    font-family: 'BebasRegular';
 }
 .year{
-    font-size:6em;
-    height:28%;
+    font-size:4.3em;
+    height:22%;
     margin-left:2%;
     font-weight: bold;
 }
 .fact{
     line-height: 1.2;
-    font-size:0.9em;
+    font-size:0.7em;
+    padding-right: 2%;
 }
 

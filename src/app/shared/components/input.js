@@ -9,7 +9,7 @@ export default ({
 }) => {
     return (
         <input
-            onChange={e => enter(e.target.value, props.fieldType,props.rest?props.rest:"input")}
+            onChange={e => enter(e.target.value, props.fieldType,props.builderField?props.builderField:"input")}
             className={fieldStyle(field.isPristine, field.isValid)}
             styleName={props.style || ""}
             type="text"

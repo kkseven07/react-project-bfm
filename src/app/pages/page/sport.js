@@ -3,7 +3,7 @@ import './sport.css'
 
 export default ({page,book}) =>(
     <div className="full flex flex-center" styleName="r">
-        {page.data.year}
+        <span styleName="year">{page.data.year}</span>
         {page.data.sports
             .sort((obj1,obj2)=> obj1.fact.length<obj2.fact.length)
             .map((obj,i)=>{

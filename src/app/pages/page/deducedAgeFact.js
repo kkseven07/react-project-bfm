@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import "./deducedAgeFact.css";
 import { checkLength } from "../../shared/utils";
 
-export default ({ page, book }) => (
+export default ({ page, book, ...props}) => (
     <div className="full" styleName="r">
-        <div styleName="top-part">
+           <div styleName="top-part">
             <div
                 styleName="name positioned"
                 style={{ fontSize: checkLength(book.name, 10, 1.5) }}
@@ -15,7 +15,7 @@ export default ({ page, book }) => (
             <div styleName="days-alive positioned">{page.data.days_alive}</div>
         </div>
         <div styleName="bottom-part">
-            <div styleName="heart-beats positioned">
+            <div styleName="heart-beats positioned" style={{top:props.osName==='Mac'&&'18%' }}>
                 {page.data.heart_beats}
             </div>
             <div styleName="dream-time positioned">{page.data.dream_time}</div>

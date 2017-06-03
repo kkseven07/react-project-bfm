@@ -20,11 +20,15 @@
 }
 
 .facts{
-    font-size:0.5em;
+    font-size:0.6em;
     font-style: italic;
     margin-top:2%;
+    line-height:1.3em;
 }
 
 .small{
     font-size:1.5em;
+}
+.fact-item {
+    margin-top: 1%;
 }

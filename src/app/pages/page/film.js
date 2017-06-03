@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+ import React, { Component } from "react";
 import "./film.css";
 import { getDate, checkLength } from "../../shared/utils.js";
 const setStyle = image_url => {
@@ -9,12 +9,12 @@ const setStyle = image_url => {
     else return ["no-image", "no-image"];
 };
 // {setStyle(page.primary_image.image.url)[0].match('v3')?getDate(book.dob).year.substr(2,3):getDate(book.dob).year}
-export default ({ page, book }) => (
+export default ({ page, book, ...props }) => (
     <div className="full " styleName="r">
-        <div
+        <div 
             className="absolute"
             styleName={setStyle(page.primary_image.image.url)[0]}
-        >
+        > 
             <div styleName="day" style={{ display: "none" }}>
                 {getDate(book.dob).day}
             </div>
@@ -30,7 +30,7 @@ export default ({ page, book }) => (
         <div
             className="absolute"
             styleName={setStyle(page.primary_image.image.url)[1]}
-            style={{ fontSize: checkLength(page.data.film, 18, 2) }}
+            style={{ fontSize: checkLength(page.data.film, 17, 2) }}
         >
             {page.data.film}
         </div>

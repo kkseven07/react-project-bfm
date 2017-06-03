@@ -4,13 +4,14 @@ import { checkLength } from "../../shared/utils.js";
 const first = "Компьютер";
 const second ="Девушки";
 const third ="Воллейбол";
-export default ({ book, page }) => (
-    <div className="full" styleName="r">
+export default ({ book, page }) => {
+    return <div className="full" styleName="r">
+    	<div styleName="thinkabout">О чём думает {book.name}?</div>
         <div styleName="first" className="absolute"
-            style={{fontSize:checkLength(first, 16, 1.2)}}>{first}</div>
+        	style={{fontSize:page.data.text&&checkLength(page.data.text, 16, 1.2)}}>{page.data.text?page.data.text:'еда'}</div>
         <div styleName="second" className="absolute"
-            style={{fontSize:checkLength(second, 15, 1.2)}}>{second}</div>
+        	style={{fontSize:page.data.text1&&checkLength(page.data.text1, 15, 1.2)}}>{page.data.text1?page.data.text1:"сон"}</div>
         <div styleName="third" className="absolute"
-            style={{fontSize:checkLength(third, 10, 1.2)}}>{third}</div>
+        	style={{fontSize:page.data.tex2t&&checkLength(page.data.text2, 9, 1.2)}}>{page.data.text2?page.data.text2:"работа"}</div>
     </div>
-);
+}

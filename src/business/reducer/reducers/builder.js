@@ -14,7 +14,20 @@ const init = {
             isValid: true,
             errorText: ""
         },
-        input: { value: "", isPristine: true, isValid: true, errorText: "" }
+        input: { value: "", isPristine: true, isValid: true, errorText: "" },
+        textarea: {value:"",  errorText:""}
+    },
+    epicStory: {
+        selectedImage: null
+    },
+
+    brain: {
+        input: { value: "", isPristine: true, isValid: true, errorText: "" },
+        input1: {value:"", isPristine: true, isValid: true, errorText: "" },
+        input2: {value:"", isPristine: true, isValid: true, errorText: "" }
+    },
+    musicHit: {
+        selectedImage: null
     },
     fruitDNA: {
         selectedImage: null
@@ -29,7 +42,8 @@ const init = {
         selectedImage: null
     },
     wiseWord: {
-        selectedImage: null
+        selectedImage: null,
+        textarea: {value:"",  errorText:""}
     },
     virtue: {
         select: {

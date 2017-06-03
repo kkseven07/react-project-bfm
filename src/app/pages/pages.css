@@ -104,45 +104,18 @@
   font-family: 'Sylfaen';
   src: url('../../../assets/fonts/sylfaen.woff2');
 }
-/*@font-face {
-  font-family: 'BebasBold';
-  src: url('../../../assets/fonts/AA-BebasNeue-Bold.woff2');
-}*/
-@font-face {
-  font-family: 'BebasLight';
-  src: url('../../../assets/fonts/BebasNeue-Light.woff2');
-}
-@font-face {
-  font-family: 'BebasBook';
-  src: url('../../../assets/fonts/AA-BebasNeue-Book.woff2');
-}
 @font-face {
   font-family: 'Agaaler';
   src: url('../../../assets/fonts/Agaaler.woff2');
 }
 @font-face {
-  font-family: 'Century';
-  src: url('../../../assets/fonts/Century.woff2');
-}
-@font-face {
-  font-family: 'CoreSansGRegular';
-  src: url('../../../assets/fonts/CoreSansG-Regular.woff2');
-}
-@font-face {
   font-family: 'OksFree';
   src: url('../../../assets/fonts/Oks-Free.woff2');
 }
-@font-face {
-  font-family: 'OpenSansCondBold';
-  src: url('../../../assets/fonts/OpenSans-CondBold.woff2');
-}
+
 @font-face {
   font-family: 'OranienBaum';
   src: url('../../../assets/fonts/Oranienbaum.woff2');
-}
-@font-face {
-  font-family: 'Yarin';
-  src: url('../../../assets/fonts/Yarin.woff2');
 }
 @font-face {
   font-family: 'Bttf';
@@ -154,7 +127,35 @@
 }
 @font-face {
   font-family: 'YellowNumber';
-  src: url('../../../assets/fonts/YELLOWNUMBERSROUGHB.woff2');
+  src: url('../../../assets/fonts/YELLOWNUMBERSREG.woff2');
+}
+@font-face {
+  font-family:'AkrobatSemiBold';
+  src: url('../../../assets/fonts/AKROBAT-SEMIBOLD.woff2');
+}
+@font-face {
+  font-family:'GothamBlack';
+  src: url('../../../assets/fonts/GothaProBla.woff2');
+}
+@font-face {
+  font-family:'GothamBold';
+  src: url('../../../assets/fonts/GothaProBol.woff2');
+}
+@font-face {
+  font-family:'GothamRegular';
+  src: url('../../../assets/fonts/GothaProReg.woff2');
+}
+@font-face {
+  font-family: 'GothamMedium';
+  src: url('../../../assets/fonts/GothaProMed.woff2');
+}
+@font-face {
+  font-family: 'Russian';
+  src: url('../../../assets/fonts/Russian.woff2');
+}
+@font-face {
+  font-family: 'Drina';
+  src: url('../../../assets/fonts/Drina.woff2');
 }
 
 /*MEDIA*/

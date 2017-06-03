@@ -7,21 +7,28 @@ const getDate = (date, map) => {
     let dateTemp = new Date(date);
     dateTemp.toISOString();
     return (
-        dateTemp.getDate() +
+        dateTemp.getUTCDate() +
         " " +
-        map[dateTemp.getMonth()].toLowerCase() +
+        map[dateTemp.getUTCMonth()].toLowerCase() +
         " " +
-        dateTemp.getFullYear()
+        dateTemp.getUTCFullYear()
     );
 };
 
 class Page extends Component {
+     setStyle = image_url => {
+        if (image_url.match("v1")) return ["text-v1"];
+        else if (image_url.match("v2")) return ["text-v2"];
+        else return ["no-image"];
+    };
     render() {
+        const uniqs = this.setStyle(this.props.page.primary_image.image.url);
+        const text = uniqs[0];
         let word = this.props.book.gender === "male" ? "родился " : "родилась ";
         let date = getDate(this.props.book.dob, invert(monthsMapYa));
         return (
-            <div className="flex full" styleName="r">
-                <div className="flex flex-center" styleName="text">
+            <div className="full" styleName="r">
+                <div className="absolute" styleName={text}>
                     {"И как результат," +
                         "\n " +
                         date +

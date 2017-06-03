@@ -1,10 +1,11 @@
 .r{
     position: relative;
+    font-family: 'StarSeedPro';
 }
 
 .text{
     font-size: 3em;
     text-align: center;
-    top: 11%;
+    top: 10%;
     left: 41%;
 }

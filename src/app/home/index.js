@@ -19,7 +19,7 @@ export default (
                 scroller.scrollTo("myScrollToElement", {
                     duration: 300,
                     delay: 50,
-                    offset:-100,
+                    offset:-90,
                     smooth: true,
                     containerId: "ContainerElementID"
                 });

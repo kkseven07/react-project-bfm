@@ -22,12 +22,14 @@ export const fieldStyle = (isPristine, isValid) => {
 
 export const getDate = (raw) => {
     const date = new Date(raw);
-    const day = date.getDate();
+    const day = date.getDate()<10?`0${date.getDate()}`:date.getDate();
     const month = invert(monthsMap)[date.getMonth()];
     const year = date.getFullYear();
-    return { day, month, year };
+    const monthNumber = date.getMonth()<10?`0${date.getMonth()+1}`:date.getMonth()+1;
+    const monthYa = invert(monthsMapYa)[date.getMonth()];
+    const monthYe = invert(monthsMapYe)[date.getMonth()];
+    return {day, month, year, monthNumber, monthYa,monthYe};
 };
-
 export const cellTime = (month, year) =>
     month > 9
         ? { month: month - 9, year }
@@ -102,6 +104,7 @@ export const editable = [
     "coolPlace",
     "wiseWord",
     "fruitDNA",
+    "epicStory",
     "framefridge"
 ];
 

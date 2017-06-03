@@ -4,7 +4,7 @@
 }
 .box2{
     position:absolute;
-    top:70%;
+    top:64%;
     left:0;
     height:24%;
     padding:2%;
@@ -19,10 +19,10 @@
 .text{
     color:#fb1611;
     font-size:9em;
-    text-shadow:4px 3px #04eef9;
+    text-shadow:0.025em 0.025em #04eef9;
      position: absolute;
     top:3%;
-    left:3%;
+    left:11%;
     height:40%;
     width:45%;
     transform: rotate(-23deg);

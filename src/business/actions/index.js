@@ -17,6 +17,10 @@ export const changeForm = (isNext, part) => {
     return { type: "CHANGE_FORM", isNext, part };
 };
 
+export const orderInput=(text,field) =>{
+    return {type:"ORDER_INPUT", text, field}
+}
+
 //modal
 export const openModal = (page, book) => {
     return { type: "OPEN_MODAL", page, book };

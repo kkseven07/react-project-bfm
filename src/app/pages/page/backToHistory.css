@@ -4,9 +4,10 @@
     position: relative;
 }
 .facts{
-    font-family: 'Sylfaen';
-    margin-top:5%;
+    font-family: 'GothamRegular';
+    margin-top:11%;
     width:60%;
+    height: 75%;
     display: flex;
     flex-direction: column;
 }
@@ -21,7 +22,7 @@
 }
 .date{
     position:absolute;
-    top:4%;
+    top:3.8%;
     left:27%;
     flex-wrap: wrap;
     width:14%;
@@ -33,3 +34,15 @@
     color:white;
     line-height: 1.2;
 }
+.gradient {
+    background:linear-gradient(180deg, #f57e48, #ffe13a);
+    -webkit-background-clip: text; 
+     color: transparent;
+     font-family: 'BTTF';
+     font-size:1.75em;
+}
+.dot {
+    top: 8%;
+    left: 70%;
+}
+.shadow {}

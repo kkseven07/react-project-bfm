@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
 import "./imageChooser.css";
 
 const isSelected = (selectedCurrent, image) => {
@@ -10,7 +9,7 @@ const isSelected = (selectedCurrent, image) => {
     }
 };
 
-const Chooser = ({ images, select, page, selectedImage, url }) => {
+export default ({ images, select, page, selectedImage }) => {
     return (
         <div className="flex flex-center width-full" styleName="r">
             {images.map(image => (
@@ -18,14 +17,9 @@ const Chooser = ({ images, select, page, selectedImage, url }) => {
                     onClick={() => select({image},page)}
                     key={image.url}
                     styleName={`image ${isSelected(selectedImage, image) ? "selected" : ""}`}
-                    src={url+image.url}
+                    src={"http://localhost:4000"+image.url}
                 />
             ))}
         </div>
     );
 };
-
-const mapStateToProps=(state)=>({
-    url:state.init.url
-})
-export default connect(mapStateToProps)(Chooser);

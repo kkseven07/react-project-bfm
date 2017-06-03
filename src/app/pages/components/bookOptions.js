@@ -35,6 +35,9 @@ class Options extends React.Component {
     };
 
     render() {
+        if(!this.props.book.order.data){
+            return null
+        }
         return (
             <div
                 style={{ marginTop: 40 }}

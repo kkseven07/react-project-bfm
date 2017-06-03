@@ -1,16 +1,42 @@
 .r{
     display: flex;
-    height: 48%;
+    height:100%;
     color:white;
 	font-family: 'BebasRegular';
 	flex-direction: column;
 	position: relative;
+  
+
 }
-.artist {
+.artist-v1 {
     font-size: 1.4em;
-    top:23%;
+    bottom: 82%;
+    width: 52%;
+    overflow: hidden;
+    text-align: center;
 }
-.single {
-	margin-bottom: 11%;
+.single-v1 {
+	top: 20%;
 	font-size:1em;
+	height:8%;
+	display:flex;
+	align-items: center;
+}
+.artist-v2 {
+	overflow:hidden;
+	top: 30%;
+    left: 2%;
+    width: 38%;
+    font-size: 2.8em;
+    text-align: center;
+    text-shadow: 0.04em 0.04em #a5a6a0;
+}
+.single-v2 {
+	overflow:hidden;
+    bottom: 71%;
+    left: 2%;
+    width: 38%;
+    font-size: 2.1em;
+    text-align: center;
+    text-shadow: 0.04em 0.04em #a5a6a0;
 }

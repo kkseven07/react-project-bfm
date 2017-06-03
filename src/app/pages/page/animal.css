@@ -1,28 +1,34 @@
 .r {
-    font-family: 'BebasRegular';
+    font-family: 'GothamRegular';
     color:white;
+    position: relative;
 }
 .first{
     width:24%;
-    margin:2%;
-    margin-right:4%;
-    flex-direction: column;
     text-align: center;
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 22%;
+    left: 20%;
 }
 .big{
     font-size:2.5em;
+    font-family: 'GothamBold';
 }
-
-.med{
-    font-size: 0.7em;
+.little {
+    text-transform: uppercase;
+    font-size: 0.8em;
 }
-
 .small{
-    font-size:0.5em;
+    
 }
 .second{
-    width:22%;
-    text-align: center;
-    margin:2%;
-    margin-left:0;
+    position: absolute;
+    width:32%;
+    text-transform: uppercase;
+    font-size:0.4em;
+    top: 36%;
+    left: 44.5%;
+    padding: 0 0.5% 0 1.5%;
+    line-height: 1.3em;
 }

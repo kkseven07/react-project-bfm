@@ -8,12 +8,13 @@ import reverse from "lodash/reverse";
 const tryTo = props => {
     return <div>hello</div>;
 };
+import { Button } from "../shared";
+import Form from "./components/form";
 import Logo from "../../../assets/icons/logo.png";
 class Order extends React.Component {
     componentDidMount() {
         window.scrollTo(0, 0);
     }
-
     getTotal = books => {
         return books.reduce(
             (acc, book) =>
@@ -29,17 +30,12 @@ class Order extends React.Component {
         );
     };
 
-    getWrapPrice = books => {
-        return books.reduce(
-            (acc, book) => book.order.data.gift_wrap===""?0:1000 + acc,
-            0
-        );
-    };
-
     render() {
         let { currentBookId, ...books } = this.props.book;
         let data = reverse(values(books));
+        let totalForBooks=this.getTotalForBooks(data)
         let total = this.getTotal(data);
+        let wrapPrice = total - totalForBooks
         return (
             <div
                 className="flex flex-center width-full flex-column"
@@ -60,7 +56,7 @@ class Order extends React.Component {
                         marginTop: 10,
                         width: "90%",
                         fontSize: 25,
-                        maxWidth: 700,
+                        maxWidth: 500,
                         fontFamily: "RobotoRegular"
                     }}
                 >
@@ -75,7 +71,7 @@ class Order extends React.Component {
                     </div>
 
                     <div>
-                        {this.getTotalForBooks(data)}
+                        {totalForBooks} тг
                     </div>
                 </div>
                 <div
@@ -87,7 +83,7 @@ class Order extends React.Component {
                     </div>
 
                     <div>
-                        {this.getWrapPrice(data)}
+                        {wrapPrice} тг
                     </div>
                 </div>
                 <div
@@ -99,7 +95,7 @@ class Order extends React.Component {
                     </div>
 
                     <div>
-                        {total}
+                        {total} тг
                     </div>
                 </div>
 
@@ -111,11 +107,32 @@ class Order extends React.Component {
                         marginTop: 20,
                         width: "90%",
                         fontSize: 25,
-                        maxWidth: 700,
+                        maxWidth: 500,
                         fontFamily: "RobotoRegular"
                     }}
                 >
                     Ваши детали
+                </div>
+
+                <Form form={this.props.form} actions={this.props.actions}/>
+                <div
+                    style={{ maxWidth: 500, width: "90%" }}
+                    className="flex space-between"
+                >
+                    <Button
+                        click={() => {
+                            this.props.history.push("/cart");
+                        }}
+                    >
+                        Вернуться
+                    </Button>
+                    <Button
+                        click={() => {
+                            this.props.history.push("/cart");
+                        }}
+                    >
+                        Заказать
+                    </Button>
                 </div>
 
             </div>
@@ -123,7 +140,8 @@ class Order extends React.Component {
     }
 }
 const mapStateToProps = state => ({
-    book: state.book
+    book: state.book,
+    form:state.order
 });
 const mapDispatchToProps = dispatch => ({
     actions: bindActionCreators(actions, dispatch)

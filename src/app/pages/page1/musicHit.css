@@ -1,0 +1,16 @@
+.r{
+    display: flex;
+    height: 48%;
+    color:white;
+	font-family: 'BebasRegular';
+	flex-direction: column;
+	position: relative;
+}
+.artist {
+    font-size: 1.4em;
+    top:23%;
+}
+.single {
+	margin-bottom: 11%;
+	font-size:1em;
+}

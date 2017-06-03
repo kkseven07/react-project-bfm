@@ -1,15 +1,37 @@
 .r{
-    position: relative
+    position: relative;
+    font-family: 'PeaceSans';
 }
 
 .text{
-    top:59%;
-    left:42%;
-    width:50%;
+    top: 62%;
+    left: 48.5%;
+    width: 42%;
     font-size: 1.5em;
-    text-align: center;
+    text-align: right;
     color:#FEE23A;
-    line-height: 1;
-    font-family: 'PeaceSans';
+    line-height: 1.1em;
+    
 
+}
+.default-text {
+	position: absolute;
+	color: #7fc4d1;
+	 top: 39%;
+    left: 33%;
+	text-transform: uppercase;
+	font-size: 0.95em;
+	line-height: 1.18em;
+    font-size: 1.2em;
+}
+.text-piece {
+	position: relative;
+}
+.name{
+	text-transform: uppercase;
+	position: absolute;
+	color: #FEE23A;
+	top:31%;
+	left: 18%;
+	font-size: 1.7em;
 }

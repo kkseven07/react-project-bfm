@@ -4,6 +4,7 @@ import "./builder.css";
 import { connect } from "react-redux";
 import * as actions from "../../../business/actions";
 import { bindActionCreators } from "redux";
+import Info from './info'
 import Intro from "./components/intro";
 import Brain from "./components/brain";
 import CoolPlace from "./components/coolPlace";
@@ -13,12 +14,14 @@ import EasternWiseWord from "./components/easternWiseWord";
 import WesternWiseWord from "./components/westernWiseWord";
 import Virtue from "./components/virtue";
 import Vice from "./components/vice";
-import Info from './info'
 import WiseWord from "./components/wiseWord";
-import FrameFridge from "./components/frameFridge";
-
+import EpicStory from "./components/epicStory";
+import MusicHit from "./components/musicHit";
+import Zoom from "./components/zoom";
 const getComponent = (page, book, actions, form, step) => {
     switch (page.type) {
+        case "info":
+            return <Info book={book} actions={actions} />;
         case "intro":
             return (
                 <Intro page={page} book={book} actions={actions} form={form} />
@@ -82,12 +85,6 @@ const getComponent = (page, book, actions, form, step) => {
                     form={form}
                 />
             );
-        case "info":
-            return <Info
-                book={book}
-                actions={actions}
-
-            />
         case "vice":
             return (
                 <Vice page={page} book={book} actions={actions} form={form} />
@@ -96,9 +93,18 @@ const getComponent = (page, book, actions, form, step) => {
             return (
                 <Virtue page={page} book={book} actions={actions} form={form} />
             );
-        case "framefridge":
+        case "epicStory":
             return (
-                <FrameFridge
+                <EpicStory
+                    page={page}
+                    book={book}
+                    actions={actions}
+                    form={form}
+                />
+            );
+        case "musicHit":
+            return (
+                <MusicHit
                     page={page}
                     book={book}
                     actions={actions}
@@ -109,34 +115,46 @@ const getComponent = (page, book, actions, form, step) => {
             return null;
     }
 };
+const getZoomComponent = (page, book, actions) => {
+    return <Zoom page={page} book={book} actions={actions} />;
+};
 const stopClick = e => {
     e.stopPropagation();
 };
-const Modal = ({ isOpen, page, book, actions, builder }) => {
+const Modal = ({ isOpen, page, book, actions, builder, params }) => {
     if (!isOpen) {
         return null;
     }
     return (
         <Background close={actions.closeModal} zIndex={"20"} isOpen={isOpen}>
-            <div onClick={stopClick} styleName="r">
-                {getComponent(
-                    page,
-                    book,
-                    actions,
-                    builder[page.type],
-                    builder.qualityTableStep
-                )}
+            <div
+                onClick={stopClick}
+                styleName={params != "zoom" ? "r" : "zoom"}
+            >
+                {params != "zoom"
+                    ? getComponent(
+                          page,
+                          book,
+                          actions,
+                          builder[page.type],
+                          builder.qualityTableStep
+                      )
+                    : getZoomComponent(page, book, actions)}
             </div>
         </Background>
     );
 };
+
 const mapStateToProps = state => ({
     isOpen: state.modal.isOpen,
     page: state.modal.page,
     book: state.modal.book,
-    builder: state.builder
+    builder: state.builder,
+    params: state.modal.params
 });
+
 const mapDispatchToProps = dispatch => ({
     actions: bindActionCreators(actions, dispatch)
 });
+
 export default connect(mapStateToProps, mapDispatchToProps)(Modal);

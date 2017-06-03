@@ -1,13 +1,15 @@
 .text {
-	margin:auto;
-	margin-top:55%;
-	width:80%;
-	color:#fff;
-	font-size:0.8em;
-	text-align:justify;
-	text-align-last: center;
-	font-family: 'BebasRegular';
+    left: 48.5%;
+    top: 7%;
+    line-height: 1.2;
+    width: 49%;
+    color: #fff;
+    font-size: 0.66em;
+    font-family: 'GothamRegular';
+    position: absolute;
+
 }
 .text span {
 	font-size: 1.5em;
+	line-height: 1.4;
 }

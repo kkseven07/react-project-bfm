@@ -1,17 +1,19 @@
 import React from "react";
-import "./animal.css";
+import "./animal.css"; 
+import { cutString, checkLength } from "../../shared/utils.js";
 
-export default ({ page, book }) => (
-    <div className="full flex flex-center" styleName="r">
-        <div className="flex flex-center" styleName="first">
+export default ({ page, book }) => {
+    let text = page.data.animal.description
+     text = text.substring(0,text.indexOf("["))+text.substring(text.indexOf("]")+1, text.length)
+   
+    return <div className="full" styleName="r">
+        <div  styleName="first">
             <div styleName="big">{page.data.year} </div>
-            <div styleName="">{page.data.animal.name}</div>
+            <div styleName="little" style={{fontSize:checkLength(page.data.animal.name, 13, 0.8)}}>{page.data.animal.name}</div>
         </div>
-        <div className="flex flex-center" styleName="second">
-            <div styleName="small">
-                {page.data.animal.description}
-            </div>
+        <div styleName="second">
+                {cutString(text,400)}
         </div>
 
     </div>
-);
+}

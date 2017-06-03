@@ -19,7 +19,7 @@ export default ({ book, page }) => (
                 </div>
                 <div styleName="facts">
                     {page.data.facts.map((fact, i) => (
-                        <div key={i}>{fact}</div>
+                        <div styleName="fact-item" key={i}>{fact}</div>
                     ))}
                 </div>
             </div>
