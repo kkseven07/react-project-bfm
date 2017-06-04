@@ -43,12 +43,14 @@ export default ({ page, book, actions, form }) => {
                  <div className="flex flex-center" >
                         <div onClick={()=>actions.builderInput(wishText[0], 'intro', 'textarea')}
                             styleName="text-variants"
-                            style={{background:form.textarea.value===wishText[0]&&'rgb(88, 119, 255)'}}>
+                            style={{background:form.textarea.value===wishText[0]&&'rgb(88, 119, 255)',
+                                    position:form.textarea.value===wishText[0]&&'static'}}>
                             Вариант 1
                         </div>
                         <div onClick={()=>actions.builderInput(wishText[1], 'intro', 'textarea')}
                             styleName="text-variants"
-                            style={{background:form.textarea.value===wishText[1]&&'rgb(88, 119, 255)'}}>
+                            style={{background:form.textarea.value===wishText[1]&&'rgb(88, 119, 255)',
+                                    position:form.textarea.value===wishText[1]&&'static'}}>
                             Вариант 2
                         </div>
                     </div>

@@ -6,6 +6,7 @@
   vertical-align: baseline;
 }*/
 body {
+    cursor:default;
     margin: 0;
     padding:0;
     line-height: 1;
@@ -51,7 +52,10 @@ select{
   font-family: 'BebasBold';
   src: url('../../assets/fonts/AA-BebasNeue-Bold.woff2');
 }
-
+@font-face {
+  font-family:'GothamBlack';
+  src: url('../../assets/fonts/GothaProBla.woff2');
+}
 :global .full{
   height:100%;
   width: 100%;

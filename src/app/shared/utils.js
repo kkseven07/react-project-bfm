@@ -105,7 +105,7 @@ export const editable = [
     "wiseWord",
     "fruitDNA",
     "epicStory",
-    "framefridge"
+    "framefridge",
 ];
 
 export const monthsMap = {

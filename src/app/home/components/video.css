@@ -1,0 +1,44 @@
+.r {
+    background: #ffe56a;
+    height: 620px;
+}
+.youtube {
+    border: none;
+    width:60%;
+    height: 520px;
+}
+@media screen and (max-width:1200px) {
+    .r {
+        height: 520px;
+    }
+    .youtube {
+        height:400px;
+    }
+}
+@media screen and  (max-width:800px) {
+    .r {
+        height: 420px;
+    }
+    .youtube {
+        height:320px;
+        width:70%;
+    }
+}
+@media screen and (max-width:500px) {
+    .r {
+        height: 250px;
+    }
+    .youtube {
+        height:200px;
+        width:80%;
+    }
+}
+@media screen and (max-width:330px) {
+    .r {
+        height: 220px;
+    }
+    .youtube {
+        height:160px;
+        width:80%;
+    }
+}

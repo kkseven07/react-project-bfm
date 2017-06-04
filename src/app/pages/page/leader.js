@@ -10,12 +10,15 @@ export default ({ page, book }) => (
                 }
                 return (
                     // <ul>
-                        
-                            <div key={i} styleName="box">
-                               <div styleName="country">{country}</div>
-                                <div styleName="leader">{leader}</div>
-                            </div>
-                        
+
+
+                                <div key={i} styleName="box">
+                                <li style={{position:'absolute', left:'-12%', transform:'scale(0.5)'}}/>
+                                   <div styleName="country">{country}</div>
+                                    <div styleName="leader">{leader}</div>
+                                </div>
+
+
                     // </ul>
                 );
             })}

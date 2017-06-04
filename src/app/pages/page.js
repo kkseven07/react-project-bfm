@@ -10,7 +10,6 @@ import Scene from "./page/scene";
 import CoverChooser from "./page/coverChooser";
 import Intro from "./page/intro";
 import WiseWord from "./page/wiseWord";
-
 import FruitDNA from "./page/fruitDNA";
 import BackToHistory from "./page/backToHistory";
 import Vice from "./page/vice";
@@ -53,22 +52,19 @@ class Page extends Component {
             return <Cover book={book} page={page} />;
         } else if (type === "animal") {
             return <Animal page={page} book={book} />;
-        }
-        else if (type === "intro") {
+        } else if (type === "intro") {
             return <Intro page={page} book={book} />;
         } else if (type === "musicHit") {
             return <MusicHit book={book} page={page} />;
-        }
-        else if (type === "epicStory") {
+        } else if (type === "epicStory") {
             return <EpicStory page={page} book={book} />;
-        }
-        else if (type === "scene") {
+        } else if (type === "scene") {
             return <Scene book={book} />;
-        }
-        else if (type === "fruitDNA") {
-            return <FruitDNA page={page} book={book} />;
-        }
-         else if (type === "factoid") {
+        } else if (type === "fruitDNA") {
+            return (
+                <FruitDNA page={page} book={book} osName={this.props.osName} />
+            );
+        } else if (type === "factoid") {
             return <Factoid book={book} />;
         } else if (type === "cell") {
             return <Cell book={book} />;
@@ -76,24 +72,25 @@ class Page extends Component {
             return <Vice book={book} page={page} />;
         } else if (type === "virtue") {
             return <Virtue book={book} page={page} />;
-        }
-        else if (type === "deducedAgeFact") {
-            return <DeducedAgeFact book={book} page={page} />;
+        } else if (type === "deducedAgeFact") {
+            return (
+                <DeducedAgeFact
+                    book={book}
+                    page={page}
+                    osName={this.props.osName}
+                />
+            );
         } else if (type === "bestseller") {
             return <Bestseller page={page} book={book} />;
         } else if (type === "toy") {
-            return <Toy page={page} book={book} />;
-        }
-        else if (type === "videoGame") {
+            return <Toy page={page} book={book} osName={this.props.osName} />;
+        } else if (type === "videoGame") {
             return <VideoGame page={page} book={book} />;
-        }
-        else if (type === "backToHistory") {
+        } else if (type === "backToHistory") {
             return <BackToHistory page={page} book={book} />;
-        }
-         else if (type === "car") {
-            return <Car page={page} book={book}/>;
-        }
-        else if (type === "sport") {
+        } else if (type === "car") {
+            return <Car page={page} book={book} />;
+        } else if (type === "sport") {
             return <Sport page={page} />;
         } else if (type === "leaders") {
             return <Leader page={page} />;
@@ -106,13 +103,12 @@ class Page extends Component {
         } else if (type === "ageFact") {
             return <AgeFact page={page} book={book} />;
         } else if (type === "film") {
-            return <Film page={page} book={book} />;
+            return <Film page={page} book={book} osName={this.props.osName} />;
         } else if (type === "holiday") {
             return <Holiday page={page} book={book} />;
-        }else if(type==="wiseWord"){
+        } else if (type === "wiseWord") {
             return <WiseWord page={page} book={book} />;
-        }
-         else {
+        } else {
             return <div />;
         }
     };
@@ -121,11 +117,16 @@ class Page extends Component {
 
     edit = () => this.props.actions.openModal(this.props.page, this.props.book);
 
-    imageUrl = (print, primary_image) => {
+    imageUrl = (print, zoom, primary_image) => {
         if (print) {
             return `url(${this.props.url + primary_image.image.url
                     .replace("/web/", "/print/")
                     .replace("_768", "_2048")})`;
+        } else if (zoom) {
+            return `url(${this.props.url + primary_image.image.url})`.replace(
+                "_768",
+                "_1024"
+            );
         } else {
             return `url(${this.props.url + primary_image.image.url})`;
         }
@@ -149,7 +150,7 @@ class Page extends Component {
     componentWillReceiveProps(nextProps) {
         if (
             nextProps.page.primary_image.image.url !==
-                this.props.page.primary_image.image.url
+            this.props.page.primary_image.image.url
         )
             this.setState({ imgLoaded: false });
     }
@@ -159,7 +160,12 @@ class Page extends Component {
         let image, smallImage, url;
         if (primary_image.image.url) {
             image = {
-                backgroundImage: this.imageUrl(this.props.print, primary_image)
+                backgroundImage: this.imageUrl(
+                    this.props.print,
+                    this.props.zoom,
+                    primary_image
+                ),
+                // backgroundSize:"cover"
             };
             smallImage = {
                 backgroundImage: this.smallImage(),
@@ -174,12 +180,27 @@ class Page extends Component {
                     e.preventDefault();
                 }}
                 styleName={
-                    this.state.zoom
-                        ? "page clicked"
+                    this.props.zoom
+                        ? "page zoom"
                         : this.props.print ? "page print" : "page"
                 }
                 style={this.state.imgLoaded ? image : smallImage}
             >
+                <div
+                    className="full"
+                    style={{ position: "absolute", zIndex: "2" }}
+                    onClick={() => {
+                        if (this.props.zoom) {
+                            this.props.actions.closeModal();
+                        } else {
+                            this.props.actions.openModal(
+                                this.props.page,
+                                this.props.book,
+                                { zoom: true }
+                            );
+                        }
+                    }}
+                />
                 {!this.props.print &&
                     <img
                         src={url}
@@ -202,9 +223,11 @@ class Page extends Component {
 
                 {this.isEditable(type) &&
                     !this.props.print &&
+                    !this.props.zoom &&
                     <button
                         onClick={this.edit}
                         styleName="edit-button"
+                        style={{ zIndex: "3" }}
                     >
                         <div styleName="edit-text">
                             Редактировать

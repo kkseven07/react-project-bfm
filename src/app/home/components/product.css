@@ -1,0 +1,101 @@
+.r {
+  background: #a2e277;
+  height: 620px;
+  display: flex;
+  flex-direction: row;
+  padding: 5%;
+  font-family: 'RobotoMedium';
+  width:100%;
+
+}
+.container {
+}
+
+.anim div[class*="animation-appear-active"] {
+  right: 10% !important;
+  transition: 0.5s;
+}
+.anim div[class*="animation-enter"] {
+  right: -10% !important;
+  transition: 0.5s;
+}
+.anim div[class*="animation-enter-active"]
+{
+  right: 14% !important;
+  transition: 0.5s;
+}
+.anim div[class*="animation-leave"] {
+  opacity: 0.5;
+}
+.anim div[class*="animation-leave-active"] {
+  opacity: 0.01;
+  transition: opacity 100ms ease-in;
+}
+
+.anim2 div[class*="animation2-appear-active"] {
+  top: 30%;
+  transition: 1s;
+}
+.anim2 div[class*="animation2-enter"] {
+  opacity: 0.01;
+}
+.anim2 div[class*="animation2-enter-active"]
+{
+   opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.anim2 div[class*="animation2-leave"] {
+  opacity: 1;
+}
+.anim2 div[class*="animation2-leave-active"] {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+.tab {}
+.first {
+  color: #212121 ;
+  position: relative;
+}
+.tabs {
+}
+.second {
+  margin-top:-5%;
+  margin-bottom:-5%;
+  padding-left: 5%;
+}
+.first, .second {
+  width: 50%;
+}
+.tab {
+  padding: 0.5rem 1vw;
+  display: inline-block;
+  font-size: 1.1em;
+  /*font-weight: bold;*/
+  cursor:default;
+  border-radius: 0.85em;
+  text-transform: uppercase;
+}
+.imgs {
+  right:14%;
+}
+.text{
+  font-size: 1.2em;
+}
+@media screen and (max-width:768px) {
+  .r {
+    flex-direction: column;
+  }
+    .first, .second {
+      width: 100%;
+    }
+  .second {
+    order: 1;
+    height: 19rem;
+  }
+  .first {
+    order:2;
+  }
+  .tab {
+    font-size:0.9rem;
+  }
+}

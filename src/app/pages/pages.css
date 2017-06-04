@@ -133,10 +133,7 @@
   font-family:'AkrobatSemiBold';
   src: url('../../../assets/fonts/AKROBAT-SEMIBOLD.woff2');
 }
-@font-face {
-  font-family:'GothamBlack';
-  src: url('../../../assets/fonts/GothaProBla.woff2');
-}
+
 @font-face {
   font-family:'GothamBold';
   src: url('../../../assets/fonts/GothaProBol.woff2');
@@ -196,7 +193,13 @@
     font-size:55.01px;
     margin:0;
     }
-
+.zoom{
+  width: 97vh;
+  height: 97vh;
+  margin:0;
+  /*border-radius: 0.25rem;*/
+  font-size: 27.7px;
+}
 
 
 

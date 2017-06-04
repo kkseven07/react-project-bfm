@@ -1,6 +1,6 @@
 .r,.first,.second, .box{
     display: flex;
-     
+
 }
 .first{
     width:32%;
@@ -21,6 +21,7 @@
     flex-direction: column;
     margin-left:9%;
     height: 10%;
+    position: relative;
 }
 
 .country{
@@ -30,14 +31,15 @@
 
 .leader{
     font-size:0.45em;
-    margin-left:2.5%;
     font-family: 'BebasRegular';
 }
 .year{
-    font-size:4.3em;
-    height:22%;
-    margin-left:2%;
+    font-size: 5.3em;
+    height: 22%;
+    padding-top: 2%;
+    margin-left: 11%;
     font-weight: bold;
+    font-family: "BebasBold";
 }
 .fact{
     line-height: 1.2;

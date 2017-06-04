@@ -8,9 +8,10 @@ const setStyle = image_url => {
     };
 const dropSong =(s)=>{
     let index =0;
-    if (s.match("/")) {
+    if (s.match("/") ) {
         index = s.indexOf("/");
         s=s.substring(0,index);
+        console.log("s",s)
     }
     return s;
 }
@@ -19,17 +20,17 @@ export default ({ page, book }) => {
 
     // page.data.single.artist= page.data.single.artist.replace(/при участии/gi, "ft.")
      let uniqStyle = setStyle(page.primary_image.image.url);
-    return <div className="full flex-center" styleName="r">
+    return <div className="full" styleName="r">
         <div className="absolute" styleName={uniqStyle[0]}
-            style={{fontSize:checkLength(dropSong(page.data.single.artist), uniqStyle[2], uniqStyle[3])}}
-        >{dropSong(page.data.single.artist)}
+            style={{fontSize:checkLength(dropSong(page.data.single.artist&&page.data.single.artist), uniqStyle[2], uniqStyle[3])}}
+        >{dropSong(page.data.single.artist&&page.data.single.artist)}
         </div>
         <div
             className="absolute"
             styleName={uniqStyle[1]}
-            style={{fontSize:checkLength(dropSong(page.data.single.song), uniqStyle[4], uniqStyle[5])}}
+            style={{fontSize:checkLength(dropSong(page.data.single.song&&page.data.single.song), uniqStyle[4], uniqStyle[5])}}
         >
-            {dropSong(page.data.single.song.replace('»', '').replace('«', ''))}
+            {dropSong(page.data.single.song&&page.data.single.song.replace('»', '').replace('«', ''))}
         </div>
     </div>
 }

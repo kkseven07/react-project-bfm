@@ -83,6 +83,7 @@ class BookRoute extends Component {
                             />
                             {pages.map((page, i) => (
                                 <Page
+                                    osName={this.props.osName}
                                     url={this.props.url}
                                     actions={this.props.actions}
                                     book={bData}

@@ -7,7 +7,7 @@ export default ({ book, page }) => (
         <div>
             <div>
                 <div styleName="text">{getDate(book.dob).day}</div>
-                <div styleName="text small">{getDate(book.dob).month}</div>
+                <div styleName="text small">{getDate(book.dob).monthYa}</div>
                 <div styleName="text">{getDate(book.dob).year}</div>
             </div>
             <div styleName="facts-container">

@@ -22,8 +22,8 @@ export const orderInput=(text,field) =>{
 }
 
 //modal
-export const openModal = (page, book) => {
-    return { type: "OPEN_MODAL", page, book };
+export const openModal = (page, book, params) => {
+    return { type: "OPEN_MODAL", page, book, params };
 };
 
 export const builderImage = (params, page) => {

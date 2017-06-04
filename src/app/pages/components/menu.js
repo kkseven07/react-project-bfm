@@ -3,7 +3,7 @@ import "./menu.css";
 
 export default ({ book, actions, history, cover }) => {
     return (
-        <div styleName="r" className="fixed">
+        <div styleName="r" className="fixed" style={{zIndex:4}}>
             <div className="flex flex-center width-full">
                 <div className="flex flex-center" styleName="elem">
                     <div

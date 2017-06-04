@@ -13,7 +13,7 @@ export default ({ page, book, actions, form }) => {
 
     return (
         <div className="flex flex-column width-full">
-            
+
 			<Text>Напишите о чём думает {book.name}</Text>
 			 <div style={{ padding: 15, paddingTop: 0 }} styleName="thoughts">
 
@@ -41,9 +41,9 @@ export default ({ page, book, actions, form }) => {
                     enter={actions.builderInput}
                 />
             </div>
-            <Buttons 
-            	close={actions.closeModal}  
-            	onSave={() => actions.updatePage(page, {text, text1, text2})}/>
+            <Buttons
+            	close={actions.closeModal}
+            	onSave={() => actions.updatePage(page, {text1, text, text2})}/>
         </div>
     );
 };

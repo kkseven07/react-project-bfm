@@ -6,6 +6,8 @@ import BookForm from "./components/bookForm";
 import Reviews from "./components/reviews";
 import Footer from "./components/footer";
 import Gallery from "./components/gallery";
+import Video from "./components/video";
+import Product from "./components/product"
 var Scroll = require("react-scroll");
 var Element = Scroll.Element;
 var scroller = Scroll.scroller;
@@ -19,7 +21,7 @@ export default (
                 scroller.scrollTo("myScrollToElement", {
                     duration: 300,
                     delay: 50,
-                    offset:-90,
+                    offset:-110,
                     smooth: true,
                     containerId: "ContainerElementID"
                 });
@@ -29,9 +31,12 @@ export default (
 
         </div>
         <Gallery />
+        <Video />
         <Element style={{width:"100%"}} name="myScrollToElement">
             <BookForm history={props.history} />
         </Element>
+        <Product/>
+        <Reviews />
         <Footer />
 
     </div>

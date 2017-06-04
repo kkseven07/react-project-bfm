@@ -1,11 +1,10 @@
 .r{
-    display: flex;
     height:100%;
     color:white;
 	font-family: 'BebasRegular';
 	flex-direction: column;
 	position: relative;
-  
+
 
 }
 .artist-v1 {
@@ -14,13 +13,17 @@
     width: 52%;
     overflow: hidden;
     text-align: center;
+    left: 24%;
 }
 .single-v1 {
+    width: 58%;
+    justify-content: center;
 	top: 20%;
 	font-size:1em;
 	height:8%;
 	display:flex;
 	align-items: center;
+    left: 21%
 }
 .artist-v2 {
 	overflow:hidden;

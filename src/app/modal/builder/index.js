@@ -125,13 +125,14 @@ const Modal = ({ isOpen, page, book, actions, builder, params }) => {
     if (!isOpen) {
         return null;
     }
+    console.log(params)
     return (
         <Background close={actions.closeModal} zIndex={"20"} isOpen={isOpen}>
             <div
                 onClick={stopClick}
-                styleName={params != "zoom" ? "r" : "zoom"}
+                styleName={!params.zoom ? "r" : "zoom"}
             >
-                {params != "zoom"
+                {!params.zoom
                     ? getComponent(
                           page,
                           book,

@@ -2,6 +2,9 @@ import React from "react";
 import "./holiday.css";
 import { getDate } from "../../shared/utils.js";
 export default ({ page, book }) => {
+    if(!page.data.holiday){
+        return null
+    }
     const ls = page.data.holiday.split("-");
     const first = ls[0].trim().split(" ");
     const day = first[0];

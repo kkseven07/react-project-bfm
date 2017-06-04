@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import './reviews.css'
 import ReactCSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
-import rev1 from './../../../../assets/reviewers/rev1.jpeg'
-import rev2 from './../../../../assets/reviewers/rev2.jpeg'
-import rev3 from './../../../../assets/reviewers/rev3.jpeg'
-import rev4 from './../../../../assets/reviewers/rev4.jpeg'
+import rev1 from './../../../../assets/img/abay.jpg'
+import rev2 from './../../../../assets/img/abay.jpg'
+import rev3 from './../../../../assets/img/abay.jpg'
+import rev4 from './../../../../assets/img/abay.jpg'
 
 
 
@@ -17,7 +17,7 @@ const revText = [
             ]
 const revPhoto = [rev1, rev2, rev3, rev4]
 const revAuthor = ['Ильяс', 'Бинур', 'Абай', 'Аян']
-
+let vr = "count"
 class Review extends React.Component {
       state = {count1:0, count2:1, count3:2}
       componentWillUnmount () {
@@ -42,27 +42,33 @@ class Review extends React.Component {
 
   startTimer () {
     clearInterval(this.timer)
-    this.timer = setInterval(this.dsa.bind(this), 10000)
+    this.timer = setInterval(this.dsa.bind(this), 15000)
   }
   stopTimer () {
     clearInterval(this.timer)
   }
+
+
   render () {
+
     return (
-        <div styleName="r">
+        <div styleName="r" className="flex">
+          <h2 style={{textAlign:'center'}}>Отзывы</h2>
+          <div styleName="revs">
             <div styleName="animated-review" className="flex">
                 <ReactCSSTransitionGroup
                   transitionName="animation"
                   transitionEnterTimeout={600}
                   transitionLeaveTimeout={600}>
 
-                    <div styleName="review-container" key={this.state.count1} className="flex">
+                    <div styleName="review-container" >
                         <div styleName="review-photo">
                             <img src={revPhoto[this.state.count1]} key={this.state.count1}/>
                         </div>
                         <div styleName="review">
+                          <div styleName="review-author">{revAuthor[this.state.count1]}</div>
                             <div styleName="review-text">{revText[this.state.count1]}</div>
-                            <div styleName="review-author">{revAuthor[this.state.count1]}</div>
+
                         </div>
 
                     </div>
@@ -75,13 +81,14 @@ class Review extends React.Component {
                   transitionEnterTimeout={600}
                   transitionLeaveTimeout={600}>
 
-                    <div styleName="review-container" key={this.state.count2} className="flex">
+                    <div styleName="review-container"  >
                         <div styleName="review-photo">
                             <img src={revPhoto[this.state.count2]} key={this.state.count2}/>
                         </div>
                         <div styleName="review">
+                          <div styleName="review-author">{revAuthor[this.state.count2]}</div>
                             <div styleName="review-text">{revText[this.state.count2]}</div>
-                            <div styleName="review-author">{revAuthor[this.state.count2]}</div>
+
                         </div>
 
 
@@ -96,18 +103,20 @@ class Review extends React.Component {
                   transitionEnterTimeout={600}
                   transitionLeaveTimeout={600}>
 
-                    <div styleName="review-container" key={this.state.count3} className="flex">
+                    <div styleName="review-container"  >
                         <div styleName="review-photo">
                             <img src={revPhoto[this.state.count3]} key={this.state.count3}/>
                         </div>
                         <div styleName="review">
+                          <div styleName="review-author">{revAuthor[this.state.count3]}</div>
                             <div styleName="review-text">{revText[this.state.count3]}</div>
-                            <div styleName="review-author">{revAuthor[this.state.count3]}</div>
+
                         </div>
 
                     </div>
                  </ReactCSSTransitionGroup>
             </div>
+          </div>
         </div>
     )
   }
