@@ -15,7 +15,12 @@ const revText = [
             'Отличный подарок всей семье и друзьям. Покупал сам себе ибо лучше друга, чем ты сам, нет!',
             'Крутой подарок! Купил сестренке, она была очень довольна. Собираюсь купить еще несколько книг друзьям!'
             ]
-const revPhoto = [rev1, rev2, rev3, rev4]
+const revPhoto = [
+                  'https://organicthemes.com/demo/profile/files/2012/12/profile_img.png',
+                  'https://s-media-cache-ak0.pinimg.com/originals/49/73/72/49737247376df0b8dd243aba892922ef.jpg',
+                  'https://www.cheme.cornell.edu/engineering/customcf/iws_ai_faculty_display/ai_images/mjp31-profile.jpg',
+                  'https://researchers.adelaide.edu.au/sites/default/files/profile-images/17124.jpeg'
+                  ]
 const revAuthor = ['Ильяс', 'Бинур', 'Абай', 'Аян']
 let vr = "count"
 class Review extends React.Component {

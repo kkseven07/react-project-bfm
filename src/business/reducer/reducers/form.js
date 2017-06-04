@@ -65,7 +65,7 @@ let partTwo = ["senderName", "relation"];
 import * as selector from "./selectorForm";
 import { data } from "../../../app/shared";
 
-export default (state = forTest, action) => {
+export default (state = initialState, action) => {
    // console.log(action)
    switch (action.type) {
       case "CHANGE_FORM":

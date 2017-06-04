@@ -11,26 +11,21 @@ import Product from "./components/product"
 var Scroll = require("react-scroll");
 var Element = Scroll.Element;
 var scroller = Scroll.scroller;
-export default (
-    props // console.log(props)||
-) => (
-    <div className="full flex flex-center flex-column">
-
-        <div
-            onClick={() => {
-                scroller.scrollTo("myScrollToElement", {
+const scrollTo =()=> {
+    scroller.scrollTo("myScrollToElement", {
                     duration: 300,
                     delay: 50,
                     offset:-110,
                     smooth: true,
                     containerId: "ContainerElementID"
-                });
-            }}
-        >
-            click
+                })
+}
+export default (
+    props // console.log(props)||
+) => (
+    <div className="full flex flex-center flex-column">
 
-        </div>
-        <Gallery />
+        <Gallery scrollTo={scrollTo}/>
         <Video />
         <Element style={{width:"100%"}} name="myScrollToElement">
             <BookForm history={props.history} />
