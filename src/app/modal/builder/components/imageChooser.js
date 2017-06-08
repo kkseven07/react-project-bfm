@@ -1,6 +1,6 @@
 import React from "react";
 import "./imageChooser.css";
-
+import url from "../../../../entry/url.js"
 const isSelected = (selectedCurrent, image) => {
     if (!selectedCurrent) {
         return false;
@@ -17,7 +17,7 @@ export default ({ images, select, page, selectedImage }) => {
                     onClick={() => select({image},page)}
                     key={image.url}
                     styleName={`image ${isSelected(selectedImage, image) ? "selected" : ""}`}
-                    src={"http://localhost:4000"+image.url}
+                    src={url+image.url}
                 />
             ))}
         </div>

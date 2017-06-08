@@ -31,11 +31,14 @@ class Order extends React.Component {
     };
 
     render() {
+        if(!this.props.book){
+            return null
+        }
         let { currentBookId, ...books } = this.props.book;
         let data = reverse(values(books));
-        let totalForBooks=this.getTotalForBooks(data)
+        let totalForBooks = this.getTotalForBooks(data);
         let total = this.getTotal(data);
-        let wrapPrice = total - totalForBooks
+        let wrapPrice = total - totalForBooks;
         return (
             <div
                 className="flex flex-center width-full flex-column"
@@ -114,7 +117,7 @@ class Order extends React.Component {
                     Ваши детали
                 </div>
 
-                <Form form={this.props.form} actions={this.props.actions}/>
+                <Form form={this.props.form} actions={this.props.actions} />
                 <div
                     style={{ maxWidth: 500, width: "90%" }}
                     className="flex space-between"
@@ -141,7 +144,7 @@ class Order extends React.Component {
 }
 const mapStateToProps = state => ({
     book: state.book,
-    form:state.order
+    form: state.order
 });
 const mapDispatchToProps = dispatch => ({
     actions: bindActionCreators(actions, dispatch)

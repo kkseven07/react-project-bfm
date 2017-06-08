@@ -1,6 +1,7 @@
 import { ajax } from "rxjs/observable/dom/ajax";
 import Hashids from "hashids";
 import { of as ofObs } from "rxjs/observable/of";
+import url from '../../../entry/url'
 const ajaxObject = {
     method: "POST",
     content_type: "application/json",
@@ -22,7 +23,6 @@ export const decodeHashid = hashed => {
     let hashids = new Hashids("", 10);
     return hashids.decode(hashed);
 };
-const url = "http://localhost:4000";
 
 const checkUrl = (first, second) => {
     const part = first.split("320")[0];

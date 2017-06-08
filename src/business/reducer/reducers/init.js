@@ -1,5 +1,6 @@
+import url from "../../../entry/url"
 const init = {
-    url: "http://localhost:4000",
+    url: url,
     osName: null
 };
 

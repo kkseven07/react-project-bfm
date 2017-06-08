@@ -7,6 +7,9 @@ const getWrapPrice = order => {
         : order.type !== "digital" ? 1000 : 0;
 };
 export default ({ book, actions }) => {
+    if(!book.order.data){
+        return null
+    }
     return (
         <div styleName="r" className="flex full flex-column">
 

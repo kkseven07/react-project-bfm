@@ -5,8 +5,8 @@ import { cellTime, monthsMapYe } from "../../shared/utils.js";
 
 const getDate = raw => {
     const date = new Date(raw);
-    const time = cellTime(date.getUTCMonth(), date.getUTCFullYear());
-    return `${invert(monthsMapYe)[time.month]} ${time.year}`;
+    const time = cellTime(date.getMonth(), date.getFullYear());
+    return `${invert(monthsMapYe)[time.month-1]} ${time.year}`;
 };
 
 export default ({ book }) => (

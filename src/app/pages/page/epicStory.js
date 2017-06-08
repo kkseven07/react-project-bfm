@@ -7,11 +7,11 @@ const getDate = (date, map) => {
     let dateTemp = new Date(date);
     dateTemp.toISOString();
     return (
-        dateTemp.getUTCDate() +
+        dateTemp.getDate() +
         " " +
-        map[dateTemp.getUTCMonth()].toLowerCase() +
+        map[dateTemp.getMonth()].toLowerCase() +
         " " +
-        dateTemp.getUTCFullYear()
+        dateTemp.getFullYear()
     );
 };
 

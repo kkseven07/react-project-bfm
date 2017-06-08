@@ -15,7 +15,7 @@ const scrollTo =()=> {
     scroller.scrollTo("myScrollToElement", {
                     duration: 300,
                     delay: 50,
-                    offset:-110,
+                    offset:-95,
                     smooth: true,
                     containerId: "ContainerElementID"
                 })

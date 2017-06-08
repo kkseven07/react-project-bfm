@@ -33,7 +33,6 @@ import Virtue from "./page/virtue";
 import Film from "./page/film";
 import Holiday from "./page/holiday";
 import Brain from "./page/brain";
-const urlImage = "http://localhost:4000/images/";
 const noImage = ["cover", "coverChooser"];
 import { editable } from "../shared/utils.js";
 // import {Button} from '../shared'
@@ -125,7 +124,7 @@ class Page extends Component {
         } else if (zoom) {
             return `url(${this.props.url + primary_image.image.url})`.replace(
                 "_768",
-                "_1024"
+                "_2048"
             );
         } else {
             return `url(${this.props.url + primary_image.image.url})`;

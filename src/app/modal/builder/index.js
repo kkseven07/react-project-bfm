@@ -9,6 +9,7 @@ import Intro from "./components/intro";
 import Brain from "./components/brain";
 import CoolPlace from "./components/coolPlace";
 import FruitDNA from "./components/fruitDNA";
+import FrameFridge from "./components/frameFridge"
 import QualityTable from "./components/qualityTable";
 import EasternWiseWord from "./components/easternWiseWord";
 import WesternWiseWord from "./components/westernWiseWord";
@@ -93,6 +94,8 @@ const getComponent = (page, book, actions, form, step) => {
             return (
                 <Virtue page={page} book={book} actions={actions} form={form} />
             );
+        case "framefridge":
+            return <FrameFridge page={page} book={book} actions={actions} form={form} />
         case "epicStory":
             return (
                 <EpicStory
