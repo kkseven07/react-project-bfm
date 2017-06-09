@@ -26,7 +26,7 @@ module.exports = {
     path: __dirname + "/public",
     filename: "[name]-[chunkhash].js",
     chunkFilename: "[name]-[chunkhash].async.js",
-    publicPath: "/public"
+    publicPath: "/"
   },
   resolve: {
     modules: [SRC, NODE_MODULES], // root folders for Webpack resolving, so we can now call require('greet')
