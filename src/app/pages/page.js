@@ -122,10 +122,7 @@ class Page extends Component {
                     .replace("/web/", "/print/")
                     .replace("_768", "_2048")})`;
         } else if (zoom) {
-            return `url(${this.props.url + primary_image.image.url})`.replace(
-                "_768",
-                "_2048"
-            );
+            return `url(${this.props.url + primary_image.image.url})`
         } else {
             return `url(${this.props.url + primary_image.image.url})`;
         }
