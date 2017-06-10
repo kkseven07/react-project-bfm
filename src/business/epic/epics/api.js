@@ -25,7 +25,7 @@ export const decodeHashid = hashed => {
 };
 
 const checkUrl = (first, second) => {
-    const part = first.split("320")[0];
+    const part = first.split("smx25")[0];
     return second.includes(part);
 };
 
