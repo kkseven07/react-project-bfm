@@ -122,7 +122,7 @@ class Page extends Component {
                     .replace("/web/", "/print/")
                     .replace("_768", "_2048")})`;
         } else if (zoom) {
-            return `url(${this.props.url + primary_image.image.url})`
+            return `url(${this.props.url + primary_image.image.url.replace("_mmy70f", "_bbx24s")})`;
         } else {
             return `url(${this.props.url + primary_image.image.url})`;
         }
@@ -160,7 +160,7 @@ class Page extends Component {
                     this.props.print,
                     this.props.zoom,
                     primary_image
-                ),
+                )
                 // backgroundSize:"cover"
             };
             smallImage = {
