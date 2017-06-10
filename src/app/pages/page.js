@@ -122,7 +122,7 @@ class Page extends Component {
                     .replace("/web/", "/print/")
                     .replace("_768", "_2048")})`;
         } else if (zoom) {
-            return `url(${this.props.url + primary_image.image.url.replace("_mmy70f", "_bbx24s")})`;
+            return `url(${this.props.url + primary_image.image.url})`;
         } else {
             return `url(${this.props.url + primary_image.image.url})`;
         }
@@ -203,7 +203,7 @@ class Page extends Component {
                         onLoad={() =>
                             setTimeout(
                                 () => this.setState({ imgLoaded: true }),
-                                200
+                                300
                             )}
                         onError={() =>
                             console.log(
