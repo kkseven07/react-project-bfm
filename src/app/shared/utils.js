@@ -97,6 +97,8 @@ export const editable = [
     "vice",
     "brain",
     "quote",
+    "film",
+    "musicHit",
     "qualityTable",
     "easternWiseWord",
     "westernWiseWord",

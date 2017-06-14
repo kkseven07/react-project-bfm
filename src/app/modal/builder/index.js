@@ -4,12 +4,12 @@ import "./builder.css";
 import { connect } from "react-redux";
 import * as actions from "../../../business/actions";
 import { bindActionCreators } from "redux";
-import Info from './info'
+import Info from "./info";
 import Intro from "./components/intro";
 import Brain from "./components/brain";
 import CoolPlace from "./components/coolPlace";
 import FruitDNA from "./components/fruitDNA";
-import FrameFridge from "./components/frameFridge"
+import FrameFridge from "./components/frameFridge";
 import QualityTable from "./components/qualityTable";
 import EasternWiseWord from "./components/easternWiseWord";
 import WesternWiseWord from "./components/westernWiseWord";
@@ -18,7 +18,11 @@ import Vice from "./components/vice";
 import WiseWord from "./components/wiseWord";
 import EpicStory from "./components/epicStory";
 import MusicHit from "./components/musicHit";
+import Film from "./components/film";
 import Zoom from "./components/zoom";
+
+import { toSave } from "./utils";
+
 const getComponent = (page, book, actions, form, step) => {
     switch (page.type) {
         case "info":
@@ -26,6 +30,10 @@ const getComponent = (page, book, actions, form, step) => {
         case "intro":
             return (
                 <Intro page={page} book={book} actions={actions} form={form} />
+            );
+        case "film":
+            return (
+                <Film page={page} book={book} actions={actions} form={form} />
             );
         case "brain":
             return (
@@ -95,7 +103,14 @@ const getComponent = (page, book, actions, form, step) => {
                 <Virtue page={page} book={book} actions={actions} form={form} />
             );
         case "framefridge":
-            return <FrameFridge page={page} book={book} actions={actions} form={form} />
+            return (
+                <FrameFridge
+                    page={page}
+                    book={book}
+                    actions={actions}
+                    form={form}
+                />
+            );
         case "epicStory":
             return (
                 <EpicStory
@@ -124,30 +139,53 @@ const getZoomComponent = (page, book, actions) => {
 const stopClick = e => {
     e.stopPropagation();
 };
-const Modal = ({ isOpen, page, book, actions, builder, params }) => {
-    if (!isOpen) {
-        return null;
-    }
-    //(params)
-    return (
-        <Background close={actions.closeModal} zIndex={"20"} isOpen={isOpen}>
-            <div
-                onClick={stopClick}
-                styleName={!params.zoom ? "r" : "zoom"}
+class Modal extends React.Component {
+    // componentDidUpdate(){
+    //     // console.log(this.modal)
+    //     if(this.props.isOpen) this.modal.addEventListener("keydown", this.handleNvEnter)
+    // }
+    // componentWillUnmount() {
+    //     this.modal.removeEventListener("keydown", this.handleNvEnter);
+    // }
+    // handleNvEnter = event => {
+    //     console.log("Nv Enter:", event.key);
+    //     if(event.key==="Enter"){
+    //         console.log(this.props.builder[this.props.page.type])
+    //        this.props.actions.updatePage(this.props.page, toSave(this.props.builder[this.props.page.type]))
+    //     }
+    // };
+
+    render() {
+        const { isOpen, page, book, actions, builder, params } = this.props;
+        if (!isOpen) {
+            return null;
+        }
+        return (
+            <Background
+                close={actions.closeModal}
+                zIndex={"20"}
+                isOpen={isOpen}
             >
-                {!params.zoom
-                    ? getComponent(
-                          page,
-                          book,
-                          actions,
-                          builder[page.type],
-                          builder.qualityTableStep
-                      )
-                    : getZoomComponent(page, book, actions)}
-            </div>
-        </Background>
-    );
-};
+                <div
+                    // tabIndex="1"
+                    // ref={el => (this.modal = el)}
+                    onClick={stopClick}
+                    styleName={!params.zoom ? "r" : "zoom"}
+                >
+                    {!params.zoom
+                        ? getComponent(
+                              page,
+                              book,
+                              actions,
+                              builder[page.type],
+                              builder.qualityTableStep
+                          )
+                        : getZoomComponent(page, book, actions)}
+                </div>
+            </Background>
+        );
+    }
+}
 
 const mapStateToProps = state => ({
     isOpen: state.modal.isOpen,

@@ -42,36 +42,55 @@ class Page extends Component {
 
     getPage = (type, image, page, book) => {
         if (type === "scoop") {
+
             return <Scoop book={book} data={page.data} />;
         } else if (type === "framefridge") {
+
             return <FrameFridge url={this.props.url} book={book} page={page} />;
         } else if (type === "brain") {
+
             return <Brain book={book} page={page} />;
         } else if (type === "cover") {
+
             return <Cover book={book} page={page} />;
         } else if (type === "animal") {
+
             return <Animal page={page} book={book} />;
         } else if (type === "intro") {
+
             return <Intro page={page} book={book} />;
         } else if (type === "musicHit") {
+
             return <MusicHit book={book} page={page} />;
         } else if (type === "epicStory") {
+
             return <EpicStory page={page} book={book} />;
         } else if (type === "scene") {
+
             return <Scene book={book} />;
         } else if (type === "fruitDNA") {
+
             return (
                 <FruitDNA page={page} book={book} osName={this.props.osName} />
             );
         } else if (type === "factoid") {
+
             return <Factoid book={book} />;
         } else if (type === "cell") {
+            //
+
             return <Cell book={book} />;
         } else if (type === "vice") {
+
+
             return <Vice book={book} page={page} />;
         } else if (type === "virtue") {
+            // return null
+
             return <Virtue book={book} page={page} />;
         } else if (type === "deducedAgeFact") {
+            //
+
             return (
                 <DeducedAgeFact
                     book={book}
@@ -80,32 +99,47 @@ class Page extends Component {
                 />
             );
         } else if (type === "bestseller") {
+
+
             return <Bestseller page={page} book={book} />;
         } else if (type === "toy") {
+
             return <Toy page={page} book={book} osName={this.props.osName} />;
         } else if (type === "videoGame") {
+
             return <VideoGame page={page} book={book} />;
         } else if (type === "backToHistory") {
+
             return <BackToHistory page={page} book={book} />;
         } else if (type === "car") {
+
             return <Car page={page} book={book} />;
         } else if (type === "sport") {
+
             return <Sport page={page} />;
         } else if (type === "leaders") {
+
             return <Leader page={page} />;
         } else if (type === "mirrorDate") {
+
             return <MirrorDate book={book} />;
         } else if (type === "famousBirthShare") {
+
             return <FamousBirthShare page={page} book={book} />;
         } else if (type === "techState") {
+
             return <TechState page={page} />;
         } else if (type === "ageFact") {
+
             return <AgeFact page={page} book={book} />;
         } else if (type === "film") {
+
             return <Film page={page} book={book} osName={this.props.osName} />;
         } else if (type === "holiday") {
+
             return <Holiday page={page} book={book} />;
         } else if (type === "wiseWord") {
+
             return <WiseWord page={page} book={book} />;
         } else {
             return <div />;
@@ -118,6 +152,7 @@ class Page extends Component {
 
     imageUrl = (print, zoom, primary_image) => {
         if (print) {
+
             return `url(${this.props.url + primary_image.image.url
                     .replace("/web/", "/print/")
                     .replace("_768", "_2048")})`;
@@ -170,6 +205,7 @@ class Page extends Component {
             url = this.urlForLoading(this.props.print, primary_image);
         }
         // //("page rerender ", this.state.imgLoaded,this.props.page.type)
+        //
         return (
             <div
                 onClick={e => {

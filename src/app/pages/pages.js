@@ -17,6 +17,18 @@ export const decodeHashid = hashed => {
     return hashids.decode(hashed);
 };
 import BookOptions from "./components/bookOptions";
+var Scroll = require("react-scroll");
+var Element = Scroll.Element;
+var scroller = Scroll.scroller;
+const scrollTo = () => {
+    scroller.scrollTo("myScrollToElement", {
+        duration: 500,
+        delay: 50,
+        smooth: true,
+        containerId: "ContainerElementID"
+    });
+};
+
 class BookRoute extends Component {
     state = { inside: true };
     componentWillMount() {
@@ -95,18 +107,21 @@ class BookRoute extends Component {
                     </Waypoint>}
                 {this.state.inside &&
                     <Menu
+                        scroll={scrollTo}
                         actions={this.props.actions}
                         book={bData}
                         cover={data[0]}
                         history={this.props.history}
                     />}
                 {book[bookId] &&
-                    <BookOptions
-                        history={this.props.history}
-                        actions={this.props.actions}
-                        color={cover.data.color}
-                        book={bData}
-                    />}
+                    <Element style={{ width: "100%" }} name="myScrollToElement">
+                        <BookOptions
+                            history={this.props.history}
+                            actions={this.props.actions}
+                            color={cover.data.color}
+                            book={bData}
+                        />
+                    </Element>}
 
             </div>
         );

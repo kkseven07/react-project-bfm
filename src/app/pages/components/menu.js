@@ -1,7 +1,7 @@
 import React from "react";
 import "./menu.css";
 
-export default ({ book, actions, history, cover }) => {
+export default ({ book, actions, history, cover,scroll }) => {
     return (
         <div styleName="r" className="fixed" style={{zIndex:4}}>
             <div className="flex flex-center width-full">
@@ -26,7 +26,8 @@ export default ({ book, actions, history, cover }) => {
                     </div>
                     <div
                         onClick={() => {
-                            history.push("/cart");
+                            scroll()
+                            // history.push("/cart");
                         }}
                         className="flex flex-end"
                         styleName="box"

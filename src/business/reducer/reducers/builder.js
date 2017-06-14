@@ -17,6 +17,9 @@ const init = {
         input: { value: "", isPristine: true, isValid: true, errorText: "" },
         textarea: {value:"",  errorText:""}
     },
+    film:{
+        selectedImage:null
+    },
     epicStory: {
         selectedImage: null
     },
@@ -47,7 +50,7 @@ const init = {
     },
     virtue: {
         select: {
-            value: "",
+            value: "Хороший друг",
             isPristine: true,
             isValid: true,
             errorText: ""

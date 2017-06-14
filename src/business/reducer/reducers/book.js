@@ -73,6 +73,38 @@ export default (state = { currentBookId: null }, action) => {
             currentBookId: book.id
          };
 
+      case "UPDATE_PAGE":
+         console.log(action.params);
+         let page_to_update = action.page;
+         let params = action.params;
+         let text = params.text || page_to_update.data.text;
+         let text1 = params.text1 || page_to_update.data.text1;
+         let text2 = params.text2 || page_to_update.data.text2;
+         let background = params.background || page_to_update.data.background;
+         let selectedImage = params.selectedImage;
+         let page_to_return = {
+            ...page_to_update,
+            primary_image: {
+               ...page_to_update.primary_image,
+               image: {
+                  url: selectedImage
+                     ? selectedImage.replace("smx25", "bbx24s")
+                     : page_to_update.primary_image.image.url
+               }
+            },
+            data: { ...page_to_update.data, text, text1, text2, background }
+         };
+         return {
+            ...state,
+            [page_to_return.gift_id]: {
+               ...state[page_to_return.gift_id],
+               pages: {
+                  ...state[page_to_return.gift_id].pages,
+                  [page_to_return.id]: page_to_return
+               }
+            }
+         };
+
       case "UPLOAD_FULFILLED":
       case "UPDATE_PAGE_FULFILLED":
          let page = action.payload.page;

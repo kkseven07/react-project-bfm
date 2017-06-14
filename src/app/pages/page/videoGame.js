@@ -10,7 +10,7 @@ export default ({ book, page }) => {
                 styleName="text"
                 style={{ color: page.data.meta }}
             >
-                {date.getUTCFullYear()}
+                {date.getFullYear()}
             </div>
         </div>
     );

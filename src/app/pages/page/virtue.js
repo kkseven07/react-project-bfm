@@ -25,7 +25,7 @@ export default props => (
 			<div styleName="text-piece" style={{left:'-21%'}}>у вас много</div>
 			<div styleName="text-piece" style={{left:'-7%'}}>хороших качеств,</div>
 			<div styleName="text-piece" style={{left:'10%'}}>но, прежде </div>
-			<div styleName="text-piece" style={{left:'33%'}}>всего, вы:</div>
+			<div styleName="text-piece" style={{left:'23%'}}>всего, вы:</div>
     	</div>
         <div className="absolute" styleName="text"
         	style={{fontSize:props.page.data.text&&fitText(props.page.data.text)}}

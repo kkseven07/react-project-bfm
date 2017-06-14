@@ -31,6 +31,7 @@ const checkUrl = (first, second) => {
 
 export const updatePage = action$ =>
     action$.ofType("UPDATE_PAGE").switchMap(({ page, params }) => {
+        return ofObs({ type: "CLOSE_MODAL"})
         if (
             (params.background &&
                 params.background !== page.data.color.background) ||
@@ -47,7 +48,6 @@ export const updatePage = action$ =>
                 ...ajaxObject
             })
                 .flatMap(ajax => {
-                    console.log("update page fulfilled")
                     return [
                         { type: "CLOSE_MODAL" },
                         {
@@ -58,7 +58,7 @@ export const updatePage = action$ =>
                 })
                 .catch(error => ofObs({ type: "AJAX_ERROR", payload: error }));
         } else {
-            return [{ type: "CLOSE_MODAL" }];
+            return [{ type: "CLOSE_MODAL" },{type:"UPDATE_PAGE_DONE"}];
         }
     });
 export const updateOrder = (action$, store) =>

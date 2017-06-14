@@ -6,13 +6,14 @@ export default (state = { loading: false, type: "" }, action) => {
     case "UPDATE_ORDER":
       return {loading:true, type:"updateOrder"}
     case "GET_BOOK":
-    case "UPDATE_PAGE":
-      return  {loading:true, type:"updatePage"}
+    // case "UPDATE_PAGE":
+    //   return  {loading:true, type:"updatePage"}
     case "LOAD_FROM_CACHE":
       return { loading: true, type: "getBook" };
     case "FETCH_BOOK_FULFILLED_DELAY":
     case "GEN_PAGES_FULFILLED":
     case "UPDATE_PAGE_FULFILLED":
+    case "UPDATE_PAGE_DONE":
     case "LOAD_FROM_CACHE_FULFILLED":
     case "UPDATE_ORDER_FULFILLED":
     case "LOCAL_UPDATE_ORDER":

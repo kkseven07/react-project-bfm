@@ -3,26 +3,36 @@ import Option from "./option";
 import "./bookOptions.css";
 import hard from "./hard.jpg";
 import soft from "./soft.jpg";
-
+import url from "../../../entry/url";
 import { Button } from "../../shared";
-let prices={
-    digital:2900,
+let prices = {
+    digital: 2900,
     soft19: 9900,
-    soft23:11900,
-    hard19:14900,
-    hard23:16900,
-    deluxe:39900,
-    fumoney:99000
-}
+    soft23: 11900,
+    hard19: 14900,
+    hard23: 16900,
+    deluxe: 39900,
+    fumoney: 99000
+};
 let sizes = {
-    digital:"standard",
+    digital: "standard",
     soft19: 19,
-    soft23:23,
-    hard19:19,
-    hard23:23,
-    deluxe:23,
-    fumoney:23
-}
+    soft23: 23,
+    hard19: 19,
+    hard23: 23,
+    deluxe: 23,
+    fumoney: 23
+};
+let images = {
+    digital: url+"/media/product-1/final4.jpg",
+    soft19: url+"/media/product-1/final8.jpg",
+    soft23: url+"/media/product-1/final3.jpg",
+    hard19: url+"/media/product-1/final2.jpg",
+    hard23: url+"/media/product-1/final11.jpg",
+    deluxe: url+"/media/product-1/final6.jpg",
+    fumoney: url+"/media/product-1/final7.jpg",
+};
+
 const data = [
     {
         type: "digital",
@@ -53,8 +63,8 @@ class Options extends React.Component {
     };
 
     render() {
-        if(!this.props.book){
-            return null
+        if (!this.props.book) {
+            return null;
         }
         return (
             <div
@@ -82,7 +92,10 @@ class Options extends React.Component {
                     className="flex flex-center width-full flex-wrap"
                 >
                     <div styleName="elem image" className="flex flex-center">
-                        <img src={hard} style={{ width: 320, height: 320 }} />
+                        <img
+                            src={images[this.props.book.format]}
+                            style={{ width: 315, height: 315 }}
+                        />
 
                     </div>
                     <div styleName="elem option" className="flex flex-column">
@@ -93,7 +106,7 @@ class Options extends React.Component {
                                     height: 40,
                                     margin: 5,
                                     marginTop: 0,
-                                    width: 350,
+                                    width: 320,
                                     padding: 7,
                                     fontFamily: "RobotoRegular",
                                     fontSize: 18,
@@ -136,8 +149,7 @@ class Options extends React.Component {
                             className="flex flex-center"
                             styleName="size"
                             style={{
-                                display: this.props.book.format !==
-                                    "digital"
+                                display: this.props.book.format !== "digital"
                                     ? "flex"
                                     : "none",
                                 fontFamily: "RobotoRegular",
@@ -154,8 +166,7 @@ class Options extends React.Component {
                             style={{
                                 fontSize: 16,
                                 marginTop: 5,
-                                display: this.props.book.format !==
-                                    "digital"
+                                display: this.props.book.format !== "digital"
                                     ? "flex"
                                     : "none"
                             }}
@@ -214,7 +225,7 @@ class Options extends React.Component {
                         <div styleName="elem image" className="flex">
                             <img
                                 src={soft}
-                                style={{ width: 320, height: 320 }}
+                                style={{ width: 315, height: 315 }}
                             />
 
                         </div>
@@ -230,7 +241,7 @@ class Options extends React.Component {
                                         height: 40,
                                         margin: 5,
                                         marginTop: 0,
-                                        width: 350,
+                                        width: 320,
                                         padding: 7,
                                         fontFamily: "RobotoRegular",
                                         fontSize: 18,
@@ -296,7 +307,7 @@ class Options extends React.Component {
 
                 <Button
                     click={() => {
-                            this.props.history.push("/cart");
+                        this.props.history.push("/cart");
                     }}
                 >
                     Добавить в корзину

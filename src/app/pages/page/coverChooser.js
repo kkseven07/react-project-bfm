@@ -8,6 +8,7 @@ import { colors } from "../../shared/utils.js";
 class CoverChooser extends Component {
     getStyle = color => (color === this.props.color ? "el selected" : "el");
     render() {
+
         return (
             <div className="flex width-full flex-center" styleName="r">
                 <div style={{ margin: 10, fontFamily: "RobotoRegular" }}>

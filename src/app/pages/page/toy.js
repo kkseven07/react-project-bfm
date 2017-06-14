@@ -12,7 +12,7 @@ export default ({ book, page, ...props }) => {
                 style={{ color: page.data.meta, top:props.osName==='Mac'&&'18%' }}
 
             >
-                {date.getUTCFullYear()}
+                {date.getFullYear()}
             </div>
         </div>
     );

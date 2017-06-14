@@ -1,0 +1,26 @@
+{
+    "folders":
+    [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "js_prettier": {
+            "debug": false,
+            "prettier_cli_path": "/Users/ilyasmalgazhdarov/.nvm/versions/node/v7.4.0/bin/prettier",
+            "node_path": "/Users/ilyasmalgazhdarov/.nvm/versions/node/v7.4.0/bin/node",
+            "auto_format_on_save": false,
+            "allow_inline_formatting": false,
+            "prettier_options": {
+                "printWidth": 80,
+                "singleQuote": false,
+                "trailingComma": "none",
+                "bracketSpacing": true,
+                "jsxBracketSameLine": false,
+                "parser": "babylon",
+                "semi": true
+            }
+        }
+    }
+}

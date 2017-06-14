@@ -7,7 +7,7 @@
 }
 .text {
 	width: 71%;
-    font-size: 5em;
+    font-size: 3.5em;
     color: white;
     font-family: 'GothamBlack';
     position: absolute;
@@ -30,16 +30,18 @@
 @media screen and (max-width: 768px) and (min-width: 520px) {
 	.r {
 		height: 400px;
-
+        font-size:10px;
 	}
 }
 @media screen and (max-width: 519px) and (min-width: 325px) {
 	.r {
 		height: 200px;
+        font-size:8px;
 	}
 }
 @media screen and (max-width: 324px) {
 	.r {
 		height: 180px;
+        font-size:6px;
 	}
 }

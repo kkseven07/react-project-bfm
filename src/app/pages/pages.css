@@ -155,6 +155,21 @@
   src: url('../../../assets/fonts/Drina.woff2');
 }
 
+.print{
+    height:1400px;
+    width:1400px;
+    font-size:55.01px;
+    margin:0;
+    }
+.zoom{
+  width: 700px;
+  height: 700px;
+  margin:0;
+  /*border-radius: 0.25rem;*/
+  font-size: 27.5px;
+}
+
+
 /*MEDIA*/
 @media screen and (max-width:520px) and (min-width:400px){
    .page{
@@ -165,6 +180,14 @@
     .bg-image {
         height:398px;
         width: 398px;
+    }
+
+    .zoom{
+      width: 600px;
+      height: 600px;
+      margin:0;
+      font-size: 23.57px;
+
     }
 
 }
@@ -178,6 +201,13 @@
         height:313px;
         width: 313px;
     }
+    .zoom{
+      height:510px;
+      width:510px;
+      margin:0;
+      font-size: 20px;
+
+    }
 }
 
 /*.print{
@@ -187,19 +217,6 @@
     margin:0;
     }*/
 
-.print{
-    height:1400px;
-    width:1400px;
-    font-size:55.01px;
-    margin:0;
-    }
-.zoom{
-  width: 97vh;
-  height: 97vh;
-  margin:0;
-  /*border-radius: 0.25rem;*/
-  font-size: 27.7px;
-}
 
 
 
