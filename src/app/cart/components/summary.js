@@ -1,15 +1,25 @@
 import React from "react";
 import "./summary.css";
 
-const getWrapPrice = order => {
-    return order.data.gift_wrap === ""
+const getWrapPrice = book => {
+    return !book.gift_wrap
         ? 0
-        : order.type !== "digital" ? 1000 : 0;
+        : book.format !== "digital" ? 1000 : 0;
 };
+let prices={
+    digital:2900,
+    soft19: 9900,
+    soft23:11900,
+    hard19:14900,
+    hard23:16900,
+    deluxe:39900,
+    fumoney:99000
+}
 export default ({ book, actions }) => {
-    if(!book.order.data){
+    if(!book){
         return null
     }
+    let wrapPrice=getWrapPrice(book)
     return (
         <div styleName="r" className="flex full flex-column">
 
@@ -25,7 +35,7 @@ export default ({ book, actions }) => {
                     </div>
 
                     <div style={{ fontFamily: "RobotoMedium" }}>
-                        {book.order.data.book_price} тг
+                        {prices[book.format]} тг
                     </div>
                 </div>
 
@@ -43,7 +53,7 @@ export default ({ book, actions }) => {
                     </div>
 
                     <div style={{ fontFamily: "RobotoMedium" }}>
-                        {getWrapPrice(book.order)}
+                        {wrapPrice}
                         {" "}
                         тг
                     </div>
@@ -51,7 +61,7 @@ export default ({ book, actions }) => {
             </div>
 
             <div styleName="elem price">
-                {parseInt(book.order.data.book_price)+getWrapPrice(book.order)} тг
+                {prices[book.format]+wrapPrice} тг
             </div>
 
             <div

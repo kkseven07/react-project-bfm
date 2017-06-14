@@ -13,15 +13,16 @@
     line-height: 1.1;
     font-weight:900;
     white-space: pre-line;
-    top: 70%;
+    top: 77%;
     left: 30%;
 }
 .text-v1 {
-    top: 74%;
+    top: 71%;
+    white-space: pre-line;
     color: #242424;
     left: 37%;
     transform: matrix3d(0.94,0.025,0.34,0,0.01,1,0.00,0,-0.34,0,0.94,0,0,0,0,1);
     width: 25%;
-    font-size: 0.6em;
+    font-size: 0.8em;
     text-align: center;
 }

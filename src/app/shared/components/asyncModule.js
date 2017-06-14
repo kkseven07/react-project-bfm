@@ -101,7 +101,7 @@ export default function asyncRoute(getComponent, moduleName) {
          //    return Component&&<Component {...this.props}/>
          // }
          // if (Component && moduleName==="home") {
-         //    console.log("module name", moduleName)
+         //    //("module name", moduleName)
          //    setTimeout(() => this.setState({ open: false }), 500);
 
          //    return (

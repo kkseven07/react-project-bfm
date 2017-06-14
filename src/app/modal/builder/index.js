@@ -128,7 +128,7 @@ const Modal = ({ isOpen, page, book, actions, builder, params }) => {
     if (!isOpen) {
         return null;
     }
-    console.log(params)
+    //(params)
     return (
         <Background close={actions.closeModal} zIndex={"20"} isOpen={isOpen}>
             <div

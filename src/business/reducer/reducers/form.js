@@ -65,8 +65,8 @@ let partTwo = ["senderName", "relation"];
 import * as selector from "./selectorForm";
 import { data } from "../../../app/shared";
 
-export default (state = initialState, action) => {
-   // console.log(action)
+export default (state = forTest, action) => {
+   // //(action)
    switch (action.type) {
       case "CHANGE_FORM":
          if (action.isNext) {
@@ -104,7 +104,7 @@ export default (state = initialState, action) => {
                };
             } else {
                //check if everything is pristine
-               console.log("check if everything is pristine")
+               //("check if everything is pristine")
                let list = raw.reduce(
                   (acc, v) => ({
                      ...acc,

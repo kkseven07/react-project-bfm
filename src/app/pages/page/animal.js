@@ -3,7 +3,7 @@ import "./animal.css";
 import { cutString, checkLength } from "../../shared/utils.js";
 
 export default ({ page, book }) => {
-    // console.log("GO", "qwe (x)".split("("), "qwe(x)".match('('))
+    // //("GO", "qwe (x)".split("("), "qwe(x)".match('('))
     let text = page.data.animal.description
      text = text.substring(0,text.indexOf("["))+text.substring(text.indexOf("]")+1, text.length)
 

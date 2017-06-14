@@ -1,15 +1,25 @@
 import React from "react";
 import "./option.css";
-export default ({ text, bookVersion, value, name, color, type }) => {
-    const click = () => {
-        bookVersion(name,type);
+export default ({ book, name, text, value, enter }) => {
+    const check = () => {
+        if (name === "format") {
+            return book.format.indexOf(value) > -1;
+        } else if (name === "size") {
+            return book.format.indexOf(value) > -1;
+        } else if (name === "wrap") {
+            return book.gift_wrap;
+        }
     };
+    const click = () => {
+        enter(name, value, book.id);
+    };
+
     return (
         <div onClick={click} styleName="container" className="flex">
             <div
                 style={{
-                    background: value === name && "#5877ff",
-                    borderColor: value === name
+                    background: check() && "#5877ff",
+                    borderColor: check()
                         ? "rgb(240,240,240)"
                         : "rgb(200,200,200)"
                 }}

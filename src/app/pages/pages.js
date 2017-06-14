@@ -45,12 +45,11 @@ class BookRoute extends Component {
         this.props.actions.cleanBuilder();
     }
 
-
     _handleEnter = e => {
-        if(!this.state.inside) this.setState({ inside: true });
+        if (!this.state.inside) this.setState({ inside: true });
     };
     _handleLeave = e => {
-        if(this.state.inside)this.setState({ inside: false });
+        if (this.state.inside) this.setState({ inside: false });
     };
     render() {
         let { bookId, book } = this.props;
@@ -64,7 +63,7 @@ class BookRoute extends Component {
             cover = data[0];
         }
 
-        let pages = data//.slice(0, 1);
+        let pages = data; //.slice(0, 1);
         return (
             <div style={{ backgroundColor: "white", paddingBottom: 30 }}>
                 <Modal />
@@ -101,7 +100,6 @@ class BookRoute extends Component {
                         cover={data[0]}
                         history={this.props.history}
                     />}
-
                 {book[bookId] &&
                     <BookOptions
                         history={this.props.history}
@@ -109,10 +107,21 @@ class BookRoute extends Component {
                         color={cover.data.color}
                         book={bData}
                     />}
+
             </div>
         );
     }
 }
+
+// {
+//     book[bookId] &&
+//         <BookOptions
+//             history={this.props.history}
+//             actions={this.props.actions}
+//             color={cover.data.color}
+//             book={bData}
+//         />;
+// }
 
 const mapStateToProps = state => ({
     book: state.book,

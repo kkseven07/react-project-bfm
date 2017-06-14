@@ -5,6 +5,24 @@ import hard from "./hard.jpg";
 import soft from "./soft.jpg";
 
 import { Button } from "../../shared";
+let prices={
+    digital:2900,
+    soft19: 9900,
+    soft23:11900,
+    hard19:14900,
+    hard23:16900,
+    deluxe:39900,
+    fumoney:99000
+}
+let sizes = {
+    digital:"standard",
+    soft19: 19,
+    soft23:23,
+    hard19:19,
+    hard23:23,
+    deluxe:23,
+    fumoney:23
+}
 const data = [
     {
         type: "digital",
@@ -25,17 +43,17 @@ const data = [
 
 class Options extends React.Component {
     for_text = () => {
-        if (this.props.book.order.type === "digital") {
-            return "Цифровая версия книги - Если у вас дома есть айпад или другой интернет-планшет, с которого вы сможете показывать книгу своим друзьям и родным, то эта цифровая pdf-версия идеально вам подойдет.";
-        } else if (this.props.book.order.type === "soft") {
-            return "Книга в мягком переплете - Современная, удобная и привлекательная, она будет для вас отличной спутницей в путешествии. Если вы ведете активный образ жизни и находитесь в постоянных разъездах - выбирайте ее, и не прогадаете!";
+        if (this.props.book.format === "digital") {
+            return "Если у вас дома есть айпад или другой интернет-планшет, с которого вы сможете показывать книгу своим друзьям и родным, то эта цифровая pdf-версия идеально вам подойдет.";
+        } else if (this.props.book.format.indexOf("soft") > -1) {
+            return "Современная, удобная и привлекательная, она будет для вас отличной спутницей в путешествии. Если вы ведете активный образ жизни и находитесь в постоянных разъездах - выбирайте ее, и не прогадаете!";
         } else {
-            return "Книга в твердом переплете - Аккуратная, солидная и надежная, она способна на протяжении многих лет украшать своим видом вашу книжную полку. Ей не страшны никакие невзгоды, ее страницы защищены практически от любых воздействий и повреждений.";
+            return "Аккуратная, солидная и надежная, она способна на протяжении многих лет украшать своим видом вашу книжную полку. Ей не страшны никакие невзгоды, ее страницы защищены практически от любых воздействий и повреждений.";
         }
     };
 
     render() {
-        if(!this.props.book.order.data){
+        if(!this.props.book){
             return null
         }
         return (
@@ -89,36 +107,36 @@ class Options extends React.Component {
                                         color: "black"
                                     }}
                                 >
-                                    {this.props.book.order.data.book_price} тг
+                                    {prices[this.props.book.format]} тг
                                 </div>
                             </div>
                         </div>
                         <Option
-                            color={this.props.color}
-                            name="digital"
-                            value={this.props.book.order.type}
-                            bookVersion={this.props.actions.bookVersion}
+                            value="digital"
+                            enter={this.props.actions.bookVersion}
+                            book={this.props.book}
+                            name="format"
                             text="Цифровая версия книги"
                         />
                         <Option
-                            color={this.props.color}
-                            name="soft"
-                            value={this.props.book.order.type}
-                            bookVersion={this.props.actions.bookVersion}
+                            value="soft"
+                            enter={this.props.actions.bookVersion}
+                            book={this.props.book}
+                            name="format"
                             text="Книга в мягком переплете"
                         />
                         <Option
-                            color={this.props.color}
-                            name="hard"
-                            value={this.props.book.order.type}
-                            bookVersion={this.props.actions.bookVersion}
+                            value="hard"
+                            enter={this.props.actions.bookVersion}
+                            book={this.props.book}
+                            name="format"
                             text="Книга в твердом переплете"
                         />
                         <div
                             className="flex flex-center"
                             styleName="size"
                             style={{
-                                display: this.props.book.order.type !==
+                                display: this.props.book.format !==
                                     "digital"
                                     ? "flex"
                                     : "none",
@@ -136,26 +154,24 @@ class Options extends React.Component {
                             style={{
                                 fontSize: 16,
                                 marginTop: 5,
-                                display: this.props.book.order.type !==
+                                display: this.props.book.format !==
                                     "digital"
                                     ? "flex"
                                     : "none"
                             }}
                         >
                             <Option
-                                color={this.props.color}
-                                name="21"
-                                type={this.props.book.order.type}
-                                value={this.props.book.order.data.size}
-                                bookVersion={this.props.actions.bookVersion}
+                                value="19"
+                                enter={this.props.actions.bookVersion}
+                                book={this.props.book}
+                                name="size"
                                 text="19 см на 19 см"
                             />
                             <Option
-                                color={this.props.color}
-                                name="23"
-                                type={this.props.book.order.type}
-                                value={this.props.book.order.data.size}
-                                bookVersion={this.props.actions.bookVersion}
+                                value="23"
+                                enter={this.props.actions.bookVersion}
+                                book={this.props.book}
+                                name="size"
                                 text="23 см на 23 см"
                             />
 
@@ -176,7 +192,7 @@ class Options extends React.Component {
                 </div>
                 <div
                     style={{
-                        display: this.props.book.order.type !== "digital"
+                        display: this.props.book.format !== "digital"
                             ? "flex"
                             : "none"
                     }}
@@ -233,11 +249,11 @@ class Options extends React.Component {
                                 </div>
                             </div>
                             <Option
-                                name="giftWrap"
-                                value={this.props.book.order.data.gift_wrap}
-                                bookVersion={this.props.actions.bookVersion}
+                                value="wrap"
+                                enter={this.props.actions.bookVersion}
+                                book={this.props.book}
+                                name="wrap"
                                 text="Подарочная упаковка"
-                                type={this.props.book.order.type}
                             />
                             <div
                                 styleName="size"

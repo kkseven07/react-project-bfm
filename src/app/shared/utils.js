@@ -8,7 +8,6 @@ export const areEqualShallow = (a, b) => {
     return true;
 };
 
-export const test = () => console.log("Ilyas is awesome");
 
 export const fieldStyle = (isPristine, isValid) => {
     if (isPristine) {
@@ -66,7 +65,7 @@ export const cutString = (string, limit) => {
                 dotIndex = i;
             }
         }
-        // console.log(`${newString.substring(0, dotIndex)}...`)
+        // //(`${newString.substring(0, dotIndex)}...`)
         return `${newString.substring(0, dotIndex)}...`;
     } else return string;
 };

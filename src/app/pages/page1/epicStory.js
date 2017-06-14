@@ -22,7 +22,7 @@ class Page extends Component {
         else return ["no-image"];
     };
     render() {
-    console.log("EPIC", this.props.page)
+    //("EPIC", this.props.page)
         const uniqs = this.setStyle(this.props.page.primary_image.image.url);
         const text = uniqs[0];
         let word = this.props.book.gender === "male" ? "родился " : "родилась ";

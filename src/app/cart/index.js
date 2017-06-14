@@ -8,24 +8,33 @@ import Logo from "../../../assets/icons/logo.png";
 import reverse from "lodash/reverse";
 import { Button, ErrorText } from "../shared";
 
+let prices = {
+    digital: 2900,
+    soft19: 9900,
+    soft23: 11900,
+    hard19: 14900,
+    hard23: 16900,
+    deluxe: 39900,
+    fumoney: 99000
+};
+
 class Cart extends React.Component {
     componentDidMount() {
         window.scrollTo(0, 0);
     }
+    getWrapPrice = book => {
+        return !book.gift_wrap ? 0 : book.format !== "digital" ? 1000 : 0;
+    };
 
     getTotal = books => {
-        return books.reduce(
-            (acc, book) =>
-                parseInt(book.order.price.replace("тг", "").trim()) + acc,
-            0
-        );
+        return books.reduce((acc, book) => prices[book.format] + acc+this.getWrapPrice(book), 0);
     };
 
     render() {
         let { currentBookId, ...books } = this.props.book;
         let data = reverse(values(books));
         let total = this.getTotal(data);
-        if (data.length<1) {
+        if (data.length < 1) {
             return (
                 <div
                     className="flex flex-center width-full flex-column"
@@ -122,7 +131,12 @@ class Cart extends React.Component {
 
                 </div>
 
-                <Button width={310} click={() => {this.props.history.push("/order")}}>
+                <Button
+                    width={310}
+                    click={() => {
+                        this.props.history.push("/order");
+                    }}
+                >
                     Перейти к оплате
                 </Button>
 

@@ -16,7 +16,7 @@ const getDate = (date, map) => {
 };
 
 class Page extends Component {
-     setStyle = image_url => {
+    setStyle = image_url => {
         if (image_url.match("v1")) return ["text-v1"];
         else if (image_url.match("v2")) return ["text-v2"];
         else return ["no-image"];
@@ -29,12 +29,7 @@ class Page extends Component {
         return (
             <div className="full" styleName="r">
                 <div className="absolute" styleName={text}>
-                    {"И как результат," +
-                        "\n " +
-                        date +
-                        " года " +
-                        word +
-                        this.props.book.name}
+                    {"И как результат," + "\n " + date + " года "}
                 </div>
             </div>
         );

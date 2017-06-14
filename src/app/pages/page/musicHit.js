@@ -11,7 +11,7 @@ const dropSong =(s)=>{
     if (s.match("/") ) {
         index = s.indexOf("/");
         s=s.substring(0,index);
-        console.log("s",s)
+        //("s",s)
     }
     return s;
 }

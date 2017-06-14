@@ -169,7 +169,7 @@ class Page extends Component {
             };
             url = this.urlForLoading(this.props.print, primary_image);
         }
-        // console.log("page rerender ", this.state.imgLoaded,this.props.page.type)
+        // //("page rerender ", this.state.imgLoaded,this.props.page.type)
         return (
             <div
                 onClick={e => {
@@ -203,7 +203,7 @@ class Page extends Component {
                         onLoad={() =>
                             setTimeout(
                                 () => this.setState({ imgLoaded: true }),
-                                300
+                                200
                             )}
                         onError={() =>
                             console.log(

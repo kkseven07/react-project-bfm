@@ -1,10 +1,10 @@
 import React from "react";
 import "./factoid.css";
 // const doit =()=> {
-// 	console.log("wqe");
+// 	//("wqe");
 // }
 // const do =()=> {
-// 	console.log("eqw")
+// 	//("eqw")
 // }
 export default ({ page, book }) => (
 

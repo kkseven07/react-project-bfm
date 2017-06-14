@@ -1,5 +1,4 @@
 import React from "react";
-
 import Page from "./page";
 import { connect } from "react-redux";
 import * as actions from "../../business/actions";
@@ -15,14 +14,12 @@ class Print extends React.Component {
             return null;
         }
         let { page, book } = this.props.res;
-        return (
-                <Page url={this.props.url} print book={book} page={page} />
-        );
+        return <Page url={this.props.url} print book={book} page={page} />;
     }
 }
 const mapStateToProps = state => ({
     res: state.page,
-    url:state.init.url
+    url: state.init.url
 });
 
 const mapDispatchToProps = dispatch => ({

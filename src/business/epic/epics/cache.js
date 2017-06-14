@@ -9,7 +9,8 @@ export const storageCreateBook = (action$, store) =>
                 "UPDATE_PAGE_FULFILLED",
                 "FETCH_BOOK_FULFILLED",
                 "UPDATE_ORDER_FULFILLED",
-                "GEN_PAGES_FULFILLED"
+                "GEN_PAGES_FULFILLED",
+                "BOOK_VERSION"
             ].indexOf(action.type)>-1
         )
         .switchMap(({ payload }) => {

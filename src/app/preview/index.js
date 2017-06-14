@@ -4,7 +4,7 @@ import { Component, View, Text, Animated, StyleSheet } from "react-native";
 
 class flip extends React.Component {
     animate = () => {
-        console.log("this.animate");
+        //("this.animate");
         setImmediate(() => {
             requestAnimationFrame(() => {
                 Animated.timing(this.spinValue, {

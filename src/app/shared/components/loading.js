@@ -18,6 +18,8 @@ const Loading = props => {
          '"';
    }else if(props.type==="updateOrder"){
       text = "Меняем формат книги..."
+   }else if (props.type==="updatePage"){
+      text="Редактируем..."
    }
    else {
       text = "Подгружаем книгу...";

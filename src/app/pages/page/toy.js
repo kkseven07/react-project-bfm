@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./toy.css";
 
 export default ({ book, page, ...props }) => {
-    console.log("OS", props.osName)
+    //("OS", props.osName)
     const date = new Date(book.dob);
     return (
         <div className="full" styleName="r">

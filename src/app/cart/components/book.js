@@ -8,11 +8,16 @@ const getCover = book => {
     return data.filter(v => v.type === "cover")[0];
 };
 
-const types = {
-    digital: "Цифровая версия",
-    soft: "Мягкий переплет",
-    hard: "Твердый переплет"
-};
+
+let types={
+    digital:"Цифровая версия",
+    soft19: "Мягкий переплет",
+    soft23:"Мягкий переплет",
+    hard19:"Твердый переплет",
+    hard23:"Твердый переплет",
+    deluxe:"Deluxe",
+    fumoney:"К черту деньги!"
+}
 export const createHashid = id => {
     let hashids = new Hashids("", 10);
     return hashids.encode(id);
@@ -48,7 +53,7 @@ export default ({ book, history }) => {
             >
 
                 <div styleName="book-type">
-                    {types[book.order.type]}
+                    {types[book.format]}
                 </div>
                 <div
                     onClick={() => {

@@ -22,10 +22,11 @@ export const bookVersion = (action$, store) =>
         const book = books[currentBookId];
         const bookVersion = state.builder.bookVersion;
         return [
-            {
-                type: "UPDATE_ORDER",
-                order_id: book.order.id,
-                params:bookVersion
-            }
+        {type:"OK"}
+            // {
+            //     type: "UPDATE_ORDER",
+            //     order_id: book.order.id,
+            //     params:bookVersion
+            // }
         ];
     });

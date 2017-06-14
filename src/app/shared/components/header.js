@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../../../../assets/icons/logo.png";
 import "./header.css";
+import url from "../../../entry/url"
 import values from 'lodash/values'
 import { push as Menu } from "react-burger-menu";
 import * as actions from "../../../business/actions";
@@ -126,7 +127,7 @@ const header = ({ history, ...props }) => {
                 <div
                     styleName="close-btn"
                     onClick={() => {
-                        console.log("clickd");
+                        //("clickd");
                         props.actions.closeMenu();
                     }}
                 >
@@ -145,7 +146,7 @@ const header = ({ history, ...props }) => {
                     styleName="logo"
                     onClick={() => history.push("/")}
                 >
-                    <img styleName="image" src={Logo} />
+                    <img styleName="image" src={`${url}/images/cdn/logo.jpg`} />
 
                 </div>
 

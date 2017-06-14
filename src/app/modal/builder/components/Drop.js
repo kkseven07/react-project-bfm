@@ -16,8 +16,8 @@ const uploadToFirebase = file => {
 	// var ref = firebase.storage().ref();
 	// // putting file to firebase
 	// ref.child(file.name).put(file).then(function(snapshot) {
-	// 	console.log("File uploaded!");
-	// 	// console.log(snapshot)
+	// 	//("File uploaded!");
+	// 	// //(snapshot)
 	// });
 };
 class Drop extends Component {
@@ -58,7 +58,7 @@ class Drop extends Component {
 			mode: "no-cors"
 		})
 			.then(response => {
-				console.log(response.blob());
+				//(response.blob());
 				return response.blob();
 			})
 			.then(myBlob => {
@@ -69,7 +69,7 @@ class Drop extends Component {
 				this.setState({
 					files: file
 				});
-				console.log(this.state.files);
+				//(this.state.files);
 			});
 	}
 	render() {

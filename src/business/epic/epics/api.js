@@ -1,7 +1,7 @@
 import { ajax } from "rxjs/observable/dom/ajax";
 import Hashids from "hashids";
 import { of as ofObs } from "rxjs/observable/of";
-import url from '../../../entry/url'
+import url from "../../../entry/url";
 const ajaxObject = {
     method: "POST",
     content_type: "application/json",
@@ -26,11 +26,11 @@ export const decodeHashid = hashed => {
 
 const checkUrl = (first, second) => {
     const part = first.split("smx25")[0];
-    return second.includes(part);
+    return second.indexOf(part) > -1;
 };
 
 export const updatePage = action$ =>
-    action$.ofType("UPDATE_PAGE").mergeMap(({ page, params }) => {
+    action$.ofType("UPDATE_PAGE").switchMap(({ page, params }) => {
         if (
             (params.background &&
                 params.background !== page.data.color.background) ||
@@ -47,12 +47,13 @@ export const updatePage = action$ =>
                 ...ajaxObject
             })
                 .flatMap(ajax => {
+                    console.log("update page fulfilled")
                     return [
+                        { type: "CLOSE_MODAL" },
                         {
                             type: "UPDATE_PAGE_FULFILLED",
                             payload: ajax.response
-                        },
-                        { type: "CLOSE_MODAL" }
+                        }
                     ];
                 })
                 .catch(error => ofObs({ type: "AJAX_ERROR", payload: error }));
@@ -78,7 +79,7 @@ export const updateOrder = (action$, store) =>
             price = 17900;
         }
         const book_price = price + "";
-        if (params.giftWrap !== "" && params.value!=="digital") {
+        if (params.giftWrap !== "" && params.value !== "digital") {
             price = price + 1000;
         }
         const toSend = {
@@ -92,7 +93,7 @@ export const updateOrder = (action$, store) =>
             toSend.data.size === book.order.data.size &&
             toSend.data.giftWrap === book.order.data.giftWrap
         ) {
-            return [{type:"LOCAL_UPDATE_ORDER"}]
+            return [{ type: "LOCAL_UPDATE_ORDER" }];
         }
 
         return ajax({
@@ -117,7 +118,7 @@ export const createBook = action$ =>
         })
             .flatMap(ajax => {
                 let hashed_id = createHashid(ajax.response.book.id);
-                console.log("in create book api epic", hashed_id);
+                //("in create book api epic", hashed_id);
 
                 history.push(`/books/${hashed_id}`);
                 return [

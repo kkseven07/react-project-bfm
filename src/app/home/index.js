@@ -21,7 +21,7 @@ const scrollTo =()=> {
                 })
 }
 export default (
-    props // console.log(props)||
+    props // //(props)||
 ) => (
     <div className="full flex flex-center flex-column">
 
