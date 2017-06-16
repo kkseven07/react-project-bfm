@@ -43,9 +43,9 @@ const initialState = {
 };
 
 const forTest = {
-   name: { value: "Ильяс", isPristine: false, isValid: true, errorText: "" },
+   name: { value: "Оби-Ван", isPristine: false, isValid: true, errorText: "" },
    surname: {
-      value: "Малгаждаров",
+      value: "Кеноби",
       isPristine: false,
       isValid: true,
       errorText: ""
