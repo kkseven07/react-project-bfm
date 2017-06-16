@@ -77,11 +77,20 @@ export default (state = { currentBookId: null }, action) => {
          console.log(action.params);
          let page_to_update = action.page;
          let params = action.params;
+         let selectedImage = params.selectedImage;
          let text = params.text || page_to_update.data.text;
+
+         if (action.page.type === "qualityTable") {
+            page_to_update = state[action.page.gift_id].pages[action.page.id+1]
+            let arr=page_to_update.primary_image.image.url.split("_")
+            arr[1]=text
+            selectedImage=arr.join("_")
+            console.log(page_to_update,arr)
+         }
          let text1 = params.text1 || page_to_update.data.text1;
          let text2 = params.text2 || page_to_update.data.text2;
          let background = params.background || page_to_update.data.background;
-         let selectedImage = params.selectedImage;
+         let text_color = params.text_color || page_to_update.data.text_color;
          let page_to_return = {
             ...page_to_update,
             primary_image: {
@@ -92,7 +101,14 @@ export default (state = { currentBookId: null }, action) => {
                      : page_to_update.primary_image.image.url
                }
             },
-            data: { ...page_to_update.data, text, text1, text2, background }
+            data: {
+               ...page_to_update.data,
+               text,
+               text1,
+               text2,
+               background,
+               text_color
+            }
          };
          return {
             ...state,
@@ -106,7 +122,7 @@ export default (state = { currentBookId: null }, action) => {
          };
 
       case "UPLOAD_FULFILLED":
-      case "UPDATE_PAGE_FULFILLED":
+         // case "UPDATE_PAGE_FULFILLED":
          let page = action.payload.page;
          return {
             ...state,

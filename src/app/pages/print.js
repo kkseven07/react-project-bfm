@@ -13,8 +13,22 @@ class Print extends React.Component {
         if (!this.props.res.page) {
             return null;
         }
-        let { page, book } = this.props.res;
-        return <Page url={this.props.url} print book={book} page={page} />;
+        let { book, pages } = this.props.res;
+
+        return (
+            <div>
+                {pages.slice(15,25).map(page => (
+                    <Page
+                        key={page.id}
+                        url={this.props.url}
+                        print
+                        book={book}
+                        page={page}
+                    />
+                ))}
+
+            </div>
+        );
     }
 }
 const mapStateToProps = state => ({

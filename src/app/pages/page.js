@@ -152,10 +152,10 @@ class Page extends Component {
 
     imageUrl = (print, zoom, primary_image) => {
         if (print) {
-
+            console.log(primary_image.image.url)
             return `url(${this.props.url + primary_image.image.url
                     .replace("/web/", "/print/")
-                    .replace("_768", "_2048")})`;
+                    .replace("_bbx24s", "_2048")})`;
         } else if (zoom) {
             return `url(${this.props.url + primary_image.image.url})`;
         } else {

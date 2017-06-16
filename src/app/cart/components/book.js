@@ -25,7 +25,7 @@ export const createHashid = id => {
 
 import { getBookName, textColor } from "../../shared/utils.js";
 export default ({ book, history }) => {
-    let color = getCover(book).data.color;
+    let color = getCover(book).data;
     return (
         <div
             style={{

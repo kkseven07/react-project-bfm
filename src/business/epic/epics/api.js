@@ -31,10 +31,10 @@ const checkUrl = (first, second) => {
 
 export const updatePage = action$ =>
     action$.ofType("UPDATE_PAGE").switchMap(({ page, params }) => {
-        return ofObs({ type: "CLOSE_MODAL"})
+        // return ofObs({ type: "CLOSE_MODAL"})
         if (
             (params.background &&
-                params.background !== page.data.color.background) ||
+                params.background !== page.data.background) ||
             (params.text && params.text !== page.data.text) ||
             (params.text1 && params.text1 !== page.data.text1) ||
             (params.text2 && params.text2 !== page.data.text2) ||
@@ -43,8 +43,8 @@ export const updatePage = action$ =>
         ) {
             const id = page.type === "qualityTable" ? page.id + 1 : page.id;
             return ajax({
-                url: `${url}/api/v1/update/${page.type}/${id}`,
-                body: { params: JSON.stringify(params) },
+                url: `${url}/api/v1/batch/${id}`,
+                body: { params: JSON.stringify({...params,type:page.type}) },
                 ...ajaxObject
             })
                 .flatMap(ajax => {
@@ -56,7 +56,9 @@ export const updatePage = action$ =>
                         }
                     ];
                 })
-                .catch(error => ofObs({ type: "AJAX_ERROR", payload: error }));
+                .catch(error => {
+
+                    return ofObs({ type: "AJAX_ERROR", payload: error })});
         } else {
             return [{ type: "CLOSE_MODAL" },{type:"UPDATE_PAGE_DONE"}];
         }
