@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../../../../assets/icons/logo.png";
 import "./header.css";
-import url from "../../../entry/url"
 import values from 'lodash/values'
 import { push as Menu } from "react-burger-menu";
 import * as actions from "../../../business/actions";
@@ -31,7 +30,7 @@ const styles = {
     },
     bmMenu: {
         background: "rgb(60, 85, 105)",
-        padding: "30% 5% 0 0",
+        padding: "50% 0 0 0",
         fontSize: "1.15em"
     },
     bmMenuWrap: {
@@ -43,8 +42,7 @@ const styles = {
     },
     bmItemList: {
         color: "#fff",
-        padding: "0.8em 0.8em 0.8em 0",
-        height: "initial"
+        height: "initial",
     },
     bmOverlay: {
         background: "transparent",
@@ -64,7 +62,8 @@ const header = ({ history, ...props }) => {
     const count = values(books).length;
     return (
         <div styleName="header">
-            {props.menu &&
+
+            {props.menu && // MOBILE MENU
                 <div
                     onClick={props.actions.closeMenu}
                     style={{
@@ -85,16 +84,12 @@ const header = ({ history, ...props }) => {
                 <div
                     styleName="menu-item"
                     onClick={() => {
-                        history.push("/books");
+                        history.push("/cart");
                         props.actions.closeMenu();
                     }}
                 >
-                    <span styleName="link">КНИГИ </span>
-                    <i
-                        styleName="icon"
-                        className="fa fa-book"
-                        aria-hidden="true"
-                    />
+                    <span styleName="link">КОРЗИНА </span>
+
                 </div>
                 <div
                     styleName="menu-item"
@@ -104,11 +99,7 @@ const header = ({ history, ...props }) => {
                     }}
                 >
                     <span styleName="link">О НАС </span>
-                    <i
-                        styleName="icon"
-                        className="fa fa-users"
-                        aria-hidden="true"
-                    />
+
                 </div>
                 <div
                     styleName="menu-item"
@@ -118,16 +109,12 @@ const header = ({ history, ...props }) => {
                     }}
                 >
                     <span styleName="link">КОНТАКТЫ </span>
-                    <i
-                        styleName="icon"
-                        className="fa fa-envelope-open"
-                        aria-hidden="true"
-                    />
+
                 </div>
                 <div
                     styleName="close-btn"
                     onClick={() => {
-                        //("clickd");
+                        console.log("clickd");
                         props.actions.closeMenu();
                     }}
                 >
@@ -146,7 +133,7 @@ const header = ({ history, ...props }) => {
                     styleName="logo"
                     onClick={() => history.push("/")}
                 >
-                    <img styleName="image" src={`${url}/images/cdn/logo.jpg`} />
+                    <img styleName="image" src={Logo} />
 
                 </div>
 
@@ -169,10 +156,25 @@ const header = ({ history, ...props }) => {
 
                 </div>
 
-                {count>0&&<div onClick={()=>{
+                {count>0&&<div
+                    onClick={()=>{
                     history.push("/cart")
-                }} styleName="cart" style={{marginLeft:"20%"}}>
-                    Корзина ({count})
+                }} styleName="cart" style={{marginLeft:"20%", position:'relative'}}>
+                    <i style={{transform:'scale(1.5)'}} className="fa fa-shopping-cart"></i>
+                    <div
+                        style={{
+                            position:'absolute',
+                            top:'-70%',
+                            left:'130%',
+                            width:'1.3em',
+                            height:'1.3em',
+                            lineHeight:'1.4em',
+                            borderRadius:'50%',
+                            background:'#ff7c00',
+                            textAlign:'center',
+                            fontSize:'0.9em'
+                        }}
+                    >{count}</div>
                 </div>}
             </div>
         </div>

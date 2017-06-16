@@ -35,15 +35,13 @@
 .menu-item {
     width:100%;
     text-decoration: none;
-    text-align: right;
+    text-align: center;
     margin-bottom:3%;
     font-size:1.3em;
 
 }
 .link {
-    border-bottom: 0.8px solid #656978;
-    display: inline-block;
-    width: 87%;
+    width: 100%;
     font-family: 'RobotoRegular';
 }
 .menu-link {
@@ -71,14 +69,13 @@
 .open-btn {
     display: none;
 }
+.cart:hover i {
+    color:#757677;
+}
 @media screen and (max-width:830px) and (min-width:430px){
     .logo{
         width:30%;
     }
-
-    /*.links{
-        display:none;
-    }*/
 }
 
 @media screen and (max-width:630px){

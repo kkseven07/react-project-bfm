@@ -8,7 +8,6 @@ const getCover = book => {
     return data.filter(v => v.type === "cover")[0];
 };
 
-
 let types={
     digital:"Цифровая версия",
     soft19: "Мягкий переплет",

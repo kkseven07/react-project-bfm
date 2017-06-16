@@ -80,6 +80,7 @@
 }
 .text{
   font-size: 1.2em;
+  font-family: 'RobotoRegular';
 }
 @media screen and (max-width:768px) {
   .r {
@@ -97,5 +98,16 @@
   }
   .tab {
     font-size:0.9rem;
+  }
+  .text, .title {
+    text-align: center;
+  }
+  .tabs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .content {
+    font-size: 14px;
   }
 }

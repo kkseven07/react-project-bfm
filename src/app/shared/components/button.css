@@ -11,9 +11,12 @@
 .root:hover{
     opacity:0.8;
 }
+.root:active {
+    transform:scale(0.97);
+    transition: 0.1s;
+}
 .text{
     color:white;
     font-weight: 400;
     font-size:16px;
 }
-

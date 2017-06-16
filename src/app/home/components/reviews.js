@@ -21,7 +21,7 @@ const revPhoto = [
                   'https://www.cheme.cornell.edu/engineering/customcf/iws_ai_faculty_display/ai_images/mjp31-profile.jpg',
                   'https://researchers.adelaide.edu.au/sites/default/files/profile-images/17124.jpeg'
                   ]
-const revAuthor = ['Ильяс', 'Бинур', 'Абай', 'Аян']
+const revAuthor = ['Алексей', 'Алина', 'Максим', 'Игорь']
 let vr = "count"
 class Review extends React.Component {
       state = {count1:0, count2:1, count3:2}

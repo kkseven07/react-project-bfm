@@ -1,6 +1,8 @@
 export const isEmpty = str => str.length === 0 || !str.trim();
 export const isValidStr = str => !str.match(/[^а-яА-Яa-zA-Z ]/gi);
 export const tooLong = (str, limit) => str.length > limit;
+export const checkMail = str => str.match("@")&&str.match(/\./);
+export const isNumbers = str => str.match(/[^0-9|+]/gi);
 const validateFields = ["name", "surname", "senderName"];
 const defaultFields = [
     "Пол",
@@ -27,9 +29,11 @@ export const validateMicro = str => {
 
 export const validate = (str, field) => {
     let limit = 18;
+    console.log("validated")
     if (selectFields.indexOf(field) > -1) {
         return validateSelect(str);
     }
+    //bookname
     if (field === "bookName") {
         if (tooLong(str, 30)) {
             return {
@@ -38,6 +42,60 @@ export const validate = (str, field) => {
             };
         }
         return validateMicro(str);
+    }
+    //email
+    if (field === 'email') {
+        if (isEmpty(str)) {
+            return {
+                isValid: false,
+                errorText: "Необходимо заполнить"
+            }
+        }
+        else if(!checkMail(str)) {
+            return {
+                isValid: false,
+                errorText: 'Неверный формат email'
+            };
+        } else {
+            return {
+                isValid: true,
+                errorText: ""
+            };
+        }
+    }
+    //address
+    if (field === 'address') {
+        if (isEmpty(str)) {
+            return {
+                isValid: false,
+                errorText: "Необходимо заполнить"
+            }
+        }
+        else return {
+                isValid: true,
+                errorText: ""
+            }
+    };
+
+    //phone
+    if (field === 'phone') {
+        if (isEmpty(str)) {
+            return {
+                isValid: false,
+                errorText: "Необходимо заполнить"
+            }
+        }
+        else if(isNumbers(str)) {
+            return {
+                isValid: false,
+                errorText: 'Неверный формат телефона'
+            };
+        } else {
+            return {
+                isValid: true,
+                errorText: ""
+            };
+        }
     }
     if (isEmpty(str)) {
         return {

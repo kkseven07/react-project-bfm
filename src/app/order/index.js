@@ -20,9 +20,12 @@ let prices = {
 };
 
 class Order extends React.Component {
+    state={canConfirm:false}
+
     componentDidMount() {
         window.scrollTo(0, 0);
     }
+
 
     getWrapPrice = book => {
         return !book.gift_wrap ? 0 : book.format !== "digital" ? 1000 : 0;
@@ -39,15 +42,45 @@ class Order extends React.Component {
         return books.reduce((acc, book) => prices[book.format] + acc,0);
     };
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.form.canConfirm&&this.state.canConfirm===false) {
+            this.setState({canConfirm:true});
+            this.props.actions.confirmOrder(
+                this.books,
+                {
+                    price:{
+                        total:this.total,
+                        totalForBooks:this.totalForBooks,
+                        wrapPrice:this.wrapPrice
+                    },
+                    orderInfo:{
+                        name:this.props.form.name.value,
+                        phone:this.props.form.phone.value,
+                        address:this.props.form.address.value,
+                        email:this.props.form.email.value
+                    }
+                }
+            );
+        }
+    };
     render() {
         if (!this.props.book) {
             return null;
         }
         let { currentBookId, ...books } = this.props.book;
+        console.log("booksCart", books)
+        // let data = reverse(values(books));
         let data = reverse(values(books));
-        let totalForBooks = this.getTotalForBooks(data);
+
+        let totalForBooks=this.getTotalForBooks(data);
         let total = this.getTotal(data);
         let wrapPrice = total - totalForBooks;
+
+        this.totalForBooks=totalForBooks;
+        this.wrapPrice=wrapPrice;
+        this.total=total;
+        this.books=Object.keys(books).map((k) => books[k]);
+
         return (
             <div
                 className="flex flex-center width-full flex-column"
@@ -60,100 +93,128 @@ class Order extends React.Component {
                     src={Logo}
                     style={{ width: 100, height: 100, marginBottom: 10 }}
                 />
-                <div
-                    className="flex-start"
-                    style={{
-                        margin: 10,
-                        paddingLeft: 5,
-                        marginTop: 10,
-                        width: "90%",
-                        fontSize: 25,
-                        maxWidth: 500,
-                        fontFamily: "RobotoRegular"
-                    }}
-                >
-                    Ваш заказ
-                </div>
-                <div
-                    styleName="summary first"
-                    className="flex flex-center space-between"
-                >
-                    <div>
-                        {data.length > 1 ? "Книги" : "Книга"}
-                    </div>
 
-                    <div>
-                        {totalForBooks} тг
-                    </div>
-                </div>
-                <div
-                    styleName="summary"
-                    className="flex flex-center space-between"
-                >
-                    <div>
-                        Упаковка
-                    </div>
-
-                    <div>
-                        {wrapPrice} тг
-                    </div>
-                </div>
-                <div
-                    styleName="summary"
-                    className="flex flex-center space-between"
-                >
-                    <div>
-                        Итого
-                    </div>
-
-                    <div>
-                        {total} тг
-                    </div>
-                </div>
-
-                <div
-                    className="flex-start"
-                    style={{
-                        margin: 10,
-                        paddingLeft: 5,
-                        marginTop: 20,
-                        width: "90%",
-                        fontSize: 25,
-                        maxWidth: 500,
-                        fontFamily: "RobotoRegular"
-                    }}
-                >
-                    Ваши детали
-                </div>
-
-                <Form form={this.props.form} actions={this.props.actions} />
-                <div
-                    style={{ maxWidth: 500, width: "90%" }}
-                    className="flex space-between"
-                >
-                    <Button
-                        click={() => {
-                            this.props.history.push("/cart");
+                    <div
+                        className="flex-start"
+                        style={{
+                            margin: 10,
+                            paddingLeft: 5,
+                            marginTop: 10,
+                            width: "90%",
+                            fontSize: 25,
+                            maxWidth: 500,
+                            fontFamily: "RobotoRegular"
                         }}
                     >
-                        Вернуться
-                    </Button>
-                    <Button
-                        click={() => {
-                            this.props.history.push("/cart");
+                        Ваш заказ
+                    </div>
+                    <div
+                        styleName="summary first"
+                        className="flex flex-center space-between"
+                    >
+                        <div>
+                            {data.length > 1 ? "Книги" : "Книга"}
+                        </div>
+
+                        <div>
+                            {totalForBooks} тг
+                        </div>
+                    </div>
+                    <div
+                        styleName="summary"
+                        className="flex flex-center space-between"
+                    >
+                        <div>
+                            Упаковка
+                        </div>
+
+                        <div>
+                            {wrapPrice} тг
+                        </div>
+                    </div>
+                    <div
+                        styleName="summary"
+                        className="flex flex-center space-between"
+                    >
+                        <div
+                        >
+                            Итого
+                        </div>
+
+                        <div>
+                            {total} тг
+                        </div>
+                    </div>
+
+                    {this.state.canConfirm&&<div
+                         //CONFIRMED ORDER STATUS BAR
+                        style={{
+                                width:'90%',
+                                maxWidth:'500px',
+                                display:'flex',
+                                alignItems:'center',
+                                flexDirection:'column'
                         }}
                     >
-                        Заказать
-                    </Button>
-                </div>
+                        <div>Поздравляем! Ваш заказ принят. В течение часа с вами свяжется консультант для подтверждения заказа.</div>
+                    </div>
+                    }
 
+                    {!this.state.canConfirm&&<div
+                        // ORDER DETAILS
+                        style={{
+                            width:'90%',
+                            maxWidth:'500px',
+                            display:'flex',
+                            alignItems:'center',
+                            flexDirection:'column'
+                        }}
+                    >
+                    <div
+                        className="flex-start"
+                        style={{
+                            margin: 10,
+                            paddingLeft: 5,
+                            marginTop: 20,
+                            width: "90%",
+                            fontSize: 25,
+                            maxWidth: 500,
+                            fontFamily: "RobotoRegular"
+                        }}
+                    >
+                        Ваши детали
+                    </div>
+                    <Form form={this.props.form} actions={this.props.actions}/>
+                    <div
+                        style={{ maxWidth: 500, width: "90%" }}
+                        className="flex space-between"
+                    >
+                        <Button
+                            click={() => {
+                                this.props.history.push("/cart");
+                            }}
+                        >
+                            Вернуться
+                        </Button>
+                        <Button
+                            click={() => {
+                                this.props.actions.validateForm();
+                            }}
+                        >
+                            Заказать
+
+                        </Button>
+                    </div>
+
+                </div>}
             </div>
         );
     }
 }
 const mapStateToProps = state => ({
     book: state.book,
-    form: state.order
+    form:state.orderForm,
+    order:state.order
 });
 const mapDispatchToProps = dispatch => ({
     actions: bindActionCreators(actions, dispatch)

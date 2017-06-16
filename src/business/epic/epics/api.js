@@ -58,7 +58,7 @@ export const updatePage = action$ =>
                 })
                 .catch(error => {
 
-                    return ofObs({ type: "AJAX_ERROR", payload: error })});
+                    return ofObs({ type: "AJAX_ERROR", payload: error, errorType:"updatePage error" })});
         } else {
             return [{ type: "CLOSE_MODAL" },{type:"UPDATE_PAGE_DONE"}];
         }
@@ -109,6 +109,12 @@ export const updateOrder = (action$, store) =>
                 ];
             })
             .catch(error => ofObs({ type: "AJAX_ERROR", payload: error }));
+    });
+
+export const sendOrder = (action$, store) =>
+    action$.ofType("CONFIRM_ORDER").switchMap(({order, orderDetails})=> {
+            return [{type:"CONFIRM_ORDER_FULFILLED"}];
+
     });
 
 export const createBook = action$ =>

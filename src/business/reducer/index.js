@@ -8,8 +8,9 @@ import modal from "./reducers/modal";
 import builder from "./reducers/builder";
 import page from './reducers/page'
 import init from './reducers/init'
-import order from './reducers/order'
+import orderForm from './reducers/orderForm'
 import menu from './reducers/menu'
+import order from './reducers/order'
 const reducer = combineReducers({
     routing,
     loading,
@@ -19,8 +20,9 @@ const reducer = combineReducers({
     builder,
     page,
     init,
-    order,
-    menu
+    orderForm,
+    menu,
+    order
 });
 
 export default reducer;

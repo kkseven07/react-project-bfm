@@ -7,7 +7,6 @@ export default ({page,book}) =>(
             <div styleName="gradient">{getDate(book.dob).day}</div>
             <div styleName="gradient">{getDate(book.dob).monthNumber}</div>
 
-            <div className="absolute" styleName="dot gradient">.</div>
         </div>
         <div styleName="facts">
             {page.data.facts.map((fact,i)=>

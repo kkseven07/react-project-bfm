@@ -16,6 +16,7 @@ export default ({
             maxLength={props.maxLength}
             value={field.value}
             placeholder={props.placeholder}
+            onBlur={e =>props.onBlur&&props.onBlur(e.target.value, props.fieldType,props.builderField?props.builderField:"input")}
         />
     );
 };

@@ -5,7 +5,7 @@ export default ({page,book}) =>(
     <div className="full flex flex-center" styleName="r">
         <span styleName="year">{page.data.year}</span>
         {page.data.sports
-            .sort((obj1,obj2)=> obj1.fact.length<obj2.fact.length)
+            .sort((obj1,obj2)=> obj1.fact.length>obj2.fact.length)
             .map((obj,i)=>{
             const {type, fact} = obj
             return <div key={i} styleName="sport">

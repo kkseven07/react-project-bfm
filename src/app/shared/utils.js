@@ -24,7 +24,7 @@ export const getDate = (raw) => {
     const day = date.getDate()<10?`0${date.getDate()}`:date.getDate();
     const month = invert(monthsMap)[date.getMonth()];
     const year = date.getFullYear();
-    const monthNumber = date.getMonth()<10?`0${date.getMonth()+1}`:date.getMonth()+1;
+    const monthNumber = date.getMonth()<9?`0${date.getMonth()+1}`:date.getMonth()+1;
     const monthYa = invert(monthsMapYa)[date.getMonth()];
     const monthYe = invert(monthsMapYe)[date.getMonth()];
     return {day, month, year, monthNumber, monthYa,monthYe};

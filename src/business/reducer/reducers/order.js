@@ -1,31 +1,43 @@
-import every from "lodash/every";
-import mapValues from "lodash/mapValues";
-import find from "lodash/find";
-const initialState = {
-    name: { value: "", isPristine: true, isValid: true, errorText: "" },
-    email: { value: "", isPristine: true, isValid: true, errorText: "" },
-    phone: { value: "", isPristine: true, isValid: true, errorText: "" },
-    address: { value: "День", isPristine: true, isValid: true, errorText: "" }
+const initialState= {
+    orderDetails: null,
+    books:null,
+    orderId:null
+}
+export const normaliseOrders = orders => {
+   let map = {};
+   let k=0;
+   orders.forEach((order, i) => (map[k] = order));
+   return map;
 };
-import * as selector from "./selectorForm";
+export const normaliseBooks = books => {
+   let map = {};
+   let k=0;
+   books.forEach((book, i) => (map[k] = book));
+   return map;
+};
 export default (state = initialState, action) => {
     switch (action.type) {
-        case "ORDER_INPUT":
-            const { isValid, errorText } = selector.validate(
-                action.text,
-                action.field
-            );
+        case "CONFIRM_ORDER":
+        let id =0;
+        console.log("CONFIRMED")
+                return {
+                    orderId: id,
+                    books:action.books,
+                    orderDetails:action.orderDetails
+                };
+        id++;
+        case "CONFIRM_ORDER_FULFILLED" :
+        console.log("CONFIRMED FULFILLED")
             return {
-                ...state,
-                [action.field]: {
-                    ...state[action.field],
-                    value: action.text,
-                    isPristine: false,
-                    isValid,
-                    errorText
-                },
-                inputEntered: true
+                ...state
             };
+        case "LOAD_ORDER_CACHE_FULFILLED" :
+            console.log("action.payload", action.payload)
+            let orders = normaliseOrders(action.payload);
+            return {
+                // ...state,
+                ...orders
+            }
         default:
             return state;
     }

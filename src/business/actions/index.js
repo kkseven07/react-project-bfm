@@ -20,7 +20,9 @@ export const changeForm = (isNext, part) => {
 export const orderInput=(text,field) =>{
     return {type:"ORDER_INPUT", text, field}
 }
-
+export const emailInput=(text,field) =>{
+    return {type:"EMAIL_INPUT", text, field}
+}
 //modal
 export const openModal = (page, book, params) => {
     return { type: "OPEN_MODAL", page, book, params };
@@ -97,7 +99,16 @@ export const loadFromCache = book => {
 export const loadCache = () => {
     return { type: "LOAD_CACHE" };
 };
-
+// order
+export const confirmOrder = (books, orderDetails)=> {
+    return {type:'CONFIRM_ORDER', books:books, orderDetails:orderDetails};
+}
+export const validateForm =()=> {
+    return {type: "VALIDATE_FORM"};
+}
+export const loadOrderCache =()=> {
+    return {type: "LOAD_ORDER_CACHE"};
+}
 
 
 

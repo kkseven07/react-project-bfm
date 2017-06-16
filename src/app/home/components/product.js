@@ -25,7 +25,7 @@ class Review extends React.Component {
   }
 
   render () {
-//(this.state.count)
+console.log(this.state.count)
     return (
         <div styleName="r" >
           <div styleName="first">
@@ -48,8 +48,8 @@ class Review extends React.Component {
                   transitionName="animation2"
                   transitionEnterTimeout={600}
                   transitionLeaveTimeout={600}>
-                  <div style={{position:'absolute', padding:'1%'}}key={this.state.count}>
-                    <div style={{fontSize:'1.9em', margin:'1.1rem 0'}}>{headers[this.state.count]}</div>
+                  <div styleName="content"style={{position:'absolute', padding:'1%'}}key={this.state.count}>
+                    <div styleName="title" style={{fontSize:'1.9em', margin:'1.1rem 0'}}>{headers[this.state.count]}</div>
                     <div styleName="text">{text[this.state.count]}</div>
                   </div>
               </ReactCSSTransitionGroup>

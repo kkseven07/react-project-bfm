@@ -3,16 +3,17 @@ import reverse from "lodash/reverse";
 
 export const storageCreateBook = (action$, store) =>
     action$
-        .filter(action =>
-            [
-                "UPLOAD_FULFILLED",
-                "UPDATE_PAGE_FULFILLED",
-                "FETCH_BOOK_FULFILLED",
-                "UPDATE_ORDER_FULFILLED",
-                "GEN_PAGES_FULFILLED",
-                "BOOK_VERSION",
-                "UPDATE_PAGE"
-            ].indexOf(action.type)>-1
+        .filter(
+            action =>
+                [
+                    "UPLOAD_FULFILLED",
+                    "UPDATE_PAGE_FULFILLED",
+                    "FETCH_BOOK_FULFILLED",
+                    "UPDATE_ORDER_FULFILLED",
+                    "GEN_PAGES_FULFILLED",
+                    "BOOK_VERSION",
+                    "UPDATE_PAGE"
+                ].indexOf(action.type) > -1
         )
         .switchMap(({ payload }) => {
             const bookState = store.getState().book;
@@ -32,14 +33,15 @@ export const loadCache = (action$, store) =>
     action$.ofType("LOAD_CACHE").switchMap(action => {
         const items = reverse(
             Object.keys(localStorage).map(key =>
-                JSON.parse(localStorage.getItem(key))
+                key!=='orderKey'&&JSON.parse(localStorage.getItem(key))
             )
         );
-        if (items.length < 1) {
+
+        const bookItems =items.filter(key=> key!==false);
+        if (bookItems.length < 1) {
             return [{ type: "OK" }];
         }
-
-        return [{ type: "LOAD_CACHE_FULFILLED", payload: items }];
+        return [{ type: "LOAD_CACHE_FULFILLED", payload: bookItems }];
     });
 
 export const deleteFromCache = (action$, store) =>
@@ -48,8 +50,42 @@ export const deleteFromCache = (action$, store) =>
         return [{ type: "DELETE_FROM_CACHE_FULFILLED", payload: id }];
     });
 
-
 export const loadFromCache = (action$, store) =>
     action$.ofType("LOAD_FROM_CACHE").delay(100).switchMap(action => {
         return [{ type: "LOAD_FROM_CACHE_FULFILLED" }];
+    });
+
+//order
+
+export const orderStorage = (action$, store) =>
+    action$
+        .ofType("CONFIRM_ORDER_FULFILLED")
+        .switchMap(({payload})=> {
+            const order = store.getState().order;
+            const orderId = 1;
+            try {
+                localStorage.setItem('orderKey', JSON.stringify(order));
+            }
+            catch (e) {
+                localStorage.clear();
+            }
+            return [{type:"ORDER_OK"}];
+            console.log("cache", localStorage)
+        });
+
+export const loadOrderCache =(action$, store)=>
+    action$.ofType("LOAD_ORDER_CACHE").switchMap(action => {
+        const items = reverse(
+            Object.keys(localStorage).map(key =>
+                key==='orderKey'&&JSON.parse(localStorage.getItem(key))
+            )
+        );
+        const orderItems = items.filter(key => key!==false)
+        if (orderItems.length < 1) {
+            return [{ type: "OK" }];
+        }
+        console.log("orderItems", orderItems)
+
+
+        return [{ type: "LOAD_ORDER_CACHE_FULFILLED", payload: orderItems }];
     });
