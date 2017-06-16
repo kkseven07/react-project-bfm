@@ -1,6 +1,20 @@
 import every from "lodash/every";
 import mapValues from "lodash/mapValues";
 import find from "lodash/find";
+export const months = [
+    "Январь",
+    "Февраль",
+    "Март",
+    "Апрель",
+    "Май",
+    "Июнь",
+    "Июль",
+    "Август",
+    "Сентябрь",
+    "Октябрь",
+    "Ноябрь",
+    "Декабрь"
+];
 const initialState = {
    name: { value: "", isPristine: true, isValid: true, errorText: "" },
    surname: { value: "", isPristine: true, isValid: true, errorText: "" },
@@ -38,9 +52,9 @@ const forTest = {
    },
    gender: { value: "male", isPristine: false, isValid: true, errorText: "" },
    bookName: { value: "", isPristine: true, isValid: true, errorText: "" },
-   day: { value: "1", isPristine: false, isValid: true, errorText: "" },
-   month: { value: "Май", isPristine: false, isValid: true, errorText: "" },
-   year: { value: "1987", isPristine: false, isValid: true, errorText: "" },
+   day: { value:Math.floor(Math.random()*(28-1))+1+"", isPristine: false, isValid: true, errorText: "" },
+   month: { value: months[Math.floor(Math.random()*11)], isPristine: false, isValid: true, errorText: "" },
+   year: { value: Math.floor(Math.random()*(2010-1940))+1940+"", isPristine: false, isValid: true, errorText: "" },
    age: { value: "today", isPristine: false, isValid: true, errorText: "" },
    relation: {
       value: "collegue",
