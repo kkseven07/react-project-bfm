@@ -7,13 +7,13 @@ export const input = action$ =>
         )
         .mapTo({ type: "CHECK_DATE" });
 
-export const changeForm = action$ =>
-    action$
-        .ofType("CHANGE_FORM")
-        .filter(({ bool, part }) => {
-            return part === "partTwo";
-        })
-        .mapTo({ type: "ME" });
+export const changeForm = (action$, store) =>
+    action$.ofType("CHANGE_FORM").switchMap(({ gift, history }) => {
+        const state = store.getState();
+        const { canCreate } = state.form;
+        if (canCreate) return [{ type: "CREATE_BOOK", book: gift, history }];
+        else return [{ type: "OK" }];
+    });
 
 export const bookVersion = (action$, store) =>
     action$.ofType("BOOK_VERSION").switchMap(action => {
@@ -22,7 +22,7 @@ export const bookVersion = (action$, store) =>
         const book = books[currentBookId];
         const bookVersion = state.builder.bookVersion;
         return [
-        {type:"OK"}
+            { type: "OK" }
             // {
             //     type: "UPDATE_ORDER",
             //     order_id: book.order.id,

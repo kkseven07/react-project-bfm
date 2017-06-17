@@ -13,8 +13,8 @@ export const checkDate = () => {
     return { type: "CHECK_DATE" };
 };
 
-export const changeForm = (isNext, part) => {
-    return { type: "CHANGE_FORM", isNext, part };
+export const changeForm = (isNext, part, gift, history) => {
+    return { type: "CHANGE_FORM", isNext, part, gift, history };
 };
 
 export const orderInput=(text,field) =>{

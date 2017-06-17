@@ -22,7 +22,7 @@ var Element = Scroll.Element;
 var scroller = Scroll.scroller;
 const scrollTo = () => {
     scroller.scrollTo("myScrollToElement", {
-        duration: 500,
+        duration: 200,
         delay: 50,
         smooth: true,
         containerId: "ContainerElementID"

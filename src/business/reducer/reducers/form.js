@@ -15,7 +15,7 @@ export const months = [
     "Ноябрь",
     "Декабрь"
 ];
-const initialState = {
+const init = {
    name: { value: "", isPristine: true, isValid: true, errorText: "" },
    surname: { value: "", isPristine: true, isValid: true, errorText: "" },
    gender: { value: "Пол", isPristine: true, isValid: true, errorText: "" },
@@ -24,8 +24,8 @@ const initialState = {
    month: { value: "Месяц", isPristine: true, isValid: true, errorText: "" },
    year: { value: "Год", isPristine: true, isValid: true, errorText: "" },
    age: {
-      value: "Возраст указанный в книге",
-      isPristine: true,
+      value: "today",
+      isPristine: false,
       isValid: true,
       errorText: ""
    },
@@ -43,9 +43,9 @@ const initialState = {
 };
 
 const forTest = {
-   name: { value: "Оби-Ван", isPristine: false, isValid: true, errorText: "" },
+   name: { value: "Оби Ван", isPristine: false, isValid: true, errorText: "" },
    surname: {
-      value: "Кеноби",
+      value: "",
       isPristine: false,
       isValid: true,
       errorText: ""
@@ -74,12 +74,12 @@ const forTest = {
    canCreate: false
 };
 
-let partOne = ["name", "surname", "gender", "day", "month", "year", "age"];
+let partOne = ["name",  "gender", "day", "month", "year", "senderName"];
 let partTwo = ["senderName", "relation"];
 import * as selector from "./selectorForm";
 import { data } from "../../../app/shared";
 
-export default (state = forTest, action) => {
+export default (state = init, action) => {
    // //(action)
    switch (action.type) {
       case "CHANGE_FORM":
@@ -105,11 +105,7 @@ export default (state = forTest, action) => {
                state.dateExists
             ) {
                //successful path
-               if (action.part === "partOne") {
-                  canCreate = false;
-               } else {
-                  canCreate = true;
-               }
+               canCreate = true;
                return {
                   ...state,
                   isNext: true,
@@ -118,7 +114,6 @@ export default (state = forTest, action) => {
                };
             } else {
                //check if everything is pristine
-               //("check if everything is pristine")
                let list = raw.reduce(
                   (acc, v) => ({
                      ...acc,
@@ -143,7 +138,6 @@ export default (state = forTest, action) => {
             };
          }
       case "ENTER_INPUT":
-
          const { isValid, errorText } = selector.validate(
             action.text,
             action.field
@@ -158,9 +152,6 @@ export default (state = forTest, action) => {
                errorText,
             },
             inputEntered:true
-
-
-
          };
       case "CHECK_DATE":
          if (

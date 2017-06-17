@@ -9,14 +9,14 @@
 	font-family:'Agaaler';
     font-size: 6.3em;
     color:#fff;
-    top: 16%;
+    top: 20%;
     left: 27%;
     transform:rotate(-15deg);
-    text-shadow: 4px 4px rgba(0, 0, 0, 0.74), -3px -2px #ffc81e; 
+    text-shadow: 4px 4px rgba(0, 0, 0, 0.74), -3px -2px #ffc81e;
 }
 .film-name-v1 {
 	width:60%;
-    bottom: 33%;
+    bottom: 34%;
     right: 39%;
     font-family: 'BebasRegular';
     font-size: 2em;
@@ -35,8 +35,8 @@
 	font-family:'BebasBold';
 	color:#fff;
 	font-size:2.8em;
-	top:3%;
-	left:45%;
+	top:4%;
+	left:46%;
 	text-shadow: 1.5px 1px #ff2526;
 }
 .film-name-v2 {

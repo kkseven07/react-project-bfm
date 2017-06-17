@@ -170,7 +170,7 @@ const header = ({ history, ...props }) => {
                             height:'1.3em',
                             lineHeight:'1.4em',
                             borderRadius:'50%',
-                            background:'#ff7c00',
+                            background:'rgb(253, 204, 89)',
                             textAlign:'center',
                             fontSize:'0.9em'
                         }}
