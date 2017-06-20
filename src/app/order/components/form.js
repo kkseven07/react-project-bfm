@@ -13,7 +13,7 @@ import { bindActionCreators } from "redux";
 import * as actions from "../../../business/actions";
 const orderForm =({form, actions} ) => {
     return (
-        <div style={{ width: "90%", maxWidth: 500 }}>
+        <div style={{ width: "100%", maxWidth: 500 }}>
 
             <Input
                 maxLength={50}

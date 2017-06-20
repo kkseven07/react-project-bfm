@@ -13,6 +13,10 @@ import * as actions from "../../../business/actions";
 import { bindActionCreators } from "redux";
 import range from "lodash/range";
 import { data } from "../../shared";
+const siteKey = "6LcrISYUAAAAAHK2ADjF_25cmmOepUUMrRKUV_Zj";
+import Recaptcha from "react-recaptcha";
+const callback = () => console.log("recapthcad");
+const verifyCallback = response => console.log(response);
 const getData = field => {
     if (field === "day") {
         return range(1, 32);
@@ -36,6 +40,7 @@ const Part = ({ form, ...props }) => {
         senderName: form.senderName.value,
         calculatedAge: parseInt(form.calculatedAge)
     };
+    console.log(Recaptcha)
     return (
         <div className="flex flex-center flex-column" styleName="form">
             <DescText text="Для кого эта книга?" />
@@ -122,6 +127,15 @@ const Part = ({ form, ...props }) => {
                 enter={props.actions.enterInput}
             />
             <ErrorText text={form.bookName.errorText} />
+            <div className="flex width-full">
+
+                <Recaptcha
+                    render="explicit"
+                    onloadCallback={callback}
+                    sitekey={siteKey}
+                    verifyCallback={verifyCallback}
+                />
+            </div>
 
             <div className="flex width-full">
                 <Button

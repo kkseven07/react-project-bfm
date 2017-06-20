@@ -22,7 +22,10 @@ export const storageCreateBook = (action$, store) =>
             // console.log("in storatge book fulfilled")
             // localStorage.clear()
             try {
-                localStorage.setItem(currentBookId, JSON.stringify(book));
+                localStorage.setItem(
+                    "bookKey_" + currentBookId,
+                    JSON.stringify(book)
+                );
             } catch (e) {
                 localStorage.clear();
             }
@@ -32,16 +35,33 @@ export const storageCreateBook = (action$, store) =>
 export const loadCache = (action$, store) =>
     action$.ofType("LOAD_CACHE").switchMap(action => {
         const items = reverse(
-            Object.keys(localStorage).map(key =>
-                key!=='orderKey'&&JSON.parse(localStorage.getItem(key))
-            )
+            Object.keys(localStorage).map(key => {
+                let type;
+                if (key.indexOf("order") < 0) {
+                    type = "books";
+                } else {
+                    type = "orders";
+                }
+                return { type, item: JSON.parse(localStorage.getItem(key)) };
+            })
         );
+        const bookItems = items
+            .filter(obj => obj.type === "books")
+            .map(obj => obj.item);
+        const orderItems = items
+            .filter(obj => obj.type === "orders")
+            .map(obj => obj.item);
 
-        const bookItems =items.filter(key=> key!==false);
         if (bookItems.length < 1) {
-            return [{ type: "OK" }];
+            return [
+                { type: "OK" },
+                { type: "LOAD_ORDER_CACHE_FULFILLED", payload: orderItems }
+            ];
         }
-        return [{ type: "LOAD_CACHE_FULFILLED", payload: bookItems }];
+        return [
+            { type: "LOAD_CACHE_FULFILLED", payload: bookItems },
+            { type: "LOAD_ORDER_CACHE_FULFILLED", payload: orderItems }
+        ];
     });
 
 export const deleteFromCache = (action$, store) =>
@@ -58,34 +78,30 @@ export const loadFromCache = (action$, store) =>
 //order
 
 export const orderStorage = (action$, store) =>
-    action$
-        .ofType("CONFIRM_ORDER_FULFILLED")
-        .switchMap(({payload})=> {
-            const order = store.getState().order;
-            const orderId = 1;
-            try {
-                localStorage.setItem('orderKey', JSON.stringify(order));
-            }
-            catch (e) {
-                localStorage.clear();
-            }
-            return [{type:"ORDER_OK"}];
-            console.log("cache", localStorage)
-        });
-
-export const loadOrderCache =(action$, store)=>
-    action$.ofType("LOAD_ORDER_CACHE").switchMap(action => {
-        const items = reverse(
-            Object.keys(localStorage).map(key =>
-                key==='orderKey'&&JSON.parse(localStorage.getItem(key))
-            )
-        );
-        const orderItems = items.filter(key => key!==false)
-        if (orderItems.length < 1) {
-            return [{ type: "OK" }];
+    action$.ofType("CONFIRM_ORDER_FULFILLED").switchMap(({ payload }) => {
+        const order = store.getState().order;
+        const orderId = 1;
+        try {
+            localStorage.setItem("orderKey", JSON.stringify(order));
+        } catch (e) {
+            localStorage.clear();
         }
-        console.log("orderItems", orderItems)
-
-
-        return [{ type: "LOAD_ORDER_CACHE_FULFILLED", payload: orderItems }];
+        return [{ type: "ORDER_OK" }];
+        console.log("cache", localStorage);
     });
+
+// export const loadOrderCache = (action$, store) =>
+//     action$.ofType("LOAD_ORDER_CACHE").switchMap(action => {
+//         const items = reverse(
+//             Object.keys(localStorage)
+//                 .filter(key => key.indexOf("order") > -1)
+//                 .map(key => JSON.parse(localStorage.getItem(key)))
+//         );
+//         const orderItems = items.filter(key => key !== false);
+//         if (orderItems.length < 1) {
+//             return [{ type: "OK" }];
+//         }
+//         console.log("orderItems", orderItems);
+
+//         return [{ type: "LOAD_ORDER_CACHE_FULFILLED", payload: orderItems }];
+//     });

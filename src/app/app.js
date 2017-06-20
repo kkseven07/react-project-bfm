@@ -38,14 +38,12 @@ class App extends React.Component {
         return (
             <div id="outer-container">
                 <Loading />
-
                 <Background zIndex="10">
                     modal...
                 </Background>
                 <Background zIndex="10">
                     zoomer...
                 </Background>
-
                 {showHeader(location) && <Header  history={history} />}
                 <div id="wrap">
                     <div

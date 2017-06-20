@@ -117,6 +117,24 @@ export const sendOrder = (action$, store) =>
 
     });
 
+
+export const createOrder = action$ =>
+    action$.ofType("CREATE_ORDER").mergeMap(({ params }) => {
+        return ajax({
+            url: `${url}/api/v1/orders`,
+            body: { params: JSON.stringify(params) },
+            ...ajaxObject
+        })
+            .flatMap(ajax => {
+                console.log(ajax.response)
+                return [
+                    { type: "FETCH_ORDER_FULFILLED", payload: ajax.response },
+                ];
+            })
+            .catch(error => ofObs({ type: "AJAX_ERROR", payload: error }));
+    });
+
+
 export const createBook = action$ =>
     action$.ofType("CREATE_BOOK").mergeMap(({ book, history }) => {
         return ajax({

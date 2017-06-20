@@ -164,7 +164,7 @@ class Page extends Component {
     };
 
     smallImage = () => {
-        return `url(${this.props.url + this.props.page.primary_image.image.url.replace("_768", "_80")})`;
+        return `url(${this.props.url + this.props.page.primary_image.image.url.replace("bbx24s", "ssx8m")})`;
     };
 
     urlForLoading = (print, primary_image) => {

@@ -22,6 +22,9 @@
     font-size: 2em;
     transform: rotate(9deg);
     text-align:right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 .film-name-v1::after {
 	content:'»';

@@ -53,6 +53,8 @@ export const closeModal = () => {
 };
 
 //api
+
+
 export const createBook = (book, history) => {
     // history.push("/books/1")
     return { type: "CREATE_BOOK", book, history };
@@ -61,6 +63,11 @@ export const createBook = (book, history) => {
 export const updatePage = (page, params) => {
     return { type: "UPDATE_PAGE", page, params };
 };
+
+export const createOrder = (params) => {
+    return {type:"CREATE_ORDER", params}
+}
+
 export const genPages = (count, book_id) => {
     return { type: "GEN_PAGES", count, book_id };
 };

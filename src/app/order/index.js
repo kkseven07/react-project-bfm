@@ -57,7 +57,8 @@ class Order extends React.Component {
                         name:this.props.form.name.value,
                         phone:this.props.form.phone.value,
                         address:this.props.form.address.value,
-                        email:this.props.form.email.value
+                        email:this.props.form.email.value,
+
                     }
                 }
             );
@@ -100,7 +101,7 @@ class Order extends React.Component {
                             margin: 10,
                             paddingLeft: 5,
                             marginTop: 10,
-                            width: "90%",
+                            width: "100%",
                             fontSize: 25,
                             maxWidth: 500,
                             fontFamily: "RobotoRegular"
@@ -149,7 +150,7 @@ class Order extends React.Component {
                     {this.state.canConfirm&&<div
                          //CONFIRMED ORDER STATUS BAR
                         style={{
-                                width:'90%',
+                                width:'100%',
                                 maxWidth:'500px',
                                 display:'flex',
                                 alignItems:'center',
@@ -163,7 +164,7 @@ class Order extends React.Component {
                     {!this.state.canConfirm&&<div
                         // ORDER DETAILS
                         style={{
-                            width:'90%',
+                            width:'100%',
                             maxWidth:'500px',
                             display:'flex',
                             alignItems:'center',
@@ -176,7 +177,7 @@ class Order extends React.Component {
                             margin: 10,
                             paddingLeft: 5,
                             marginTop: 20,
-                            width: "90%",
+                            width: "100%",
                             fontSize: 25,
                             maxWidth: 500,
                             fontFamily: "RobotoRegular"
@@ -186,7 +187,7 @@ class Order extends React.Component {
                     </div>
                     <Form form={this.props.form} actions={this.props.actions}/>
                     <div
-                        style={{ maxWidth: 500, width: "90%" }}
+                        style={{ maxWidth: 500, width: "100%" }}
                         className="flex space-between"
                     >
                         <Button
@@ -198,6 +199,8 @@ class Order extends React.Component {
                         </Button>
                         <Button
                             click={() => {
+                                // console.log("console in order create order")
+                                this.props.actions.createOrder({orderDetails:{phone:555}, books:[1,2,3]})
                                 this.props.actions.validateForm();
                             }}
                         >
