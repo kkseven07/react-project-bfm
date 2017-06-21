@@ -156,7 +156,7 @@ export const createBook = action$ =>
                             book: ajax.response.book,
                             cover: ajax.response.pages[0]
                         }
-                    }
+                    },
                 ];
             })
             .catch(error => ofObs({ type: "AJAX_ERROR", payload: error }));

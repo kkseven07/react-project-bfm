@@ -21,6 +21,9 @@ body {
 user-select: none;
 
 }
+:global .HiddenOverflow{
+  overflow:hidden;
+}
 
 html {
   box-sizing: border-box;

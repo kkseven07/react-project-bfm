@@ -20,6 +20,7 @@ const uploadToFirebase = file => {
 	// 	// //(snapshot)
 	// });
 };
+import AvatarEditor from "react-avatar-editor";
 class Drop extends Component {
 	constructor(props) {
 		super(props);
@@ -34,18 +35,17 @@ class Drop extends Component {
 		this.setState({
 			file: dropFiles[0]
 		});
+		document.body.style.oveflow="hidden"
 	};
 
 	upload = () => {
-
-		if (this.state.file){
+		if (this.state.file) {
 			this.props.upload(
 				this.props.book.id,
 				this.props.page,
 				this.state.file
 			);
 		}
-
 	};
 
 	onSuccessDropbox = file => {
@@ -75,7 +75,7 @@ class Drop extends Component {
 	render() {
 		return (
 			<div styleName="Drop">
-				<Dropzone
+				{!this.state.file&&<Dropzone
 					ref={el => (this.dropzone = el)}
 					id="dropZone"
 					onDrop={files => this.onDrop(files)}
@@ -84,36 +84,17 @@ class Drop extends Component {
 					<p styleName="text">Перенесите сюда файл</p>
 					<p styleName="text">или</p>
 					<p styleName="text">Нажмите здесь</p>
-				</Dropzone>
-				<DropboxChooser
-					appKey={"zd54fs45x0wugg3"}
-					multiselect={false}
-					success={files => this.onSuccessDropbox(files)}
-					linkType={"direct"}
-				>
-					<a href="#" id="button">
-						<img
-							src={require("./img/dropbox.png")}
-							style={{ display: "inline-block" }}
-						/>
-						<p
-							style={{
-								fontSize: "14px",
-								fontFamily: "Helvetica",
-								color: "#636363",
-								display: "inline-block",
-								margin: "10px",
-								paddingLeft: "5px"
-							}}
-						>
-							Загрузить с Dropbox
-						</p>
-					</a>
-				</DropboxChooser>
+				</Dropzone>}
+
 				{this.state.file &&
-					<img
-						style={{ height: 200, width: 200 }}
-						src={this.state.file.preview}
+					<AvatarEditor
+						image={this.state.file.preview}
+						width={250}
+						height={250}
+						border={20}
+						color={[255, 255, 255, 0.6]} // RGBA
+						scale={1}
+						rotate={0}
 					/>}
 			</div>
 		);

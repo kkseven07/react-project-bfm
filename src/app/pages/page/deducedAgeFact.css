@@ -6,117 +6,108 @@
   position:relative;
   width:100%;
   height:25%;
+  color:white;
 }
 .positioned {
   position:absolute;
 }
 .name {
-  width:25%;
-  bottom:46%;
-  left:7%;
-  font-size:1.5em;
+  bottom: 73%;
+  right: 75%;
+  font-size: 1.15em;
 }
 .age {
-  top:48%;
-  left:35%;
-  font-size:1.5em;
-  text-align: center;
-  width:5%;
+    top: 9%;
+    left: 47%;
+    font-size: 1.15em;
 }
 .days-alive {
-  width:12%;
-  top:52.3%;
-  left:69.5%;
-  font-size:0.55em;
-  text-align:center;
+  width: 25%;
+  top: 61.3%;
+  left: 9.5%;
+  font-size: 2.8em;
+  color: #254d65;
+  text-align: center;
 }
 .bottom-part {
   position:relative;
   width:100%;
   height:75%;
+  color: white;
 }
 .heart-beats {
-  width:11%;
-  font-size:0.6em;
-  top:18%;
-  left:18.7%;
-  text-align:center;
+  font-size: 0.7em;
+  top: 15.5%;
+  left: 26.7%;
 }
 .dream-time {
- width:6%;
- top:11.15%;
- left:45%;
- text-align:center;
+  width: 10%;
+  top: 42.3%;
+  left: 64.7%;
+  text-align: center;
+  font-size: 1.8em;
 }
 .tears-total {
-  width:4%;
- top:28.75%;
- left:31%;
- text-align:center;
- font-size:0.6em;
- font-weight: 900;
+  width: 11%;
+  top: 13.75%;
+  left: 82%;
+  text-align: center;
+  font-size: 1.6em;
+  font-weight: 900;
+  color: #254d65;
 }
 .tears-sad {
-  width:6%;
- top:35%;
- left:17.5%;
- text-align:center;
- font-size:0.8em;
+  width: 6%;
+  top: 10.3%;
+  left: 52.3%;
+  text-align: center;
+  font-size: 1.1em;
 }
 .tears-joy {
-  width:4%;
- top:45%;
- left:13.5%;
- text-align:center;
- font-size:0.8em;
+  width: 6%;
+  top: 16.6%;
+  left: 52.3%;
+  text-align: center;
+  font-size: 1.1em;
 }
 .tears-pain {
-  width:4%;
- top:56.2%;
- left:19%;
- text-align:center;
- font-size:0.8em;
- transform: rotate(-33deg);
+  width: 6%;
+  top: 23.3%;
+  left: 52.3%;
+  text-align: center;
+  font-size: 1.1em;
 }
 .eat-in-kilos {
-  width:8%;
-  top:19.3%;
-  left:62%;
-  font-size:0.7em;
-  text-align:center;
+  width: 13%;
+  top: 51.3%;
+  left: 0.3%;
+  text-align: center;
+  font-size: 1.2em;
 }
 .eat-in-elephants {
-  width:6%;
-  top:19.3%;
-  left:73%;
-  font-size:0.7em;
-  text-align:center;
+  width: 13%;
+  top: 51.3%;
+  left: 23.3%;
+  text-align: center;
+  font-size: 1.2em;
 }
 .smiles-count {
-  width:11%;
-  top:40%;
-  left:54.5%;
-  font-size:0.7em;
-  text-align:center;
+  width: 25%;
+  top: 60%;
+  left: 73.5%;
+  font-size: 1.7em;
+  text-align: center;
 }
-.smiles-in-meters {
 
-  top:49.5%;
-  right:40.8%;
-  font-size:0.5em;
-  direction:rtl;
-}
-.tortois-minutes {
-  width:4%;
-  top:49.4%;
-  left:77.3%;
-  font-size:0.4em;
-  text-align:center;
-}
-.smile-again {
-  width:8%;
-  top:54.7%;
-  left:70.9%;
-  font-size:0.5em;
-  text-align:center;
-}
+.name-v2 { color:#0e6a9a; } .name-v3 {color:#017edc;}
+.smiles-count-v2{color:#0e6a9a;} .smiles-count-v3 {color:#017edc;}
+.age-v2 {color:#0e6a9a;} .age-v3 {color:#017edc;}
+.days-alive-v2 {} .days-alive-v3 {color:#017edc;}
+.heart-beats-v2{color:#0e6a9a;} .heart-beats-v3 {color:#017edc;}
+.dream-time-v2 {color:#0e6a9a;} .dream-time-v3 {color:#017edc;}
+.tears-total-v2 {} .tears-total-v3 {color:#017edc;}
+.tears-sad-v2 {color:#0e6a9a;} .tears-sad-v3 {color:#017edc;}
+.tears-joy-v2 {color:#0e6a9a;} .tears-joy-v3 {color:#017edc;}
+.tears-pain-v2 {color:#0e6a9a;} .tears-pain-v3 {color:#017edc;}
+.eat-in-kilos-v2 {color:#0e6a9a;} .eat-in-kilos-v3 {color:#017edc;}
+.eat-in-elephants-v2 {color:#0e6a9a;} .eat-in-elephants-v3 {color:#017edc;}

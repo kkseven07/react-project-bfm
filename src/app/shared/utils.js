@@ -107,6 +107,7 @@ export const editable = [
     "fruitDNA",
     "epicStory",
     "framefridge",
+    "deducedAgeFact"
 ];
 
 export const monthsMap = {

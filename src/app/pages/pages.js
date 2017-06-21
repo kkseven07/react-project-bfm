@@ -28,7 +28,6 @@ const scrollTo = () => {
         containerId: "ContainerElementID"
     });
 };
-
 class BookRoute extends Component {
     state = { inside: true };
     componentWillMount() {
@@ -39,7 +38,7 @@ class BookRoute extends Component {
             if (book_id === this.props.book.currentBookId) {
                 return;
             }
-            let book = JSON.parse(localStorage.getItem(book_id));
+            let book = JSON.parse(localStorage.getItem("bookKey_"+book_id));
             if (book) this.props.actions.loadFromCache(book);
             else {
                 if (this.props.history.action === "PUSH") {
@@ -127,17 +126,6 @@ class BookRoute extends Component {
         );
     }
 }
-
-// {
-//     book[bookId] &&
-//         <BookOptions
-//             history={this.props.history}
-//             actions={this.props.actions}
-//             color={cover.data.color}
-//             book={bData}
-//         />;
-// }
-
 const mapStateToProps = state => ({
     book: state.book,
     bookId: state.book.currentBookId,

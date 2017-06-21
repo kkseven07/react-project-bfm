@@ -35,6 +35,9 @@ const init = {
     fruitDNA: {
         selectedImage: null
     },
+    deducedAgeFact: {
+        selectedImage: null
+    },
     coolPlace: {
         selectedImage: null
     },

@@ -9,6 +9,10 @@ export const enterInput = (text, field) => {
     return { type: "ENTER_INPUT", text, field };
 };
 
+export const captchaVerify = () => {
+    return { type: "CAPTCHA_VERIFY" };
+};
+
 export const checkDate = () => {
     return { type: "CHECK_DATE" };
 };
@@ -17,12 +21,12 @@ export const changeForm = (isNext, part, gift, history) => {
     return { type: "CHANGE_FORM", isNext, part, gift, history };
 };
 
-export const orderInput=(text,field) =>{
-    return {type:"ORDER_INPUT", text, field}
-}
-export const emailInput=(text,field) =>{
-    return {type:"EMAIL_INPUT", text, field}
-}
+export const orderInput = (text, field) => {
+    return { type: "ORDER_INPUT", text, field };
+};
+export const emailInput = (text, field) => {
+    return { type: "EMAIL_INPUT", text, field };
+};
 //modal
 export const openModal = (page, book, params) => {
     return { type: "OPEN_MODAL", page, book, params };
@@ -41,7 +45,7 @@ export const rotateQualityTable = leftRotate => {
 };
 
 export const bookVersion = (name, value, book_id) => {
-    return { type: "BOOK_VERSION", name, value, book_id};
+    return { type: "BOOK_VERSION", name, value, book_id };
 };
 
 export const cleanBuilder = () => {
@@ -54,7 +58,6 @@ export const closeModal = () => {
 
 //api
 
-
 export const createBook = (book, history) => {
     // history.push("/books/1")
     return { type: "CREATE_BOOK", book, history };
@@ -64,9 +67,9 @@ export const updatePage = (page, params) => {
     return { type: "UPDATE_PAGE", page, params };
 };
 
-export const createOrder = (params) => {
-    return {type:"CREATE_ORDER", params}
-}
+export const createOrder = params => {
+    return { type: "CREATE_ORDER", params };
+};
 
 export const genPages = (count, book_id) => {
     return { type: "GEN_PAGES", count, book_id };
@@ -96,7 +99,7 @@ export const closeMenu = () => {
 //cache
 
 export const deleteFromCache = id => {
-    return { type: "DELETE_FROM_CACHE", id:id };
+    return { type: "DELETE_FROM_CACHE", id: id };
 };
 
 export const loadFromCache = book => {
@@ -107,15 +110,12 @@ export const loadCache = () => {
     return { type: "LOAD_CACHE" };
 };
 // order
-export const confirmOrder = (books, orderDetails)=> {
-    return {type:'CONFIRM_ORDER', books:books, orderDetails:orderDetails};
-}
-export const validateForm =()=> {
-    return {type: "VALIDATE_FORM"};
-}
-export const loadOrderCache =()=> {
-    return {type: "LOAD_ORDER_CACHE"};
-}
-
-
-
+export const confirmOrder = (books, orderDetails) => {
+    return { type: "CONFIRM_ORDER", books: books, orderDetails: orderDetails };
+};
+export const validateForm = () => {
+    return { type: "VALIDATE_FORM" };
+};
+export const loadOrderCache = () => {
+    return { type: "LOAD_ORDER_CACHE" };
+};

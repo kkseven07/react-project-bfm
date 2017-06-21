@@ -200,7 +200,7 @@ class Order extends React.Component {
                         <Button
                             click={() => {
                                 // console.log("console in order create order")
-                                this.props.actions.createOrder({orderDetails:{phone:555}, books:[1,2,3]})
+                                this.props.actions.createOrder({orderDetails:{phone:555}, books:[89,88,94]})
                                 this.props.actions.validateForm();
                             }}
                         >

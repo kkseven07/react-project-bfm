@@ -16,12 +16,11 @@ import { data } from "../../shared";
 const siteKey = "6LcrISYUAAAAAHK2ADjF_25cmmOepUUMrRKUV_Zj";
 import Recaptcha from "react-recaptcha";
 const callback = () => console.log("recapthcad");
-const verifyCallback = response => console.log(response);
 const getData = field => {
     if (field === "day") {
         return range(1, 32);
     } else if (field === "year") {
-        return range(2010, 1939, -1);
+        return range(2010, 1941, -1);
     } else {
         return data.monthsList;
     }
@@ -40,7 +39,8 @@ const Part = ({ form, ...props }) => {
         senderName: form.senderName.value,
         calculatedAge: parseInt(form.calculatedAge)
     };
-    console.log(Recaptcha)
+    const verifyCallback = response => props.actions.captchaVerify();
+
     return (
         <div className="flex flex-center flex-column" styleName="form">
             <DescText text="Для кого эта книга?" />
@@ -127,15 +127,18 @@ const Part = ({ form, ...props }) => {
                 enter={props.actions.enterInput}
             />
             <ErrorText text={form.bookName.errorText} />
-            <div className="flex width-full">
+            <div className="flex width-full" style={{paddingBottom:8}}>
 
                 <Recaptcha
                     render="explicit"
                     onloadCallback={callback}
                     sitekey={siteKey}
+                    hl="ru"
+                    // theme="dark"
                     verifyCallback={verifyCallback}
                 />
             </div>
+            {!form.verifyed&&!form.captchaPristine&&<ErrorText text={"Вы не робот?"} />}
 
             <div className="flex width-full">
                 <Button

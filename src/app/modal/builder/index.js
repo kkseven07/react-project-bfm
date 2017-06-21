@@ -18,6 +18,8 @@ import Vice from "./components/vice";
 import WiseWord from "./components/wiseWord";
 import EpicStory from "./components/epicStory";
 import MusicHit from "./components/musicHit";
+import DeducedAgeFact from "./components/deducedAgeFact";
+
 import Film from "./components/film";
 import Zoom from "./components/zoom";
 
@@ -129,6 +131,15 @@ const getComponent = (page, book, actions, form, step) => {
                     form={form}
                 />
             );
+        case "deducedAgeFact":
+            return (
+                <DeducedAgeFact
+                    page={page}
+                    book={book}
+                    actions={actions}
+                    form={form}
+                />
+            );
         default:
             return null;
     }
@@ -140,12 +151,22 @@ const stopClick = e => {
     e.stopPropagation();
 };
 class Modal extends React.Component {
+    componentDidUpdate() {
+        if (this.props.isOpen) {
+            document.body.classList.toggle("HiddenOverflow", true);
+        } else {
+            document.body.classList.toggle("HiddenOverflow", false);
+        }
+    }
+
     // componentDidUpdate(){
     //     // console.log(this.modal)
     //     if(this.props.isOpen) this.modal.addEventListener("keydown", this.handleNvEnter)
     // }
     // componentWillUnmount() {
-    //     this.modal.removeEventListener("keydown", this.handleNvEnter);
+    // console.log("component did unmlasjdlk----");
+    // this.modal.removeEventListener("keydown", this.handleNvEnter);
+    // document.body.style.oveflow="initial"
     // }
     // handleNvEnter = event => {
     //     console.log("Nv Enter:", event.key);

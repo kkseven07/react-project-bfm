@@ -45,7 +45,6 @@ class Page extends Component {
 
             return <Scoop book={book} data={page.data} />;
         } else if (type === "framefridge") {
-
             return <FrameFridge url={this.props.url} book={book} page={page} />;
         } else if (type === "brain") {
 
@@ -66,7 +65,6 @@ class Page extends Component {
 
             return <EpicStory page={page} book={book} />;
         } else if (type === "scene") {
-
             return <Scene book={book} />;
         } else if (type === "fruitDNA") {
 
@@ -85,11 +83,9 @@ class Page extends Component {
 
             return <Vice book={book} page={page} />;
         } else if (type === "virtue") {
-            // return null
 
             return <Virtue book={book} page={page} />;
         } else if (type === "deducedAgeFact") {
-            //
 
             return (
                 <DeducedAgeFact
@@ -99,8 +95,6 @@ class Page extends Component {
                 />
             );
         } else if (type === "bestseller") {
-
-
             return <Bestseller page={page} book={book} />;
         } else if (type === "toy") {
 
@@ -159,7 +153,7 @@ class Page extends Component {
         } else if (zoom) {
             return `url(${this.props.url + primary_image.image.url})`;
         } else {
-            return `url(${this.props.url + primary_image.image.url})`;
+            return `url(${this.props.url + primary_image.image.url.replace("bbx24s", "mmy70f")})`;
         }
     };
 
@@ -176,7 +170,7 @@ class Page extends Component {
                     .replace("_768", "_2048")
             );
         }
-        return this.props.url + primary_image.image.url;
+        return this.props.url + primary_image.image.url.replace("bbx24s", "mmy70f");
     };
     componentWillReceiveProps(nextProps) {
         if (

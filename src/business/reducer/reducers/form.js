@@ -2,18 +2,18 @@ import every from "lodash/every";
 import mapValues from "lodash/mapValues";
 import find from "lodash/find";
 export const months = [
-    "Январь",
-    "Февраль",
-    "Март",
-    "Апрель",
-    "Май",
-    "Июнь",
-    "Июль",
-    "Август",
-    "Сентябрь",
-    "Октябрь",
-    "Ноябрь",
-    "Декабрь"
+   "Январь",
+   "Февраль",
+   "Март",
+   "Апрель",
+   "Май",
+   "Июнь",
+   "Июль",
+   "Август",
+   "Сентябрь",
+   "Октябрь",
+   "Ноябрь",
+   "Декабрь"
 ];
 const init = {
    name: { value: "", isPristine: true, isValid: true, errorText: "" },
@@ -39,7 +39,8 @@ const init = {
    calculatedAge: "",
    dateExists: true,
    isNext: false,
-   canCreate: false
+   canCreate: false,
+   captchaPristine:true
 };
 
 const forTest = {
@@ -52,9 +53,24 @@ const forTest = {
    },
    gender: { value: "male", isPristine: false, isValid: true, errorText: "" },
    bookName: { value: "", isPristine: true, isValid: true, errorText: "" },
-   day: { value:Math.floor(Math.random()*(28-1))+1+"", isPristine: false, isValid: true, errorText: "" },
-   month: { value: months[Math.floor(Math.random()*11)], isPristine: false, isValid: true, errorText: "" },
-   year: { value: Math.floor(Math.random()*(2010-1940))+1940+"", isPristine: false, isValid: true, errorText: "" },
+   day: {
+      value: Math.floor(Math.random() * (28 - 1)) + 1 + "",
+      isPristine: false,
+      isValid: true,
+      errorText: ""
+   },
+   month: {
+      value: months[Math.floor(Math.random() * 11)],
+      isPristine: false,
+      isValid: true,
+      errorText: ""
+   },
+   year: {
+      value: Math.floor(Math.random() * (2010 - 1940)) + 1940 + "",
+      isPristine: false,
+      isValid: true,
+      errorText: ""
+   },
    age: { value: "today", isPristine: false, isValid: true, errorText: "" },
    relation: {
       value: "collegue",
@@ -71,10 +87,12 @@ const forTest = {
    calculatedAge: "30",
    dateExists: true,
    isNext: false,
-   canCreate: false
+   canCreate: false,
+   verifyed: false,
+   captchaPristine:true
 };
 
-let partOne = ["name",  "gender", "day", "month", "year", "senderName"];
+let partOne = ["name", "gender", "day", "month", "year", "senderName"];
 let partTwo = ["senderName", "relation"];
 import * as selector from "./selectorForm";
 import { data } from "../../../app/shared";
@@ -97,12 +115,13 @@ export default (state = forTest, action) => {
                   errorText,
                   fieldType: v,
                   value: state[v].value,
-                  inputEntered:true
+                  inputEntered: true
                };
             });
             if (
                every(mapValues(fields, ({ isValid }) => isValid)) &&
-               state.dateExists
+               state.dateExists &&
+               state.verifyed
             ) {
                //successful path
                canCreate = true;
@@ -110,7 +129,7 @@ export default (state = forTest, action) => {
                   ...state,
                   isNext: true,
                   canCreate,
-                  inputEntered:false
+                  inputEntered: false
                };
             } else {
                //check if everything is pristine
@@ -121,22 +140,26 @@ export default (state = forTest, action) => {
                   }),
                   {}
                );
+
                canCreate = false;
                return {
                   ...state,
+                  captchaPristine:false,
                   isNext: action.part === "partOne" ? false : true,
                   canCreate,
                   ...list,
-                  inputEntered:true
+                  inputEntered: true
                };
             }
          } else {
             return {
                ...state,
                isNext: false,
-               inputEntered:true
+               inputEntered: true
             };
          }
+      case "CAPTCHA_VERIFY":
+         return {...state, verifyed:true, captchaPristine:false}
       case "ENTER_INPUT":
          const { isValid, errorText } = selector.validate(
             action.text,
@@ -149,9 +172,9 @@ export default (state = forTest, action) => {
                value: action.text,
                isPristine: false,
                isValid,
-               errorText,
+               errorText
             },
-            inputEntered:true
+            inputEntered: true
          };
       case "CHECK_DATE":
          if (
@@ -178,10 +201,10 @@ export default (state = forTest, action) => {
             } else {
                calculatedAge = "";
             }
-            return { ...state, calculatedAge, dateExists, inputEntered:true };
+            return { ...state, calculatedAge, dateExists, inputEntered: true };
          }
       case "CLEAR_GIFT_FORM":
-         return initialState;
+         return forTest;
       default:
          return state;
    }

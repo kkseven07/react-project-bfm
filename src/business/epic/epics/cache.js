@@ -66,7 +66,7 @@ export const loadCache = (action$, store) =>
 
 export const deleteFromCache = (action$, store) =>
     action$.ofType("DELETE_FROM_CACHE").switchMap(({ id }) => {
-        localStorage.removeItem(id);
+        localStorage.removeItem("bookKey_"+id);
         return [{ type: "DELETE_FROM_CACHE_FULFILLED", payload: id }];
     });
 

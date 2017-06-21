@@ -1,18 +1,18 @@
 .text{
-    font-size: 1.7em;
-    text-align:center;
-    padding-top:20%;
-    font-family: 'BebasRegular';
+    font-size: 1.2em;
+    text-align: center;
+    padding-top: 41%;
+    font-family: 'RoundsBlack'
 }
 
-.banana{
-    color:#ffe577;
+.pear{
+    color:#8c9b53;
 }
 
-.plum{
-    color:#d7e88e;
+.grapes{
+    color:#783b77;
 }
 
-.potato{
-    color:#ffb797;
+.apple{
+    color:#9c1e15;
 }
