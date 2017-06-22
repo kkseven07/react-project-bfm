@@ -104,8 +104,8 @@ export default ({ page, book, actions, step }) => {
                             }}
                             style={{
                                 borderRadius: "40%",
-                                height: "70%",
-                                width: "70%",
+                                height: "auto",
+                                width: "67%",
                                 transform: `rotate(${rotate}deg)`
                             }}
                             src={url + page.primary_image.image.url}

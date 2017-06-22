@@ -1,18 +1,12 @@
 .r{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    font-family:'AkrobatSemiBold';
-    font-size: 0.7em;
-    color:white;
-    padding-top:15%;
-    box-sizing: border-box;
+    position: relative;
+    font-family: 'UniSansHeavy';
 }
 
 .text-name{
-	width: 53%;
-    text-align: center;
+	color: black;
     font-size: 3em;
-    text-transform: uppercase;
-    color: #fde3e5;
+    position: absolute;
+        bottom: 10%;
+    right: 10%;
 }

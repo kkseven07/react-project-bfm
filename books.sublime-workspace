@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"read",
+				"readAsDataURL"
+			],
+			[
+				"align",
+				"align-items"
+			],
+			[
+				"de",
+				"deducedAgeFact\t(index.js)"
+			],
+			[
+				"CLEA",
+				"CLEAR_GIFT_FORM\t(form.js)"
+			],
+			[
+				"site",
+				"siteKey"
+			],
+			[
+				"init",
+				"initialState"
+			],
+			[
+				"qu",
+				"qualityTable\t(index.js)"
+			],
+			[
 				"compon",
 				"componentDidMount\t(index.js)"
 			],
@@ -400,10 +428,6 @@
 				"SwipeableListView"
 			],
 			[
-				"align",
-				"alignSelf\t(countryPicker.js)"
-			],
-			[
 				"To",
 				"TouchableOpacity"
 			],
@@ -490,86 +514,16 @@
 			[
 				"Sc",
 				"ScrollView\t(list.js)"
-			],
-			[
-				"Tou",
-				"TouchableHighlight"
-			],
-			[
-				"disable",
-				"disableGestures"
-			],
-			[
-				"disbal",
-				"disableGestures"
-			],
-			[
-				"react",
-				"react-native-side-menu\t(list.js)"
-			],
-			[
-				"Incre",
-				"IncrementalGroup"
-			],
-			[
-				"compone",
-				"componentWillUnmount\t(app.js)"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "src/app/home/index.js",
+			"file": "src/app/order/index.js",
 			"settings":
 			{
-				"buffer_size": 1154,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/pages/page.js",
-			"settings":
-			{
-				"buffer_size": 9147,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/pages/pages.js",
-			"settings":
-			{
-				"buffer_size": 5083,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "import React from \"react\";\nimport Option from \"./option\";\nimport \"./bookOptions.css\";\nimport hard from \"./hard.jpg\";\nimport soft from \"./soft.jpg\";\nimport url from '../../../entry/url'\nimport { Button } from \"../../shared\";\nlet prices={\n    digital:2900,\n    soft19: 9900,\n    soft23:11900,\n    hard19:14900,\n    hard23:16900,\n    deluxe:39900,\n    fumoney:99000\n}\nlet sizes = {\n    digital:\"standard\",\n    soft19: 19,\n    soft23:23,\n    hard19:19,\n    hard23:23,\n    deluxe:23,\n    fumoney:23\n}\nlet images={\n    digital:\"standard\",\n    soft19: 19,\n    soft23:23,\n    hard19:19,\n    hard23:23,\n    deluxe:23,\n    fumoney:23\n}\n\nconst data = [\n    {\n        type: \"digital\",\n        label: \"Цифровая версия книги\",\n        price: \"2900 тг\"\n    },\n    {\n        type: \"soft\",\n        label: \"Книга в мягком переплете\",\n        price: \"9900 тг\"\n    },\n    {\n        type: \"hard\",\n        label: \"Книга в твердом переплете\",\n        price: \"14900 тг\"\n    }\n];\n\nclass Options extends React.Component {\n    for_text = () => {\n        if (this.props.book.format === \"digital\") {\n            return \"Если у вас дома есть айпад или другой интернет-планшет, с которого вы сможете показывать книгу своим друзьям и родным, то эта цифровая pdf-версия идеально вам подойдет.\";\n        } else if (this.props.book.format.indexOf(\"soft\") > -1) {\n            return \"Современная, удобная и привлекательная, она будет для вас отличной спутницей в путешествии. Если вы ведете активный образ жизни и находитесь в постоянных разъездах - выбирайте ее, и не прогадаете!\";\n        } else {\n            return \"Аккуратная, солидная и надежная, она способна на протяжении многих лет украшать своим видом вашу книжную полку. Ей не страшны никакие невзгоды, ее страницы защищены практически от любых воздействий и повреждений.\";\n        }\n    };\n\n    render() {\n        if(!this.props.book){\n            return null\n        }\n        return (\n            <div\n                style={{ marginTop: 40 }}\n                className=\"width-full flex flex-column flex-center\"\n            >\n                <div\n                    style={{\n                        height: 1,\n                        backgroundColor: \"rgb(230,230,230)\",\n                        width: \"70%\"\n                    }}\n                />\n                <div\n                    style={{\n                        fontFamily: \"RobotoMedium\",\n                        fontSize: 25,\n                        marginTop: 30\n                    }}\n                >\n                    ФОРМАТ КНИГИ\n                </div>\n                <div\n                    styleName=\"container\"\n                    className=\"flex flex-center width-full flex-wrap\"\n                >\n                    <div styleName=\"elem image\" className=\"flex flex-center\">\n                        <img src={url+\"/media/product-1/final1.jpg\"} style={{ width: 315, height: 315 }} />\n\n                    </div>\n                    <div styleName=\"elem option\" className=\"flex flex-column\">\n                        <div className=\"flex\" styleName=\"size\">\n                            <div\n                                className=\"flex flex-center space-between\"\n                                style={{\n                                    height: 40,\n                                    margin: 5,\n                                    marginTop: 0,\n                                    width: 320,\n                                    padding: 7,\n                                    fontFamily: \"RobotoRegular\",\n                                    fontSize: 18,\n                                    background: \"rgba(78, 162, 249, 0.22)\"\n                                }}\n                            >\n                                ЦЕНА\n                                <div\n                                    style={{\n                                        fontFamily: \"RobotoMedium\",\n                                        color: \"black\"\n                                    }}\n                                >\n                                    {prices[this.props.book.format]} тг\n                                </div>\n                            </div>\n                        </div>\n                        <Option\n                            value=\"digital\"\n                            enter={this.props.actions.bookVersion}\n                            book={this.props.book}\n                            name=\"format\"\n                            text=\"Цифровая версия книги\"\n                        />\n                        <Option\n                            value=\"soft\"\n                            enter={this.props.actions.bookVersion}\n                            book={this.props.book}\n                            name=\"format\"\n                            text=\"Книга в мягком переплете\"\n                        />\n                        <Option\n                            value=\"hard\"\n                            enter={this.props.actions.bookVersion}\n                            book={this.props.book}\n                            name=\"format\"\n                            text=\"Книга в твердом переплете\"\n                        />\n                        <div\n                            className=\"flex flex-center\"\n                            styleName=\"size\"\n                            style={{\n                                display: this.props.book.format !==\n                                    \"digital\"\n                                    ? \"flex\"\n                                    : \"none\",\n                                fontFamily: \"RobotoRegular\",\n                                fontSize: 22,\n                                marginTop: 5,\n                                marginLeft: 8\n                            }}\n                        >\n                            Размер\n\n                        </div>\n                        <div\n                            className=\"flex flex-column\"\n                            style={{\n                                fontSize: 16,\n                                marginTop: 5,\n                                display: this.props.book.format !==\n                                    \"digital\"\n                                    ? \"flex\"\n                                    : \"none\"\n                            }}\n                        >\n                            <Option\n                                value=\"19\"\n                                enter={this.props.actions.bookVersion}\n                                book={this.props.book}\n                                name=\"size\"\n                                text=\"19 см на 19 см\"\n                            />\n                            <Option\n                                value=\"23\"\n                                enter={this.props.actions.bookVersion}\n                                book={this.props.book}\n                                name=\"size\"\n                                text=\"23 см на 23 см\"\n                            />\n\n                        </div>\n                        <div\n                            styleName=\"size\"\n                            style={{\n                                fontFamily: \"RobotoRegular\",\n                                fontSize: 16,\n                                marginTop: 6,\n                                lineHeight: 1.4,\n                                marginLeft: 8\n                            }}\n                        >\n                            {this.for_text()}\n                        </div>\n                    </div>\n                </div>\n                <div\n                    style={{\n                        display: this.props.book.format !== \"digital\"\n                            ? \"flex\"\n                            : \"none\"\n                    }}\n                    className=\"flex flex-center flex-column\"\n                >\n                    <div\n                        style={{\n                            fontFamily: \"RobotoMedium\",\n                            fontSize: 25,\n                            marginTop: 4\n                        }}\n                    >\n                        ПОДАРОЧНАЯ УПАКОВКА\n                    </div>\n                    <div\n                        styleName=\"container\"\n                        className=\"flex flex-center width-full flex-wrap\"\n                    >\n                        <div styleName=\"elem image\" className=\"flex\">\n                            <img\n                                src={soft}\n                                style={{ width: 315, height: 315 }}\n                            />\n\n                        </div>\n                        <div\n                            style={{ height: 320 }}\n                            styleName=\"elem option\"\n                            className=\"flex flex-column\"\n                        >\n                            <div className=\"flex\" styleName=\"size\">\n                                <div\n                                    className=\"flex flex-center space-between\"\n                                    style={{\n                                        height: 40,\n                                        margin: 5,\n                                        marginTop: 0,\n                                        width: 320,\n                                        padding: 7,\n                                        fontFamily: \"RobotoRegular\",\n                                        fontSize: 18,\n                                        background: \"rgba(78, 162, 249, 0.22)\"\n                                    }}\n                                >\n                                    ЦЕНА\n                                    <div\n                                        style={{\n                                            fontFamily: \"RobotoMedium\",\n                                            color: \"black\"\n                                        }}\n                                    >\n                                        1000 тг\n                                    </div>\n                                </div>\n                            </div>\n                            <Option\n                                value=\"wrap\"\n                                enter={this.props.actions.bookVersion}\n                                book={this.props.book}\n                                name=\"wrap\"\n                                text=\"Подарочная упаковка\"\n                            />\n                            <div\n                                styleName=\"size\"\n                                style={{\n                                    fontFamily: \"RobotoRegular\",\n                                    fontSize: 16,\n                                    marginTop: 10,\n                                    marginLeft: 8,\n                                    lineHeight: 1.4\n                                }}\n                            >\n                                Подарочная упаковка - Яркая и красочная фирменная упаковка от\n                                {\" \"}\n                                <span style={{ fontFamily: \"RobotoMedium\" }}>\n                                    bookfrom.me\n                                </span>\n                                {\" \"}\n                                сделает ваш подарок еще более удивительным! Конечно, сначала\n                                {\" \"}\n                                {this.props.book.name}\n                                {\" \"}\n                                увидит сверток и подумает, что Вы дарите\n                                {\" \"}\n                                {this.props.book.gender === \"male\"\n                                    ? \"ему\"\n                                    : \"ей\"}\n                                {\" \"}\n                                обычную книгу. Но только представьте, в какой восторг\n                                {\" \"}\n                                {this.props.book.gender === \"male\"\n                                    ? \"он\"\n                                    : \"она\"}\n                                {\" \"}\n                                придет, когда раскроет его!\n                            </div>\n\n                        </div>\n                    </div>\n                </div>\n\n                <Button\n                    click={() => {\n                            this.props.history.push(\"/cart\");\n                    }}\n                >\n                    Добавить в корзину\n                </Button>\n\n            </div>\n        );\n    }\n}\nexport default Options;\n",
-			"file": "src/app/pages/components/bookOptions.js",
-			"file_size": 13347,
-			"file_write_time": 131419277680000000,
-			"settings":
-			{
-				"buffer_size": 12568,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "books-client.sublime-project",
-			"settings":
-			{
-				"buffer_size": 751,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/pages/components/menu.js",
-			"settings":
-			{
-				"buffer_size": 1399,
+				"buffer_size": 8921,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -647,23 +601,20 @@
 	[
 		"/Users/ilyasmalgazhdarov/Production/books-client",
 		"/Users/ilyasmalgazhdarov/Production/books-client/assets",
-		"/Users/ilyasmalgazhdarov/Production/books-client/assets/icons",
-		"/Users/ilyasmalgazhdarov/Production/books-client/assets/img",
+		"/Users/ilyasmalgazhdarov/Production/books-client/node_modules/react-recaptcha",
+		"/Users/ilyasmalgazhdarov/Production/books-client/node_modules/react-recaptcha/dist",
+		"/Users/ilyasmalgazhdarov/Production/books-client/node_modules/react-recaptcha/example",
+		"/Users/ilyasmalgazhdarov/Production/books-client/node_modules/react-recaptcha/example/build",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/cart",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/cart/components",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/contacts",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/components",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/order",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/order/components",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/components",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/business",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/actions",
@@ -675,138 +626,138 @@
 	],
 	"file_history":
 	[
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/cart/index.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/selectorForm.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/order.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/orderForm.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/form.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/builder.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/order/components/form.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/components/menu.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/components/bookOptions.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/components/bookOptions.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/pages.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/coverChooser.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/components/menu.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/about/index.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/contacts/index.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/contacts/index.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/about/about.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/header.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/book.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic/index.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic/epics/cache.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic/epics/api.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/actions/index.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/app.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic/epics/form.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/pages.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/framefridge.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/wiseWord.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/utils.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/quotes.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/wiseWord.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/Drop.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/framefridge.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/backToHistory.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/pastPhoto.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/components/form.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/backToHistory.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/pastPhoto.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/musicHit.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/sport.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/sport.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/ageFact.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/scoop.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/film.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/ageFact.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/scoop.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/musicHit.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/epicStory.js",
+		"/Users/ilyasmalgazhdarov/Production/book",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/deducedAgeFact.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/deducedAgeFact.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/qualityTable.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/film.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/film.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/epicStory.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/cover.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/relaxPhoto.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/relaxPhoto.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/pastPhoto.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/package.json",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/holiday.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/index.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/relaxPhoto.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/frameFridge.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/quotes.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/quotes.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/intro.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/modal.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/intro.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/pages.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/quotes.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/bestseller.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/factoid.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/scene.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/scene.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/order/index.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/loading.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/cart/index.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/cart/components/orderItem.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/cart/components/cart.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/cart/components/orders.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/cart/components/orderBooks.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/cart/components/orderBooks.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/cart/components/orderItem.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/index.html",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/intro.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/intro.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/common.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/deducedAgeFact.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/fruitDNA.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/fruitDNA.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/fruitDNA.js",
+		"/Users/ilyasmalgazhdarov/Learning/sublimeSetup",
+		"/Users/ilyasmalgazhdarov/Production/books-client/.babelrc",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/Drop.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/app.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/builder.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/entry/url.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/.gitignore",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic/epics/delay.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/index.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/components/bookForm.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/preview/index.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/cover.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/famousBirthShare.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/mirrorDate.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/cart/index.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/index.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/cart/components/book.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/book.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/coverChooser.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/input.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/header.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/button.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/components/reviews.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/components/gallery.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/components/product.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/components/product.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/components/footer.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/components/menu.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/components/bookOptions.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/vice.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/page.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/print.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/print.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/components/bookOptions.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/books.sublime-project",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/components/menu.css",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/virtue.css",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/virtue.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/loading.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/epicStory.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/epicStory.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/loading.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/toy.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/videoGame.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/intro.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/button.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/vice.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/builder.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/utils.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/index.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/components/gallery.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/famousBirthShare.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/mirrorDate.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/builder.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/index.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/film.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/utils.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic/epics/api.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic/epics/cache.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/order/index.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/cart/components/summary.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/cart/components/book.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/actions/index.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic/epics/form.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/components/option.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/book.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/form.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/entry/url.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/print.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/app.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/components/bookForm.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/webpack.production.config.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/imageChooser.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/qualityTable.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/zoom.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components1/Drop.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/Drop.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/components/product.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/header.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/components/gallery.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/asyncModule.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/preview/index.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page1/epicStory.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/musicHit.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/factoid.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/animal.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/init.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/webpack.config.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components1/qualityTable.js",
-		"/Users/ilyasmalgazhdarov/Learning/sublimeSetup",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/entry/constants.js",
-		"/Users/ilyasmalgazhdarov/Production/sql/scr.postgresql",
-		"/Users/ilyasmalgazhdarov/Production/bookfromme/apps/book/lib/book/generate/update.ex",
-		"/Users/ilyasmalgazhdarov/Production/bookfromme/apps/book_api/web/router.ex",
-		"/Users/ilyasmalgazhdarov/Production/bookfromme/apps/book/lib/book.ex",
-		"/Users/ilyasmalgazhdarov/Production/bookfromme/apps/book/lib/book/order.ex",
-		"/Users/ilyasmalgazhdarov/Production/bookfromme/apps/book/lib/book/page.ex",
-		"/Users/ilyasmalgazhdarov/Production/bookfromme/apps/book_api/config/config.exs",
-		"/Users/ilyasmalgazhdarov/Production/bookfromme/apps/book_api/lib/book_api/mailer.ex",
-		"/Users/ilyasmalgazhdarov/Production/bookfromme/apps/book/lib/book/gift.ex",
-		"/Users/ilyasmalgazhdarov/Production/bookfromme/apps/book_api/mix.exs",
-		"/Users/ilyasmalgazhdarov/Production/bookfromme/apps/book/priv/repo/migrations/20170404071552_orders.exs",
-		"/Users/ilyasmalgazhdarov/Production/bookfromme/apps/book_api/web/views/email_view.ex",
-		"/Users/ilyasmalgazhdarov/Production/bookfromme/.env",
-		"/Users/ilyasmalgazhdarov/Production/bookfromme/.gitignore",
-		"/Users/ilyasmalgazhdarov/Production/bookfromme/apps/book_api/lib/email.ex",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/frameFridge.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/data.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/order/order.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic/index.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/framefridge",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/order.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/books-client.sublime-project",
-		"/Users/ilyasmalgazhdarov/Production/books-client/books-front.sublime-project",
-		"/Users/ilyasmalgazhdarov/.nvm/versions/node/v7.4.0/bin/prettier",
-		"/Users/ilyasmalgazhdarov/.bash_profile",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/brain.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/brain.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/index.js",
-		"/Users/ilyasmalgazhdarov/Production/bookfromme/apps/book/lib/book/generate/helper.ex",
-		"/Users/ilyasmalgazhdarov/Production/bookfromme/apps/book/lib/book/generate/data_for_page.ex",
-		"/Users/ilyasmalgazhdarov/Production/bookfromme/apps/book/lib/book/generate/get_primary_image.ex",
-		"/Users/ilyasmalgazhdarov/Production/bookfromme/apps/book/lib/book/generate/create_image.ex",
-		"/Users/ilyasmalgazhdarov/Production/bookfromme/apps/book/lib/book/data_for_book/helper_file",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/formDescriptionSmall.css",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/formDesсriptionSmall.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/formDescriptionText.css",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/formDesсriptionText.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/errorText.css",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/asyncModule.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/webpack.production.config.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/business/reducer/form.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/header.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/home/components/book.css",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/home/components/book.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/pages/pages.css",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/pages/page/cover.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/app.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/.babelrc",
-		"/Users/ilyasmalgazhdarov/Production/book-app/.gitignore",
-		"/Users/ilyasmalgazhdarov/Production/book-app/webpack.config.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/about/index.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/about/about.css",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/business/epic/index.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/app.css",
-		"/Users/ilyasmalgazhdarov/Production/book-app/public/index.html",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/index.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/home/components/form.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/home/components/bookForm.css",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/app/shared/components/button.css",
-		"/Users/ilyasmalgazhdarov/Production/book-app/assets/fonts/AA-BebasNeue-Bold.woff",
-		"/Users/ilyasmalgazhdarov/Production/book-app/assets/fonts/AA-BebasNeue-Regular.woff",
-		"/Users/ilyasmalgazhdarov/Production/book-app/src/entry/store.js",
-		"/Users/ilyasmalgazhdarov/Production/book-app/package.json"
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/button.js"
 	],
 	"find":
 	{
-		"height": 56.0
+		"height": 49.0
 	},
 	"find_in_files":
 	{
@@ -843,6 +794,41 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"/img",
+			"img",
+			"300",
+			"250",
+			"017edc",
+			"0e6a9a",
+			"100",
+			"var",
+			"eRef",
+			"editor",
+			"quotes",
+			"Quotes",
+			"PastPhoto",
+			"FrameFridge",
+			"Quotes",
+			"quote",
+			"1",
+			"0",
+			"wishText",
+			"deducedAgeFact",
+			"color",
+			");\n",
+			"v2",
+			"v1",
+			"+",
+			"no-image",
+			") {",
+			"100",
+			"300",
+			"200",
+			"250",
+			"400",
+			"700",
+			"20",
+			"5",
 			"   margin:0;\n      font-size: 23.57px;",
 			"350",
 			"320",
@@ -935,42 +921,7 @@
 			"Select",
 			"year",
 			"gender",
-			"<Input",
-			"Input",
-			"===",
-			"gender",
-			"20",
-			"17",
-			"10",
-			"class",
-			"monthsMap",
-			"containerB",
-			"img",
-			"browserHistory",
-			"props",
-			"\"",
-			"Enum.random",
-			"си",
-			",",
-			"BEST",
-			"hist",
-			"back",
-			"scoop",
-			"reduce",
-			"<span>",
-			"Textfit",
-			"span",
-			"25px",
-			"width",
-			"70",
-			"4",
-			"10",
-			"430",
-			"width",
-			"-5px",
-			"left: -5px",
-			"left:-5px",
-			"520"
+			"<Input"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1011,24 +962,24 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/app/home/index.js",
+					"file": "src/app/order/index.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1154,
+						"buffer_size": 8921,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1011,
-								964
+								8556,
+								8556
 							]
 						],
 						"settings":
@@ -1039,164 +990,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/app/pages/page.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9147,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/app/pages/pages.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5083,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								881,
-								881
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/app/pages/components/bookOptions.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 12568,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								500,
-								506
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 144.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "books-client.sublime-project",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 751,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								751
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3889.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "src/app/pages/components/menu.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1399,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1070,
-								1070
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
 					"type": "text"
 				}
 			]

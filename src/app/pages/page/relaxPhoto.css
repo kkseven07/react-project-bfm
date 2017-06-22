@@ -1,0 +1,22 @@
+.r {
+    position: relative;
+}
+.image {
+    position: absolute;
+    height: auto;
+    width: 71.1%;
+    object-fit: contain;
+    border: 0;
+    transform: rotate(10.1deg);
+    top: 13.6%;
+    left: 14.6%;
+}
+.title {
+    position: absolute;
+    bottom: 12%;
+    font-size: 1.7em;
+    transform: rotate(11deg);
+    right: 23%;
+    font-family: 'AkrobatSemiBold';
+    z-index: 2;
+}

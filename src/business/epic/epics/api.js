@@ -111,29 +111,30 @@ export const updateOrder = (action$, store) =>
             .catch(error => ofObs({ type: "AJAX_ERROR", payload: error }));
     });
 
-export const sendOrder = (action$, store) =>
-    action$.ofType("CONFIRM_ORDER").switchMap(({order, orderDetails})=> {
-            return [{type:"CONFIRM_ORDER_FULFILLED"}];
-
-    });
-
-
-export const createOrder = action$ =>
-    action$.ofType("CREATE_ORDER").mergeMap(({ params }) => {
+export const createOrder = (action$, store) =>
+    action$.ofType("CONFIRM_ORDER").switchMap(({order})=> {
+        const bookIds = store.getState().order.books.map((key)=> key.id);
+        const orderDetails = store.getState().order.orderDetails;
+        console.log("boookIds", bookIds)
+        const params = {books:bookIds, orderDetails:orderDetails}
         return ajax({
-            url: `${url}/api/v1/orders`,
-            body: { params: JSON.stringify(params) },
+            url:`${url}/api/v1/orders`,
+            body: {params: JSON.stringify(params)},
             ...ajaxObject
         })
-            .flatMap(ajax => {
-                console.log(ajax.response)
-                return [
-                    { type: "FETCH_ORDER_FULFILLED", payload: ajax.response },
-                ];
-            })
-            .catch(error => ofObs({ type: "AJAX_ERROR", payload: error }));
-    });
 
+        .flatMap(ajax=> {
+            let orderId = ajax.response.order_id;
+            console.log("AJAX RESPONSE");
+            return [
+                {type: "CREATE_ORDER_FULFILLED", orderId:orderId},
+                {type:"DELETE_BOOKS_FROM_CACHE"}
+            ]
+        })
+        .catch(error=>ofObs({type:"AJAX_ERROR", payload:error, mesage:"Произошла ошибка с отправкой заказа."}));
+});
+
+// "you" "mom" "dad"
 
 export const createBook = action$ =>
     action$.ofType("CREATE_BOOK").mergeMap(({ book, history }) => {

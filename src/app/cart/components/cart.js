@@ -22,9 +22,6 @@ class Cart extends React.Component {
     componentDidMount() {
         window.scrollTo(0, 0);
     }
-    componentWillMount() {
-        this.props.actions.loadOrderCache();
-    }
     getWrapPrice = book => {
         return !book.gift_wrap ? 0 : book.format !== "digital" ? 1000 : 0;
     };

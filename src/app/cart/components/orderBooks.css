@@ -1,0 +1,79 @@
+.r{
+    height:170px;
+    width:170px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding:6px;
+    white-space: pre-line;
+    text-align: right;
+    padding-bottom:0;
+    font-size:25px;
+    font-family: "BebasBold";
+}
+.book-info{
+    font-family:"BebasBold";
+    font-size: 25px;
+    color:rgb(50,50,50);
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.desc{
+    padding-left:20px;
+}
+
+.elem{
+    width:150px;
+    height:40px;
+    border:0;
+    padding-top:12px;
+    font-size:17px;
+    border-style: solid;
+    border-top: 1px solid rgb(220,220,220);
+}
+
+.price{
+    border:0;
+    display: flex;
+    padding:0;
+    padding-right:6px;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgb(240,240,240);
+    font-family:"RobotoMedium";
+    font-size:22px;
+
+}
+@media screen and (min-width:551px) and (max-width: 745px){
+    .r{
+        height: 150px;
+        width:150px;
+        font-size: 24px;
+    }
+}
+@media screen and (max-width: 550px){
+    .container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .elem{
+        width:250px;
+    }
+    .r{
+        height: 250px;
+        width:250px;
+        font-size:38px;
+    }
+    .desc{
+        width:250px;
+        padding:0;
+        padding-top:20px;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+}

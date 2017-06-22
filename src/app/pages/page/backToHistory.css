@@ -2,14 +2,17 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    font-family: 'BebasRegular';
 }
 .facts{
-    font-family: 'GothamRegular';
-    margin-top:11%;
-    width:60%;
+    font-family: 'AkrobatSemiBold';
+    margin-top: 38%;
+    margin-left: 40%;
+    width:55%;
     height: 75%;
     display: flex;
     flex-direction: column;
+    color: black;
 }
 .image{
     height:35%;
@@ -22,24 +25,20 @@
 }
 .date{
     position:absolute;
-    top:3.8%;
-    left:27%;
+    top: 7.8%;
+    left: 7%;
     flex-wrap: wrap;
     width:14%;
-    height:16%;
 }
 .text{
-    font-size: 0.6em;
+    font-size: 0.54em;
     margin:1%;
-    color:white;
     line-height: 1.2;
 }
 .gradient {
-    background:linear-gradient(180deg, #f57e48, #ffe13a);
-    -webkit-background-clip: text; 
-     color: transparent;
-     font-family: 'BTTF';
-     font-size:1.75em;
+    color: white;
+    font-size: 5.75em;
+    line-height: 0.72;
 }
 .dot {
     top: 8%;

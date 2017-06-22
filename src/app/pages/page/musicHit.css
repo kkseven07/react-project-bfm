@@ -12,8 +12,8 @@
 
 }
 .artist-v1 {
-    font-size: 1.4em;
-    bottom: 82%;
+    font-size: 2em;
+    bottom: 85%;
     width: 52%;
     overflow: hidden;
     text-align: center;
@@ -21,13 +21,10 @@
 }
 .single-v1 {
     width: 58%;
-    justify-content: center;
-	top: 20%;
-	font-size:1em;
-	height:8%;
-	display:flex;
-	align-items: center;
-    left: 21%
+	top: 18%;
+	font-size:2em;
+    left: 21%;
+    text-align:center;
 }
 .artist-v2 {
 	overflow:hidden;
@@ -46,4 +43,20 @@
     font-size: 2.1em;
     text-align: center;
     text-shadow: 0.04em 0.04em #a5a6a0;
+}
+.artist-v3 {
+    color:#a8426d;
+    bottom: 22%;
+    width: 54%;
+    left: 23%;
+    text-align: center;
+    font-size: 1.1em;
+}
+.single-v3 {
+    color:#a8426d;
+    bottom: 17%;
+    width: 54%;
+    left: 23%;
+    text-align: center;
+    font-size: 1.1em;
 }

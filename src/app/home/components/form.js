@@ -127,18 +127,7 @@ const Part = ({ form, ...props }) => {
                 enter={props.actions.enterInput}
             />
             <ErrorText text={form.bookName.errorText} />
-            <div className="flex width-full" style={{paddingBottom:8}}>
 
-                <Recaptcha
-                    render="explicit"
-                    onloadCallback={callback}
-                    sitekey={siteKey}
-                    hl="ru"
-                    // theme="dark"
-                    verifyCallback={verifyCallback}
-                />
-            </div>
-            {!form.verifyed&&!form.captchaPristine&&<ErrorText text={"Вы не робот?"} />}
 
             <div className="flex width-full">
                 <Button
@@ -178,3 +167,17 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);
+
+//<div className="flex width-full" style={{paddingBottom:8}}>
+
+                // <Recaptcha
+                    // render="explicit"
+            //         onloadCallback={callback}
+            //         sitekey={siteKey}
+            //         hl="ru"
+            //         // theme="dark"
+            //         verifyCallback={verifyCallback}
+            //     />
+            // </div>
+            // {!form.verifyed&&!form.captchaPristine&&<ErrorText text={"Вы не робот?"} />}
+

@@ -8,7 +8,6 @@ class Cover extends Component {
 
    render() {
       const {text_color, background} = this.props.page.data
-      console.log(this.props.page.data)
       return (
          <div
             styleName="r"

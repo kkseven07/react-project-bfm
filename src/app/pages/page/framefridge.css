@@ -1,10 +1,8 @@
 .image{
-    height:56.6%;
-    width:56.1%;
+    height:auto;
+    width:61.5%;
     object-fit: contain;
-
-    margin-top:3%;
-    margin-left:0%;
+    position: absolute;
     border:0;
 
 }

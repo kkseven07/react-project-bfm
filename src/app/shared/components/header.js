@@ -29,7 +29,7 @@ const styles = {
         background: "#bdc3c7"
     },
     bmMenu: {
-        background: "rgb(60, 85, 105)",
+        background: "rgb(71, 156, 224)",
         padding: "50% 0 0 0",
         fontSize: "1.15em"
     },
@@ -54,18 +54,28 @@ const styles = {
 };
 
 // const isMenuOpen = function(state) {
-//   if (state.isOpen==false && props.menu)
+//   if (state.isOpen==false && this.props.menu)
 
 // };
-const header = ({ history, ...props }) => {
-    const { currentBookId, ...books } = props.book;
-    const count = values(books).length;
+
+class Header extends React.Component  {
+    componentWillReceiveProps(nextProps) {
+        console.log("history", nextProps.history)
+    }
+    render() {
+        const { currentBookId, ...books } = this.props.book;
+        const {history}= this.props;
+        const {...orders} = this.props.order;
+        const count = values(books).length;
+        const orderCount = values(orders).length;
+        const location = history.location.pathname;
+        console.log("location", this.props.location)
     return (
         <div styleName="header">
 
-            {props.menu && // MOBILE MENU
+            {this.props.menu && // MOBILE MENU
                 <div
-                    onClick={props.actions.closeMenu}
+                    onClick={this.props.actions.closeMenu}
                     style={{
                         position: "fixed",
                         zIndex: "100",
@@ -74,7 +84,7 @@ const header = ({ history, ...props }) => {
                     }}
                 />}
             <Menu
-                isOpen={props.menu}
+                isOpen={this.props.menu}
                 width={"90%"}
                 styles={styles}
                 right
@@ -85,7 +95,17 @@ const header = ({ history, ...props }) => {
                     styleName="menu-item"
                     onClick={() => {
                         history.push("/cart");
-                        props.actions.closeMenu();
+                        this.props.actions.closeMenu();
+                    }}
+                >
+                    <img src="" alt=""/>
+
+                </div>
+                <div
+                    styleName="menu-item"
+                    onClick={() => {
+                        history.push("/cart");
+                        this.props.actions.closeMenu();
                     }}
                 >
                     <span styleName="link">КОРЗИНА </span>
@@ -95,7 +115,7 @@ const header = ({ history, ...props }) => {
                     styleName="menu-item"
                     onClick={() => {
                         history.push("/about");
-                        props.actions.closeMenu();
+                        this.props.actions.closeMenu();
                     }}
                 >
                     <span styleName="link">О НАС </span>
@@ -105,7 +125,7 @@ const header = ({ history, ...props }) => {
                     styleName="menu-item"
                     onClick={() => {
                         history.push("/contacts");
-                        props.actions.closeMenu();
+                        this.props.actions.closeMenu();
                     }}
                 >
                     <span styleName="link">КОНТАКТЫ </span>
@@ -115,7 +135,7 @@ const header = ({ history, ...props }) => {
                     styleName="close-btn"
                     onClick={() => {
                         console.log("clickd");
-                        props.actions.closeMenu();
+                        this.props.actions.closeMenu();
                     }}
                 >
                     <i className="fa fa-times" />
@@ -124,7 +144,7 @@ const header = ({ history, ...props }) => {
 
             <div className="flex fixed" styleName="r">
 
-                <div styleName="open-btn" onClick={props.actions.openMenu}>
+                <div styleName="open-btn" onClick={this.props.actions.openMenu}>
                     <i className="fa fa-bars" aria-hidden="true" />
                 </div>
 
@@ -142,21 +162,20 @@ const header = ({ history, ...props }) => {
                     style={{ fontFamily: "RobotoRegular", fontSize: 23 }}
                     styleName="links"
                 >
-                    <NavLink to="/books" style={style} activeStyle={active}>
-                        КНИГИ
-                    </NavLink>
+                    <div
+                        style={{color:this.props.location.pathname==='/books'&&'#2d6cf9'}}
+                        onClick={()=>history.push("/books")}>КНИГИ</div>
+                    <div
+                        style={{color:this.props.location.pathname==='/about'&&'#2d6cf9'}}
+                        onClick={()=>history.push("/about")}>О НАС</div>
+                    <div
+                        style={{color:this.props.location.pathname==='/contacts'&&'#2d6cf9'}}
+                        onClick={()=>history.push("/contacts")}>КОНТАКТЫ</div>
 
-                    <NavLink to="/about" style={style} activeStyle={active}>
-                        О НАС
-                    </NavLink>
-
-                    <NavLink to="/contacts" style={style} activeStyle={active}>
-                        КОНТАКТЫ
-                    </NavLink>
 
                 </div>
 
-                {count>0&&<div
+                {(count>0||orderCount>0)&&<div
                     onClick={()=>{
                     history.push("/cart")
                 }} styleName="cart" style={{marginLeft:"20%", position:'relative'}}>
@@ -170,7 +189,7 @@ const header = ({ history, ...props }) => {
                             height:'1.3em',
                             lineHeight:'1.4em',
                             borderRadius:'50%',
-                            background:'rgb(253, 204, 89)',
+                            background:'#ff7c00',
                             textAlign:'center',
                             fontSize:'0.9em'
                         }}
@@ -180,13 +199,15 @@ const header = ({ history, ...props }) => {
         </div>
     );
 };
+}
 
 const mapStateToProps = state => ({
     menu: state.menu.open,
     book: state.book,
-    count: state.menu.count
+    count: state.menu.count,
+    order: state.order
 });
 const mapDispatchToProps = dispatch => ({
     actions: bindActionCreators(actions, dispatch)
 });
-export default connect(mapStateToProps, mapDispatchToProps)(header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

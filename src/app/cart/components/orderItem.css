@@ -1,0 +1,19 @@
+.elem {
+    display:flex;
+    width: 250px;
+    justify-content: space-between;
+    margin-top:0.7em;
+}
+.order-info {
+    width: 73%;
+    display: flex;
+    justify-content: flex-end;
+}
+.type {
+    color: rgb(120, 120, 120);
+}
+@media screen and (max-width: 550px){
+    .order-info {
+        justify-content: center;
+    }
+}

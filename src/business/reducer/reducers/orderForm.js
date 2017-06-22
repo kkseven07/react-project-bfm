@@ -7,6 +7,7 @@ const initialState = {
     email: { value: "", isPristine: true, isValid: true, errorText: "" },
     phone: { value: "", isPristine: true, isValid: true, errorText: "" },
     address: { value: "", isPristine: true, isValid: true, errorText: "" },
+    promo: { value: "", isPristine: true, isValid: true, errorText: "" },
     canConfirm:false
 };
 const test = {
@@ -14,6 +15,7 @@ const test = {
     email: { value: "john@mail.com", isPristine: true, isValid: true, errorText: "" },
     phone: { value: "+77072301555", isPristine: true, isValid: true, errorText: "" },
     address: { value: "Manas 34/a", isPristine: true, isValid: true, errorText: "" },
+    promo: { value: "", isPristine: true, isValid: true, errorText: "" },
     canConfirm:false
 };
 const types=["name", "email", "phone", "address"];
@@ -61,7 +63,7 @@ export default (state = test, action) => {
                };
             });
             if ( every(mapValues(fields, ({ isValid }) => isValid)) ) {
-                return {...state, canConfirm:true};
+                return {...state, canConfirm:true, order:action.order};
 
             }
             else {

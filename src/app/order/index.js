@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import values from "lodash/values";
 import * as actions from "../../business/actions/index.js";
 import reverse from "lodash/reverse";
-import { Button } from "../shared";
+import { Button, Input, ErrorText } from "../shared";
 import Form from "./components/form";
 import Logo from "../../../assets/icons/logo.png";
 
@@ -42,13 +42,25 @@ class Order extends React.Component {
         return books.reduce((acc, book) => prices[book.format] + acc,0);
     };
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.form.canConfirm&&this.state.canConfirm===false) {
-            this.setState({canConfirm:true});
-            this.props.actions.confirmOrder(
-                this.books,
-                {
-                    price:{
+    render() {
+        if (!this.props.book) {
+            return null;
+        }
+        let { currentBookId, ...books } = this.props.book;
+        let data = reverse(values(books));
+
+        let totalForBooks=this.getTotalForBooks(data);
+        let total = this.getTotal(data);
+        let wrapPrice = total - totalForBooks;
+        this.totalForBooks=totalForBooks;
+        this.wrapPrice=wrapPrice;
+        this.total=total;
+        this.books=Object.keys(books).map((k) => books[k]);
+        this.date = new Date();
+        let order ={
+            books:this.books,
+            orderDetails: {
+                price:{
                         total:this.total,
                         totalForBooks:this.totalForBooks,
                         wrapPrice:this.wrapPrice
@@ -58,30 +70,30 @@ class Order extends React.Component {
                         phone:this.props.form.phone.value,
                         address:this.props.form.address.value,
                         email:this.props.form.email.value,
-
+                        date: this.date
                     }
-                }
-            );
-        }
-    };
-    render() {
-        if (!this.props.book) {
-            return null;
-        }
-        let { currentBookId, ...books } = this.props.book;
-        console.log("booksCart", books)
-        // let data = reverse(values(books));
-        let data = reverse(values(books));
-
-        let totalForBooks=this.getTotalForBooks(data);
-        let total = this.getTotal(data);
-        let wrapPrice = total - totalForBooks;
-
-        this.totalForBooks=totalForBooks;
-        this.wrapPrice=wrapPrice;
-        this.total=total;
-        this.books=Object.keys(books).map((k) => books[k]);
-
+            }
+        };
+        if (data.length<1) return (
+            <div
+                className="flex flex-center width-full flex-column"
+                style={{ paddingBottom: 50 }}
+            >
+                <img
+                    onClick={() => {
+                        this.props.history.push("/");
+                    }}
+                    src={Logo}
+                    style={{ width: 100, height: 100, marginBottom: 10 }}
+                />
+                <div style={{fontSize:'1.2em', paddingTop:'100px', paddingBottom:'15px'}}>
+                    Вы уже сделали заказ. Вы можете посмотреть ваши заказы.
+                </div>
+                <Button
+                    click={()=>{this.props.history.push("/cart")}}
+                >Страница заказов</Button>
+            </div>
+        )
         return (
             <div
                 className="flex flex-center width-full flex-column"
@@ -147,7 +159,24 @@ class Order extends React.Component {
                         </div>
                     </div>
 
-                    {this.state.canConfirm&&<div
+                    <div
+                        style={{display:'flex', width:'90%', maxWidth:'500px', padding:'20px 0', justifyContent:'space-between',
+                            alignItems:'flex-start'
+                        }}>
+                        <div style={{width:'18%'}}>
+                            <Input
+                                maxLength={6}
+                                placeholder="1A2B3C"
+                                field={this.props.form.promo}
+                                fieldType={"promo"}
+                                enter={this.props.actions.orderInput}
+                            />
+                            <ErrorText text={this.props.form.promo.errorText} />
+                        </div>
+                        <Button>Применить</Button>
+                    </div>
+
+                    {this.props.form.canConfirm&&<div
                          //CONFIRMED ORDER STATUS BAR
                         style={{
                                 width:'100%',
@@ -157,11 +186,15 @@ class Order extends React.Component {
                                 flexDirection:'column'
                         }}
                     >
-                        <div>Поздравляем! Ваш заказ принят. В течение часа с вами свяжется консультант для подтверждения заказа.</div>
+                        <div
+                            style={{marginTop:'40px', fontSize:'1.1em', padding:'14px'}}
+                        >
+                            Поздравляем! Ваш заказ принят. В течение часа с вами свяжется консультант для подтверждения заказа.
+                        </div>
                     </div>
                     }
 
-                    {!this.state.canConfirm&&<div
+                    {!this.props.form.canConfirm&&<div
                         // ORDER DETAILS
                         style={{
                             width:'100%',
@@ -187,7 +220,7 @@ class Order extends React.Component {
                     </div>
                     <Form form={this.props.form} actions={this.props.actions}/>
                     <div
-                        style={{ maxWidth: 500, width: "100%" }}
+                        style={{ maxWidth: 500, width: "90%" }}
                         className="flex space-between"
                     >
                         <Button
@@ -199,9 +232,7 @@ class Order extends React.Component {
                         </Button>
                         <Button
                             click={() => {
-                                // console.log("console in order create order")
-                                this.props.actions.createOrder({orderDetails:{phone:555}, books:[89,88,94]})
-                                this.props.actions.validateForm();
+                                this.props.actions.validateForm(order);
                             }}
                         >
                             Заказать

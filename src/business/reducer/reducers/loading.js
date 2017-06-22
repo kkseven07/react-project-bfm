@@ -10,6 +10,8 @@ export default (state = { loading: false, type: "" }, action) => {
     //   return  {loading:true, type:"updatePage"}
     case "LOAD_FROM_CACHE":
       return { loading: true, type: "getBook" };
+    case "CONFIRM_ORDER":
+      return {loading:true, type:"createOrder"}
     case "FETCH_BOOK_FULFILLED_DELAY":
     case "GEN_PAGES_FULFILLED":
     case "UPDATE_PAGE_FULFILLED":
@@ -18,6 +20,7 @@ export default (state = { loading: false, type: "" }, action) => {
     case "UPDATE_ORDER_FULFILLED":
     case "LOCAL_UPDATE_ORDER":
     case "FETCH_CANCEL":
+    case "CREATE_ORDER_FULFILLED":
       return { ...state, loading: false };
     case "AJAX_ERROR":
       return { ...state, loading: false };

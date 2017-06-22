@@ -19,10 +19,11 @@ import WiseWord from "./components/wiseWord";
 import EpicStory from "./components/epicStory";
 import MusicHit from "./components/musicHit";
 import DeducedAgeFact from "./components/deducedAgeFact";
-
 import Film from "./components/film";
 import Zoom from "./components/zoom";
-
+import Quotes from "./components/quotes";
+import PastPhoto from "./components/pastPhoto";
+import RelaxPhoto from "./components/relaxPhoto";
 import { toSave } from "./utils";
 
 const getComponent = (page, book, actions, form, step) => {
@@ -134,6 +135,33 @@ const getComponent = (page, book, actions, form, step) => {
         case "deducedAgeFact":
             return (
                 <DeducedAgeFact
+                    page={page}
+                    book={book}
+                    actions={actions}
+                    form={form}
+                />
+            );
+        case "quotes":
+            return (
+                <Quotes
+                    page={page}
+                    book={book}
+                    actions={actions}
+                    form={form}
+                />
+            );
+        case "pastPhoto":
+            return (
+                <PastPhoto
+                    page={page}
+                    book={book}
+                    actions={actions}
+                    form={form}
+                />
+            );
+        case "relaxPhoto":
+            return (
+                <RelaxPhoto
                     page={page}
                     book={book}
                     actions={actions}

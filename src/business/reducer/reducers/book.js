@@ -12,6 +12,8 @@ import reverse from "lodash/reverse";
 import omit from "lodash/omit";
 export default (state = { currentBookId: null }, action) => {
    switch (action.type) {
+      case "DELETE_BOOKS_FROM_CACHE_FULFILLED":
+          return {}
       case "DELETE_FROM_CACHE_FULFILLED":
          // const {[action.payload]:book_to_remove,...rest}=state
          let new_state = omit(state, action.payload);

@@ -2,9 +2,9 @@ import React from "react";
 import "./musicHit.css";
 import { checkLength } from "../../shared/utils.js";
 const setStyle = image_url => {
-        if (image_url.match("v1")) return ["artist-v1", "single-v1",48, 1.4,34, 1];
+        if (image_url.match("v1")) return ["artist-v1", "single-v1",20, 2,20, 2];
         else if (image_url.match("v2")) return ["artist-v2", "single-v2",8, 2.8, 28, 2.1];
-        else return ["no-image", "no-image"];
+        else return ["artist-v3", "single-v3", 40, 1, 40, 1];
     };
 const dropSong =(s)=>{
     let index =0;

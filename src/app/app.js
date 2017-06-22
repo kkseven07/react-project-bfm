@@ -44,7 +44,7 @@ class App extends React.Component {
                 <Background zIndex="10">
                     zoomer...
                 </Background>
-                {showHeader(location) && <Header  history={history} />}
+                {showHeader(location) && <Header location={location}  history={history} />}
                 <div id="wrap">
                     <div
                         styleName={

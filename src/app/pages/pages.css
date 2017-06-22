@@ -96,7 +96,10 @@
   font-family: 'UniSansHeavy';
   src: url('../../../assets/fonts/Uni-Sans-Heavy.woff2');
 }
-
+@font-face {
+  font-family: 'Intro';
+  src: url('../../../assets/fonts/INTRO.woff2');
+}
 @font-face {
   font-family: 'RoundsBlack';
   src: url('../../../assets/fonts/Rounds-Black.woff2');

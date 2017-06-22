@@ -30,3 +30,17 @@ export const bookVersion = (action$, store) =>
             // }
         ];
     });
+export const sendOrder = (action$, store) =>
+    action$.ofType("VALIDATE_FORM").switchMap(({order})=> {
+        console.log("epicsendorder")
+            const orderForm = store.getState().orderForm.order;
+            const canConfirm = store.getState().orderForm.canConfirm;
+            if(canConfirm)
+                return [
+                    {type:"CONFIRM_ORDER", books:orderForm.books, orderDetails:orderForm.orderDetails}
+                ];
+            else {
+                return [{type:"ORDER_NOT_SENT"}];
+            }
+
+    });

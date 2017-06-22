@@ -1,50 +1,50 @@
 .r {
-	position: absolute
+    position: absolute
 }
 .date {
-	color:#fff;
+    color:#fff;
 }
 
 .date-v1 {
-	font-family:'Agaaler';
+    font-family:'Agaaler';
     font-size: 6.3em;
     color:#fff;
-    top: 20%;
+    top: 16%;
     left: 27%;
     transform:rotate(-15deg);
     text-shadow: 4px 4px rgba(0, 0, 0, 0.74), -3px -2px #ffc81e;
 }
 .film-name-v1 {
-	width:60%;
-    bottom: 34%;
+    width:60%;
+    bottom: 33%;
     right: 39%;
     font-family: 'BebasRegular';
     font-size: 2em;
     transform: rotate(9deg);
-    text-align:right;
+    height: 8%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 .film-name-v1::after {
-	content:'»';
-	color:red;
+    content:'»';
+    color:red;
 }
 .film-name-v1::before {
-	content:'«';
-	color:red;
+    content:'«';
+    color:red;
 }
 .date-v2 {
-	font-family:'BebasBold';
-	color:#fff;
-	font-size:2.8em;
-	top:4%;
-	left:46%;
-	text-shadow: 1.5px 1px #ff2526;
+    font-family:'BebasBold';
+    color:#fff;
+    font-size:2.8em;
+    top: 4.3%;
+    left: 46%;
+    text-shadow: 1.5px 1px #ff2526;
 }
 .film-name-v2 {
-	font-family:'BebasRegular';
-	color: #000;
+    font-family:'BebasRegular';
+    color: #000;
     width: 62%;
     height: 7%;
     bottom: 51.6%;
@@ -55,15 +55,15 @@
     justify-content: center;
 }
 .film-name-v2::after {
-	content:'»';
-	color:red;
+    content:'»';
+    color:red;
 }
 .film-name-v2::before {
-	content:'«';
-	color:red;
+    content:'«';
+    color:red;
 }
 .date-v3 {
-	font-family: 'BebasRegular';
+    font-family: 'BebasRegular';
     color: #234e49;
     bottom: 16.2%;
     left: 19%;
@@ -72,36 +72,36 @@
     height:5%;
 }
 .date-v3 .year {
-	display:inline-block;
-	position:absolute;
-	left:81%;
+    display:inline-block;
+    position:absolute;
+    left:81%;
 }
 .date-v3 .month {
-	display:inline-block !important;
-	position:absolute;
-	left: 47.5%;
+    display:inline-block !important;
+    position:absolute;
+    left: 47.5%;
     width: 10%;
     text-align: center;
 }
 .date-v3 .day {
     width:11%;
-	display:inline-block !important;
-	position: absolute;
-	left:12%;
+    display:inline-block !important;
+    position: absolute;
+    left:12%;
     text-align: center;
 }
 .film-name-v3 {
-	width: 59%;
-    bottom: 27.6%;
+    width: 59%;
+    bottom: 27%;
     left: 14%;
     font-family: 'BebasRegular';
-    text-align: center;
     font-size: 1.9em;
     color: #234e49;
+    height: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .film-name-v3::after, .film-name-v3::before {
-	content:'"';
-}
-.no-image{
-
+    content:'"';
 }

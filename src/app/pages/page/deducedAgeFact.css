@@ -98,16 +98,23 @@
   font-size: 1.7em;
   text-align: center;
 }
-
-.name-v2 { color:#0e6a9a; } .name-v3 {color:#017edc;}
-.smiles-count-v2{color:#0e6a9a;} .smiles-count-v3 {color:#017edc;}
-.age-v2 {color:#0e6a9a;} .age-v3 {color:#017edc;}
-.days-alive-v2 {} .days-alive-v3 {color:#017edc;}
-.heart-beats-v2{color:#0e6a9a;} .heart-beats-v3 {color:#017edc;}
-.dream-time-v2 {color:#0e6a9a;} .dream-time-v3 {color:#017edc;}
-.tears-total-v2 {} .tears-total-v3 {color:#017edc;}
-.tears-sad-v2 {color:#0e6a9a;} .tears-sad-v3 {color:#017edc;}
-.tears-joy-v2 {color:#0e6a9a;} .tears-joy-v3 {color:#017edc;}
-.tears-pain-v2 {color:#0e6a9a;} .tears-pain-v3 {color:#017edc;}
-.eat-in-kilos-v2 {color:#0e6a9a;} .eat-in-kilos-v3 {color:#017edc;}
-.eat-in-elephants-v2 {color:#0e6a9a;} .eat-in-elephants-v3 {color:#017edc;}
+.goda {
+  font-family: 'RoundsBlack';
+  color: #fb7a6a;
+  bottom: 46%;
+  right: 26.5%;
+  font-size: 0.65em;
+}
+.goda-v2 {color: #153c73;} .goda-v3 {color: #0165bf;}
+.name-v2 { color:#0e6a9a; } .name-v3 {color:#0165bf;}
+.smiles-count-v2{color:#0e6a9a;} .smiles-count-v3 {color:#0165bf;}
+.age-v2 {color:#0e6a9a;} .age-v3 {color:#0165bf;}
+.days-alive-v2 {} .days-alive-v3 {color:#0165bf;}
+.heart-beats-v2{color:#0e6a9a;} .heart-beats-v3 {color:#0165bf;}
+.dream-time-v2 {color:#0e6a9a;} .dream-time-v3 {color:#0165bf;}
+.tears-total-v2 {} .tears-total-v3 {color:#0165bf;}
+.tears-sad-v2 {color:#0e6a9a;} .tears-sad-v3 {color:#0165bf;}
+.tears-joy-v2 {color:#0e6a9a;} .tears-joy-v3 {color:#0165bf;}
+.tears-pain-v2 {color:#0e6a9a;} .tears-pain-v3 {color:#0165bf;}
+.eat-in-kilos-v2 {color:#0e6a9a;} .eat-in-kilos-v3 {color:#0165bf;}
+.eat-in-elephants-v2 {color:#0e6a9a;} .eat-in-elephants-v3 {color:#0165bf;}

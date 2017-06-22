@@ -27,7 +27,8 @@ export const getDate = (raw) => {
     const monthNumber = date.getMonth()<9?`0${date.getMonth()+1}`:date.getMonth()+1;
     const monthYa = invert(monthsMapYa)[date.getMonth()];
     const monthYe = invert(monthsMapYe)[date.getMonth()];
-    return {day, month, year, monthNumber, monthYa,monthYe};
+    const dayNoZero = date.getDate();
+    return {day, month, year, monthNumber, monthYa, monthYe, dayNoZero};
 };
 export const cellTime = (month, year) =>
     month > 9
@@ -69,21 +70,67 @@ export const cutString = (string, limit) => {
         return `${newString.substring(0, dotIndex)}...`;
     } else return string;
 };
-export const checkLength = (name, breakpoint, fontsize) => {
+export const checkLength = (name, breakpoint, fontsize, params) => {
     var diff = name.length - breakpoint;
     var size = fontsize;
     var k = diff;
     if (name.length > breakpoint) {
-        for (let i = 0; i < diff; i++) {
-            if (k - diff === 0) {
-                size = size * 0.9;
-                k = k - 1;
-            } else if (diff - k > 0 && k - diff <= 3) {
-                size = size * 0.96;
-                k = k - 1;
-            } else if (diff - k > 3) {
-                size = size * 0.99;
-                k = k - 1;
+        if (!params) {
+            for (let i = 0; i < diff; i++) {
+                if (k - diff === 0) {
+                    size = size * 0.9;
+                    k = k - 1;
+                } else if (diff - k > 0 && k - diff < 3) {
+                    size = size * 0.95;
+                    k = k - 1;
+                } else if (diff - k >= 3 && k-diff<= 6) {
+                    size = size * 0.99;
+                    k = k - 1;
+                } else if (diff - k >6) {
+                    size = size * 0.999;
+                    k = k - 1;
+                }
+            }
+        }
+        else if (params==='wise') {
+            for (let i = 0; i < diff; i++) {
+                    size = size * 0.9;
+                    k = k - 1;
+                if (diff - k > 0 && diff - k < 50) {
+                    size = size * 0.9925;
+                    k = k - 1;
+                } else if (diff - k > 50 && diff - k < 200) {
+                    size = size * 0.9945;
+                    k = k - 1;
+                }
+            }
+        }
+        else if (params==='film') {
+            for (let i = 0; i < diff; i++) {
+                    size = size * 0.995;
+                    k = k - 1;
+                if (diff - k > 0 && diff - k < 50) {
+                    size = size * 0.969;
+                    k = k - 1;
+                } else if (diff - k > 50 && diff - k < 200) {
+                    size = size * 0.996;
+                    k = k - 1;
+                }
+            }
+        }
+
+        else if (params==='wise1') {
+            for (let i = 0; i < diff; i++) {
+                    size = size * 0.995;
+                    k = k - 1;
+                if (diff - k > 0 && diff - k < 50) {
+                    size = size * 0.993;
+                    k = k - 1;
+                } else if (diff - k > 50 && diff - k < 200) {
+                    size = size * 0.9965;
+                    k = k - 1;
+                }
+
             }
         }
         return `${size}em`;
@@ -107,7 +154,10 @@ export const editable = [
     "fruitDNA",
     "epicStory",
     "framefridge",
-    "deducedAgeFact"
+    "deducedAgeFact",
+    "quotes",
+    "pastPhoto",
+    "relaxPhoto"
 ];
 
 export const monthsMap = {

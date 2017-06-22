@@ -4,7 +4,7 @@ import "./scoop.css";
 class Scoop extends Component {
   dropFact =(array, maxLen)=> {
     let len=0, min=100, minIndex=0;
-   
+
     for(let i=0;i<array.length;i++) {
       len+=array[i].length;
       if (array[i].length<min && array[i].length>40)  {
@@ -14,11 +14,11 @@ class Scoop extends Component {
     }
     if (len> maxLen) {
        return array.splice(minIndex, 1);
-    } 
+    }
     else {
       return array;
     }
-  
+
 }
 
   render() {
@@ -45,7 +45,7 @@ class Scoop extends Component {
           </ul>
         </div>
 
-        <div className="flex-center" styleName="second">
+        <div styleName="second">
           <ul style={{ marginRight: 5 }}>
             {second.map((fact, i) => <li styleName="li" key={i}> {fact}</li>)}
           </ul>

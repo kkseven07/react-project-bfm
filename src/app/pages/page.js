@@ -33,24 +33,24 @@ import Virtue from "./page/virtue";
 import Film from "./page/film";
 import Holiday from "./page/holiday";
 import Brain from "./page/brain";
+import Quotes from "./page/quotes";
+import PastPhoto from "./page/pastPhoto";
+import RelaxPhoto from "./page/relaxPhoto";
 const noImage = ["cover", "coverChooser"];
 import { editable } from "../shared/utils.js";
-// import {Button} from '../shared'
-// .replace("http://localhost:4000","http://46.101.217.205:4000")
+
 class Page extends Component {
     state = { zoom: false, imgLoaded: this.props.print ? true : false };
 
     getPage = (type, image, page, book) => {
         if (type === "scoop") {
-
             return <Scoop book={book} data={page.data} />;
-        } else if (type === "framefridge") {
+        }
+        else if (type === "framefridge") {
             return <FrameFridge url={this.props.url} book={book} page={page} />;
         } else if (type === "brain") {
-
             return <Brain book={book} page={page} />;
         } else if (type === "cover") {
-
             return <Cover book={book} page={page} />;
         } else if (type === "animal") {
 
@@ -135,6 +135,15 @@ class Page extends Component {
         } else if (type === "wiseWord") {
 
             return <WiseWord page={page} book={book} />;
+        } else if (type === "quotes") {
+
+            return <Quotes page={page} book={book} />;
+        } else if (type === "pastPhoto") {
+
+            return <PastPhoto url={this.props.url} page={page} book={book} />;
+        } else if (type === "relaxPhoto") {
+
+            return <RelaxPhoto url={this.props.url} page={page} book={book} />;
         } else {
             return <div />;
         }

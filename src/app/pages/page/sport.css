@@ -1,26 +1,37 @@
 .r{
-    text-align: center;
     flex-direction: column;
     color:white;
     padding-bottom:9%;
-    font-family: 'Sylfaen';
+    font-family: 'Intro';
+    color: black;
+    position: relative;
 }
 
 .sport{
-    display: flex;
     flex-direction: column;
     margin-top:1%;
-    color:rgb(220,220,220);
+    margin-top: 0.5em;
 }
 
 .type{
     font-size:0.65em;
-    color: #fcfafa;
 }
 .fact{
     font-size:0.5em;
 }
 
 .year {
-    font-size:1.1em;
+    font-size:6.1em;
+    position: absolute;
+    top: 4%;
+    left: 40%;
+    color: white;
+}
+
+.container {
+    position: absolute;
+    top: 23.5%;
+    left: 36%;
+    font-size: 1.4em;
+    width: 58%;
 }

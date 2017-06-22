@@ -69,6 +69,10 @@ const init = {
         },
         input: { value: "", isPristine: true, isValid: true, errorText: "" }
     },
+    quotes: {
+        input: { value: "", isPristine: true, isValid: true, errorText: "" },
+        textarea: {value:"",  errorText:""}
+    },
     qualityTableStep: 280
 };
 

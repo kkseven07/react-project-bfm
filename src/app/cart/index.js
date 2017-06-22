@@ -2,10 +2,23 @@ import React, { Component } from "react";
 import Logo from "../../../assets/icons/logo.png";
 import Cart from "./components/cart";
 import Orders from "./components/orders";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import values from 'lodash/values'
+import reverse from "lodash/reverse";
+// import * as actions from "../../../business/actions";
 import "./index.css";
+
 class App extends Component {
     state = { type: "cart" };
+    componentDidMount() {
+        this.count<1&&this.setState({
+            type:"orders"
+        })
+    }
     render() {
+        const { currentBookId,...books } = this.props.book;
+        this.count = reverse(values(books)).length;
         return (
             <div>
                 <div
@@ -57,4 +70,8 @@ class App extends Component {
     }
 }
 
-export default App;
+const mapStateToProps = state => ({
+    book: state.book
+});
+
+export default connect(mapStateToProps)(App);

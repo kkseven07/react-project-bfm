@@ -1,0 +1,20 @@
+.text-variants {
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    border:1px solid black;
+    font-size:0.9em;
+}
+.text-variants:first-child {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+.text-variants:last-child {
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+.text-variants:hover {
+    position: relative;
+    top: -2px;
+    transition: 0.2s;
+
+}

@@ -28,22 +28,41 @@ class Drop extends Component {
 	}
 
 	state = {
-		file: null
+		file: null,
+		croppedImage: null
 	};
 
 	onDrop = (dropFiles, err, e) => {
-		this.setState({
-			file: dropFiles[0]
-		});
-		document.body.style.oveflow="hidden"
+		this.setState(
+			{
+				file: dropFiles[0]
+			},
+			() => {
+				const reader = new FileReader();
+				console.log(this.state.file)
+				let whatever=reader.readAsDataURL(this.state.file);
+				console.log(whatever)
+				// console.log(this.state.file);
+				// const test_file = reader.readAsDataURL(this.state.file.preview);
+				// console.log(test_file);
+				// let canvas=this.editor.getImageScaledToCanvas()
+
+
+				// let canvas = document.createElement("canvas");
+				// let context = canvas.getContext("2d");
+				// context.drawImage({src:this.state.file.preview}, 0, 0); // i assume that img.src is your blob url
+				// let dataurl = canvas.toDataURL("img/jpg", 1);
+				// console.log(dataurl)
+			}
+		);
 	};
 
 	upload = () => {
-		if (this.state.file) {
+		if (this.state.final) {
 			this.props.upload(
 				this.props.book.id,
 				this.props.page,
-				this.state.file
+				this.state.final
 			);
 		}
 	};
@@ -51,6 +70,24 @@ class Drop extends Component {
 	onSuccessDropbox = file => {
 		this.fetchFromUrl(file[0].link, file[0].name);
 	};
+
+	onFileLoad = (evt) => {
+		const reader = new FileReader();
+		console.log("here we go")
+        reader.onload = ((file)=>{
+        	console.log(file,"file")
+            return (e)=>{
+            	// console.log(e.target.result, "in onload")
+            	this.setState({fileURL:e.target.result})
+            }
+        })(evt.target.files[0]);
+        reader.readAsDataURL(evt.target.files[0]);
+		// console.log("er re", uri)
+        // setTimeout(()=>{console.log(this.state.fileURL)},1500)
+        // console.log(evt.targetxd,"here we go ", evt.target)
+        // const uri=reader.readAsBinaryString(evt.target.files[0]);
+        // console.log(uri, "datauri")
+	}
 
 	fetchFromUrl(url, name) {
 		fetch(url, {
@@ -72,30 +109,57 @@ class Drop extends Component {
 				//(this.state.files);
 			});
 	}
+
+	// this.state.croppedImage = this.editorRef.getImage();
+	// console.log("thisstatefile", this.state.file)
+	// if (this.state.file) {
+	// 		this.editor.getImageScaledToCanvas().toBlob(e=>console.log(e))
+	// }
+
+	setEditorRef = editor => {
+		this.editor = editor;
+	};
+	imageChange=(e)=>{
+		let canvas=this.editor.getImageScaledToCanvas()
+		let dataurl = canvas.toDataURL("img/jpg", 2);
+		let newurl=canvas.toBlob(console.log)
+		this.setState({final:dataurl})
+		console.log(dataurl,"here")
+	}
+
 	render() {
 		return (
 			<div styleName="Drop">
-				{!this.state.file&&<Dropzone
-					ref={el => (this.dropzone = el)}
-					id="dropZone"
-					onDrop={files => this.onDrop(files)}
-				>
-					<img id="dropZoneImage" src={require("./img/upload.png")} />
-					<p styleName="text">Перенесите сюда файл</p>
-					<p styleName="text">или</p>
-					<p styleName="text">Нажмите здесь</p>
-				</Dropzone>}
-
-				{this.state.file &&
-					<AvatarEditor
-						image={this.state.file.preview}
-						width={250}
-						height={250}
-						border={20}
-						color={[255, 255, 255, 0.6]} // RGBA
-						scale={1}
-						rotate={0}
-					/>}
+				{!this.state.file &&
+					<Dropzone
+						ref={el => (this.dropzone = el)}
+						id="dropZone"
+						onDrop={files => this.onDrop(files)}
+					>
+						<img
+							id="dropZoneImage"
+							src={require("./img/upload.png")}
+						/>
+						<p styleName="text">Перенесите сюда файл</p>
+						<p styleName="text">или</p>
+						<p styleName="text">Нажмите здесь</p>
+					</Dropzone>}
+				<AvatarEditor
+					// style={{ width: 200 }}
+					ref={this.setEditorRef}
+					image={this.state.fileURL&&this.state.fileURL}
+					onImageChange={this.imageChange}
+					// crossOrigin="anonymous"
+					onImageReady={this.imageChange}
+					width={400}
+					height={400}
+					border={20}
+					color={[255, 255, 255, 0.6]} // RGBA
+					scale={1}
+					rotate={0}
+				/>
+				<img src={this.state.croppedImage} alt="" />
+				<input type='file' onChange={this.onFileLoad}/>
 			</div>
 		);
 	}

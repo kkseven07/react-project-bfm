@@ -10,30 +10,26 @@ class Orders extends Component {
 
     render() {
         let {...orders} = this.props.order;
-        console.log("orders", orders)
-        console.log("values", values(orders))
         let data = reverse(values(orders));
+        console.log("orders", this.props.order)
         console.log("reverse(values(orders))", data)
         if (data.length<1) {
             return (
-                <div>Вы еще не делали заказов</div>
+                <div className="flex flex-center" style={{marginTop:'50px'}}>Вы еще не делали заказов</div>
             )
         }
         return (
 
-            <div>
-            {
-                data.map((item,i)=> (
-                    <OrderItem key={i} order={item} actions={this.props.actions} />
-                ))
-            }
+            <div >
+                {
+                    data.map((item,i)=> (
+                        <OrderItem key={i} order={item} actions={this.props.actions} />
+                    ))
+                }
             </div>
-
         );
     }
 }
-
-
 
 const mapStateToProps = state => ({
     order: state.order

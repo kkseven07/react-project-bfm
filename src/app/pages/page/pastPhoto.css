@@ -1,0 +1,33 @@
+.r {
+    position: relative;
+}
+.image{
+    position: absolute;
+    height:auto;
+    width:56.1%;
+    object-fit: contain;
+    border:0;
+    transform: rotate(-4.9deg);
+    top: 13.6%;
+    left: 17.6%;
+
+}
+.zaplatka {
+    position: absolute;
+    background: #dac09f;
+    height: 100px;
+    width: 37%;
+    z-index: 1;
+    bottom: 12.7%;
+    right: 18.3%;
+    transform: rotate(8deg);
+}
+.title {
+    position: absolute;
+    bottom: 16%;
+    font-size: 1.3em;
+    transform: rotate(8deg);
+    right: 7%;
+    font-family: 'AkrobatSemiBold';
+    z-index: 2;
+}

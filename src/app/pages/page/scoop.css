@@ -37,8 +37,11 @@ ul{
 }
 
 .second{
+    display: flex;
+    align-items: flex-start;
     padding:4% 2% 2% 6%;
     width:50%;
     height:75%;
+
 }
 

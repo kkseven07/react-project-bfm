@@ -113,8 +113,8 @@ export const loadCache = () => {
 export const confirmOrder = (books, orderDetails) => {
     return { type: "CONFIRM_ORDER", books: books, orderDetails: orderDetails };
 };
-export const validateForm = () => {
-    return { type: "VALIDATE_FORM" };
+export const validateForm = (order) => {
+    return { type: "VALIDATE_FORM", order:order };
 };
 export const loadOrderCache = () => {
     return { type: "LOAD_ORDER_CACHE" };

@@ -3,6 +3,7 @@ export const isValidStr = str => !str.match(/[^а-яА-Яa-zA-Z ]/gi);
 export const tooLong = (str, limit) => str.length > limit;
 export const checkMail = str => str.match("@")&&str.match(/\./);
 export const isNumbers = str => str.match(/[^0-9|+]/gi);
+export const isPromo = str => str.match(/[^a-zA-Z0-9]/gi)
 const validateFields = ["name", "surname", "senderName"];
 const defaultFields = [
     "Пол",
@@ -29,7 +30,7 @@ export const validateMicro = str => {
 
 export const validate = (str, field) => {
     let limit = 18;
-    // console.log("validated")
+    console.log("validated")
     if (selectFields.indexOf(field) > -1) {
         return validateSelect(str);
     }
@@ -42,6 +43,26 @@ export const validate = (str, field) => {
             };
         }
         return validateMicro(str);
+    }
+    //promo
+    if (field==='promo') {
+        if (isEmpty(str)) {
+            return {
+                isValid: false,
+                errorText: "Необходимо заполнить"
+            }
+        }
+        else if(isPromo(str)) {
+            return {
+                isValid: false,
+                errorText: 'Неверный формат промокода'
+            };
+        } else {
+            return {
+                isValid: true,
+                errorText: ""
+            };
+        }
     }
     //email
     if (field === 'email') {
