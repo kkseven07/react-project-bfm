@@ -26,7 +26,7 @@ export default ({ page, book, ...props }) => {
                 </div>
                 <div
                     styleName={`days-alive days-alive${uniqs} positioned`}
-                    style={{ top: props.osName === "Mac" && "61.3%" }}
+                    style={{ top: props.osName === "Mac" && "63.3%" }}
                 >
                     {page.data.days_alive}
                 </div>
@@ -63,7 +63,7 @@ export default ({ page, book, ...props }) => {
                     styleName={`eat-in-kilos${uniqs} eat-in-kilos positioned`}
                     style={{ top: props.osName === "Mac" && "51.3%" }}
                 >
-                    {page.data.eat_in_kilos}
+                    {Math.round(parseFloat(page.data.eat_in_kilos))}
                 </div>
                 <div
                     styleName={`eat-in-elephants${uniqs} eat-in-elephants positioned`}

@@ -30,7 +30,6 @@ export const validateMicro = str => {
 
 export const validate = (str, field) => {
     let limit = 18;
-    console.log("validated")
     if (selectFields.indexOf(field) > -1) {
         return validateSelect(str);
     }

@@ -1,6 +1,6 @@
 import { normalisePages } from "../../reducer/reducers/book";
 import reverse from "lodash/reverse";
-
+import crypto from "crypto-js";
 export const storageCreateBook = (action$, store) =>
     action$
         .filter(
@@ -21,6 +21,19 @@ export const storageCreateBook = (action$, store) =>
             const book = bookState[currentBookId];
             // console.log("in storatge book fulfilled")
             // localStorage.clear()
+            var ciphertext = crypto.AES.encrypt(
+                "my message",
+                "secret key 123"
+            );
+            console.log(ciphertext,"encrypt");
+
+            var bytes = crypto.AES.decrypt(
+                ciphertext.toString(),
+                "secret key 123"
+            );
+            var plaintext = bytes.toString(crypto.enc.Utf8);
+
+            console.log(plaintext, "decrypt");
             try {
                 localStorage.setItem(
                     "bookKey_" + currentBookId,
@@ -66,7 +79,7 @@ export const loadCache = (action$, store) =>
 
 export const deleteFromCache = (action$, store) =>
     action$.ofType("DELETE_FROM_CACHE").switchMap(({ id }) => {
-        localStorage.removeItem("bookKey_"+id);
+        localStorage.removeItem("bookKey_" + id);
         return [{ type: "DELETE_FROM_CACHE_FULFILLED", payload: id }];
     });
 
@@ -78,27 +91,25 @@ export const loadFromCache = (action$, store) =>
 //order
 
 export const orderStorage = (action$, store) =>
-    action$
-        .ofType("CREATE_ORDER_FULFILLED")
-        .switchMap(({payload})=> {
-
-            const order = store.getState().order;
-            console.log("orderStorage", order)
-            try {
-                localStorage.setItem(`orderKey_${order.orderId}`, JSON.stringify(order));
-            }
-            catch (e) {
-                localStorage.clear();
-            }
-            return [{type:"LOAD_CACHE"}];
-        });
+    action$.ofType("CREATE_ORDER_FULFILLED").switchMap(({ payload }) => {
+        const order = store.getState().order;
+        console.log("orderStorage", order);
+        try {
+            localStorage.setItem(
+                `orderKey_${order.orderId}`,
+                JSON.stringify(order)
+            );
+        } catch (e) {
+            localStorage.clear();
+        }
+        return [{ type: "LOAD_CACHE" }];
+    });
 
 export const deleteBooksFromCache = (action$, store) =>
     action$.ofType("DELETE_BOOKS_FROM_CACHE").switchMap(action => {
         console.log("deleted");
         Object.keys(localStorage)
-            .filter((key)=>key.match("bookKey"))
-            .forEach((key)=>localStorage.removeItem(key));
+            .filter(key => key.match("bookKey"))
+            .forEach(key => localStorage.removeItem(key));
         return [{ type: "DELETE_BOOKS_FROM_CACHE_FULFILLED" }];
     });
-
