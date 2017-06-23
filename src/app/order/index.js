@@ -160,8 +160,9 @@ class Order extends React.Component {
                     </div>
 
                     <div
+                        styleName="promo"
                         style={{display:'flex', width:'90%', maxWidth:'500px', padding:'20px 0', justifyContent:'space-between',
-                            alignItems:'flex-start'
+                            alignItems:'flex-start', flexWrap:'wrap'
                         }}>
                         <div style={{width:'18%'}}>
                             <Input

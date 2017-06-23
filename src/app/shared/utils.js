@@ -62,7 +62,7 @@ export const cutString = (string, limit) => {
     let dotIndex = 0;
     if (string.length > limit) {
         for (let i = 0; i < newString.length - 1; i++) {
-            if (string.charAt(i) === ".") {
+            if (string.charAt(i) === "." || string.charAt(i)===";")  {
                 dotIndex = i;
             }
         }

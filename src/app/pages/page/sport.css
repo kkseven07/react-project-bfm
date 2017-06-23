@@ -11,6 +11,8 @@
     flex-direction: column;
     margin-top:1%;
     margin-top: 0.5em;
+    line-height: 1.1;
+
 }
 
 .type{
@@ -23,8 +25,8 @@
 .year {
     font-size:6.1em;
     position: absolute;
-    top: 4%;
-    left: 40%;
+    top: 1.7%;
+    left: 37%;
     color: white;
 }
 
