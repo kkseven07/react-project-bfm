@@ -1,13 +1,13 @@
 import { normalisePages } from "../../reducer/reducers/book";
 import reverse from "lodash/reverse";
-import crypto from "crypto-js";
+import CryptoJS from "crypto-js";
 export const storageCreateBook = (action$, store) =>
     action$
         .filter(
             action =>
                 [
                     "UPLOAD_FULFILLED",
-                    "UPDATE_PAGE_FULFILLED",
+                    // "UPDATE_PAGE_FULFILLED",
                     "FETCH_BOOK_FULFILLED",
                     "UPDATE_ORDER_FULFILLED",
                     "GEN_PAGES_FULFILLED",
@@ -21,25 +21,27 @@ export const storageCreateBook = (action$, store) =>
             const book = bookState[currentBookId];
             // console.log("in storatge book fulfilled")
             // localStorage.clear()
-            var ciphertext = crypto.AES.encrypt(
-                "my message",
+            let data = book
+            var ciphertext = CryptoJS.AES.encrypt(
+                JSON.stringify(data),
                 "secret key 123"
             );
-            console.log(ciphertext,"encrypt");
 
-            var bytes = crypto.AES.decrypt(
+            // Decrypt
+            var bytes = CryptoJS.AES.decrypt(
                 ciphertext.toString(),
                 "secret key 123"
             );
-            var plaintext = bytes.toString(crypto.enc.Utf8);
+            var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
 
-            console.log(plaintext, "decrypt");
+            console.log(decryptedData, "decrypt");
             try {
                 localStorage.setItem(
                     "bookKey_" + currentBookId,
                     JSON.stringify(book)
                 );
             } catch (e) {
+                console.log(e)
                 localStorage.clear();
             }
             return [{ type: "OK" }, { type: "CLOSE_MODAL" }];

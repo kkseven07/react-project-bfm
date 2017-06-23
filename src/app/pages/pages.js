@@ -28,6 +28,12 @@ const scrollTo = () => {
         containerId: "ContainerElementID"
     });
 };
+import CryptoJS from "crypto-js"
+
+const decrypt = ciphertext => {
+    var bytes = CryptoJS.AES.decrypt(ciphertext.toString(), "secret key 123");
+    return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+};
 class BookRoute extends Component {
     state = { inside: true };
     componentWillMount() {
@@ -39,6 +45,8 @@ class BookRoute extends Component {
                 return;
             }
             let book = JSON.parse(localStorage.getItem("bookKey_" + book_id));
+            // let book = localStorage.getItem("bookKey_"+book_id)
+            // book = decrypt(book)
             if (book) this.props.actions.loadFromCache(book);
             else {
                 if (this.props.history.action === "PUSH") {
@@ -67,7 +75,7 @@ class BookRoute extends Component {
 
         let gift, data = [], bData, cover;
         if (book[bookId]) {
-            console.log("my book", book)
+            console.log("my book", book);
             data = values(book[bookId].pages);
             const { pages, ...rest } = book[bookId];
             bData = rest;
@@ -77,7 +85,7 @@ class BookRoute extends Component {
         let pages = data.filter(
             page =>
                 ["frontPage", "frontPageBack", "endPage"].indexOf(page.type) < 0
-        )//.slice(10, 11);
+        ); //.slice(10, 11);
 
         return (
             <div style={{ backgroundColor: "white", paddingBottom: 30 }}>

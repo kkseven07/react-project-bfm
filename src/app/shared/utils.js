@@ -94,9 +94,10 @@ export const checkLength = (name, breakpoint, fontsize, params) => {
         }
         else if (params==='wise') {
             for (let i = 0; i < diff; i++) {
-                    size = size * 0.9;
+                if (diff - k === 0) {
+                    size = size * 0.995;
                     k = k - 1;
-                if (diff - k > 0 && diff - k < 50) {
+                } else if (diff - k > 0 && diff - k < 50) {
                     size = size * 0.9925;
                     k = k - 1;
                 } else if (diff - k > 50 && diff - k < 200) {
@@ -121,16 +122,16 @@ export const checkLength = (name, breakpoint, fontsize, params) => {
 
         else if (params==='wise1') {
             for (let i = 0; i < diff; i++) {
+                if (diff - k === 0) {
                     size = size * 0.995;
                     k = k - 1;
-                if (diff - k > 0 && diff - k < 50) {
-                    size = size * 0.993;
+                } else if (diff - k > 0 && diff - k < 50) {
+                    size = size * 0.9925;
                     k = k - 1;
                 } else if (diff - k > 50 && diff - k < 200) {
                     size = size * 0.9965;
                     k = k - 1;
                 }
-
             }
         }
         return `${size}em`;
