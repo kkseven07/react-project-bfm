@@ -1,0 +1,27 @@
+.r {
+    color: white;
+    position: relative;
+    font-family: 'AkrobatSemiBold';
+    color: #3e3e3c;
+}
+.text {
+    position: absolute;
+    left: 49%;
+    top: 20%;
+    width: 50%;
+    line-height: 1.1;
+    text-align: right;
+    height: 30%;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+.author {
+    position: absolute;
+    left: 63%;
+    top: 70%;
+    width: 59%;
+    line-height: 1.1;
+    height: 30%;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}

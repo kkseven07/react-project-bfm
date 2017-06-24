@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import "./brain.css";
 import { checkLength } from "../../shared/utils.js";
-const first = "Компьютер";
-const second ="Девушки";
-const third ="Воллейбол";
+
 export default ({ book, page }) => {
     return <div className="full" styleName="r">
     	<div styleName="thinkabout">О чём думает {book.name}?</div>
@@ -12,6 +10,6 @@ export default ({ book, page }) => {
         <div styleName="second" className="absolute"
         	style={{fontSize:page.data.text1&&checkLength(page.data.text1, 15, 1.2)}}>{page.data.text1?page.data.text1:"сон"}</div>
         <div styleName="third" className="absolute"
-        	style={{fontSize:page.data.tex2t&&checkLength(page.data.text2, 9, 1.2)}}>{page.data.text2?page.data.text2:"работа"}</div>
+        	style={{fontSize:page.data.text2&&checkLength(page.data.text2, 9, 1.2)}}>{page.data.text2?page.data.text2:"работа"}</div>
     </div>
 }

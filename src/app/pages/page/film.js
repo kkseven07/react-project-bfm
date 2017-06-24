@@ -30,7 +30,7 @@ export default ({ page, book, ...props }) => (
         <div
             className="absolute"
             styleName={setStyle(page.primary_image.image.url)[1]}
-            style={{ fontSize: checkLength(page.data.film, 17, 2, "film") }}
+            style={{ fontSize: checkLength(page.data.film, 16, 2, "film") }}
         >
             {page.data.film}
         </div>

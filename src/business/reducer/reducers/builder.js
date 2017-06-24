@@ -82,6 +82,48 @@ const init = {
         input: { value: "", isPristine: true, isValid: true, errorText: "" },
         textarea: {value:"",  errorText:""}
     },
+    momChemistryProoved: {
+        textarea: {value:"",  errorText:""}
+    },
+    formulaMom: {
+        input: { value: "", isPristine: true, isValid: true, errorText: "" },
+        input1: {value:"", isPristine: true, isValid: true, errorText: "" },
+        input2: {value:"", isPristine: true, isValid: true, errorText: "" }
+    },
+    geniusQuoteMom: {
+        textarea: {value:"",  errorText:""}
+    },
+    prideOfMom: {
+        textarea: {value:"",  errorText:""}
+    },
+    credoMom: {
+        textarea: {value:"",  errorText:""},
+        input: { value: "", isPristine: true, isValid: true, errorText: "" }
+    },
+    thanksForMom: {
+        textarea: {value:"",  errorText:""}
+    },
+    dadChemistryProoved: {
+        textarea: {value:"",  errorText:""}
+    },
+    formulaDad: {
+        input: { value: "", isPristine: true, isValid: true, errorText: "" },
+        input1: {value:"", isPristine: true, isValid: true, errorText: "" },
+        input2: {value:"", isPristine: true, isValid: true, errorText: "" }
+    },
+    geniusQuoteDad: {
+        textarea: {value:"",  errorText:""}
+    },
+    prideOfDad: {
+        textarea: {value:"",  errorText:""}
+    },
+    credoDad: {
+        textarea: {value:"",  errorText:""},
+        input: { value: "", isPristine: true, isValid: true, errorText: "" }
+    },
+    thanksForDad: {
+        textarea: {value:"",  errorText:""}
+    },
     qualityTableStep: 280
 };
 

@@ -66,7 +66,6 @@ export const cutString = (string, limit) => {
                 dotIndex = i;
             }
         }
-        // //(`${newString.substring(0, dotIndex)}...`)
         return `${newString.substring(0, dotIndex)}...`;
     } else return string;
 };
@@ -134,6 +133,42 @@ export const checkLength = (name, breakpoint, fontsize, params) => {
                 }
             }
         }
+        else if (params==='formulaMom') {
+            for (let i = 0; i < diff; i++) {
+                if (diff - k === 0) {
+                    size = size * 0.9;
+                    k = k - 1; 
+                } else if (diff - k > 0 && diff - k < 50) {
+                    size = size * 0.93;
+                    k = k - 1;
+                }
+            }
+        }
+        else if (params==='prideOfMom') {
+            for (let i = 0; i < diff; i++) {
+                if (diff - k === 0) {
+                    size = size * 0.9;
+                    k = k - 1; 
+                } else if (diff - k > 0 && diff - k < 50) {
+                    size = size * 0.985;
+                    k = k - 1;
+                }
+            }
+        }
+        else if (params==='thanksForMom') {
+            for (let i = 0; i < diff; i++) {
+                if (diff - k === 0) {
+                    size = size * 0.85;
+                    k = k - 1; 
+                } else if (diff - k > 0 && diff - k < 50) {
+                    k = k - 1;
+                    size = size * 0.99;
+                } else if (diff - k > 50 && diff - k < 200) {
+                    size = size * 0.998;
+                    k = k - 1;
+                }
+            }
+        }
         return `${size}em`;
     }
     return "";
@@ -158,7 +193,19 @@ export const editable = [
     "deducedAgeFact",
     "quotes",
     "pastPhoto",
-    "relaxPhoto"
+    "relaxPhoto",
+    "momChemistryProoved",
+    "formulaMom",
+    'geniusQuoteMom',
+    'prideOfMom',
+    'credoMom',
+    'thanksForMom',
+    "dadChemistryProoved",
+    "formulaDad",
+    'geniusQuoteDad',
+    'prideOfDad',
+    'credoDad',
+    'thanksForDad'
 ];
 
 export const monthsMap = {
