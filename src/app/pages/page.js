@@ -40,7 +40,7 @@ const noImage = ["cover", "coverChooser"];
 import { editable } from "../shared/utils.js";
 
 class Page extends Component {
-    state = { zoom: false, imgLoaded: this.props.print ? true : false };
+    state = { zoom: false, imgLoaded: this.props.print||this.props.zoom ? true : false };
 
     getPage = (type, image, page, book) => {
         if (type === "scoop") {
@@ -236,7 +236,7 @@ class Page extends Component {
                         }
                     }}
                 />
-                {!this.props.print &&
+                {!(this.props.print||this.props.zoom) &&
                     <img
                         src={url}
                         onLoad={() =>

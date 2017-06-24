@@ -24,10 +24,13 @@
 }
 .title {
     position: absolute;
-    bottom: 16%;
+    bottom: 4%;
+    width: 49%;
+    height: 27%;
     font-size: 1.3em;
-    transform: rotate(8deg);
-    right: 7%;
+    -webkit-transform: rotate(8deg);
+    transform: rotate(8.6deg);
+    right: 6%;
     font-family: 'AkrobatSemiBold';
     z-index: 2;
 }

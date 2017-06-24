@@ -1,9 +1,23 @@
 .image{
-    height:auto;
-    width:61.5%;
+    height: auto;
+    width: 59.8%;
     object-fit: contain;
     position: absolute;
-    border:0;
-
+    border: 0;
+    transform: rotate(-7.3deg);
+    top: 10.6%;
+    left: 18.6%;
 }
-
+.text {
+    position: absolute;
+    bottom: 14.6%;
+    transform: rotate(-7.3deg);
+    font-family: 'AkrobatSemiBold';
+    font-size: 1.5em;
+    left: 19%;
+    width: 68%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -16,10 +16,10 @@
 }
 
 .type{
-    font-size:0.65em;
+    font-size:0.5em;
 }
 .fact{
-    font-size:0.5em;
+    font-size:0.4em;
 }
 
 .year {
@@ -32,7 +32,7 @@
 
 .container {
     position: absolute;
-    top: 23.5%;
+    top: 34.5%;
     left: 36%;
     font-size: 1.4em;
     width: 58%;

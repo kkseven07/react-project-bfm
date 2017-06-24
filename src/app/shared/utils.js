@@ -251,3 +251,39 @@ export const colors = [
         text: "black"
     }
   ];
+// export const colors = [
+//     {
+//         background: "#DAAAA6 ",
+//         text: "black"
+//     },
+//     {
+//         background: "#769E95 ",
+//         text: "black"
+//     },
+//     {
+//         background: "#090A0A ",
+//         text: "white"
+//     },
+//     {
+//         background: "#ECE16E ",
+//         text: "black"
+//     },
+//     {
+//         background: "#D59146 ",
+//         text: "black"
+//     },
+//     {
+//         background: "#CE5B95 ",
+//         text: "black"
+//     },
+//     {
+//         background: "#C4312D ",
+//         text: "white"
+//     },
+//     {
+//         background: "#A3C384 ",
+//         text: "black"
+//     }
+//   ];
+
+

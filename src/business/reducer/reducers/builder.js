@@ -51,6 +51,15 @@ const init = {
         selectedImage: null,
         textarea: {value:"",  errorText:""}
     },
+    framefridge: {
+        textarea: {value:"",  errorText:""}
+    },
+    pastPhoto: {
+        textarea: {value:"",  errorText:""}
+    },
+    relaxPhoto: {
+        textarea: {value:"",  errorText:""}
+    },
     virtue: {
         select: {
             value: "Хороший друг",
