@@ -1,0 +1,19 @@
+.arrow {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.arrow:after {
+  content: "▼";
+  padding: 0 8px;
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  top: 35%;
+  z-index: 1;
+  text-align: center;
+/*  width: 10%;
+  height: 100%;*/
+  pointer-events: none;
+  box-sizing: border-box;
+}

@@ -12,7 +12,7 @@
 .second{
     width:50%;
     height:84%;
-    margin:2% 0% 2% 2%;
+    margin:0% 0% 2% 2%;
     flex-direction: column;
     padding-left:2%;
     font-family: 'Tahoma';
@@ -36,7 +36,6 @@
 .year{
     font-size: 5.3em;
     height: 22%;
-    padding-top: 2%;
     margin-left: 11%;
     font-weight: bold;
     font-family: "BebasBold";
@@ -45,5 +44,6 @@
     line-height: 1.2;
     font-size:0.7em;
     padding-right: 2%;
+    padding-top: 5%;
 }
 

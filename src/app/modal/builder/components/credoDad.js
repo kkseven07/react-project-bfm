@@ -88,7 +88,7 @@ export default ({ page, book, actions, form }) => {
                     placeholder="Автор"
                     field={form.input}
                     maxLength={25}
-                    fieldType={"credoMom"}
+                    fieldType={"credoDad"}
                     enter={actions.builderInput}
                 />
             </div>
