@@ -55,7 +55,7 @@ const noImage = ["cover", "coverChooser"];
 import { editable } from "../shared/utils.js";
 
 class Page extends Component {
-    state = { zoom: false, imgLoaded: this.props.print||this.props.zoom ? true : false };
+    state = { zoom: false, imgLoaded: (this.props.print||this.props.zoom) ? true : false };
 
     getPage = (type, image, page, book) => {
         if (type === "scoop") {
@@ -210,7 +210,6 @@ class Page extends Component {
 
     imageUrl = (print, zoom, primary_image) => {
         if (print) {
-            console.log(primary_image.image.url)
             return `url(${this.props.url + primary_image.image.url
                     .replace("/web/", "/print/")
                     .replace("_bbx24s", "_2048")})`;
@@ -234,19 +233,19 @@ class Page extends Component {
                     .replace("_768", "_2048")
             );
         }
-        return this.props.url + primary_image.image.url.replace("bbx24s", "mmy70f");
+        return this.props.url + primary_image.image.url.replace("bbx24s", "ssx8m");
     };
     componentWillReceiveProps(nextProps) {
         if (
             nextProps.page.primary_image.image.url !==
             this.props.page.primary_image.image.url
         )
-            this.setState({ imgLoaded: false });
+            !(this.props.print||this.props.zoom)&&this.setState({ imgLoaded: false });
     }
 
     render() {
         const { type, primary_image, data } = this.props.page;
-        let image, smallImage, url;
+        let image, smallImage, loadingurl;
         if (primary_image.image.url) {
             image = {
                 backgroundImage: this.imageUrl(
@@ -260,10 +259,8 @@ class Page extends Component {
                 backgroundImage: this.smallImage(),
                 filter: "blur(15px)"
             };
-            url = this.urlForLoading(this.props.print, primary_image);
+            loadingurl = this.urlForLoading(this.props.print, primary_image);
         }
-        // //("page rerender ", this.state.imgLoaded,this.props.page.type)
-        //
         return (
             <div
                 onClick={e => {
@@ -293,17 +290,18 @@ class Page extends Component {
                 />
                 {!(this.props.print||this.props.zoom) &&
                     <img
-                        src={url}
+                        src={loadingurl}
                         onLoad={() =>
                             setTimeout(
                                 () => this.setState({ imgLoaded: true }),
-                                200
+                                400
                             )}
                         onError={() =>
                             console.log(
                                 "error happend in ",
                                 this.props.page.type
-                            )}
+                            )||this.setState({ imgLoaded: true })}
+
                         style={{
                             display: "none"
                         }}
