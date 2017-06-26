@@ -4,6 +4,10 @@ export const osName = name => {
     return { type: "OS_NAME", name };
 };
 
+export const setupScroll=(scroll)=>{
+    return {type:"SETUP_SCROLL", scroll}
+}
+
 //form
 export const enterInput = (text, field) => {
     return { type: "ENTER_INPUT", text, field };

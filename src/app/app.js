@@ -44,7 +44,7 @@ class App extends React.Component {
                 <Background zIndex="10">
                     zoomer...
                 </Background>
-                {showHeader(location) && <Header location={location}  history={history} />}
+                {showHeader(location) && <Header scroll={this.props.scroll} location={location}  history={history} />}
                 <div id="wrap">
                     <div
                         styleName={
@@ -75,7 +75,8 @@ class App extends React.Component {
 }
 const mapStateToProps = state => ({
     fetching: state.fetching,
-    modalOpen: state.modalOpen
+    modalOpen: state.modalOpen,
+    scroll:state.init.scroll
 });
 
 const mapDispatchToProps = dispatch => ({

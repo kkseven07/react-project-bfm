@@ -36,9 +36,9 @@ const init = {
       errorText: ""
    },
    sondaug: {
-      value: "Кем приходитесь?",
-      isPristine: true,
-      isValid: false,
+      value: "Son",
+      isPristine: false,
+      isValid: true,
       errorText: ""
    },
    senderName: { value: "", isPristine: true, isValid: true, errorText: "" },
@@ -114,13 +114,18 @@ let partOne = [
    "senderName",
    "sondaug"
 ];
+
+const initsondaug = {
+   value: "Кем приходитесь?",
+   isPristine: true,
+   isValid: true,
+   errorText: ""
+};
 let partTwo = ["senderName", "relation"];
 import * as selector from "./selectorForm";
 import { data } from "../../../app/shared";
 
 export default (state = init, action) => {
-   // //(action)
-      console.log(action.type)
 
    switch (action.type) {
       case "CHANGE_FORM":
@@ -186,19 +191,21 @@ export default (state = init, action) => {
       case "SETUP_BOOK_TYPE":
          if (action.bookType === "you") {
             return {
-               ...state,
+               ...init,
                sondaug: { valid: true },
                relation: { value: "you", valid: true, refr: "you" }
             };
          } else if (action.bookType === "mom") {
             return {
-               ...state,
+               ...init,
+               sondaug: initsondaug,
                gender: { value: "female", valid: true },
                relation: { value: "mom", valid: true, refr: "mom" }
             };
          } else {
             return {
-               ...state,
+               ...init,
+               sondaug: initsondaug,
                gender: { value: "male", valid: true },
                relation: { value: "dad", valid: true, refr: "dad" }
             };
