@@ -1,0 +1,19 @@
+.r {
+    color: white;
+    position: relative;
+    font-family: 'CoreSansGRegular';
+    color: #eeeeee;
+}
+.text {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 33%;
+    bottom: 28%;
+    line-height: 1.2;
+    width: 45%;
+    height: 27%;
+    font-size: 0.9em;
+}

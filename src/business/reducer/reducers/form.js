@@ -73,7 +73,7 @@ const forTest = {
    },
    age: { value: "today", isPristine: false, isValid: true, errorText: "" },
    relation: {
-      value: "collegue",
+      value: "dad",
       isPristine: false,
       isValid: true,
       errorText: ""

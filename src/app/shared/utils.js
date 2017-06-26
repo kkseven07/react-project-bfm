@@ -62,11 +62,10 @@ export const cutString = (string, limit) => {
     let dotIndex = 0;
     if (string.length > limit) {
         for (let i = 0; i < newString.length - 1; i++) {
-            if (string.charAt(i) === ".") {
+            if (string.charAt(i) === "." || string.charAt(i)===";")  {
                 dotIndex = i;
             }
         }
-        // //(`${newString.substring(0, dotIndex)}...`)
         return `${newString.substring(0, dotIndex)}...`;
     } else return string;
 };
@@ -94,9 +93,10 @@ export const checkLength = (name, breakpoint, fontsize, params) => {
         }
         else if (params==='wise') {
             for (let i = 0; i < diff; i++) {
-                    size = size * 0.9;
+                if (diff - k === 0) {
+                    size = size * 0.995;
                     k = k - 1;
-                if (diff - k > 0 && diff - k < 50) {
+                } else if (diff - k > 0 && diff - k < 50) {
                     size = size * 0.9925;
                     k = k - 1;
                 } else if (diff - k > 50 && diff - k < 200) {
@@ -121,16 +121,52 @@ export const checkLength = (name, breakpoint, fontsize, params) => {
 
         else if (params==='wise1') {
             for (let i = 0; i < diff; i++) {
+                if (diff - k === 0) {
                     size = size * 0.995;
                     k = k - 1;
-                if (diff - k > 0 && diff - k < 50) {
-                    size = size * 0.993;
+                } else if (diff - k > 0 && diff - k < 50) {
+                    size = size * 0.9925;
                     k = k - 1;
                 } else if (diff - k > 50 && diff - k < 200) {
                     size = size * 0.9965;
                     k = k - 1;
                 }
-
+            }
+        }
+        else if (params==='formulaMom') {
+            for (let i = 0; i < diff; i++) {
+                if (diff - k === 0) {
+                    size = size * 0.9;
+                    k = k - 1; 
+                } else if (diff - k > 0 && diff - k < 50) {
+                    size = size * 0.93;
+                    k = k - 1;
+                }
+            }
+        }
+        else if (params==='prideOfMom') {
+            for (let i = 0; i < diff; i++) {
+                if (diff - k === 0) {
+                    size = size * 0.9;
+                    k = k - 1; 
+                } else if (diff - k > 0 && diff - k < 50) {
+                    size = size * 0.985;
+                    k = k - 1;
+                }
+            }
+        }
+        else if (params==='thanksForMom') {
+            for (let i = 0; i < diff; i++) {
+                if (diff - k === 0) {
+                    size = size * 0.85;
+                    k = k - 1; 
+                } else if (diff - k > 0 && diff - k < 50) {
+                    k = k - 1;
+                    size = size * 0.99;
+                } else if (diff - k > 50 && diff - k < 200) {
+                    size = size * 0.998;
+                    k = k - 1;
+                }
             }
         }
         return `${size}em`;
@@ -157,7 +193,19 @@ export const editable = [
     "deducedAgeFact",
     "quotes",
     "pastPhoto",
-    "relaxPhoto"
+    "relaxPhoto",
+    "momChemistryProoved",
+    "formulaMom",
+    'geniusQuoteMom',
+    'prideOfMom',
+    'credoMom',
+    'thanksForMom',
+    "dadChemistryProoved",
+    "formulaDad",
+    'geniusQuoteDad',
+    'prideOfDad',
+    'credoDad',
+    'thanksForDad'
 ];
 
 export const monthsMap = {
@@ -250,3 +298,39 @@ export const colors = [
         text: "black"
     }
   ];
+// export const colors = [
+//     {
+//         background: "#DAAAA6 ",
+//         text: "black"
+//     },
+//     {
+//         background: "#769E95 ",
+//         text: "black"
+//     },
+//     {
+//         background: "#090A0A ",
+//         text: "white"
+//     },
+//     {
+//         background: "#ECE16E ",
+//         text: "black"
+//     },
+//     {
+//         background: "#D59146 ",
+//         text: "black"
+//     },
+//     {
+//         background: "#CE5B95 ",
+//         text: "black"
+//     },
+//     {
+//         background: "#C4312D ",
+//         text: "white"
+//     },
+//     {
+//         background: "#A3C384 ",
+//         text: "black"
+//     }
+//   ];
+
+

@@ -11,26 +11,27 @@
     flex-direction: column;
     margin-top:1%;
     margin-top: 0.5em;
+    line-height: 1.1;
 }
 
 .type{
-    font-size:0.65em;
+    font-size:0.45em;
 }
 .fact{
-    font-size:0.5em;
+    font-size:0.37em;
 }
 
 .year {
     font-size:6.1em;
     position: absolute;
-    top: 4%;
-    left: 40%;
+    top: 1.7%;
+    left: 37%;
     color: white;
 }
 
 .container {
     position: absolute;
-    top: 23.5%;
+    top: 34.5%;
     left: 36%;
     font-size: 1.4em;
     width: 58%;

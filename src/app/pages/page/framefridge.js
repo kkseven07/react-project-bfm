@@ -8,5 +8,6 @@ export default ({page,book,url}) =>{
         {url+page.data.image_url?<img  styleName="image" src={url+page.data.image_url}/>:
             <img src="" alt=""/>
         }
+        <div styleName="text">{page.data.text?page.data.text:"Хорошие воспоминания"}</div>
     </div>
 }

@@ -91,7 +91,14 @@
 }
 
 /*FONTS*/
-
+@font-face {
+  font-family: 'LifehackSansMedium';
+  src: url('../../../assets/fonts/LifehackSansMedium.woff2');
+}
+@font-face {
+  font-family: 'CoreSansGRegular';
+  src: url('../../../assets/fonts/CoreSansGRegular.woff2');
+}
 @font-face {
   font-family: 'UniSansHeavy';
   src: url('../../../assets/fonts/Uni-Sans-Heavy.woff2');
@@ -163,12 +170,19 @@
   src: url('../../../assets/fonts/Drina.woff2');
 }
 
-.print{
+/*.print{
     height:1400px;
     width:1400px;
     font-size:55.01px;
     margin:0;
+    }*/
+.print{
+    height:1024px;
+    width:1024px;
+    font-size:40.15px;
+    margin:0;
     }
+
 .zoom{
   width: 700px;
   height: 700px;

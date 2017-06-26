@@ -1,0 +1,25 @@
+.r {
+    color: white;
+    position: relative;
+    font-family: 'LifehackSansMedium';
+    color: white;
+}
+.text {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 16%;
+    bottom: 32%;
+    line-height: 1.2;
+    width: 68%;
+    height: 40%;
+    font-size: 1.4em;
+}
+.mom {
+    position: absolute;
+    bottom: 26%;
+    right: 16%;
+    font-size: 1.4em;
+}

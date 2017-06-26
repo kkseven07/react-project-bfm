@@ -157,18 +157,33 @@ class Header extends React.Component  {
 
                 </div>
 
-                <div
+                <div // DESKTOP MENU
                     className="flex flex-center"
                     style={{ fontFamily: "RobotoRegular", fontSize: 23 }}
                     styleName="links"
                 >
                     <div
+                        styleName="books d-item"
                         style={{color:this.props.location.pathname==='/books'&&'#2d6cf9'}}
-                        onClick={()=>history.push("/books")}>КНИГИ</div>
+                        onClick={()=>history.push("/books")}>
+                        <span>КНИГИ</span>
+                        <i
+                            className="fa fa-sort-desc"
+                            style={{bottom:'5%', position:'absolute', marginLeft:'0.2em', lineHeight:'120px'}}
+                        ></i>
+                        <div styleName="dropdown">
+                            <div>КНИГА О ТЕБЕ</div>
+                            <div>КНИГА МАТЕРИ</div>
+                            <div>КНИГА ОТЦА</div>
+
+                        </div>
+                        </div>
                     <div
+                        styleName="d-item"
                         style={{color:this.props.location.pathname==='/about'&&'#2d6cf9'}}
                         onClick={()=>history.push("/about")}>О НАС</div>
                     <div
+                        styleName="d-item"
                         style={{color:this.props.location.pathname==='/contacts'&&'#2d6cf9'}}
                         onClick={()=>history.push("/contacts")}>КОНТАКТЫ</div>
 

@@ -76,6 +76,7 @@ export default (state = { currentBookId: null }, action) => {
          };
 
       case "UPDATE_PAGE":
+         console.log("update page", action.page)
          let page_to_update = action.page;
          let params = action.params;
          let selectedImage = params.selectedImage;
