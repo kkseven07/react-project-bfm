@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from 'react-dom';
 import { NavLink } from "react-router-dom";
 import Logo from "../../../../assets/icons/logo.png";
 import "./header.css";
@@ -59,9 +60,58 @@ const styles = {
 // };
 
 class Header extends React.Component  {
+    state={isOpen:false}
     componentWillReceiveProps(nextProps) {
-        console.log("history", nextProps.history)
+        if(this.props.history.location!==nextProps.history.location) {
+            this.setState({
+                isOpen:false
+            })
+        }
     }
+    // componentDidMount() {
+    //     document.body.addEventListener('click', this.triggerClickHandler, true);
+    // }
+
+    // componentWillUnmount() {
+    //     document.body.removeEventListener('click', this.triggerClickHandler, false);
+    // }
+    // triggerClickHandler=(param)=> {
+    //     console.log("clicktrigger");
+    //         console.log("PARAM", param)
+    //         if (!this.state.isOpen && param===true) {
+    //             console.log("if1")
+    //         this.setState({
+    //           isOpen: true
+    //         });
+    //     }
+    //     else if (this.state.isOpen && param===true) {console.log("if2")
+    //         this.setState({
+    //             isOpen:false
+    //         })
+    //     }
+    //     else if (this.state.isOpen && param!==true){console.log("if3")
+    //         this.setState({
+    //             isOpen:false
+    //         })
+    //     }
+    // }
+    // openDropDown=()=> {
+    //     console.log("opendropdown");
+    //     if (!this.state.isOpen) {
+    //         this.setState({
+    //           isOpen: true
+    //         });
+    //     }
+    //     else {
+    //         this.setState({
+    //             isOpen:false
+    //         })
+    //     }
+    // }
+    // dropdownClickHandler=(e)=> {
+    //     console.log("stopped")
+    //     e.nativeEvent.stopImmediatePropagation();
+    //   }
     render() {
         const { currentBookId, ...books } = this.props.book;
         const {history}= this.props;
@@ -69,10 +119,10 @@ class Header extends React.Component  {
         const count = values(books).length;
         const orderCount = values(orders).length;
         const location = history.location.pathname;
-        console.log("location", this.props.location)
+        let dropStyle = this.state.isOpen ? "flex" : "none";
+        
     return (
         <div styleName="header">
-
             {this.props.menu && // MOBILE MENU
                 <div
                     onClick={this.props.actions.closeMenu}
@@ -99,6 +149,15 @@ class Header extends React.Component  {
                     }}
                 >
                     <img src="" alt=""/>
+
+                </div>
+                <div
+                    styleName="menu-item"
+                    onClick={() => {
+                        this.props.actions.closeMenu();
+                    }}
+                >
+                    <span styleName="link">КНИГИ </span>
 
                 </div>
                 <div
@@ -134,7 +193,6 @@ class Header extends React.Component  {
                 <div
                     styleName="close-btn"
                     onClick={() => {
-                        console.log("clickd");
                         this.props.actions.closeMenu();
                     }}
                 >
@@ -165,18 +223,47 @@ class Header extends React.Component  {
                     <div
                         styleName="books d-item"
                         style={{color:this.props.location.pathname==='/books'&&'#2d6cf9'}}
-                        onClick={()=>history.push("/books")}>
+                        //onClick={()=>{
+                         //       history.push("/books");
+                         //   }}; onClick={this.dropdownClickHandler}
+                        
+                        onClick={()=>{
+                            this.state.isOpen?this.setState({isOpen:false}):this.setState({isOpen:true});
+                            history.push("/");
+                        }}
+                        >
                         <span>КНИГИ</span>
                         <i
                             className="fa fa-sort-desc"
-                            style={{bottom:'5%', position:'absolute', marginLeft:'0.2em', lineHeight:'120px'}}
+                            style={{
+                                bottom:'5%', 
+                                position:'absolute', 
+                                marginLeft:'0.2em', 
+                                lineHeight:this.state.isOpen?'100px':'120px',
+                                transform:this.state.isOpen&&'rotate(180deg)'
+                            }}
                         ></i>
-                        <div styleName="dropdown">
-                            <div>КНИГА О ТЕБЕ</div>
-                            <div>КНИГА МАТЕРИ</div>
-                            <div>КНИГА ОТЦА</div>
-
+                        
                         </div>
+                        <div 
+                            onClick={(e)=>e.stopPropagation()}
+                            styleName="dropdown" style={{display:`${dropStyle}`}}
+                        >
+                            <div styleName="dropdown-list"> 
+                                <div
+                                    styleName="list-item" 
+                                    onClick={()=>this.setState({isOpen: false})}
+                                >КНИГА О ТЕБЕ</div>
+                                <div
+                                    styleName="list-item" 
+                                    onClick={()=>this.setState({isOpen: false})}
+                                >КНИГА МАТЕРИ</div>
+                                <div
+                                    styleName="list-item" 
+                                    onClick={()=>this.setState({isOpen: false})}
+                                >КНИГА ОТЦА</div>
+                            </div>
+                            <div style={{textAlign:'center', display:'none'}}><i className="fa fa-sort-asc"/></div>
                         </div>
                     <div
                         styleName="d-item"

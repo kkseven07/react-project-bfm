@@ -81,11 +81,11 @@ class BookRoute extends Component {
             bData = rest;
             cover = data[0];
         }
-
-        let pages = data.filter(
-            page =>
-                ["frontPage", "frontPageBack", "endPage"].indexOf(page.type) < 0
-        ); //.slice(10, 11);
+        let pages = data;
+        // let pages = data.filter(
+        //     page =>
+        //         ["frontPage", "frontPageBack", "endPage"].indexOf(page.type) < 0
+        // ); //.slice(10, 11);
 
         return (
             <div style={{ backgroundColor: "white", paddingBottom: 30 }}>

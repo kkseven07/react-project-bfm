@@ -9,7 +9,7 @@ export default ({ book, page, ...props }) => {
             <div
                 className="absolute"
                 styleName="text"
-                style={{ color: page.data.meta, top:props.osName==='Mac'&&'18%' }}
+                style={{ color: page.data.meta}}
 
             >
                 {date.getFullYear()}

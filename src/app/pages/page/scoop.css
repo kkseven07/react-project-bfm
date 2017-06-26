@@ -4,7 +4,7 @@
 
 .r{
     flex-wrap:wrap;
-    font-family: 'Sylfaen';
+    font-family: 'Times New Roman';
     color: #525046;
     position: relative;
 }
@@ -12,8 +12,11 @@
 .year-text{
     font-size: 1em;
     position: absolute;
+
     top: 18.2%;
     left: 22.5%;
+
+
 }
 
 ul{
@@ -27,7 +30,6 @@ ul{
 .empty{
     width:100%;
     padding-top:18%;
-    padding-left:16%;
     height:25%;
 }
 .first{

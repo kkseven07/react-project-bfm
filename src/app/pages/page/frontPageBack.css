@@ -1,0 +1,12 @@
+.r {
+	position: relative;
+}
+.text {
+	position: absolute;
+	top: 20%;
+	left: 5%;
+	text-align: right;
+	font-family: 'GothamRegular';
+	text-transform: uppercase;
+	line-height: 1.2em;
+}
