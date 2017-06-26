@@ -19,30 +19,14 @@ export const storageCreateBook = (action$, store) =>
             const bookState = store.getState().book;
             const currentBookId = bookState.currentBookId;
             const book = bookState[currentBookId];
-            // console.log("in storatge book fulfilled")
-            // localStorage.clear()
-            let data = book
-            var ciphertext = CryptoJS.AES.encrypt(
-                JSON.stringify(data),
-                "secret key 123"
-            );
-
-            // Decrypt
-            var bytes = CryptoJS.AES.decrypt(
-                ciphertext.toString(),
-                "secret key 123"
-            );
-            var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
-
-            console.log(decryptedData, "decrypt");
-
+            console.log(bookState,currentBookId)
             try {
                 localStorage.setItem(
                     "bookKey_" + currentBookId,
                     JSON.stringify(book)
                 );
             } catch (e) {
-                console.log(e)
+                // console.log(e)
                 localStorage.clear();
             }
             return [{ type: "OK" }, { type: "CLOSE_MODAL" }];
@@ -96,7 +80,6 @@ export const loadFromCache = (action$, store) =>
 export const orderStorage = (action$, store) =>
     action$.ofType("CREATE_ORDER_FULFILLED").switchMap(({ payload }) => {
         const order = store.getState().order;
-        console.log("orderStorage", order);
         try {
             localStorage.setItem(
                 `orderKey_${order.orderId}`,
@@ -110,7 +93,6 @@ export const orderStorage = (action$, store) =>
 
 export const deleteBooksFromCache = (action$, store) =>
     action$.ofType("DELETE_BOOKS_FROM_CACHE").switchMap(action => {
-        console.log("deleted");
         Object.keys(localStorage)
             .filter(key => key.match("bookKey"))
             .forEach(key => localStorage.removeItem(key));

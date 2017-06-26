@@ -1,11 +1,8 @@
 import shell from "shelljs";
 import _ from "lodash";
-import fs from 'fs'
-let book_id = 257;
-
-let raw = process.argv.slice(2,10)
-
-let types = [
+import fs from "fs";
+let raw = process.argv.slice(2, 10);
+let you = [
     "cover",
     "frontPage",
     "frontPageBack",
@@ -56,52 +53,153 @@ let types = [
     "wiseWord",
     "endPage"
 ];
+let mom = [
+    "cover",
+    "frontPage",
+    "frontPageBack",
+    "intro",
+    "epicStory",
+    "scene",
+    "momChemistryProoved",
+    "formulaMom",
+    "geniusQuoteMom",
+    "prideOfMom",
+    "establishedCollage",
+    "ageFact",
+    "cell",
+    "factoid",
+    "fruitDNA",
+    "deducedAgeFact",
+    "backToHistory",
+    "scoop",
+    "film",
+    "toy",
+    "bestseller",
+    "musicHit",
+    "mirrorDate",
+    "famousBirthShare",
+    "easternWiseWord",
+    "westernWiseWord",
+    "shar",
+    "chinesezodiac",
+    "virtue",
+    "vice",
+    "brain",
+    "holiday",
+    "sport",
+    "videoGame",
+    "animal",
+    "techState",
+    "fashion",
+    "leaders",
+    "credoMom",
+    "coolPlace",
+    "qualityTable",
+    "qualityTableChoice",
+    "faceOfTime",
+    "framefridge",
+    "pastPhoto",
+    "relaxPhoto",
+    "momPoem",
+    "thanksForMom",
+    "endPage"
+];
+let dad = [
+    "cover",
+    "frontPage",
+    "frontPageBack",
+    "intro",
+    "epicStory",
+    "scene",
+    "dadChemistryProoved",
+    "formulaDad",
+    "geniusQuoteDad",
+    "prideOfDad",
+    "establishedCollage",
+    "ageFact",
+    "cell",
+    "factoid",
+    "fruitDNA",
+    "deducedAgeFact",
+    "backToHistory",
+    "scoop",
+    "film",
+    "toy",
+    "bestseller",
+    "musicHit",
+    "mirrorDate",
+    "famousBirthShare",
+    "easternWiseWord",
+    "westernWiseWord",
+    "shar",
+    "chinesezodiac",
+    "virtue",
+    "vice",
+    "brain",
+    "car",
+    "sport",
+    "videoGame",
+    "animal",
+    "techState",
+    "fashion",
+    "leaders",
+    "credoDad",
+    "coolPlace",
+    "qualityTable",
+    "qualityTableChoice",
+    "faceOfTime",
+    "framefridge",
+    "pastPhoto",
+    "relaxPhoto",
+    "dadPoem",
+    "thanksForDad",
+    "endPage"
+];
 
-let urls = types
-    .map(type => {
-        return `http://localhost:8080/pages/${book_id}/${type}`;
-    })
-    .join(" ");
-let urls1 = types1
-    .map(type => {
-        return `http://localhost:8080/pages/${book_id}/${type}`;
-    })
-    .join(" ");
-let urls2 = types2
-    .map(type => {
-        return `http://localhost:8080/pages/${book_id}/${type}`;
-    })
-    .join(" ");
+let getUrls = (types,book_id) =>
+    types
+        .map(type => {
+            return `http://localhost:8080/pages/${book_id}/${type}`;
+        })
+        .join(" ");
 
-let print = urls => {
+let print = (urls, book_id) => {
     shell.exec(
-        `electroshot [${urls} 1024x1024]  --delay 3500 --out ../print/${book_id} --filename '{name}.png'`
+        `electroshot [${urls} 1024x1024]  --delay 4000 --out ../print/${book_id} --filename '{name}.png'`
     );
 };
 
-
-
-let newPrint = () => {
-    shell.exec(
-        `electroshot [ http://localhost:8080/pages/${book_id}/scoop 1400x14000]  --delay 26500 --out ../print/${book_id} --filename '{name}.png'`
-    );
-};
-
-let convert = book_id => {
+let convert = (book_id,types) => {
     fs.readdir(`../print/${book_id}/`, (err, files) => {
-        let filenames = types.map(
-            (type, i) => `../print/${book_id}/${files.filter(file => file.indexOf(type) > -1)[0]}`
-        ).join(" ");
-        shell.exec(`convert ${filenames} ../print/${book_id}/output.pdf`);
+        let filenames = types
+            .map(
+                (type, i) =>
+                    `../print/${book_id}/${files.filter(file => file.indexOf(type) > -1)[0]}`
+            )
+            .join(" ");
+        shell.exec(`convert ${filenames} ../print/${book_id}/${book_id}.pdf`);
     });
 };
 
-console.log(book_id);
-shell.exec(`mkdir ../print/${book_id}`);
-// print(urls);
-// convert(book_id);
-// let ls = JSON.parse(process.argv[2])
-console.log(process.argv.slice(2,10))
+let work = () => {
+    raw.forEach(v => {
+        let [id, type] = v.split("-");
+        shell.exec(`mkdir ../print/${id}`);
+        console.log(id);
+        let urls = type === "you"
+            ? [getUrls(you,id),you]
+            : type === "mom" ? [getUrls(mom,id),mom] : [getUrls(dad,id),dad];
+        console.log(urls)
+        print(urls[0], id);
+        convert(id,urls[1]);
+    });
+};
+
+work();
+
+
+// 265-dad 266-mom 267-you
+
 
 
 
