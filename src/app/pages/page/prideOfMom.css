@@ -1,0 +1,17 @@
+.r {
+    color: white;
+    position: relative;
+    font-family: 'LifehackSansMedium';
+    color: #b9556a;
+}
+.text {
+    text-align: right;
+    position: absolute;
+    right: 7%;
+    top: 56%;
+    width: 47%;
+    line-height: 0.9;
+    height: 40%;
+    font-size: 3.4em;
+    text-transform: uppercase;
+}

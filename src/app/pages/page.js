@@ -36,6 +36,21 @@ import Brain from "./page/brain";
 import Quotes from "./page/quotes";
 import PastPhoto from "./page/pastPhoto";
 import RelaxPhoto from "./page/relaxPhoto";
+import MomChemistryProoved from "./page/momChemistryProoved";
+import FormulaMom from "./page/formulaMom";
+import GeniusQuoteMom from "./page/geniusQuoteMom";
+import PrideOfMom from "./page/prideOfMom";
+import CredoMom from "./page/credoMom";
+import ThanksForMom from "./page/thanksForMom";
+
+import DadChemistryProoved from "./page/dadChemistryProoved";
+import FormulaDad from "./page/formulaDad";
+import GeniusQuoteDad from "./page/geniusQuoteDad";
+import PrideOfDad from "./page/prideOfDad";
+import CredoDad from "./page/credoDad";
+import ThanksForDad from "./page/thanksForDad";
+
+
 const noImage = ["cover", "coverChooser"];
 import { editable } from "../shared/utils.js";
 
@@ -144,7 +159,47 @@ class Page extends Component {
         } else if (type === "relaxPhoto") {
 
             return <RelaxPhoto url={this.props.url} page={page} book={book} />;
-        } else {
+        }else if (type === "momChemistryProoved") {
+
+            return <MomChemistryProoved page={page} book={book} />;
+        }
+        else if (type === "formulaMom") {
+
+            return <FormulaMom page={page} book={book} />;
+        }else if (type === "geniusQuoteMom") {
+
+            return <GeniusQuoteMom page={page} book={book} />;
+        } else if (type === "prideOfMom") {
+
+            return <PrideOfMom page={page} book={book} />;
+        } else if (type === "credoMom") {
+
+            return <CredoMom page={page} book={book} />;
+        }
+        else if (type === "thanksForMom") {
+
+            return <ThanksForMom page={page} book={book} />;
+        } else if (type === "dadChemistryProoved") {
+
+            return <DadChemistryProoved page={page} book={book} />;
+        }
+        else if (type === "formulaDad") {
+
+            return <FormulaDad page={page} book={book} />;
+        }else if (type === "geniusQuoteDad") {
+
+            return <GeniusQuoteDad page={page} book={book} />;
+        } else if (type === "prideOfDad") {
+
+            return <PrideOfDad page={page} book={book} />;
+        } else if (type === "credoDad") {
+
+            return <CredoDad page={page} book={book} />;
+        }
+        else if (type === "thanksForDad") {
+
+            return <ThanksForDad page={page} book={book} />;
+        }else {
             return <div />;
         }
     };

@@ -24,6 +24,19 @@ import Zoom from "./components/zoom";
 import Quotes from "./components/quotes";
 import PastPhoto from "./components/pastPhoto";
 import RelaxPhoto from "./components/relaxPhoto";
+import MomChemistryProoved from "./components/momChemistryProoved";
+import FormulaMom from "./components/formulaMom"
+import GeniusQuoteMom from "./components/geniusQuoteMom"
+import PrideOfMom from "./components/prideOfMom"
+import CredoMom from "./components/credoMom"
+import ThanksForMom from "./components/thanksForMom"
+import DadChemistryProoved from "./components/dadChemistryProoved";
+import FormulaDad from "./components/formulaDad"
+import GeniusQuoteDad from "./components/geniusQuoteDad"
+import PrideOfDad from "./components/prideOfDad"
+import CredoDad from "./components/credoDad"
+import ThanksForDad from "./components/thanksForDad"
+
 import { toSave } from "./utils";
 
 const getComponent = (page, book, actions, form, step) => {
@@ -162,6 +175,115 @@ const getComponent = (page, book, actions, form, step) => {
         case "relaxPhoto":
             return (
                 <RelaxPhoto
+                    page={page}
+                    book={book}
+                    actions={actions}
+                    form={form}
+                />
+            );
+        case "momChemistryProoved":
+            return (
+                <MomChemistryProoved
+                    page={page}
+                    book={book}
+                    actions={actions}
+                    form={form}
+                />
+            );
+        case "formulaMom":
+            return (
+                <FormulaMom
+                    page={page}
+                    book={book}
+                    actions={actions}
+                    form={form}
+                />
+            );
+        case "geniusQuoteMom":
+            return (
+                <GeniusQuoteMom
+                    page={page}
+                    book={book}
+                    actions={actions}
+                    form={form}
+                />
+            );
+        case "prideOfMom":
+            return (
+                <PrideOfMom
+                    page={page}
+                    book={book}
+                    actions={actions}
+                    form={form}
+                />
+            );
+        case "credoMom":
+            return (
+                <CredoMom
+                    page={page}
+                    book={book}
+                    actions={actions}
+                    form={form}
+                />
+            );
+        case "thanksForMom":
+            return (
+                <ThanksForMom
+                    page={page}
+                    book={book}
+                    actions={actions}
+                    form={form}
+                />
+            );
+            //-----DAD
+        case "dadChemistryProoved":
+            return (
+                <DadChemistryProoved
+                    page={page}
+                    book={book}
+                    actions={actions}
+                    form={form}
+                />
+            );
+        case "formulaDad":
+            return (
+                <FormulaDad
+                    page={page}
+                    book={book}
+                    actions={actions}
+                    form={form}
+                />
+            );
+        case "geniusQuoteDad":
+            return (
+                <GeniusQuoteDad
+                    page={page}
+                    book={book}
+                    actions={actions}
+                    form={form}
+                />
+            );
+        case "prideOfDad":
+            return (
+                <PrideOfDad
+                    page={page}
+                    book={book}
+                    actions={actions}
+                    form={form}
+                />
+            );
+        case "credoDad":
+            return (
+                <CredoDad
+                    page={page}
+                    book={book}
+                    actions={actions}
+                    form={form}
+                />
+            );
+        case "thanksForDad":
+            return (
+                <ThanksForDad
                     page={page}
                     book={book}
                     actions={actions}

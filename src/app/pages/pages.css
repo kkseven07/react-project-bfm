@@ -91,7 +91,14 @@
 }
 
 /*FONTS*/
-
+@font-face {
+  font-family: 'LifehackSansMedium';
+  src: url('../../../assets/fonts/LifehackSansMedium.woff2');
+}
+@font-face {
+  font-family: 'CoreSansGRegular';
+  src: url('../../../assets/fonts/CoreSansGRegular.woff2');
+}
 @font-face {
   font-family: 'UniSansHeavy';
   src: url('../../../assets/fonts/Uni-Sans-Heavy.woff2');
