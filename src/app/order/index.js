@@ -158,7 +158,7 @@ class Order extends React.Component {
                                 {total} тг
                             </div>
                         </div>
-                    
+
                         <div
                             style={{display:'flex', width:'90%', maxWidth:'500px', padding:'20px 0', justifyContent:'space-between',
                                 alignItems:'flex-start'
@@ -174,9 +174,6 @@ class Order extends React.Component {
                                 <ErrorText text={this.props.form.promo.errorText} />
                             </div>
                             <Button>Применить</Button>
-                    </div>
-
-
                         </div>
                     </div>}
                     {this.state.showConfirm&&<div
