@@ -35,6 +35,7 @@ export const storageCreateBook = (action$, store) =>
             var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
 
             console.log(decryptedData, "decrypt");
+
             try {
                 localStorage.setItem(
                     "bookKey_" + currentBookId,
