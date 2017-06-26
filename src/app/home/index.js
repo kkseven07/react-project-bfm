@@ -21,28 +21,33 @@ const scrollTo = () => {
         containerId: "ContainerElementID"
     });
 };
-const Home=props => {
-    window.scrollTo(0, 0);
-    return (
-        <div className="full flex flex-center flex-column">
-            <Gallery actions={props.actions} scrollTo={scrollTo} />
-            <Video />
-            <Element style={{ width: "100%" }} name="myScrollToElement">
-                <BookForm history={props.history} />
-            </Element>
-            <Product />
-            <Reviews />
-            <Footer />
-        </div>
-    );
-};
+class Home extends React.Component {
+    componentWillMount(){
+        this.props.actions.setupScroll(scrollTo)
+    }
 
-const mapStateToProps = state => ({
-});
+    render() {
+        const props=this.props
+        // window.scrollTo(0, 0);
+        return (
+            <div className="full flex flex-center flex-column">
+                <Gallery actions={props.actions} scrollTo={scrollTo} />
+                <Video />
+                <Element style={{ width: "100%" }} name="myScrollToElement">
+                    <BookForm history={props.history} />
+                </Element>
+                <Product />
+                <Reviews />
+                <Footer />
+            </div>
+        );
+    }
+}
+
+const mapStateToProps = state => ({});
 
 const mapDispatchToProps = dispatch => ({
     actions: bindActionCreators(actions, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
-
