@@ -38,9 +38,10 @@ export const cellTime = (month, year) =>
 export const textColor = (bacgroundColor, colors) =>
     colors.filter(cmap => cmap.background === bacgroundColor)[0].text;
 
-export const getBookName = (bookName, name) => {
+export const getBookName = (bookName, name,bookType) => {
+    const text=bookType==="you"?"ТЕБЕ":bookType==="mom"?"МАМЕ":"ПАПЕ"
     if (name === "") {
-        return "КНИГА\nО\nТЕБЕ";
+        return "КНИГА\nО\n"+text;
     }
     if (bookName.trim() === "") {
         return name.toUpperCase();
@@ -137,7 +138,7 @@ export const checkLength = (name, breakpoint, fontsize, params) => {
             for (let i = 0; i < diff; i++) {
                 if (diff - k === 0) {
                     size = size * 0.9;
-                    k = k - 1; 
+                    k = k - 1;
                 } else if (diff - k > 0 && diff - k < 50) {
                     size = size * 0.93;
                     k = k - 1;
@@ -148,7 +149,7 @@ export const checkLength = (name, breakpoint, fontsize, params) => {
             for (let i = 0; i < diff; i++) {
                 if (diff - k === 0) {
                     size = size * 0.9;
-                    k = k - 1; 
+                    k = k - 1;
                 } else if (diff - k > 0 && diff - k < 50) {
                     size = size * 0.985;
                     k = k - 1;
@@ -159,7 +160,7 @@ export const checkLength = (name, breakpoint, fontsize, params) => {
             for (let i = 0; i < diff; i++) {
                 if (diff - k === 0) {
                     size = size * 0.85;
-                    k = k - 1; 
+                    k = k - 1;
                 } else if (diff - k > 0 && diff - k < 50) {
                     k = k - 1;
                     size = size * 0.99;

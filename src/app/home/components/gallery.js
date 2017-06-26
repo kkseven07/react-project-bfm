@@ -12,7 +12,15 @@ export default props => {
             }}
             styleName="r"
         >
-            <div onClick={props.scrollTo} styleName="start-btn">Начать</div>
+            <div
+                onClick={() => {
+                    props.scrollTo();
+                    props.actions.setupBookType("mom")
+                }}
+                styleName="start-btn"
+            >
+                Начать
+            </div>
             <div styleName="text">СОЗДАЙ НЕЗАБЫВАЕМЫЙ ПОДАРОК</div>
         </div>
     );

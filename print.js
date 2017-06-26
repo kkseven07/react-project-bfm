@@ -165,7 +165,7 @@ let getUrls = (types,book_id) =>
 
 let print = (urls, book_id) => {
     shell.exec(
-        `electroshot [${urls} 1024x1024]  --delay 4000 --out ../print/${book_id} --filename '{name}.png'`
+        `electroshot [${urls} 1024x1024]  --delay 5000  --out ../print/${book_id} --filename '{name}.png'`
     );
 };
 

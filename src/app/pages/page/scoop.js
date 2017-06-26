@@ -32,7 +32,7 @@ class Scoop extends Component {
     return (
       <div className="full" styleName="r">
         <div className="flex-center" styleName="empty">
-          <div styleName="year-text">{year} год</div>
+          <div styleName="year-text"> Общий сбор новостей за {year} год</div>
         </div>
 
         <div className="flex-center" styleName="first">

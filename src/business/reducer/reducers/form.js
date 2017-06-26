@@ -30,17 +30,24 @@ const init = {
       errorText: ""
    },
    relation: {
-      value: "Кем приходитесь?",
+      value: "you",
       isPristine: true,
       isValid: true,
+      errorText: ""
+   },
+   sondaug: {
+      value: "Кем приходитесь?",
+      isPristine: true,
+      isValid: false,
       errorText: ""
    },
    senderName: { value: "", isPristine: true, isValid: true, errorText: "" },
    calculatedAge: "",
    dateExists: true,
    isNext: false,
+   verifyed: true,
    canCreate: false,
-   captchaPristine:true
+   captchaPristine: true
 };
 
 const forTest = {
@@ -59,6 +66,12 @@ const forTest = {
       isValid: true,
       errorText: ""
    },
+   sondaug: {
+      value: "Кем приходитесь?",
+      isPristine: true,
+      isValid: true,
+      errorText: ""
+   },
    month: {
       value: months[Math.floor(Math.random() * 11)],
       isPristine: false,
@@ -73,7 +86,7 @@ const forTest = {
    },
    age: { value: "today", isPristine: false, isValid: true, errorText: "" },
    relation: {
-      value: "dad",
+      value: "mom",
       isPristine: false,
       isValid: true,
       errorText: ""
@@ -89,16 +102,26 @@ const forTest = {
    isNext: false,
    canCreate: false,
    verifyed: true,
-   captchaPristine:true
+   captchaPristine: true
 };
 
-let partOne = ["name", "gender", "day", "month", "year", "senderName"];
+let partOne = [
+   "name",
+   "gender",
+   "day",
+   "month",
+   "year",
+   "senderName",
+   "sondaug"
+];
 let partTwo = ["senderName", "relation"];
 import * as selector from "./selectorForm";
 import { data } from "../../../app/shared";
 
-export default (state = forTest, action) => {
+export default (state = init, action) => {
    // //(action)
+      console.log(action.type)
+
    switch (action.type) {
       case "CHANGE_FORM":
          if (action.isNext) {
@@ -144,7 +167,7 @@ export default (state = forTest, action) => {
                canCreate = false;
                return {
                   ...state,
-                  captchaPristine:false,
+                  captchaPristine: false,
                   isNext: action.part === "partOne" ? false : true,
                   canCreate,
                   ...list,
@@ -159,14 +182,47 @@ export default (state = forTest, action) => {
             };
          }
       case "CAPTCHA_VERIFY":
-         return {...state, verifyed:true, captchaPristine:false}
+         return { ...state, verifyed: true, captchaPristine: false };
+      case "SETUP_BOOK_TYPE":
+         if (action.bookType === "you") {
+            return {
+               ...state,
+               sondaug: { valid: true },
+               relation: { value: "you", valid: true, refr: "you" }
+            };
+         } else if (action.bookType === "mom") {
+            return {
+               ...state,
+               gender: { value: "female", valid: true },
+               relation: { value: "mom", valid: true, refr: "mom" }
+            };
+         } else {
+            return {
+               ...state,
+               gender: { value: "male", valid: true },
+               relation: { value: "dad", valid: true, refr: "dad" }
+            };
+         }
       case "ENTER_INPUT":
          const { isValid, errorText } = selector.validate(
             action.text,
             action.field
          );
+         let rel = null;
+         if (action.field === "sondaug") {
+            rel = {
+               relation: {
+                  value: action.text === "son"
+                     ? state.relation.refr + "_s"
+                     : state.relation.refr + "_d",
+                  valid: true,
+                  refr: state.relation.refr
+               }
+            };
+         }
          return {
             ...state,
+            ...rel,
             [action.field]: {
                ...state[action.field],
                value: action.text,
@@ -204,7 +260,7 @@ export default (state = forTest, action) => {
             return { ...state, calculatedAge, dateExists, inputEntered: true };
          }
       case "CLEAR_GIFT_FORM":
-         return forTest;
+         return init;
       default:
          return state;
    }

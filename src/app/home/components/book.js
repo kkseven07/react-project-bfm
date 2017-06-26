@@ -1,6 +1,5 @@
 import React from "react";
 import "./book.css";
-import { connect } from "react-redux";
 import { utils } from "../../shared";
 const getFontSize = str => {
     if (str.length > 9 && str.length < 15) {
@@ -15,9 +14,9 @@ const getFontSize = str => {
         return "1em";
     }
 };
-const Book = ({ bookName, name }) => {
-    const result = utils.getBookName(bookName, name);
-    const toRender = utils.getBookName(bookName, name);
+export default({ bookName, name,bookType }) => {
+    const result = utils.getBookName(bookName, name,bookType);
+    const toRender = utils.getBookName(bookName, name,bookType);
     let fontSize = "1em";
 
     if (result instanceof Array) {
@@ -35,9 +34,4 @@ const Book = ({ bookName, name }) => {
     );
 };
 
-const mapStateToProps = state => ({
-    name: state.form.name.value,
-    bookName: state.form.bookName.value
-});
 
-export default connect(mapStateToProps)(Book);
