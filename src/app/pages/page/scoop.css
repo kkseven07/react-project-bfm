@@ -4,7 +4,7 @@
 
 .r{
     flex-wrap:wrap;
-    font-family: 'Sylfaen';
+    font-family: 'Times New Roman';
     color: #525046;
     position: relative;
 }
@@ -13,7 +13,7 @@
     font-size: 0.6em;
     position: absolute;
     top: 20.2%;
-    left: 59.5%;
+    font-weight: 900;
 }
 
 ul{
@@ -27,7 +27,6 @@ ul{
 .empty{
     width:100%;
     padding-top:18%;
-    padding-left:16%;
     height:25%;
 }
 .first{

@@ -174,9 +174,6 @@ class Order extends React.Component {
                                 <ErrorText text={this.props.form.promo.errorText} />
                             </div>
                             <Button>Применить</Button>
-                    </div>
-
-
                         </div>
                     </div>}
                     {this.state.showConfirm&&<div

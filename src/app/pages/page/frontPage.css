@@ -1,0 +1,26 @@
+.r {
+	position: relative;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.part1 {
+	width: 80%;
+	position: absolute;
+	top:32%;
+	font-size: 2.5em;
+	text-align: center;
+	font-family: 'BebasRegular';
+}
+.part2 {
+	height: 25%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	bottom:0;
+	flex-direction: column;
+	align-items: center;
+	font-size: 0.6em;
+	font-family: 'GothamRegular';
+}

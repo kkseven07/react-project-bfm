@@ -42,14 +42,14 @@ import GeniusQuoteMom from "./page/geniusQuoteMom";
 import PrideOfMom from "./page/prideOfMom";
 import CredoMom from "./page/credoMom";
 import ThanksForMom from "./page/thanksForMom";
-
 import DadChemistryProoved from "./page/dadChemistryProoved";
 import FormulaDad from "./page/formulaDad";
 import GeniusQuoteDad from "./page/geniusQuoteDad";
 import PrideOfDad from "./page/prideOfDad";
 import CredoDad from "./page/credoDad";
 import ThanksForDad from "./page/thanksForDad";
-
+import FrontPage from "./page/frontPage";
+import FrontPageBack from "./page/frontPageBack";
 
 const noImage = ["cover", "coverChooser"];
 import { editable } from "../shared/utils.js";
@@ -199,7 +199,13 @@ class Page extends Component {
         else if (type === "thanksForDad") {
 
             return <ThanksForDad page={page} book={book} />;
-        }else {
+        } else if (type === "frontPage" || type==="endPage") {
+
+            return <FrontPage page={page} book={book} />;
+        } else if (type === "frontPageBack") {
+
+            return <FrontPageBack page={page} book={book} />;
+        } else {
             return <div />;
         }
     };
