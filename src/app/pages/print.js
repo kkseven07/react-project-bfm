@@ -12,7 +12,7 @@ class Print extends React.Component {
             console.log("getting book from cache");
             this.props.actions.loadFromCache(book);
         } else {
-            this.props.actions.getBook(book_id, type);
+            this.props.actions.getBook(book_id);
         }
     }
 
@@ -20,10 +20,10 @@ class Print extends React.Component {
         const { book_id, type } = this.props.match.params;
         let { bookId, book } = this.props;
         if (!book[bookId]) return null;
-        const { pages, ...rest } = book[bookId];
-        console.log(pages)
-        const page = values(pages).filter(page => page.type === type)[0];
+        const { pages, ...rest } = book[book_id];
         const bData = rest;
+        const page = values(pages).filter(page => page.type === type)[0];
+
         return <Page url={this.props.url} print book={bData} page={page} />;
     }
 }

@@ -76,7 +76,6 @@ export default (state = { currentBookId: null }, action) => {
          };
 
       case "UPDATE_PAGE":
-         console.log("update page", action.page)
          let page_to_update = action.page;
          let params = action.params;
          let selectedImage = params.selectedImage;
@@ -87,7 +86,6 @@ export default (state = { currentBookId: null }, action) => {
             let arr=page_to_update.primary_image.image.url.split("_")
             arr[1]=text
             selectedImage=arr.join("_")
-            console.log(page_to_update,arr)
          }
          let text1 = params.text1 || page_to_update.data.text1;
          let text2 = params.text2 || page_to_update.data.text2;
