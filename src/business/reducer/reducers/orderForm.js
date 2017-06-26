@@ -81,6 +81,11 @@ export default (state = test, action) => {
                 }
 
             }
+            case "CREATE_ORDER_FULFILLED" :
+            return {
+                ...state,
+                canConfirm:false
+            };
 
 
 
