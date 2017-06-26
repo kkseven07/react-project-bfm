@@ -13,7 +13,7 @@ const defaultFields = [
     "День",
     "Кем приходитесь?"
 ];
-const selectFields = ["gender", "age", "relation", "month", "day", "year"];
+const selectFields = ["gender", "age", "relation", "month", "day", "year","sondaug"];
 
 export const validateSelect = str => {
     if (defaultFields.indexOf(str) > -1) {

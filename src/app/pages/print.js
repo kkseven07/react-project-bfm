@@ -24,7 +24,9 @@ class Print extends React.Component {
         const bData = rest;
         const page = values(pages).filter(page => page.type === type)[0];
 
-        return <Page url={this.props.url} print book={bData} page={page} />;
+        return (
+                <Page id={`${page.type}`} url={this.props.url} print book={bData} page={page} />
+        )
     }
 }
 const mapStateToProps = state => ({

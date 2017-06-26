@@ -8,8 +8,8 @@ export default (state = { loading: false, type: "" }, action) => {
     case "GET_BOOK":
     // case "UPDATE_PAGE":
     //   return  {loading:true, type:"updatePage"}
-    case "LOAD_FROM_CACHE":
-      return { loading: true, type: "getBook" };
+    // case "LOAD_FROM_CACHE":
+    //   return { loading: true, type: "getBook" };
     case "CONFIRM_ORDER":
       return {loading:true, type:"createOrder"}
     case "FETCH_BOOK_FULFILLED_DELAY":

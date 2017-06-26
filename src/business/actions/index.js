@@ -8,7 +8,9 @@ export const osName = name => {
 export const enterInput = (text, field) => {
     return { type: "ENTER_INPUT", text, field };
 };
-
+export const setupBookType=(bookType)=>{
+    return {type:"SETUP_BOOK_TYPE", bookType}
+}
 export const captchaVerify = () => {
     return { type: "CAPTCHA_VERIFY" };
 };
