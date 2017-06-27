@@ -1,6 +1,6 @@
-import every from "lodash/every";
 import mapValues from "lodash/mapValues";
 import find from "lodash/find";
+import every from "lodash/every"
 export const months = [
    "Январь",
    "Февраль",

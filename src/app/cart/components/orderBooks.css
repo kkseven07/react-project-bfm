@@ -3,7 +3,6 @@
     width:170px;
     justify-content: flex-end;
     align-items: flex-end;
-    padding:6px;
     white-space: pre-line;
     text-align: right;
     padding-bottom:0;
@@ -45,6 +44,13 @@
     font-family:"RobotoMedium";
     font-size:22px;
 
+}
+.korewok {
+    height: 99.5%;
+    width: 0.5%;
+    position: absolute;
+    left: 4%;
+    box-shadow: -0.05em 0 0.07em #b9b7b7; 
 }
 @media screen and (min-width:551px) and (max-width: 745px){
     .r{

@@ -39,8 +39,15 @@ export const validate = (str, field) => {
             return {
                 isValid: false,
                 errorText: `Длина текста превышает допустимую`
-            };
+            }
         }
+        else if (str.split(" ").length>5) {
+            return {
+                isValid:false,
+                errorText:'Максимальное количество слов - 5'
+            }
+        }
+        
         return validateMicro(str);
     }
     //promo

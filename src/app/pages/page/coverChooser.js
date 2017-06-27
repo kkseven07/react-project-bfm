@@ -20,7 +20,8 @@ class CoverChooser extends Component {
                             onClick={e => {
                                 this.props.actions.updatePage(this.props.page, {
                                     background: color.background,
-                                    text_color: color.text
+                                    text_color: color.text,
+                                    border_color:color.borderColor
                                 });
                             }}
                             key={color.background}
