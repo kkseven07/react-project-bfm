@@ -8,7 +8,6 @@ import {
     getBook,
     upload,
     getBookPage,
-    updateOrder,
     createOrder
 } from "./epics/api";
 import {
@@ -37,7 +36,6 @@ const rootEpic = combineEpics(
     bookVersion,
     genPages,
     updatePage,
-    updateOrder,
     changeRoute,
     getBook,
     upload,

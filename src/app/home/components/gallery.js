@@ -15,7 +15,7 @@ export default props => {
             <div
                 onClick={() => {
                     props.scrollTo();
-                    props.actions.setupBookType("mom")
+                    props.actions.setupBookType("you")
                 }}
                 styleName="start-btn"
             >

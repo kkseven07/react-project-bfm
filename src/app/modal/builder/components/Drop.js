@@ -34,12 +34,12 @@ class Drop extends Component {
 
 	onDrop = (dropFiles, err, e) => {
 		const reader = new FileReader();
-        reader.onload = ((file)=>{
-            return (e)=>{
-            	this.setState({fileURL:e.target.result})
-            }
-        })(dropFiles[0]);
-        reader.readAsDataURL(dropFiles[0]);
+		reader.onload = (file => {
+			return e => {
+				this.setState({ fileURL: e.target.result });
+			};
+		})(dropFiles[0]);
+		reader.readAsDataURL(dropFiles[0]);
 	};
 
 	upload = () => {
@@ -55,7 +55,6 @@ class Drop extends Component {
 	onSuccessDropbox = file => {
 		this.fetchFromUrl(file[0].link, file[0].name);
 	};
-
 
 	fetchFromUrl(url, name) {
 		fetch(url, {
@@ -80,11 +79,11 @@ class Drop extends Component {
 	setEditorRef = editor => {
 		this.editor = editor;
 	};
-	imageChange=(e)=>{
-		let canvas=this.editor.getImageScaledToCanvas()
+	imageChange = e => {
+		let canvas = this.editor.getImageScaledToCanvas();
 		let dataurl = canvas.toDataURL("img/jpg", 2);
-		this.setState({final:dataurl})
-	}
+		this.setState({ final: dataurl });
+	};
 
 	render() {
 		return (
@@ -103,20 +102,23 @@ class Drop extends Component {
 						<p styleName="text">или</p>
 						<p styleName="text">Нажмите здесь</p>
 					</Dropzone>}
-				{this.state.fileURL&&<AvatarEditor
-					// style={{ width: 200 }}
-					ref={this.setEditorRef}
-					image={this.state.fileURL&&this.state.fileURL}
-					onImageChange={this.imageChange}
-					// crossOrigin="anonymous"
-					onImageReady={this.imageChange}
-					width={400}
-					height={400}
-					border={20}
-					color={[255, 255, 255, 0.6]} // RGBA
-					scale={1}
-					rotate={0}
-				/>}
+				<div style={{cursor:"all-scroll"}}>
+					{this.state.fileURL &&
+						<AvatarEditor
+							// style={{ width: 200 }}
+							ref={this.setEditorRef}
+							image={this.state.fileURL && this.state.fileURL}
+							onImageChange={this.imageChange}
+							// crossOrigin="anonymous"
+							onImageReady={this.imageChange}
+							width={400}
+							height={400}
+							border={20}
+							color={[255, 255, 255, 0.6]} // RGBA
+							scale={1}
+							rotate={0}
+						/>}
+				</div>
 			</div>
 		);
 	}

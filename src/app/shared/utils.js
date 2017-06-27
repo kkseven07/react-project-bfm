@@ -40,7 +40,7 @@ export const textColor = (bacgroundColor, colors) =>
 
 export const getBookName = (bookName, name,bookType) => {
     const text=bookType==="you"?"ТЕБЕ":bookType==="mom"?"МАМЕ":"ПАПЕ"
-    if (name === "") {
+    if (name === "" && bookName==="") {
         return "КНИГА\nО\n"+text;
     }
     if (bookName.trim() === "") {
@@ -265,73 +265,73 @@ export const months = [
     "Ноябрь",
     "Декабрь"
 ];
-export const colors = [
-    {
-        background: "#a0dbeb ",
-        text: "black"
-    },
-    {
-        background: "#73dcb4 ",
-        text: "black"
-    },
-    {
-        background: "#fa2d2e ",
-        text: "white"
-    },
-    {
-        background: "#ffd632 ",
-        text: "black"
-    },
-    {
-        background: "#c570e5 ",
-        text: "black"
-    },
-    {
-        background: "#ff8c1b ",
-        text: "black"
-    },
-    {
-        background: "#2d292a ",
-        text: "white"
-    },
-    {
-        background: "#ffc5d9 ",
-        text: "black"
-    }
-  ];
 // export const colors = [
 //     {
-//         background: "#DAAAA6 ",
+//         background: "#a0dbeb ",
 //         text: "black"
 //     },
 //     {
-//         background: "#769E95 ",
+//         background: "#73dcb4 ",
 //         text: "black"
 //     },
 //     {
-//         background: "#090A0A ",
+//         background: "#fa2d2e ",
 //         text: "white"
 //     },
 //     {
-//         background: "#ECE16E ",
+//         background: "#ffd632 ",
 //         text: "black"
 //     },
 //     {
-//         background: "#D59146 ",
+//         background: "#c570e5 ",
 //         text: "black"
 //     },
 //     {
-//         background: "#CE5B95 ",
+//         background: "#ff8c1b ",
 //         text: "black"
 //     },
 //     {
-//         background: "#C4312D ",
+//         background: "#2d292a ",
 //         text: "white"
 //     },
 //     {
-//         background: "#A3C384 ",
+//         background: "#ffc5d9 ",
 //         text: "black"
 //     }
 //   ];
+export const colors = [
+    {
+        background: "#DAAAA6 ",
+        text: "black"
+    },
+    {
+        background: "#769E95 ",
+        text: "black"
+    },
+    {
+        background: "#090A0A ",
+        text: "white"
+    },
+    {
+        background: "#ECE16E ",
+        text: "black"
+    },
+    {
+        background: "#D59146 ",
+        text: "black"
+    },
+    {
+        background: "#CE5B95 ",
+        text: "black"
+    },
+    {
+        background: "#C4312D ",
+        text: "white"
+    },
+    {
+        background: "#A3C384 ",
+        text: "black"
+    }
+  ];
 
 
