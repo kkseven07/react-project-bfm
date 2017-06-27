@@ -40,7 +40,7 @@ export const textColor = (bacgroundColor, colors) =>
 
 export const getBookName = (bookName, name,bookType) => {
     const text=bookType==="you"?"ТЕБЕ":bookType==="mom"?"МАМЕ":"ПАПЕ"
-    if (name === "") {
+    if (name === "" && bookName==="") {
         return "КНИГА\nО\n"+text;
     }
     if (bookName.trim() === "") {

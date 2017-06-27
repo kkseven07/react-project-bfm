@@ -19,6 +19,8 @@ let prices = {
     fumoney: 99000
 };
 
+const priceIndex=1
+
 class Order extends React.Component {
     state={showConfirm:false}
 

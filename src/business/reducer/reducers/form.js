@@ -126,7 +126,7 @@ import * as selector from "./selectorForm";
 import { data } from "../../../app/shared";
 
 export default (state = init, action) => {
-
+   // console.log(action.type)
    switch (action.type) {
       case "CHANGE_FORM":
          if (action.isNext) {

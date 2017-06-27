@@ -2,6 +2,8 @@ import { ajax } from "rxjs/observable/dom/ajax";
 import Hashids from "hashids";
 import { of as ofObs } from "rxjs/observable/of";
 import url from "../../../entry/url";
+var Base64 = require('js-base64').Base64;
+
 const ajaxObject = {
     method: "POST",
     content_type: "application/json",
@@ -63,53 +65,6 @@ export const updatePage = action$ =>
             return [{ type: "CLOSE_MODAL" },{type:"UPDATE_PAGE_DONE"}];
         }
     });
-export const updateOrder = (action$, store) =>
-    action$.ofType("UPDATE_ORDER").mergeMap(({ order_id, params }) => {
-        let price;
-        const book_state = store.getState().book;
-        const book_id = book_state.currentBookId;
-        const book = book_state[book_id];
-        if (params.value === "digital") {
-            price = 2900;
-        } else if (params.value === "soft" && params.size === "21") {
-            price = 9900;
-        } else if (params.value === "soft" && params.size === "23") {
-            price = 11900;
-        } else if (params.value === "hard" && params.size === "21") {
-            price = 14900;
-        } else if (params.value === "hard" && params.size === "23") {
-            price = 17900;
-        }
-        const book_price = price + "";
-        if (params.giftWrap !== "" && params.value !== "digital") {
-            price = price + 1000;
-        }
-        const toSend = {
-            type: params.value,
-            price: price + "",
-            data: { size: params.size, gift_wrap: params.giftWrap, book_price }
-        };
-        if (
-            toSend.type === book.order.type &&
-            toSend.price === book.order.price &&
-            toSend.data.size === book.order.data.size &&
-            toSend.data.giftWrap === book.order.data.giftWrap
-        ) {
-            return [{ type: "LOCAL_UPDATE_ORDER" }];
-        }
-
-        return ajax({
-            url: `${url}/api/v1/orders/${order_id}`,
-            body: { params: JSON.stringify(toSend) },
-            ...ajaxObject
-        })
-            .flatMap(ajax => {
-                return [
-                    { type: "UPDATE_ORDER_FULFILLED", payload: ajax.response }
-                ];
-            })
-            .catch(error => ofObs({ type: "AJAX_ERROR", payload: error }));
-    });
 
 export const createOrder = (action$, store) =>
     action$.ofType("CONFIRM_ORDER").switchMap(({order})=> {
@@ -146,7 +101,8 @@ export const createBook = action$ =>
             .flatMap(ajax => {
                 let hashed_id = createHashid(ajax.response.book.id);
                 //("in create book api epic", hashed_id);
-
+                console.log(ajax.response)
+                console.log(Base64.decode(ajax.response.test.pages))
                 history.push(`/books/${hashed_id}`);
                 return [
                     { type: "FETCH_BOOK_FULFILLED", payload: ajax.response },
