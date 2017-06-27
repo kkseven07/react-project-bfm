@@ -11,6 +11,7 @@ export const normaliseBooks = books => {
 import reverse from "lodash/reverse";
 import omit from "lodash/omit";
 export default (state = { currentBookId: null }, action) => {
+   console.log("DADA", action.type)
    switch (action.type) {
       case "DELETE_BOOKS_FROM_CACHE_FULFILLED":
           return {}
@@ -91,6 +92,7 @@ export default (state = { currentBookId: null }, action) => {
          let text2 = params.text2 || page_to_update.data.text2;
          let background = params.background || page_to_update.data.background;
          let text_color = params.text_color || page_to_update.data.text_color;
+         let border_color = params.border_color || page_to_update.data.border_color;
          let page_to_return = {
             ...page_to_update,
             primary_image: {
@@ -107,7 +109,8 @@ export default (state = { currentBookId: null }, action) => {
                text1,
                text2,
                background,
-               text_color
+               text_color,
+               border_color
             }
          };
          return {

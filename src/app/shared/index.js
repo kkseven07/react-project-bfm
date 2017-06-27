@@ -12,6 +12,7 @@ import ErrorText from './components/errorText'
 import DescText from './components/formDesсriptionText'
 import DescSmall from './components/formDesсriptionSmall'
 import asyncModule from './components/asyncModule'
+import Paspartu from './components/paspartu'
 export {
     utils,
     data,
@@ -25,5 +26,6 @@ export {
     Background,
     DescSmall,
     DescText,
-    asyncModule
+    asyncModule,
+    Paspartu
 }

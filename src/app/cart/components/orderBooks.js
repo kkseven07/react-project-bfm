@@ -4,6 +4,7 @@ import values from "lodash/values";
 import reverse from "lodash/reverse";
 import { getBookName, textColor } from "../../shared/utils.js";
 import Summary from "./summary";
+import {Paspartu} from '../../shared';
 
 const getCover = book => {
     let data = values(book.pages);
@@ -54,10 +55,12 @@ export default ({ book, history, edit }) => {
                 styleName="r"
                 style={{
                     background: color.background,
-                    color: color.text_color
+                    color: color.text_color,
+                    position:'relative'
                 }}
             >
-                {getBookName(book.book_name, book.name)}
+                <div styleName="korewok"></div>
+                <Paspartu name={getBookName(book.book_name, book.name)} page={getCover(book)}/>
 
             </div>
 

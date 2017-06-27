@@ -3,6 +3,7 @@ import "./book.css";
 import values from "lodash/values";
 import reverse from "lodash/reverse";
 import Hashids from "hashids";
+import {Paspartu} from '../../shared'
 const getCover = book => {
     let data = values(book.pages);
     return data.filter(v => v.type === "cover")[0];
@@ -39,11 +40,12 @@ export default ({ book, history }) => {
                 styleName="r"
                 style={{
                     background: color.background,
-                    color: color.text_color
+                    color: color.text_color,
+                    position:'relative'
                 }}
             >
-                {getBookName(book.book_name, book.name)}
-
+                <div styleName="korewok"></div>
+                <Paspartu name={getBookName(book.book_name, book.name)} page={getCover(book)}/>
             </div>
 
             <div
