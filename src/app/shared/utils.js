@@ -301,36 +301,44 @@ export const months = [
 //   ];
 export const colors = [
     {
-        background: "#DAAAA6 ",
-        text: "black"
+        background: "#ffd8d4 ",
+        text: "black",
+        borderColor:"rgb(247, 203, 199)"
     },
     {
-        background: "#769E95 ",
-        text: "black"
+        background: "rgb(176, 227, 215)",
+        text: "black",
+        borderColor:"rgb(178, 235, 222)"
     },
     {
-        background: "#090A0A ",
-        text: "white"
+        background: "rgb(35, 37, 37)",
+        text: "white",
+        borderColor:"rgb(32, 33, 33)"
     },
     {
-        background: "#ECE16E ",
-        text: "black"
+        background: "rgb(255, 243, 123)",
+        text: "black",
+        borderColor:"rgb(251, 239, 106)"
     },
     {
-        background: "#D59146 ",
-        text: "black"
+        background: "rgb(247, 170, 85)",
+        text: "black",
+        borderColor:"rgb(243, 162, 74)"
     },
     {
-        background: "#CE5B95 ",
-        text: "black"
+        background: "rgb(190, 74, 132)",
+        text: "black",
+        borderColor:"rgb(202, 73, 139)"
     },
     {
-        background: "#C4312D ",
-        text: "white"
+        background: "rgb(214, 34, 30)",
+        text: "white",
+        borderColor:"rgb(223, 36, 31)"
     },
     {
-        background: "#A3C384 ",
-        text: "black"
+        background: "rgb(175, 227, 124)",
+        text: "black",
+        borderColor:"rgb(167, 223, 111)"
     }
   ];
 
