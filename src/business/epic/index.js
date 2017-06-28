@@ -9,7 +9,11 @@ import {
     upload,
     getBookPage,
     createOrder,
+
+    bookFormat,
+
     checkVoucher
+
 } from "./epics/api";
 import {
     storageCreateBook,
@@ -33,6 +37,7 @@ const rootEpic = combineEpics(
     input,
     changeForm,
     createBook,
+    bookFormat,
     createOrder,
     bookVersion,
     genPages,

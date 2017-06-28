@@ -73,6 +73,10 @@ export const updatePage = (page, params) => {
     return { type: "UPDATE_PAGE", page, params };
 };
 
+export const bookFormat = (book) => {
+    return {type: "BOOK_FORMAT", book}
+}
+
 export const createOrder = params => {
     return { type: "CREATE_ORDER", params };
 };
