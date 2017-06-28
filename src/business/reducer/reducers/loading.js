@@ -3,7 +3,10 @@ export default (state = { loading: false, type: "" }, action) => {
     case "GEN_PAGES":
     case "CREATE_BOOK":
       return { loading: true, type: "createBook" };
+    case "UPLOAD":
+      return { loading: true, type: "upload" };
     case "UPDATE_ORDER":
+
       return {loading:true, type:"updateOrder"}
     case "GET_BOOK":
     // case "UPDATE_PAGE":
@@ -15,6 +18,7 @@ export default (state = { loading: false, type: "" }, action) => {
     case "FETCH_BOOK_FULFILLED_DELAY":
     case "GEN_PAGES_FULFILLED":
     case "UPDATE_PAGE_FULFILLED":
+    case "UPLOAD_FULFILLED":
     case "UPDATE_PAGE_DONE":
     case "LOAD_FROM_CACHE_FULFILLED":
     case "UPDATE_ORDER_FULFILLED":

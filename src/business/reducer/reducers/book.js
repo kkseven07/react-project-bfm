@@ -11,7 +11,6 @@ export const normaliseBooks = books => {
 import reverse from "lodash/reverse";
 import omit from "lodash/omit";
 export default (state = { currentBookId: null }, action) => {
-   console.log("DADA", action.type)
    switch (action.type) {
       case "DELETE_BOOKS_FROM_CACHE_FULFILLED":
           return {}
@@ -127,13 +126,14 @@ export default (state = { currentBookId: null }, action) => {
       case "UPLOAD_FULFILLED":
          // case "UPDATE_PAGE_FULFILLED":
          let page = action.payload.page;
+         let oldPage=state[action.payload.book_id].pages[page.id]
          return {
             ...state,
             [action.payload.book_id]: {
                ...state[action.payload.book_id],
                pages: {
                   ...state[action.payload.book_id].pages,
-                  [action.payload.page.id]: page
+                  [page.id]: {...page,data:{...page.data, text:oldPage.data.text}}
                }
             }
          };

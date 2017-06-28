@@ -61,7 +61,7 @@ const styles = {
 
 class Header extends React.Component {
     state = { isOpen: false };
-    
+
     // componentDidMount() {
     //     document.body.addEventListener('click', this.triggerClickHandler, true);
     // }
@@ -107,7 +107,6 @@ class Header extends React.Component {
     //     e.nativeEvent.stopImmediatePropagation();
     //   }
     componentWillReceiveProps(props) {
-        console.log("prop", this.props.actions)
     }
     render() {
         const { currentBookId, ...books } = this.props.book;
@@ -117,7 +116,6 @@ class Header extends React.Component {
         const orderCount = values(orders).length;
         const location = history.location.pathname;
         let dropStyle = this.state.isOpen ? "flex" : "none";
-        console.log("HAAA")
         return (
             <div styleName="header">
                 {this.props.menu && // MOBILE MENU

@@ -13,7 +13,6 @@ const getFontSize = str => {
         countWord=str.split('\n').length;
     }
     let fontSize='';
-    console.log("maxword", maxWord.length, maxWord)
     // console.log("length", maxWord.length, maxWord)
     if (maxWord.length >= 9 && maxWord.length < 13) {
         fontSize =  "0.52em";
@@ -51,11 +50,11 @@ export default({ bookName, name,bookType, page}) => {
     return (
         <div styleName="r" className="flex app-blue" >
             <div styleName="korewok"></div>
-            <div 
-                style={{ 
+            <div
+                style={{
                     fontSize: fontSize, fontFamily: "BebasBold", width:'100%', height:'100%',
                     display:'flex', alignItems:'flex-end', justifyContent:'flex-end'
-                }} 
+                }}
             >
                 <Paspartu name={toRender} page={page}/>
             </div>

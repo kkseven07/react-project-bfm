@@ -99,19 +99,18 @@ export const createBook = action$ =>
             ...ajaxObject
         })
             .flatMap(ajax => {
-                let hashed_id = createHashid(ajax.response.book.id);
-                //("in create book api epic", hashed_id);
-                console.log(ajax.response)
-                console.log(Base64.decode(ajax.response.test.pages))
+                let response = Base64.decode(ajax.response.book_uuid)
+                response = JSON.parse(response)
+                let hashed_id = createHashid(response.book.id);
                 history.push(`/books/${hashed_id}`);
                 return [
-                    { type: "FETCH_BOOK_FULFILLED", payload: ajax.response },
+                    { type: "FETCH_BOOK_FULFILLED", payload:response },
                     {
                         type: "OPEN_MODAL",
                         page: { type: "info" },
                         book: {
-                            book: ajax.response.book,
-                            cover: ajax.response.pages[0]
+                            book:response.book,
+                            cover:response.pages[0]
                         }
                     },
                 ];
