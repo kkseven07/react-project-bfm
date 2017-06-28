@@ -15,6 +15,8 @@ export default (state = { loading: false, type: "" }, action) => {
     //   return { loading: true, type: "getBook" };
     case "CONFIRM_ORDER":
       return {loading:true, type:"createOrder"}
+    case "CHECK_VOUCHER":
+      return {loading:true, type:"checkVoucher"}
     case "FETCH_BOOK_FULFILLED_DELAY":
     case "GEN_PAGES_FULFILLED":
     case "UPDATE_PAGE_FULFILLED":
@@ -25,6 +27,8 @@ export default (state = { loading: false, type: "" }, action) => {
     case "LOCAL_UPDATE_ORDER":
     case "FETCH_CANCEL":
     case "CREATE_ORDER_FULFILLED":
+    case "CHECK_VOUCHER_FULFILLED":
+    case "CHECK_VOUCHER_FAILED":
       return { ...state, loading: false };
     case "AJAX_ERROR":
       return { ...state, loading: false };

@@ -11,8 +11,6 @@ class Orders extends Component {
     render() {
         let {...orders} = this.props.order;
         let data = reverse(values(orders));
-        console.log("orders", this.props.order)
-        console.log("reverse(values(orders))", data)
         if (data.length<1) {
             return (
                 <div className="flex flex-center" style={{marginTop:'50px'}}>Вы еще не делали заказов</div>

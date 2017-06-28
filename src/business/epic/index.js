@@ -8,7 +8,8 @@ import {
     getBook,
     upload,
     getBookPage,
-    createOrder
+    createOrder,
+    checkVoucher
 } from "./epics/api";
 import {
     storageCreateBook,
@@ -18,7 +19,7 @@ import {
     orderStorage,
     deleteBooksFromCache
 } from "./epics/cache";
-import { input, changeForm, bookVersion, sendOrder } from "./epics/form";
+import { input, changeForm, bookVersion, sendOrder,sendVoucher } from "./epics/form";
 import { delayLoading } from "./epics/delay";
 import "rxjs/add/operator/filter";
 import "rxjs/add/operator/delay";
@@ -47,7 +48,9 @@ const rootEpic = combineEpics(
     deleteFromCache,
     sendOrder,
     orderStorage,
-    deleteBooksFromCache
+    deleteBooksFromCache,
+    sendVoucher,
+    checkVoucher
     // loadOrderCache
 );
 

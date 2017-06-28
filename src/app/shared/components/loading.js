@@ -24,6 +24,8 @@ const Loading = props => {
       text="Отправляем заказ..."
    }else if(props.type==="upload"){
       text="Загружаем картинку..."
+   } else if(props.type==="checkVoucher"){
+      text="Проверка промокода..."
    }
    else {
       text = "Подгружаем книгу...";

@@ -19,7 +19,6 @@ export const storageCreateBook = (action$, store) =>
             const bookState = store.getState().book;
             const currentBookId = bookState.currentBookId;
             const book = bookState[currentBookId];
-            console.log(bookState,currentBookId)
             try {
                 localStorage.setItem(
                     "bookKey_" + currentBookId,

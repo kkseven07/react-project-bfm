@@ -25,7 +25,6 @@ class Review extends React.Component {
   }
 
   render () {
-console.log(this.state.count)
     return (
         <div styleName="r" >
           <div styleName="first">

@@ -25,9 +25,15 @@ export default (props)=>{
         <div styleName="form">
           <div style={{textAlign:'center', fontFamily:'RobotoMedium'}}>НАПИШИТЕ НАМ</div>
           <div style={{width:'100%', paddingBottom:'20px'}}>
-            <div styleName="form-item"><Input placeholder="Ваше имя" field="go"/></div>
-            <div styleName="form-item"><Input placeholder="Ваш email" field="go"/></div>
-            <div styleName="form-item"><TextArea style={{height:'180px'}} placeholder="Ваше сообщение" field="go"/></div>
+            <div styleName="form-item">
+              <Input placeholder="Ваше имя" field="go"/>
+            </div>
+            <div styleName="form-item">
+              <Input placeholder="Ваш email" field="go"/>
+            </div>
+            <div styleName="form-item">
+              <TextArea style={{height:'180px'}} placeholder="Ваше сообщение" field="go"/>
+            </div>
 
           </div>
           <Button>Отправить</Button>

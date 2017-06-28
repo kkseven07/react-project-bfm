@@ -51,18 +51,12 @@ export const validate = (str, field) => {
         return validateMicro(str);
     }
     //promo
-    if (field==='promo') {
+    if (field==='voucherField') {
         if (isEmpty(str)) {
             return {
                 isValid: false,
                 errorText: "Необходимо заполнить"
             }
-        }
-        else if(isPromo(str)) {
-            return {
-                isValid: false,
-                errorText: 'Неверный формат промокода'
-            };
         } else {
             return {
                 isValid: true,
