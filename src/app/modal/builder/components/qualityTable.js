@@ -27,8 +27,8 @@ export const male = {
     домосед: 3
 };
 export const femaleE = {
-    карьеристка: "сareerist",
-    умница: "smartgirl",
+    карьеристка: "careerist",
+    умница: "smart",
     звездочка: "star",
     гик: "geek",
     домоседка: "homebody",

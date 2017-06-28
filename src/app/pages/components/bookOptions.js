@@ -307,6 +307,7 @@ class Options extends React.Component {
 
                 <Button
                     click={() => {
+                        this.props.actions.bookFormat(this.props.book)
                         this.props.history.push("/cart");
                     }}
                 >

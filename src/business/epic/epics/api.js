@@ -2,7 +2,7 @@ import { ajax } from "rxjs/observable/dom/ajax";
 import Hashids from "hashids";
 import { of as ofObs } from "rxjs/observable/of";
 import url from "../../../entry/url";
-var Base64 = require('js-base64').Base64;
+var Base64 = require("js-base64").Base64;
 
 const ajaxObject = {
     method: "POST",
@@ -35,8 +35,7 @@ export const updatePage = action$ =>
     action$.ofType("UPDATE_PAGE").switchMap(({ page, params }) => {
         // return ofObs({ type: "CLOSE_MODAL"})
         if (
-            (params.background &&
-                params.background !== page.data.background) ||
+            (params.background && params.background !== page.data.background) ||
             (params.text && params.text !== page.data.text) ||
             (params.text1 && params.text1 !== page.data.text1) ||
             (params.text2 && params.text2 !== page.data.text2) ||
@@ -46,7 +45,9 @@ export const updatePage = action$ =>
             const id = page.type === "qualityTable" ? page.id + 1 : page.id;
             return ajax({
                 url: `${url}/api/v1/batch/${id}`,
-                body: { params: JSON.stringify({...params,type:page.type}) },
+                body: {
+                    params: JSON.stringify({ ...params, type: page.type })
+                },
                 ...ajaxObject
             })
                 .flatMap(ajax => {
@@ -59,38 +60,72 @@ export const updatePage = action$ =>
                     ];
                 })
                 .catch(error => {
-
-                    return ofObs({ type: "AJAX_ERROR", payload: error, errorType:"updatePage error" })});
+                    return ofObs({
+                        type: "AJAX_ERROR",
+                        payload: error,
+                        errorType: "updatePage error"
+                    });
+                });
         } else {
-            return [{ type: "CLOSE_MODAL" },{type:"UPDATE_PAGE_DONE"}];
+            return [{ type: "CLOSE_MODAL" }, { type: "UPDATE_PAGE_DONE" }];
         }
     });
 
 export const createOrder = (action$, store) =>
-    action$.ofType("CONFIRM_ORDER").switchMap(({order})=> {
-        const bookIds = store.getState().order.books.map((key)=> key.id);
+    action$.ofType("CONFIRM_ORDER").switchMap(({ order }) => {
+        const bookIds = store.getState().order.books.map(key => key.id);
         const orderDetails = store.getState().order.orderDetails;
-        console.log("boookIds", bookIds)
-        const params = {books:bookIds, orderDetails:orderDetails}
+        console.log("boookIds", bookIds);
+        const params = { books: bookIds, orderDetails: orderDetails };
         return ajax({
-            url:`${url}/api/v1/orders`,
-            body: {params: JSON.stringify(params)},
+            url: `${url}/api/v1/orders`,
+            body: { params: JSON.stringify(params) },
             ...ajaxObject
         })
-
-        .flatMap(ajax=> {
-            let orderId = ajax.response.order_id;
-            console.log("AJAX RESPONSE");
-            return [
-                {type: "CREATE_ORDER_FULFILLED", orderId:orderId},
-                {type:"DELETE_BOOKS_FROM_CACHE"}
-            ]
-        })
-        .catch(error=>ofObs({type:"AJAX_ERROR", payload:error, mesage:"Произошла ошибка с отправкой заказа."}));
-});
+            .flatMap(ajax => {
+                let orderId = ajax.response.order_id;
+                console.log("AJAX RESPONSE");
+                return [
+                    { type: "CREATE_ORDER_FULFILLED", orderId: orderId },
+                    { type: "DELETE_BOOKS_FROM_CACHE" }
+                ];
+            })
+            .catch(error =>
+                ofObs({
+                    type: "AJAX_ERROR",
+                    payload: error,
+                    mesage: "Произошла ошибка с отправкой заказа."
+                })
+            );
+    });
 
 // "you" "mom" "dad"
 
+export const bookFormat = action$ =>
+    action$.ofType("BOOK_FORMAT").switchMap(({ book }) => {
+        return ajax({
+            url: `${url}/api/v1/bookformat/${book.id}`,
+            body: { params: JSON.stringify(book) },
+            ...ajaxObject
+        })
+            .flatMap(ajax => {
+                console.log(ajax.response)
+                return [
+                    { type: "CLOSE_MODAL" },
+                    {
+                        type: "UPDATE_PAGE_FULFILLED",
+                        payload: ajax.response
+                    }
+                ];
+            })
+            .catch(error => {
+                return ofObs({
+                    type: "AJAX_ERROR",
+                    payload: error,
+                    errorType: "updatePage error"
+                });
+            });
+    });
 export const createBook = action$ =>
     action$.ofType("CREATE_BOOK").mergeMap(({ book, history }) => {
         return ajax({
@@ -99,20 +134,20 @@ export const createBook = action$ =>
             ...ajaxObject
         })
             .flatMap(ajax => {
-                let response = Base64.decode(ajax.response.book_uuid)
-                response = JSON.parse(response)
+                let response = Base64.decode(ajax.response.book_uuid);
+                response = JSON.parse(response);
                 let hashed_id = createHashid(response.book.id);
                 history.push(`/books/${hashed_id}`);
                 return [
-                    { type: "FETCH_BOOK_FULFILLED", payload:response },
+                    { type: "FETCH_BOOK_FULFILLED", payload: response },
                     {
                         type: "OPEN_MODAL",
                         page: { type: "info" },
                         book: {
-                            book:response.book,
-                            cover:response.pages[0]
+                            book: response.book,
+                            cover: response.pages[0]
                         }
-                    },
+                    }
                 ];
             })
             .catch(error => ofObs({ type: "AJAX_ERROR", payload: error }));
