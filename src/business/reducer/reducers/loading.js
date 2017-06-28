@@ -19,7 +19,7 @@ export default (state = { loading: false, type: "" }, action) => {
       return {loading:true, type:"checkVoucher"}
     case "FETCH_BOOK_FULFILLED_DELAY":
     case "GEN_PAGES_FULFILLED":
-    case "UPDATE_PAGE_FULFILLED":
+    // case "UPDATE_PAGE_FULFILLED":
     case "UPLOAD_FULFILLED":
     case "UPDATE_PAGE_DONE":
     case "LOAD_FROM_CACHE_FULFILLED":

@@ -28,14 +28,30 @@ const scrollTo = () => {
         containerId: "ContainerElementID"
     });
 };
-import CryptoJS from "crypto-js"
+const throttle = (funcScroll, wait) => {
+    var time = Date.now();
+    return () => {
+        if (time + wait - Date.now() < 0) {
+            funcScroll();
+            time = Date.now();
+        }
+    };
+};
+
+import CryptoJS from "crypto-js";
 
 const decrypt = ciphertext => {
     var bytes = CryptoJS.AES.decrypt(ciphertext.toString(), "secret key 123");
     return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
 };
 class BookRoute extends Component {
-    state = { inside: true };
+    state = {
+        inside: true,
+        first: false,
+        second: false,
+        firstEntered: false,
+        secondEntered: false
+    };
     componentWillMount() {
         //setup book from local storage
         let hash_id = this.props.location.pathname.replace(/\/books\//, "");
@@ -58,11 +74,28 @@ class BookRoute extends Component {
     }
     componentDidMount() {
         window.scrollTo(0, 0);
+        window.addEventListener("scroll", throttle(this.handleScroll, 1200));
     }
     componentWillUnmount() {
         this.props.actions.closeModal();
         this.props.actions.cleanBuilder();
+        window.removeEventListener("scroll", throttle(this.handleScroll, 1200));
     }
+    handleScroll = e => {
+        if (!this.state.first && !this.firstEntered) {
+            console.log("settin first state");
+            this.setState({ firstEntered: true });
+            setTimeout(() => this.setState({ first: true }), 500);
+        } else if (
+            this.state.first &&
+            !this.state.second &&
+            !this.secondEntered
+        ) {
+            console.log("setting second state");
+            this.setState({ secondEntered: true });
+            setTimeout(() => this.setState({ second: true }), 1000);
+        }
+    };
 
     _handleEnter = e => {
         if (!this.state.inside) this.setState({ inside: true });
@@ -75,7 +108,7 @@ class BookRoute extends Component {
 
         let gift, data = [], bData, cover;
         if (book[bookId]) {
-            console.log("my book", book);
+            // console.log("my book", book);
             data = values(book[bookId].pages);
             const { pages, ...rest } = book[bookId];
             bData = rest;
@@ -103,17 +136,46 @@ class BookRoute extends Component {
                                     )[0]
                                 }
                             />
-                            {pages.map((page, i) => (
-                                <Page
-                                    osName={this.props.osName}
-                                    url={this.props.url}
-                                    actions={this.props.actions}
-                                    book={bData}
-                                    id={page.type}
-                                    page={page}
-                                    key={i}
-                                />
-                            ))}
+                            {pages.map((page, i) => {
+                                if (i > 10 && i < 25) {
+                                    return (
+                                        this.state.first &&
+                                        <Page
+                                            osName={this.props.osName}
+                                            url={this.props.url}
+                                            actions={this.props.actions}
+                                            book={bData}
+                                            id={page.type}
+                                            page={page}
+                                            key={i}
+                                        />
+                                    );
+                                } else if (i > 25) {
+                                    return (
+                                        this.state.second &&
+                                        <Page
+                                            osName={this.props.osName}
+                                            url={this.props.url}
+                                            actions={this.props.actions}
+                                            book={bData}
+                                            id={page.type}
+                                            page={page}
+                                            key={i}
+                                        />
+                                    );
+                                }
+                                return (
+                                    <Page
+                                        osName={this.props.osName}
+                                        url={this.props.url}
+                                        actions={this.props.actions}
+                                        book={bData}
+                                        id={page.type}
+                                        page={page}
+                                        key={i}
+                                    />
+                                );
+                            })}
                         </div>
                     </Waypoint>}
                 {this.state.inside &&
