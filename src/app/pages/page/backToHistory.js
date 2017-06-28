@@ -6,11 +6,12 @@ const getStyle = length =>
     length > 1000 && length < 1200
         ? "0.45em"
         : length > 100 && length < 800
-              ? "0.59em"
+              ? "0.57em"
               : length >= 1200 ? "0.4" : "0.535em";
 
 export default ({ page, book }) => {
     const facts = page.data.facts;
+    console.log(sum(facts))
     const fontSize = getStyle(sum(facts));
     return (
         <div className="full flex-center" styleName="r">

@@ -22,6 +22,8 @@ const Loading = props => {
       text="Редактируем..."
    }else if (props.type==="createOrder"){
       text="Отправляем заказ..."
+   }else if(props.type==="upload"){
+      text="Загружаем картинку..."
    }
    else {
       text = "Подгружаем книгу...";

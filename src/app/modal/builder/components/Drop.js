@@ -88,7 +88,7 @@ class Drop extends Component {
 	render() {
 		return (
 			<div styleName="Drop">
-				{!this.state.file &&
+				{!this.state.fileURL &&
 					<Dropzone
 						ref={el => (this.dropzone = el)}
 						id="dropZone"
@@ -102,22 +102,42 @@ class Drop extends Component {
 						<p styleName="text">или</p>
 						<p styleName="text">Нажмите здесь</p>
 					</Dropzone>}
-				<div style={{cursor:"all-scroll"}}>
+				<div style={{ cursor: "all-scroll" }}>
 					{this.state.fileURL &&
-						<AvatarEditor
-							// style={{ width: 200 }}
-							ref={this.setEditorRef}
-							image={this.state.fileURL && this.state.fileURL}
-							onImageChange={this.imageChange}
-							// crossOrigin="anonymous"
-							onImageReady={this.imageChange}
-							width={400}
-							height={400}
-							border={20}
-							color={[255, 255, 255, 0.6]} // RGBA
-							scale={1}
-							rotate={0}
-						/>}
+						<div style={{ position: "relative" }}>
+							<div
+								onClick={() => this.setState({ fileURL: null })}
+								style={{
+									position:"absolute",
+									right: "1%",
+									top: "1%",
+									paddingTop: "3%",
+									fontSize: 17,
+									backgroundColor: "black",
+									width: 40,
+									height: 40,
+									borderRadius: 20,
+									color: "white",
+									fontWeight: "bold"
+								}}
+							>
+								x
+							</div>
+							<AvatarEditor
+								// style={{ width: 200 }}
+								ref={this.setEditorRef}
+								image={this.state.fileURL && this.state.fileURL}
+								onImageChange={this.imageChange}
+								// crossOrigin="anonymous"
+								onImageReady={this.imageChange}
+								width={400}
+								height={400}
+								border={20}
+								color={[255, 255, 255, 0.6]} // RGBA
+								scale={1}
+								rotate={0}
+							/>
+						</div>}
 				</div>
 			</div>
 		);

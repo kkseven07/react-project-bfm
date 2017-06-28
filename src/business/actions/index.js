@@ -86,7 +86,7 @@ export const getBook = book_id => {
 export const getBookPage = (book_id, page_type) => {
     return { type: "GET_BOOK_PAGE", book_id, page_type };
 };
-export const upload = (book_id, page, params) => {
+export const upload = (book_id, page, params, text) => {
     return { type: "UPLOAD", book_id, page, params };
 };
 
