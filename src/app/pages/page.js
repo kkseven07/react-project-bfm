@@ -55,53 +55,45 @@ const noImage = ["cover", "coverChooser"];
 import { editable } from "../shared/utils.js";
 
 class Page extends Component {
-    state = { zoom: false, imgLoaded: (this.props.print||this.props.zoom) ? true : false };
+    state = {
+        zoom: false,
+        imgLoaded: this.props.print || this.props.zoom ? true : false
+    };
 
     getPage = (type, image, page, book) => {
         if (type === "scoop") {
             return <Scoop book={book} data={page.data} />;
-        }
-        else if (type === "framefridge") {
+        } else if (type === "framefridge") {
             return <FrameFridge url={this.props.url} book={book} page={page} />;
         } else if (type === "brain") {
             return <Brain book={book} page={page} />;
         } else if (type === "cover") {
             return <Cover book={book} page={page} />;
         } else if (type === "animal") {
-
             return <Animal page={page} book={book} />;
         } else if (type === "intro") {
-
             return <Intro page={page} book={book} />;
         } else if (type === "musicHit") {
-
             return <MusicHit book={book} page={page} />;
         } else if (type === "epicStory") {
-
             return <EpicStory page={page} book={book} />;
         } else if (type === "scene") {
             return <Scene book={book} />;
         } else if (type === "fruitDNA") {
-
             return (
                 <FruitDNA page={page} book={book} osName={this.props.osName} />
             );
         } else if (type === "factoid") {
-
             return <Factoid book={book} />;
         } else if (type === "cell") {
             //
 
             return <Cell book={book} />;
         } else if (type === "vice") {
-
-
             return <Vice book={book} page={page} />;
         } else if (type === "virtue") {
-
             return <Virtue book={book} page={page} />;
         } else if (type === "deducedAgeFact") {
-
             return (
                 <DeducedAgeFact
                     book={book}
@@ -112,98 +104,64 @@ class Page extends Component {
         } else if (type === "bestseller") {
             return <Bestseller page={page} book={book} />;
         } else if (type === "toy") {
-
             return <Toy page={page} book={book} osName={this.props.osName} />;
         } else if (type === "videoGame") {
-
             return <VideoGame page={page} book={book} />;
         } else if (type === "backToHistory") {
-
             return <BackToHistory page={page} book={book} />;
         } else if (type === "car") {
-
             return <Car page={page} book={book} />;
         } else if (type === "sport") {
-
             return <Sport page={page} />;
         } else if (type === "leaders") {
-
             return <Leader page={page} />;
         } else if (type === "mirrorDate") {
-
             return <MirrorDate book={book} />;
         } else if (type === "famousBirthShare") {
-
             return <FamousBirthShare page={page} book={book} />;
         } else if (type === "techState") {
-
             return <TechState page={page} />;
         } else if (type === "ageFact") {
-
             return <AgeFact page={page} book={book} />;
         } else if (type === "film") {
-
             return <Film page={page} book={book} osName={this.props.osName} />;
         } else if (type === "holiday") {
-
             return <Holiday page={page} book={book} />;
         } else if (type === "wiseWord") {
-
             return <WiseWord page={page} book={book} />;
         } else if (type === "quotes") {
-
             return <Quotes page={page} book={book} />;
         } else if (type === "pastPhoto") {
-
             return <PastPhoto url={this.props.url} page={page} book={book} />;
         } else if (type === "relaxPhoto") {
-
             return <RelaxPhoto url={this.props.url} page={page} book={book} />;
-        }else if (type === "momChemistryProoved") {
-
+        } else if (type === "momChemistryProoved") {
             return <MomChemistryProoved page={page} book={book} />;
-        }
-        else if (type === "formulaMom") {
-
+        } else if (type === "formulaMom") {
             return <FormulaMom page={page} book={book} />;
-        }else if (type === "geniusQuoteMom") {
-
+        } else if (type === "geniusQuoteMom") {
             return <GeniusQuoteMom page={page} book={book} />;
         } else if (type === "prideOfMom") {
-
             return <PrideOfMom page={page} book={book} />;
         } else if (type === "credoMom") {
-
             return <CredoMom page={page} book={book} />;
-        }
-        else if (type === "thanksForMom") {
-
+        } else if (type === "thanksForMom") {
             return <ThanksForMom page={page} book={book} />;
         } else if (type === "dadChemistryProoved") {
-
             return <DadChemistryProoved page={page} book={book} />;
-        }
-        else if (type === "formulaDad") {
-
+        } else if (type === "formulaDad") {
             return <FormulaDad page={page} book={book} />;
-        }else if (type === "geniusQuoteDad") {
-
+        } else if (type === "geniusQuoteDad") {
             return <GeniusQuoteDad page={page} book={book} />;
         } else if (type === "prideOfDad") {
-
             return <PrideOfDad page={page} book={book} />;
         } else if (type === "credoDad") {
-
             return <CredoDad page={page} book={book} />;
-        }
-        else if (type === "thanksForDad") {
-
+        } else if (type === "thanksForDad") {
             return <ThanksForDad page={page} book={book} />;
-        } else if (type === "frontPage" || type==="endPage") {
-
+        } else if (type === "frontPage" || type === "endPage") {
             return <FrontPage page={page} book={book} />;
         } else if (type === "frontPageBack") {
-
             return <FrontPageBack page={page} book={book} />;
         } else {
             return <div />;
@@ -222,37 +180,40 @@ class Page extends Component {
         } else if (zoom) {
             return `url(${this.props.url + primary_image.image.url})`;
         } else {
-            return `url(${this.props.url + primary_image.image.url.replace("bbx24s", "mmy70f")})`;
+            return `url(${this.props.url + primary_image.image.url})`;
         }
+        //.replace("bbx24s", "mmy70f")
     };
 
     smallImage = () => {
-        return `url(${this.props.url + this.props.page.primary_image.image.url.replace("bbx24s", "mmy70f")})`;
+        return `url(${this.props.url + this.props.page.primary_image.image.url.replace("bbx24s", "ssx8m")})`;
     };
 
     urlForLoading = (print, primary_image) => {
-        if (print) {
-            return (
-                this.props.url +
-                primary_image.image.url
-                    .replace("/web/", "/print/")
-                    .replace("_768", "_2048")
-            );
-        }
-        return this.props.url + primary_image.image.url.replace("bbx24s", "ssx8m");
+        // if (print) {
+        //     return (
+        //         this.props.url +
+        //         primary_image.image.url
+        //             .replace("/web/", "/print/")
+        //             .replace("_768", "_2048")
+        //     );
+        // }
+        return this.props.url + primary_image.image.url; //.replace("bbx24s", "ssx8m");
     };
     componentWillReceiveProps(nextProps) {
         if (
             nextProps.page.primary_image.image.url !==
             this.props.page.primary_image.image.url
         )
-            !(this.props.print||this.props.zoom)&&this.setState({ imgLoaded: false });
+            !(this.props.print || this.props.zoom) &&
+                this.setState({ imgLoaded: false });
     }
 
     render() {
         const { type, primary_image, data } = this.props.page;
         let image, smallImage, loadingurl;
         if (primary_image.image.url) {
+            if(type==="qualityTableChoice") console.log(this.state.imgLoaded,"qualityTableChoice")
             image = {
                 backgroundImage: this.imageUrl(
                     this.props.print,
@@ -294,20 +255,19 @@ class Page extends Component {
                         }
                     }}
                 />
-                {!(this.props.print||this.props.zoom) &&
+                {!(this.props.print || this.props.zoom) &&
                     <img
                         src={loadingurl}
                         onLoad={() =>
                             setTimeout(
                                 () => this.setState({ imgLoaded: true }),
-                                400
+                                500
                             )}
                         onError={() =>
                             console.log(
                                 "error happend in ",
                                 this.props.page.type
-                            )||this.setState({ imgLoaded: true })}
-
+                            ) || this.setState({ imgLoaded: true })}
                         style={{
                             display: "none"
                         }}
