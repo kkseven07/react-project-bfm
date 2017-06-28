@@ -12,7 +12,6 @@ class Page extends Component {
         else return [""];
     };
     render() {
-        // console.log("props", this.props)
         const uniqs = this.setStyle(this.props.page.primary_image.image.url);
         const vStyle = uniqs[0];
         const word = this.props.book.gender === "male" ? ["РОДИЛСЯ "," НАШЕГО ГЕРОЯ"] : ["РОДИЛАСЬ "," НАШЕЙ ГЕРОИНИ"];

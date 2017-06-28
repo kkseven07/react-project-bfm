@@ -125,3 +125,9 @@ export const validateForm = (order) => {
 export const loadOrderCache = () => {
     return { type: "LOAD_ORDER_CACHE" };
 };
+export const voucherInput =(text, field)=> {
+    return {type: "VOUCHER_INPUT", text, field};
+}
+export const validateVaucher = (vaucher) => {
+    return { type: "VALIDATE_VOUCHER", vaucher:vaucher };
+};

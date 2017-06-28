@@ -1,8 +1,11 @@
 import React from 'react'
 import './paspartu.css'
-import {getBookName} from '../utils'
+import {getBookName, getFontSize} from '../utils'
 
 const Paspartu =({name, page})=> {
+	let nameToRender = name.slice(0);
+	let fontsize = getFontSize(name);
+	
 	return (
 		<div
 			styleName="r"
@@ -11,8 +14,11 @@ const Paspartu =({name, page})=> {
 				1px 0 5px ${page.data.border_color}, -1px 0 5px ${page.data.border_color}`
 			}}
 		>
-			<div styleName="part1" style={{border:`0.072em solid ${page.data.border_color}`}}>
-				{name}
+			<div 
+				styleName="part1" 
+				style={{border:`0.072em solid ${page.data.border_color}`, fontSize:fontsize}}
+			>
+				{nameToRender} 
 			</div>
 		</div>
 	)

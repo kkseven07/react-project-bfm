@@ -32,7 +32,6 @@ export const bookVersion = (action$, store) =>
     });
 export const sendOrder = (action$, store) =>
     action$.ofType("VALIDATE_FORM").switchMap(({order})=> {
-        console.log("epicsendorder")
             const orderForm = store.getState().orderForm.order;
             const canConfirm = store.getState().orderForm.canConfirm;
             if(canConfirm)
@@ -41,6 +40,19 @@ export const sendOrder = (action$, store) =>
                 ];
             else {
                 return [{type:"ORDER_NOT_SENT"}];
+            }
+
+    });
+export const sendVoucher = (action$, store) =>
+    action$.ofType("VALIDATE_VOUCHER").switchMap(({order})=> {
+            const voucher = store.getState().voucher.voucherField.value;
+            const shouldVoucherSend = store.getState().voucher.shouldVoucherSend;
+            if(shouldVoucherSend)
+                return [
+                    {type:"CHECK_VOUCHER"}
+                ];
+            else {
+                return [{type:"VOUCHER_NOT_SENT"}];
             }
 
     });

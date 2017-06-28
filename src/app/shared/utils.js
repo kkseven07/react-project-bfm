@@ -174,7 +174,38 @@ export const checkLength = (name, breakpoint, fontsize, params) => {
     }
     return "";
 };
+export const getFontSize = str => {
+    let maxWord="";
+    let countWord =0;
+    if (str instanceof Array) {
+        maxWord = str.sort((word1, word2)=>word1.length<word2.length)[0].trim();
+        countWord=str.length;
+    } else {
+        maxWord = str.split('\n').sort((word1, word2)=>word1.length<word2.length)[0].trim();
+        countWord=str.split('\n').length;
+    }
+    let fontSize='';
+    if (maxWord.length >= 9 && maxWord.length < 13) {
+        fontSize =  "0.52em";
+    } else if (maxWord.length >= 13 && maxWord.length < 14) {
+        fontSize =  "0.5em";
+    }else if (maxWord.length >= 7 && maxWord.length < 9) {
+        fontSize =  "0.78em";
+    } else if (maxWord.length >= 14 && maxWord.length < 16) {
+        fontSize =  "0.44em";
+    } else if (maxWord.length >= 16) {
+        fontSize =  "0.4em";
+    }  else {
+        fontSize =  "0.9em";
+    }
 
+    if (countWord>3 && countWord<4) {
+        fontSize =  "0.7em";
+    } else if (countWord>=4) {
+        fontSize =  "0.55em";
+    }
+    return fontSize;
+};
 export const editable = [
     "intro",
     "virtue",

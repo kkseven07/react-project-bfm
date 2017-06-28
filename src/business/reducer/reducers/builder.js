@@ -29,6 +29,7 @@ const init = {
         input1: {value:"", isPristine: true, isValid: true, errorText: "" },
         input2: {value:"", isPristine: true, isValid: true, errorText: "" }
     },
+    
     musicHit: {
         selectedImage: null
     },

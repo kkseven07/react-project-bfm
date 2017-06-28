@@ -22,5 +22,6 @@
     justify-content: flex-end;
     align-items: flex-end;
     text-align: right;
+    line-height: 0.95em;
 
 }
