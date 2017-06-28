@@ -1,10 +1,8 @@
 import React, {Component} from 'react'
 import './reviews.css'
 import ReactCSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
-import rev1 from './../../../../assets/img/abay.jpg'
-import rev2 from './../../../../assets/img/abay.jpg'
-import rev3 from './../../../../assets/img/abay.jpg'
-import rev4 from './../../../../assets/img/abay.jpg'
+import url from "../../../entry/url";
+
 
 
 
@@ -16,10 +14,10 @@ const revText = [
             'Отличный подарок! Купил сестренке, она была очень довольна. Собираюсь купить еще несколько книг друзьям!'
             ]
 const revPhoto = [
-                  'https://organicthemes.com/demo/profile/files/2012/12/profile_img.png',
-                  'https://s-media-cache-ak0.pinimg.com/originals/49/73/72/49737247376df0b8dd243aba892922ef.jpg',
-                  'https://www.cheme.cornell.edu/engineering/customcf/iws_ai_faculty_display/ai_images/mjp31-profile.jpg',
-                  'https://researchers.adelaide.edu.au/sites/default/files/profile-images/17124.jpeg'
+                  `${url}/images//rev1.png`,
+                  `${url}/images//rev2.jpg`,
+                  `${url}/images//rev3.jpg`,
+                  `${url}/images//rev4.jpeg`
                   ]
 const revAuthor = ['Алексей', 'Алина', 'Максим', 'Игорь']
 let vr = "count"

@@ -1,10 +1,10 @@
 import React from 'react'
 import './product.css'
 import ReactCSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
-import Image1 from '../../../../assets/img/product1.jpg'
-import Image2 from '../../../../assets/img/product2.jpg'
-import Image3 from '../../../../assets/img/product3.jpg'
-import Image4 from '../../../../assets/img/product2.jpg'
+import url from "../../../entry/url";
+const Image1 =`${url}/images//product1.jpg`
+const Image2 =`${url}/images//product2.jpg`
+const Image3 =`${url}/images//product3.jpg`
 
 
 
@@ -14,7 +14,7 @@ const text = [
   'Размер наших книг варируется от 19см х 19 см до 23см х 23 см, как в мягком, так и в твердом переплете',
   'Цена на книгу начинается от 9900тг и до 17900тг'
 ]
-const images =[Image1, Image2, Image3, Image4]
+const images =[Image1, Image2, Image3]
 const headers =['Подари уникальную, персонализированную книгу', 'Памятный подарок на всю жизнь', 'Идеальный размер чтобы радовать глаз','']
 class Review extends React.Component {
   state = {count: 0}
@@ -38,9 +38,7 @@ class Review extends React.Component {
               <div styleName="tab" onClick={()=>this.changeTab(2)} style={{backgroundColor:this.state.count===2&&'white'}}>
                 Размеры
               </div>
-              <div styleName="tab" onClick={()=>this.changeTab(3)} style={{backgroundColor:this.state.count===3&&'white'}}>
-                Цены
-              </div>
+   
             </div>
             <div styleName="anim2">
               <ReactCSSTransitionGroup

@@ -44,6 +44,19 @@ class Order extends React.Component {
     getTotalForBooks = books => {
         return books.reduce((acc, book) => prices[book.format] + acc,0);
     };
+    componentWillReceiveProps(props) {
+        if (props.voucher.voucherStatus.isValid) {
+            this.setState({
+                isVoucherValid:true
+            })
+        }
+        else if (props.voucher.voucherStatus.isValid===false) {
+            this.setState({
+                isVoucherValid:false
+            })
+        }
+        
+    }
     render() {
         if (!this.props.book) {
             return null;
@@ -51,11 +64,15 @@ class Order extends React.Component {
         console.log("state fulfilled", this.props.voucher.voucherStatus)
         let { currentBookId, ...books } = this.props.book;
         let data = reverse(values(books));
-
+        const {voucherStatus} = this.props.voucher;
         let totalForBooks=this.getTotalForBooks(data);
         let total = this.getTotal(data);
         let wrapPrice = total - totalForBooks;
-        console.log("voucherstatys", this.props.voucher)
+        let discount = voucherStatus.discount?(voucherStatus.discount*total):0;
+        total = total-discount;
+        
+        
+        
         this.totalForBooks=totalForBooks;
         this.wrapPrice=wrapPrice;
         this.total=total;
@@ -76,12 +93,13 @@ class Order extends React.Component {
                     email:this.props.form.email.value,
                     date: this.date
                 },
-                voucher:this.props.voucher.voucherStatus.isValid!==""
-                ?this.props.voucher.voucherStatus
+                voucher:voucherStatus.isValid!==""
+                ?voucherStatus
                 :'no voucher'
 
             }
         };
+        console.log("ORDER SENT", order)
         if (data.length<1&&!this.state.showConfirm) return (
             <div
                 className="flex flex-center width-full flex-column"
@@ -168,7 +186,12 @@ class Order extends React.Component {
                             </div>
                         </div> 
 
-                        <Voucher actions={this.props.actions} voucher={this.props.voucher}/>
+                        {
+                            this.state.isVoucherValid===""
+                            ?<Voucher actions={this.props.actions} voucher={this.props.voucher}/>
+                            :this.state.isVoucherValid?<div>VOUCHER SUCCESS</div>
+                            : <div>VOUCHER UNSUCCESS</div>
+                        }
                     </div>}
                     {this.state.showConfirm&&<div // voucher up 
                          //CONFIRMED ORDER STATUS BAR
@@ -232,7 +255,7 @@ class Order extends React.Component {
                         <Button
                             click={() => {
                                 this.props.actions.validateForm(order);
-                                this.setState({showConfirm:true})
+                                this.props.form.canConfirm&&this.setState({showConfirm:true})
                             }}
                         >
                             Заказать

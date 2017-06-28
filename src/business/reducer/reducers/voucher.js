@@ -42,7 +42,7 @@ export default (state = initialState, action) => {
                };
             });
             if ( every(mapValues(fields, ({ isValid }) => isValid)) ) {
-                return {voucherField:state.voucherField, shouldVoucherSend:true};
+                return {voucherField:state.voucherField, shouldVoucherSend:true, voucherStatus:state.voucherStatus};
 
             }
             else {
