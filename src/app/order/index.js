@@ -8,6 +8,7 @@ import reverse from "lodash/reverse";
 import { Button, Input, ErrorText } from "../shared";
 import Form from "./components/form";
 import Logo from "../../../assets/icons/logo.png";
+import Voucher from './components/voucher';
 
 let prices = {
     digital: 2900,
@@ -22,7 +23,7 @@ let prices = {
 const priceIndex=1
 
 class Order extends React.Component {
-    state={showConfirm:false}
+    state={showConfirm:false, isVoucherValid:""}
 
     componentDidMount() {
         window.scrollTo(0, 0);
@@ -47,12 +48,14 @@ class Order extends React.Component {
         if (!this.props.book) {
             return null;
         }
+        console.log("state fulfilled", this.props.voucher.voucherStatus)
         let { currentBookId, ...books } = this.props.book;
         let data = reverse(values(books));
 
         let totalForBooks=this.getTotalForBooks(data);
         let total = this.getTotal(data);
         let wrapPrice = total - totalForBooks;
+        console.log("voucherstatys", this.props.voucher)
         this.totalForBooks=totalForBooks;
         this.wrapPrice=wrapPrice;
         this.total=total;
@@ -65,14 +68,18 @@ class Order extends React.Component {
                         total:this.total,
                         totalForBooks:this.totalForBooks,
                         wrapPrice:this.wrapPrice
-                    },
-                    orderInfo:{
-                        name:this.props.form.name.value,
-                        phone:this.props.form.phone.value,
-                        address:this.props.form.address.value,
-                        email:this.props.form.email.value,
-                        date: this.date
-                    }
+                },
+                orderInfo:{
+                    name:this.props.form.name.value,
+                    phone:this.props.form.phone.value,
+                    address:this.props.form.address.value,
+                    email:this.props.form.email.value,
+                    date: this.date
+                },
+                voucher:this.props.voucher.voucherStatus.isValid!==""
+                ?this.props.voucher.voucherStatus
+                :'no voucher'
+
             }
         };
         if (data.length<1&&!this.state.showConfirm) return (
@@ -159,26 +166,11 @@ class Order extends React.Component {
                             <div>
                                 {total} тг
                             </div>
-                        </div>
+                        </div> 
 
-                        <div
-                            style={{display:'flex', width:'90%', maxWidth:'500px', padding:'20px 0', justifyContent:'space-between',
-                                alignItems:'flex-start'
-                            }}>
-                            <div style={{width:'18%'}}>
-                                <Input
-                                    maxLength={6}
-                                    placeholder="1A2B3C"
-                                    field={this.props.form.promo}
-                                    fieldType={"promo"}
-                                    enter={this.props.actions.orderInput}
-                                />
-                                <ErrorText text={this.props.form.promo.errorText} />
-                            </div>
-                            <Button>Применить</Button>
-                        </div>
+                        <Voucher actions={this.props.actions} voucher={this.props.voucher}/>
                     </div>}
-                    {this.state.showConfirm&&<div
+                    {this.state.showConfirm&&<div // voucher up 
                          //CONFIRMED ORDER STATUS BAR
                         style={{
                                 width:'100%',
@@ -257,6 +249,7 @@ const mapStateToProps = state => ({
     book: state.book,
     form:state.orderForm,
     order:state.order,
+    voucher:state.voucher
 });
 const mapDispatchToProps = dispatch => ({
     actions: bindActionCreators(actions, dispatch)

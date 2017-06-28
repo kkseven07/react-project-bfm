@@ -11,6 +11,8 @@ import init from './reducers/init'
 import orderForm from './reducers/orderForm'
 import menu from './reducers/menu'
 import order from './reducers/order'
+import voucher from './reducers/voucher'
+
 const reducer = combineReducers({
     routing,
     loading,
@@ -22,7 +24,8 @@ const reducer = combineReducers({
     init,
     orderForm,
     menu,
-    order
+    order,
+    voucher
 });
 
 export default reducer;

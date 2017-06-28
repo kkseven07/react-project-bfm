@@ -257,3 +257,23 @@ export const changeRoute = action$ =>
         reroute();
         return [{ type: "DONE" }];
     });
+
+// voucher
+export const checkVoucher = (action$, store) =>
+    action$.ofType("CHECK_VOUCHER").switchMap(({order})=> {
+        const voucher = store.getState().voucher.voucherField.value;
+        const params = {number:voucher}
+        return ajax({
+            url:`${url}/api/v1/voucher/check`,
+            body: {number: voucher},
+            ...ajaxObject
+        })
+
+        .flatMap(ajax=> {
+            const isValid = ajax.response.valid;
+                return [
+                    {type: "CHECK_VOUCHER_FULFILLED", voucherStatus:ajax.response}
+                ]   
+        })
+        .catch(error=>ofObs({type:"AJAX_ERROR", payload:error, mesage:"Произошла ошибка с отправкой заказа."}));
+});

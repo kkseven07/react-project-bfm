@@ -11,7 +11,6 @@ const getStyle = length =>
 
 export default ({ page, book }) => {
     const facts = page.data.facts;
-    console.log(sum(facts))
     const fontSize = getStyle(sum(facts));
     return (
         <div className="full flex-center" styleName="r">
