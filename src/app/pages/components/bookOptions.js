@@ -24,13 +24,13 @@ let sizes = {
     fumoney: 23
 };
 let images = {
-    digital: url+"/media/product-1/final4.jpg",
-    soft19: url+"/media/product-1/final8.jpg",
-    soft23: url+"/media/product-1/final3.jpg",
-    hard19: url+"/media/product-1/final2.jpg",
-    hard23: url+"/media/product-1/final11.jpg",
-    deluxe: url+"/media/product-1/final6.jpg",
-    fumoney: url+"/media/product-1/final7.jpg",
+    digital: `${url}/images//digital.jpg)`,
+    soft19: `${url}/images//price-small.jpg)`,
+    soft23: `${url}/images//price-big.jpg)`,
+    hard19: `${url}/images//price-small-hard.jpg)`,
+    hard23: `${url}/images//price-big-hard.jpg)`,
+    deluxe: `${url}/images//product3.jpg)`,
+    fumoney: `${url}/images//product3.jpg)`,
 };
 
 const data = [
