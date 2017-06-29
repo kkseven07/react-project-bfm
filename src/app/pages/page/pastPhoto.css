@@ -4,12 +4,12 @@
 .image{
     position: absolute;
     height:auto;
-    width:56.1%;
+    width:62.1%;
     object-fit: contain;
     border:0;
-    transform: rotate(-4.9deg);
+    transform: rotate(-5deg);
     top: 13.6%;
-    left: 17.6%;
+    left: 14.6%;
 
 }
 .zaplatka {

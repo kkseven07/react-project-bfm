@@ -71,6 +71,9 @@
 .open-btn {
     display: none;
 }
+.cart {
+    cursor:pointer;
+}
 .cart:hover i {
     color:#757677;
 }

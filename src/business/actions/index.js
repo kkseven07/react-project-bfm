@@ -33,6 +33,26 @@ export const orderInput = (text, field) => {
 export const emailInput = (text, field) => {
     return { type: "EMAIL_INPUT", text, field };
 };
+export const validateForm = (order) => {
+    return { type: "VALIDATE_FORM", order:order };
+};
+export const voucherInput =(text, field)=> {
+    return {type: "VOUCHER_INPUT", text, field};
+}
+export const validateVaucher = (vaucher) => {
+    return { type: "VALIDATE_VOUCHER", vaucher:vaucher };
+};
+export const contactInput =(text, field)=> {
+    return {type: "CONTACT_INPUT", text, field};
+}
+export const emailContactInput = (text, field) => {
+    return { type: "EMAIL_CONTACT_INPUT", text, field };
+};
+export const validateContactForm = () => {
+    return { type: "VALIDATE_CONTACTFORM" };
+};
+
+
 //modal
 export const openModal = (page, book, params) => {
     return { type: "OPEN_MODAL", page, book, params };
@@ -128,15 +148,7 @@ export const loadCache = () => {
 export const confirmOrder = (books, orderDetails) => {
     return { type: "CONFIRM_ORDER", books: books, orderDetails: orderDetails };
 };
-export const validateForm = (order) => {
-    return { type: "VALIDATE_FORM", order:order };
-};
+
 export const loadOrderCache = () => {
     return { type: "LOAD_ORDER_CACHE" };
-};
-export const voucherInput =(text, field)=> {
-    return {type: "VOUCHER_INPUT", text, field};
-}
-export const validateVaucher = (vaucher) => {
-    return { type: "VALIDATE_VOUCHER", vaucher:vaucher };
 };

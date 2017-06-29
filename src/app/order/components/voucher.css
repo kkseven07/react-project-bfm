@@ -1,0 +1,15 @@
+.promo {
+    display: flex;
+    flex-wrap:wrap;
+}
+@media screen and (max-width: 768px) {
+    .promo {
+        justify-content: center !important;
+    }
+    .promo div:first-child {
+        width: 45% !important;
+    }
+    .promo div:last-child {
+        width: 60% !important;
+    }
+}

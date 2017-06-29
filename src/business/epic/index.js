@@ -9,9 +9,8 @@ import {
     upload,
     getBookPage,
     createOrder,
-
+    sendContactForm,
     bookFormat,
-
     checkVoucher
 
 } from "./epics/api";
@@ -23,8 +22,8 @@ import {
     orderStorage,
     deleteBooksFromCache
 } from "./epics/cache";
-import { input, changeForm, bookVersion, sendOrder,sendVoucher } from "./epics/form";
 import { delayLoading, uploadDelay } from "./epics/delay";
+import { input, changeForm, bookVersion, shouldOrderSend,shouldVoucherSend, shouldContactFormSend } from "./epics/form";
 import "rxjs/add/operator/filter";
 import "rxjs/add/operator/delay";
 import "rxjs/add/operator/mapTo";
@@ -51,12 +50,14 @@ const rootEpic = combineEpics(
     loadCache,
     loadFromCache,
     deleteFromCache,
-    sendOrder,
+    shouldOrderSend,
     orderStorage,
     deleteBooksFromCache,
-    sendVoucher,
     checkVoucher,
     uploadDelay
+    shouldVoucherSend,
+    sendContactForm,
+    shouldContactFormSend
     // loadOrderCache
 );
 

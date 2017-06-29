@@ -88,13 +88,17 @@
   .r {
     flex-direction: column;
     height: 700px;
+    padding: 4em 0.5em;
   }
     .first, .second {
       width: 100%;
     }
   .second {
     order: 1;
-    height: 19rem;
+    height: 38vh;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
   }
   .first {
     order:2;

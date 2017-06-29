@@ -1,6 +1,7 @@
 import React from "react";
 import "./book.css";
 import { getBookName, textColor } from "../../shared/utils.js";
+import {Paspartu} from '../../shared'
 export default ({ book,cover, history }) => {
     const color = cover.data;
     return (
@@ -12,10 +13,12 @@ export default ({ book,cover, history }) => {
                 styleName="r"
                 style={{
                     background: color.background,
-                    color: color.text_color
+                    color: color.text_color,
+                    position:'relative'
                 }}
             >
-                {getBookName(book.book_name, book.name)}
+                <div styleName="korewok"></div>
+                <Paspartu name={getBookName(book.book_name, book.name)} page={cover}/>
             </div>
         </div>
     );

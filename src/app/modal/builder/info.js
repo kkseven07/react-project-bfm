@@ -2,6 +2,7 @@ import React from "react";
 import Confetti from "react-confetti";
 import Book from "./book";
 import {Button} from '../../shared'
+
 export default ({ book, actions }) => {
     const cover = book.cover;
     const rest = book.book;

@@ -21,7 +21,7 @@
 }
 .name-v4 {
   top:23%;
-  font-size:1.8em;
+  font-size:1.5em;
   font-weight:500;
   width: 40%;
   left: 32%
@@ -29,15 +29,16 @@
 
 .wish-text-v4 {
     top: 31%;
-    font-size: 1.2em;
+    font-size: 1em;
     width: 50%;
     left: 27%;
+
 }
 .sender-v4 {
-  top:61%;
+  top:62%;
   width: 36%;
-  left: 34%;
-  font-size:0.9em;
+  left: 35%;
+  font-size:0.6em;
   text-align:center;
 }
 .r div[class*="v1"] {
@@ -49,13 +50,13 @@
   top: 26%;
   width: 30%;
   left: 35%;
-    font-size: 1.8em;
+    font-size: 1.5em;
 }
 .sender-v1 {
   top: 79%;
   left: 48%;
   color: #ffff0d !important;
-  font-size: 1.4em;
+  font-size: 1.1em;
   transform: rotate(-15deg);
   width: 49%;
 }
@@ -63,10 +64,10 @@
   text-align: center;
     width: 62%;
     left: 20%;
-    font-size: 1.5em;
+    font-size: 1.2em;
     top: 35%;
     text-transform: uppercase;
-    line-height: 1.3em;
+    line-height: 1.2em;
 }
 .r div[class*="v3"] {
   font-family: 'StarSeedPro';

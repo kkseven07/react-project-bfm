@@ -77,7 +77,6 @@ export const createOrder = (action$, store) =>
     action$.ofType("CONFIRM_ORDER").switchMap(({ order }) => {
         const bookIds = store.getState().order.books.map(key => key.id);
         const orderDetails = store.getState().order.orderDetails;
-        console.log("boookIds", bookIds);
         const params = { books: bookIds, orderDetails: orderDetails };
         return ajax({
             url: `${url}/api/v1/orders`,
@@ -86,7 +85,6 @@ export const createOrder = (action$, store) =>
         })
             .flatMap(ajax => {
                 let orderId = ajax.response.order_id;
-                console.log("AJAX RESPONSE");
                 return [
                     { type: "CREATE_ORDER_FULFILLED", orderId: orderId },
                     { type: "DELETE_BOOKS_FROM_CACHE" }
@@ -111,7 +109,6 @@ export const bookFormat = action$ =>
             ...ajaxObject
         })
             .flatMap(ajax => {
-                console.log(ajax.response);
                 return [
                     { type: "CLOSE_MODAL" },
                     {
@@ -277,17 +274,28 @@ export const checkVoucher = (action$, store) =>
             .flatMap(ajax => {
                 const isValid = ajax.response.valid;
                 return [
-                    {
-                        type: "CHECK_VOUCHER_FULFILLED",
-                        voucherStatus: ajax.response
-                    }
-                ];
-            })
-            .catch(error =>
-                ofObs({
-                    type: "AJAX_ERROR",
-                    payload: error,
-                    mesage: "Произошла ошибка с отправкой заказа."
-                })
-            );
-    });
+                    {type: "CHECK_VOUCHER_FULFILLED", voucherStatus:ajax.response}
+                ]   
+        })
+        .catch(error=>ofObs({type:"AJAX_ERROR", payload:error, mesage:"Произошла ошибка с отправкой заказа."}));
+});
+
+export const sendContactForm = (action$, store) =>
+    action$.ofType("SEND_CONTACTFORM").switchMap(({elem})=> {
+        const form = store.getState().contactForm;
+        console.log("server", form.email.value, form.name.value, form.text.value)
+        return ajax({
+            url:`${url}/api/v1/contacts/message`,
+            body: {from:form.email.value, name:form.name.value, message:form.text.value},
+            ...ajaxObject
+        })
+
+        .flatMap(ajax=> {
+                console.log("CONTACTFORM RESPONSE", ajax.response)
+                return [
+                    {type: "SEND_CONTACTFORM_FULFILLED"}
+                ]   
+        })
+        .catch(error=>ofObs({type:"AJAX_ERROR", payload:error, mesage:"Произошла ошибка с отправкой заказа."}));
+});
+

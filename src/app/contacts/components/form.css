@@ -1,0 +1,16 @@
+.form {
+  width: 48%;
+  background: #cadaff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.form-item {
+  margin-top:15px;
+}
+@media screen and (max-width: 768px) {
+	.form {
+	    width: 100%;
+	}
+}

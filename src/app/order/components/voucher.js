@@ -3,12 +3,13 @@ import './voucher.css';
 import { Button, Input, ErrorText } from "../../shared";
 
 export default ({actions, voucher}) => {
-	console.log("vour", voucher)
 	return (
 		<div // VAUCHER
 	        style={{display:'flex', width:'90%', maxWidth:'500px', padding:'20px 0', justifyContent:'space-between',
 	            alignItems:'flex-start'
-	        }}>
+	        }}
+	        styleName="promo"
+	    >
 	        <div style={{width:'20%'}}>
 	            <Input
 	                maxLength={6}
