@@ -2,9 +2,9 @@ import React from 'react'
 import './product.css'
 import ReactCSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 import url from "../../../entry/url";
-const Image1 =`${url}/images//product1.jpg`
-const Image2 =`${url}/images//product2.jpg`
-const Image3 =`${url}/images//product3.jpg`
+const Image1 =`${url}/images/product1.jpg`
+const Image2 =`${url}/images/product2.jpg`
+const Image3 =`${url}/images/product3.jpg`
 
 
 
@@ -38,7 +38,7 @@ class Review extends React.Component {
               <div styleName="tab" onClick={()=>this.changeTab(2)} style={{backgroundColor:this.state.count===2&&'white'}}>
                 Размеры
               </div>
-   
+
             </div>
             <div styleName="anim2">
               <ReactCSSTransitionGroup

@@ -84,7 +84,6 @@ class BookRoute extends Component {
         // window.removeEventListener("scroll", throttle(this.handleScroll, 1200));
     }
     handleScroll = e => {
-        console.log("-=-=-=-=-= without throttle")
         if (!this.state.first && !this.firstEntered) {
             console.log("settin first state");
             this.setState({ firstEntered: true });

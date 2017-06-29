@@ -2,10 +2,10 @@ import React from 'react'
 import './about.css'
 import url from '../../entry/url'
 import Footer from '../home/components/footer'
-const Img1 = `${url}/images//price-small.jpg`
-const Img2 = `${url}/images//price-big.jpg`
-const Img3 = `${url}/images//price-small-hard.jpg`
-const Img4 = `${url}/images//price-big-hard.jpg`
+const Img1 = `${url}/images/price-small.jpg`
+const Img2 = `${url}/images/price-big.jpg`
+const Img3 = `${url}/images/price-small-hard.jpg`
+const Img4 = `${url}/images/price-big-hard.jpg`
 export default (props)=>(
     <div styleName="page">
         <div styleName="section">

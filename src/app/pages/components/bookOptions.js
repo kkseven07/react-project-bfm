@@ -1,8 +1,8 @@
 import React from "react";
 import Option from "./option";
 import "./bookOptions.css";
-import hard from "./hard.jpg";
-import soft from "./soft.jpg";
+// import hard from "./hard.jpg";
+// import soft from "./soft.jpg";
 import values from "lodash/values";
 import url from "../../../entry/url";
 import { Button } from "../../shared";
