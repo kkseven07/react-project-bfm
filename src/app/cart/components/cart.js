@@ -34,7 +34,6 @@ class Cart extends React.Component {
         let { currentBookId, ...books } = this.props.book;
         let data = reverse(values(books));
         let total = this.getTotal(data);
-        console.log("books", books)
         if (data.length < 1) {
             return (
                 <div

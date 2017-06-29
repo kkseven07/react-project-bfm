@@ -104,7 +104,7 @@ class Drop extends Component {
 					</Dropzone>}
 				<div style={{ cursor: "all-scroll" }}>
 					{this.state.fileURL &&
-						<div style={{ position: "relative" }}>
+						<div style={{ position: "relative" }} styleName="crop-image">
 							<div
 								onClick={() => this.setState({ fileURL: null })}
 								style={{

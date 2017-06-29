@@ -97,7 +97,18 @@ export const validate = (str, field) => {
                 errorText: ""
             }
     };
-
+    if (field === 'text') {
+        if (isEmpty(str)) {
+            return {
+                isValid: false,
+                errorText: "Необходимо заполнить"
+            }
+        }
+        else return {
+                isValid: true,
+                errorText: ""
+            }
+    };
     //phone
     if (field === 'phone') {
         if (isEmpty(str)) {

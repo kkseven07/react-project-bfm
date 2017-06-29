@@ -49,17 +49,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.form {
-  width: 48%;
-  background: #cadaff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-.form-item {
-  margin-top:15px;
-}
+
 .map {
   width: 48%;
   background: white;

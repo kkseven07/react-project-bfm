@@ -20,7 +20,6 @@ const quote =[
     'Ваша жизнь на 10% зависит от того, что с вами происходит, и на 90% от того, как вы реагируете на эти события.'
 ]
 export default ({ page, book, actions, form }) => {
-    console.log("form", form)
     // const update = toSave(form);
     const text1 = form.input.value;
     const text = form.textarea.value;

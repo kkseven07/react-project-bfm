@@ -2,7 +2,6 @@
     display:flex;
     width: 250px;
     justify-content: space-between;
-    margin-top:0.7em;
 }
 .order-info {
     width: 73%;
