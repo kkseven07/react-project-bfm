@@ -14,10 +14,10 @@ const revText = [
             'Отличный подарок! Купил сестренке, она была очень довольна. Собираюсь купить еще несколько книг друзьям!'
             ]
 const revPhoto = [
-                  `${url}/images//rev1.png`,
-                  `${url}/images//rev2.jpg`,
-                  `${url}/images//rev3.jpg`,
-                  `${url}/images//rev4.jpeg`
+                  `${url}/images/rev1.png`,
+                  `${url}/images/rev2.jpg`,
+                  `${url}/images/rev3.jpg`,
+                  `${url}/images/rev4.jpeg`
                   ]
 const revAuthor = ['Алексей', 'Алина', 'Максим', 'Игорь']
 let vr = "count"

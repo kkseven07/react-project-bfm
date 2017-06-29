@@ -14,7 +14,7 @@
 }
 
 .r div[class*="v4"] {
-  font-family:'Drina';
+  font-family:'RoundsBlack';
   color:#3a3839;
   text-align:center;
   text-transform: uppercase;
@@ -41,7 +41,7 @@
   text-align:center;
 }
 .r div[class*="v1"] {
-  font-family: 'Drina';
+  font-family: 'RoundsBlack';
   color: #74c9de;
   text-align: center;
 }

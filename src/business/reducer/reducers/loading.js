@@ -20,7 +20,7 @@ export default (state = { loading: false, type: "" }, action) => {
     case "FETCH_BOOK_FULFILLED_DELAY":
     case "GEN_PAGES_FULFILLED":
     // case "UPDATE_PAGE_FULFILLED":
-    case "UPLOAD_FULFILLED":
+    case "UPLOAD_FULFILLED_DELAY":
     case "UPDATE_PAGE_DONE":
     case "LOAD_FROM_CACHE_FULFILLED":
     case "UPDATE_ORDER_FULFILLED":

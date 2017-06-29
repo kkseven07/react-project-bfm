@@ -24,7 +24,7 @@ import {
     deleteBooksFromCache
 } from "./epics/cache";
 import { input, changeForm, bookVersion, sendOrder,sendVoucher } from "./epics/form";
-import { delayLoading } from "./epics/delay";
+import { delayLoading, uploadDelay } from "./epics/delay";
 import "rxjs/add/operator/filter";
 import "rxjs/add/operator/delay";
 import "rxjs/add/operator/mapTo";
@@ -55,7 +55,8 @@ const rootEpic = combineEpics(
     orderStorage,
     deleteBooksFromCache,
     sendVoucher,
-    checkVoucher
+    checkVoucher,
+    uploadDelay
     // loadOrderCache
 );
 

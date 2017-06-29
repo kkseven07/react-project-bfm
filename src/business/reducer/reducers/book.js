@@ -32,6 +32,8 @@ export default (state = { currentBookId: null }, action) => {
             currentBookId,
             ...books
          };
+      case "BOOK_LOADED":
+        return {...state,[action.bookId]:{...state[action.bookId], loaded:true}}
       case "BOOK_VERSION":
          let book = state[action.book_id];
          switch (action.name) {
@@ -63,15 +65,17 @@ export default (state = { currentBookId: null }, action) => {
                   }
                };
          }
+
       case "FETCH_BOOK_FULFILLED":
          book = {
             ...action.payload.book,
             order: action.payload.order,
             pages: normalisePages(action.payload.pages)
          };
+         // console.log("fetch book fulfileled",{...book, loaded:false})
          return {
             ...state,
-            [action.payload.book.id]: book,
+            [action.payload.book.id]: {...book, loaded:false},
             currentBookId: book.id
          };
 
@@ -155,7 +159,7 @@ export default (state = { currentBookId: null }, action) => {
          };
          return {
             ...state,
-            [action.payload.book.id]: book,
+            [action.payload.book.id]: {...book, loaded:false},
             currentBookId: book.id
          };
       default:

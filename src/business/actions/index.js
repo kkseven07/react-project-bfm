@@ -69,6 +69,11 @@ export const createBook = (book, history) => {
     return { type: "CREATE_BOOK", book, history };
 };
 
+export const bookLoaded = (bookId) =>{
+    console.log("in book loaded action", bookId)
+    return {type:"BOOK_LOADED", bookId}
+}
+
 export const updatePage = (page, params) => {
     return { type: "UPDATE_PAGE", page, params };
 };
