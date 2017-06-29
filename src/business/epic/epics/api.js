@@ -275,7 +275,7 @@ export const checkVoucher = (action$, store) =>
                 const isValid = ajax.response.valid;
                 return [
                     {type: "CHECK_VOUCHER_FULFILLED", voucherStatus:ajax.response}
-                ]   
+                ]
         })
         .catch(error=>ofObs({type:"AJAX_ERROR", payload:error, mesage:"Произошла ошибка с отправкой заказа."}));
 });
@@ -283,7 +283,6 @@ export const checkVoucher = (action$, store) =>
 export const sendContactForm = (action$, store) =>
     action$.ofType("SEND_CONTACTFORM").switchMap(({elem})=> {
         const form = store.getState().contactForm;
-        console.log("server", form.email.value, form.name.value, form.text.value)
         return ajax({
             url:`${url}/api/v1/contacts/message`,
             body: {from:form.email.value, name:form.name.value, message:form.text.value},
@@ -291,10 +290,9 @@ export const sendContactForm = (action$, store) =>
         })
 
         .flatMap(ajax=> {
-                console.log("CONTACTFORM RESPONSE", ajax.response)
                 return [
                     {type: "SEND_CONTACTFORM_FULFILLED"}
-                ]   
+                ]
         })
         .catch(error=>ofObs({type:"AJAX_ERROR", payload:error, mesage:"Произошла ошибка с отправкой заказа."}));
 });

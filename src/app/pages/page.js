@@ -190,7 +190,7 @@ class Page extends Component {
     };
 
     urlForLoading = (print, primary_image) => {
-        return this.props.url + primary_image.image.url.replace("bbx24s", "ssx8m");
+        return this.props.url + primary_image.image.url//.replace("bbx24s", "ssx8m");
     };
     componentWillReceiveProps(nextProps) {
         if (
@@ -256,10 +256,7 @@ class Page extends Component {
                                 200
                             )}
                         onError={() =>
-                            console.log(loadingurl,
-                                "error happend in ",
-                                this.props.page.type
-                            ) || setTimeout(this.setState({ imgLoaded: true }),200)}
+                             setTimeout(this.setState({ imgLoaded: true }),200)}
                         style={{
                             display: "none"
                         }}

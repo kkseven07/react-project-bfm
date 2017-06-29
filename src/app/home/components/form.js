@@ -13,7 +13,7 @@ import range from "lodash/range";
 import { data } from "../../shared";
 const siteKey = "6LcrISYUAAAAAHK2ADjF_25cmmOepUUMrRKUV_Zj";
 import Recaptcha from "react-recaptcha";
-const callback = () => console.log("recapthcad");
+const callback = () => console.log("");
 const getData = field => {
     if (field === "day") {
         return range(1, 32);

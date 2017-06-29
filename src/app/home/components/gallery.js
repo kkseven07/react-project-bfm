@@ -1,6 +1,6 @@
 import React from "react";
 import "./gallery.css";
-import Slider from "react-slick";
+// import Slider from "react-slick";
 import url from "../../../entry/url";
 export default props => {
     return (

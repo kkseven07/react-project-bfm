@@ -61,7 +61,6 @@ export default (state = initialState, action) => {
 
             }
             case "CHECK_VOUCHER_FULFILLED" :
-            console.log("fulfilled", action.voucherStatus);
             const {valid, type, number, discount, count} = action.voucherStatus;
             return {
                 ...state,

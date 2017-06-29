@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./epicStory.css";
 import { monthsMapYa } from "../../shared/utils.js";
 import invert from "lodash/invert";
-import { View, Text, Animated, StyleSheet } from "react-native";
+// import { View, Text, Animated, StyleSheet } from "react-native";
 import { getDate } from "../../shared/utils.js";
 
 class Page extends Component {

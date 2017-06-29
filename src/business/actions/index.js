@@ -90,7 +90,6 @@ export const createBook = (book, history) => {
 };
 
 export const bookLoaded = (bookId) =>{
-    console.log("in book loaded action", bookId)
     return {type:"BOOK_LOADED", bookId}
 }
 

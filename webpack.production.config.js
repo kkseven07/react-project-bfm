@@ -19,7 +19,7 @@ module.exports = {
       "react-burger-menu",
       "react-transition-group/CSSTransitionGroup",
       "halogen/GridLoader",
-      "react-native"
+      // "react-native"
     ]
   },
   output: {
@@ -32,7 +32,7 @@ module.exports = {
     modules: [SRC, NODE_MODULES], // root folders for Webpack resolving, so we can now call require('greet')
     alias: {
       actions: path.join(SRC, "actions/"), // sample alias, calling require('actions/file') will resolve to ./src/actions/file.js
-      "react-native": "react-native-web"
+      // "react-native": "react-native-web"
     }
   },
   module: {
@@ -48,8 +48,8 @@ module.exports = {
       {
         test: /\.js$/,
         include: [
-          path.resolve(__dirname, "src"),
-          path.resolve(__dirname, "node_modules/react-native-uncompiled")
+          path.resolve(__dirname, "src")
+          //path.resolve(__dirname, "node_modules/react-native-uncompiled")
         ],
         loader: "babel-loader",
         query: {
