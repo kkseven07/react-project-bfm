@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { NavLink } from "react-router-dom";
-import Logo from "../../../../assets/icons/logo.png";
+// import Logo from "../../../../assets/icons/logo.png";
+import url from "../../../entry/url";
+
 import "./header.css";
 import values from "lodash/values";
 import { push as Menu } from "react-burger-menu";
@@ -209,7 +211,7 @@ class Header extends React.Component {
                         styleName="logo"
                         onClick={() => history.push("/")}
                     >
-                        <img styleName="image" src={Logo} />
+                        <img styleName="image" src={`${url}/images/logo.png`} />
 
                     </div>
 
