@@ -74,7 +74,7 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.BannerPlugin("Copyright Ilyas Malgazhdarov"),
+    new webpack.BannerPlugin("Copyright bookfromme"),
     new HtmlWebpackPlugin({
       template: __dirname + "/index.html"
     }),

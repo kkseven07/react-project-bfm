@@ -8,3 +8,11 @@ export const delayLoading = action$ =>
             { type: "FETCH_BOOK_FULFILLED_DELAY" },
            { type: "CLEAR_GIFT_FORM" }
         ]);
+
+export const uploadDelay = action$ =>
+    action$
+        .ofType("UPLOAD_FULFILLED")
+        .delay(200)
+        .flatMap(action => [
+            { type: "UPLOAD_FULFILLED_DELAY" },
+        ]);

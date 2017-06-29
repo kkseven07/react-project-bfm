@@ -24,13 +24,13 @@ let sizes = {
     fumoney: 23
 };
 let images = {
-    digital: `${url}/images//digital.jpg)`,
-    soft19: `${url}/images//price-small.jpg)`,
-    soft23: `${url}/images//price-big.jpg)`,
-    hard19: `${url}/images//price-small-hard.jpg)`,
-    hard23: `${url}/images//price-big-hard.jpg)`,
-    deluxe: `${url}/images//product3.jpg)`,
-    fumoney: `${url}/images//product3.jpg)`,
+    digital: `${url}/images/digital.jpg`,
+    soft19: `${url}/images/price-small.jpg`,
+    soft23: `${url}/images/price-big.jpg`,
+    hard19: `${url}/images/price-small-hard.jpg`,
+    hard23: `${url}/images/price-big-hard.jpg`,
+    deluxe: `${url}/images/product3.jpg`,
+    fumoney: `${url}/images/product3.jpg`,
 };
 
 const data = [

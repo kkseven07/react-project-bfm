@@ -12,6 +12,7 @@ export const storageCreateBook = (action$, store) =>
                     "UPDATE_ORDER_FULFILLED",
                     "GEN_PAGES_FULFILLED",
                     "BOOK_VERSION",
+                    "BOOK_LOADED",
                     "UPDATE_PAGE"
                 ].indexOf(action.type) > -1
         )
@@ -70,7 +71,7 @@ export const deleteFromCache = (action$, store) =>
     });
 
 export const loadFromCache = (action$, store) =>
-    action$.ofType("LOAD_FROM_CACHE").delay(100).switchMap(action => {
+    action$.ofType("LOAD_FROM_CACHE").switchMap(action => {
         return [{ type: "LOAD_FROM_CACHE_FULFILLED" }];
     });
 

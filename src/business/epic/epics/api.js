@@ -51,11 +51,13 @@ export const updatePage = action$ =>
                 ...ajaxObject
             })
                 .flatMap(ajax => {
+                    let response = Base64.decode(ajax.response.__yaml_faxmlscm);
+                    response = JSON.parse(response);
                     return [
                         { type: "CLOSE_MODAL" },
                         {
                             type: "UPDATE_PAGE_FULFILLED",
-                            payload: ajax.response
+                            payload: response
                         }
                     ];
                 })
@@ -131,7 +133,7 @@ export const createBook = action$ =>
             ...ajaxObject
         })
             .flatMap(ajax => {
-                let response = Base64.decode(ajax.response.book_uuid);
+                let response = Base64.decode(ajax.response.__yaml_faxmlscm);
                 response = JSON.parse(response);
                 let hashed_id = createHashid(response.book.id);
                 history.push(`/books/${hashed_id}`);
@@ -160,10 +162,12 @@ export const upload = action$ =>
             ...ajaxObject
         })
             .flatMap(ajax => {
+                let response = Base64.decode(ajax.response.__yaml_faxmlscm);
+                response = JSON.parse(response);
                 return [
                     {
                         type: "UPLOAD_FULFILLED",
-                        payload: ajax.response
+                        payload: response
                     },
                     { type: "CLOSE_MODAL" }
                 ];
@@ -181,9 +185,11 @@ export const getBook = action$ =>
     action$.ofType("GET_BOOK").switchMap(({ book_id }) => {
         return ajax({ url: `${url}/api/v1/books/${book_id}`, ...ajaxObjectGet })
             .flatMap(ajax => {
+                let response = Base64.decode(ajax.response.__yaml_faxmlscm);
+                response = JSON.parse(response);
                 return ofObs({
                     type: "GEN_PAGES_FULFILLED",
-                    payload: ajax.response
+                    payload: response
                 });
             })
             .catch(error =>
@@ -257,17 +263,16 @@ export const changeRoute = action$ =>
 
 // voucher
 export const checkVoucher = (action$, store) =>
-    action$.ofType("CHECK_VOUCHER").switchMap(({order})=> {
+    action$.ofType("CHECK_VOUCHER").switchMap(({ order }) => {
         const voucher = store.getState().voucher.voucherField.value;
-        const params = {number:voucher}
+        const params = { number: voucher };
         return ajax({
-            url:`${url}/api/v1/voucher/check`,
-            body: {number: voucher},
+            url: `${url}/api/v1/voucher/check`,
+            body: { number: voucher },
             ...ajaxObject
         })
-
-        .flatMap(ajax=> {
-            const isValid = ajax.response.valid;
+            .flatMap(ajax => {
+                const isValid = ajax.response.valid;
                 return [
                     {type: "CHECK_VOUCHER_FULFILLED", voucherStatus:ajax.response}
                 ]   
@@ -293,3 +298,4 @@ export const sendContactForm = (action$, store) =>
         })
         .catch(error=>ofObs({type:"AJAX_ERROR", payload:error, mesage:"Произошла ошибка с отправкой заказа."}));
 });
+

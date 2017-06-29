@@ -49,16 +49,17 @@ class BookRoute extends Component {
 
     state = {
         inside: true,
-        first: false,
-        second: false,
-        firstEntered: false,
-        secondEntered: false
+        first: this.props.book[this.props.bookId].loaded,
+        second: this.props.book[this.props.bookId].loaded,
+        firstEntered: this.props.book[this.props.bookId].loaded,
+        secondEntered: this.props.book[this.props.bookId].loaded
     };
     componentWillMount() {
         //setup book from local storage
         let hash_id = this.props.location.pathname.replace(/\/books\//, "");
         if (hash_id.length > 2 && !hash_id.match(/\/books/)) {
             let book_id = decodeHashid(hash_id)[0];
+            this.book_id = book_id
             if (book_id === this.props.book.currentBookId) {
                 return;
             }
@@ -84,7 +85,8 @@ class BookRoute extends Component {
         window.removeEventListener("scroll", throttle(this.handleScroll, 1200));
     }
     handleScroll = e => {
-        console.log("-=-=-=-=-= without throttle")
+        // console.log("-=-=-=-", this.props.book[this.book_id].loaded, "loaded?")
+        // if(this.props.book[this.book_id].loaded) return;
         if (!this.state.first && !this.firstEntered) {
             console.log("settin first state");
             this.setState({ firstEntered: true });
@@ -96,7 +98,9 @@ class BookRoute extends Component {
         ) {
             console.log("setting second state");
             this.setState({ secondEntered: true });
-            setTimeout(() => this.setState({ second: true }), 500);
+            setTimeout(() => this.setState({ second: true },()=>{
+                this.props.actions.bookLoaded(this.props.bookId)
+            }), 500);
         }
     };
 
@@ -111,7 +115,7 @@ class BookRoute extends Component {
 
         let gift, data = [], bData, cover;
         if (book[bookId]) {
-            // console.log("my book", book);
+            console.log("my book", book[bookId].loaded);
             data = values(book[bookId].pages);
             const { pages, ...rest } = book[bookId];
             bData = rest;

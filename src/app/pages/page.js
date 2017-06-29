@@ -185,19 +185,11 @@ class Page extends Component {
         //.replace("bbx24s", "mmy70f")
     };
 
-    smallImage = () => {
-        return `url(${this.props.url + this.props.page.primary_image.image.url.replace("bbx24s", "ssx8m")})`;
+    smallImage = (primary_image) => {
+        return `url(${this.props.url + primary_image.image.url.replace("bbx24s", "ssx8m")})`;
     };
 
     urlForLoading = (print, primary_image) => {
-        // if (print) {
-        //     return (
-        //         this.props.url +
-        //         primary_image.image.url
-        //             .replace("/web/", "/print/")
-        //             .replace("_768", "_2048")
-        //     );
-        // }
         return this.props.url + primary_image.image.url; //.replace("bbx24s", "ssx8m");
     };
     componentWillReceiveProps(nextProps) {
@@ -213,7 +205,7 @@ class Page extends Component {
         const { type, primary_image, data } = this.props.page;
         let image, smallImage, loadingurl;
         if (primary_image.image.url) {
-            if(type==="qualityTableChoice") console.log(this.state.imgLoaded,"qualityTableChoice")
+            // if(type==="qualityTableChoice") console.log(this.state.imgLoaded,"qualityTableChoice")
             image = {
                 backgroundImage: this.imageUrl(
                     this.props.print,
@@ -223,7 +215,7 @@ class Page extends Component {
                 // backgroundSize:"cover"
             };
             smallImage = {
-                backgroundImage: this.smallImage(),
+                backgroundImage: this.smallImage(primary_image),
                 filter: "blur(15px)"
             };
             loadingurl = this.urlForLoading(this.props.print, primary_image);
@@ -261,13 +253,13 @@ class Page extends Component {
                         onLoad={() =>
                             setTimeout(
                                 () => this.setState({ imgLoaded: true }),
-                                500
+                                200
                             )}
                         onError={() =>
-                            console.log(
+                            console.log(loadingurl,
                                 "error happend in ",
                                 this.props.page.type
-                            ) || this.setState({ imgLoaded: true })}
+                            ) || setTimeout(this.setState({ imgLoaded: true }),200)}
                         style={{
                             display: "none"
                         }}
