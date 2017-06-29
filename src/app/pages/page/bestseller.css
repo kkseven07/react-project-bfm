@@ -4,7 +4,7 @@
     align-items: center;
     height:70%;
     padding-left:5%;
-    font-family: 'Sylfaen';
+    font-family: 'Times New Roman';
     color:rgb(50,50,50);
 }
 
@@ -12,11 +12,11 @@
     text-align: center;
 }
 .name {
-    font-size: 0.6em;
+    font-size: 1em;
 }
 .title{
-    font-size: 0.5em;
+    font-size: 0.6em;
 }
 .year{
-    font-size: 0.45em;
+    font-size: 0.6em;
 }

@@ -30,7 +30,7 @@ export const bookVersion = (action$, store) =>
             // }
         ];
     });
-export const sendOrder = (action$, store) =>
+export const shouldOrderSend = (action$, store) =>
     action$.ofType("VALIDATE_FORM").switchMap(({order})=> {
             const orderForm = store.getState().orderForm.order;
             const canConfirm = store.getState().orderForm.canConfirm;
@@ -43,8 +43,8 @@ export const sendOrder = (action$, store) =>
             }
 
     });
-export const sendVoucher = (action$, store) =>
-    action$.ofType("VALIDATE_VOUCHER").switchMap(({order})=> {
+export const shouldVoucherSend = (action$, store) =>
+    action$.ofType("VALIDATE_VOUCHER").switchMap(({elem})=> {
             const voucher = store.getState().voucher.voucherField.value;
             const shouldVoucherSend = store.getState().voucher.shouldVoucherSend;
             if(shouldVoucherSend)
@@ -55,4 +55,16 @@ export const sendVoucher = (action$, store) =>
                 return [{type:"VOUCHER_NOT_SENT"}];
             }
 
+    });
+export const shouldContactFormSend = (action$, store) =>
+    action$.ofType("VALIDATE_CONTACTFORM").switchMap(({contact})=> {
+            const canConfirm = store.getState().contactForm.canConfirm;
+            if(canConfirm)
+                return [
+                    {type:"SEND_CONTACTFORM"}
+                ];
+            else {
+                return [{type:"CONTACTFORM_NOT_SENT"}];
+            }
+    
     });

@@ -172,7 +172,7 @@ class Header extends React.Component {
                             this.props.actions.closeMenu();
                         }}
                     >
-                        <span styleName="link">О НАС </span>
+                        <span styleName="link">О ПРОДУКТЕ </span>
 
                     </div>
                     <div
@@ -304,7 +304,7 @@ class Header extends React.Component {
                             }}
                             onClick={() => history.push("/about")}
                         >
-                            О НАС
+                            О ПРОДУКТЕ
                         </div>
                         <div
                             styleName="d-item"

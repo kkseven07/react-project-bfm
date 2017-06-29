@@ -21,7 +21,7 @@ class Orders extends Component {
             <div >
                 {
                     data.map((item,i)=> (
-                        <OrderItem key={i} order={item} actions={this.props.actions} />
+                        <OrderItem key={i} order={item} actions={this.props.actions}/>
                     ))
                 }
             </div>

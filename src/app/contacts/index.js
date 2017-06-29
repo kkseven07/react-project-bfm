@@ -2,6 +2,7 @@ import React from 'react'
 import './index.css'
 import {Input, Button, TextArea} from '../shared'
 import Footer from '../home/components/footer'
+import Form from './components/form'
 export default (props)=>{
 
   return <div >
@@ -22,22 +23,8 @@ export default (props)=>{
         </div>
       </div>
       <div styleName="part2">
-        <div styleName="form">
-          <div style={{textAlign:'center', fontFamily:'RobotoMedium'}}>НАПИШИТЕ НАМ</div>
-          <div style={{width:'100%', paddingBottom:'20px'}}>
-            <div styleName="form-item">
-              <Input placeholder="Ваше имя" field="go"/>
-            </div>
-            <div styleName="form-item">
-              <Input placeholder="Ваш email" field="go"/>
-            </div>
-            <div styleName="form-item">
-              <TextArea style={{height:'180px'}} placeholder="Ваше сообщение" field="go"/>
-            </div>
-
-          </div>
-          <Button>Отправить</Button>
-        </div>
+        <Form />
+        
         <div styleName="map">
           <iframe
             style={{border:0,frameBorder:0, width:'100%', height:'100%' }}

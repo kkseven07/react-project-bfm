@@ -115,10 +115,10 @@
   font-family: 'PeaceSans';
   src: url('../../../assets/fonts/Peace-Sans.woff2');
 }
-@font-face {
+/*@font-face {
   font-family: 'Sylfaen';
   src: url('../../../assets/fonts/sylfaen.woff2');
-}
+}*/
 @font-face {
   font-family: 'Agaaler';
   src: url('../../../assets/fonts/Agaaler.woff2');
@@ -165,10 +165,10 @@
   font-family: 'Russian';
   src: url('../../../assets/fonts/Russian.woff2');
 }
-@font-face {
+/*@font-face {
   font-family: 'Drina';
   src: url('../../../assets/fonts/Drina.woff2');
-}
+}*/
 
 /*.print{
     height:1400px;

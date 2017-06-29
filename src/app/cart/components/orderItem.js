@@ -2,25 +2,12 @@ import React from "react";
 import OrderBook from "./orderBooks";
 import './orderItem.css'
 //background:'rgba(153, 153, 153, 0.08)',
-let prices = {
-    digital: 2900,
-    soft19: 9900,
-    soft23: 11900,
-    hard19: 14900,
-    hard23: 16900,
-    deluxe: 39900,
-    fumoney: 99000
-};
-const getWrapPrice = book => {
-        return !book.gift_wrap ? 0 : book.format !== "digital" ? 1000 : 0;
-    };
-const getTotal = books => {
-        return books.reduce((acc, book) => prices[book.format] + acc+getWrapPrice(book), 0);
-    };
+
 export default ({ order, actions }) => {
-    const {orderInfo} = order.orderDetails;
+    const {orderInfo, voucher} = order.orderDetails;
     const date = new Date(orderInfo.date);
-    let total = getTotal(order.books);
+    let total = order.orderDetails.price.total;
+    let discount = order.orderDetails.price.discount;
     return (
         <div
             className="width-full"
@@ -49,7 +36,34 @@ export default ({ order, actions }) => {
                 ))}
 
             </div>
-            <div style={{width:'73%', justifyContent:'flex-end'}} className="flex">
+            <div 
+                style={{width:'73%', justifyContent:'flex-end', flexDirection:'column', alignItems:'flex-end'}} 
+                className="flex"
+                >
+                {
+                    discount!==0&&<div
+                    styleName="elem"
+                    style={{
+                        width:'200px', fontFamily:'RobotoMedium', fontSize:'1.3em', background:'#f0f0f0', padding:'0.5em',
+                        borderBottom:'1px solid rgb(181, 179, 179)'
+                    }}
+                    >
+                        <div styleName="type">СУММА</div>
+                        <div>{total+discount}</div>
+                    </div>  
+                }
+                {
+                     discount!==0&&<div
+                    styleName="elem"
+                    style={{
+                        width:'200px', fontFamily:'RobotoMedium', fontSize:'1.3em', background:'#f0f0f0', padding:'0.5em',
+                        borderBottom:'1px solid rgb(181, 179, 179)'
+                    }}
+                    >
+                        <div styleName="type">СКИДКА</div>
+                        <div>{discount}</div>
+                </div>
+                }
                 <div
                     styleName="elem"
                     style={{width:'200px', fontFamily:'RobotoMedium', fontSize:'1.3em', background:'#f0f0f0', padding:'0.5em'}}

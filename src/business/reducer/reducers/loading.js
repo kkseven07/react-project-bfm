@@ -17,6 +17,8 @@ export default (state = { loading: false, type: "" }, action) => {
       return {loading:true, type:"createOrder"}
     case "CHECK_VOUCHER":
       return {loading:true, type:"checkVoucher"}
+    case "SEND_CONTACTFORM":
+      return {loading:true, type:"sendContactForm"}
     case "FETCH_BOOK_FULFILLED_DELAY":
     case "GEN_PAGES_FULFILLED":
     // case "UPDATE_PAGE_FULFILLED":
@@ -29,6 +31,8 @@ export default (state = { loading: false, type: "" }, action) => {
     case "CREATE_ORDER_FULFILLED":
     case "CHECK_VOUCHER_FULFILLED":
     case "CHECK_VOUCHER_FAILED":
+    case "SEND_CONTACTFORM_FULFILLED":
+
       return { ...state, loading: false };
     case "AJAX_ERROR":
       return { ...state, loading: false };

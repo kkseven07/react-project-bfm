@@ -9,6 +9,7 @@ import { Button, Input, ErrorText } from "../shared";
 import Form from "./components/form";
 import Logo from "../../../assets/icons/logo.png";
 import Voucher from './components/voucher';
+import OrderPrice from './components/orderPrice'
 
 let prices = {
     digital: 2900,
@@ -61,7 +62,6 @@ class Order extends React.Component {
         if (!this.props.book) {
             return null;
         }
-        console.log("state fulfilled", this.props.voucher.voucherStatus)
         let { currentBookId, ...books } = this.props.book;
         let data = reverse(values(books));
         const {voucherStatus} = this.props.voucher;
@@ -70,21 +70,20 @@ class Order extends React.Component {
         let wrapPrice = total - totalForBooks;
         let discount = voucherStatus.discount?(voucherStatus.discount*total):0;
         total = total-discount;
-        
-        
-        
         this.totalForBooks=totalForBooks;
         this.wrapPrice=wrapPrice;
         this.total=total;
         this.books=Object.keys(books).map((k) => books[k]);
         this.date = new Date();
+        this.discount=discount;
         let order ={
             books:this.books,
             orderDetails: {
                 price:{
                         total:this.total,
                         totalForBooks:this.totalForBooks,
-                        wrapPrice:this.wrapPrice
+                        wrapPrice:this.wrapPrice,
+                        discount:this.discount
                 },
                 orderInfo:{
                     name:this.props.form.name.value,
@@ -99,7 +98,6 @@ class Order extends React.Component {
 
             }
         };
-        console.log("ORDER SENT", order)
         if (data.length<1&&!this.state.showConfirm) return (
             <div
                 className="flex flex-center width-full flex-column"
@@ -134,64 +132,23 @@ class Order extends React.Component {
                 />
 
                     {!this.state.showConfirm&&<div style={{width:'100%', flexDirection:'column'}} className="flex flex-center">
-                        <div
-                            className="flex-start"
-                            style={{
-                                margin: 10,
-                                paddingLeft: 5,
-                                marginTop: 10,
-                                width: "100%",
-                                fontSize: 25,
-                                maxWidth: 500,
-                                fontFamily: "RobotoRegular"
-                            }}
-                        >
-                            Ваш заказ
-                        </div>
-                        <div
-                            styleName="summary first"
-                            className="flex flex-center space-between"
-                        >
-                            <div>
-                                {data.length > 1 ? "Книги" : "Книга"}
-                            </div>
+                        
+                        <OrderPrice 
+                            total={total} data={data} totalForBooks={totalForBooks} wrapPrice={wrapPrice} discount={discount}
+                        />
 
-                            <div>
-                                {totalForBooks} тг
-                            </div>
-                        </div>
-                        <div
-                            styleName="summary"
-                            className="flex flex-center space-between"
-                        >
-                            <div>
-                                Упаковка
-                            </div>
-
-                            <div>
-                                {wrapPrice} тг
-                            </div>
-                        </div>
-                        <div
-                            styleName="summary"
-                            className="flex flex-center space-between"
-                        >
-                            <div
-                            >
-                                Итого
-                            </div>
-
-                            <div>
-                                {total} тг
-                            </div>
-                        </div> 
 
                         {
-                            this.state.isVoucherValid===""
+                            this.state.isVoucherValid===""||this.state.isVoucherValid===false
                             ?<Voucher actions={this.props.actions} voucher={this.props.voucher}/>
-                            :this.state.isVoucherValid?<div>VOUCHER SUCCESS</div>
-                            : <div>VOUCHER UNSUCCESS</div>
+                            :<div style={{paddingTop:'10px', color:'#0ec62e'}}>Промокод успешно применен.</div>
                         }
+                        {
+                            this.state.isVoucherValid===false&&<div style={{paddingTop:'10px', color:'red'}}>
+                                Введенный промокод не верен.
+                            </div>
+                        }
+                        
                     </div>}
                     {this.state.showConfirm&&<div // voucher up 
                          //CONFIRMED ORDER STATUS BAR
@@ -237,13 +194,15 @@ class Order extends React.Component {
                             maxWidth: 500,
                             fontFamily: "RobotoRegular"
                         }}
+                        styleName="title"
                     >
                         Ваши детали
                     </div>
                     <Form form={this.props.form} actions={this.props.actions}/>
                     <div
-                        style={{ maxWidth: 500, width: "90%" }}
+                        style={{ maxWidth: 500, width: "100%" }}
                         className="flex space-between"
+                        styleName="btns"
                     >
                         <Button
                             click={() => {

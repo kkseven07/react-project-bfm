@@ -26,6 +26,8 @@ const Loading = props => {
       text="Загружаем картинку..."
    } else if(props.type==="checkVoucher"){
       text="Проверка промокода..."
+   } else if(props.type==="sendContactForm"){
+      text="Почтальон доставляет письмо..."
    }
    else {
       text = "Подгружаем книгу...";
