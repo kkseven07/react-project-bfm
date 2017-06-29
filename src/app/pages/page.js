@@ -190,7 +190,7 @@ class Page extends Component {
     };
 
     urlForLoading = (print, primary_image) => {
-        return this.props.url + primary_image.image.url; //.replace("bbx24s", "ssx8m");
+        return this.props.url + primary_image.image.url.replace("bbx24s", "ssx8m");
     };
     componentWillReceiveProps(nextProps) {
         if (

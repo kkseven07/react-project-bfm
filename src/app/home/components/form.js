@@ -126,6 +126,20 @@ const You = ({ form, ...props }) => {
                 enter={props.actions.enterInput}
             />
             <ErrorText text={form.bookName.errorText} />
+            <div className="flex width-full" style={{ paddingBottom: 8 }}>
+
+                <Recaptcha
+                    render="explicit"
+                    onloadCallback={callback}
+                    sitekey={siteKey}
+                    hl="ru"
+                    // theme="dark"
+                    verifyCallback={verifyCallback}
+                />
+            </div>
+            {!form.verifyed &&
+                !form.captchaPristine &&
+                <ErrorText text={"Вы не робот?"} />}
 
             <div className="flex width-full">
                 <Button
@@ -145,7 +159,7 @@ const You = ({ form, ...props }) => {
     );
 };
 
-const MomAndDad = ({ form,bookType, ...props }) => {
+const MomAndDad = ({ form, bookType, ...props }) => {
     let gift = {
         name: form.name.value,
         surname: form.surname.value,
@@ -160,7 +174,9 @@ const MomAndDad = ({ form,bookType, ...props }) => {
         calculatedAge: parseInt(form.calculatedAge)
     };
     const verifyCallback = response => props.actions.captchaVerify();
-    const descText=bookType==="mom"?"Как зовут Вашу маму?":"Как зовут Вашего папу?"
+    const descText = bookType === "mom"
+        ? "Как зовут Вашу маму?"
+        : "Как зовут Вашего папу?";
     return (
         <div className="flex flex-center flex-column" styleName="form">
             <DescText text={descText} />
@@ -249,6 +265,20 @@ const MomAndDad = ({ form,bookType, ...props }) => {
                 enter={props.actions.enterInput}
             />
             <ErrorText text={form.sondaug.errorText} />
+            <div className="flex width-full" style={{ paddingBottom: 8 }}>
+
+                <Recaptcha
+                    render="explicit"
+                    onloadCallback={callback}
+                    sitekey={siteKey}
+                    hl="ru"
+                    // theme="dark"
+                    verifyCallback={verifyCallback}
+                />
+            </div>
+            {!form.verifyed &&
+                !form.captchaPristine &&
+                <ErrorText text={"Вы не робот?"} />}
 
             <div className="flex width-full">
                 <Button
@@ -289,16 +319,3 @@ export default ({
               form={props}
           />;
 };
-
-//<div className="flex width-full" style={{paddingBottom:8}}>
-
-// <Recaptcha
-// render="explicit"
-//         onloadCallback={callback}
-//         sitekey={siteKey}
-//         hl="ru"
-//         // theme="dark"
-//         verifyCallback={verifyCallback}
-//     />
-// </div>
-// {!form.verifyed&&!form.captchaPristine&&<ErrorText text={"Вы не робот?"} />}

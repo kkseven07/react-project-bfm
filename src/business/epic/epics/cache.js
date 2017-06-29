@@ -1,6 +1,15 @@
 import { normalisePages } from "../../reducer/reducers/book";
 import reverse from "lodash/reverse";
 import CryptoJS from "crypto-js";
+var Base64 = require("js-base64").Base64;
+
+const encodeItem = item => {
+    let s=JSON.stringify(item)
+    Base64.encode(s)
+};
+
+const decodeItem = item => {};
+
 export const storageCreateBook = (action$, store) =>
     action$
         .filter(

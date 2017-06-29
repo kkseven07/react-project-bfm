@@ -3,6 +3,7 @@ import Option from "./option";
 import "./bookOptions.css";
 import hard from "./hard.jpg";
 import soft from "./soft.jpg";
+import values from "lodash/values";
 import url from "../../../entry/url";
 import { Button } from "../../shared";
 let prices = {
@@ -30,7 +31,7 @@ let images = {
     hard19: `${url}/images/price-small-hard.jpg`,
     hard23: `${url}/images/price-big-hard.jpg`,
     deluxe: `${url}/images/product3.jpg`,
-    fumoney: `${url}/images/product3.jpg`,
+    fumoney: `${url}/images/product3.jpg`
 };
 
 const data = [
@@ -94,7 +95,7 @@ class Options extends React.Component {
                     <div styleName="elem image" className="flex flex-center">
                         <img
                             src={images[this.props.book.format]}
-                            style={{ width: 315, height: 315 }}
+                            style={{ width: 330, height: 280 }}
                         />
 
                     </div>
@@ -224,7 +225,7 @@ class Options extends React.Component {
                     >
                         <div styleName="elem image" className="flex">
                             <img
-                                src={soft}
+                                src={`${url}/images/giftwrap1.jpg`}
                                 style={{ width: 315, height: 315 }}
                             />
 
@@ -276,7 +277,7 @@ class Options extends React.Component {
                                     lineHeight: 1.4
                                 }}
                             >
-                                Подарочная упаковка - Яркая и красочная фирменная упаковка от
+                                Фирменная упаковка от
                                 {" "}
                                 <span style={{ fontFamily: "RobotoMedium" }}>
                                     bookfrom.me
@@ -307,12 +308,21 @@ class Options extends React.Component {
 
                 <Button
                     click={() => {
-                        this.props.actions.bookFormat(this.props.book)
+                        this.props.actions.bookFormat(this.props.book);
                         this.props.history.push("/cart");
                     }}
                 >
                     Добавить в корзину
                 </Button>
+
+                <div style={{ display: "none" }}>
+                    {values(images).map((src, i) => {
+                        return <img src={src} key={i} />;
+                    })}
+
+                    <img src={`${url}/images/giftwrap1.jpg`} />
+
+                </div>
 
             </div>
         );

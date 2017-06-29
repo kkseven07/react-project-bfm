@@ -54,7 +54,7 @@ const rootEpic = combineEpics(
     orderStorage,
     deleteBooksFromCache,
     checkVoucher,
-    uploadDelay
+    uploadDelay,
     shouldVoucherSend,
     sendContactForm,
     shouldContactFormSend

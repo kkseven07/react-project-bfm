@@ -45,7 +45,7 @@ const init = {
    calculatedAge: "",
    dateExists: true,
    isNext: false,
-   verifyed: true,
+   verifyed: false,
    canCreate: false,
    captchaPristine: true
 };
