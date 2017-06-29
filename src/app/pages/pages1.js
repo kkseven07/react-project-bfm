@@ -86,7 +86,7 @@ class BookRoute extends Component {
     }
     handleScroll = e => {
         // console.log("-=-=-=-", this.props.book[this.book_id].loaded, "loaded?")
-        // if(this.props.book[this.book_id].loaded) return;
+        if(this.props.book[this.book_id].loaded) return;
         if (!this.state.first && !this.firstEntered) {
             console.log("settin first state");
             this.setState({ firstEntered: true });
@@ -97,9 +97,11 @@ class BookRoute extends Component {
             !this.secondEntered
         ) {
             console.log("setting second state");
-            this.setState({ secondEntered: true });
-            setTimeout(() => this.setState({ second: true },()=>{
+            this.setState({ secondEntered: true },()=>{
                 this.props.actions.bookLoaded(this.props.bookId)
+            });
+            setTimeout(() => this.setState({ second: true },()=>{
+
             }), 500);
         }
     };

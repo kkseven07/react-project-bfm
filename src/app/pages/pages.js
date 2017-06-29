@@ -49,10 +49,10 @@ class BookRoute extends Component {
 
     state = {
         inside: true,
-        first: false,
-        second: false,
-        firstEntered: false,
-        secondEntered: false
+        // first: false,
+        // second: false,
+        // firstEntered: false,
+        // secondEntered: false
     };
     componentWillMount() {
         //setup book from local storage
@@ -76,12 +76,12 @@ class BookRoute extends Component {
     }
     componentDidMount() {
         window.scrollTo(0, 0);
-        window.addEventListener("scroll", throttle(this.handleScroll, 1200));
+        // window.addEventListener("scroll", throttle(this.handleScroll, 1200));
     }
     componentWillUnmount() {
         this.props.actions.closeModal();
         this.props.actions.cleanBuilder();
-        window.removeEventListener("scroll", throttle(this.handleScroll, 1200));
+        // window.removeEventListener("scroll", throttle(this.handleScroll, 1200));
     }
     handleScroll = e => {
         console.log("-=-=-=-=-= without throttle")
@@ -140,33 +140,6 @@ class BookRoute extends Component {
                                 }
                             />
                             {pages.map((page, i) => {
-                                if (i > 10 && i < 25) {
-                                    return (
-                                        this.state.first &&
-                                        <Page
-                                            osName={this.props.osName}
-                                            url={this.props.url}
-                                            actions={this.props.actions}
-                                            book={bData}
-                                            id={page.type}
-                                            page={page}
-                                            key={i}
-                                        />
-                                    );
-                                } else if (i > 25) {
-                                    return (
-                                        this.state.second &&
-                                        <Page
-                                            osName={this.props.osName}
-                                            url={this.props.url}
-                                            actions={this.props.actions}
-                                            book={bData}
-                                            id={page.type}
-                                            page={page}
-                                            key={i}
-                                        />
-                                    );
-                                }
                                 return (
                                     <Page
                                         osName={this.props.osName}
