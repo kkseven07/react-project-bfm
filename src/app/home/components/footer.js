@@ -1,7 +1,7 @@
 import React from 'react'
 import './footer.css'
-import Logo from '../../../../assets/img/logo monochr.png'
-
+// import Logo from '../../../../assets/img/logo monochr.png'
+import url from "../../../entry/url";
 export default (props)=>{
 
 
@@ -44,7 +44,7 @@ export default (props)=>{
 
             </div>
             <div styleName="logo">
-                <img src={Logo} alt="" style={{width:'100px', height:'100px', display:'block'}}/>
+                <img src={`${url}/images/logo_mono.png`} alt="" style={{width:'100px', height:'100px', display:'block'}}/>
             </div>
             <div styleName="copyright">
                 2017 © bookfrom.me — подари незабываемый подарок. Все права защищены. Доставка по всему Казахстану. Попытка взлома данной системы плохо влияет на вашу карму.
