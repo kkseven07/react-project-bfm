@@ -296,81 +296,81 @@ export const months = [
     "Ноябрь",
     "Декабрь"
 ];
-export const colors = [
-    {
-        background: "#a0dbeb ",
-        text: "black"
-    },
-    {
-        background: "#73dcb4 ",
-        text: "black"
-    },
-    {
-        background: "#fa2d2e ",
-        text: "white"
-    },
-    {
-        background: "#ffd632 ",
-        text: "black"
-    },
-    {
-        background: "#c570e5 ",
-        text: "black"
-    },
-    {
-        background: "#ff8c1b ",
-        text: "black"
-    },
-    {
-        background: "#2d292a ",
-        text: "white"
-    },
-    {
-        background: "#ffc5d9 ",
-        text: "black"
-    }
-  ];
 // export const colors = [
 //     {
-//         background: "#ffd8d4 ",
-//         text: "black",
-//         borderColor:"rgb(247, 203, 199)"
+//         background: "#a0dbeb ",
+//         text: "black"
 //     },
 //     {
-//         background: "rgb(176, 227, 215)",
-//         text: "black",
-//         borderColor:"rgb(178, 235, 222)"
+//         background: "#73dcb4 ",
+//         text: "black"
 //     },
 //     {
-//         background: "rgb(35, 37, 37)",
-//         text: "white",
-//         borderColor:"rgb(32, 33, 33)"
+//         background: "#fa2d2e ",
+//         text: "white"
 //     },
 //     {
-//         background: "rgb(255, 243, 123)",
-//         text: "black",
-//         borderColor:"rgb(251, 239, 106)"
+//         background: "#ffd632 ",
+//         text: "black"
 //     },
 //     {
-//         background: "rgb(247, 170, 85)",
-//         text: "black",
-//         borderColor:"rgb(243, 162, 74)"
+//         background: "#c570e5 ",
+//         text: "black"
 //     },
 //     {
-//         background: "rgb(190, 74, 132)",
-//         text: "black",
-//         borderColor:"rgb(202, 73, 139)"
+//         background: "#ff8c1b ",
+//         text: "black"
 //     },
 //     {
-//         background: "rgb(214, 34, 30)",
-//         text: "white",
-//         borderColor:"rgb(223, 36, 31)"
+//         background: "#2d292a ",
+//         text: "white"
 //     },
 //     {
-//         background: "rgb(175, 227, 124)",
-//         text: "black",
-//         borderColor:"rgb(167, 223, 111)"
+//         background: "#ffc5d9 ",
+//         text: "black"
 //     }
 //   ];
+export const colors = [
+    {
+        background: "#ffd8d4 ",
+        text: "black",
+        borderColor:"rgb(247, 203, 199)"
+    },
+    {
+        background: "rgb(176, 227, 215)",
+        text: "black",
+        borderColor:"rgb(178, 235, 222)"
+    },
+    {
+        background: "rgb(35, 37, 37)",
+        text: "white",
+        borderColor:"rgb(32, 33, 33)"
+    },
+    {
+        background: "rgb(255, 243, 123)",
+        text: "black",
+        borderColor:"rgb(251, 239, 106)"
+    },
+    {
+        background: "rgb(247, 170, 85)",
+        text: "black",
+        borderColor:"rgb(243, 162, 74)"
+    },
+    {
+        background: "rgb(190, 74, 132)",
+        text: "black",
+        borderColor:"rgb(202, 73, 139)"
+    },
+    {
+        background: "rgb(214, 34, 30)",
+        text: "white",
+        borderColor:"rgb(223, 36, 31)"
+    },
+    {
+        background: "rgb(175, 227, 124)",
+        text: "black",
+        borderColor:"rgb(167, 223, 111)"
+    }
+  ];
 
 
