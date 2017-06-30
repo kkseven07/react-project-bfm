@@ -2,17 +2,38 @@ import React from 'react'
 import './footer.css'
 // import Logo from '../../../../assets/img/logo monochr.png'
 import url from "../../../entry/url";
-export default (props)=>{
+import * as actions from "../../../business/actions";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+const Footer  =(props)=>{
 
-
+    console.log("actions", props.scroll)
     return <div className="width-full flex" styleName="r">
         <div styleName="part1" className="flex">
             <div styleName=" col" className="flex" >
                 <ul>
                     <li style={{color:'#ed2626'}}>О продукте</li>
-                    <li><a href="">Книга о тебе</a></li>
-                    <li><a href="">Детская Книга</a></li>
-                    <li><a href="">Книга матери</a></li>
+                    <li><div onClick={()=> 
+                            {
+                                props.actions.setupBookType("you");
+                                props.scroll();
+                                
+                            }}
+                        >Книга о тебе</div></li>
+                    <li><div onClick={()=> 
+                            {
+                                props.actions.setupBookType("dad");
+                                props.scroll();
+                                
+                            }}
+                        >Книга отца</div></li>
+                    <li><div onClick={()=> 
+                            {
+                                props.actions.setupBookType("mom");
+                                props.scroll();
+                                
+                            }}
+                        >Книга матери</div></li>
                     <li><a href="">Цены</a></li>
                 </ul>
             </div>
@@ -27,9 +48,10 @@ export default (props)=>{
             <div styleName="col" className="flex">
                 <ul>
                     <li style={{color:'#4563fe'}}>Помощь</li>
-                    <li><a href="">Контакты</a></li>
-                    <li><a href="">Доставка</a></li>
-                    <li><a href="">Возврат</a></li>
+                    <li><div>Контакты</div></li>
+                    <li><div onClick={()=>props.actions.openRouteModal("shipping")}>Доставка</div></li>
+                    <li><div onClick={()=>props.actions.openRouteModal("return")}>Возврат</div></li>
+                    <li><div onClick={()=>props.actions.openRouteModal("payment")}>Оплата</div></li>
                 </ul>
             </div>
 
@@ -54,3 +76,10 @@ export default (props)=>{
 
     </div>
 }
+const mapStateToProps = state => ({
+    scroll:state.init.scroll
+});
+const mapDispatchToProps = dispatch => ({
+    actions: bindActionCreators(actions, dispatch)
+});
+export default connect(mapStateToProps, mapDispatchToProps)(Footer);

@@ -39,7 +39,7 @@ export default (props)=>(
             <div styleName="description right">
                 <div styleName="title">Мягкий и твердый формат книги в разном размере</div>
                 <div styleName="text">
-                    Книги доступны в мягкой и твердой обложке и варируются от 20см х 20см до 23см х 23см.
+                    Книги доступны в мягкой и твердой обложке и варируются от 19см х 19см до 23см х 23см.
                     Данные форматы смотрятся ярко и удобны для чтения с близкими.
                 </div>
             </div>
@@ -51,7 +51,7 @@ export default (props)=>(
                 </div>
                 <div styleName="price-text">
                     <div styleName="price-desc">
-                        Мягкая обложка <br/> 20см х 20см
+                        Мягкая обложка <br/> 19см х 19см
                     </div>
                     <div styleName="price">9900 тг</div>
                 </div>
@@ -74,7 +74,7 @@ export default (props)=>(
                 </div>
                 <div styleName="price-text">
                     <div styleName="price-desc">
-                        Твердая обложка <br/> 20см х 20см
+                        Твердая обложка <br/> 19см х 19см
                     </div>
                     <div styleName="price">14900 тг</div>
                 </div>

@@ -17,7 +17,7 @@ const test = {
     status:false
 };
 const types=["name", "email", "text"];
-export default (state = test, action) => {
+export default (state = initialState, action) => {
     switch (action.type) {
         case "EMAIL_CONTACT_INPUT":
             return {
@@ -81,7 +81,7 @@ export default (state = test, action) => {
             }
             case "SEND_CONTACTFORM_FULFILLED" :
             return {
-                ...state,
+                ...initialState,
                 status:true
             };
 

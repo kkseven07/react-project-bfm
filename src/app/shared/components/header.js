@@ -217,7 +217,7 @@ class Header extends React.Component {
 
                     <div // DESKTOP MENU
                         className="flex flex-center"
-                        style={{ fontFamily: "RobotoRegular", fontSize: 23 }}
+                        style={{ fontFamily: "RobotoMedium", fontSize: 23 }}
                         styleName="links"
                     >
                         <div
@@ -327,7 +327,7 @@ class Header extends React.Component {
                                 history.push("/cart");
                             }}
                             styleName="cart"
-                            style={{ marginLeft: "20%", position: "relative" }}
+                            style={{ marginLeft: "20%", position: "relative", fontFamily:'RobotoRegular' }}
                         >
                             <i
                                 style={{ transform: "scale(1.5)" }}

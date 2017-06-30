@@ -9,6 +9,7 @@ import Product from "./components/product";
 import { connect } from "react-redux";
 import * as actions from "../../business/actions";
 import { bindActionCreators } from "redux";
+import Modal from '../modal/route_modal/index'
 var Scroll = require("react-scroll");
 var Element = Scroll.Element;
 var scroller = Scroll.scroller;
@@ -31,6 +32,7 @@ class Home extends React.Component {
         // window.scrollTo(0, 0);
         return (
             <div className="full flex flex-center flex-column">
+                <Modal />
                 <Gallery actions={props.actions} scrollTo={scrollTo} />
                 <Video />
                 <Element style={{ width: "100%" }} name="myScrollToElement">

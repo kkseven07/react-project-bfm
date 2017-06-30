@@ -23,7 +23,7 @@ class App extends Component {
             <div>
                 <div
                     className="flex flex-center width-full flex-column"
-                    style={{ paddingBottom: 50 }}
+                    style={{ paddingBottom: 50, fontFamily:'RobotoRegular' }}
                 >
                     <img
                         onClick={() => {

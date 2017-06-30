@@ -69,7 +69,7 @@ class Options extends React.Component {
         }
         return (
             <div
-                style={{ marginTop: 40 }}
+                style={{ marginTop: 40, fontFamily:'RobotoRegular' }}
                 className="width-full flex flex-column flex-center"
             >
                 <div
