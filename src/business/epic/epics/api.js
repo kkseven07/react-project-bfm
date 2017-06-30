@@ -183,7 +183,7 @@ export const upload = action$ =>
 
 export const getBook = action$ =>
     action$.ofType("GET_BOOK").switchMap(({ book_id }) => {
-        return ajax({ url: `${url}/api/v1/books/${book_id}`, ...ajaxObjectGet })
+        return ajax({ url: `http://localhost:9000/api/v1/books/${book_id}`, ...ajaxObjectGet })
             .flatMap(ajax => {
                 let response = Base64.decode(ajax.response.__yaml_faxmlscm);
                 response = JSON.parse(response);
@@ -200,6 +200,7 @@ export const getBook = action$ =>
                 })
             );
     });
+
 export const getBookPage = action$ =>
     action$.ofType("GET_BOOK_PAGE").switchMap(({ book_id, page_type }) => {
         return ajax({
