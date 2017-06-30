@@ -13,7 +13,7 @@ import menu from './reducers/menu'
 import order from './reducers/order'
 import voucher from './reducers/voucher'
 import contactForm from './reducers/contactForm'
-
+import routeModal from './reducers/routeModal'
 const reducer = combineReducers({
     routing,
     loading,
@@ -27,7 +27,8 @@ const reducer = combineReducers({
     menu,
     order,
     voucher,
-    contactForm
+    contactForm,
+    routeModal
 });
 
 export default reducer;

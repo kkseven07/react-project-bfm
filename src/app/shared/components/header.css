@@ -82,10 +82,10 @@
     height: 120px;
     line-height: 120px;
 }
-.links {
+/*.links {
     font-family: 'RobotoMedium';
     font-weight: 900;
-}
+}*/
 .links .d-item:hover {
     color: rgba(255, 0, 0, 0.91);
 }

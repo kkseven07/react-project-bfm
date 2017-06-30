@@ -57,7 +57,12 @@ export const validateContactForm = () => {
 export const openModal = (page, book, params) => {
     return { type: "OPEN_MODAL", page, book, params };
 };
-
+export const openRouteModal = (name) => {
+    return { type: "OPEN_ROUTEMODAL", name };
+};
+export const closeRouteModal = () => {
+    return { type: "CLOSE_ROUTEMODAL" };
+};
 export const builderImage = (params, page) => {
     return { type: "BUILDER_IMAGE", params, page };
 };
