@@ -120,7 +120,7 @@ class Header extends React.Component {
         let dropStyle = this.state.isOpen ? "flex" : "none";
         return (
             <div styleName="header">
-                {this.props.menu && // MOBILE MENU
+                {this.props.menu && // ---------------------------MOBILE MENU--------------------------------
                     <div
                         onClick={this.props.actions.closeMenu}
                         style={{
@@ -139,22 +139,47 @@ class Header extends React.Component {
                     outerContainerId={"outer-container"}
                 >
                     <div
+                        style={{position:'absolute', top:'2%', left:'6%', textAlign:'center'}}
                         styleName="menu-item"
                         onClick={() => {
-                            history.push("/cart");
+                            history.push("/");
                             this.props.actions.closeMenu();
                         }}
                     >
-                        <img src="" alt="" />
+                        <img src={`${url}/images/logo_mono.png`} alt="" />
 
                     </div>
                     <div
                         styleName="menu-item"
                         onClick={() => {
                             this.props.actions.closeMenu();
+                            this.props.actions.setupBookType("you");
+                            this.props.scroll();
                         }}
                     >
-                        <span styleName="link">КНИГИ </span>
+                        <span styleName="link">КНИГА О ТЕБЕ </span>
+
+                    </div>
+                    <div
+                        styleName="menu-item"
+                        onClick={() => {
+                            this.props.actions.closeMenu();
+                            this.props.actions.setupBookType("mom");
+                            this.props.scroll();
+                        }}
+                    >
+                        <span styleName="link">КНИГА МАТЕРИ </span>
+
+                    </div>
+                    <div
+                        styleName="menu-item"
+                        onClick={() => {
+                            this.props.actions.closeMenu();
+                            this.props.actions.setupBookType("dad");
+                            this.props.scroll();
+                        }}
+                    >
+                        <span styleName="link">КНИГА ОТЦА </span>
 
                     </div>
                     <div
@@ -162,6 +187,7 @@ class Header extends React.Component {
                         onClick={() => {
                             history.push("/cart");
                             this.props.actions.closeMenu();
+
                         }}
                     >
                         <span styleName="link">КОРЗИНА </span>
@@ -215,7 +241,7 @@ class Header extends React.Component {
 
                     </div>
 
-                    <div // DESKTOP MENU
+                    <div // ---------------------DESKTOP MENU---------------------------
                         className="flex flex-center"
                         style={{ fontFamily: "RobotoMedium", fontSize: 23 }}
                         styleName="links"

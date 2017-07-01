@@ -2,12 +2,15 @@ import React from 'react'
 import './about.css'
 import url from '../../entry/url'
 import Footer from '../home/components/footer'
+import Modal from '../modal/route_modal/index'
+
 const Img1 = `${url}/images/price-small.jpg`
 const Img2 = `${url}/images/price-big.jpg`
 const Img3 = `${url}/images/price-small-hard.jpg`
 const Img4 = `${url}/images/price-big-hard.jpg`
 export default (props)=>(
     <div styleName="page">
+    <Modal />
         <div styleName="section">
             <div styleName="img img-1" style={{background:`url(${url}/images//product1.jpg)`}}>
             </div>

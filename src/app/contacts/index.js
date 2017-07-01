@@ -3,9 +3,12 @@ import './index.css'
 import {Input, Button, TextArea} from '../shared'
 import Footer from '../home/components/footer'
 import Form from './components/form'
+import Modal from '../modal/route_modal/index'
+
 export default (props)=>{
 
   return <div >
+  <Modal />
     <div styleName="App">
       <div styleName="part1">
         <div styleName="title">НАШИ КОНТАКТЫ</div>
