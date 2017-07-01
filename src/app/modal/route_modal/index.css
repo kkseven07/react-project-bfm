@@ -1,0 +1,19 @@
+.r{
+    padding:10px;
+    width:70%;
+    /*max-width: 550px;*/
+    min-width:320px;
+    min-height:100px;
+    max-height:90%;
+    /*height: 100vh;*/
+    background:white;
+    font-size:25px;
+    font-family:"BebasBold";
+    overflow: auto;
+    border-radius: 0.25rem;
+}
+@media screen and (max-width: 768px) {
+    .r {
+        max-width: 550px;
+    }
+}

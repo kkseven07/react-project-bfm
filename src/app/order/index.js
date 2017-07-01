@@ -29,8 +29,6 @@ class Order extends React.Component {
     componentDidMount() {
         window.scrollTo(0, 0);
     }
-
-
     getWrapPrice = book => {
         return !book.gift_wrap ? 0 : book.format !== "digital" ? 1000 : 0;
     };
@@ -59,6 +57,9 @@ class Order extends React.Component {
         
     }
     render() {
+        let status = this.props.order.deleted?this.props.order.deleted:'false';
+        console.log("status", status)
+
         if (!this.props.book) {
             return null;
         }
@@ -98,7 +99,7 @@ class Order extends React.Component {
 
             }
         };
-        if (data.length<1&&!this.state.showConfirm) return (
+        if (data.length<1&&status!==true) return (
             <div
                 className="flex flex-center width-full flex-column"
                 style={{ paddingBottom: 50 }}
@@ -130,8 +131,8 @@ class Order extends React.Component {
                     src={Logo}
                     style={{ width: 100, height: 100, marginBottom: 10 }}
                 />
-
-                    {!this.state.showConfirm&&<div style={{width:'100%', flexDirection:'column'}} className="flex flex-center">
+                        {console.log("st", status)}
+                    {status!==true&&<div style={{width:'100%', flexDirection:'column'}} className="flex flex-center">
                         
                         <OrderPrice 
                             total={total} data={data} totalForBooks={totalForBooks} wrapPrice={wrapPrice} discount={discount}
@@ -150,7 +151,7 @@ class Order extends React.Component {
                         }
                         
                     </div>}
-                    {this.state.showConfirm&&<div // voucher up 
+                    {status===true&&<div // voucher up 
                          //CONFIRMED ORDER STATUS BAR
                         style={{
                                 width:'100%',
@@ -173,7 +174,7 @@ class Order extends React.Component {
                     </div>
                     }
 
-                    {!this.state.showConfirm&&<div
+                    {status!==true&&<div
                         // ORDER DETAILS
                         style={{
                             width:'100%',
