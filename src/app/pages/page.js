@@ -60,11 +60,11 @@ class Page extends Component {
         imgLoaded: this.props.print || this.props.zoom ? true : false
     };
 
-    getPage = (type, image, page, book) => {
+    getPage = (type, image, page, book,print) => {
         if (type === "scoop") {
             return <Scoop book={book} data={page.data} />;
         } else if (type === "framefridge") {
-            return <FrameFridge url={this.props.url} book={book} page={page} />;
+            return <FrameFridge print={print} url={this.props.url} book={book} page={page} />;
         } else if (type === "brain") {
             return <Brain book={book} page={page} />;
         } else if (type === "cover") {
@@ -132,9 +132,9 @@ class Page extends Component {
         } else if (type === "quotes") {
             return <Quotes page={page} book={book} />;
         } else if (type === "pastPhoto") {
-            return <PastPhoto url={this.props.url} page={page} book={book} />;
+            return <PastPhoto print={print} url={this.props.url} page={page} book={book} />;
         } else if (type === "relaxPhoto") {
-            return <RelaxPhoto url={this.props.url} page={page} book={book} />;
+            return <RelaxPhoto print={print} url={this.props.url} page={page} book={book} />;
         } else if (type === "momChemistryProoved") {
             return <MomChemistryProoved page={page} book={book} />;
         } else if (type === "formulaMom") {
@@ -262,7 +262,7 @@ class Page extends Component {
                         }}
                     />}
 
-                {this.getPage(type, image, this.props.page, this.props.book)}
+                {this.getPage(type, image, this.props.page, this.props.book,this.props.print)}
 
                 {this.isEditable(type) &&
                     !this.props.print &&

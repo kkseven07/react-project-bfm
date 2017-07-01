@@ -19,14 +19,37 @@ class Print extends React.Component {
     render() {
         const { book_id, type } = this.props.match.params;
         let { bookId, book } = this.props;
+        console.log(book);
         if (!book[bookId]) return null;
         const { pages, ...rest } = book[book_id];
         const bData = rest;
         const page = values(pages).filter(page => page.type === type)[0];
-
         return (
-                <Page id={`${page.type}`} url={this.props.url} print book={bData} page={page} />
-        )
+            <Page
+                id={`${page.type}`}
+                url={this.props.url}
+                print
+                book={bData}
+                page={page}
+            />
+        );
+        // return (
+        //     <div style={{ width: 7048, display: "flex", flexWrap: "wrap" }}>
+        //         {page.map(page => {
+        //             return (
+        //                 <Page
+        //                     key={page.type}
+        //                     id={`${page.type}`}
+        //                     url={this.props.url}
+        //                     print
+        //                     book={bData}
+        //                     page={page}
+        //                 />
+        //             );
+        //         })}
+
+        //     </div>
+        // );
     }
 }
 const mapStateToProps = state => ({
@@ -40,3 +63,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Print);
+// return (
+
+//                 <Page id={`${page.type}`} url={this.props.url} print book={bData} page={page} />
+//         )

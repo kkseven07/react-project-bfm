@@ -3,6 +3,7 @@ import _ from "lodash";
 import fs from "fs";
 let raw = process.argv.slice(2, 10);
 let you = [
+    "initmister",
     "cover",
     "frontPage",
     "frontPageBack",
@@ -54,6 +55,8 @@ let you = [
     "endPage"
 ];
 let mom = [
+    "initmister",
+
     "cover",
     "frontPage",
     "frontPageBack",
@@ -105,6 +108,8 @@ let mom = [
     "endPage"
 ];
 let dad = [
+    "initmister",
+
     "cover",
     "frontPage",
     "frontPageBack",
@@ -156,7 +161,7 @@ let dad = [
     "endPage"
 ];
 
-let getUrls = (types,book_id) =>
+let getUrls = (types, book_id) =>
     types
         .map(type => {
             return `http://localhost:8080/pages/${book_id}/${type}`;
@@ -164,14 +169,19 @@ let getUrls = (types,book_id) =>
         .join(" ");
 
 let print = (urls, book_id) => {
-    shell.exec(
-        `electroshot [${urls} 1024x1024]  --delay 5000  --out ../print/${book_id} --filename '{name}.png'`
-    );
+    console.log(urls)
+    // urls.split(" ").forEach(url => {
+        // const delay = url.indexOf("framefridge")>-1?30000:5000
+        shell.exec(
+            `electroshot [${urls} 1024x1024]  --delay 3000  --out ../print/${book_id} --filename '{name}.png'`
+        );
+    // });
 };
 
-let convert = (book_id,types) => {
+let convert = (book_id, types) => {
     fs.readdir(`../print/${book_id}/`, (err, files) => {
         let filenames = types
+            .filter(type => type !== "initmister")
             .map(
                 (type, i) =>
                     `../print/${book_id}/${files.filter(file => file.indexOf(type) > -1)[0]}`
@@ -187,19 +197,16 @@ let work = () => {
         shell.exec(`mkdir ../print/${id}`);
         console.log(id);
         let urls = type === "you"
-            ? [getUrls(you,id),you]
-            : type === "mom" ? [getUrls(mom,id),mom] : [getUrls(dad,id),dad];
-        console.log(urls)
+            ? [getUrls(you, id), you]
+            : type === "mom"
+                  ? [getUrls(mom, id), mom]
+                  : [getUrls(dad, id), dad];
+        console.log(urls);
         print(urls[0], id);
-        convert(id,urls[1]);
+        convert(id, urls[1]);
     });
 };
 
 work();
 
-
 // 265-dad 266-mom 267-you
-
-
-
-

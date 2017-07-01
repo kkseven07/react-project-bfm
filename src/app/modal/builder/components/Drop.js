@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Dropzone from "react-dropzone";
-import DropboxChooser from "react-dropbox-chooser";
+// import DropboxChooser from "react-dropbox-chooser";
 import "./Drop.css";
 // import firebase from 'firebase'
 var config = {
