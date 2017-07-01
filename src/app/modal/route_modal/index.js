@@ -1,6 +1,6 @@
 import React from "react";
 import { Background } from "../../shared";
-import "../builder/builder.css";
+import "./index.css";
 import { connect } from "react-redux";
 import * as actions from "../../../business/actions";
 import { bindActionCreators } from "redux";
@@ -41,7 +41,7 @@ class Modal extends React.Component {
                 zIndex={"20"}
                 isOpen={isOpen}
             > 
-                <div onClick={stopClick} styleName="r">
+                <div onClick={stopClick} styleName="r" style={{}}>
                     {getComponent(name, actions)}
                 </div>
             </Background>

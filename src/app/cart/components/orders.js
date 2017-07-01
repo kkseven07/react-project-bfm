@@ -13,12 +13,12 @@ class Orders extends Component {
         let data = reverse(values(orders));
         if (data.length<1) {
             return (
-                <div className="flex flex-center" style={{marginTop:'50px'}}>Вы еще не делали заказов</div>
+                <div className="flex flex-center" style={{marginTop:'50px', fontFamily:'RobotoRegular'}}>Вы еще не делали заказов</div>
             )
         }
         return (
 
-            <div >
+            <div style={{fontFamily:'RobotoRegular'}} >
                 {
                     data.map((item,i)=> (
                         <OrderItem key={i} order={item} actions={this.props.actions}/>

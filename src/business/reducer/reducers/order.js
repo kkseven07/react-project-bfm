@@ -32,6 +32,12 @@ export default (state = initialState, action) => {
                 // ...state,
                 ...orders
             }
+        case "DELETE_BOOKS_FROM_CACHE":
+          return {
+            deleted:true
+          }
+            
+
         default:
             return state;
     }

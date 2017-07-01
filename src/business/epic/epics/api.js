@@ -76,8 +76,9 @@ export const updatePage = action$ =>
 export const createOrder = (action$, store) =>
     action$.ofType("CONFIRM_ORDER").switchMap(({ order }) => {
         const bookIds = store.getState().order.books.map(key => key.id);
+        const hashes = bookIds.map(id=> {return { [id]: createHashid(id)}})
         const orderDetails = store.getState().order.orderDetails;
-        const params = { books: bookIds, orderDetails: orderDetails };
+        const params = { books: bookIds, orderDetails: {...orderDetails, hashes:hashes} };
         return ajax({
             url: `${url}/api/v1/orders`,
             body: { params: JSON.stringify(params) },

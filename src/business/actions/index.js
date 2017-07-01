@@ -156,3 +156,6 @@ export const confirmOrder = (books, orderDetails) => {
 export const loadOrderCache = () => {
     return { type: "LOAD_ORDER_CACHE" };
 };
+export const checkOrderPage =()=> {
+    return {type: "CHECK_ORDER_PAGE"};
+}

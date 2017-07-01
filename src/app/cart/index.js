@@ -33,7 +33,7 @@ class App extends Component {
                         style={{ width: 100, height: 100, marginBottom: 10 }}
                     />
                 </div>
-                <div>
+                <div style={{fontFamily:'RobotoRegular'}}>
                     <div styleName="type-btns">
                         <div
                             onClick={() => this.setState({ type: "cart" })}
