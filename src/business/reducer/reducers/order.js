@@ -1,7 +1,8 @@
 const initialState= {
     orderDetails: null,
     books:null,
-    orderId:null
+    orderId:null,
+    isSent:false
 }
 export const normaliseOrders = orders => {
    let map = {};
@@ -13,7 +14,9 @@ export const normaliseBooks = books => {
    books.forEach((book, i) => (map[k] = book));
    return map;
 };
+
 export default (state = initialState, action) => {
+
     switch (action.type) {
         case "CONFIRM_ORDER":
                 return {
@@ -21,21 +24,13 @@ export default (state = initialState, action) => {
                     orderDetails:action.orderDetails
                 };
         case "CREATE_ORDER_FULFILLED" :
+            console.log("create")
             return {
                 ...state,
-                orderId:action.orderId
+                orderId:action.orderId,
+                isSent:true
             };
 
-        case "LOAD_ORDER_CACHE_FULFILLED" :
-            let orders = normaliseOrders(action.payload);
-            return {
-                // ...state,
-                ...orders
-            }
-        case "DELETE_BOOKS_FROM_CACHE":
-          return {
-            deleted:true
-          }
             
 
         default:

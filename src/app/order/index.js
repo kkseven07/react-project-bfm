@@ -57,8 +57,8 @@ class Order extends React.Component {
         
     }
     render() {
-        let status = this.props.order.deleted?this.props.order.deleted:'false';
-        console.log("status", status)
+        let status = this.props.order.isSent?this.props.order.isSent:false;
+        console.log("status", status, this.props.order)
 
         if (!this.props.book) {
             return null;
@@ -131,7 +131,7 @@ class Order extends React.Component {
                     src={Logo}
                     style={{ width: 100, height: 100, marginBottom: 10 }}
                 />
-                        {console.log("st", status)}
+                        
                     {status!==true&&<div style={{width:'100%', flexDirection:'column'}} className="flex flex-center">
                         
                         <OrderPrice 

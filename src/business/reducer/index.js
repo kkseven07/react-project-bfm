@@ -14,6 +14,8 @@ import order from './reducers/order'
 import voucher from './reducers/voucher'
 import contactForm from './reducers/contactForm'
 import routeModal from './reducers/routeModal'
+import orderCache from './reducers/orderCache'
+
 const reducer = combineReducers({
     routing,
     loading,
@@ -28,7 +30,9 @@ const reducer = combineReducers({
     order,
     voucher,
     contactForm,
-    routeModal
+    routeModal,
+    orderCache
+
 });
 
 export default reducer;
