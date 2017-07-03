@@ -54,11 +54,11 @@ class Order extends React.Component {
                 isVoucherValid:false
             })
         }
-        
+
     }
     render() {
         let status = this.props.order.isSent?this.props.order.isSent:false;
-        console.log("status", status, this.props.order)
+        // console.log("status", status, this.props.order)
 
         if (!this.props.book) {
             return null;
@@ -131,10 +131,10 @@ class Order extends React.Component {
                     src={Logo}
                     style={{ width: 100, height: 100, marginBottom: 10 }}
                 />
-                        
+
                     {status!==true&&<div style={{width:'100%', flexDirection:'column'}} className="flex flex-center">
-                        
-                        <OrderPrice 
+
+                        <OrderPrice
                             total={total} data={data} totalForBooks={totalForBooks} wrapPrice={wrapPrice} discount={discount}
                         />
 
@@ -149,9 +149,9 @@ class Order extends React.Component {
                                 Введенный промокод не верен.
                             </div>
                         }
-                        
+
                     </div>}
-                    {status===true&&<div // voucher up 
+                    {status===true&&<div // voucher up
                          //CONFIRMED ORDER STATUS BAR
                         style={{
                                 width:'100%',
