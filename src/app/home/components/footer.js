@@ -7,31 +7,31 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 const Footer  =(props)=>{
 
-    console.log("actions", props.scroll)
+    // console.log("actions", props.scroll)
     return <div className="width-full flex" styleName="r">
         <div styleName="part1" className="flex">
             <div styleName=" col" className="flex" >
                 <ul>
                     <li style={{color:'#ed2626'}}>О продукте</li>
-                    <li><div onClick={()=> 
+                    <li><div onClick={()=>
                             {
                                 props.actions.setupBookType("you");
                                 props.scroll();
-                                
+
                             }}
                         >Книга о тебе</div></li>
-                    <li><div onClick={()=> 
+                    <li><div onClick={()=>
                             {
                                 props.actions.setupBookType("dad");
                                 props.scroll();
-                                
+
                             }}
                         >Книга отца</div></li>
-                    <li><div onClick={()=> 
+                    <li><div onClick={()=>
                             {
                                 props.actions.setupBookType("mom");
                                 props.scroll();
-                                
+
                             }}
                         >Книга матери</div></li>
                     <li><a href="">Цены</a></li>

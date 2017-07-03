@@ -174,7 +174,7 @@ let print = (urls, book_id) => {
         // const delay = url.indexOf("framefridge")>-1?30000:5000
 
         shell.exec(
-            `electroshot [${urls} 1024x1024]  --delay 2000  --out ../print/${book_id} --filename '{name}.png'`
+            `electroshot [${urls} 1024x1024]  --delay 4000  --out ../print/${book_id} --filename '{name}.png'`
         );
     // });
 };

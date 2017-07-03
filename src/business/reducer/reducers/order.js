@@ -24,14 +24,14 @@ export default (state = initialState, action) => {
                     orderDetails:action.orderDetails
                 };
         case "CREATE_ORDER_FULFILLED" :
-            console.log("create")
+            // console.log("create")
             return {
                 ...state,
                 orderId:action.orderId,
                 isSent:true
             };
 
-            
+
 
         default:
             return state;

@@ -10,12 +10,12 @@ export default (state = initialState, action) => {
 
     switch (action.type) {
         case "LOAD_ORDER_CACHE_FULFILLED" :
-            console.log("load")
+            // console.log("load")
             let orders = normaliseOrders(action.payload);
             return {
                 ...orders
             }
-            
+
 
         default:
             return state;
