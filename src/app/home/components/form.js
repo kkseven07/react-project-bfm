@@ -13,7 +13,6 @@ import range from "lodash/range";
 import { data } from "../../shared";
 const siteKey = "6LcrISYUAAAAAHK2ADjF_25cmmOepUUMrRKUV_Zj";
 import Recaptcha from "react-recaptcha";
-const callback = () => console.log("");
 const getData = field => {
     if (field === "day") {
         return range(1, 32);
@@ -39,6 +38,7 @@ const You = ({ form, ...props }) => {
         calculatedAge: parseInt(form.calculatedAge)
     };
     const verifyCallback = response => props.actions.captchaVerify();
+    const callback = () => console.log("");
 
     return (
         <div className="flex flex-center flex-column" styleName="form">
@@ -174,6 +174,8 @@ const MomAndDad = ({ form, bookType, ...props }) => {
         calculatedAge: parseInt(form.calculatedAge)
     };
     const verifyCallback = response => props.actions.captchaVerify();
+const callback = () => console.log("");
+
     const descText = bookType === "mom"
         ? "Как зовут Вашу маму?"
         : "Как зовут Вашего папу?";

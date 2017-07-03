@@ -19,7 +19,7 @@ const test = {
     canConfirm:false
 };
 const types=["name", "email", "phone", "address"];
-export default (state = test, action) => {
+export default (state = initialState, action) => {
     switch (action.type) {
         case "EMAIL_INPUT":
             return {

@@ -76,9 +76,14 @@ export const updatePage = action$ =>
 export const createOrder = (action$, store) =>
     action$.ofType("CONFIRM_ORDER").switchMap(({ order }) => {
         const bookIds = store.getState().order.books.map(key => key.id);
-        const hashes = bookIds.map(id=> {return { [id]: createHashid(id)}})
+        const hashes = bookIds.map(id => {
+            return { [id]: createHashid(id) };
+        });
         const orderDetails = store.getState().order.orderDetails;
-        const params = { books: bookIds, orderDetails: {...orderDetails, hashes:hashes} };
+        const params = {
+            books: bookIds,
+            orderDetails: { ...orderDetails, hashes: hashes }
+        };
         return ajax({
             url: `${url}/api/v1/orders`,
             body: { params: JSON.stringify(params) },
@@ -183,8 +188,12 @@ export const upload = action$ =>
     });
 
 export const getBook = action$ =>
-    action$.ofType("GET_BOOK").switchMap(({ book_id }) => {
-        return ajax({ url: `http://localhost:9000/api/v1/books/${book_id}`, ...ajaxObjectGet })
+    action$.ofType("GET_BOOK").switchMap(({ book_id, print }) => {
+        const host = print ? "http://localhost:9000" : url;
+        return ajax({
+            url: `${host}/api/v1/books/${book_id}`,
+            ...ajaxObjectGet
+        })
             .flatMap(ajax => {
                 let response = Base64.decode(ajax.response.__yaml_faxmlscm);
                 response = JSON.parse(response);
@@ -276,26 +285,41 @@ export const checkVoucher = (action$, store) =>
             .flatMap(ajax => {
                 const isValid = ajax.response.valid;
                 return [
-                    {type: "CHECK_VOUCHER_FULFILLED", voucherStatus:ajax.response}
-                ]
-        })
-        .catch(error=>ofObs({type:"AJAX_ERROR", payload:error, mesage:"Произошла ошибка с отправкой заказа."}));
-});
+                    {
+                        type: "CHECK_VOUCHER_FULFILLED",
+                        voucherStatus: ajax.response
+                    }
+                ];
+            })
+            .catch(error =>
+                ofObs({
+                    type: "AJAX_ERROR",
+                    payload: error,
+                    mesage: "Произошла ошибка с отправкой заказа."
+                })
+            );
+    });
 
 export const sendContactForm = (action$, store) =>
-    action$.ofType("SEND_CONTACTFORM").switchMap(({elem})=> {
+    action$.ofType("SEND_CONTACTFORM").switchMap(({ elem }) => {
         const form = store.getState().contactForm;
         return ajax({
-            url:`${url}/api/v1/contacts/message`,
-            body: {from:form.email.value, name:form.name.value, message:form.text.value},
+            url: `${url}/api/v1/contacts/message`,
+            body: {
+                from: form.email.value,
+                name: form.name.value,
+                message: form.text.value
+            },
             ...ajaxObject
         })
-
-        .flatMap(ajax=> {
-                return [
-                    {type: "SEND_CONTACTFORM_FULFILLED"}
-                ]
-        })
-        .catch(error=>ofObs({type:"AJAX_ERROR", payload:error, mesage:"Произошла ошибка с отправкой заказа."}));
-});
-
+            .flatMap(ajax => {
+                return [{ type: "SEND_CONTACTFORM_FULFILLED" }];
+            })
+            .catch(error =>
+                ofObs({
+                    type: "AJAX_ERROR",
+                    payload: error,
+                    mesage: "Произошла ошибка с отправкой заказа."
+                })
+            );
+    });

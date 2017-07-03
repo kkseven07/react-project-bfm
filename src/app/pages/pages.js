@@ -70,7 +70,7 @@ class BookRoute extends Component {
                 if (this.props.history.action === "PUSH") {
                     return;
                 }
-                this.props.actions.getBook(book_id);
+                this.props.actions.getBook(book_id,false);
             }
         }
     }

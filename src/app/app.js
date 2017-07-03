@@ -5,9 +5,9 @@ const About = asyncModule(() => import("./about"), "About route");
 const Home = asyncModule(() => import("./home"), "home");
 const Contacts = asyncModule(() => import("./contacts"), "contacts route");
 const Builder = asyncModule(() => import("./pages/pages"), "pages route");
-const Cart = asyncModule(()=>import("./cart"),"cart route")
-const Print = asyncModule(()=> import("./pages/print"), "print route")
-const Order = asyncModule(()=>import("./order"),"order")
+const Cart = asyncModule(() => import("./cart"), "cart route");
+const Print = asyncModule(() => import("./pages/print"), "print route");
+const Order = asyncModule(() => import("./order"), "order");
 // import Order from './order'
 import { routerActions } from "react-router-redux";
 import { connect } from "react-redux";
@@ -44,7 +44,12 @@ class App extends React.Component {
                 <Background zIndex="10">
                     zoomer...
                 </Background>
-                {showHeader(location) && <Header scroll={this.props.scroll} location={location}  history={history} />}
+                {showHeader(location) &&
+                    <Header
+                        scroll={this.props.scroll}
+                        location={location}
+                        history={history}
+                    />}
                 <div id="wrap">
                     <div
                         styleName={
@@ -60,7 +65,7 @@ class App extends React.Component {
                             <Route path="/books" component={Builder} />
                             <Route path="/books/:id" component={Builder} />
                             <Route path="/cart" component={Cart} />
-                            <Route path="/order" component={Order}/>
+                            <Route path="/order" component={Order} />
                             <Route
                                 path="/pages/:book_id/:type"
                                 component={Print}
@@ -76,7 +81,7 @@ class App extends React.Component {
 const mapStateToProps = state => ({
     fetching: state.fetching,
     modalOpen: state.modalOpen,
-    scroll:state.init.scroll
+    scroll: state.init.scroll
 });
 
 const mapDispatchToProps = dispatch => ({
