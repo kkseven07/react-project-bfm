@@ -193,6 +193,7 @@ class Page extends Component {
         return this.props.url + primary_image.image.url//.replace("bbx24s", "ssx8m");
     };
     componentWillReceiveProps(nextProps) {
+        if(!this.props.primary_image) return;
         if (
             nextProps.page.primary_image.image.url !==
             this.props.page.primary_image.image.url
@@ -204,7 +205,7 @@ class Page extends Component {
     render() {
         const { type, primary_image, data } = this.props.page;
         let image, smallImage, loadingurl;
-        if (primary_image.image.url) {
+        if (primary_image&&primary_image.image&&primary_image.image.url) {
             // if(type==="qualityTableChoice") console.log(this.state.imgLoaded,"qualityTableChoice")
             image = {
                 backgroundImage: this.imageUrl(

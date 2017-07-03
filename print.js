@@ -172,8 +172,9 @@ let print = (urls, book_id) => {
     console.log(urls)
     // urls.split(" ").forEach(url => {
         // const delay = url.indexOf("framefridge")>-1?30000:5000
+
         shell.exec(
-            `electroshot [${urls} 1024x1024]  --delay 3000  --out ../print/${book_id} --filename '{name}.png'`
+            `electroshot [${urls} 1024x1024]  --delay 2000  --out ../print/${book_id} --filename '{name}.png'`
         );
     // });
 };
@@ -208,5 +209,46 @@ let work = () => {
 };
 
 work();
+
+// const Pageres = require('pageres');
+
+// const pageres = new Pageres({delay: 10})
+//     .src('yeoman.io', ['1024x1024'], {crop: false})
+//     .src('127.0.0.1:8080', ['100x10'])
+//     .src('data:text/html;base64,PGgxPkZPTzwvaDE+', ['1024x768'])
+//     .dest("../print")
+//     .run()
+//     .then(() => console.log('done'));
+
+
+
+
+// var shashin = require('shashin');
+
+// var info = shashin('google.com', '1024x768', { delay: 1, crop: true });
+// var file = fs.createWriteStream('screenshot.png');
+
+// // Don't forget to handle errors
+// info.stream.on('error', function (err) {
+//   console.error(err);
+// });
+
+// info.stream.pipe(file);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // 265-dad 266-mom 267-you

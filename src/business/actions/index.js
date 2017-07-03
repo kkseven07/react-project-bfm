@@ -113,8 +113,8 @@ export const createOrder = params => {
 export const genPages = (count, book_id) => {
     return { type: "GEN_PAGES", count, book_id };
 };
-export const getBook = book_id => {
-    return { type: "GET_BOOK", book_id };
+export const getBook = (book_id, print) => {
+    return { type: "GET_BOOK", book_id, print };
 };
 export const getBookPage = (book_id, page_type) => {
     return { type: "GET_BOOK_PAGE", book_id, page_type };
