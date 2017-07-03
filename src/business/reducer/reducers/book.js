@@ -13,7 +13,7 @@ import omit from "lodash/omit";
 export default (state = { currentBookId: null }, action) => {
    switch (action.type) {
       case "DELETE_BOOKS_FROM_CACHE_FULFILLED":
-          return {}
+         return {};
       case "DELETE_FROM_CACHE_FULFILLED":
          // const {[action.payload]:book_to_remove,...rest}=state
          let new_state = omit(state, action.payload);
@@ -33,7 +33,10 @@ export default (state = { currentBookId: null }, action) => {
             ...books
          };
       case "BOOK_LOADED":
-        return {...state,[action.bookId]:{...state[action.bookId], loaded:true}}
+         return {
+            ...state,
+            [action.bookId]: { ...state[action.bookId], loaded: true }
+         };
       case "BOOK_VERSION":
          let book = state[action.book_id];
          switch (action.name) {
@@ -75,7 +78,7 @@ export default (state = { currentBookId: null }, action) => {
          // console.log("fetch book fulfileled",{...book, loaded:false})
          return {
             ...state,
-            [action.payload.book.id]: {...book, loaded:false},
+            [action.payload.book.id]: { ...book, loaded: false },
             currentBookId: book.id
          };
 
@@ -86,16 +89,18 @@ export default (state = { currentBookId: null }, action) => {
          let text = params.text || page_to_update.data.text;
 
          if (action.page.type === "qualityTable") {
-            page_to_update = state[action.page.gift_id].pages[action.page.id+1]
-            let arr=page_to_update.primary_image.image.url.split("_")
-            arr[1]=text
-            selectedImage=arr.join("_")
+            page_to_update =
+               state[action.page.gift_id].pages[action.page.id + 1];
+            let arr = page_to_update.primary_image.image.url.split("_");
+            arr[1] = text;
+            selectedImage = arr.join("_");
          }
          let text1 = params.text1 || page_to_update.data.text1;
          let text2 = params.text2 || page_to_update.data.text2;
          let background = params.background || page_to_update.data.background;
          let text_color = params.text_color || page_to_update.data.text_color;
-         let border_color = params.border_color || page_to_update.data.border_color;
+         let border_color =
+            params.border_color || page_to_update.data.border_color;
          let page_to_return = {
             ...page_to_update,
             primary_image: {
@@ -103,7 +108,9 @@ export default (state = { currentBookId: null }, action) => {
                image: {
                   url: selectedImage
                      ? selectedImage.replace("smx25", "bbx24s")
-                     : page_to_update.primary_image.image.url
+                     : page_to_update.primary_image &&
+                          page_to_update.primary_image.image &&
+                          page_to_update.primary_image.image.url
                }
             },
             data: {
@@ -130,14 +137,17 @@ export default (state = { currentBookId: null }, action) => {
       case "UPLOAD_FULFILLED":
          // case "UPDATE_PAGE_FULFILLED":
          let page = action.payload.page;
-         let oldPage=state[action.payload.book_id].pages[page.id]
+         let oldPage = state[action.payload.book_id].pages[page.id];
          return {
             ...state,
             [action.payload.book_id]: {
                ...state[action.payload.book_id],
                pages: {
                   ...state[action.payload.book_id].pages,
-                  [page.id]: {...page,data:{...page.data, text:oldPage.data.text}}
+                  [page.id]: {
+                     ...page,
+                     data: { ...page.data, text: oldPage.data.text }
+                  }
                }
             }
          };
@@ -159,7 +169,7 @@ export default (state = { currentBookId: null }, action) => {
          };
          return {
             ...state,
-            [action.payload.book.id]: {...book, loaded:false},
+            [action.payload.book.id]: { ...book, loaded: false },
             currentBookId: book.id
          };
       default:
