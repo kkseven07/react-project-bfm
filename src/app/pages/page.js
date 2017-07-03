@@ -193,8 +193,8 @@ class Page extends Component {
         return this.props.url + primary_image.image.url//.replace("bbx24s", "ssx8m");
     };
     componentWillReceiveProps(nextProps) {
-        if(!this.props.primary_image) return;
-        if (
+        // if(!this.props.primary_image) return;
+        if (//this.props.primary_image&&this.props.primary_image.image&&
             nextProps.page.primary_image.image.url !==
             this.props.page.primary_image.image.url
         )
