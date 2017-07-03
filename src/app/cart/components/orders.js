@@ -10,7 +10,10 @@ class Orders extends Component {
 
     render() {
         let {...orders} = this.props.order;
-        let data = reverse(values(orders));
+        console.log("orders", this.props.order)
+        const {deleted, ...rest} = orders 
+        let data = reverse(values(rest));
+        
         if (data.length<1) {
             return (
                 <div className="flex flex-center" style={{marginTop:'50px', fontFamily:'RobotoRegular'}}>Вы еще не делали заказов</div>
@@ -30,7 +33,7 @@ class Orders extends Component {
 }
 
 const mapStateToProps = state => ({
-    order: state.order
+    order: state.orderCache
 });
 const mapDispatchToProps = dispatch => ({
     actions: bindActionCreators(actions, dispatch)
