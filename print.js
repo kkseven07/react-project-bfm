@@ -179,6 +179,14 @@ let print = (urls, book_id) => {
     // });
 };
 
+let printType=() => {
+    let book_id = process.argv[2].split("-")[0];
+    let type = process.argv[3]
+    shell.exec(
+        `electroshot http://localhost:8080/pages/${book_id}/${type} 1024x1024 --delay 5000 --out ../print/${book_id} --filename '{name}.png'`
+        )
+}
+
 let convert = (book_id, types) => {
     fs.readdir(`../print/${book_id}/`, (err, files) => {
         let filenames = types
@@ -209,6 +217,8 @@ let work = () => {
 };
 
 work();
+// printType()
+
 
 // const Pageres = require('pageres');
 

@@ -29,6 +29,7 @@ class Drop extends Component {
 
 	state = {
 		file: null,
+		rotate:0,
 		croppedImage: null
 	};
 
@@ -85,6 +86,10 @@ class Drop extends Component {
 		this.setState({ final: dataurl });
 	};
 
+	turn = () =>{
+		this.setState({rotate:this.state.rotate+90})
+	}
+
 	render() {
 		return (
 			<div styleName="Drop">
@@ -123,6 +128,24 @@ class Drop extends Component {
 							>
 								x
 							</div>
+							<div
+								onClick={this.turn}
+								style={{
+									position:"absolute",
+									left: "1%",
+									top: "1%",
+									paddingTop: "3%",
+									fontSize: 17,
+									backgroundColor: "black",
+									width: 40,
+									height: 40,
+									borderRadius: 20,
+									color: "white",
+									fontWeight: "bold"
+								}}
+							>
+								↩️
+							</div>
 							<AvatarEditor
 								// style={{ width: 200 }}
 								ref={this.setEditorRef}
@@ -135,7 +158,7 @@ class Drop extends Component {
 								border={20}
 								color={[255, 255, 255, 0.6]} // RGBA
 								scale={1}
-								rotate={0}
+								rotate={this.state.rotate}
 							/>
 						</div>}
 				</div>
