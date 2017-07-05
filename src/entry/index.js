@@ -13,7 +13,7 @@ import App from "../app/app";
 const store = configureStore();
 const history = createHistory();
 import ReactGA from "react-ga";
-ReactGA.initialize("UA-UA-101909111-1");
+ReactGA.initialize("UA-101909111-1");
 
 history.listen((location, action) => {
     // console.log(location, action)
