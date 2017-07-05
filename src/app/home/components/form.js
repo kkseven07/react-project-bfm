@@ -8,7 +8,7 @@ import {
     DescSmall
 } from "../../shared";
 import "./form.css";
-
+import ReactGA from "react-ga";
 import range from "lodash/range";
 import { data } from "../../shared";
 const siteKey = "6LcrISYUAAAAAHK2ADjF_25cmmOepUUMrRKUV_Zj";
@@ -22,6 +22,17 @@ const getData = field => {
         return data.monthsList;
     }
 };
+
+// const createBook = (detail, callback,callbackParams) => {
+//     const action = detail === "you"
+//         ? "Create book of you"
+//         : "Create book of parents";
+//     ReactGA.event({
+//         category: "Create book",
+//         action
+//     });
+//     props.actions.changeForm(true, "partOne", gift, props.history);
+// };
 
 const You = ({ form, ...props }) => {
     let gift = {
@@ -143,13 +154,18 @@ const You = ({ form, ...props }) => {
 
             <div className="flex width-full">
                 <Button
-                    click={() =>
+                    click={() => {
+                        ReactGA.event({
+                            category: "Create book",
+                            action: "Clicked create book of you"
+                        });
                         props.actions.changeForm(
                             true,
                             "partOne",
                             gift,
                             props.history
-                        )}
+                        );
+                    }}
                 >
                     Создать книгу
                 </Button>
@@ -174,7 +190,7 @@ const MomAndDad = ({ form, bookType, ...props }) => {
         calculatedAge: parseInt(form.calculatedAge)
     };
     const verifyCallback = response => props.actions.captchaVerify();
-const callback = () => console.log("");
+    const callback = () => console.log("");
 
     const descText = bookType === "mom"
         ? "Как зовут Вашу маму?"
@@ -284,13 +300,18 @@ const callback = () => console.log("");
 
             <div className="flex width-full">
                 <Button
-                    click={() =>
+                    click={() => {
+                        ReactGA.event({
+                            category: "Create book",
+                            action: "Clicked create book for mom or dad"
+                        });
                         props.actions.changeForm(
                             true,
                             "partOne",
                             gift,
                             props.history
-                        )}
+                        );
+                    }}
                 >
                     Создать книгу
                 </Button>

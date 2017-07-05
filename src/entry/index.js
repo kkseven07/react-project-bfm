@@ -1,28 +1,36 @@
+import React, { Component } from "react";
+import { render } from "react-dom";
+import "../app/app.css";
 
-import React, {Component} from 'react'
-import {render} from 'react-dom'
-import "../app/app.css"
+import configureStore from "./store";
+import createHistory from "history/createBrowserHistory";
+import { Provider } from "react-redux";
 
-import configureStore from './store'
-import createHistory from 'history/createBrowserHistory'
-import { Provider } from 'react-redux'
+import { ConnectedRouter } from "react-router-redux";
 
-import { ConnectedRouter} from 'react-router-redux'
+import App from "../app/app";
 
-import App from '../app/app'
+const store = configureStore();
+const history = createHistory();
+import ReactGA from "react-ga";
+ReactGA.initialize("UA-UA-101909111-1");
 
-const store = configureStore()
-const history = createHistory()
+history.listen((location, action) => {
+    // console.log(location, action)
+    const page=location.pathname
+    ReactGA.set({page})
+    ReactGA.pageview(page);
+});
 
 // import { AppRegistry } from 'react-native-web';
 render(
     <Provider store={store}>
         <ConnectedRouter history={history}>
-            <App/>
+            <App />
         </ConnectedRouter>
     </Provider>,
-  document.getElementById('root')
-)
+    document.getElementById("root")
+);
 
 // const rootTag = document.getElementById('root');
 // AppRegistry.registerComponent('App', () => App);
