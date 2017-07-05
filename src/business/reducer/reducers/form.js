@@ -24,9 +24,9 @@ const init = {
    month: { value: "Месяц", isPristine: true, isValid: true, errorText: "" },
    year: { value: "Год", isPristine: true, isValid: true, errorText: "" },
    age: {
-      value: "today",
-      isPristine: false,
-      isValid: true,
+      value: "Возраст указанный в книге",
+      isPristine: true,
+      isValid: false,
       errorText: ""
    },
    relation: {
@@ -112,7 +112,8 @@ let partOne = [
    "month",
    "year",
    "senderName",
-   "sondaug"
+   "sondaug",
+   "age"
 ];
 
 const initsondaug = {

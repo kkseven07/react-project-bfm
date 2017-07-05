@@ -117,6 +117,19 @@ const You = ({ form, ...props }) => {
                             form.year.errorText
                     }
                 />}
+            <Select
+                values={["today", "next"]}
+                default="Возраст указанный в книге"
+                options={[
+                    `Возраст сегодня ${form.calculatedAge && " (" + form.calculatedAge + ")"}`,
+                    `На следующий день рождения ${form.calculatedAge && " (" + (parseInt(form.calculatedAge) + 1) + ")"}`
+                ]}
+                field={form.age}
+                fieldType={"age"}
+                enter={props.actions.enterInput}
+            />
+
+            <ErrorText text={form.age.errorText} />
 
             <DescText text="От кого эта книга?" />
             <DescSmall text="Ваше имя и название книги" />
@@ -254,6 +267,19 @@ const MomAndDad = ({ form, bookType, ...props }) => {
                             form.year.errorText
                     }
                 />}
+            <Select
+                values={["today", "next"]}
+                default="Возраст указанный в книге"
+                options={[
+                    `Возраст сегодня ${form.calculatedAge && " (" + form.calculatedAge + ")"}`,
+                    `На следующий день рождения ${form.calculatedAge && " (" + (parseInt(form.calculatedAge) + 1) + ")"}`
+                ]}
+                field={form.age}
+                fieldType={"age"}
+                enter={props.actions.enterInput}
+            />
+
+            <ErrorText text={form.age.errorText} />
             <Input
                 field={form.bookName}
                 style=""
