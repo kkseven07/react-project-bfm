@@ -102,7 +102,7 @@ class Order extends React.Component {
         if (data.length<1&&status!==true) return (
             <div
                 className="flex flex-center width-full flex-column"
-                style={{ paddingBottom: 50 }}
+                style={{ paddingBottom: 50, fontFamily:'RobotoRegular' }}
             >
                 <img
                     onClick={() => {
@@ -122,7 +122,7 @@ class Order extends React.Component {
         return (
             <div
                 className="flex flex-center width-full flex-column"
-                style={{ paddingBottom: 50 }}
+                style={{ paddingBottom: 50, fontFamily:'RobotoRegular' }}
             >
                 <img
                     onClick={() => {
