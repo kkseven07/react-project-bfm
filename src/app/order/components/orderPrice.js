@@ -3,7 +3,7 @@ import './orderPrice.css';
 
 export default ({data, totalForBooks, wrapPrice, total, discount}) => {
 	return (
-		<div style={{width:'100%', flexDirection:'column'}} className="flex flex-center">
+		<div style={{width:'100%', flexDirection:'column', fontFamily:'RobotoRegular'}} className="flex flex-center">
 			<div
 	            className="flex-start"
 	            style={{
@@ -46,7 +46,7 @@ export default ({data, totalForBooks, wrapPrice, total, discount}) => {
 	            styleName="summary"
 	            className="flex flex-center space-between"
 	        >
-	            <div>Cкидка</div>
+	            <div>Cкидка ({discount*100/(total+discount)}%)</div>
 	            <div>{discount} тг</div>
 	        </div>}
 
