@@ -5,7 +5,7 @@ export default (props)=>{
 
     return <div className="width-full flex flex-center" styleName="r">
 
-        <iframe styleName="youtube" src="https://www.youtube.com/embed/APe8-aG9hw8" ></iframe>
+        <iframe styleName="youtube" src="https://www.youtube.com/embed/APe8-aG9hw8" allowFullScreen ></iframe>
 
     </div>
 }
