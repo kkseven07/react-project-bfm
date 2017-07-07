@@ -57,6 +57,7 @@ class Order extends React.Component {
 
     }
     render() {
+
         let status = this.props.order.isSent?this.props.order.isSent:false;
         // console.log("status", status, this.props.order)
 
@@ -65,6 +66,7 @@ class Order extends React.Component {
         }
         let { currentBookId, ...books } = this.props.book;
         let data = reverse(values(books));
+        // console.log("order", data)
         const {voucherStatus} = this.props.voucher;
         let totalForBooks=this.getTotalForBooks(data);
         let total = this.getTotal(data);
@@ -216,7 +218,8 @@ class Order extends React.Component {
                         <Button
                             click={() => {
                                 this.props.actions.validateForm(order);
-                                this.props.form.canConfirm&&this.setState({showConfirm:true})
+                                this.props.form.canConfirm&&this.setState({showConfirm:true});
+                                
                             }}
                         >
                             Заказать
