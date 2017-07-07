@@ -318,18 +318,8 @@ class Options extends React.Component {
                                 {" "}
                                 придет, когда раскроет его!
                             </div>
-                            <div>
-                                SOCIAL
-                                <FacebookShareButton
-                                    url="bookfrom.me"
-                                    title="bookfrom.me"
-                                    // picture={`${String(window.location)}/${exampleImage}`}
-                                    className="Demo__some-network__share-button">
-                                    <FacebookIcon
-                                      size={32}
-                                      round />
-                                </FacebookShareButton>
-                            </div>
+
+                            
                         </div>
                     </div>
                 </div>
@@ -357,3 +347,18 @@ class Options extends React.Component {
     }
 }
 export default Options;
+/*
+<div>
+                                SOCIAL
+                                <FacebookShareButton
+                                    url="bookfrom.me"
+                                    title="bookfrom.me"
+                                    // picture={`${String(window.location)}/${exampleImage}`}
+                                    className="Demo__some-network__share-button">
+                                    <FacebookIcon
+                                      size={32}
+                                      round />
+                                </FacebookShareButton>
+                            </div>
+
+*/
