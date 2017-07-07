@@ -165,6 +165,7 @@ class Order extends React.Component {
                             style={{marginTop:'40px', fontSize:'1.1em', padding:'14px', textAlign:'center'}}
                         >
                             Поздравляем! Ваш заказ принят. В течение часа с вами свяжется консультант для подтверждения заказа.
+                            Звонки осуществляются с 9.00 до 20.00.
                         </div>
                         <Button
                             click={()=>{this.props.history.push("/cart")}}
