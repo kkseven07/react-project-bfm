@@ -146,7 +146,7 @@ class Header extends React.Component {
                             this.props.actions.closeMenu();
                         }}
                     >
-                        <img src={`${url}/images/logo_mono.png`} alt="" />
+                        <img styleName="image" src={`${url}/images/logo.png`} alt="" />
 
                     </div>
                     <div
