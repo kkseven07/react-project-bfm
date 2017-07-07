@@ -6,6 +6,23 @@ import "./bookOptions.css";
 import values from "lodash/values";
 import url from "../../../entry/url";
 import { Button } from "../../shared";
+import {
+  ShareButtons,
+  ShareCounts,
+  generateShareIcon
+} from 'react-share';
+const {
+  FacebookShareButton,
+  VKShareButton
+} = ShareButtons;
+
+const {
+  FacebookShareCount,
+  VKShareCount
+} = ShareCounts;
+const FacebookIcon = generateShareIcon('facebook');
+const VKIcon = generateShareIcon('vk');
+
 let prices = {
     digital: 2900,
     soft19: 9900,
@@ -301,7 +318,18 @@ class Options extends React.Component {
                                 {" "}
                                 придет, когда раскроет его!
                             </div>
-
+                            <div>
+                                SOCIAL
+                                <FacebookShareButton
+                                    url="bookfrom.me"
+                                    title="bookfrom.me"
+                                    // picture={`${String(window.location)}/${exampleImage}`}
+                                    className="Demo__some-network__share-button">
+                                    <FacebookIcon
+                                      size={32}
+                                      round />
+                                </FacebookShareButton>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -11,7 +11,14 @@ export const changeForm = (action$, store) =>
     action$.ofType("CHANGE_FORM").switchMap(({ gift, history }) => {
         const state = store.getState();
         const { canCreate } = state.form;
-        if (canCreate) return [{ type: "CREATE_BOOK", book: gift, history }];
+        if (canCreate)  {
+             fbq('track', 'CreateBook', {
+                value: 10,
+                currency:'USD'
+            })
+            return [{ type: "CREATE_BOOK", book: gift, history }];
+           
+        }
         else return [{ type: "OK" }];
     });
 
@@ -34,10 +41,15 @@ export const shouldOrderSend = (action$, store) =>
     action$.ofType("VALIDATE_FORM").switchMap(({order})=> {
             const orderForm = store.getState().orderForm.order;
             const canConfirm = store.getState().orderForm.canConfirm;
-            if(canConfirm)
+            if(canConfirm) {
+                fbq('track', 'Purchase', {
+                                    value: orderForm.orderDetails.price.total/324,
+                                    currency:'USD'
+                                })
                 return [
                     {type:"CONFIRM_ORDER", books:orderForm.books, orderDetails:orderForm.orderDetails}
                 ];
+            }
             else {
                 return [{type:"ORDER_NOT_SENT"}];
             }
@@ -47,10 +59,12 @@ export const shouldVoucherSend = (action$, store) =>
     action$.ofType("VALIDATE_VOUCHER").switchMap(({elem})=> {
             const voucher = store.getState().voucher.voucherField.value;
             const shouldVoucherSend = store.getState().voucher.shouldVoucherSend;
-            if(shouldVoucherSend)
+            if(shouldVoucherSend) {
+                fbq('track', 'Lead', { value: 10, currency:'USD' })
                 return [
                     {type:"CHECK_VOUCHER"}
                 ];
+            }
             else {
                 return [{type:"VOUCHER_NOT_SENT"}];
             }
