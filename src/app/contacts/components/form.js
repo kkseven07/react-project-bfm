@@ -15,7 +15,7 @@ import * as actions from "../../../business/actions";
 const contactForm =({form, actions} ) => {
     return (
         <div styleName="form">
-          <div style={{textAlign:'center', fontFamily:'RobotoMedium'}}>НАПИШИТЕ НАМ</div>
+          <div style={{textAlign:'center', fontFamily:'RobotoMedium'}} styleName="form-title">НАПИШИТЕ НАМ</div>
           <div style={{width:'100%'}}>
                 <div styleName="form-item">
                     <Input
