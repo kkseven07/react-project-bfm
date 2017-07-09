@@ -23,6 +23,7 @@ user-select: none;
 }
 :global .HiddenOverflow{
   overflow:hidden;
+  position: relative;
 }
 
 html {
