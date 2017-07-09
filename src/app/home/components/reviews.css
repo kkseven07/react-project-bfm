@@ -7,7 +7,8 @@
     background: #fbc4c2;
     font-family: 'RobotoRegular';
     padding:0 5% 5%;
-  flex-direction: column;
+    flex-direction: column;
+    align-items: center;
 
 }
 .revs {
@@ -82,6 +83,22 @@
   transition: opacity 300ms ease-in;
 }
 
+.add-review {
+  border: 0.07em solid black;
+    border-radius: 0.15em;
+    padding: 0.8em;
+    margin-top: 50px;
+    font-size: 0.9em;
+    font-family: 'RobotoMedium';
+    text-transform: uppercase;
+    transition: 0.2s;
+}
+.add-review:hover {
+  transform:matrix(1.03,0,0,1.03,0,-5);
+}
+.add-review:active {
+  transform:scale(0.9);
+}
 @media screen and (max-width:920px) {
     .animated-review {
         width: 100%;

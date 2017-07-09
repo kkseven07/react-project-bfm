@@ -73,6 +73,7 @@
   cursor:default;
   border-radius: 0.85em;
   text-transform: uppercase;
+  transition: 0.2s;
 }
 .imgs {
   right:14%;
@@ -84,6 +85,9 @@
 .imgs img {
   width: 100%;
 }
+.tab:hover {
+    transform: scale(1.05);
+  }
 @media screen and (max-width:768px) {
   .r {
     flex-direction: column;
@@ -106,6 +110,7 @@
   .tab {
     font-size:0.9rem;
   }
+
   .text, .title {
     text-align: center;
   }
@@ -113,8 +118,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 15px;
   }
   .content {
     font-size: 14px;
+  }
+  .imgs img {
+    margin-left: 6.5vw;
   }
 }

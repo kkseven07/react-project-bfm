@@ -1,14 +1,16 @@
 .form {
   width: 48%;
-  background: #cadaff;
+  /*background: #cadaff;*/
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  font-family: 'RobotoRegular';
 }
 .form-item {
   margin-top:15px;
 }
+.form-title {}
 @media screen and (max-width: 768px) {
 	.form {
 	    width: 100%;
