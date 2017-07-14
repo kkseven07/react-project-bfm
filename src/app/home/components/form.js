@@ -50,12 +50,11 @@ const You = ({ form, ...props }) => {
     };
     const verifyCallback = response => props.actions.captchaVerify();
     const callback = () => console.log("");
-
     return (
         <div className="flex flex-center flex-column" styleName="form">
             <DescText text="Для кого эта книга?" />
             <div style={{ margin: 3, marginTop: 0 }} />
-            <DescSmall text="Укажите имя, пол и дату рождения" />
+            <DescSmall text="Данные будут использованы для создания книги" />
             <div style={{ margin: 6 }} />
             <Input
                 placeholder="Имя"
@@ -64,15 +63,7 @@ const You = ({ form, ...props }) => {
                 enter={props.actions.enterInput}
             />
             <ErrorText text={form.name.errorText} />
-            <Select
-                default="Пол"
-                values={["female", "male"]}
-                options={["Женский", "Мужской"]}
-                field={form.gender}
-                fieldType={"gender"}
-                enter={props.actions.enterInput}
-            />
-            <ErrorText text={form.gender.errorText} />
+
             <div className="flex width-full">
                 <div styleName="day">
                     <Select
@@ -117,19 +108,100 @@ const You = ({ form, ...props }) => {
                             form.year.errorText
                     }
                 />}
-            <Select
-                values={["today", "next"]}
-                default="Возраст указанный в книге"
-                options={[
-                    `Возраст сегодня ${form.calculatedAge && " (" + form.calculatedAge + ")"}`,
-                    `На следующий день рождения ${form.calculatedAge && " (" + (parseInt(form.calculatedAge) + 1) + ")"}`
-                ]}
-                field={form.age}
-                fieldType={"age"}
-                enter={props.actions.enterInput}
-            />
 
-            <ErrorText text={form.age.errorText} />
+            <div className="flex width-full">
+                <div className="flex flex-column" styleName="gender">
+                    <div
+                        className="flex width-full"
+                        styleName={
+                            form.gender.errorText === ""
+                                ? "group"
+                                : "group border-red"
+                        }
+                    >
+                        <div
+                            className="flex flex-center"
+                            styleName={`genderButton girl ${form.gender.value === "female" ? "selected" : ""}`}
+                            onClick={() => {
+                                props.actions.enterInput(
+                                    "female",
+                                    "gender",
+                                    "select"
+                                );
+                            }}
+                        >
+                            Ж
+                        </div>
+                        <div
+                            className="flex flex-center"
+                            styleName={`genderButton boy ${form.gender.value === "male" ? "selected" : ""}`}
+                            onClick={() => {
+                                props.actions.enterInput(
+                                    "male",
+                                    "gender",
+                                    "select"
+                                );
+                            }}
+                        >
+                            М
+                        </div>
+                    </div>
+                    <div
+                        className="flex width-full flex-center"
+                        styleName="smallText"
+                    >
+                        {form.gender.errorText === ""
+                            ? <div>
+                                  Пол
+                                  {form.gender.value === "male"
+                                      ? ": мужской"
+                                      : form.gender.value === "female"
+                                            ? ": женский"
+                                            : ""}
+                              </div>
+                            : <div style={{ color: "red" }}>
+                                  Вы забыли пол!
+                              </div>}
+                    </div>
+                </div>
+                <div className="flex flex-column" styleName="age">
+
+                    <div className="flex width-full" styleName="group">
+                        <div
+                            onClick={() => {
+                                props.actions.enterInput("today", "age", "");
+                            }}
+                            className="flex flex-center"
+                            styleName={`ageButton today ${form.age.value === "today" ? "selected" : ""}`}
+                        >
+                            {form.dateExists && form.calculatedAge !== ""
+                                ? form.calculatedAge
+                                : "Сегодня"}
+                        </div>
+                        <div
+                            onClick={() => {
+                                props.actions.enterInput("next", "age", "");
+                            }}
+                            className="flex flex-center"
+                            styleName={`ageButton next ${form.age.value !== "today" ? "selected" : ""}`}
+                        >
+                            {form.dateExists && form.calculatedAge !== ""
+                                ? parseInt(form.calculatedAge) + 1
+                                : "Через год"}
+
+                        </div>
+                    </div>
+                    <div
+                        className="flex width-full flex-center"
+                        styleName="smallText"
+                    >
+                        Возраст в книге
+                    </div>
+
+                </div>
+            </div>
+
+            <div style={{ height: 30 }} />
 
             <DescText text="От кого эта книга?" />
             <DescSmall text="Ваше имя и название книги" />
@@ -150,20 +222,6 @@ const You = ({ form, ...props }) => {
                 enter={props.actions.enterInput}
             />
             <ErrorText text={form.bookName.errorText} />
-            <div className="flex width-full" style={{ paddingBottom: 8 }}>
-
-                <Recaptcha
-                    render="explicit"
-                    onloadCallback={callback}
-                    sitekey={siteKey}
-                    hl="ru"
-                    // theme="dark"
-                    verifyCallback={verifyCallback}
-                />
-            </div>
-            {!form.verifyed &&
-                !form.captchaPristine &&
-                <ErrorText text={"Вы не робот?"} />}
 
             <div className="flex width-full">
                 <Button
@@ -267,28 +325,95 @@ const MomAndDad = ({ form, bookType, ...props }) => {
                             form.year.errorText
                     }
                 />}
-            <Select
-                values={["today", "next"]}
-                default="Возраст указанный в книге"
-                options={[
-                    `Возраст сегодня ${form.calculatedAge && " (" + form.calculatedAge + ")"}`,
-                    `На следующий день рождения ${form.calculatedAge && " (" + (parseInt(form.calculatedAge) + 1) + ")"}`
-                ]}
-                field={form.age}
-                fieldType={"age"}
-                enter={props.actions.enterInput}
-            />
 
-            <ErrorText text={form.age.errorText} />
-            <Input
-                field={form.bookName}
-                style=""
-                placeholder="Название на обложке"
-                fieldType={"bookName"}
-                enter={props.actions.enterInput}
-            />
-            <ErrorText text={form.bookName.errorText} />
 
+            <div className="flex width-full">
+                <div className="flex flex-column" styleName="gender">
+                    <div
+                        className="flex width-full"
+                        styleName={
+                            form.sondaug.errorText === ""
+                                ? "group"
+                                : "group border-red"
+                        }
+                    >
+                        <div
+                            className="flex flex-center"
+                            styleName={`genderButton girl ${form.sondaug.value === "daughter" ? "selected" : ""}`}
+                            onClick={() => {
+                                props.actions.enterInput(
+                                    "daughter",
+                                    "sondaug",
+                                    "select"
+                                );
+                            }}
+                        >
+                            Дочь
+                        </div>
+                        <div
+                            className="flex flex-center"
+                            styleName={`genderButton boy ${form.sondaug.value === "son" ? "selected" : ""}`}
+                            onClick={() => {
+                                props.actions.enterInput(
+                                    "son",
+                                    "sondaug",
+                                    "select"
+                                );
+                            }}
+                        >
+                            Сын
+                        </div>
+                    </div>
+                    <div
+                        className="flex width-full flex-center"
+                        styleName="smallText"
+                    >
+                        {form.sondaug.errorText === ""
+                            ? <div>
+                                  Кем приходитесь?
+                              </div>
+                            : <div style={{ color: "red" }}>
+                                  Вы забыли меня!
+                              </div>}
+                    </div>
+                </div>
+                <div className="flex flex-column" styleName="age">
+
+                    <div className="flex width-full" styleName="group">
+                        <div
+                            onClick={() => {
+                                props.actions.enterInput("today", "age", "");
+                            }}
+                            className="flex flex-center"
+                            styleName={`ageButton today ${form.age.value === "today" ? "selected" : ""}`}
+                        >
+                            {form.dateExists && form.calculatedAge !== ""
+                                ? form.calculatedAge
+                                : "Сегодня"}
+                        </div>
+                        <div
+                            onClick={() => {
+                                props.actions.enterInput("next", "age", "");
+                            }}
+                            className="flex flex-center"
+                            styleName={`ageButton next ${form.age.value !== "today" ? "selected" : ""}`}
+                        >
+                            {form.dateExists && form.calculatedAge !== ""
+                                ? parseInt(form.calculatedAge) + 1
+                                : "Через год"}
+
+                        </div>
+                    </div>
+                    <div
+                        className="flex width-full flex-center"
+                        styleName="smallText"
+                    >
+                        Возраст в книге
+                    </div>
+
+                </div>
+            </div>
+            <div style={{height:30}}/>
             <DescText text="От кого эта книга?" />
             <DescSmall text="Ваше имя и кем приходитесь" />
             <div style={{ margin: 10, marginTop: 0 }} />
@@ -300,29 +425,15 @@ const MomAndDad = ({ form, bookType, ...props }) => {
                 enter={props.actions.enterInput}
             />
             <ErrorText text={form.senderName.errorText} />
-            <Select
-                default="Кем приходитесь?"
-                values={["son", "daughter"]}
-                options={["Сын", "Дочь"]}
-                field={form.sondaug}
-                fieldType={"sondaug"}
+
+             <Input
+                field={form.bookName}
+                style=""
+                placeholder="Название на обложке"
+                fieldType={"bookName"}
                 enter={props.actions.enterInput}
             />
-            <ErrorText text={form.sondaug.errorText} />
-            <div className="flex width-full" style={{ paddingBottom: 8 }}>
-
-                <Recaptcha
-                    render="explicit"
-                    onloadCallback={callback}
-                    sitekey={siteKey}
-                    hl="ru"
-                    // theme="dark"
-                    verifyCallback={verifyCallback}
-                />
-            </div>
-            {!form.verifyed &&
-                !form.captchaPristine &&
-                <ErrorText text={"Вы не робот?"} />}
+            <ErrorText text={form.bookName.errorText} />
 
             <div className="flex width-full">
                 <Button

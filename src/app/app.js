@@ -9,6 +9,7 @@ const Cart = asyncModule(() => import("./cart"), "cart route");
 const Print = asyncModule(() => import("./pages/print"), "print route");
 const Order = asyncModule(() => import("./order"), "order");
 // import Order from './order'
+// import Hope from "./pages/hoep"
 import { routerActions } from "react-router-redux";
 import { connect } from "react-redux";
 import * as actions from "../business/actions";
@@ -25,11 +26,11 @@ fbq('init', '148262285740491');
 `;
 
 const showHeader = location =>
-    !location.pathname.includes("/books/") &&
-    !location.pathname.includes("/pages/") &&
-    !location.pathname.includes("/preview") &&
-    !location.pathname.includes("/order") &&
-    !location.pathname.includes("/cart");
+    !location.pathname.match("/books/") &&
+    !location.pathname.match("/pages/") &&
+    !location.pathname.match("/preview") &&
+    !location.pathname.match("/order") &&
+    !location.pathname.match("/cart");
 
 class App extends React.Component {
     componentWillMount() {

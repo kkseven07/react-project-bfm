@@ -5,16 +5,105 @@
 }
 
 .day{
-    width:21%;
+    width:25%;
 
 }
 .month{
-    width:42%;
-    margin-left:6%;
+    width:40%;
+    margin-left:5%;
 }
 
 .year{
     width:25%;
-    margin-left:6%;
+    margin-left:5%;
 }
 
+
+
+.gender{
+    width:38%;
+    margin-right:5%;
+}
+
+.age{
+    width:56%;
+
+}
+.group{
+    cursor:pointer;
+    border:1px solid;
+    border-color:rgb(230,230,230);
+    border-radius:0.3rem;
+
+}
+
+.genderButton{
+    background: white;
+    height:45px;
+    width:50%;
+
+}
+.genderButton:hover{
+    color:rgb(60,60,60);
+}
+.border-red{
+    border-color:red;
+}
+.ageButton{
+    background: white;
+    height:45px;
+    width:50%;
+    text-align: center;
+}
+.ageButton:hover{
+    color:rgb(60,60,60);
+}
+
+.today{
+    background: white;
+    color:rgb(200,200,200);
+    border-top-left-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
+}
+.next{
+    background: white;
+    color:rgb(200,200,200);
+    border-left:1px solid;
+    border-left-color:rgb(220,220,220);
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+}
+
+.boy{
+    background: white;
+    border-left:1px solid;
+    color:rgb(200,200,200);
+    border-left-color:rgb(220,220,220);
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+}
+.smallText{
+   margin-top:8px;
+   font-size:15px;
+
+}
+@media screen and (max-width:400px){
+    .smallText{
+       font-size:13px;
+    }
+}
+
+.girl {
+   background: white;
+   color:rgb(200,200,200);
+   border-top-left-radius: 0.3rem;
+   border-bottom-left-radius: 0.3rem;
+
+}
+
+.selected{
+    font-weight: bold;
+    color:black;
+    /*border:1px solid rgb(150,150,150);*/
+
+}

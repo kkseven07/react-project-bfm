@@ -16,7 +16,7 @@ const bookTypes = {
 };
 const BookForm = props => {
     const bookType = bookTypes[props.form.relation.value];
-    const backgroundColor=bookType==="mom"?"#fff1f8":"#D9E9FF"
+    const backgroundColor="rgb(217, 241, 255)"
     return (
         <div className="width-full flex flex-center flex-wrap"
             style={{backgroundColor}}

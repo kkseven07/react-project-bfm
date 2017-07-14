@@ -2,9 +2,9 @@ import React, {Component} from 'react'
 import './fruitDNA.css'
 
 const getFruit = (url) => {
-    if(url.includes("apple")){
+    if(url.indexOf("apple")>-1){
         return "apple"
-    }else if(url.includes("grapes")){
+    }else if(url.indexOf("grapes")>-1){
         return"grapes"
     }
     return "pear"
