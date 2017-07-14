@@ -55,9 +55,9 @@ export const loadCache = (action$, store) =>
         const items = reverse(
             Object.keys(localStorage).map(key => {
                 let type;
-                if (key.indexOf("order") < 0) {
+                if (key.indexOf("bookKey") > -1) {
                     type = "books";
-                } else {
+                } else if (key.indexOf("order")> -1) {
                     type = "orders";
                 }
                 return { type, item: JSON.parse(localStorage.getItem(key)) };

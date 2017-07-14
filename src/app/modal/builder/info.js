@@ -36,6 +36,7 @@ export default ({ book, actions }) => {
                 У некоторых страниц есть кнопка
             </div>
             <div
+
                 className="flex flex-center"
                 style={{
                     marginTop:10
@@ -43,6 +44,8 @@ export default ({ book, actions }) => {
             >
                 Редактировать
             </div>
+
+
              <div
                 style={{
                     fontFamily: "RobotoRegular",

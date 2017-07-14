@@ -9,7 +9,7 @@ export default ({ type, actions}) => {
             	На данный момент мы принимаем оплату переводом через банковскую систему {" "}
             	<a href="http://qiwi.kz/Home/moneytransfers/" style={{textDecoration:'underline'}}>QIWI</a>.
             	<div style={{textAlign:'center', padding:'7px 0'}}>
-            		<span style={{borderBottom:'2px solid orange'}}><span>Счет QIWI: </span> +7 777 777 77 77</span>
+            		<span style={{borderBottom:'2px solid orange'}}><span>Счет QIWI: </span> +7 707 23 01 555</span>
             	</div>
             	<div 
             		style={{fontFamily:'BebasBold', fontSize:'1.3em', padding:'20px 0'}}

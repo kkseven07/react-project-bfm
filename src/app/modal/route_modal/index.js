@@ -7,6 +7,7 @@ import { bindActionCreators } from "redux";
 import Return from './components/return';
 import Shipping from './components/shipping';
 import Payment from './components/payment';
+import AddReview from './components/addReview';
 const getComponent = (name, actions) => {
     switch (name) {
         case 'return':
@@ -15,6 +16,10 @@ const getComponent = (name, actions) => {
             return <Payment name={name} actions={actions} />;
         case 'shipping':
             return <Shipping name={name} actions={actions} />;
+        case 'addReview':
+            return <AddReview name={name} actions={actions} />;
+        default: 
+            return <div></div>;
     }
     
 };
