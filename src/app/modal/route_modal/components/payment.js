@@ -7,14 +7,25 @@ export default ({ type, actions}) => {
            </div>
             <div style={{fontFamily:'RobotoRegular', fontSize:'0.7em', padding:'20px 0', lineHeight:'1.3'}}>
             	На данный момент мы принимаем оплату переводом через банковскую систему {" "}
-            	<a href="http://qiwi.kz/Home/moneytransfers/" style={{textDecoration:'underline'}}>QIWI</a>.
+            	<a href="http://qiwi.kz/Home/moneytransfers/" style={{textDecoration:'underline'}}>QIWI</a>
+                {" "}и {" "}
+                <a href="https://www.wooppay.com/services" style={{textDecoration:'underline'}}>Wooppay</a>.
             	<div style={{textAlign:'center', padding:'7px 0'}}>
             		<span style={{borderBottom:'2px solid orange'}}><span>Счет QIWI: </span> +7 707 23 01 555</span>
             	</div>
             	<div 
             		style={{fontFamily:'BebasBold', fontSize:'1.3em', padding:'20px 0'}}
-            	>Вы можете воспользоваться двумя способами:</div>
-            	<div>1.
+            	>Вы можете воспользоваться тремя способами:</div>
+                <div>1.
+                    <a
+                        target="_blank" 
+                        href="https://www.wooppay.com/services/transfer_2494" 
+                        style={{textDecoration:'underline'}}
+                    >
+                         Оплата картой(перевод через систему wooppay)
+                    </a>
+                </div>
+            	<div>2.
             		<a
             			target="_blank" 
             			href="https://qiwi.com/payment/form.action?provider=99" 
@@ -23,7 +34,7 @@ export default ({ type, actions}) => {
 						 Оплата через перевод с кошелька QIWI
             		</a>
             	</div>
-            	<div>2.
+            	<div>3.
             		<a
             			target="_blank" 
             			href="https://qiwi.com/replenish/categories/qiwi-terminals/qiwi-kazakhstan.action" 

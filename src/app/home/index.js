@@ -40,7 +40,7 @@ class Home extends React.Component {
                 </Element>
                 <Product />
                 <Reviews />
-                <Footer />
+                <Footer history={props.history}/>
 
             </div>
         );

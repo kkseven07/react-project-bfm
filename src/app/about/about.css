@@ -17,7 +17,7 @@
   background: #ffe56a;
 }
 .img {
-  width: 675px;
+  width: 50%;
   height: 450px;
 }
 .img-1 {
@@ -155,7 +155,7 @@
     padding: 20px 5%;
   }
   .img {
-    height: 290px;
+    height: 250px;
     width: 380px;
   }
 }

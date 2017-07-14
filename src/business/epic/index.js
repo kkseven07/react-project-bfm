@@ -23,7 +23,15 @@ import {
     deleteBooksFromCache
 } from "./epics/cache";
 import { delayLoading, uploadDelay } from "./epics/delay";
-import { input, changeForm, bookVersion, shouldOrderSend,shouldVoucherSend, shouldContactFormSend } from "./epics/form";
+import { 
+    input, 
+    changeForm, 
+    bookVersion, 
+    shouldOrderSend,
+    shouldVoucherSend, 
+    shouldContactFormSend,
+    scrollToForm
+     } from "./epics/form";
 import "rxjs/add/operator/filter";
 import "rxjs/add/operator/delay";
 import "rxjs/add/operator/mapTo";
@@ -57,7 +65,8 @@ const rootEpic = combineEpics(
     uploadDelay,
     shouldVoucherSend,
     sendContactForm,
-    shouldContactFormSend
+    shouldContactFormSend,
+    scrollToForm
     // loadOrderCache
 );
 

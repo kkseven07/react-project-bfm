@@ -37,6 +37,6 @@ export default (props)=>{
         </div>
       </div>
     </div>
-    <Footer/>
+    <Footer history={props.history}/>
   </div>
 }
