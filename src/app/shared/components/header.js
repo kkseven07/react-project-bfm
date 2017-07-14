@@ -109,8 +109,10 @@ class Header extends React.Component {
     //     e.nativeEvent.stopImmediatePropagation();
     //   }
     componentWillReceiveProps(props) {
+        props.routeChanged&&this.setState({isOpen:false})
     }
     render() {
+        
         const { currentBookId, ...books } = this.props.book;
         const { history } = this.props;
         const { ...orders } = this.props.order;
@@ -260,7 +262,7 @@ class Header extends React.Component {
                                 this.state.isOpen
                                     ? this.setState({ isOpen: false })
                                     : this.setState({ isOpen: true });
-                                history.push("/");
+                                // history.push("/");
                             }}
                         >
                             <span>КНИГИ</span>
@@ -289,8 +291,9 @@ class Header extends React.Component {
                                     styleName="list-item"
                                     onClick={() => {
                                         this.setState({ isOpen: false });
-                                        this.props.actions.setupBookType("you")
-                                        this.props.scroll()
+                                        this.props.actions.setupBookType("you");
+                                        this.props.scroll();
+
                                     }}
                                 >
                                     КНИГА О ТЕБЕ
@@ -386,7 +389,8 @@ const mapStateToProps = state => ({
     menu: state.menu.open,
     book: state.book,
     count: state.menu.count,
-    order: state.order
+    order: state.order,
+    routeChanged: state.menu.routeChanged
 });
 const mapDispatchToProps = dispatch => ({
     actions: bindActionCreators(actions, dispatch)

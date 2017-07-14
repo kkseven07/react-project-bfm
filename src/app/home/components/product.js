@@ -54,13 +54,13 @@ class Review extends React.Component {
           </div>
 
           <div styleName="second">
-            <div styleName="anim" style={{position:'relative', width:'100%'}}>
+            <div styleName="anim" style={{position:'relative', width:'100%', height:'100%'}}>
               <ReactCSSTransitionGroup
                   transitionName="animation"
-                  transitionEnterTimeout={500}
-                  transitionLeaveTimeout={500}>
-                  <div styleName="imgs" style={{position:'absolute'}}key={this.state.count+100}>
-                    <img style={{width:'100%', height:'50%'}} src={images[this.state.count]} key={this.state.count}/>
+                  transitionEnterTimeout={700}
+                  transitionLeaveTimeout={720}>
+                  <div styleName="imgs" key={this.state.count+100}>
+                    <img style={{width:'100%', height:'100%', display:'block'}} src={images[this.state.count]} key={this.state.count}/>
                   </div>
               </ReactCSSTransitionGroup>
             </div>
