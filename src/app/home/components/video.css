@@ -1,6 +1,7 @@
 .r {
     background: #ffe56a;
     min-height: 200px;
+    padding:25px 0 25px 0;
     flex-direction: column;
     font-size: 1em;transition: 1s;
 }
@@ -19,7 +20,7 @@
     top:0;
     left: 0;
     z-index:30;
-    
+
     display: none;
 }
 /*.youtube:hover {
@@ -33,7 +34,7 @@
 .youtube:hover .darkness  {
     display: block;
 }*/
-.video { 
+.video {
     /*width:100%; */
 }
 .title {
