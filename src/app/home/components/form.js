@@ -54,7 +54,7 @@ const You = ({ form, ...props }) => {
         <div className="flex flex-center flex-column" styleName="form">
             <DescText text="Для кого эта книга?" />
             <div style={{ margin: 3, marginTop: 0 }} />
-            <DescSmall text="Данные будут использованы для создания книги" />
+            <DescSmall text="Укажите имя, дату рождения и пол" />
             <div style={{ margin: 6 }} />
             <Input
                 placeholder="Имя"
@@ -109,7 +109,7 @@ const You = ({ form, ...props }) => {
                     }
                 />}
 
-            <div className="flex width-full">
+            <div className="flex width-full" styleName="container">
                 <div className="flex flex-column" styleName="gender">
                     <div
                         className="flex width-full"
@@ -270,7 +270,7 @@ const MomAndDad = ({ form, bookType, ...props }) => {
         <div className="flex flex-center flex-column" styleName="form">
             <DescText text={descText} />
             <div style={{ margin: 3, marginTop: 0 }} />
-            <DescSmall text="Укажите имя, дату рождения и название" />
+            <DescSmall text="Укажите имя, дату рождения и кем приходитесь" />
             <div style={{ margin: 6 }} />
             <Input
                 placeholder="Имя"
@@ -327,7 +327,7 @@ const MomAndDad = ({ form, bookType, ...props }) => {
                 />}
 
 
-            <div className="flex width-full">
+            <div className="flex width-full" styleName="container">
                 <div className="flex flex-column" styleName="gender">
                     <div
                         className="flex width-full"
