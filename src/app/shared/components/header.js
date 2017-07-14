@@ -154,9 +154,10 @@ class Header extends React.Component {
                     <div
                         styleName="menu-item"
                         onClick={() => {
+                            history.push("/"); 
                             this.props.actions.closeMenu();
                             this.props.actions.setupBookType("you");
-                            this.props.scroll();
+                            setTimeout(()=>this.props.scroll(),100);
                         }}
                     >
                         <span styleName="link">КНИГА О ТЕБЕ </span>
@@ -165,9 +166,10 @@ class Header extends React.Component {
                     <div
                         styleName="menu-item"
                         onClick={() => {
+                            history.push("/"); 
                             this.props.actions.closeMenu();
                             this.props.actions.setupBookType("mom");
-                            this.props.scroll();
+                            setTimeout(()=>this.props.scroll(),100);
                         }}
                     >
                         <span styleName="link">КНИГА МАТЕРИ </span>
@@ -176,9 +178,10 @@ class Header extends React.Component {
                     <div
                         styleName="menu-item"
                         onClick={() => {
+                            history.push("/"); 
                             this.props.actions.closeMenu();
                             this.props.actions.setupBookType("dad");
-                            this.props.scroll();
+                            setTimeout(()=>this.props.scroll(),100);
                         }}
                     >
                         <span styleName="link">КНИГА ОТЦА </span>
@@ -280,7 +283,7 @@ class Header extends React.Component {
                                 }}
                             />
 
-                        </div>
+                        </div> 
                         <div
                             onClick={e => e.stopPropagation()}
                             styleName="dropdown"
@@ -290,9 +293,12 @@ class Header extends React.Component {
                                 <div
                                     styleName="list-item"
                                     onClick={() => {
+                                        history.push("/"); 
                                         this.setState({ isOpen: false });
                                         this.props.actions.setupBookType("you");
-                                        this.props.scroll();
+                                        setTimeout(()=>this.props.scroll(),100);
+
+
 
                                     }}
                                 >
@@ -301,9 +307,11 @@ class Header extends React.Component {
                                 <div
                                     styleName="list-item"
                                     onClick={() => {
+                                        history.push("/");  
                                         this.setState({ isOpen: false });
-                                        this.props.actions.setupBookType("mom")
-                                        this.props.scroll()
+                                        this.props.actions.setupBookType("mom");
+                                        setTimeout(()=>this.props.scroll(),100);
+
 
                                     }}
                                 >
@@ -312,9 +320,11 @@ class Header extends React.Component {
                                 <div
                                     styleName="list-item"
                                     onClick={() => {
+                                        history.push("/");  
                                         this.setState({ isOpen: false });
-                                        this.props.actions.setupBookType("dad")
-                                        this.props.scroll()
+                                        this.props.actions.setupBookType("dad");
+                                        setTimeout(()=>this.props.scroll(),100);
+
 
                                     }}
                                 >

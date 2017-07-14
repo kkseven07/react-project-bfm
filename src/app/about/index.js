@@ -14,7 +14,7 @@ export default (props)=>(
         <div styleName="section">
             <div styleName="img img-1" style={{background:`url(${url}/images//product1.jpg)`}}>
             </div>
-            <div styleName="description right first" style={{paddingTop:'1.5em'}}>
+            <div styleName="description right first" >
                 <div styleName="title">Подарите уникальную, персонализированную книгу</div>
                 <div styleName="text">
                     Наш продукт - уникальный и интересный подарок на всю жизнь. 
@@ -92,7 +92,7 @@ export default (props)=>(
                 </div>
             </div>
         </div>
-        <Footer />
+        <Footer history={props.history}/>
     </div>
 
 )

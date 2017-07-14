@@ -69,3 +69,12 @@ export const shouldContactFormSend = (action$, store) =>
             return [{ type: "CONTACTFORM_NOT_SENT" }];
         }
     });
+export const scrollToForm = (action$, store) =>
+    action$.ofType("SETUP_BOOK_TYPE").switchMap(() => {
+        // // const type = store.getState();
+        // store.getState().init.scroll()
+        // console.log("type", type)
+        
+            return [{ type: "CONTACTFORM_NOT_SENT" }];
+        
+    });

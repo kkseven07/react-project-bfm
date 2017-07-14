@@ -5,7 +5,7 @@ import url from "../../../entry/url";
 import * as actions from "../../../business/actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-const Footer  =(props)=>{
+const Footer  =props=>{
 
     // console.log("actions", props.scroll)
     return <div className="width-full flex" styleName="r">
@@ -15,26 +15,31 @@ const Footer  =(props)=>{
                     <li style={{color:'#ed2626'}}>О продукте</li>
                     <li><div onClick={()=>
                             {
+                                props.history.push("/");  
                                 props.actions.setupBookType("you");
-                                props.scroll();
+                                setTimeout(()=>props.scroll(),100);
 
                             }}
                         >Книга о тебе</div></li>
                     <li><div onClick={()=>
                             {
+                                props.history.push("/");  
                                 props.actions.setupBookType("dad");
-                                props.scroll();
+                                setTimeout(()=>props.scroll(),100);
 
                             }}
                         >Книга отца</div></li>
                     <li><div onClick={()=>
                             {
+                                props.history.push("/");  
                                 props.actions.setupBookType("mom");
-                                props.scroll();
+                                setTimeout(()=>props.scroll(),100);
 
                             }}
                         >Книга матери</div></li>
-                    <li><a href="">Цены</a></li>
+                    <li>
+                        <div onClick={()=>props.actions.openRouteModal("prices")}>Цены</div>
+                    </li>
                 </ul>
             </div>
             <div styleName="col" className="flex">
