@@ -26,7 +26,7 @@ const BookForm = props => {
                     bookType={bookType}
                     name={props.form.name.value}
                     bookName={props.form.bookName.value}
-                    page={{data:{text_color:'white', border_color:'rgb(101, 128, 242)'}}}
+                    page={{data:{text_color:'white', border_color:'rgba(65, 99, 242, 0.36)'}}}
                 />
             </div>
             <div className="flex flex-center" styleName="book-form form">
