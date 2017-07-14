@@ -109,7 +109,7 @@ const You = ({ form, ...props }) => {
                     }
                 />}
 
-            <div className="flex width-full">
+            <div className="flex width-full" styleName="container">
                 <div className="flex flex-column" styleName="gender">
                     <div
                         className="flex width-full"
@@ -327,7 +327,7 @@ const MomAndDad = ({ form, bookType, ...props }) => {
                 />}
 
 
-            <div className="flex width-full">
+            <div className="flex width-full" styleName="container">
                 <div className="flex flex-column" styleName="gender">
                     <div
                         className="flex width-full"

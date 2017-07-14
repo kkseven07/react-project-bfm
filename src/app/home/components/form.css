@@ -37,6 +37,10 @@
 
 }
 
+.container{
+    font-family: "RobotoRegular";
+}
+
 .genderButton{
     background: white;
     height:45px;
