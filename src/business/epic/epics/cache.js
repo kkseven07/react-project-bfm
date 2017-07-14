@@ -9,7 +9,11 @@ const encodeItem = item => {
 };
 
 const decodeItem = item => {};
-
+import Hashids from "hashids";
+export const createHashid = id => {
+    let hashids = new Hashids("", 10);
+    return hashids.encode(id);
+};
 export const storageCreateBook = (action$, store) =>
     action$
         .filter(
@@ -43,6 +47,11 @@ export const storageCreateBook = (action$, store) =>
 
 export const loadCache = (action$, store) =>
     action$.ofType("LOAD_CACHE").switchMap(action => {
+        try {
+            localStorage.getItem("key")
+        }catch(e){
+            return [{ type: "OK" }];
+        }
         const items = reverse(
             Object.keys(localStorage).map(key => {
                 let type;
@@ -81,6 +90,7 @@ export const deleteFromCache = (action$, store) =>
 
 export const loadFromCache = (action$, store) =>
     action$.ofType("LOAD_FROM_CACHE").switchMap(action => {
+        console.log(createHashid(281))
         return [{ type: "LOAD_FROM_CACHE_FULFILLED" }];
     });
 

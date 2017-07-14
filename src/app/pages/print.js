@@ -15,10 +15,10 @@ class Print extends React.Component {
             this.props.actions.getBook(book_id, true);
         }
     }
-    componentDidMount(){
+    componentDidMount() {
         const { book_id, type } = this.props.match.params;
-        if(type==="endPage"){
-            localStorage.removeItem("bookKey_"+book_id)
+        if (type === "endPage") {
+            localStorage.removeItem("bookKey_" + book_id);
         }
     }
 
@@ -55,32 +55,35 @@ class Print extends React.Component {
         //         </div>
         //     );
         // }
-        return (
-            <Page
-                id={`${page.type}`}
-                url={this.props.url}
-                print
-                book={bData}
-                page={page}
-            />
-        );
-        // return (
-        //     <div style={{ width: 7048, display: "flex", flexWrap: "wrap" }}>
-        //         {page.map(page => {
-        //             return (
-        //                 <Page
-        //                     key={page.type}
-        //                     id={`${page.type}`}
-        //                     url={this.props.url}
-        //                     print
-        //                     book={bData}
-        //                     page={page}
-        //                 />
-        //             );
-        //         })}
+        if (type !== "all") {
+            return (
+                <Page
+                    id={`${page.type}`}
+                    url={this.props.url}
+                    print
+                    book={bData}
+                    page={page}
+                />
+            );
+        }
 
-        //     </div>
-        // );
+        return (
+            <div style={{ width: 7048, display: "flex", flexWrap: "wrap" }}>
+                {values(pages).map(page => {
+                    return (
+                        <Page
+                            key={page.type}
+                            id={`${page.type}`}
+                            url={this.props.url}
+                            print
+                            book={bData}
+                            page={page}
+                        />
+                    );
+                })}
+
+            </div>
+        );
     }
 }
 const mapStateToProps = state => ({

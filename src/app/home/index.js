@@ -9,7 +9,7 @@ import Product from "./components/product";
 import { connect } from "react-redux";
 import * as actions from "../../business/actions";
 import { bindActionCreators } from "redux";
-import Modal from '../modal/route_modal/index'
+import Modal from "../modal/route_modal/index";
 var Scroll = require("react-scroll");
 var Element = Scroll.Element;
 var scroller = Scroll.scroller;
@@ -23,12 +23,12 @@ const scrollTo = () => {
     });
 };
 class Home extends React.Component {
-    componentWillMount(){
-        this.props.actions.setupScroll(scrollTo)
+    componentWillMount() {
+        this.props.actions.setupScroll(scrollTo);
     }
 
     render() {
-        const props=this.props
+        const props = this.props;
         // window.scrollTo(0, 0);
         return (
             <div className="full flex flex-center flex-column">
@@ -41,6 +41,7 @@ class Home extends React.Component {
                 <Product />
                 <Reviews />
                 <Footer />
+
             </div>
         );
     }

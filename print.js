@@ -1,7 +1,7 @@
 import shell from "shelljs";
 import _ from "lodash";
 import fs from "fs";
-let raw = process.argv.slice(2, 10);
+
 let you = [
     "initmister",
     "cover",
@@ -160,7 +160,7 @@ let dad = [
     "thanksForDad",
     "endPage"
 ];
-
+let raw = process.argv.slice(2, 100);
 let getUrls = (types, book_id) =>
     types
         .map(type => {
@@ -169,34 +169,43 @@ let getUrls = (types, book_id) =>
         .join(" ");
 
 let print = (urls, book_id) => {
-    console.log(urls)
-    // urls.split(" ").forEach(url => {
-        // const delay = url.indexOf("framefridge")>-1?30000:5000
-
-        shell.exec(
-            `electroshot [${urls} 1024x1024]  --delay 4000  --out ../print/${book_id} --filename '{name}.png'`
-        );
-    // });
+    console.log(urls);
+    // если какой то концепт перепечатать
+    urls = urls
+        .split(" ")
+        .filter(
+            v =>
+                // v.indexOf("relaxPhoto") > -1 ||
+                //  v.indexOf("pastPhoto") > -1 ||
+                v.indexOf("frontPageBack") > -1 ||
+                v.indexOf("initmister") > -1
+        )
+        .join(" ");
+    shell.exec(
+        `electroshot [${urls} 1024x1024]  --delay 4000  --out ../print/${book_id} --filename '{name}.png'`
+    );
 };
 
-let printType=() => {
+let printType = () => {
     let book_id = process.argv[2].split("-")[0];
-    let type = process.argv[3]
+    let type = process.argv[3];
     shell.exec(
         `electroshot http://localhost:8080/pages/${book_id}/${type} 1024x1024 --delay 5000 --out ../print/${book_id} --filename '{name}.png'`
-        )
-}
+    );
+};
 
 let convert = (book_id, types) => {
     fs.readdir(`../print/${book_id}/`, (err, files) => {
         let filenames = types
-            .filter(type => type !== "initmister")
+            .filter(type=>[types[17],types[2], types[3], types[16]].indexOf(type)>-1)
+            // .filter(type => type !== "initmister")
             .map(
                 (type, i) =>
                     `../print/${book_id}/${files.filter(file => file.indexOf(type) > -1)[0]}`
             )
             .join(" ");
-        shell.exec(`convert ${filenames} ../print/${book_id}/${book_id}.pdf`);
+        // console.log(filenames)
+        shell.exec(`convert ${filenames} ../print/${book_id}/${book_id}add.pdf`);
     });
 };
 
@@ -210,15 +219,14 @@ let work = () => {
             : type === "mom"
                   ? [getUrls(mom, id), mom]
                   : [getUrls(dad, id), dad];
-        console.log(urls);
-        print(urls[0], id);
+        // console.log(urls);
+        // print(urls[0], id);
         convert(id, urls[1]);
     });
 };
 
 work();
 // printType()
-
 
 // const Pageres = require('pageres');
 
@@ -229,9 +237,6 @@ work();
 //     .dest("../print")
 //     .run()
 //     .then(() => console.log('done'));
-
-
-
 
 // var shashin = require('shashin');
 
@@ -244,21 +249,5 @@ work();
 // });
 
 // info.stream.pipe(file);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // 265-dad 266-mom 267-you

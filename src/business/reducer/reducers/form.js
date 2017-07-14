@@ -24,7 +24,7 @@ const init = {
    month: { value: "Месяц", isPristine: true, isValid: true, errorText: "" },
    year: { value: "Год", isPristine: true, isValid: true, errorText: "" },
    age: {
-      value: "Возраст указанный в книге",
+      value: "today",
       isPristine: true,
       isValid: false,
       errorText: ""
@@ -127,7 +127,6 @@ import * as selector from "./selectorForm";
 import { data } from "../../../app/shared";
 
 export default (state = init, action) => {
-   // console.log(action.type)
    switch (action.type) {
       case "CHANGE_FORM":
          if (action.isNext) {
@@ -149,8 +148,8 @@ export default (state = init, action) => {
             });
             if (
                every(mapValues(fields, ({ isValid }) => isValid)) &&
-               state.dateExists &&
-               state.verifyed
+               state.dateExists
+               // && state.verifyed
             ) {
                //successful path
                canCreate = true;
@@ -193,7 +192,7 @@ export default (state = init, action) => {
          if (action.bookType === "you") {
             return {
                ...init,
-               sondaug: { valid: true },
+               sondaug: { valid: true, errorText:""},
                relation: { value: "you", valid: true, refr: "you" }
             };
          } else if (action.bookType === "mom") {
@@ -224,6 +223,7 @@ export default (state = init, action) => {
                      ? state.relation.refr + "_s"
                      : state.relation.refr + "_d",
                   valid: true,
+                  errorText:"",
                   refr: state.relation.refr
                }
             };
