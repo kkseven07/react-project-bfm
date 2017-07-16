@@ -323,10 +323,8 @@ class Options extends React.Component {
                         </div>
                     </div>
                 </div>
-                
-                <div>
-                    primenit pormo    
-                </div>
+
+
                 <Button
                     click={() => {
                         this.props.actions.bookFormat(this.props.book);
