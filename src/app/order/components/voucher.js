@@ -10,7 +10,7 @@ export default ({actions, voucher}) => {
 	        }}
 	        
 	    >
-	    	<div style={{fontSize:'1.2em', fontFamily:'RobotoMedium'}}>Введите промо код для получения скидки.</div>
+	    	<div style={{fontSize:'1em', fontFamily:'RobotoRegular'}}>Есть промокод? Введите и получите скидку.</div>
 	    	<div 
 				style={{display:'flex', width:'100%', maxWidth:'500px', padding:'20px 0', justifyContent:'space-between',
 	            			alignItems:'flex-start', flexDirection:'row'

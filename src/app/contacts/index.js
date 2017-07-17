@@ -14,15 +14,15 @@ export default (props)=>{
         <div styleName="title">НАШИ КОНТАКТЫ</div>
         <div styleName="item">
           <div styleName="icon"><i className="fa fa-map-marker"></i></div>
-          <div>Байзакова 280, Almaty Towers, Алматы, Казахстан</div>
+          <div styleName="item-text">Байзакова 280, Almaty Towers, Алматы, Казахстан</div>
         </div>
         <div styleName="item">
           <div styleName="icon"><i className="fa fa-phone"></i></div>
-          <div>+7 707 961 76 98</div>
+          <div styleName="item-text">+7 707 961 76 98</div>
         </div>
         <div styleName="item">
           <div styleName="icon"><i className="fa fa-envelope"></i></div>
-          <div>team.bookfrom.me@gmail.com</div>
+          <div styleName="item-text" style={{textTransform:'initial'}}>team.bookfrom.me@gmail.com</div>
         </div>
       </div>
       <div styleName="part2">

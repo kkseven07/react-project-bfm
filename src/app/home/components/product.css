@@ -91,6 +91,7 @@
 .text{
   font-size: 1.2em;
   font-family: 'RobotoRegular';
+  line-height: 1.2em;
 }
 .imgs img {
   width: 100%;

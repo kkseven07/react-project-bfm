@@ -57,6 +57,7 @@ const Footer  =props=>{
                     <li><div onClick={()=>props.actions.openRouteModal("shipping")}>Доставка</div></li>
                     <li><div onClick={()=>props.actions.openRouteModal("return")}>Возврат</div></li>
                     <li><div onClick={()=>props.actions.openRouteModal("payment")}>Оплата</div></li>
+                    <li><div onClick={()=>props.actions.openRouteModal("oferta")}>Оферта</div></li>
                 </ul>
             </div>
 
