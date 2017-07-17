@@ -78,4 +78,8 @@
   .part2 {
     height: 700px;
   }
+  .item-text {
+    font-size: 0.65em !important;
+    padding-left: 10px;
+  }
 }

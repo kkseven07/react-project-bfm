@@ -9,6 +9,7 @@ import Shipping from './components/shipping';
 import Payment from './components/payment';
 import AddReview from './components/addReview';
 import Prices from './components/prices';
+import Oferta from './components/oferta'
 
 const getComponent = (name, actions) => {
     switch (name) {
@@ -22,6 +23,8 @@ const getComponent = (name, actions) => {
             return <AddReview name={name} actions={actions} />;
         case 'prices':
             return <Prices name={name} actions={actions} />;
+        case 'oferta':
+            return <Oferta name={name} actions={actions} />;
         default: 
             return <div></div>;
     }
