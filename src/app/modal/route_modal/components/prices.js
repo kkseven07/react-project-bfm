@@ -8,8 +8,8 @@ export default ({ type, actions}) => {
             <div style={{fontFamily:'RobotoRegular', fontSize:'0.7em', padding:'20px 0', lineHeight:'2'}}>
                 <div>Твердый переплет 19см х 19см: <strong>14900</strong> тг.  </div>
                 <div>Твердый переплет 23см х 23см: <b>16900</b> тг.  </div>
-                <div>Мягкий переплет 19см х 19см: <b>11900</b> тг.  </div>
-                <div>Мягкий переплет 23см х 23см: <b>9900</b> тг. </div>
+                <div>Мягкий переплет 19см х 19см: <b>9900</b> тг.  </div>
+                <div>Мягкий переплет 23см х 23см: <b>11900</b> тг. </div>
                 <div>Электронная версия PDF: <b>2900</b> тг. </div>
                 <div>
                   <a 
