@@ -28,7 +28,7 @@ const Footer  =props=>{
                                 setTimeout(()=>props.scroll(),100);
 
                             }}
-                        >Книга отца</div></li>
+                        >Книга о папе</div></li>
                     <li><div onClick={()=>
                             {
                                 props.history.push("/");  
@@ -36,7 +36,7 @@ const Footer  =props=>{
                                 setTimeout(()=>props.scroll(),100);
 
                             }}
-                        >Книга матери</div></li>
+                        >Книга о маме</div></li>
                     <li>
                         <div onClick={()=>props.actions.openRouteModal("prices")}>Цены</div>
                     </li>
