@@ -1,6 +1,6 @@
 .r {
   background: #a2e277;
-  height: 620px;
+  height: 580px;
   display: flex;
   flex-direction: row;
   /*padding: 4em 2em;*/
@@ -126,12 +126,13 @@
   }
   .r {
     flex-direction: column;
-    height: 700px;
+    height: 750px;
     padding: 4em 0.5em;
   }
     .first, .second {
       width: 100%;
     }
+
   .second {
     order: 1;
     height: 38vh;
@@ -141,6 +142,7 @@
   }
   .first {
     order:2;
+    padding:1em 0;
   }
   .tab {
     font-size:0.9rem;

@@ -172,7 +172,7 @@ class Header extends React.Component {
                             setTimeout(()=>this.props.scroll(),100);
                         }}
                     >
-                        <span styleName="link">КНИГА МАТЕРИ </span>
+                        <span styleName="link">КНИГА О МАМЕ</span>
 
                     </div>
                     <div
@@ -184,7 +184,7 @@ class Header extends React.Component {
                             setTimeout(()=>this.props.scroll(),100);
                         }}
                     >
-                        <span styleName="link">КНИГА ОТЦА </span>
+                        <span styleName="link">КНИГА О ПАПЕ </span>
 
                     </div>
                     <div
