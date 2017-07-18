@@ -171,18 +171,18 @@ let getUrls = (types, book_id) =>
 let print = (urls, book_id) => {
     console.log(urls);
     // если какой то концепт перепечатать
-    urls = urls
-        .split(" ")
-        .filter(
-            v =>
-                // v.indexOf("relaxPhoto") > -1 ||
-                //  v.indexOf("pastPhoto") > -1 ||
-                v.indexOf("frontPageBack") > -1 ||
-                v.indexOf("initmister") > -1
-        )
-        .join(" ");
+    // urls = urls
+    //     .split(" ")
+    //     .filter(
+    //         v =>
+    //             // v.indexOf("relaxPhoto") > -1 ||
+    //             //  v.indexOf("pastPhoto") > -1 ||
+    //             v.indexOf("frontPageBack") > -1 ||
+    //             v.indexOf("initmister") > -1
+    //     )
+    //     .join(" ");
     shell.exec(
-        `electroshot [${urls} 1024x1024]  --delay 4000  --out ../print/${book_id} --filename '{name}.png'`
+        `electroshot [${urls} 1024x1024]  --delay 7000  --out ../print/${book_id} --filename '{name}.png'`
     );
 };
 
@@ -197,8 +197,8 @@ let printType = () => {
 let convert = (book_id, types) => {
     fs.readdir(`../print/${book_id}/`, (err, files) => {
         let filenames = types
-            .filter(type=>[types[17],types[2], types[3], types[16]].indexOf(type)>-1)
-            // .filter(type => type !== "initmister")
+            // .filter(type=>[types[17],types[2], types[3], types[16]].indexOf(type)>-1)
+            .filter(type => type !== "initmister")
             .map(
                 (type, i) =>
                     `../print/${book_id}/${files.filter(file => file.indexOf(type) > -1)[0]}`
