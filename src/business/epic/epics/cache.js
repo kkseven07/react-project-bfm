@@ -90,7 +90,7 @@ export const deleteFromCache = (action$, store) =>
 
 export const loadFromCache = (action$, store) =>
     action$.ofType("LOAD_FROM_CACHE").switchMap(action => {
-        console.log(createHashid(281))
+        // console.log(createHashid(281))
         return [{ type: "LOAD_FROM_CACHE_FULFILLED" }];
     });
 
