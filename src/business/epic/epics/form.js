@@ -1,3 +1,5 @@
+import ReactPixel from 'react-facebook-pixel';
+
 export const input = action$ =>
     action$
         .ofType("ENTER_INPUT")
@@ -36,10 +38,14 @@ export const shouldOrderSend = (action$, store) =>
         const orderForm = store.getState().orderForm.order;
         const canConfirm = store.getState().orderForm.canConfirm;
         if (canConfirm) {
-            fbq("track", "Purchase", {
-                value: orderForm.orderDetails.price.total / 324,
-                currency: "USD"
-            });
+            // fbq("track", "Purchase", {
+            //     value: orderForm.orderDetails.price.total / 324,
+            //     currency: "USD"
+            // });
+            ReactPixel.track('Purchase', {
+              value: orderForm.orderDetails.price.total / 324,
+              currency: 'USD'
+            })
             return [
                 {
                     type: "CONFIRM_ORDER",

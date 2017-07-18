@@ -1,6 +1,7 @@
 import { Route, Switch, withRouter, Redirect } from "react-router-dom";
 import React from "react";
 import { asyncModule } from "./shared";
+import ReactPixel from 'react-facebook-pixel';
 const About = asyncModule(() => import("./about"), "About route");
 const Home = asyncModule(() => import("./home"), "home");
 const Contacts = asyncModule(() => import("./contacts"), "contacts route");
@@ -41,14 +42,17 @@ class App extends React.Component {
         if (navigator.appVersion.indexOf("X11") != -1) OSName = "Mac";
         if (navigator.appVersion.indexOf("Linux") != -1) OSName = "Mac";
         this.props.actions.osName(OSName);
+
+        ReactPixel.init('148262285740491');
+        ReactPixel.pageView();
     }
-    componentDidMount() {
-        let s = document.createElement('script');
-        s.type = 'text/javascript';
-        s.async = true;
-        s.innerHTML =scr;
-        document.head.appendChild(s);
-    }
+    // componentDidMount() {
+    //     let s = document.createElement('script');
+    //     s.type = 'text/javascript';
+    //     s.async = true;
+    //     s.innerHTML =scr;
+    //     document.head.appendChild(s);
+    // }
 
 
     render() {
