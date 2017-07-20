@@ -3,7 +3,6 @@
     border: 1px solid rgb(240,240,240);
     transition: all 0.3s;
     margin-top:29px;
-    height:260px;
     width:510px;
     /*box-shadow: 2px 3px 2px rgb(190,190,190);*/
     font-size:20px;
@@ -11,19 +10,14 @@
 
 .c{
     flex-wrap: wrap;
-    padding-left:10px;
-    padding-right:10px;
-    margin-bottom: 10px;
-
+    padding:5px 40px;
 }
-
 .el{
     outline:none;
-
     margin:15px;
     margin-top:10px;
-    width:70px;
-    height:70px;
+    width:80px;
+    height:80px;
     border-width: 0;
 
 }

@@ -18,7 +18,7 @@ export default (props)=>{
         </div>
         <div styleName="item">
           <div styleName="icon"><i className="fa fa-phone"></i></div>
-          <div styleName="item-text">+7 707 961 76 98</div>
+          <div styleName="item-text">+7 707 23 01 555, +7 707 961 76 98</div>
         </div>
         <div styleName="item">
           <div styleName="icon"><i className="fa fa-envelope"></i></div>
