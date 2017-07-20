@@ -341,21 +341,21 @@ export const colors = [
         text: "black",
         borderColor:"rgb(178, 235, 222)"
     },
-    {
-        background: "rgb(35, 37, 37)",
-        text: "white",
-        borderColor:"rgb(32, 33, 33)"
-    },
+    // {
+    //     background: "rgb(35, 37, 37)",
+    //     text: "white",
+    //     borderColor:"rgb(32, 33, 33)"
+    // },
     {
         background: "rgb(255, 243, 123)",
         text: "black",
         borderColor:"rgb(251, 239, 106)"
     },
-    {
-        background: "rgb(247, 170, 85)",
-        text: "black",
-        borderColor:"rgb(243, 162, 74)"
-    },
+    // {
+    //     background: "rgb(247, 170, 85)",
+    //     text: "black",
+    //     borderColor:"rgb(243, 162, 74)"
+    // },
     {
         background: "rgb(190, 74, 132)",
         text: "black",
