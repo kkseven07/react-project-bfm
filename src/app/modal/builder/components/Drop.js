@@ -146,7 +146,6 @@ class Drop extends Component {
 							>
 								↩️
 							</div>
-							<div style={{width:500, height:500, overflow:'hidden'}}>
 							<AvatarEditor
 								// style={{ width: 200 }}
 								ref={this.setEditorRef}
@@ -154,14 +153,13 @@ class Drop extends Component {
 								onImageChange={this.imageChange}
 								// crossOrigin="anonymous"
 								onImageReady={this.imageChange}
-								width={500}
-								height={500}
+								width={400}
+								height={400}
 								border={20}
 								color={[255, 255, 255, 0.6]} // RGBA
 								scale={1}
 								rotate={this.state.rotate}
 							/>
-							</div>
 						</div>}
 				</div>
 			</div>
