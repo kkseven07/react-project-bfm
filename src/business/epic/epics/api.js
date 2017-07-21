@@ -323,3 +323,22 @@ export const sendContactForm = (action$, store) =>
                 })
             );
     });
+// export const getFriendList = (action$, store) =>
+//     action$.ofType("GET_FACEBOOK_RESPONSE").switchMap(({ elem }) => {
+//         const profileId = store.getState().fbProfile.response.profile.id;
+//         return ajax({
+//             url: `graph.facebook.com/v2.10/${profileId}/friends`,
+//             ...ajaxObject
+//         })
+//             .flatMap(ajax => {
+//                 console.log("ajax response", ajax.response);
+//                 return [{ type: "SEND_CONTACTFORM_FULFILLED" }];
+//             })
+//             .catch(error =>
+//                 ofObs({
+//                     type: "AJAX_ERROR",
+//                     payload: error,
+//                     mesage: "Произошла ошибка с отправкой заказа."
+//                 })
+//             );
+//     });

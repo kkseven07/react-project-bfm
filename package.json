@@ -52,6 +52,8 @@
     "react-dom": "^15.5.4",
     "react-dropbox-chooser": "0.0.3",
     "react-dropzone": "^3.13.1",
+    "react-facebook": "^4.0.14",
+    "react-facebook-login": "^3.6.2",
     "react-facebook-pixel": "^0.1.0",
     "react-ga": "^2.2.0",
     "react-motion": "^0.5.0",

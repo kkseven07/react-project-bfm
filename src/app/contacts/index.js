@@ -14,11 +14,11 @@ export default (props)=>{
         <div styleName="title">НАШИ КОНТАКТЫ</div>
         <div styleName="item">
           <div styleName="icon"><i className="fa fa-map-marker"></i></div>
-          <div styleName="item-text">Байзакова 280, Almaty Towers, Алматы, Казахстан</div>
+          <div styleName="item-text">г. Алматы, ул. Тимирязева 28в, "HUB Coworking"</div>
         </div>
         <div styleName="item">
           <div styleName="icon"><i className="fa fa-phone"></i></div>
-          <div styleName="item-text">+7 707 23 01 555, +7 707 961 76 98</div>
+          <div styleName="item-text">+7 707 961 76 94, +7 707 961 76 98</div>
         </div>
         <div styleName="item">
           <div styleName="icon"><i className="fa fa-envelope"></i></div>
@@ -32,7 +32,7 @@ export default (props)=>{
           <iframe
             style={{border:0,frameBorder:0, width:'100%', height:'100%' }}
             src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDLlaQgld5094_h5m3PnyIY77XqaXU0ZIE
-              &q=Алматы+Тауэрс, Байзакова+280" >
+              &q=Тимирязева+28в" >
           </iframe>
         </div>
       </div>
