@@ -182,7 +182,7 @@ let print = (urls, book_id) => {
     //     )
     //     .join(" ");
     shell.exec(
-        `electroshot [${urls} 1024x1024]  --delay 7000  --out ../print/${book_id} --filename '{name}.png'`
+        `electroshot [${urls} 1024x1024]  --delay 5000  --out ../print/${book_id} --filename '{name}.png'`
     );
 };
 

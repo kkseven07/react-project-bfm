@@ -8,7 +8,7 @@ import { toSave } from "../utils";
 const values = gender => {
     return [
         `Хороший друг`,
-        `Всегда поможет в беде`,
+        `Всегда поможете в беде`,
         gender === "male" ? `Умен` : "Умна",
         gender === "male" ? `Скромен` : "Скромна"
     ];
