@@ -16,11 +16,12 @@ const fitText =(s)=> {
 
 	return size;
 }
-export default props => (
-
+export default props => {
+	const fontSize = props.book.name.indexOf(" ")>-1?'1.2':'1.7'
+	
 //style={{ fontSize: props.page.data.text&&checkLength(props.page.data.text, 6, 1.5) }}
-    <div className="full" styleName="r">
-    	<div styleName="name">{props.book.name}</div>
+    return <div className="full" styleName="r">
+    	<div styleName="name" style={{fontSize:`${fontSize}em`}}>{props.book.name},</div>
     	<div styleName="default-text">
 			<div styleName="text-piece" style={{left:'-21%'}}>у вас много</div>
 			<div styleName="text-piece" style={{left:'-7%'}}>хороших качеств,</div>
@@ -33,4 +34,4 @@ export default props => (
             {props.page.data.text?props.page.data.text.toUpperCase():"упорны".toUpperCase()}
         </div>
     </div>
-);
+};

@@ -11,7 +11,7 @@ import {
     createOrder,
     sendContactForm,
     bookFormat,
-    checkVoucher
+    checkVoucher,
 
 } from "./epics/api";
 import {
@@ -66,7 +66,7 @@ const rootEpic = combineEpics(
     shouldVoucherSend,
     sendContactForm,
     shouldContactFormSend,
-    scrollToForm
+    scrollToForm,
     // loadOrderCache
 );
 

@@ -159,3 +159,7 @@ export const loadOrderCache = () => {
 export const checkOrderPage =()=> {
     return {type: "CHECK_ORDER_PAGE"};
 }
+//facebook 
+export const getFacebookResponse =(response)=> {
+    return {type: "GET_FACEBOOK_RESPONSE", response:response};
+}

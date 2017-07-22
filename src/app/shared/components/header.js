@@ -10,6 +10,8 @@ import { push as Menu } from "react-burger-menu";
 import * as actions from "../../../business/actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import FacebookProvider, { Login } from 'react-facebook';
+import FacebookLogin from 'react-facebook-login'
 const links = ["КНИГИ", "О НАС", "КОНТАКТЫ"];
 const active = {
     color: "#5877ff",
@@ -63,56 +65,11 @@ const styles = {
 
 class Header extends React.Component {
     state = { isOpen: false };
-
-    // componentDidMount() {
-    //     document.body.addEventListener('click', this.triggerClickHandler, true);
-    // }
-
-    // componentWillUnmount() {
-    //     document.body.removeEventListener('click', this.triggerClickHandler, false);
-    // }
-    // triggerClickHandler=(param)=> {
-    //     console.log("clicktrigger");
-    //         console.log("PARAM", param)
-    //         if (!this.state.isOpen && param===true) {
-    //             console.log("if1")
-    //         this.setState({
-    //           isOpen: true
-    //         });
-    //     }
-    //     else if (this.state.isOpen && param===true) {console.log("if2")
-    //         this.setState({
-    //             isOpen:false
-    //         })
-    //     }
-    //     else if (this.state.isOpen && param!==true){console.log("if3")
-    //         this.setState({
-    //             isOpen:false
-    //         })
-    //     }
-    // }
-    // openDropDown=()=> {
-    //     console.log("opendropdown");
-    //     if (!this.state.isOpen) {
-    //         this.setState({
-    //           isOpen: true
-    //         });
-    //     }
-    //     else {
-    //         this.setState({
-    //             isOpen:false
-    //         })
-    //     }
-    // }
-    // dropdownClickHandler=(e)=> {
-    //     console.log("stopped")
-    //     e.nativeEvent.stopImmediatePropagation();
-    //   }
     componentWillReceiveProps(props) {
         props.routeChanged&&this.setState({isOpen:false})
     }
     render() {
-        
+        {console.log("state", this.props.fbProfile)}
         const { currentBookId, ...books } = this.props.book;
         const { history } = this.props;
         const { ...orders } = this.props.order;
@@ -122,7 +79,7 @@ class Header extends React.Component {
         let dropStyle = this.state.isOpen ? "flex" : "none";
         return (
             <div styleName="header">
-                {this.props.menu && // ---------------------------MOBILE MENU--------------------------------
+                {this.props.menu && // <-></->--------------------------MOBILE MENU--------------------------------
                     <div
                         onClick={this.props.actions.closeMenu}
                         style={{
@@ -389,6 +346,39 @@ class Header extends React.Component {
                                 {count}
                             </div>
                         </div>}
+
+                        <div // ---------------------------FACEBOOK LOGIN
+                        >
+                        {/*
+                           <FacebookProvider appId="106686149984565">
+                                <Login
+                                  scope="user_friends"
+                                  onResponse={(e)=>this.props.actions.getFacebookResponse(e)}
+                                  render={console.log("render")}
+                                  // onError={this.handleError}
+                                >
+                                  <span>FBLogin</span>
+                                </Login>
+                            </FacebookProvider> 
+                        
+                            <FacebookLogin
+                              appId="106686149984565"
+                              cookie={true}
+                              xfbml={true}
+                              version='2.10'
+                              autoLoad={false}
+                              fields="name,email,friends,picture"
+                              scope="public_profile,email,user_friends"
+                              callback={(e)=>this.props.actions.getFacebookResponse(e)}
+                              disableMobileRedirect={true}
+                              textButton={'login'}
+                            />
+                            <br/>*/
+                            }
+                            { 
+                                //this.props.fbProfile&&this.props.fbProfile.name
+                            }
+                        </div>
                 </div>
             </div>
         );
@@ -400,7 +390,8 @@ const mapStateToProps = state => ({
     book: state.book,
     count: state.menu.count,
     order: state.order,
-    routeChanged: state.menu.routeChanged
+    routeChanged: state.menu.routeChanged,
+    fbProfile: state.fbLogin.response
 });
 const mapDispatchToProps = dispatch => ({
     actions: bindActionCreators(actions, dispatch)
