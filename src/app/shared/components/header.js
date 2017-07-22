@@ -10,8 +10,8 @@ import { push as Menu } from "react-burger-menu";
 import * as actions from "../../../business/actions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import FacebookProvider, { Login } from 'react-facebook';
-import FacebookLogin from 'react-facebook-login'
+// import FacebookProvider, { Login } from 'react-facebook';
+// import FacebookLogin from 'react-facebook-login'
 const links = ["КНИГИ", "О НАС", "КОНТАКТЫ"];
 const active = {
     color: "#5877ff",
@@ -111,7 +111,7 @@ class Header extends React.Component {
                     <div
                         styleName="menu-item"
                         onClick={() => {
-                            history.push("/"); 
+                            history.push("/");
                             this.props.actions.closeMenu();
                             this.props.actions.setupBookType("you");
                             setTimeout(()=>this.props.scroll(),100);
@@ -123,7 +123,7 @@ class Header extends React.Component {
                     <div
                         styleName="menu-item"
                         onClick={() => {
-                            history.push("/"); 
+                            history.push("/");
                             this.props.actions.closeMenu();
                             this.props.actions.setupBookType("mom");
                             setTimeout(()=>this.props.scroll(),100);
@@ -135,7 +135,7 @@ class Header extends React.Component {
                     <div
                         styleName="menu-item"
                         onClick={() => {
-                            history.push("/"); 
+                            history.push("/");
                             this.props.actions.closeMenu();
                             this.props.actions.setupBookType("dad");
                             setTimeout(()=>this.props.scroll(),100);
@@ -240,7 +240,7 @@ class Header extends React.Component {
                                 }}
                             />
 
-                        </div> 
+                        </div>
                         <div
                             onClick={e => e.stopPropagation()}
                             styleName="dropdown"
@@ -250,7 +250,7 @@ class Header extends React.Component {
                                 <div
                                     styleName="list-item"
                                     onClick={() => {
-                                        history.push("/"); 
+                                        history.push("/");
                                         this.setState({ isOpen: false });
                                         this.props.actions.setupBookType("you");
                                         setTimeout(()=>this.props.scroll(),100);
@@ -264,7 +264,7 @@ class Header extends React.Component {
                                 <div
                                     styleName="list-item"
                                     onClick={() => {
-                                        history.push("/");  
+                                        history.push("/");
                                         this.setState({ isOpen: false });
                                         this.props.actions.setupBookType("mom");
                                         setTimeout(()=>this.props.scroll(),100);
@@ -277,7 +277,7 @@ class Header extends React.Component {
                                 <div
                                     styleName="list-item"
                                     onClick={() => {
-                                        history.push("/");  
+                                        history.push("/");
                                         this.setState({ isOpen: false });
                                         this.props.actions.setupBookType("dad");
                                         setTimeout(()=>this.props.scroll(),100);
@@ -359,8 +359,8 @@ class Header extends React.Component {
                                 >
                                   <span>FBLogin</span>
                                 </Login>
-                            </FacebookProvider> 
-                        
+                            </FacebookProvider>
+
                             <FacebookLogin
                               appId="106686149984565"
                               cookie={true}
@@ -375,7 +375,7 @@ class Header extends React.Component {
                             />
                             <br/>*/
                             }
-                            { 
+                            {
                                 //this.props.fbProfile&&this.props.fbProfile.name
                             }
                         </div>
