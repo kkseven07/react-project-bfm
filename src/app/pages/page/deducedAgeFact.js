@@ -14,7 +14,7 @@ export default ({ page, book, ...props }) => {
             <div styleName="top-part">
                 <div
                     styleName={`name${uniqs} name positioned`}
-                    style={{ fontSize: checkLength(book.name, 10, 1.5) }}
+                    style={{ fontSize: book.name.indexOf(" ")>-1?'0.85em':checkLength(book.name, 10, 1.5) }}
                 >
                     {book.name},
                 </div>
