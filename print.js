@@ -175,10 +175,10 @@ let print = (urls, book_id) => {
     //     .split(" ")
     //     .filter(
     //         v =>
-    //             // v.indexOf("relaxPhoto") > -1 ||
-    //             //  v.indexOf("pastPhoto") > -1 ||
-    //             v.indexOf("frontPageBack") > -1 ||
-    //             v.indexOf("initmister") > -1
+    //             v.indexOf("initmister") > -1 ||
+    //              v.indexOf("deducedAgeFact") > -1 ||
+    //             v.indexOf("endPage") > -1
+    //             // v.indexOf("initmister") > -1
     //     )
     //     .join(" ");
     shell.exec(
@@ -205,7 +205,7 @@ let convert = (book_id, types) => {
             )
             .join(" ");
         // console.log(filenames)
-        shell.exec(`convert ${filenames} ../print/${book_id}/${book_id}add.pdf`);
+        shell.exec(`convert ${filenames} ../print/${book_id}/${book_id}.pdf`);
     });
 };
 
