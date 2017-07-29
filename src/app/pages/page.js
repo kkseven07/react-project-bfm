@@ -176,6 +176,7 @@ class Page extends Component {
         if (print) {
             return `url(${this.props.url + primary_image.image.url
                     .replace("/web/", "/print/")
+                    // .replace("print_","")
                     .replace("_bbx24s", "_2048")})`;
         } else if (zoom) {
             return `url(${this.props.url + primary_image.image.url})`;

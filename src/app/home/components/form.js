@@ -415,7 +415,7 @@ const MomAndDad = ({ form, bookType, ...props }) => {
             </div>
             <div style={{height:30}}/>
             <DescText text="От кого эта книга?" />
-            <DescSmall text="Ваше имя и кем приходитесь" />
+            <DescSmall text="Ваше имя и название книги" />
             <div style={{ margin: 10, marginTop: 0 }} />
             <Input
                 field={form.senderName}
