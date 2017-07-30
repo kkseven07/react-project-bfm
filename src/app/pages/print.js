@@ -31,30 +31,35 @@ class Print extends React.Component {
         const { pages, ...rest } = book[book_id];
         const bData = rest;
         const page = values(pages).filter(page => page.type === type)[0];
-        // const uploads = values(pages)
-        //     .filter(
-        //         page =>
-        //             page.type === "framefridge" ||
-        //             page.type === "pastPhoto" ||
-        //             page.type === "relaxPhoto"
-        //     )
-        //     .map(page => "https://www.bookfrom.me"+page.data.image_url);
 
-        // if (type === "initmister") {
-        //     return (
-        //         <div>
-        //             {uploads.map(
-        //                 url =>
-        //                     url &&
-        //                     <img
-        //                         key={url}
-        //                         src={url}
-        //                         style={{ width: 300, height: 300 }}
-        //                     />
-        //             )}
-        //         </div>
-        //     );
-        // }
+        if (type.indexOf("-") > -1) {
+            //condition for booklet print
+            let typePair = type
+                .split("-")
+                .map(
+                    type => values(pages).filter(page => page.type === type)[0]
+                );
+            return (
+                <div className="flex" style={{ width: 2048 }}>
+                    <Page
+                        id={`${typePair[0].type}`}
+                        url={this.props.url}
+                        print
+                        book={bData}
+                        page={typePair[0]}
+                    />
+                     <Page
+                        id={`${typePair[1].type}`}
+                        url={this.props.url}
+                        print
+                        book={bData}
+                        page={typePair[1]}
+                    />
+
+                </div>
+            );
+        }
+
         if (type !== "all") {
             return (
                 <Page
