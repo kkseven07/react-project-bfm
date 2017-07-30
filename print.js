@@ -56,7 +56,6 @@ let you = [
 ];
 let mom = [
     "initmister",
-
     "cover",
     "frontPage",
     "frontPageBack",
@@ -109,7 +108,6 @@ let mom = [
 ];
 let dad = [
     "initmister",
-
     "cover",
     "frontPage",
     "frontPageBack",
@@ -160,6 +158,17 @@ let dad = [
     "thanksForDad",
     "endPage"
 ];
+let algo_map = {
+    1: [16, 1],
+    2: [2, 15],
+    3: [14, 3],
+    4: [4, 13],
+    5: [12, 5],
+    6: [6, 11],
+    7: [10, 7],
+    0: [8, 9]
+};
+
 let raw = process.argv.slice(2, 100);
 let getUrls = (types, book_id) =>
     types
@@ -167,6 +176,32 @@ let getUrls = (types, book_id) =>
             return `http://localhost:8080/pages/${book_id}/${type}`;
         })
         .join(" ");
+
+let getPrintUrls = (book_type, book_id, types_arr) => {
+    let all = _.range(1, 25);
+    let booklet = types_arr.slice(1, 100);
+    let names = all
+        .map(number => {
+            if (number > 8 && number < 17) {
+                return algo_map[number % 8].map(v => v + 16);
+            } else if (number > 16) {
+                return algo_map[number % 8].map(v => v + 32);
+            }
+            return algo_map[number % 8];
+        })
+        .map(concept_pair => {
+            return concept_pair.map(v => booklet[v]).join("-");
+        })
+    let result=names
+        .map(url_part => {
+            return `http://localhost:8080/pages/${book_id}/${url_part}`;
+        });
+    let toReturn =
+        `http://localhost:8080/pages/${book_id}/initmister` +
+        " " +
+        result.join(" ");
+    return { print_urls: toReturn, booklet_names: names };
+};
 
 let print = (urls, book_id) => {
     console.log(urls);
@@ -186,12 +221,21 @@ let print = (urls, book_id) => {
     );
 };
 
-let printType = () => {
-    let book_id = process.argv[2].split("-")[0];
-    let type = process.argv[3];
+let printBooklet = (urls, book_id) => {
     shell.exec(
-        `electroshot http://localhost:8080/pages/${book_id}/${type} 1024x1024 --delay 5000 --out ../print/${book_id} --filename '{name}.png'`
+        `electroshot [${urls} 2048x1024]  --delay 5000  --out ../print/${book_id} --filename '{name}.png'`
     );
+};
+let convertBooklet = (names, book_id) => {
+    fs.readdir(`../print/${book_id}/`, (err, files) => {
+          let filenames = names
+            .map(
+                (type, i) =>
+                    `../print/${book_id}/${files.filter(file => file.indexOf(type) > -1)[0]}`
+            )
+            .join(" ");
+        shell.exec(`convert ${filenames} ../print/${book_id}/${book_id}booklet.pdf`);
+    });
 };
 
 let convert = (book_id, types) => {
@@ -204,7 +248,6 @@ let convert = (book_id, types) => {
                     `../print/${book_id}/${files.filter(file => file.indexOf(type) > -1)[0]}`
             )
             .join(" ");
-        // console.log(filenames)
         shell.exec(`convert ${filenames} ../print/${book_id}/${book_id}.pdf`);
     });
 };
@@ -220,34 +263,13 @@ let work = () => {
                   ? [getUrls(mom, id), mom]
                   : [getUrls(dad, id), dad];
         // console.log(urls);
+        let { print_urls, booklet_names } = getPrintUrls(type, id, urls[1]);
+
+        // printBooklet(print_urls, id);
+        convertBooklet(booklet_names, id);
         // print(urls[0], id);
-        convert(id, urls[1]);
+        // convert(id, urls[1]);
     });
 };
 
 work();
-// printType()
-
-// const Pageres = require('pageres');
-
-// const pageres = new Pageres({delay: 10})
-//     .src('yeoman.io', ['1024x1024'], {crop: false})
-//     .src('127.0.0.1:8080', ['100x10'])
-//     .src('data:text/html;base64,PGgxPkZPTzwvaDE+', ['1024x768'])
-//     .dest("../print")
-//     .run()
-//     .then(() => console.log('done'));
-
-// var shashin = require('shashin');
-
-// var info = shashin('google.com', '1024x768', { delay: 1, crop: true });
-// var file = fs.createWriteStream('screenshot.png');
-
-// // Don't forget to handle errors
-// info.stream.on('error', function (err) {
-//   console.error(err);
-// });
-
-// info.stream.pipe(file);
-
-// 265-dad 266-mom 267-you
