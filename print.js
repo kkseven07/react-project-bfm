@@ -223,18 +223,18 @@ let print = (urls, book_id) => {
 
 let printBooklet = (urls, book_id) => {
     shell.exec(
-        `electroshot [${urls} 2048x1024]  --delay 5000  --out ../print/${book_id} --filename '{name}.png'`
+        `electroshot [${urls} 2048x1024]  --delay 5000  --out ../print/${book_id+"-print"} --filename '{name}.png'`
     );
 };
 let convertBooklet = (names, book_id) => {
-    fs.readdir(`../print/${book_id}/`, (err, files) => {
+    fs.readdir(`../print/${book_id+"-print"}/`, (err, files) => {
           let filenames = names
             .map(
                 (type, i) =>
-                    `../print/${book_id}/${files.filter(file => file.indexOf(type) > -1)[0]}`
+                    `../print/${book_id+"-print"}/${files.filter(file => file.indexOf(type) > -1)[0]}`
             )
             .join(" ");
-        shell.exec(`convert ${filenames} ../print/${book_id}/${book_id}booklet.pdf`);
+        shell.exec(`convert ${filenames} ../print/${book_id+"-print"}/${book_id}booklet.pdf`);
     });
 };
 
@@ -256,6 +256,7 @@ let work = () => {
     raw.forEach(v => {
         let [id, type] = v.split("-");
         shell.exec(`mkdir ../print/${id}`);
+        shell.exec(`mkdir ../print/${id+"-print"}`);
         console.log(id);
         let urls = type === "you"
             ? [getUrls(you, id), you]
@@ -265,10 +266,10 @@ let work = () => {
         // console.log(urls);
         let { print_urls, booklet_names } = getPrintUrls(type, id, urls[1]);
 
-        // printBooklet(print_urls, id);
+        printBooklet(print_urls, id);
         convertBooklet(booklet_names, id);
-        // print(urls[0], id);
-        // convert(id, urls[1]);
+        print(urls[0], id);
+        convert(id, urls[1]);
     });
 };
 
