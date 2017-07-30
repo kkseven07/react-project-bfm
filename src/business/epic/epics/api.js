@@ -189,7 +189,9 @@ export const upload = action$ =>
 
 export const getBook = action$ =>
     action$.ofType("GET_BOOK").switchMap(({ book_id, print }) => {
-        const host = print ? "http://localhost:9000" : url;
+        // const host = print ? "http://localhost:9000" : url;
+        const host = print ? "https://bookfrom.me" : url;
+
         return ajax({
             url: `${host}/api/v1/books/${book_id}`,
             ...ajaxObjectGet
