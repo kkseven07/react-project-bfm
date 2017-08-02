@@ -1,7 +1,7 @@
 import React from "react";
 import "./holiday.css";
 import { getDate } from "../../shared/utils.js";
-export default ({ page, book }) => {
+export default ({ page, book, ...props }) => {
     if(!page.data.holiday){
         return null
     }
@@ -11,7 +11,7 @@ export default ({ page, book }) => {
     const month = first[1];
     const holiday = ls[1].trim();
     return (
-        <div className="full" styleName="r">
+        <div className="full" styleName="r" style={{width:props.print&&'98%', height:props.print&&'95%'}}>
             <div styleName="default-text">
                 вот еще один повод собраться в
                 {" "}

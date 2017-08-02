@@ -1,8 +1,8 @@
 import React from "react";
 import "./leader.css";
 import { cutString } from "../../shared/utils.js";
-export default ({ page, book }) => (
-    <div className="full flex-center" styleName="r">
+export default ({ page, book, ...props }) => (
+    <div className="full flex-center" styleName="r" style={{width:props.print&&'98%', height:props.print&&'95%'}}>
         <div styleName="first">
             {page.data.leaders.map(({ leader, country }, i) => {
                 if (country === "Федеративная Республика Германии") {

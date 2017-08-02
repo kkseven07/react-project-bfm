@@ -12,7 +12,7 @@
     top: 16%;
     left: 27%;
     transform:rotate(-15deg);
-    text-shadow: 4px 4px rgba(0, 0, 0, 0.74), -3px -2px #ffc81e;
+    text-shadow: 0.03em 0.03em rgba(0, 0, 0, 0.74), -0.03em -0.02em #ffc81e;
 }
 .film-name-v1 {
     width:60%;

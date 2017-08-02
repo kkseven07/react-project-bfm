@@ -211,9 +211,10 @@ let print = (urls, book_id) => {
     //     .filter(
     //         v =>
     //             v.indexOf("initmister") > -1 ||
-    //              v.indexOf("deducedAgeFact") > -1 ||
-    //             v.indexOf("endPage") > -1
-    //             // v.indexOf("initmister") > -1
+    //              v.indexOf("pastPhoto") > -1 ||
+    //             v.indexOf("endPage") > -1||
+    //             v.indexOf("framefridge") > -1||
+    //             v.indexOf("relaxPhoto") > -1
     //     )
     //     .join(" ");
     shell.exec(
@@ -223,7 +224,7 @@ let print = (urls, book_id) => {
 
 let printBooklet = (urls, book_id) => {
     shell.exec(
-        `electroshot [${urls} 2048x1024]  --delay 5000  --out ../print/${book_id+"-print"} --filename '{name}.png'`
+        `electroshot [${urls} 2370x1220]  --delay 5000  --out ../print/${book_id+"-print"} --filename '{name}.png'`
     );
 };
 let convertBooklet = (names, book_id) => {
@@ -235,6 +236,7 @@ let convertBooklet = (names, book_id) => {
             )
             .join(" ");
         shell.exec(`convert ${filenames} ../print/${book_id+"-print"}/${book_id}booklet.pdf`);
+        // shell.exec(`convert -size 1000x1000 -density 270x270 ${filenames} ../print/${book_id+"-print"}/${book_id}booklet.pdf`);
     });
 };
 
@@ -268,8 +270,8 @@ let work = () => {
 
         printBooklet(print_urls, id);
         convertBooklet(booklet_names, id);
-        print(urls[0], id);
-        convert(id, urls[1]);
+        // print(urls[0], id);
+        // convert(id, urls[1]);
     });
 };
 

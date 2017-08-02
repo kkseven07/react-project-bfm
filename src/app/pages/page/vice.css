@@ -1,8 +1,5 @@
 .r{
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    height:90%;
+    height:100%;
     padding-left:2%;
     font-family: 'BebasRegular';
 }
@@ -10,4 +7,8 @@
     font-size: 1em;
     text-align: center;
     color:white;
+    bottom: 10.5%;
+    position: absolute;
+    width: 100%;
+    text-align: center;
 }

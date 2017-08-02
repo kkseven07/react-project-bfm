@@ -6,7 +6,7 @@
 .text {
     text-align: right;
     position: absolute;
-    right: 4%;
+    right: 5%;
     bottom: 65%;
     line-height: 1.2;
     width: 73%;
@@ -14,7 +14,7 @@
 .author {
     font-weight: 900;
     text-align: right;
-    right: 4%;
+    right: 5%;
     top: 39%;
     position: absolute;
 }

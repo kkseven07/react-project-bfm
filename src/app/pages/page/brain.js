@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "./brain.css";
 import { checkLength } from "../../shared/utils.js";
 
-export default ({ book, page }) => {
-    return <div className="full" styleName="r">
+export default ({ book, page, ...props }) => {
+    return <div className="full" styleName="r" style={{width:props.print&&'98%', height:props.print&&'95%'}}>
     	<div styleName="thinkabout">О чём думает {book.name}?</div>
         <div styleName="first" className="absolute"
         	style={{fontSize:page.data.text&&checkLength(page.data.text, 16, 1.2)}}>{page.data.text?page.data.text:'еда'}</div>

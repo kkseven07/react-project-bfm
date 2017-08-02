@@ -170,18 +170,18 @@
   src: url('../../../assets/fonts/Drina.woff2');
 }*/
 
-/*.print{
-    height:1400px;
-    width:1400px;
-    font-size:55.01px;
-    margin:0;
-    }*/
-.print{
+.digital{
     height:1024px;
     width:1024px;
     font-size:40.16px;
     margin:0;
     }
+.print{
+    height:1220px;
+    width:1197px;
+    font-size:45px;
+    margin:0;
+}
 
 .zoom{
   width: 700px;

@@ -1,10 +1,10 @@
 import React from 'react'
 import './relaxPhoto.css'
-export default ({page,book,url, print}) =>{
+export default ({page,book,url, print,digital}) =>{
     const print_url="https://www.bookfrom.me"
 
-    return <div className="full" styleName="r">
-        {page.data.image_url&&<img  styleName="image" src={(print?print_url:url)+page.data.image_url}/>}
+    return <div className="full" styleName="r" >
+        {page.data.image_url&&<img  styleName="image" src={(print||digital?print_url:url)+page.data.image_url}/>}
         <div styleName="title" className="flex flex-center">{page.data.text?page.data.text:"А ВОТ ТАК МЫ ОТДЫХАЛИ!"}</div>
     </div>
 }

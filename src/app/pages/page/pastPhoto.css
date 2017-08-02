@@ -4,7 +4,7 @@
 .image{
     position: absolute;
     height:auto;
-    width:62.1%;
+    width:63.1%;
     object-fit: contain;
     border:0;
     transform: rotate(-5deg);

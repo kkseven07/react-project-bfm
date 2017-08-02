@@ -17,9 +17,9 @@ class Intro extends Component {
         const sender_uniq = uniqs[1];
         const wishtext_uniq = uniqs[2];
         let fontSize= this.props.book.name.indexOf(" ")>-1?uniqs[3]*0.7:uniqs[3];
-        
+
         return (
-            <div className="full" styleName="r" style={{}}>
+            <div className="full" styleName="r" style={{width:this.props.print&&'98%', height:this.props.print&&'95%'}}>
                 <div styleName={"name positioned " + name_uniq} style={{fontSize:`${fontSize}em`}}>
                     {this.props.book.name.toUpperCase()},
                 </div>

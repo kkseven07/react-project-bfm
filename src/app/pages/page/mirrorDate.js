@@ -2,8 +2,8 @@ import React from 'react'
 import './mirrorDate.css'
 import {getDate} from "../../shared/utils.js"
 
-export default ({book}) =>(
-    <div className="full" styleName="r">
+export default ({book, ...props}) =>(
+    <div className="full" styleName="r" >
         <div styleName="date" className="absolute">
             <div styleName="text">
                 {getDate(book.dob).day}
