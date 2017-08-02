@@ -13,6 +13,9 @@
 	text-align: center;
 	font-family: 'BebasRegular';
 }
+.bookid{
+	transform:rotate(-90deg);
+}
 .part2 {
 	height: 25%;
 	width: 100%;

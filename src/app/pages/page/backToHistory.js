@@ -9,11 +9,11 @@ const getStyle = length =>
               ? "0.57em"
               : length >= 1200 ? "0.4" : "0.535em";
 
-export default ({ page, book }) => {
+export default ({ page, book, ...props }) => {
     const facts = page.data.facts;
     const fontSize = getStyle(sum(facts));
     return (
-        <div className="full flex-center" styleName="r">
+        <div className="full flex-center" styleName="r" style={{width:props.print&&'98%', height:props.print&&'95%'}}>
             <div styleName="date">
                 <div styleName="gradient">{getDate(book.dob).day}</div>
                 <div styleName="gradient">{getDate(book.dob).monthNumber}</div>

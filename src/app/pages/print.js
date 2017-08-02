@@ -40,21 +40,34 @@ class Print extends React.Component {
                     type => values(pages).filter(page => page.type === type)[0]
                 );
             return (
-                <div className="flex" style={{ width: 2048 }}>
-                    <Page
-                        id={`${typePair[0].type}`}
-                        url={this.props.url}
-                        print
-                        book={bData}
-                        page={typePair[0]}
-                    />
-                     <Page
-                        id={`${typePair[1].type}`}
-                        url={this.props.url}
-                        print
-                        book={bData}
-                        page={typePair[1]}
-                    />
+                <div className="flex" style={{ width: 2370 }}>
+                    <div style={{width:'1185px', height:'1220px', overflow:'hidden' }}>
+                        <Page
+                            id={`${typePair[0].type}`}
+                            url={this.props.url}
+                            print
+                            book={bData}
+                            page={typePair[0]}
+
+                        />
+                    </div>
+                    <div style={{
+                        width:'1185px',
+                        height:'1220px',
+                        overflow:'hidden',
+                        display:'flex',
+                        flexDirection:'column',
+                        alignItems:'flex-end'
+                    }}>
+                        <Page
+                            id={`${typePair[1].type}`}
+                            url={this.props.url}
+                            print
+                            book={bData}
+                            page={typePair[1]}
+                            // style={{width:'1197px', height:'1220px' }}
+                        />
+                    </div>
 
                 </div>
             );
@@ -65,7 +78,7 @@ class Print extends React.Component {
                 <Page
                     id={`${page.type}`}
                     url={this.props.url}
-                    print
+                    digital
                     book={bData}
                     page={page}
                 />

@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "./formulaMom.css";
 import { checkLength } from "../../shared/utils.js";
 
-export default ({ book, page }) => {
-    return <div className="full" styleName="r">
+export default ({ book, page, ...props }) => {
+    return <div className="full" styleName="r" style={{width:props.print&&'98%', height:props.print&&'95%'}}>
         <div styleName="first" className="absolute"
         	style={{fontSize:page.data.text&&checkLength(page.data.text, 10, 1, "formulaMom")}}>{page.data.text?page.data.text:'семья'}</div>
         <div styleName="second" className="absolute"

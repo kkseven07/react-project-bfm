@@ -30,10 +30,10 @@ class Scoop extends Component {
     this.dropFact(first,firstMaxLength);
     this.dropFact(second,secondMaxLength);
     return (
-      <div className="full" styleName="r">
+      <div className="full" styleName="r" style={{width:this.props.print&&'98%', height:this.props.print&&'95%'}}>
         <div className="flex-center" styleName="empty">
 
-          <div styleName="year-text"> Общий сбор новостей за {year} год</div>
+          <div styleName="year-text" style={{top:this.props.print&&'17.2%'}}> Общий сбор новостей за {year} год</div>
 
         </div>
 

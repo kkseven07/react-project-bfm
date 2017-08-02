@@ -18,9 +18,9 @@ const fitText =(s)=> {
 }
 export default props => {
 	const fontSize = props.book.name.indexOf(" ")>-1?'1.2':'1.7'
-	
+
 //style={{ fontSize: props.page.data.text&&checkLength(props.page.data.text, 6, 1.5) }}
-    return <div className="full" styleName="r">
+    return <div className="full" styleName="r" style={{width:props.print&&'98%', height:props.print&&'95%'}}>
     	<div styleName="name" style={{fontSize:`${fontSize}em`}}>{props.book.name},</div>
     	<div styleName="default-text">
 			<div styleName="text-piece" style={{left:'-21%'}}>у вас много</div>

@@ -11,7 +11,7 @@ const getFruit = (url) => {
 }
 
 export default ({page,book, ...props}) => {
-    return   <div className="full">
+    return   <div className="full" style={{position:'relative',width:props.print&&'98%', height:props.print&&'95%'}}>
         <div
             // style={{paddingTop:props.osName==='Mac'&&'21%' }}
             styleName={`text ${getFruit(page.primary_image.image.url)}`}>

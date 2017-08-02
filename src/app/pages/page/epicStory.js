@@ -17,7 +17,11 @@ class Page extends Component {
         const word = this.props.book.gender === "male" ? ["РОДИЛСЯ "," НАШЕГО ГЕРОЯ"] : ["РОДИЛАСЬ "," НАШЕЙ ГЕРОИНИ"];
 
         return (
-            <div className="full flex" styleName="r">
+            <div
+                className="full flex"
+                styleName="r"
+                style={{width:this.props.print&&'98%', height:this.props.print&&'95%'}}
+            >
                 <div styleName={"greet"+vStyle}>ДОБРО ПОЖАЛОВАТЬ!</div>
                 <div styleName={"part1"+vStyle}>
                     ЭТА КНИГА ПОВЕДАЕТ ВАМ ОБО ВСЕХ НЕВЕРОЯТНЫХ ФАКТАХ

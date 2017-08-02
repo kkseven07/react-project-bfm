@@ -2,7 +2,7 @@ import React from "react";
 import "./famousBirthShare.css";
 import { getDate } from "../../shared/utils.js";
 
-export default ({ book, page }) => (
+export default ({ book, page, ...props }) => (
     <div className="full" styleName="r">
         <div>
             <div>

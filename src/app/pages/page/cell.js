@@ -9,8 +9,8 @@ const getDate = raw => {
     return `${invert(monthsMapYe)[time.month-1]} ${time.year}`;
 };
 
-export default ({ book }) => (
-    <div className="full flex-center" styleName="r">
+export default ({ book, ...props }) => (
+    <div className="full flex-center" styleName="r" style={{width:props.print&&'98%', height:props.print&&'95%'}}>
         <div styleName="text">
             в {getDate(book.dob)} года <br />
             Вы провели 30 минут в состоянии <br />

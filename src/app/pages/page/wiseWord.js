@@ -6,9 +6,9 @@ const setStyle = image_url => {
     else if (image_url.match("v2")) return ["text-v2", 110 ,1.6, 'wise1'];
     else return ["no-image", "no-image"];
 };
-export default ({ page, book }) => {
+export default ({ page, book, ...props }) => {
     const nstyle = setStyle(page.primary_image.image.url)
-    return <div className="full " styleName="r">
+    return <div className="full " styleName="r" style={{width:props.print&&'98%', height:props.print&&'95%'}}>
         <div
             styleName={nstyle[0]}
             style={{fontSize:page.data.text&&checkLength(page.data.text, nstyle[1], nstyle[2], nstyle[3] )}}>

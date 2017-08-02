@@ -10,11 +10,11 @@ const setStyle = image_url => {
 export default ({ page, book, ...props }) => {
     const uniqs = setStyle(page.primary_image.image.url)[0];
     return (
-        <div className="full" styleName="r">
+        <div className="full" styleName="r" style={{width:props.print&&'98%', height:props.print&&'95%'}}>
             <div styleName="top-part">
                 <div
                     styleName={`name${uniqs} name positioned`}
-                    style={{ fontSize: book.name.indexOf(" ")>-1?'0.85em':checkLength(book.name, 10, 1.5) }}
+                    style={{ fontSize: book.name.trim().indexOf(" ")>-1?'0.85em':checkLength(book.name, 10, 1.5) }}
                 >
                     {book.name},
                 </div>
