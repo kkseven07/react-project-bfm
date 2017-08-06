@@ -194,7 +194,7 @@ let getPrintUrls = (book_type, book_id, types_arr) => {
             return concept_pair.map(v => booklet[v]).join("-");
         })
         // .filter(concept_pair=>{
-        //     return concept_pair.indexOf("framefridge")>-1
+        //     return concept_pair.indexOf("pastPhoto")>-1//||concept_pair.indexOf("toy")>-1
         // })
     let result = names.map(url_part => {
         return `http://localhost:8080/pages/${book_id}/${url_part}`;
@@ -215,13 +215,13 @@ let print = (urls, book_id) => {
     //         v =>
     //             v.indexOf("initmister") > -1 ||
     //             //  v.indexOf("pastPhoto") > -1 ||
-    //             // v.indexOf("endPage") > -1||
-    //             // v.indexOf("framefridge") > -1||
-    //             v.indexOf("ageFact") > -1
+    //             v.indexOf("endPage") > -1||
+    //             // v.indexOf("fashion") > -1||
+    //             v.indexOf("pastPhoto") > -1
     //     )
     //     .join(" ");
     shell.exec(
-        `electroshot [${urls} 1024x1024]  --delay 4000  --out ../print/${book_id} --filename '{name}.png'`
+        `electroshot [${urls} 1024x1024]  --delay 6000  --out ../print/${book_id} --filename '{name}.png'`
     );
 };
 
@@ -273,8 +273,8 @@ let work = () => {
         let { print_urls, booklet_names } = getPrintUrls(type, id, urls[1]);
 
         // printBooklet(print_urls, id);
-        // convertBooklet(booklet_names, id);
-        print(urls[0], id);
+        convertBooklet(booklet_names, id);
+        // print(urls[0], id);
         convert(id, urls[1]);
     });
 };
