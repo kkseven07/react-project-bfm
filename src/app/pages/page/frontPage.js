@@ -18,6 +18,7 @@ export default ({ page, book, print }) => (
             style={{
                position: "absolute",
                left: "0.8%",
+               color:"rgb(160,160,160)",
                bottom: "20%",
                width:20,
                fontSize:'0.4em'
