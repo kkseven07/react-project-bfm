@@ -171,7 +171,7 @@ export default props => {
     return (
         <div style={{ width: "100%", padding: "2%" }}>
             <div style={{ fontFamily: "BebasBold", margin: 10, fontSize: 40, marginBottom:20}}>
-                ФОТОГАЛЕРИЯ
+                ФОТОГАЛЕРЕЯ
 
             </div>
             <Gallery margin={2} enableImageSelection={false} images={IMAGES} />
