@@ -12,12 +12,12 @@ export default (props)=>(
     <div styleName="page">
     <Modal />
         <div styleName="section">
-            <div styleName="img img-1" style={{background:`url(${url}/images//product1.jpg)`}}>
+            <div styleName="img img-1" style={{background:`url(${url}/images/product1.jpg)`}}>
             </div>
             <div styleName="description right first" >
                 <div styleName="title">Подарите уникальную, персонализированную книгу</div>
                 <div styleName="text">
-                    Наш продукт - уникальный и интересный подарок на всю жизнь. 
+                    Наш продукт - уникальный и интересный подарок на всю жизнь.
 Как это работает? Заполните небольшую форму и наш сайт создаст красочную книгу , отобрав из миллиона фактов, самые интересные о главном герое и его времени. В процессе создания вы можете добавлять фото, пожелания и текст, которые в сочетании с ярким дизайном, сотворят подарок, который еще никто не получал.
                 </div>
             </div>
@@ -31,11 +31,11 @@ export default (props)=>(
                     Подарок, сделанный нами, будет радовать получателя на протяжении всей его жизни.
                  </div>
             </div>
-            <div styleName="img img-2" style={{background:`url(${url}/images//product2.jpg)`}}>
+            <div styleName="img img-2" style={{background:`url(${url}/images/product2.jpg)`}}>
             </div>
         </div>
         <div styleName="section">
-            <div styleName="img img-3" style={{background:`url(${url}/images//product3.jpg)`}}>
+            <div styleName="img img-3" style={{background:`url(${url}/images/product3.jpg)`}}>
             </div>
             <div styleName="description right">
                 <div styleName="title">Мягкий и твердый формат книги в разном размере</div>

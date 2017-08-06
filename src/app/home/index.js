@@ -10,6 +10,7 @@ import { connect } from "react-redux";
 import * as actions from "../../business/actions";
 import { bindActionCreators } from "redux";
 import Modal from "../modal/route_modal/index";
+import Images from "./components/images";
 var Scroll = require("react-scroll");
 var Element = Scroll.Element;
 var scroller = Scroll.scroller;
@@ -39,8 +40,10 @@ class Home extends React.Component {
                     <BookForm history={props.history} />
                 </Element>
                 <Product />
+
                 <Reviews />
-                <Footer history={props.history}/>
+                <Images />
+                <Footer history={props.history} />
 
             </div>
         );
