@@ -9,6 +9,7 @@ const Paspartu =({name, page})=> {
 	return (
 		<div
 			styleName="r"
+			style={{color:page.data.text_color}}
 		>
 			<div 
 				styleName="part1" 
