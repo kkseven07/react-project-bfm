@@ -10,6 +10,7 @@
     padding-bottom:20px;
     padding-top:30px;
     min-height: 600px;
+    overflow-x: hidden;
 }
 .page-wrap{
     height:452px;

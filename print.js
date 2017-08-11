@@ -176,60 +176,6 @@ let getUrls = (types, book_id) =>
             return `http://localhost:8080/pages/${book_id}/${type}`;
         })
         .join(" ");
-
-let getPrintUrls = (book_type, book_id, types_arr) => {
-    let all = _.range(1, 25);
-    let booklet = types_arr.slice(1, 100);
-    let names = all
-        .map(number => {
-            if (number > 8 && number < 17) {
-                return algo_map[number % 8].map(v => v + 16);
-            } else if (number > 16) {
-                return algo_map[number % 8].map(v => v + 32);
-            }
-            return algo_map[number % 8];
-        })
-
-        .map(concept_pair => {
-            return concept_pair.map(v => booklet[v]).join("-");
-        })
-        // .filter(concept_pair=>{
-        //     return concept_pair.indexOf("pastPhoto")>-1//||concept_pair.indexOf("toy")>-1
-        // })
-    let result = names.map(url_part => {
-        return `http://localhost:8080/pages/${book_id}/${url_part}`;
-    });
-    let toReturn =
-        `http://localhost:8080/pages/${book_id}/initmister` +
-        " " +
-        result.join(" ");
-    return { print_urls: toReturn, booklet_names: names };
-};
-
-let print = (urls, book_id) => {
-    console.log(urls);
-    // если какой то концепт перепечатать
-    // urls = urls
-    //     .split(" ")
-    //     .filter(
-    //         v =>
-    //             v.indexOf("initmister") > -1 ||
-    //             //  v.indexOf("pastPhoto") > -1 ||
-    //             v.indexOf("endPage") > -1||
-    //             // v.indexOf("fashion") > -1||
-    //             v.indexOf("pastPhoto") > -1
-    //     )
-    //     .join(" ");
-    shell.exec(
-        `electroshot [${urls} 1024x1024]  --delay 6000  --out ../print/${book_id} --filename '{name}.png'`
-    );
-};
-
-let printBooklet = (urls, book_id) => {
-    shell.exec(
-        `electroshot [${urls} 2370x1220]  --delay 7000  --out ../print/${book_id + "-print"} --filename '{name}.png'`
-    );
-};
 let convertBooklet = (names, book_id) => {
     fs.readdir(`../print/${book_id + "-print"}/`, (err, files) => {
         let filenames = names
@@ -259,6 +205,69 @@ let convert = (book_id, types) => {
     });
 };
 
+let printBooklet = (urls, book_id) => {
+    shell.exec(
+        `electroshot [${urls} 2370x1220]  --delay 6500  --out ../print/${book_id + "-print"} --filename '{name}.png'`
+    );
+};
+
+
+let getPrintUrls = (book_type, book_id, types_arr) => {
+    let all = _.range(1, 25);
+    let booklet = types_arr.slice(1, 100);
+    let names = all
+        .map(number => {
+            if (number > 8 && number < 17) {
+                return algo_map[number % 8].map(v => v + 16);
+            } else if (number > 16) {
+                return algo_map[number % 8].map(v => v + 32);
+            }
+            return algo_map[number % 8];
+        })
+        .map(concept_pair => {
+            return concept_pair.map(v => booklet[v]).join("-");
+        })
+        // .filter(concept_pair => {
+        //     return (
+        //         // concept_pair.indexOf("fashion") > -1 ||
+        //         // concept_pair.indexOf("frontPage") > -1 ||
+        //         concept_pair.indexOf("framefridge") > -1
+        //     );
+        // });
+    let result = names.map(url_part => {
+        return `http://localhost:8080/pages/${book_id}/${url_part}`;
+    });
+    let toReturn =
+        `http://localhost:8080/pages/${book_id}/initmister` +
+        " " +
+        result.join(" ");
+    return { print_urls: toReturn, booklet_names: names };
+};
+
+let print = (urls, book_id) => {
+    console.log(urls);
+    // если какой то концепт перепечатать
+    // urls = urls
+    //     .split(" ")
+    //     .filter(
+    //         v =>
+    //             v.indexOf("initmister") > -1 ||
+    //             // v.indexOf("animal") > -1 ||
+    //             v.indexOf("cover") > -1||
+    //             // v.indexOf("pastPhoto") > -1||
+    //             // v.indexOf("relaxPhoto") > -1||
+    //             // v.indexOf("wiseWord") > -1||
+    //             // v.indexOf("poem") > -1||
+    //             // v.indexOf("car") > -1||
+    //             v.indexOf("endPage") > -1
+    //     )
+    //     .join(" ");
+    shell.exec(
+        `electroshot [${urls} 1024x1024]  --delay 6500  --out ../print/${book_id} --filename '{name}.png'`
+    );
+};
+
+
 let work = () => {
     raw.forEach(v => {
         let [id, type] = v.split("-");
@@ -272,9 +281,9 @@ let work = () => {
                   : [getUrls(dad, id), dad];
         let { print_urls, booklet_names } = getPrintUrls(type, id, urls[1]);
 
-        // printBooklet(print_urls, id);
+        printBooklet(print_urls, id);
         convertBooklet(booklet_names, id);
-        // print(urls[0], id);
+        print(urls[0], id);
         convert(id, urls[1]);
     });
 };
