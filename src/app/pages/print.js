@@ -19,6 +19,7 @@ class Print extends React.Component {
         const { book_id, type } = this.props.match.params;
         if (type === "endPage") {
             localStorage.removeItem("bookKey_" + book_id);
+            // localStorage.clear()
         }
     }
 
