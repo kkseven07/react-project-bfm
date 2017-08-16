@@ -16,7 +16,7 @@ class Cover extends Component {
             className="app-blue"
             style={{ background: background, fontSize:'4em' }}
          >
-            <Paspartu 
+            <Paspartu
                name={name}
                page={this.props.page}
             />

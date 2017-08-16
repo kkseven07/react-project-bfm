@@ -253,7 +253,7 @@ let print = (urls, book_id) => {
     //         v =>
     //             v.indexOf("initmister") > -1 ||
     //             // v.indexOf("animal") > -1 ||
-    //             v.indexOf("cover") > -1||
+    //             v.indexOf("framefridge") > -1||
     //             // v.indexOf("pastPhoto") > -1||
     //             // v.indexOf("relaxPhoto") > -1||
     //             // v.indexOf("wiseWord") > -1||
@@ -283,8 +283,8 @@ let work = () => {
 
         printBooklet(print_urls, id);
         convertBooklet(booklet_names, id);
-        print(urls[0], id);
-        convert(id, urls[1]);
+        // print(urls[0], id);
+        // convert(id, urls[1]);
     });
 };
 
