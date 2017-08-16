@@ -3,7 +3,7 @@ import "./framefridge.css";
 export default ({ page, book, url, print,digital }) => {
     const print_url = "https://www.bookfrom.me";
     return (
-        <div className="full" style={{position:'relative', width:print&&'98%', height:print&&'95%'}}>
+        <div className="full" >
 
             {page.data.image_url &&
                 <img

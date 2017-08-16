@@ -24,7 +24,7 @@ export default ({ page, book, print }) => (
                fontSize:'0.4em'
             }}
          >
-            {book.id}{book.format.indexOf("soft") > -1 && "М"}
+            {book.id}{book.format.indexOf("soft19") > -1 && "М"}
          </div>}
 
    </div>

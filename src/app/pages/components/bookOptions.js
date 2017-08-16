@@ -74,7 +74,7 @@ class Options extends React.Component {
         if (this.props.book.format === "digital") {
             return "Если у вас дома есть айпад или другой интернет-планшет, с которого вы сможете показывать книгу своим друзьям и родным, то эта цифровая pdf-версия идеально вам подойдет.";
         } else if (this.props.book.format.indexOf("soft") > -1) {
-            return "Современная, удобная и привлекательная, она будет для вас отличной спутницей в путешествии. Если вы ведете активный образ жизни и находитесь в постоянных разъездах - выбирайте ее, и не прогадаете!";
+            return "Современная, удобная и привлекательная, она будет для вас отличной спутницей в путешествии (ее размер - 19 на 19 см). Если вы ведете активный образ жизни и находитесь в постоянных разъездах - выбирайте ее, и не прогадаете!";
         } else {
             return "Аккуратная, солидная и надежная, она способна на протяжении многих лет украшать своим видом вашу книжную полку. Ей не страшны никакие невзгоды, ее страницы защищены практически от любых воздействий и повреждений.";
         }
@@ -167,7 +167,7 @@ class Options extends React.Component {
                             className="flex flex-center"
                             styleName="size"
                             style={{
-                                display: this.props.book.format !== "digital"
+                                display: this.props.book.format.indexOf("hard")>-1
                                     ? "flex"
                                     : "none",
                                 fontFamily: "RobotoRegular",
@@ -184,7 +184,7 @@ class Options extends React.Component {
                             style={{
                                 fontSize: 16,
                                 marginTop: 5,
-                                display: this.props.book.format !== "digital"
+                                display: this.props.book.format.indexOf("hard")>-1
                                     ? "flex"
                                     : "none"
                             }}
