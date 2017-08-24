@@ -187,7 +187,9 @@ let convertBooklet = (names, book_id) => {
         shell.exec(
             `convert ${filenames} ../print/${book_id + "-print"}/${book_id}booklet.pdf`
         );
-        // shell.exec(`convert -size 1000x1000 -density 270x270 ${filenames} ../print/${book_id+"-print"}/${book_id}booklet.pdf`);
+        // shell.exec(
+        //     `convert -size 1000x1000 -density 270x270 ${filenames} ../print/${book_id + "-print"}/${book_id}bookletc.pdf`
+        // );
     });
 };
 
@@ -207,10 +209,9 @@ let convert = (book_id, types) => {
 
 let printBooklet = (urls, book_id) => {
     shell.exec(
-        `electroshot [${urls} 2370x1220]  --delay 6500  --out ../print/${book_id + "-print"} --filename '{name}.png'`
+        `electroshot [${urls} 1896x976]  --delay 6500  --out ../print/${book_id + "-print"} --filename '{name}.png'`
     );
 };
-
 
 let getPrintUrls = (book_type, book_id, types_arr) => {
     let all = _.range(1, 25);
@@ -226,14 +227,14 @@ let getPrintUrls = (book_type, book_id, types_arr) => {
         })
         .map(concept_pair => {
             return concept_pair.map(v => booklet[v]).join("-");
-        })
-        // .filter(concept_pair => {
-        //     return (
-        //         // concept_pair.indexOf("fashion") > -1 ||
-        //         // concept_pair.indexOf("frontPage") > -1 ||
-        //         concept_pair.indexOf("framefridge") > -1
-        //     );
-        // });
+        });
+    // .filter(concept_pair => {
+    //     return (
+    //         // concept_pair.indexOf("framefridge") > -1 ||
+    //         concept_pair.indexOf("poem") > -1 ||
+    //         concept_pair.indexOf("coolPlace") > -1
+    //     );
+    // });
     let result = names.map(url_part => {
         return `http://localhost:8080/pages/${book_id}/${url_part}`;
     });
@@ -253,7 +254,7 @@ let print = (urls, book_id) => {
     //         v =>
     //             v.indexOf("initmister") > -1 ||
     //             // v.indexOf("animal") > -1 ||
-    //             v.indexOf("framefridge") > -1||
+    //             v.indexOf("epicStory") > -1||
     //             // v.indexOf("pastPhoto") > -1||
     //             // v.indexOf("relaxPhoto") > -1||
     //             // v.indexOf("wiseWord") > -1||
@@ -263,10 +264,9 @@ let print = (urls, book_id) => {
     //     )
     //     .join(" ");
     shell.exec(
-        `electroshot [${urls} 1024x1024]  --delay 6500  --out ../print/${book_id} --filename '{name}.png'`
+        `electroshot [${urls} 700x700]  --delay 5500  --out ../print/${book_id} --filename '{name}.png'`
     );
 };
-
 
 let work = () => {
     raw.forEach(v => {

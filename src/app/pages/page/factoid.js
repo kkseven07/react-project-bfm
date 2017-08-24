@@ -7,7 +7,14 @@ import "./factoid.css";
 //  //("eqw")
 // }
 export default ({ page, book, ...props }) => (
-    <div className="full" style={{position:'relative', width:props.print&&'98%', height:props.print&&'95%'}}>
+    <div
+        className="full"
+        style={{
+            position: "relative",
+            width: props.print && "98%",
+            height: props.print && "95%"
+        }}
+    >
         <div styleName="text" className="absolute">
             <span style={{ fontWeight: "bold" }}>
                 {book.name.toUpperCase()},

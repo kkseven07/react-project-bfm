@@ -172,15 +172,16 @@
 }*/
 
 .digital{
-    height:1024px;
-    width:1024px;
-    font-size:40.16px;
+    height:700px;
+    width:700px;
+    font-size:27.45px;
     margin:0;
+    border:0;
     }
 .print{
-    height:1220px;
-    width:1197px;
-    font-size:45px;
+    height:976px;
+    width:957.6px;
+    font-size:36px;
     margin:0;
 }
 
