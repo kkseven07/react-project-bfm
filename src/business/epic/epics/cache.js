@@ -60,6 +60,9 @@ export const loadCache = (action$, store) =>
                 } else if (key.indexOf("order")> -1) {
                     type = "orders";
                 }
+                else {
+                    type="other";
+                }
                 return { type, item: JSON.parse(localStorage.getItem(key)) };
             })
         );
