@@ -69,7 +69,6 @@ class Header extends React.Component {
         props.routeChanged&&this.setState({isOpen:false})
     }
     render() {
-        {console.log("state", this.props.fbProfile)}
         const { currentBookId, ...books } = this.props.book;
         const { history } = this.props;
         const { ...orders } = this.props.order;
