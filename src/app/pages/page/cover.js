@@ -14,7 +14,7 @@ class Cover extends Component {
          <div
             styleName="r"
             className="app-blue"
-            style={{ background: background, fontSize:'4em' }}
+            style={{ background: background, fontSize:'3.2em' }}
          >
             <Paspartu
                name={name}
