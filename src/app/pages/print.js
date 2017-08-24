@@ -41,8 +41,8 @@ class Print extends React.Component {
                     type => values(pages).filter(page => page.type === type)[0]
                 );
             return (
-                <div className="flex" style={{ width: 2370 }}>
-                    <div style={{width:'1185px', height:'1220px', overflow:'hidden' }}>
+                <div className="flex" style={{ width: 1896 }}>
+                    <div style={{width:'948px', height:'976px', overflow:'hidden' }}>
                         <Page
                             id={`${typePair[0].type}`}
                             url={this.props.url}
@@ -53,8 +53,8 @@ class Print extends React.Component {
                         />
                     </div>
                     <div style={{
-                        width:'1185px',
-                        height:'1220px',
+                        width:'948px',
+                        height:'976px',
                         overflow:'hidden',
                         display:'flex',
                         flexDirection:'column',
