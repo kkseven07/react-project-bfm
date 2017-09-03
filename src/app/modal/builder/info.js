@@ -1,5 +1,5 @@
 import React from "react";
-import Confetti from "react-confetti";
+// import Confetti from "react-confetti";
 import Book from "./book";
 import {Button} from '../../shared'
 
@@ -11,7 +11,6 @@ export default ({ book, actions }) => {
             style={{ minHeight: 500, justifyContent:"flex-start" }}
             className="flex flex-center flex-column"
         >
-            <Confetti />
             <div style={{ fontFamily: "RobotoMedium", fontSize: 20 }}>
                 Поздравляем!
             </div>
