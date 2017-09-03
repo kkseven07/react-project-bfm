@@ -227,14 +227,14 @@ let getPrintUrls = (book_type, book_id, types_arr) => {
         })
         .map(concept_pair => {
             return concept_pair.map(v => booklet[v]).join("-");
-        });
-    // .filter(concept_pair => {
-    //     return (
-    //         // concept_pair.indexOf("framefridge") > -1 ||
-    //         concept_pair.indexOf("poem") > -1 ||
-    //         concept_pair.indexOf("coolPlace") > -1
-    //     );
-    // });
+        })
+        // .filter(concept_pair => {
+        //     return (
+        //         // concept_pair.indexOf("candy") > -1 ||
+        //         concept_pair.indexOf("scoop") > -1 ||
+        //         concept_pair.indexOf("fashion") > -1
+        //     );
+        // });
     let result = names.map(url_part => {
         return `http://localhost:8080/pages/${book_id}/${url_part}`;
     });
@@ -254,7 +254,7 @@ let print = (urls, book_id) => {
     //         v =>
     //             v.indexOf("initmister") > -1 ||
     //             // v.indexOf("animal") > -1 ||
-    //             v.indexOf("epicStory") > -1||
+    //             v.indexOf("framefridge") > -1||
     //             // v.indexOf("pastPhoto") > -1||
     //             // v.indexOf("relaxPhoto") > -1||
     //             // v.indexOf("wiseWord") > -1||
@@ -264,7 +264,7 @@ let print = (urls, book_id) => {
     //     )
     //     .join(" ");
     shell.exec(
-        `electroshot [${urls} 700x700]  --delay 5500  --out ../print/${book_id} --filename '{name}.png'`
+        `electroshot [${urls} 700x700]  --delay 6500  --out ../print/${book_id} --filename '{name}.png'`
     );
 };
 
