@@ -42,24 +42,31 @@ class Print extends React.Component {
                 );
             return (
                 <div className="flex" style={{ width: 1896 }}>
-                    <div style={{width:'948px', height:'976px', overflow:'hidden' }}>
+                    <div
+                        style={{
+                            width: "948px",
+                            height: "976px",
+                            overflow: "hidden"
+                        }}
+                    >
                         <Page
                             id={`${typePair[0].type}`}
                             url={this.props.url}
                             print
                             book={bData}
                             page={typePair[0]}
-
                         />
                     </div>
-                    <div style={{
-                        width:'948px',
-                        height:'976px',
-                        overflow:'hidden',
-                        display:'flex',
-                        flexDirection:'column',
-                        alignItems:'flex-end'
-                    }}>
+                    <div
+                        style={{
+                            width: "948px",
+                            height: "976px",
+                            overflow: "hidden",
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "flex-end"
+                        }}
+                    >
                         <Page
                             id={`${typePair[1].type}`}
                             url={this.props.url}
@@ -69,7 +76,6 @@ class Print extends React.Component {
                             // style={{width:'1197px', height:'1220px' }}
                         />
                     </div>
-
                 </div>
             );
         }
@@ -100,7 +106,6 @@ class Print extends React.Component {
                         />
                     );
                 })}
-
             </div>
         );
     }
@@ -116,7 +121,4 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Print);
-// return (
 
-//                 <Page id={`${page.type}`} url={this.props.url} print book={bData} page={page} />
-//         )

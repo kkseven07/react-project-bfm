@@ -35,18 +35,9 @@ class App extends React.Component {
         if (navigator.appVersion.indexOf("Linux") != -1) OSName = "Mac";
         this.props.actions.osName(OSName);
 
-        ReactPixel.init('148262285740491');
+        ReactPixel.init('1530616043643215');
         ReactPixel.pageView();
     }
-    // componentDidMount() {
-    //     let s = document.createElement('script');
-    //     s.type = 'text/javascript';
-    //     s.async = true;
-    //     s.innerHTML =scr;
-    //     document.head.appendChild(s);
-    // }
-
-
     render() {
         const { match, location, history, ...props } = this.props;
         return (

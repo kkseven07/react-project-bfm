@@ -45,14 +45,8 @@ const decrypt = ciphertext => {
     return JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
 };
 class BookRoute extends Component {
-
-
     state = {
         inside: true,
-        // first: false,
-        // second: false,
-        // firstEntered: false,
-        // secondEntered: false
     };
     componentWillMount() {
         //setup book from local storage
@@ -83,22 +77,6 @@ class BookRoute extends Component {
         this.props.actions.cleanBuilder();
         // window.removeEventListener("scroll", throttle(this.handleScroll, 1200));
     }
-    handleScroll = e => {
-        if (!this.state.first && !this.firstEntered) {
-            console.log("settin first state");
-            this.setState({ firstEntered: true });
-            setTimeout(() => this.setState({ first: true }), 500);
-        } else if (
-            this.state.first &&
-            !this.state.second &&
-            !this.secondEntered
-        ) {
-            console.log("setting second state");
-            this.setState({ secondEntered: true });
-            setTimeout(() => this.setState({ second: true }), 500);
-        }
-    };
-
     _handleEnter = e => {
         if (!this.state.inside) this.setState({ inside: true });
     };

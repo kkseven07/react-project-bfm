@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"qual",
+				"qualityTableChoice"
+			],
+			[
+				"fr",
+				"frontPage"
+			],
+			[
+				"rela",
+				"relaxPhoto"
+			],
+			[
+				"frontPa",
+				"frontPageBack"
+			],
+			[
+				"vid",
+				"videoGame"
+			],
+			[
+				"ind",
+				"indexOf"
+			],
+			[
+				"init",
+				"initmister"
+			],
+			[
 				"conve",
 				"convertBooklet"
 			],
@@ -30,10 +58,6 @@
 			[
 				"site",
 				"siteKey"
-			],
-			[
-				"init",
-				"initialState"
 			],
 			[
 				"qu",
@@ -74,10 +98,6 @@
 			[
 				"htt",
 				"http://46.101.217.205:4000\t(page.js)"
-			],
-			[
-				"qual",
-				"qualityTableChoice\t(factory.ex)"
 			],
 			[
 				"api",
@@ -494,26 +514,6 @@
 			[
 				"Cale",
 				"CalendarTitle"
-			],
-			[
-				"Cal",
-				"CalendarTitle\t(calendarTitle.js)"
-			],
-			[
-				"react-",
-				"react-native-vector-icons\t(settingsButton.js)"
-			],
-			[
-				"compoent",
-				"componentWillUnmount\t(app.js)"
-			],
-			[
-				"comope",
-				"componentWillMount\t(list.js)"
-			],
-			[
-				"ke",
-				"keyboard"
 			]
 		]
 	},
@@ -523,7 +523,7 @@
 			"file": "src/app/pages/print.js",
 			"settings":
 			{
-				"buffer_size": 3960,
+				"buffer_size": 3992,
 				"line_ending": "Unix"
 			}
 		},
@@ -531,30 +531,45 @@
 			"file": "print.js",
 			"settings":
 			{
-				"buffer_size": 6405,
+				"buffer_size": 6650,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "Package Control Messages\n========================\n\nGitGutter\n---------\n\n  1.7.3:\n  ------\n  \n    Enhancement:\n     - Add support for PackageDev settings linting & completion\n  \n    Fix:\n     - Don't use Consolas font in diff popup\n     - Correctly decode empty git output\n     - IndexError exception in console (Issue #429)\n     - Reduce gutter icon jumping while editing text\n  \n    README:\n     - Fix some smaller graphical glitches\n     - Use animated screenshots captured with latest Sublime Text\n     - Add trouble shooting section for working tree\n  \n  \n  💛 Git Gutter? Want to support development?\n  \n  I've teamed up with Wes Bos to offer the following discounts:\n  \n  +------------------------------------------------+\n  |                                                |\n  |   Use the coupon code GITGUTTER for $10 off    |\n  |                                                |\n  +------------------------------------------------+\n  \n  🏅 ⭐ ES6 ⭐\n  \n  👉 ES6.io/friend/GITGUTTER\n  \n  🏅 ⭐ Sublime Text Book ⭐\n  \n  👉 SublimeTextBook.com/friend/GITGUTTER\n  \n  🏅 ⭐ React For Beginners ⭐\n  \n  👉 ReactForBeginners.com/friend/GITGUTTER\n  \n  \n  Join 15,000 other developers already learning with Wes Bos.\n  \n  These are fantastic resources - 100% money back guarantee! 🌟\n\n\nJsPrettier\n----------\n\n  ## 1.12.0\n  \n  Release Date: 2017-07-02\n  \n  - Added new `auto_format_on_save_excludes` setting to ignore auto formatting\n    when the target file, or its path resides in a particular location, and when\n    `auto_format_on_save` is turned on.\n",
+			"file": "books.sublime-project",
 			"settings":
 			{
-				"buffer_size": 1540,
-				"line_ending": "Unix",
-				"name": "Package Control Messages",
-				"read_only": true,
-				"scratch": true
+				"buffer_size": 751,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"contents": "{\n    \"folders\":\n    [\n        {\n            \"path\": \".\"\n        }\n    ],\n    \"settings\": {\n        \"js_prettier\": {\n            \"debug\": false,\n            \"prettier_cli_path\": \"/Users/ilyasmalgazhdarov/.nvm/versions/node/v7.4.0/bin/prettier\",\n            \"node_path\": \"/Users/ilyasmalgazhdarov/.nvm/versions/node/v7.4.0/bin/node\",\n            \"auto_format_on_save\": false,\n            \"allow_inline_formatting\": false,\n            \"prettier_options\": {\n                \"printWidth\": 80,\n                \"singleQuote\": false,\n                \"trailingComma\": \"none\",\n                \"bracketSpacing\": true,\n                \"jsxBracketSameLine\": false,\n                \"parser\": \"babylon\",\n                \"semi\": true\n            }\n        }\n    }\n}\n",
-			"file": "book.sublime-project",
+			"file": "books-client.sublime-project",
 			"file_size": 751,
-			"file_write_time": 131433769900000000,
+			"file_write_time": 131489404210000000,
 			"settings":
 			{
 				"buffer_size": 751,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/app/modal/builder/info.js",
+			"settings":
+			{
+				"buffer_size": 1769,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/app/pages/pages.css",
+			"settings":
+			{
+				"buffer_size": 4614,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -563,34 +578,6 @@
 			"settings":
 			{
 				"buffer_size": 100,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/pages/page/frontPage.js",
-			"settings":
-			{
-				"buffer_size": 929,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/pages/page.js",
-			"settings":
-			{
-				"buffer_size": 13984,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/app/home/components/form.js",
-			"settings":
-			{
-				"buffer_size": 17801,
-				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -603,9 +590,17 @@
 	"command_palette":
 	{
 		"height": 354.0,
-		"last_filter": "i",
+		"last_filter": "in",
 		"selected_items":
 		[
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Add Repository"
+			],
 			[
 				"i",
 				"Package Control: Install Package"
@@ -637,13 +632,9 @@
 			[
 				"inst",
 				"Package Control: Install Package"
-			],
-			[
-				"in",
-				"Package Control: Install Package"
 			]
 		],
-		"width": 575.0
+		"width": 584.0
 	},
 	"console":
 	{
@@ -668,7 +659,14 @@
 		"/Users/ilyasmalgazhdarov/Production/books-client",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/about",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/contacts",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/components",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/order",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/order/components",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/components",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page",
@@ -681,29 +679,51 @@
 	],
 	"file_history":
 	[
-		"/Users/ilyasmalgazhdarov/Production/books-client/common.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/books-client.sublime-project",
+		"/Users/ilyasmalgazhdarov/Learning/sublimeSetup",
+		"/Users/ilyasmalgazhdarov/Production/books-client/.git/MERGE_MSG",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/entry/url.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/pages.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/famousBirthShare.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/mirrorDate.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/techState.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/header.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/factoid.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/film.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/framefridge.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/scene.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic/epics/cache.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/cover.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/components/images.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/app.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/paspartu.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/components/bookOptions.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/frontPage.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/order/components/form.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/components/form.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/about/index.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/package.json",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/components/product.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/components/images.css",
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/index.js",
+		"/Users/ilyasmalgazhdarov/Production/books-client/index.html",
+		"/Users/ilyasmalgazhdarov/Production/books-client/books.sublime-project",
+		"/Users/ilyasmalgazhdarov/Production/books-client/common.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/film.css",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/techState.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/techState.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/mirrorDate.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/film.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/relaxPhoto.css",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/relaxPhoto.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/framefridge.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/frontPage.css",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/pastPhoto.css",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/pastPhoto.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/famousBirthShare.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/mirrorDate.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/frontPage.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/pages.css",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/quotes.css",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/prideOfDad.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/prideOfMom.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/prideOfMom.css",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/prideOfDad.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/famousBirthShare.css",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/musicHit.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/deducedAgeFact.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/epicStory.js",
@@ -717,7 +737,6 @@
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/pages.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/scoop.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/fruitDNA.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/scene.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/sport.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/thanksForDad.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/thanksForMom.js",
@@ -734,7 +753,6 @@
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/geniusQuoteDad.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/formulaMom.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/formulaDad.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/factoid.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/dadChemistryProoved.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/credoMom.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/credoDad.js",
@@ -745,10 +763,8 @@
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/backToHistory.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/animal.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic/epics/api.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/virtue.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/app.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/header.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/print.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/Drop.js",
 		"/Users/ilyasmalgazhdarov/.bash_profile",
@@ -768,47 +784,29 @@
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/utils.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/order/order.css",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/order/index.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/app.css",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/components/product.css",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/sport.css",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/shared/components/header.css",
-		"/Users/ilyasmalgazhdarov/Learning/sublimeSetup",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/selectorForm.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/order.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/orderForm.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/order/components/form.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/about/index.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/contacts/index.css",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/contacts/index.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/about/about.css",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic/index.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic/epics/cache.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/epic/epics/form.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/wiseWord.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/home/components/form.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/backToHistory.css",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/ageFact.css",
 		"/Users/ilyasmalgazhdarov/Production/book",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/qualityTable.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/film.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/epicStory.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/cover.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/package.json",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/holiday.css",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/quotes.css",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/intro.js",
 		"/Users/ilyasmalgazhdarov/Production/books-client/src/business/reducer/reducers/modal.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/intro.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/bestseller.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/pages/page/scene.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/cart/index.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/cart/components/orderItem.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/cart/components/cart.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/cart/components/orders.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/cart/components/orderBooks.js",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/cart/components/orderBooks.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/cart/components/orderItem.css",
-		"/Users/ilyasmalgazhdarov/Production/books-client/index.html"
+		"/Users/ilyasmalgazhdarov/Production/books-client/src/app/modal/builder/components/intro.css"
 	],
 	"find":
 	{
@@ -849,6 +847,26 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"console.log",
+			"1220px",
+			"1185px",
+			"cover",
+			"510",
+			"m1",
+			"Image5",
+			"Image3",
+			"Image1",
+			"es/",
+			"const Imag",
+			"Image",
+			"image",
+			"Image",
+			"274",
+			"isSelected: true,",
+			"product",
+			"//",
+			"console.log",
+			"1024",
 			"130",
 			"150",
 			"200",
@@ -956,27 +974,7 @@
 			"musicHit",
 			"save",
 			"\"12\"",
-			"\"11\"",
-			"\"10\"",
-			"month",
-			"december",
-			"november",
-			"october",
-			"september",
-			"august",
-			"july",
-			"june",
-			"may",
-			"april",
-			"march",
-			"february",
-			"january",
-			"my_app",
-			"MyApp",
-			"100",
-			"class",
-			"gender",
-			"768"
+			"\"11\""
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1008,7 +1006,7 @@
 			"0084b4",
 			"134DB1"
 		],
-		"reverse": false,
+		"reverse": true,
 		"show_context": false,
 		"use_buffer2": true,
 		"whole_word": false,
@@ -1017,7 +1015,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -1026,15 +1024,19 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3960,
+						"buffer_size": 3992,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3347,
-								3352
+								1634,
+								1634
+							],
+							[
+								2080,
+								2080
 							]
 						],
 						"settings":
@@ -1044,11 +1046,11 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
+						"translation.x": 9.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -1057,15 +1059,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6405,
+						"buffer_size": 6650,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6384,
-								6332
+								6323,
+								6323
 							]
 						],
 						"settings":
@@ -1076,7 +1078,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4315.0,
+						"translation.y": 4477.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -1084,38 +1086,8 @@
 				},
 				{
 					"buffer": 2,
+					"file": "books.sublime-project",
 					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1540,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								520,
-								520
-							]
-						],
-						"settings":
-						{
-							"auto_indent": false,
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_width": 2,
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "book.sublime-project",
-					"semi_transient": true,
 					"settings":
 					{
 						"buffer_size": 751,
@@ -1131,7 +1103,7 @@
 						],
 						"settings":
 						{
-							"git_gutter_is_enabled": false,
+							"git_gutter_is_enabled": true,
 							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
@@ -1144,64 +1116,89 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "src/entry/url.js",
+					"buffer": 3,
+					"file": "books-client.sublime-project",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 100,
+						"buffer_size": 751,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								54,
-								54
+								0,
+								751
 							]
 						],
 						"settings":
 						{
 							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "src/app/pages/page/frontPage.js",
+					"buffer": 4,
+					"file": "src/app/modal/builder/info.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 929,
+						"buffer_size": 1769,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								710,
-								710
-							],
-							[
-								714,
-								714
-							],
-							[
-								718,
-								718
+								217,
+								217
 							]
 						],
 						"settings":
 						{
 							"git_gutter_is_enabled": true,
 							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 3,
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 553.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/app/pages/pages.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4614,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3653,
+								3653
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -1213,27 +1210,25 @@
 				},
 				{
 					"buffer": 6,
-					"file": "src/app/pages/page.js",
+					"file": "src/entry/url.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13984,
+						"buffer_size": 100,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8330,
-								8330
+								43,
+								43
 							]
 						],
 						"settings":
 						{
 							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1241,44 +1236,13 @@
 					},
 					"stack_index": 6,
 					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "src/app/home/components/form.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 17801,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								15987,
-								15987
-							]
-						],
-						"settings":
-						{
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 7279.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 24.0
+		"height": 48.0
 	},
 	"input":
 	{
@@ -1312,7 +1276,7 @@
 		"height": 114.0
 	},
 	"pinned_build_system": "",
-	"project": "books.sublime-project",
+	"project": "books-client.sublime-project",
 	"replace":
 	{
 		"height": 44.0

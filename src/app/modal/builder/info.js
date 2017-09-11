@@ -1,19 +1,19 @@
 import React from "react";
-// import Confetti from "react-confetti";
 import Book from "./book";
-import {Button} from '../../shared'
+import { Button } from "../../shared";
 
 export default ({ book, actions }) => {
     const cover = book.cover;
     const rest = book.book;
     return (
         <div
-            style={{ minHeight: 500, justifyContent:"flex-start" }}
+            style={{ minHeight: 500, justifyContent: "flex-start" }}
             className="flex flex-center flex-column"
         >
             <div style={{ fontFamily: "RobotoMedium", fontSize: 20 }}>
                 Поздравляем!
             </div>
+
             <div
                 style={{
                     fontFamily: "RobotoMedium",
@@ -23,6 +23,7 @@ export default ({ book, actions }) => {
             >
                 Вы только что создали:{" "}
             </div>
+
             <Book book={rest} cover={cover} />
 
             <div
@@ -34,30 +35,31 @@ export default ({ book, actions }) => {
             >
                 У некоторых страниц есть кнопка
             </div>
-            <div
 
+            <div
                 className="flex flex-center"
                 style={{
-                    marginTop:10
+                    marginTop: 10
                 }}
             >
                 Редактировать
             </div>
 
-
-             <div
+            <div
                 style={{
                     fontFamily: "RobotoRegular",
                     marginTop: 10,
                     fontSize: 18,
-                    width:300,
-                    textAlign:"center"
+                    width: 300,
+                    textAlign: "center"
                 }}
             >
                 Нажав на которую вы сможете персонализировать книгу
             </div>
-            <div style={{height:25}}/>
-            <Button click={()=>actions.closeModal()}>
+
+            <div style={{ height: 25 }} />
+
+            <Button click={() => actions.closeModal()}>
                 Перейти к книге
             </Button>
 
